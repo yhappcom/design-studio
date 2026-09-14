@@ -127,7 +127,6 @@ with tempfile.TemporaryDirectory(prefix='c007-') as td, sync_playwright() as p:
         geom.pop('cells', None)
         results[variant] = {
             'geometry_identical_to_neutral': same,
-            'geometry': geom,
             'metrics': metrics,
         }
 
@@ -145,6 +144,7 @@ payload = {
         'geometry': 'DOM rectangles must be identical across variants; only CSS color custom properties change.',
         'image_metrics': 'Screenshots are downsampled 4x. Oklab statistics and a study-specific local feature-variability proxy are computed. The proxy is not Rosenholtz Feature Congestion and is not a human-clutter score.',
     },
+    'baseline_geometry': base_geom,
     'results': results,
 }
 RESULTS.write_text(json.dumps(payload, indent=2), encoding='utf-8')
