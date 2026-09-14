@@ -129,6 +129,27 @@ https://www.w3.org/TR/WCAG22/
 
 Why it matters: normative accessibility reference for contrast, text adaptation, reflow, focus, target size, and non-color-dependent communication.
 
+### Wagemans et al. (2012) — A Century of Gestalt Psychology in Visual Perception I
+https://pmc.ncbi.nlm.nih.gov/articles/PMC3482144/
+https://pubmed.ncbi.nlm.nih.gov/22845751/
+
+Why it matters: peer-reviewed modern synthesis of classical and later perceptual-grouping and figure-ground research. It prevents reducing Gestalt theory to a simplified design-school checklist and documents interactions among proximity, similarity, common region, uniform connectedness, contour grouping, attention, depth, and border ownership.
+
+### Kubovy, Holcombe & Wagemans (1998) — On the Lawfulness of Grouping by Proximity
+https://pubmed.ncbi.nlm.nih.gov/9520318/
+
+Why it matters: quantitative evidence that proximity grouping strength changes systematically with relative distance in the studied dot-lattice paradigm. Use to support relational spacing reasoning, not to invent universal UI pixel thresholds.
+
+### Palmer (1992) — Common Region: A New Principle of Perceptual Grouping
+https://pubmed.ncbi.nlm.nih.gov/1516361/
+
+Why it matters: original peer-reviewed evidence that shared spatial regions can provide a grouping factor independent of proximity and similarity and can participate in hierarchical perceptual organization.
+
+### Palmer & Rock (1994) — Rethinking Perceptual Organization: The Role of Uniform Connectedness
+https://pubmed.ncbi.nlm.nih.gov/24203413/
+
+Why it matters: original theoretical and experimental work on uniform connectedness as an early perceptual-unit formation principle. Useful when reasoning about joined surfaces, segmented controls, paths, and when visual connection changes the apparent object structure.
+
 ## Graduate design education references
 
 Planned primary review:
