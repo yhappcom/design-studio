@@ -1,31 +1,33 @@
 # Layout, Spatial & Interaction Specialist Status
 
 Operating state: **ACTIVE — RESEARCH MAY RESUME**  
-Governance sync: 2026-09-14  
+Governance sync: 2026-09-15  
 Canonical paths: `research/layout/`, `research/interaction/`  
 Next new-study IDs: Layout `L007`; Interaction `I005`
 
-This file is maintained by the Layout, Spatial & Interaction Specialist. It must not update global `progress/STATUS.md` during ordinary research.
+This file is maintained by the Layout, Spatial & Interaction Specialist. It does not update global `progress/STATUS.md` during ordinary research.
 
 ## Mission / stage
 
-Research exists to improve real app, web and product decisions. Live projects must receive project-specific guidance on hierarchy, grouping, density, responsive behavior, navigation, state, feedback, latency, recovery, concurrency, layer ownership, target placement, accessibility, localization, platform/device and implementation trade-offs.
+Research exists to improve real app, web and product decisions. Research volume is not the objective.
 
 Current stage: **Stage 1 — Foundation**  
 Overall state: **CRITIQUE** in studied modules  
 Foundation: **NOT PASSED**
 
-Spatial evidence remains under `research/layout/`; behavioral evidence remains under `research/interaction/`.
+Human-observer/user-task validation is currently **DEFERRED TO APP-DEVELOPMENT VALIDATION**, not treated as completed or fabricated.
 
 ## Four-specialist sync
 
-- **Type:** through **T007**. Source→CFF/TTF evidence now extends into two-master variable-font compatibility and adversarial intermediate-instance validation. Delivered build + axis value are Layout inputs; a successful build is not proof of correct runtime geometry.
-- **Color:** through **C009**. C007 independently confirms L005 fixed-geometry density/salience findings; C009 shows fixed semantic Color pairs do not normalize Type weight/fallback rendering or spatial footprint.
-- **Web:** no substantive `W###` yet; `W001` remains next. Do not invent Web evidence.
+- **Type:** through **T014**. Type now covers source/build/package/normalization contracts through Hangul NFC↔NFD subset closure. Layout consequence: exact delivered font/package plus actual normalization/fallback state are spatial inputs before Korean wrap/density regression is considered stable.
+- **Color:** through **C012**. Color now adds C010 production color-management, C011 forced-colors/SVG semantic transfer, and C012 spectral provenance/sampling evidence. Layout consequence: appearance, semantic state and operational ownership remain separate validation layers.
+- **Web:** no substantive `W###` yet; `W001` remains next. Do not invent Web production evidence.
+
+---
 
 ## Canonical evidence
 
-### Layout
+### Layout / spatial
 - `006-grid-composition-hierarchy.md`
 - `014-perceptual-grouping-spatial-grammar.md`
 - `L001-figure-ground-balance-optical-centering.md`
@@ -48,144 +50,139 @@ Spatial evidence remains under `research/layout/`; behavioral evidence remains u
 - `I002-latency-pending-optimistic-retry.md` + **19 assertions**
 - `I003-forced-colors-state-semantic-resilience.md` + **14 assertions**
 - `I004-concurrent-edits-conflict-merge-recovery.md` + **17 controlled assertions**
-- `I004-http-precondition-etag-transfer.md` + real HTTP/1.1 ETag/If-Match harness + **16 assertions**
+- `I004-http-precondition-etag-transfer.md` + **16 real HTTP precondition assertions**
+- `I004-offline-outbox-reconnect-transfer.md` + **18 durable offline/restart/reconnect assertions**
 
 Shared accessibility baseline: `research/004-accessibility-reflow-targets-focus.md`.
 
 ---
 
-## Latest completed block — L006 layer ownership
+# L006 — layer ownership evidence
 
-L006 treats layered UI as a cross-contract, not a z-index/elevation question.
+L006 treats layered UI as a cross-contract rather than a z-index/elevation problem.
 
 Ownership vector:
 
 `visual owner / pointer hit owner / active gesture-capture owner / keyboard-focus owner / semantic-AT owner / action-data owner / layer-stack position / restoration target`
 
-Additional consistency check:
+Consistency check:
 
 `declared semantic modality ↔ actual operational modality`
 
-### 1. Custom visual/interaction ownership — **15/15**
+Evidence layers:
 
-Pixel-identical broken/revised popover, sticky and modal-sheet pairs proved that a foreground can look correct while pointer/focus ownership remains with obscured background controls. Revised pairs repaired hit ownership, inertness and bidirectional focus containment without changing the pixels.
+1. **Custom visual/interaction ownership — 15/15**  
+   Pixel-identical broken/revised popover, sticky and modal-sheet pairs proved screenshot appearance cannot validate pointer/focus ownership.
 
-**Rule:** screenshot QA cannot validate overlay interaction ownership.
+2. **Native HTML popover/dialog — 13/13 bounded assertions**  
+   Native popover overlap, `showModal()` underlay blocking, nested top-layer behavior and bounded invoker restoration established. Strict APG-style focus-loop behavior remains a separate target-browser gate.
 
-### 2. Native HTML popover/dialog — **13/13 bounded assertions**
+3. **Pointer capture / dismissal / lost invoker — 13/13**  
+   A pre-existing captured background drag survived modal entry until explicitly released. Nested dismissal is topmost-first. Missing invoker requires a logical restoration fallback.
 
-Chromium 144:
-- native popover owns its overlap without globally inerting the page;
-- `dialog.showModal()` blocks outside pointer interaction and underlay availability;
-- nested popover can become topmost;
-- close restored focus to the invoker in the bounded case.
+4. **Forced-colors / touch implicit capture / Chromium AX tree — 28/28**  
+   Shadow-only layer cues can disappear while operational ownership remains foreground. System-color structural outlines survive the controlled forced-colors condition. Touch implicit capture can survive modal entry. Chromium AX-tree modality was validated but is not screen-reader PASS.
 
-Limitation: `activeElement` transiently became `<body>` at some Tab boundaries. Outside controls stayed unreachable, but native modality did not prove the stronger “activeElement always remains a dialog descendant” APG-style focus loop.
+5. **Custom `aria-modal=true` versus actual modality — 14/14**  
+   `aria-modal=true` can declare modal semantics while pointer/focus/background behavior remains non-modal. Revised version required real inertness, pointer blocking, focus containment and restoration.
 
-### 3. Pointer capture / dismissal / lost invoker — **13/13**
+Evidence level: **PRACTICE + CRITIQUE**.
 
-Failure: a background drag with explicit `setPointerCapture()` continued to receive move/up and committed hidden mutation after modal entry.
+Remaining L006 gates: real Windows High Contrast; NVDA/JAWS/Narrator/VoiceOver/TalkBack; Firefox/Safari; physical iOS/Android; stylus/multi-touch/OS gesture arbitration; production portal/focus-scope/native-framework behavior; human layer comprehension.
 
-Revision: release capture + cancel the domain gesture before entering the modal; commit changed `1 → 0`.
+---
 
-Also established:
-- bounded touch overlap belonged to foreground;
-- `page → modal → nested popover` dismisses topmost-first;
-- missing invoker caused native close to fall to `BODY`; explicit logical fallback repaired restoration.
+# I004 — concurrent edits / conflict / offline sync
 
-**Rule:** new-hit ownership and already-active gesture/capture ownership are different contracts.
+I004 now has three evidence layers.
 
-### 4. Forced-colors / touch implicit capture / Chromium AX tree — **28/28**
+## 1. Controlled conflict state machine — **17/17**
 
-Forced-colors reciprocal failure:
-- shadow-only foreground kept correct hit/action ownership;
-- Chromium forced-colors removed `box-shadow`, foreground/page surfaces merged, and an isolated boundary strip lost its distinguishing pixels.
+Established:
+- naive lost update;
+- disjoint safe merge when semantic independence is known;
+- same-field conflict with local draft preservation;
+- delete-vs-edit as a distinct identity conflict;
+- focus/recovery behavior after resolution.
 
-Revision: `outline: 3px solid CanvasText` preserved a system-color-resolved structural boundary. `forced-color-adjust:none` preserved author shadow only as a diagnostic/exception, not a generic fix.
+## 2. Real HTTP `ETag` / `If-Match` — **16/16**
 
-Touch implicit capture:
-- direct-manipulation touch began already captured;
-- modal entry alone left capture active and hidden background commit occurred;
-- explicit release + gesture cancellation changed commit `1 → 0`.
+Established over an actual HTTP origin-server exchange:
+- stale whole-record mutation can lose parallel work when unprotected;
+- strong ETag + `If-Match` blocks stale mutation with 412;
+- disjoint merge must rebase against the newest validator;
+- same-field winner is not decided by HTTP preconditions;
+- delete-vs-edit can preserve work as a new identity with `If-None-Match:*`.
 
-Chromium AX tree:
-- non-modal popover adds its region/action while background remains exposed;
-- modal dialog removes page background from exposed AX tree;
-- nested popover remains inside the modal exposure stack;
-- close restores page background exposure.
+## 3. Durable offline outbox / restart / reconnect — **18/18**
 
-**Limit:** AX-tree evidence is not screen-reader PASS.
+Test substrate: real HTTP/1.1 server + two independent durable SQLite client stores. SQLite is a lab persistence substrate, not a Web/mobile storage recommendation.
 
-### 5. Custom `aria-modal=true` versus actual modality — **14/14**
+Established:
+- unavailable network leaves queued operation and draft durable;
+- queued intent survives client/process restart;
+- original base ETag remains attached to the queued intent;
+- reconnect first retries against that historical base and receives stale detection;
+- safe disjoint rebase occurs only after fetching current state and establishing semantic independence;
+- same-field conflict remains durable and does not auto-write;
+- delete-vs-edit remains pending without resurrection;
+- explicit keep-as-new creates a separate identity;
+- queue/draft clear only after authoritative success.
 
-Broken custom portal:
-- AX dialog exposes role `dialog`, name, and `modal=true`;
-- DOM underlay is not inert;
-- background destructive button remains exposed **and focusable** in Chromium AX tree;
-- `Shift+Tab` escapes `Confirm → background destructive action → opener`;
-- forward Tab leaves the dialog task;
-- backdrop permits pointer hit-through;
-- background destructive action activates while the dialog is semantically modal.
+Critical rule:
 
-Revised, with the same role/name/`aria-modal` declaration:
-- underlay becomes `inert`;
-- background controls disappear from Chromium AX tree;
-- Tab/Shift+Tab stay within the dialog;
-- backdrop blocks hidden background actions;
-- close restores focus to the opener.
+> `base state` is a historical fact attached to the queued user intent. A reconnect fetch creates `current state`; it must not silently rewrite the operation's remembered base.
 
-**Rule:** `aria-modal=true` describes modality; it does not implement DOM inertness, pointer blocking, focus containment or restoration. Declared semantic modality and actual operational modality must agree.
+Offline sync state model now distinguishes:
 
-### L006 evidence level
+`local draft / queued-saved-locally / syncing / remote confirmed / network pending / mergeable stale base / conflict requiring resolution / remote deleted-finalized / recovered as new or compensating action`.
 
-**PRACTICE + CRITIQUE / custom DOM + native browser + gesture transition + forced-colors + Chromium AX-tree + semantic/behavior contradiction validation.**
+Do not collapse this to `synced / error`.
 
-Not PASS: actual Windows High Contrast; NVDA/JAWS/Narrator/VoiceOver/TalkBack; Firefox/Safari; physical iOS/Android; stylus/multi-touch/OS gesture arbitration; production framework portals/native frameworks; human layer comprehension.
+### Infrastructure limitation recorded
+
+The intended Chromium + localhost HTTP + IndexedDB harness could not run because the installed Chromium policy returned `ERR_BLOCKED_BY_ADMINISTRATOR` for localhost navigation, including after launch-flag checks. No browser product conclusion is inferred.
+
+Browser IndexedDB/service-worker/background-sync transfer remains a future Web/live-project gate.
+
+Evidence level: **PRACTICE + CRITIQUE / state-machine + real HTTP + durable offline/reconnect transfer**.
+
+Remaining I004 gates:
+- actual production DB/transaction/isolation behavior;
+- IndexedDB/service worker or real mobile local database transfer;
+- physical multi-device races;
+- ambiguous-result duplicate delivery/idempotency;
+- multiple queued operation ordering/compaction;
+- authorization/account change/finalization while offline;
+- CRDT/OT for text/list/order domains;
+- AT and human conflict comprehension.
 
 ---
 
 ## Other established blocks
 
 ### L001 figure-ground / optical centering
-- Border-ownership cue isolation: nine stimuli, pixel-identical local shared-edge crop after failure→revision; blinded Left/Right/Ambiguous human protocol ready; no human data fabricated.
-- Optical centering: fixed 48×48 target, six asymmetric shapes, 16/24/32/40px at DPR1/2; no universal optical-offset token; raster mass is diagnostic, not perceived center.
+- Border ownership: nine local-edge-controlled stimuli + blinded observer protocol. Human data deferred to app-development validation.
+- Optical centering: fixed 48×48 target, six asymmetric shapes, 16/24/32/40px at DPR1/2; no universal offset token; raster mass is diagnostic rather than perceived center.
 
 ### L002 density / spatial rhythm
-**216-condition Chromium validation** rejected fake compactness from clipping/undersized targets. Adaptive density preserves semantic content, required targets and grouping while compressing discretionary whitespace.
+**216-condition Chromium validation** rejected fake compactness from clipping/undersized targets. Adaptive density preserves content, required targets and grouping while compressing discretionary whitespace.
 
 ### L003 Type fallback → Layout
-T005-compatible Latin/Korean fallback stacks crossed different browser wrap thresholds. Semantic-lane recomposition stabilized object identity instead of font-specific breakpoints.
+Mixed Latin/Korean fallback stacks crossed different browser wrap thresholds. Semantic-lane recomposition stabilized object identity instead of font-specific breakpoints. T013/T014 now add normalization state as another prerequisite for stable Korean transfer.
 
 ### L004 tabular numerals → dense Layout
-`tabular-nums` equalized tested browser digit/decimal positions but widened Inter enough to break an 88px placeholder-derived track; intrinsic numeric width removed overflow.
+`tabular-nums` equalized tested browser digit/decimal positions but widened Inter enough to break a fixed track; intrinsic numeric width removed overflow.
 
 ### L005 Color → Layout
-Fixed geometry separated spatial density from Color-driven feature variability and semantic collision. Color C007 independently confirms the main direction with complementary metrics.
+Fixed geometry separated spatial density from Color-driven feature variability and semantic collision. Color C007 independently confirmed the main direction. C011/L006 strengthen channel-loss/override transfer.
 
-### I001–I004
-- I001 navigation/state: **14/14** controlled assertions.
+### I001–I003
+- I001 navigation/state: **14/14**.
 - I002 async/retry/cancel: **19/19**.
 - I003 forced-colors state resilience: **14/14**.
-- I004 concurrent edit/conflict/merge/recovery: **17/17 controlled state-machine + 16/16 real HTTP precondition assertions**.
 
 None is production PASS.
-
----
-
-## Cross-specialist consequences
-
-### Type — through T007
-- Validate **actual delivered font build + axis value** near wrap, numeric-column, density and overlay-boundary thresholds.
-- T007 strengthens the warning: a variable font can build while a glyph is frozen or an intermediate instance is malformed.
-
-### Color — through C009
-- C007 ↔ L005 = **CONFIRMATION + COMPLEMENTARY METHOD**.
-- C009 reinforces that semantic Color values do not normalize Type/rendered geometry.
-- L006 forced-colors = **CONFIRMATION + REALISTIC LAYER TRANSFER** of C001 channel-loss risk.
-- Color cannot repair wrong interaction ownership; Layout/Type failures should not be disguised with color compensation.
-
-### Web Design
-No substantive W### yet. Web should reproduce L001–L006 and I001–I004 using production page/components, actual portals/focus scopes, delivered fonts/localization/zoom, real OS accessibility modes/AT and Firefox/Safari/mobile matrices.
 
 ---
 
@@ -193,119 +190,112 @@ No substantive W### yet. Web should reproduce L001–L006 and I001–I004 using 
 
 | Module | Status | Remaining gate |
 | --- | --- | --- |
-| Composition / visual grammar | CRITIQUE | human observation; broader multilingual/device transfer |
+| Composition / visual grammar | CRITIQUE | human observation deferred; broader multilingual/device transfer |
 | Grid / alignment systems | CRITIQUE | broader real rendering; text-growth/cross-surface transfer |
-| Perceptual grouping | CRITIQUE | broader context + human observation |
-| Figure-ground / border ownership | PRACTICE / CRITIQUE | cue isolation + realistic transfer complete; blinded observers/broader platforms pending |
-| Layer ownership / visual-interaction coupling | **PRACTICE / CRITIQUE** | **15 + 13 + 13 + 28 + 14** assertion layers; real OS/AT, Firefox/Safari, physical mobile, production portals/native and human evidence pending |
-| Visual mass / balance / tension | PRACTICE / CRITIQUE | stronger centroid datasets; observers/broader transfer |
-| Optical centering | PRACTICE / CRITIQUE | raster proof complete; blinded humans, physical devices, icon+text/RTL/platform transfer pending |
+| Perceptual grouping | CRITIQUE | broader context; human observation deferred |
+| Figure-ground / border ownership | PRACTICE / CRITIQUE | cue isolation + realistic transfer complete; human/platform transfer pending |
+| Layer ownership / visual-interaction coupling | PRACTICE / CRITIQUE | **15 + 13 + 13 + 28 + 14** assertion layers; real OS/AT/cross-browser/mobile/production/human pending |
+| Visual mass / balance / tension | PRACTICE / CRITIQUE | broader centroid/context; observers deferred |
+| Optical centering | PRACTICE / CRITIQUE | raster proof complete; human/physical-device/icon+text/RTL transfer pending |
 | Whitespace / density / spatial rhythm | PRACTICE / CRITIQUE | rendered cycle complete; human task/project transfer pending |
-| Responsive/adaptive recomposition | PRACTICE / CRITIQUE | L002/L003 evidence; real zoom/cross-browser/device/page transfer pending |
-| Type-dependent spatial robustness | PRACTICE / CRITIQUE | L003/L004 + T006/T007 dependency; delivered-font/axis/cross-platform/human evidence pending |
+| Responsive/adaptive recomposition | PRACTICE / CRITIQUE | real zoom/cross-browser/device/page transfer pending |
+| Type-dependent spatial robustness | PRACTICE / CRITIQUE | exact delivered font/package/axis/normalization state and cross-platform transfer pending |
 | Dense numeric comparison geometry | PRACTICE / CRITIQUE | locale/accounting/dynamic update/human comparison pending |
-| Color-driven feature density / salience | PRACTICE / CRITIQUE | L005 + C007 + C009 transfer; human/CVD/device/environment pending |
+| Color-driven feature density / salience | PRACTICE / CRITIQUE | L005+C007/C009/C011 context; human/device/environment pending |
 | Interaction agency / feedback / errors | CRITIQUE | real-platform/AT/human validation |
 | State / modes / reversibility / directness | CRITIQUE | broader multi-user/input/AT validation |
 | Navigation / task-flow integration | CRITIQUE | real router/URL, AT, cross-browser/device/human resumption pending |
-| Latency / pending / optimistic / retry / cancellation | PRACTICE / CRITIQUE | real HTTP/API/idempotency/abort/offline/AT/cross-browser pending |
-| Color-channel-independent state semantics | PRACTICE / CRITIQUE | real OS/other browsers/AT/production components pending |
-| Concurrent edits / conflict / merge / recovery | PRACTICE / CRITIQUE | controlled 17 + real HTTP ETag/If-Match 16 assertions; production backend/DB/offline/multi-device/CRDT-OT/AT/human pending |
+| Latency / pending / optimistic / retry / cancellation | PRACTICE / CRITIQUE | production API/idempotency/abort/offline/AT/cross-browser pending |
+| Color-channel-independent state semantics | PRACTICE / CRITIQUE | real OS/AT/production components pending |
+| Concurrent edits / conflict / merge / recovery | PRACTICE / CRITIQUE | **17 state + 16 HTTP + 18 offline/restart/reconnect assertions**; production DB/storage/multi-device/idempotency/queue ordering/CRDT-OT/AT/human pending |
+
+---
+
+## Current reusable rules
+
+- Compactness may not sacrifice meaning or required target geometry.
+- Density modes are relational policies, not immutable spacing tokens.
+- Separate spatial density, feature variability, emphasis distribution and semantic collision.
+- Border ownership is contextual; control the local edge while diagnosing remote cues.
+- Visual, hit, active-gesture, focus, semantic/AT, data, stack and restoration ownership are separate.
+- Screenshot QA cannot validate overlay interaction ownership.
+- Forced-colors can remove authored elevation while operational ownership remains intact.
+- `aria-modal=true` describes but does not implement modality.
+- Active pointer capture can survive modal entry; define explicit finish/cancel/release policy.
+- AX-tree membership is evidence, not screen-reader PASS.
+- Timeout, failure and outcome-unknown are distinct.
+- Retry is not conflict resolution.
+- `If-Match` prevents stale mutation but does not choose semantic winners.
+- Base/current/local are separate state dimensions.
+- A durable outbox is a preserved-intention store, not merely a retry list.
+- Do not replace a queued operation's base validator with the latest fetched ETag.
+- Queue clearing follows authoritative confirmation, not local persistence.
+- Auto-merge only semantically independent changes.
+- Preserve local drafts across conflicts and restarts.
+- Delete-vs-edit may require a new identity rather than resurrection.
+- Critical state meaning must survive authored color-channel loss.
 
 ---
 
 ## Active next queue
 
-1. **Human evidence when participants exist** — L001 border ownership, optical centering; L002/L005/C007 task performance/error separate from preference/workload.
-2. **L006 production/platform transfer** — actual Windows High Contrast and screen readers; Firefox/Safari; physical mobile; stylus/multi-touch/OS gestures; real framework portals/focus scopes; complex nested/routing/remount restoration; native mobile overlays.
-3. **I004 production transfer** — real project backend/DB transaction semantics, offline/reconnect, multi-device/tab, authorization/finalization, CRDT/OT where relevant, AT and human conflict resolution.
-4. **L004 only if project-relevant** — delivered production font/exact T004, locale/accounting, dynamic update, actual zoom/DPR.
-5. **I003 higher fidelity** — real OS high contrast/AT/production tokens using L006 realistic layer cases.
-6. Consume future W### evidence and independently reproduce high-risk findings.
-7. Open `L007` or `I005` only for a genuinely higher-value new question.
+Human work is deferred until app-development validation and does not block non-human research.
 
-## Open research-quality gaps
+1. **I004 next executable gap — ambiguous-result idempotency + duplicate delivery**: request applied but response lost; durable outbox retry must not duplicate side effects or misclassify own successful write as an external conflict.
+2. **I004 queue semantics** — multiple queued operations, ordering, compaction/squashing, dependency between operations and conflict propagation.
+3. **I004 authorization/finalization while offline** — queued mutation meets changed permission, finalized/locked record, or side-effect boundary.
+4. **L006 production/platform transfer** when actual OS/AT/cross-browser/mobile/framework environments become available.
+5. **I002 production async transfer** — idempotency/abort/outcome-unknown integrated with the I004 outbox model.
+6. **L004 extension only if project-relevant** — real delivered font, locale/accounting formats, dynamic updates, actual zoom/DPR.
+7. Consume future W### evidence and independently reproduce high-risk findings.
+8. Open `L007` or `I005` only for a genuinely higher-value new question than these existing validation gaps.
 
-- human border ownership/grouping/balance/optical-centering judgments;
-- human density/clutter/search/comparison/action evidence;
-- human layer-comprehension evidence;
-- real screen-reader announcement/navigation behavior;
-- actual Windows High Contrast rather than Chromium emulation;
-- Firefox/Safari focus/AX behavior;
-- physical mobile layer behavior;
-- stylus/multi-touch/OS gesture arbitration;
-- production framework portal/focus-scope behavior;
-- complex custom nested overlay/routing/remount restoration;
-- actual browser zoom;
-- production delivered static/variable font regression;
-- production backend/database transaction behavior, real multi-device/offline conflict/sync, CRDT/OT/list/text/order conflicts;
-- real router/history/service/network evidence;
-- representative interruption/resumption evidence;
-- stronger Web integration.
+## APP-DEVELOPMENT VALIDATION queue
+
+Do not fabricate or simulate human evidence. Execute when a live app/prototype and suitable participants exist:
+
+- L001 border ownership Left/Right/Ambiguous judgments;
+- L001 optical-centering blinded comparisons;
+- L002/L005/C007 task performance/error separate from preference/workload;
+- L006 layer comprehension/dismissal expectations;
+- I004 conflict-resolution comprehension/error;
+- real accessibility-user validation where applicable.
 
 ---
 
 ## HANDOFFS TO OTHER SPECIALISTS
 
 ### Typography / Type
-- T006/T007 require regression of actual delivered static/variable builds and axis instances near L003/L004/L006 boundaries.
-- L006 supplies overlay/localization cases where text/axis changes can move boundaries, hit regions and restoration targets.
-- Scope limit: Layout/Interaction does not define font/glyph production decisions.
+- T013/T014 make normalization representation a prerequisite for stable Korean Layout regression.
+- Offline conflict/diff surfaces may need exact text preservation; do not normalize away semantically relevant local/remote content without a product contract.
+- Scope limit: Interaction does not define normalization/shaping policy.
 
 ### Color
-- C007 ↔ L005 remains confirmation + complementary method.
-- L006 forced-colors confirms C001 in realistic layering: shadow-only elevation can disappear while behavior stays foreground-owned.
-- `forced-color-adjust:none` worked only as a diagnostic control and is not a generic repair.
-- Scope limit: no human salience/Color threshold claim.
+- Offline sync now has distinct `queued`, `network pending`, `mergeable stale`, `same-field conflict`, `remote deleted`, `confirmed` semantics. Color may encode them but must not collapse them or become the sole channel.
+- L006 forced-colors remains realistic confirmation of channel-loss risk.
 
-### Layout / Interaction reusable rules
-- compactness may not sacrifice meaning or required target geometry;
-- density modes are relational policies, not immutable tokens;
-- separate spatial density, feature variability, emphasis distribution and semantic collision;
-- border ownership is contextual; control the local edge while diagnosing remote cues;
-- visual, hit, active-gesture, focus, semantic/AT, data, stack and restoration ownership are separate;
-- screenshot QA cannot validate overlay interaction ownership;
-- forced-colors can remove authored elevation while interaction ownership remains intact;
-- use structurally robust/system-color-compatible boundary channels when overrides can remove shadow/fill cues;
-- `aria-modal=true` describes but does not implement modality;
-- semantic declaration and operational behavior must agree;
-- active pointer capture can survive modal entry; define finish/cancel/release policy;
-- modal QA must include Shift+Tab, active gesture transition, AX exposure, topmost-first dismissal and lost-invoker restoration;
-- AX-tree membership is evidence, not screen-reader PASS;
-- nested overlays require stack reasoning;
-- dimming does not create inertness;
-- timeout, failure and outcome-unknown are distinct; retry is not conflict resolution;
-- 412 Precondition Failed is conflict detection, not a generic Save failure; resolve/rebase against the newest validator before another write;
-- `If-Match` prevents stale mutation but does not decide same-field semantic winners; `If-None-Match:*` can protect create-new-identity recovery;
-- auto-merge only semantically independent changes; preserve local drafts across conflict;
-- critical state meaning must survive authored color-channel loss.
+### Web Design
+Reusable transfer contracts now include:
+- L001 cue isolation/optical raster;
+- L002 216-condition density;
+- L003 mixed-script wrap + Type normalization prerequisite;
+- L004 numeric alignment/intrinsic width;
+- L005/C007 fixed-geometry Color density;
+- L006 five assertion layers for overlays/modality;
+- I001 14, I002 19, I003 14;
+- I004 **17 state + 16 HTTP + 18 durable offline/reconnect assertions**.
 
-### Web Design transfer matrices
-- L001 border cue isolation + human protocol;
-- L001 optical raster matrix;
-- L002 **216-condition** density matrix;
-- L003 mixed-script wrap transfer;
-- L004 numeric alignment/intrinsic-width transfer;
-- L005 + C007 fixed-geometry Color validation;
-- L006 **15** custom ownership assertions;
-- L006 **13** native popover/dialog assertions;
-- L006 **13** gesture/restoration assertions;
-- L006 **28** forced-colors/implicit-capture/AX assertions;
-- L006 **14** custom ARIA-modal vs actual-modality assertions;
-- I001 14; I002 19; I003 14; I004 **17 controlled + 16 real HTTP precondition** assertions.
+Highest-value Web transfer: reproduce I004 with actual IndexedDB/service worker/background sync or chosen framework, including reload/crash persistence, storage eviction policy, concurrent tabs, exact ETag handling, queue ordering/idempotency and UI/AT status behavior.
 
 ---
 
 ## Latest checkpoint
 
-- `L001` → PRACTICE / CRITIQUE; observer judgments OPEN.
-- `L002` → PRACTICE / CRITIQUE.
-- `L003` → PRACTICE / CRITIQUE.
-- `L004` → PRACTICE / CRITIQUE.
-- `L005` → PRACTICE / CRITIQUE; independently confirmed/complemented by C007.
-- `L006` → **PRACTICE / CRITIQUE**, now spanning **15 + 13 + 13 + 28 + 14** controlled assertions across visual/pointer/focus/gesture/forced-color/AX/semantic-modal mismatches.
-- `I001` → CRITIQUE.
-- `I002` / `I003` → PRACTICE / CRITIQUE.
-- `I004` → **PRACTICE / CRITIQUE**, with **17/17 controlled state-machine + 16/16 real HTTP ETag/If-Match** evidence; production/offline/multi-device/human gates remain.
+- `L001`–`L006`: all studied modules remain **PRACTICE / CRITIQUE** where applicable; no human/platform PASS inferred.
+- `I001`: navigation/state → CRITIQUE.
+- `I002`: async/retry/cancel → PRACTICE / CRITIQUE.
+- `I003`: forced-colors resilience → PRACTICE / CRITIQUE.
+- `I004`: now spans **17/17 controlled state + 16/16 real HTTP + 18/18 durable offline/restart/reconnect** assertions → PRACTICE / CRITIQUE.
 - Next IDs remain Layout `L007`; Interaction `I005`.
-- No PASS promotion. Highest-value next evidence is real OS/AT/cross-browser/production-framework/human transfer, not more isolated Chromium volume.
+- Human validation explicitly deferred to app-development stage.
+- No PASS promotion claimed.
