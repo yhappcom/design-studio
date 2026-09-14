@@ -1,0 +1,39 @@
+{
+  "study": "L006 higher fidelity layer ownership",
+  "chromium": "144.0.7559.96",
+  "pass_count": 13,
+  "total": 13,
+  "checks": [
+    {"name": "pointer capture active before modal", "pass": true},
+    {"name": "modal inertness does not cancel pre-existing captured stream in this Chromium run", "pass": true},
+    {"name": "broken underlying gesture can still commit after modal appears", "pass": true},
+    {"name": "revised policy explicitly releases capture before modal", "pass": true},
+    {"name": "revised policy prevents underlying drag commit after modal transition", "pass": true},
+    {"name": "nested popover initially open inside modal", "pass": true},
+    {"name": "first Escape dismisses topmost popover before dialog", "pass": true},
+    {"name": "second Escape dismisses parent dialog", "pass": true},
+    {"name": "nested stack dismissal restores focus to parent invoker", "pass": true},
+    {"name": "lost invoker does not automatically move focus to logical sibling", "pass": true},
+    {"name": "explicit lost-invoker policy restores logical fallback", "pass": true},
+    {"name": "touch hit-test resolves to popover foreground", "pass": true},
+    {"name": "touch activates popover action only", "pass": true}
+  ],
+  "key_observations": {
+    "pointer_capture_broken": {
+      "dragMove": 4,
+      "dragUp": 1,
+      "dragCommit": 1,
+      "events": ["down:mouse:1", "capture-request:true", "gotcapture:1", "move:mouse:1", "move:mouse:1", "move:mouse:1", "move:mouse:1", "up:mouse:1:capture=true:commit=true", "lostcapture:1"]
+    },
+    "pointer_capture_revised": {
+      "dragMove": 1,
+      "dragUp": 0,
+      "dragCommit": 0,
+      "events": ["down:mouse:1", "capture-request:true", "gotcapture:1", "move:mouse:1", "gesture-canceled-before-modal", "lostcapture:1"]
+    },
+    "nested_final_focus": "openStack",
+    "lost_invoker_broken_focus": "BODY",
+    "lost_invoker_fixed_focus": "fallback",
+    "touch_counts": {"dragUp": 0, "dragMove": 0, "dragCommit": 0, "dialogAction": 0, "touchUnder": 0, "touchPop": 1}
+  }
+}
