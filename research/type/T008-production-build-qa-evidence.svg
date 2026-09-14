@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1120" viewBox="0 0 1500 1120">
+<rect width="1500" height="1120" fill="#f7f7f5"/>
+<style>
+.title{font:700 32px Arial,sans-serif;fill:#111}.h{font:700 20px Arial,sans-serif;fill:#111}.p{font:400 15px Arial,sans-serif;fill:#333}.m{font:400 14px "Courier New",monospace;fill:#222}.s{font:400 13px Arial,sans-serif;fill:#555}.box{fill:#fff;stroke:#d6d6d2;stroke-width:1}.good{font:700 15px Arial,sans-serif;fill:#1f5b3b}.bad{font:700 15px Arial,sans-serif;fill:#7d2c2c}.rule{stroke:#ddd;stroke-width:1}
+</style>
+<text class="title" x="60" y="65">T008 — Production build / release QA baseline</text>
+<text class="p" x="60" y="95">Source/build success is not binary/spec success; binary/spec success is not product/platform success.</text>
+<rect class="box" x="50" y="130" width="680" height="360" rx="12"/>
+<text class="h" x="75" y="170">A. Baseline T007 variable binary — release failure</text>
+<text class="m" x="75" y="205">head.flags = 1 (bit 1 not set)</text>
+<text class="m" x="75" y="232">critical glyph gvar tuples: H=1 O=1 n=1 o=1</text>
+<text class="m" x="75" y="259">whole-font checksum = 0xb1b0afba</text>
+<text class="bad" x="75" y="296">13 bounded audit failures</text>
+<text class="p" x="75" y="326">12 × LSB/xMin mismatches across H/O/n/o at 300, 500, 700</text>
+<text class="p" x="75" y="354">+ head bit-1 requirement not satisfied</text>
+<text class="m" x="75" y="392">example O@500: advance 610 · LSB 0 · xMin 50</text>
+<text class="s" x="75" y="438">Interpolation evidence from T007 remains useful; the emitted binary is not release-compliant.</text>
+<rect class="box" x="770" y="130" width="680" height="360" rx="12"/>
+<text class="h" x="795" y="170">B. Revised binary — local T008 audit pass</text>
+<text class="m" x="795" y="205">head.flags = 3 (bits 0 + 1 set; bit 5 clear)</text>
+<text class="m" x="795" y="232">required base/TT/VF tables: present</text>
+<text class="m" x="795" y="259">wght axis = 300 / 300 / 700</text>
+<text class="m" x="795" y="286">STAT ↔ fvar axis tags: aligned</text>
+<text class="m" x="795" y="313">gvar H/O/n/o = 1 / 1 / 1 / 1</text>
+<text class="m" x="795" y="340">whole-font checksum = 0xb1b0afba</text>
+<text class="good" x="795" y="378">0 bounded audit failures · PASS local contract</text>
+<text class="m" x="795" y="416">O: 300/500/700 LSB = xMin = 50</text>
+<text class="s" x="795" y="452">Local contract PASS ≠ foundry/browser/device/product PASS.</text>
+<rect class="box" x="50" y="525" width="680" height="260" rx="12"/>
+<text class="h" x="75" y="565">C. Deliberate mutation — STAT removed</text>
+<text class="p" x="75" y="600">Font still parses; fvar/gvar/HVAR remain; sampled instances still generate.</text>
+<text class="m" x="75" y="632">checksum = 0xb1b0afba</text>
+<text class="m" x="75" y="660">LSB/xMin probes: still normalized</text>
+<text class="bad" x="75" y="700">release audit: missing_required_table:STAT</text>
+<text class="s" x="75" y="742">“Opens/renders” is weaker than “satisfies the binary release contract”.</text>
+<rect class="box" x="770" y="525" width="680" height="260" rx="12"/>
+<text class="h" x="795" y="565">D. Reproducibility — serializer behavior matters</text>
+<text class="p" x="795" y="600">A fixed head.modified value was initially overwritten by automatic timestamp recalculation.</text>
+<text class="m" x="795" y="632">requested = 3800000000</text>
+<text class="m" x="795" y="660">auto-recalc saved = 3872231860</text>
+<text class="m" x="795" y="688">recalc disabled saved = 3800000000</text>
+<text class="good" x="795" y="725">corrected builds binary-identical = true</text>
+<text class="s" x="795" y="755">SHA-256: e3354d493cba74f03c857f022d529f8d…</text>
+<rect class="box" x="50" y="820" width="1400" height="235" rx="12"/>
+<text class="h" x="75" y="860">Release-gate hierarchy</text>
+<text class="p" x="75" y="895">A · source/design validity → B · build compatibility → C · binary/spec sanity → D · design regression → E · target environment</text>
+<line class="rule" x1="75" y1="918" x2="1425" y2="918"/>
+<text class="p" x="75" y="950">T008 proves a real separation: T007 interpolation can be valid while its first binary violates the TrueType-VF metric/header contract.</text>
+<text class="p" x="75" y="980">It also rejects a false reproducibility heuristic: assigning a fixed timestamp is insufficient if the writer silently recalculates it.</text>
+<text class="m" x="75" y="1015">FontTools 4.63.0 · FreeType 2.13.2 · research-only H/O/n/o · one wght axis</text>
+<text class="s" x="75" y="1042">Evidence only — no FontBakery/OTS/browser/platform/foundry production PASS claimed.</text>
+</svg>
