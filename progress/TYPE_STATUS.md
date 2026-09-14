@@ -3,7 +3,7 @@
 Operating state: **ACTIVE — RESEARCH MAY RESUME**  
 Governance sync: 2026-09-15  
 Primary path: `research/type/`  
-Next new-study ID: `T010`
+Next new-study ID: `T011`
 
 This file is maintained by the Typography / Type Design Specialist. The specialist must not update global `progress/STATUS.md` directly.
 
@@ -11,7 +11,7 @@ This file is maintained by the Typography / Type Design Specialist. The speciali
 
 Type research exists to improve real app, web and product decisions. Research volume or curriculum speed is not the objective.
 
-For live projects, accumulated evidence must become project-specific guidance on font choice, hierarchy, metrics, spacing, numerals, density, localization, fallback, source/build quality, release packaging, scaling, rendering, accessibility, implementation trade-offs, validation and failure conditions.
+For live projects, accumulated evidence must become project-specific guidance on font choice, hierarchy, metrics, spacing, numerals, density, localization, fallback, source/build quality, release packaging, variable-axis behavior, scaling, rendering, accessibility, implementation trade-offs, validation and failure conditions.
 
 ## Current level
 
@@ -19,9 +19,9 @@ Current curriculum stage: **Stage 1 — Foundation**
 Overall state: **PRACTICE / CRITIQUE**  
 Foundation: **NOT PASSED**
 
-The Type program now has evidence across source construction, raster behavior, numerals/punctuation, mixed-script fallback, single-master outline QA, two-master interpolation compatibility, generated-variable-font binary release QA, and **distribution-transformation QA for subsetting + WOFF2 feature/metric preservation**.
+The Type program now has evidence across source construction, raster behavior, numerals/punctuation, mixed-script fallback, single-master outline QA, two-master interpolation compatibility, generated-variable-font binary release QA, static webfont feature/subset QA, and **variable-font WOFF2/subset axis-semantics QA**.
 
-Remaining Foundation gaps include broader glyph-family coherence, components/diacritics/anchors, three-master/multi-axis/CFF2 work, external broad QA/sanitizer integration, complete naming/STAT/avar family metadata, shaping/browser/platform/device transfer, hinting strategy, mixed-script line layout and human reading/recognition evidence.
+Remaining Foundation gaps include broader glyph-family coherence, components/diacritics/anchors, three-master/multi-axis/CFF2 work, external broad QA/sanitizer integration, complete naming/style-linking/STAT/avar family metadata, broader OpenType feature closure, shaping/browser/platform/device transfer, hinting strategy, mixed-script line layout and human reading/recognition evidence.
 
 ---
 
@@ -43,99 +43,116 @@ Remaining Foundation gaps include broader glyph-family coherence, components/dia
 - `research/type/T007-variable-interpolation-source-compatibility.md`
 - `research/type/T008-production-build-release-qa.md`
 - `research/type/T009-webfont-subset-feature-contract.md`
+- `research/type/T010-variable-webfont-axis-contract.md`
 
 ### Reproducibility / evidence artifacts
 
-T002–T008 retain their existing Python/JSON/SVG artifacts. T009 adds:
+T002–T009 retain their existing Python/JSON/SVG artifacts. T010 adds:
 
-- `research/type/T009-webfont-subset-feature-contract.py`
-- `research/type/T009-webfont-subset-feature-contract-results.json`
+- `research/type/T010-variable-webfont-axis-contract.py`
+- `research/type/T010-variable-webfont-axis-contract-results.json`
 
 Generated experimental font binaries remain local outputs; they are not product assets and are not source authority.
 
 ---
 
-## Latest completed block — T009 webfont packaging/subsetting feature contract
+## Latest completed block — T010 variable webfont axis contract
 
-T009 extends T008 from generated-binary sanity into release distribution transformation.
+T010 extends T009's distribution-transformation QA from required GSUB/metrics into variable-font axis semantics.
 
 ### SOURCE
 
-- fontTools' subsetter treats retained OpenType layout features as part of glyph closure; glyph variants reachable through preserved GSUB features are retained.
-- OpenType 1.9.1 registers `tnum` as **Tabular Figures**.
+- `fvar` defines variable axes, user-space ranges/defaults and named instances.
+- `gvar` carries TrueType glyph variation data.
+- `STAT` is part of the required variable-font style-attribute model.
+- `avar` is optional, but when present remaps normalized axis coordinates.
+- fontTools applies `avar` when normalizing user-space coordinates for variable-font instancing.
 
-### Controlled research font
+### Controlled variable font
 
-The bounded static TrueType contains proportional `one/two` plus equal-width `one.tnum/two.tnum` alternates, with GSUB `tnum` mapping the proportional glyphs to `600u` tabular outputs.
+The bounded two-master TrueType VF uses:
+
+- `wght 300 / default 300 / 700`;
+- named instances `300 / 500 / 700`;
+- explicit `STAT` values;
+- deliberately non-linear `avar`: normalized `+0.5 → approximately +0.35`;
+- source glyphs `.notdef`, `space`, `H`, `O`;
+- H advances `620u` at 300 and `680u` at 700.
 
 Artifacts tested:
 
-1. source TTF;
-2. source WOFF2;
-3. feature-aware subset TTF;
-4. layout-feature-dropping subset TTF;
-5. feature-aware subset WOFF2;
-6. feature-dropping subset WOFF2.
+1. source variable TTF;
+2. source variable WOFF2;
+3. H-only subset variable TTF;
+4. H-only subset variable WOFF2;
+5. adversarial H-only subset WOFF2 with `avar` deliberately removed.
 
-Acceptance contract: `tnum` present + two GSUB outputs + both actual outputs retain equal `600u` advances.
+### RESULT A — packaging/subsetting preserved the bounded contract
 
-### Failure → revision A — QA checker false failure
+Normal WOFF2 packaging preserved `fvar/gvar/STAT/avar`, axis range, named instances and the non-linear mapping.
 
-The first checker assumed post-subset glyph names `one.tnum` and `two.tnum` must survive literally. fontTools preserved the substitutions but renamed the non-Unicode alternates to generated names.
+Normal H-only subsetting correctly reduced glyph/gvar closure to `.notdef` + `H` while retaining the same variation semantics.
 
-The name-based checker therefore failed a functionally preserved feature.
+Across source TTF, source WOFF2, subset TTF and subset WOFF2, H advances remained:
 
-Revision: inspect actual GSUB output glyphs and their advances rather than requiring source glyph names.
+- `wght 300`: `620u`;
+- `wght 500`: `641u`;
+- `wght 700`: `680u`.
 
-**STUDIO JUDGMENT:** release QA should test semantic/product contracts, not unstable internal identifiers unless those identifiers themselves are part of a real downstream contract.
+### Failure — parseable variable WOFF2 with changed axis meaning
 
-### Failure → revision B — parseable but functionally broken subset
+The adversarial subset removes only `avar` and remains parseable. It still retains:
 
-The feature-aware subset preserved:
+- `fvar`;
+- `gvar`;
+- `STAT`;
+- the same visible `wght 300/300/700` range;
+- named instances `300/500/700`;
+- the same endpoint advances `620u` and `680u`.
 
-- `tnum`;
-- two substitution outputs;
-- equal `600u` output advances;
-- the same bounded contract after WOFF2 packaging.
+But H at user-space `wght=500` changes:
 
-A deliberate subset with layout features dropped remained parseable in both TTF and WOFF2 forms but had:
+- intended package with `avar`: **641u**;
+- package without `avar`: **650u**;
+- delta: **+9u**.
 
-- no `tnum` feature;
-- zero GSUB outputs;
-- no tabular equal-width contract.
+### Critical distinction
 
-Measured artifact sizes in this tiny research font:
+`avar` is optional in OpenType. Therefore absence of `avar` does not by itself mean that a general-purpose sanitizer should reject the font.
 
-- source TTF `1084 B` → source WOFF2 `440 B`;
-- feature-aware subset TTF `1008 B` → WOFF2 `436 B`;
-- feature-dropping subset TTF `908 B` → WOFF2 `400 B`.
-
-The byte deltas are not generalizable. The transferable result is that a smaller, readable artifact can still violate the product typography contract.
+In this study, however, `avar` is part of the **authored product axis contract**. Dropping it changes the meaning of the same user coordinate.
 
 ### SYNTHESIS
 
-T006–T009 now support this release hierarchy:
+T008–T010 distinguish three release-QA layers:
 
-1. source/design validity;
-2. interpolation/build compatibility;
-3. binary/spec sanity;
-4. **distribution transformation contract** — subsetting/WOFF2/app packaging + required feature/glyph/metric retention;
-5. target shaping/rendering/layout integration;
-6. human/product validation.
+1. binary/spec/sanitizer validity;
+2. distribution transformation integrity;
+3. product-semantic integrity — required features, metrics, variable-axis mappings and representative instances.
 
-No earlier gate substitutes for the next.
+A broad validator cannot infer every product-specific semantic contract. A studio checker cannot replace broad standards/vendor QA.
 
-### OPEN / limitation
+### STUDIO JUDGMENT
 
-External `fontbakery`, `fontspector`, and `ots-sanitize` were unavailable in the execution environment. T009 does **not** simulate their results. External broad QA remains open for T010 or the first environment where those executables are available.
+Production variable-font release gates should combine:
 
-T009 also does not establish HarfBuzz/browser shaping, CSS feature application, variable-font packaging, production-family Unicode partitioning, GPOS/mark/kerning preservation, cross-machine reproducibility or human comparison performance.
+`external broad QA + product-specific semantic assertions + exact shipped-artifact target integration tests`.
+
+For intentionally non-linear axes, representative user-space coordinates should be regression-tested after packaging/subsetting.
+
+### OPEN / external QA limitation
+
+`fontbakery`, `fontspector`, and `ots-sanitize` were not available in the execution environment. A network installation attempt failed due unavailable name resolution.
+
+T010 does **not** simulate those results or claim external sanitizer PASS. This remains the first priority for T011 or the first environment where the executables are available.
+
+T010 also does not establish browser CSS axis behavior, multi-axis/three-master behavior, `avar` v2, CFF2, GPOS/mark/`locl` closure, cross-toolchain WOFF2 equivalence, target-platform rendering or human evidence.
 
 ### Evidence level
 
-**PRACTICE + CRITIQUE / original research font + GSUB `tnum` + TTF→WOFF2 + feature-aware vs feature-dropping subset mutation + QA-checker failure→revision.**
+**PRACTICE + CRITIQUE / two-master VF + WOFF2 + subset closure + named instances + non-linear `avar` + adversarial mapping removal + representative metric regression.**
 
-T009 is **not PASS**.
+T010 is **not PASS**.
 
 ---
 
@@ -146,7 +163,7 @@ T009 is **not PASS**.
 | Type anatomy / metrics | PRACTICE / CRITIQUE | broader family/role and target-platform validation |
 | Stroke / contrast / construction | PRACTICE / CRITIQUE | broader coherent family extension and role transfer |
 | Bézier / outline discipline | PRACTICE / CRITIQUE | diagonals/complex curves/components/diacritics and broader family proof |
-| Multi-master / interpolation | PRACTICE / CRITIQUE | three-master/multi-axis/avar/components/CFF2/overlap strategy |
+| Multi-master / interpolation | PRACTICE / CRITIQUE | T010 adds packaged axis-mapping proof; three-master/multi-axis/richer avar/components/CFF2/overlap remain |
 | Optical correction | PRACTICE / CRITIQUE | broader family/axis/platform intended-size proof |
 | Rasterization / rendering | PRACTICE / CRITIQUE | CoreText/DirectWrite/Skia/browser/device + hinting strategy |
 | Spacing before kerning | PRACTICE / CRITIQUE | broad family spacing, GPOS/kerning and runtime shaping |
@@ -154,7 +171,7 @@ T009 is **not PASS**.
 | Typography as information architecture | CRITIQUE | production reflow, localization and enlarged-text transfer |
 | Web fallback / metric transfer | IN STUDY / TRANSFER BASELINE | real loading/failure/script fallback, metric overrides, zoom/reflow |
 | Mixed-script / fallback | PRACTICE / CRITIQUE | target-platform shaping/line boxes/Korean breaking/weight integration/human evidence |
-| Source/build/release pipeline | **PRACTICE / CRITIQUE** | T006–T009 cover source→interpolation→binary QA→bounded package/subset contract; external QA, broader features/scripts/family metadata and target integration remain open |
+| Source/build/release pipeline | **PRACTICE / CRITIQUE** | T006–T010 cover source→interpolation→binary QA→static feature package contract→variable axis package contract; external QA, broader features/scripts/family metadata and target integration remain open |
 
 ---
 
@@ -162,21 +179,21 @@ T009 is **not PASS**.
 
 ### Color
 
-Color is through **C009**. Its controlled Chromium evidence confirms that exact Type weight/fallback/DPR can materially change rendered text while semantic Color pairs stay fixed.
+Color's C009 controlled Chromium evidence confirms that exact Type weight/fallback/DPR can materially change rendered text while semantic Color pairs stay fixed.
 
-T009 consequence: Color transfer should identify the exact **shipped/subset** artifact, not only a source/release-candidate font before packaging.
+T010 consequence: for a variable font, pinning only `wght=500` is insufficient if the shipped artifact's authored axis mapping differs. Color transfer should identify the exact packaged artifact + axis coordinate + render condition.
 
 ### Layout / Interaction
 
-Layout/Interaction is through **L006 / I004**. L004 remains directly relevant: tabular figures improve comparison alignment while increasing intrinsic width.
+Layout/Interaction is through L006 / I004 in its status. L003/L004 remain directly relevant: fallback and numeral behavior can cross wrap/column thresholds.
 
-T009 consequence: a subset can silently remove the Type feature on which the Layout contract depends. Regression must use the exact packaged artifact.
+T010 consequence: exact delivered artifact + axis mapping are Layout inputs. The `+9u` H drift is proof of font-semantic change, not a claim that every product layout will fail by that amount.
 
 ### Web Design
 
-Web still lists `W001` as next; no substantive `W###` evidence exists.
+Web still lists `W001` as next; no substantive `W###` evidence exists at this checkpoint.
 
-T009 handoff: Web should use the exact feature-audited WOFF2/subset artifact and independently test `@font-face`, CSS `font-variant-numeric`, fallback, zoom/DPR, localization, responsive geometry and target browsers/devices.
+T010 handoff: Web should load the exact axis-audited WOFF2/subset artifact and independently verify CSS `font-weight` / `font-variation-settings`, style matching, loading/fallback, zoom/DPR and target browsers/devices.
 
 ---
 
@@ -184,31 +201,30 @@ T009 handoff: Web should use the exact feature-audited WOFF2/subset artifact and
 
 Choose by expected project value, not study count.
 
-1. **T010 — external broad QA + sanitizer integration** when FontBakery/Fontspector/OTS or equivalent executables are available; classify universal/spec/vendor-policy findings and retain studio-specific contract checks.
-2. **Variable-font packaging/subsetting** — test `fvar`/`gvar`/`STAT`/`avar`, named instances and required features through WOFF2/subset transforms.
-3. **Broader feature/metric release QA** — GPOS/kerning, marks/anchors, `locl`, vertical metrics and multi-script closure.
-4. **Broaden variable-family compatibility** — three masters, multiple axes, components/diacritics, overlap strategy and CFF2.
-5. **Browser/platform transfer of T001–T009** when substantive Web or a live target stack exists.
-6. **Type→Layout regression** with exact shipped artifacts at known wrap/column/density thresholds.
-7. **Type→Color transfer** with exact package/build/axis/render condition pinned.
-8. **Target-platform mixed-script proof** for Flutter/CoreText/Skia/DirectWrite when project value justifies it.
-9. **Human evidence** after rendering/layout conditions are stable enough to test recognition and reading meaningfully.
+1. **T011 — external broad QA + sanitizer integration** when FontBakery/Fontspector/OTS or equivalent executables are available; classify universal/spec/vendor-policy findings separately from studio product-semantic assertions.
+2. **Broader feature/metric release QA** — GPOS/kerning, marks/anchors, `locl`, vertical metrics and multi-script closure through packaging/subsetting.
+3. **Broaden variable-family compatibility** — three masters, multiple axes, richer `avar`, components/diacritics, overlap strategy and CFF2.
+4. **Browser/platform transfer of T001–T010** when substantive Web or a live target stack exists.
+5. **Type→Layout regression** using exact shipped artifacts + actual axis mapping at known wrap/column/density thresholds.
+6. **Type→Color transfer** using exact package/build/axis/render condition.
+7. **Target-platform mixed-script proof** for Flutter/CoreText/Skia/DirectWrite when project value justifies it.
+8. **Human evidence** after rendering/layout conditions are stable enough to test recognition and reading meaningfully.
 
 ---
 
 ## Open research-quality gaps
 
 - external FontBakery/Fontspector/OTS integration and exception policy;
-- variable-font WOFF2/subsetting and variation-table retention;
 - GPOS/kerning/mark/`locl`/multi-script subset closure;
 - complete naming/style-linking/STAT AxisValue/avar metadata;
 - three-master and multi-axis contour/point correspondence;
+- richer avar / avar v2 behavior;
 - CFF2 variable outlines;
 - variable-font overlap/source strategy;
 - components/diacritics/anchors and broader language coverage;
 - complex production curves beyond `H O n o`;
 - manual/native hinting or justified hintless strategy;
-- cross-machine/toolchain reproducibility and release provenance;
+- cross-machine/toolchain WOFF2/reproducibility and release provenance;
 - CoreText, DirectWrite, Android/Skia, Flutter and browser transfer;
 - mixed-script line-box construction and Korean line breaking;
 - weight matching and family coherence across Latin/Korean roles;
@@ -221,19 +237,19 @@ Choose by expected project value, not study count.
 
 ### Color
 
-- Rendered Color validation should pin the exact shipped/subset font artifact and, for variable fonts, axis instance.
-- T009 makes no Color threshold/readability claim.
+- T010 strengthens C009: a nominal variable-axis coordinate is not sufficient provenance. Pin exact shipped artifact + axis mapping + renderer/DPR.
+- T010 makes no Color threshold/readability claim.
 
 ### Layout / Interaction
 
-- L004's tabular-numeral geometry can be invalidated by subsetting while the font remains readable.
-- Validate packaged production artifacts rather than relying only on source-font metrics/features.
+- Validate exact delivered static/variable artifacts and axis mappings near L003/L004 thresholds.
+- T010's `+9u` intermediate advance drift demonstrates a font contract change but does not define Layout failure thresholds.
 
 ### Web Design
 
-- Integrate the exact feature-audited WOFF2/subset artifact.
-- Reproduce `tnum` through CSS shaping and test loading/fallback/localization/zoom/DPR/browser/device behavior.
-- T009 is not browser PASS.
+- Integrate the exact axis-audited WOFF2/subset artifact.
+- Reproduce representative axis coordinates through CSS and test actual browser loading/style matching/fallback/zoom/DPR/device behavior.
+- T010 is not browser PASS.
 
 ## Handoff rule
 
@@ -250,7 +266,8 @@ When another specialist requests Type evidence, answer with canonical Type evide
 - `T006`: production-style source audit + CFF/TTF conversion/raster transfer completed.
 - `T007`: two-master interpolation incompatibility + shared-conversion repair + adversarial correspondence proof completed.
 - `T008`: production build/release QA baseline completed.
-- `T009`: TTF→WOFF2/subset feature-contract proof completed; feature-dropping artifacts remain parseable yet fail `tnum`; checker corrected from glyph-name dependence to semantic GSUB-output metrics.
-- `Source/build/release pipeline` remains **PRACTICE / CRITIQUE**, now spanning source, interpolation, binary QA and bounded distribution transformation.
-- Next Type study ID: `T010`.
+- `T009`: static TTF→WOFF2/subset feature-contract proof completed.
+- `T010`: variable TTF→WOFF2/subset axis-contract proof completed; normal transformation preserved variation semantics, while deliberate `avar` removal stayed parseable yet changed H @ `wght=500` from `641u` to `650u`.
+- `Source/build/release pipeline` remains **PRACTICE / CRITIQUE**, now spanning source, interpolation, binary QA, static feature packaging and bounded variable-axis semantic packaging.
+- Next Type study ID: `T011`.
 - Overall Type state remains **Stage 1 / PRACTICE + CRITIQUE / Foundation NOT PASSED**.
