@@ -22,7 +22,7 @@ The current team has three active specialist roles:
 2. **Color Specialist**
 3. **Layout, Spatial & Interaction Specialist**
 
-The team can expand. New specialist chats must complete the onboarding protocol before opening a new research area.
+The team can expand. New specialist chats complete the onboarding protocol before opening a new canonical research area.
 
 Interaction is intentionally owned by the Layout, Spatial & Interaction Specialist. Its evidence remains in a separate `research/interaction/` directory so temporal/behavioral research is not conflated with spatial research.
 
@@ -56,28 +56,33 @@ A specialist updates only its own specialist status during ordinary work. The co
 
 ## Cross-specialist research rule
 
-Specialist ownership boundaries are **not silos**.
+Specialist ownership boundaries are **not silos and not learning restrictions**.
 
-Before starting substantial work, every specialist must read all current specialist status files and search related research from other domains. The purpose is twofold:
+Before starting substantial work, every specialist reads all current specialist status files and searches related research from other domains. The goals are to:
 
-1. avoid duplicate or contradictory research;
-2. actively reuse evidence that another specialist has already established.
+1. reuse strong evidence already available;
+2. identify uncertainty or contradictions;
+3. decide whether independent replication or challenge is useful;
+4. avoid accidental repetition with no analytical value;
+5. create better cross-domain project judgments.
 
 Each new substantial study records a `RELATED DOMAIN CHECK`, and each completed study records `HANDOFFS TO OTHER SPECIALISTS` when the result can help another domain.
 
+Overlap is permitted and may be desirable when it provides replication, second-check confidence, transfer validation, method comparison, contradiction review, prerequisite learning, or project-specific evidence.
+
 Examples:
 
-- Layout/Interaction work involving text growth, labels or numeric alignment uses Type evidence.
-- Layout/Interaction work involving state/focus color or environmental contrast uses Color evidence.
-- Color work evaluating text contrast uses Type's realistic text roles and metrics.
-- Color work encoding states uses Layout/Interaction's state semantics.
-- Type work under responsive or dense conditions uses Layout/Interaction's canonical spatial contexts.
+- Layout/Interaction work involving text growth, labels or numeric alignment may reuse or independently stress-test Type evidence.
+- Layout/Interaction work involving state/focus color or environmental contrast may reuse or independently verify Color evidence.
+- Color work evaluating text contrast uses realistic Type roles and may reproduce typography conditions where needed.
+- Color work encoding states uses Layout/Interaction state semantics and may study those semantics deeply enough to validate the color system.
+- Type work under responsive or dense conditions uses Layout/Interaction contexts and may independently reproduce spatial constraints for typographic testing.
 
-Established knowledge is referenced from its canonical file rather than duplicated.
+Canonical ownership tells the studio where authoritative knowledge is maintained. It does not forbid another specialist from learning, reproducing, challenging, or extending that knowledge.
 
 ## New specialist onboarding
 
-A newly created specialist chat must **read before writing**. It follows `coordination/ONBOARDING.md`, reviews the current team and research, searches for overlap, then proposes its unique scope.
+A newly created specialist chat must **read before creating a new canonical structure**. It follows `coordination/ONBOARDING.md`, reviews the current team and research, maps overlap and collaboration opportunities, then proposes its role.
 
 Only after coordinator/user approval does it receive:
 
@@ -85,9 +90,9 @@ Only after coordinator/user approval does it receive:
 - a specialist status file;
 - a unique study-ID prefix;
 - ownership boundaries;
-- dependency/handoff rules.
+- overlap/dependency/handoff rules.
 
-This allows future expert chats to join without fragmenting the knowledge base.
+The new specialist may still learn, critique, and analyze overlapping topics during onboarding. Approval governs canonical structure, not intellectual scope.
 
 ## Professional standard
 
@@ -100,11 +105,15 @@ A topic is not considered learned because it has been read once. Completion requ
 5. application in more than one context;
 6. failure analysis and revision;
 7. accessibility/technical/device validation where required;
-8. cross-specialist integration;
+8. cross-specialist integration and, when useful, independent verification;
 9. written synthesis that future projects can reuse;
 10. at advanced stages, defensible research and advisory reasoning.
 
-The goal is not to accumulate references. The goal is to develop judgment.
+The goal is not to accumulate references. The goal is to develop judgment that improves real product decisions.
+
+## Operating state
+
+All three current specialists are **ACTIVE** and may resume self-directed research immediately. Live app/product project work takes priority over nonessential curriculum expansion.
 
 ## First case study
 
