@@ -61,6 +61,10 @@ New Color studies use `C###` IDs:
 - `C007-fixed-geometry-color-density-specimen.html` — four color conditions with identical content/geometry.
 - `C007-fixed-geometry-color-density-playwright.py` — Chromium geometry and Oklab image-analysis harness.
 - `C007-fixed-geometry-color-density-results.json` — measured geometry identity and rendered feature statistics.
+- `C008-rendered-data-visualization-color-validation.md` — rendered categorical/sequential/diverging validation across light/dark contexts, CVD diagnostic, state-identity failure, midpoint/missing-data critique, and revision method.
+- `C008-rendered-data-visualization-specimen.html` — matched SVG chart specimen for failure/revised light/dark conditions.
+- `C008-rendered-data-visualization-playwright.py` — Chromium + Oklab + Machado-model diagnostic harness.
+- `C008-rendered-data-visualization-results.json` — measured geometry, scale-order, CVD, selection-identity, and midpoint-semantic results.
 
 Next new Color study ID is tracked in `progress/COLOR_STATUS.md`.
 
@@ -77,9 +81,9 @@ Research should distinguish as appropriate:
 - `CONTRADICTION`
 - `TRANSFER VALIDATION`
 
-A color topic is not project-ready merely because a palette, formula, chart, token file, profile transform, screenshot statistic, or colorimetric calculation exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
+A color topic is not project-ready merely because a palette, formula, chart, token file, profile transform, screenshot statistic, simulation, or colorimetric calculation exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
 
-Computational salience/clutter proxies are not human-task or perceived-clutter evidence unless separately validated.
+Computational salience/clutter proxies and CVD simulations are not human-task, perceived-clutter, or real-observer accessibility evidence unless separately validated.
 
 ## Status authority
 
