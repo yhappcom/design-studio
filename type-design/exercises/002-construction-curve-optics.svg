@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1180" viewBox="0 0 1600 1180">
+  <rect width="1600" height="1180" fill="#f5f3ee"/>
+  <style>
+    .title{font:700 30px Arial,sans-serif;fill:#151515}.sub{font:400 17px Arial,sans-serif;fill:#444}.label{font:700 15px Arial,sans-serif;fill:#222}.note{font:400 13px Arial,sans-serif;fill:#555}.guide{stroke:#b8b5ad;stroke-width:1;stroke-dasharray:6 6}.metric{stroke:#8d8980;stroke-width:1}.shape{fill:#151515}.counter{fill:#f5f3ee}.node{fill:#b43a2f}.handle{stroke:#b43a2f;stroke-width:1}.optical{stroke:#236a86;stroke-width:2}.box{fill:none;stroke:#d4d0c7;stroke-width:1}
+  </style>
+  <text x="70" y="60" class="title">Exercise 002 — Construction, Curves, and Optical Equality</text>
+  <text x="70" y="90" class="sub">Foundation specimen only. Native redraws; no scaled glyph reuse. No product visual direction is implied.</text>
+
+  <!-- shared alignment guides -->
+  <line x1="70" y1="180" x2="1530" y2="180" class="guide"/><text x="18" y="185" class="note">cap</text>
+  <line x1="70" y1="430" x2="1530" y2="430" class="guide"/><text x="13" y="435" class="note">base</text>
+  <line x1="70" y1="168" x2="1530" y2="168" class="optical" opacity=".4"/><text x="8" y="165" class="note">round overshoot</text>
+  <line x1="70" y1="442" x2="1530" y2="442" class="optical" opacity=".4"/>
+
+  <!-- hypothesis A -->
+  <rect x="70" y="125" width="430" height="365" class="box"/>
+  <text x="90" y="150" class="label">A — constructed / low contrast</text>
+  <text x="90" y="475" class="note">Question: can low-contrast geometry remain optically calm without becoming mechanically dead?</text>
+  <rect x="120" y="180" width="40" height="250" class="shape"/><rect x="260" y="180" width="40" height="250" class="shape"/><rect x="120" y="285" width="180" height="38" class="shape"/>
+  <path d="M345 305 C345 215 385 168 430 168 C475 168 515 215 515 305 C515 395 475 442 430 442 C385 442 345 395 345 305 Z" class="shape"/>
+  <path d="M382 305 C382 244 401 208 430 208 C459 208 478 244 478 305 C478 366 459 402 430 402 C401 402 382 366 382 305 Z" class="counter"/>
+
+  <!-- hypothesis B -->
+  <rect x="585" y="125" width="430" height="365" class="box"/>
+  <text x="605" y="150" class="label">B — writing-derived / diagonal stress</text>
+  <text x="605" y="475" class="note">Question: does stress create coherent movement, or merely decorative contrast?</text>
+  <path d="M635 180 L678 180 L678 430 L635 430 Z M785 180 L824 180 L824 430 L785 430 Z M635 286 L824 286 L824 323 L635 323 Z" class="shape"/>
+  <path d="M865 308 C865 218 902 168 951 168 C1003 168 1037 221 1037 304 C1037 394 998 442 949 442 C900 442 865 392 865 308 Z" class="shape"/>
+  <path d="M903 306 C903 246 922 209 951 207 C980 205 999 242 999 305 C999 366 979 401 949 402 C920 403 903 367 903 306 Z" class="counter"/>
+  <path d="M890 214 C925 187 984 185 1015 225" fill="none" stroke="#b43a2f" stroke-width="3"/>
+  <text x="892" y="205" class="note">stress cue</text>
+
+  <!-- hypothesis C -->
+  <rect x="1100" y="125" width="430" height="365" class="box"/>
+  <text x="1120" y="150" class="label">C — broad optical / unequal width</text>
+  <text x="1120" y="475" class="note">Question: can unequal glyph widths produce more even text color than cell parity?</text>
+  <rect x="1150" y="180" width="39" height="250" class="shape"/><rect x="1282" y="180" width="39" height="250" class="shape"/><rect x="1150" y="286" width="171" height="36" class="shape"/>
+  <path d="M1345 305 C1345 214 1386 168 1443 168 C1500 168 1535 218 1535 305 C1535 392 1499 442 1442 442 C1385 442 1345 396 1345 305 Z" class="shape"/>
+  <path d="M1381 305 C1381 246 1403 208 1443 208 C1483 208 1499 247 1499 305 C1499 363 1481 402 1442 402 C1403 402 1381 365 1381 305 Z" class="counter"/>
+
+  <!-- lower-case construction row -->
+  <text x="70" y="555" class="title">Lowercase control family — two explicit construction hypotheses</text>
+  <line x1="70" y1="650" x2="1530" y2="650" class="guide"/><text x="18" y="655" class="note">x-height</text>
+  <line x1="70" y1="900" x2="1530" y2="900" class="guide"/><text x="13" y="905" class="note">base</text>
+  <line x1="70" y1="638" x2="1530" y2="638" class="optical" opacity=".4"/>
+  <line x1="70" y1="912" x2="1530" y2="912" class="optical" opacity=".4"/>
+
+  <rect x="70" y="590" width="690" height="365" class="box"/>
+  <text x="90" y="620" class="label">D — constructed arch, near-monoline</text>
+  <rect x="120" y="650" width="38" height="250" class="shape"/>
+  <path d="M158 735 C200 668 295 666 328 736 C338 757 341 785 341 820 L341 900 L303 900 L303 810 C303 743 280 712 237 712 C194 712 158 750 158 815 Z" class="shape"/>
+  <path d="M395 775 C395 692 438 638 502 638 C566 638 610 691 610 775 C610 859 566 912 502 912 C438 912 395 858 395 775 Z" class="shape"/>
+  <path d="M434 775 C434 717 457 681 502 681 C547 681 571 718 571 775 C571 832 547 869 502 869 C457 869 434 833 434 775 Z" class="counter"/>
+  <text x="90" y="940" class="note">Native outline; arch join intentionally left slightly dark for critique.</text>
+
+  <rect x="840" y="590" width="690" height="365" class="box"/>
+  <text x="860" y="620" class="label">E — expansion-derived stress, compensated join</text>
+  <rect x="890" y="650" width="43" height="250" class="shape"/>
+  <path d="M933 748 C969 679 1055 663 1103 727 C1120 751 1127 782 1127 823 L1127 900 L1088 900 L1088 813 C1088 756 1068 719 1028 713 C988 707 950 739 933 792 Z" class="shape"/>
+  <path d="M1180 774 C1180 691 1225 638 1287 638 C1351 638 1393 691 1393 774 C1393 859 1348 912 1286 912 C1223 912 1180 858 1180 774 Z" class="shape"/>
+  <path d="M1219 775 C1219 719 1242 680 1287 680 C1330 680 1355 719 1355 774 C1355 832 1331 870 1286 870 C1242 870 1219 832 1219 775 Z" class="counter"/>
+  <path d="M947 740 C986 706 1051 700 1094 736" fill="none" stroke="#b43a2f" stroke-width="3"/>
+  <text x="860" y="940" class="note">Stress is structural only if it remains coherent across n/o, not an isolated accent.</text>
+
+  <!-- node strategy annotation -->
+  <text x="70" y="1010" class="title">Node / handle audit cue</text>
+  <path d="M100 1100 C140 1035 240 1035 280 1100" fill="none" stroke="#151515" stroke-width="10"/>
+  <line x1="190" y1="1048" x2="140" y2="1048" class="handle"/><line x1="190" y1="1048" x2="240" y2="1048" class="handle"/>
+  <circle cx="190" cy="1048" r="6" class="node"/><circle cx="140" cy="1048" r="4" class="node"/><circle cx="240" cy="1048" r="4" class="node"/>
+  <text x="330" y="1060" class="note">At extrema: horizontal/vertical tangency is necessary, but not sufficient. Curvature must also transition without a visible bump.</text>
+  <text x="330" y="1090" class="note">This specimen proves construction reasoning only. It does not prove exported-font topology, hinting, or raster quality.</text>
+  <text x="330" y="1120" class="note">Next: render native redraws at 14 / 24 / 48 px and classify failures as form, optics, spacing, or rasterization.</text>
+</svg>
