@@ -20,11 +20,15 @@ Research belongs here when its primary question concerns:
 
 Interaction questions such as state, navigation, feedback, reversibility and recovery belong in `research/interaction/` under the same specialist.
 
-## Boundary with other disciplines
+## Relationship with other disciplines
 
-- **Typography / Type Design** owns font/glyph systems, metrics and typographic behavior. Layout uses Type evidence for text growth, line wrapping, numerals, localized labels and scaling.
-- **Color** owns color perception, luminance/contrast, gamut and color systems. Layout uses Color evidence when hierarchy, focus or spatial separation depends on color/luminance.
-- **Interaction** is co-owned by this specialist but separately documented. Spatial evidence does not by itself prove interaction quality, and interaction evidence does not by itself prove spatial quality.
+- **Typography / Type Design** is the canonical owner for font/glyph systems, metrics and typographic behavior.
+- **Color** is the canonical owner for color perception, luminance/contrast, gamut and color systems.
+- **Interaction** is co-owned by this specialist but separately documented.
+
+These boundaries define canonical ownership, not limits on what Layout may study. Layout may directly investigate Type, Color, Accessibility, Human Factors or other adjacent material for realistic spatial validation, independent replication, method comparison, contradiction review, transfer testing, prerequisite learning or project-specific work.
+
+Spatial evidence does not by itself prove interaction quality, and interaction evidence does not by itself prove spatial quality. Likewise, peer-domain canonical ownership remains explicit even when Layout independently validates a result.
 
 ## Mandatory cross-domain scan
 
@@ -32,9 +36,12 @@ Before new Layout research:
 
 1. read `progress/STATUS.md` and all current specialist status files;
 2. read this README and relevant Layout/Interaction studies;
-3. search Type and Color research for concepts that may already answer part of the question;
-4. identify reusable evidence and overlap risks;
-5. record a `RELATED DOMAIN CHECK` in the new study.
+3. search Type and Color research for concepts related to the question;
+4. identify what can be reused, independently verified, challenged or extended;
+5. identify dependencies and collaboration opportunities;
+6. record a `RELATED DOMAIN CHECK` in the new study.
+
+Existing work elsewhere is not an automatic reason to stop. Decide whether to reuse it or intentionally repeat/extend it, and document why.
 
 After completion, add `HANDOFFS TO OTHER SPECIALISTS` when findings can materially help Type or Color.
 
@@ -46,7 +53,8 @@ The studio evidence model applies:
 - **SYNTHESIS** — a transferable principle inferred from evidence;
 - **STUDIO JUDGMENT** — a design position or reusable method;
 - **OPEN** — unresolved questions requiring further study or validation;
-- **DEPENDENCY** — a question whose canonical answer belongs elsewhere.
+- **DEPENDENCY** — useful expertise or evidence that may come from elsewhere;
+- **REPLICATION / CONTRADICTION / TRANSFER VALIDATION** — when applicable.
 
 No Layout topic reaches `PASS` from reading or static composition alone when the gate requires rendered, responsive, multilingual, device or human-observation evidence.
 
@@ -60,3 +68,5 @@ Existing study numbers remain stable. New spatial studies use `L###` IDs.
 ## Status authority
 
 Layout and Interaction progress are jointly tracked in `progress/LAYOUT_STATUS.md`.
+
+Current operating state: **ACTIVE — research may resume immediately**.
