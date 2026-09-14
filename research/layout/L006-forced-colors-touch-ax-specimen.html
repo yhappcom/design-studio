@@ -1,0 +1,83 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>L006 forced colors, touch capture, AX ownership</title>
+<style>
+  html,body{margin:0;background:#fff;color:#111;font:16px/1.4 system-ui,sans-serif}
+  body{min-height:900px}
+  button{font:inherit;min-height:44px}
+  section{padding:24px;border-bottom:1px solid #ccc}
+
+  #fc-workspace{position:relative;height:300px}
+  #fc-under{position:fixed;width:160px;height:48px}
+  #fc-panel{position:fixed;inset:auto;left:500px;top:160px;margin:0;width:220px;height:150px;box-sizing:border-box;background:#fff;border:0;padding:28px;box-shadow:0 14px 36px rgba(0,0,0,.45)}
+  #fc-panel.revised{outline:3px solid CanvasText;outline-offset:0}
+  #fc-panel.optout{forced-color-adjust:none}
+  #fc-front{width:160px;height:48px}
+
+  #touch-drag{width:240px;height:140px;background:#ddd;touch-action:none;display:grid;place-items:center;user-select:none}
+  #touch-dialog{width:320px;height:190px;padding:24px}
+
+  #ax-pop,#ax-nested{padding:18px}
+  #ax-dialog{padding:22px}
+</style>
+<section id="forced-section">
+  <h1>Forced-colors layer cue test</h1>
+  <div id="fc-workspace">
+    <p style="width:260px">Workspace content beneath a foreground tool surface.</p>
+    <button id="fc-under">Background delete</button>
+    <div id="fc-panel" popover="manual"><button id="fc-front">Foreground details</button></div>
+  </div>
+</section>
+<section id="touch-section">
+  <h2>Touch implicit-capture modal transition</h2>
+  <div id="touch-drag">Background drag target</div>
+  <dialog id="touch-dialog"><button id="touch-inside">Modal action</button></dialog>
+</section>
+<section id="ax-section">
+  <h2>Accessibility-tree ownership</h2>
+  <button id="ax-bg">Background action</button>
+  <button id="ax-open-pop">Open popover</button>
+  <div id="ax-pop" popover="manual" role="region" aria-label="Quick tools"><button id="ax-pop-btn">Popover action</button></div>
+  <button id="ax-open-dialog">Open dialog</button>
+  <dialog id="ax-dialog" aria-labelledby="ax-title">
+    <h2 id="ax-title">Confirm task</h2>
+    <button id="ax-dialog-btn">Dialog action</button>
+    <button id="ax-open-nested">Open nested</button>
+    <div id="ax-nested" popover="manual" role="region" aria-label="Nested tools"><button id="ax-nested-btn">Nested action</button></div>
+  </dialog>
+</section>
+<script>
+const fcPanel=document.querySelector('#fc-panel'), fcFront=document.querySelector('#fc-front'), fcUnder=document.querySelector('#fc-under');
+window.fcCounts={front:0,back:0};
+fcFront.addEventListener('click',()=>fcCounts.front++); fcUnder.addEventListener('click',()=>fcCounts.back++);
+window.fcOpen=(variant)=>{
+  fcCounts.front=fcCounts.back=0;
+  fcPanel.className=variant==='revised'?'revised':variant==='optout'?'optout':'';
+  if(!fcPanel.matches(':popover-open')) fcPanel.showPopover();
+  const r=fcFront.getBoundingClientRect();
+  fcUnder.style.left=r.left+'px';fcUnder.style.top=r.top+'px';
+};
+window.fcClose=()=>{if(fcPanel.matches(':popover-open'))fcPanel.hidePopover();};
+window.fcState=()=>{
+  const ps=getComputedStyle(fcPanel), bs=getComputedStyle(document.body), r=fcPanel.getBoundingClientRect(), fr=fcFront.getBoundingClientRect();
+  const x=fr.left+fr.width/2,y=fr.top+fr.height/2,el=document.elementFromPoint(x,y);
+  return {counts:{...fcCounts},styles:{bg:ps.backgroundColor,shadow:ps.boxShadow,outlineWidth:ps.outlineWidth,outlineStyle:ps.outlineStyle,outlineColor:ps.outlineColor,forcedColorAdjust:ps.forcedColorAdjust},bodyBg:bs.backgroundColor,panelRect:{x:r.x,y:r.y,width:r.width,height:r.height},hit:{x,y,id:el&&el.id}};
+};
+
+const touchDrag=document.querySelector('#touch-drag'), touchDialog=document.querySelector('#touch-dialog');
+window.touchLog=[];window.touchCommit=0;window.touchCancelled=false;window.touchPid=null;
+function touchRecord(t,e){touchLog.push({t,target:e.target.id,pid:e.pointerId,type:e.pointerType,cap:touchDrag.hasPointerCapture(e.pointerId),x:e.clientX,y:e.clientY});}
+for(const t of ['pointerdown','gotpointercapture','pointermove','pointerup','pointercancel','lostpointercapture']) touchDrag.addEventListener(t,e=>{
+  touchRecord(t,e); if(t==='pointerdown')touchPid=e.pointerId; if(t==='pointerup'&&!touchCancelled)touchCommit++;
+});
+window.touchReset=()=>{touchLog=[];touchCommit=0;touchCancelled=false;touchPid=null;if(touchDialog.open)touchDialog.close();};
+window.touchOpenBroken=()=>touchDialog.showModal();
+window.touchOpenRevised=()=>{if(touchPid!=null&&touchDrag.hasPointerCapture(touchPid))touchDrag.releasePointerCapture(touchPid);touchCancelled=true;touchDialog.showModal();};
+window.touchState=()=>({log:touchLog.slice(),commit:touchCommit,cancelled:touchCancelled,pid:touchPid,captured:touchPid!=null?touchDrag.hasPointerCapture(touchPid):null,modal:touchDialog.open});
+
+const axPop=document.querySelector('#ax-pop'),axDialog=document.querySelector('#ax-dialog'),axNested=document.querySelector('#ax-nested');
+document.querySelector('#ax-open-pop').onclick=()=>axPop.showPopover();
+document.querySelector('#ax-open-dialog').onclick=()=>axDialog.showModal();
+document.querySelector('#ax-open-nested').onclick=()=>axNested.showPopover();
+window.axReset=()=>{if(axNested.matches(':popover-open'))axNested.hidePopover();if(axDialog.open)axDialog.close();if(axPop.matches(':popover-open'))axPop.hidePopover();};
+</script>
