@@ -1,0 +1,37 @@
+{
+  "environment": "Python controlled sequence-concurrency models",
+  "passed": 18,
+  "total": 18,
+  "all_pass": true,
+  "assertions": [
+    "whole_field_lww_loses_A_insert",
+    "whole_field_lww_preserves_only_one_intent",
+    "naive_positional_merge_replica_A",
+    "naive_positional_merge_replica_B",
+    "naive_positional_operations_diverge",
+    "naive_merge_keeps_both_but_not_convergent",
+    "ot_like_replica_A_result",
+    "ot_like_replica_B_result",
+    "ot_like_converges",
+    "ot_like_preserves_both_inserts",
+    "stable_anchor_merge_order_independent",
+    "stable_anchor_merge_preserves_both",
+    "tombstone_anchor_converges",
+    "tombstone_policy_preserves_insert_near_deleted_anchor",
+    "deterministic_move_resolution_converges_to_one_state",
+    "deterministic_move_resolution_discards_one_move_intent",
+    "whole_field_model_flags_same_field_conflict",
+    "sequence_model_can_preserve_disjoint_text_edits"
+  ],
+  "key_results": {
+    "whole_field_lww": "AYB",
+    "naive_position_replica_A": "AYXB",
+    "naive_position_replica_B": "AXYB",
+    "ot_like_both_replicas": "AXYB",
+    "stable_anchor_both_delivery_orders": "AXYB",
+    "delete_insert_tombstone_control": "AXC",
+    "deterministic_move_winner": ["B", "A", "C"],
+    "discarded_move_alternative": ["A", "C", "B"],
+    "sequence_merge_disjoint_text": "Hi, hello world!"
+  }
+}
