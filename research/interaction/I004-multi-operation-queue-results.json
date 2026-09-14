@@ -1,0 +1,57 @@
+{
+  "environment": "Python HTTP/1.1 origin + SQLite durable outbox",
+  "passed": 20,
+  "total": 20,
+  "all_pass": true,
+  "assertions": [
+    "ordered_patch_200",
+    "ordered_events_preserved",
+    "reversed_patch_200",
+    "reorder_changes_semantics",
+    "replace_compaction_same_final",
+    "naive_path_dedupe_loses_increment",
+    "semantic_increment_compaction_preserves_intent",
+    "q1_commits",
+    "remote_race_commits",
+    "q2_detects_412",
+    "independent_q3_continues",
+    "dependent_descendant_blocked",
+    "conflict_does_not_freeze_whole_queue",
+    "conflicting_title_not_overwritten",
+    "independent_record_updated",
+    "edit_before_create_fails",
+    "create_returns_server_identity",
+    "dependent_edit_after_mapping_succeeds",
+    "created_record_contains_dependent_edit",
+    "temp_identity_mapping_persisted"
+  ],
+  "scenarios": {
+    "order": {
+      "correct": ["departed", "arrived"],
+      "reversed": ["arrived", "departed"]
+    },
+    "compaction": {
+      "replace_sequence_final": "Flight 101B",
+      "replace_compacted_final": "Flight 101B",
+      "increment_sequence": 2,
+      "increment_naive_keep_last": 1,
+      "increment_semantic_compaction": 2
+    },
+    "conflict_propagation": {
+      "q1": "confirmed",
+      "q2": "conflict_same_field",
+      "q3": "confirmed",
+      "q4": "blocked_dependency",
+      "r1_title": "Remote title",
+      "r2_notes": "Independent queued"
+    },
+    "temp_identity": {
+      "local_id": "temp-1",
+      "server_id": "r3",
+      "create_status": "confirmed",
+      "dependent_edit_status": "confirmed",
+      "final_title": "Offline created",
+      "final_notes": "Added offline"
+    }
+  }
+}
