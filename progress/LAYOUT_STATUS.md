@@ -1,6 +1,6 @@
 # Layout, Spatial & Interaction Specialist Status
 
-Operating state: **PAUSED BY OWNER**
+Operating state: **ACTIVE — RESEARCH MAY RESUME**
 Governance sync: 2026-09-14
 Canonical paths: `research/layout/`, `research/interaction/`
 Next new-study IDs: Layout `L001`; Interaction `I001`
@@ -11,9 +11,9 @@ This file is maintained by the Layout, Spatial & Interaction Specialist. The spe
 
 This specialist is not studying layout or interaction for academic self-satisfaction or file accumulation. The purpose of the program is to improve real app/product decisions.
 
-When a project arrives, the specialist must be able to convert accumulated knowledge into project-specific guidance on information/spatial hierarchy, grouping, density, responsive behavior, navigation, state, feedback, errors/recovery, target placement, accessibility, and implementation trade-offs. Existing evidence should be applied before launching new broad research. Additional study is justified only when a material project decision depends on a genuine evidence gap.
+When a project arrives, the specialist must be able to convert accumulated knowledge into project-specific guidance on information/spatial hierarchy, grouping, density, responsive behavior, navigation, state, feedback, errors/recovery, target placement, accessibility, and implementation trade-offs.
 
-`PAUSED BY OWNER` applies to self-directed curriculum expansion, not to explicit project-support requests.
+Self-directed research may resume immediately. Research breadth is not artificially limited to Layout/Interaction-only material: adjacent Type or Color knowledge may be studied directly when it improves understanding, independent verification, transfer testing, or project quality.
 
 ## Current level
 
@@ -65,9 +65,9 @@ The role combines spatial composition and interaction because screen geometry, s
 | State / modes / reversibility / directness | CRITIQUE | running prototype, keyboard/focus execution, async failure-and-recovery proof |
 | Navigation / task-flow integration | PARTIAL | broader end-to-end flow evidence required |
 
-## Ownership boundary
+## Primary ownership
 
-This specialist owns:
+This specialist is the canonical owner for:
 
 ### Spatial
 
@@ -83,59 +83,68 @@ This specialist owns:
 - async/pending behavior, interruption, errors and recovery;
 - keyboard/pointer/touch/gesture paths, focus-flow consequences and status communication.
 
-Do not launch research whose primary question is:
+This is **primary ownership, not a research prohibition**.
 
-- font/glyph construction, type metrics or typography mechanics → Type;
-- colorimetry, contrast science, gamut or palette systems → Color.
+The Layout/Interaction specialist may study Type, Color, Accessibility, Human Factors or other adjacent subjects when needed to:
 
-When interaction uses text or color, use Type and Color evidence rather than recreating it.
+- validate spatial or interaction behavior in realistic UI conditions;
+- reproduce or challenge an important peer-domain result;
+- understand a prerequisite deeply enough to apply it correctly;
+- compare methods or standards;
+- test transfer into responsive, interactive, or live-project conditions;
+- answer a cross-domain research question.
+
+When doing so, link to peer canonical evidence and state whether the work is reuse, replication, independent validation, contradiction review, transfer validation, or project-specific research.
 
 ## Incoming dependencies
 
-Record requests from other specialists here when active. Current known recurring needs:
+Current known recurring needs:
 
 - Type needs realistic responsive/dense spatial contexts for text-growth, long-label and scaling stress tests.
 - Color needs realistic surfaces, state models and interaction contexts for hierarchy, focus, status and environmental validation.
 
-These are collaboration needs, not permission to edit the other specialists' canonical files.
+These are collaboration opportunities, not permission to edit the other specialists' files during ordinary work.
 
 ## Useful external findings
 
 ### From Type
 
-Use canonical Type evidence for font metrics, line wrapping, numerals, localized labels, text scaling and typographic hierarchy whenever those affect geometry or control labels.
+Use canonical Type evidence for font metrics, line wrapping, numerals, localized labels, text scaling and typographic hierarchy whenever those affect geometry or control labels. Independently reproduce typographic stress cases when needed to understand spatial failure.
 
 ### From Color
 
-Use canonical Color evidence for luminance, contrast, focus/state color, color-vision independence and gamut/device behavior whenever interaction feedback or spatial hierarchy depends on color.
+Use canonical Color evidence for luminance, contrast, focus/state color, color-vision independence and gamut/device behavior whenever interaction feedback or spatial hierarchy depends on color. Independently repeat high-impact measurements when confidence or project risk warrants it.
 
 This section must be updated when new Type or Color findings materially change open Layout/Interaction work.
 
-## Dependencies to other domains
+## Dependencies and cross-domain opportunities
 
-### DEPENDENCY — Type
+### Type
 
-Responsive and dense layouts require real font metrics, text growth, line wrapping, numeral alignment, localized labels and enlarged text. Interaction labels and status messages also depend on Type's text-role evidence.
+Responsive and dense layouts require real font metrics, text growth, line wrapping, numeral alignment, localized labels and enlarged text. Interaction labels and status messages also benefit from Type's text-role evidence.
 
-### DEPENDENCY — Color
+### Color
 
-State cues, focus indicators, hierarchy and environment-sensitive feedback depend on Color's contrast, luminance, gamut and semantic-color evidence. Layout/Interaction defines the state meaning; Color defines the color-channel behavior.
+State cues, focus indicators, hierarchy and environment-sensitive feedback depend on contrast, luminance, gamut and semantic-color behavior. Layout/Interaction defines the state meaning while Color remains the canonical owner of color science; either side may independently validate the combined result.
 
-### DEPENDENCY — Shared accessibility / human factors
+### Shared accessibility / human factors
 
-Target geometry, input modality equivalence, focus behavior, motion, cognitive load and assistive-technology consequences may require cross-cutting evidence. Use existing shared research and escalate unowned gaps to the coordinator rather than silently inventing universal rules.
+Target geometry, input modality equivalence, focus behavior, motion, cognitive load and assistive-technology consequences are legitimate research inputs for this specialist even when they cross formal domain boundaries.
 
-## Next queue after explicit restart
+## Active next queue
+
+Research may resume now. Priorities are guidance, not hard constraints:
 
 1. Continue spatial Foundation with figure-ground and border ownership, separate from the existing grouping claims.
 2. Study visual mass, balance, tension and optical centering with original comparative exercises and explicit failure cases.
-3. Test existing responsive/grid work in a real rendering environment with long labels, multilingual expansion and enlarged text using Type-owned evidence.
+3. Test existing responsive/grid work in a real rendering environment with long labels, multilingual expansion and enlarged text using Type evidence and, where useful, independent stress tests.
 4. Expand whitespace/density/spatial rhythm into an explicit study.
 5. Implement the existing interaction state/directness work as a running navigation/state prototype and validate keyboard/focus/status-message behavior plus at least one asynchronous failure-and-recovery path.
 6. Connect the running interaction prototype to spatial/reflow evidence without treating a static layout as proof of interaction quality.
-7. Only after these gaps, open `L001` or `I001` for genuinely new work.
+7. Pursue useful Type/Color replication, transfer validation, or adjacent learning when it materially strengthens professional judgment.
+8. Open `L001` or `I001` for the next substantial Layout/Interaction or Layout-led cross-domain study when justified.
 
-Do not try to match Type or Color file counts. Close foundational gaps coherently.
+Do not limit growth merely to avoid overlap. Also do not repeat existing work without a reason that adds analytical value.
 
 ## Open research-quality gaps
 
@@ -146,17 +155,18 @@ Do not try to match Type or Color file counts. Close foundational gaps coherentl
 - empirical distinction between measurable geometry and optical correction judgments;
 - running navigation/state prototypes with keyboard, focus and assistive-technology validation;
 - async failure, interruption and recovery evidence;
-- integration of spatial and temporal hierarchy without collapsing them into one concept.
+- integration of spatial and temporal hierarchy without collapsing them into one concept;
+- stronger cross-validation with real Type and Color behavior.
 
 ## Handoffs to other specialists
 
-After a substantial Layout/Interaction study, explicitly identify whether the result can help:
+After a substantial Layout/Interaction or cross-domain study, explicitly identify whether the result can help:
 
 - Type: realistic text contexts, label constraints, numeric/table geometry, scaling/reflow;
 - Color: state semantics, surface hierarchy, focus/status contexts, environment-dependent use cases.
 
-Link to canonical evidence; do not copy their source summaries.
+When repeat research confirms, contradicts, or limits peer work, hand that result back explicitly.
 
 ## Handoff rule
 
-If another specialist requests Layout/Interaction evidence, answer with the appropriate canonical study or a new domain-owned study. Do not edit their files. Split Type- or Color-owned portions into dependencies.
+If another specialist requests Layout/Interaction evidence, answer with canonical evidence or new investigation as appropriate. Cross-domain work is allowed when useful; do not silently claim canonical ownership of the peer domain and do not edit their files without authorization.
