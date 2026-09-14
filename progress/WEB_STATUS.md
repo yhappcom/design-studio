@@ -3,15 +3,15 @@
 Operating state: **ACTIVE — RESEARCH MAY RESUME**  
 Governance sync: 2026-09-15  
 Primary path: `research/web/`  
-Next new-study ID: `W002`
+Next new-study ID: `W003`
 
 ## Operational mission
 
-The Web Design Specialist exists to **design real websites and web applications**, not merely to implement other specialists' decisions and not to study frontend engineering as an end in itself.
+The Web Design Specialist exists to design real websites and web applications, not merely implement peer decisions or study frontend engineering for its own sake.
 
-Its primary responsibility is to turn product goals, user tasks, information, brand direction, and Design Studio research into complete web experiences with strong visual hierarchy, responsive behavior, coherent components, usable interaction, accessibility, and production realism.
+Its responsibility is to turn product goals, user tasks, information, brand direction, and Design Studio evidence into complete web experiences with strong hierarchy, responsive behavior, coherent components, usable interaction, accessibility and production realism. Frontend knowledge is a supporting capability for prototyping, feasibility judgment, implementation fidelity and browser validation.
 
-Frontend knowledge is a supporting professional capability for prototyping, feasibility judgment, implementation fidelity, browser validation, and preservation of design intent.
+---
 
 ## Current level
 
@@ -19,170 +19,119 @@ Current curriculum stage: **Stage 1 — Foundation**
 Overall state: **PRACTICE / CRITIQUE**  
 Foundation: **NOT PASSED**
 
-The initial Web-specific baseline has now been established through `W001`. The specialist is no longer in onboarding/synchronization state.
+Web now has two substantive canonical studies:
 
-W001 provides a medium-level model of the Web, a cross-specialist transfer frame, a bounded Chromium failure→revision exercise, an initial Web failure taxonomy, and an operational project method. It does **not** yet establish complete competency in page composition, navigation, component systems, forms/data surfaces, accessibility, browser/device transfer, or production design.
+- `W001` establishes the Web as a flexible/browser-participatory medium and a relationship-over-coordinate baseline.
+- `W002` establishes page-composition mechanism judgment and adds a reproducible Chromium failure→revision validation across wide, threshold, narrow, bilingual-long-content and text-growth stress cases.
+
+This is materially stronger than the previous W001-only baseline, but Web remains the least complete Stage 1 specialist because major Foundation areas are still not Web-baselined: information architecture, navigation/wayfinding, component/page systems, forms/search/tables/dashboard patterns as complete task systems, web interaction/state integration, and broader accessibility/browser/device transfer.
 
 ---
 
 ## Canonical Web evidence
 
-### W001 — Web as a Native Medium: History, Flexibility, and Design Contracts
+### W001 — Web as a Native Medium
+
+Canonical:
 
 - `research/web/W001-web-as-native-medium-history-flexibility-design-contracts.md`
 - `research/web/W001-web-medium-resilience-specimen.html`
 - `research/web/W001-web-medium-resilience-playwright.py`
 - `research/web/W001-web-medium-resilience-results.json`
 
-Evidence level: **PRACTICE + CRITIQUE / Foundation baseline established / NOT PASS**.
+Evidence level: **PRACTICE + CRITIQUE**.
 
-### W001 retained judgment
-
-The Web is modeled as:
+Retained model:
 
 `addressable resource`
-`→ semantic document / task structure`
+`→ semantic document/task structure`
 `→ source order + browser-native behavior`
-`→ normal flow / intrinsic content geometry`
-`→ authored hierarchy, layout, type, color, surfaces`
+`→ normal flow/intrinsic geometry`
+`→ authored hierarchy/layout/type/color`
 `→ conditional adaptation`
-`→ application state and enhancement`
-`→ browser/user override + runtime rendering`
-`→ validation under real content, input, device, failure and accessibility conditions`.
+`→ application state/enhancement`
+`→ browser/user/runtime participation`
+`→ validation under real content/input/device/failure/accessibility conditions`.
 
 Primary design consequence:
 
-> Web Design should control relationships, priorities, constraints, states, and adaptation rules more strongly than exact coordinates.
+> Web Design should control relationships, priorities, constraints, states and adaptation rules more strongly than exact coordinates.
 
-This does not reject precision, fixed dimensions, absolute positioning, custom controls, or dedicated compositions. It rejects using those mechanisms where the product actually requires variable-content relationships or browser-native behavior.
+W001 browser practice showed a fixed 960px/canvas-style transfer failing at narrower widths while an intrinsic/fluid revision preserved the document and primary actions across controlled Chromium widths. It did not claim WCAG, cross-browser, font-loading or human PASS.
 
-### W001 historical/standards baseline
+### W002 — Page Composition, Flow, Grid, Density & Visual Hierarchy
 
-Revalidated 2026-09-15:
-- CERN history of the Web;
-- HTML / WHATWG document and application model;
-- CSS1/CSS2 historical separation and expansion of presentation;
-- DOM Level 1 and ECMAScript historical application transition;
-- W3C Device Independence Principles;
-- Responsive Web Design historical framing;
-- current Media Queries, Flexbox, Grid, CSS Sizing and Container Queries;
-- WCAG Reflow;
-- WAI table/layout guidance.
+Canonical:
 
-Historical influence was used to explain current design constraints, not as authority for modern implementation details where current standards exist.
+- `research/web/W002-page-composition-flow-grid-density-hierarchy.md`
+- `research/web/W002-page-composition-specimen.html`
+- `research/web/W002-page-composition-playwright.py`
+- `research/web/W002-page-composition-results.json`
 
----
+Evidence level: **PRACTICE + CRITIQUE / TRANSFER VALIDATION / Chromium bounded validation**.
 
-## W001 browser practice
+W002 extends W001 from a general relationship-over-coordinate principle into a project decision procedure:
 
-A controlled specimen compared two transfers of comparable semantic content:
+1. classify the relationship first;
+2. identify content/runtime stress;
+3. decide what may wrap/stack/reorder and what must remain aligned;
+4. distinguish document-level reflow from legitimate component-local 2-D overflow;
+5. only then choose ordinary flow, Flexbox, Grid, positioning, sizing constraints or local overflow.
 
-1. **fixed-canvas failure**
-   - fixed 960px shell;
-   - fixed hero height/columns;
-   - fixed preview geometry;
-   - absolutely positioned action group;
-   - no narrow-width recomposition.
+Three materially different directions were produced for the same investment-tracking content:
 
-2. **web-native revision**
-   - bounded fluid inline size;
-   - normal-flow actions;
-   - wrapping navigation/actions;
-   - Grid `auto-fit` + `minmax()`;
-   - intrinsic/flexible geometry;
-   - fluid padding;
-   - content wrapping.
+- sequential editorial;
+- comparison workspace;
+- dense data with local 2-D preservation.
 
-Engine: Chromium through Playwright using `set_content` because the execution environment blocked browser navigation to local file/HTTP URLs.
-
-Tested viewports:
-- 1280 CSS px;
-- 768 CSS px;
-- 320 CSS px.
-
-### Bounded result
-
-Fixed transfer:
-- 1280: no viewport overflow;
-- 768: 960px shell caused horizontal document overflow;
-- 320: horizontal overflow and not all primary actions remained within the viewport.
-
-Web-native revision:
-- 1280: fit;
-- 768: fit;
-- 320: fit;
-- primary actions remained within viewport at all three tested widths.
-
-Author CSS removed at 320 CSS px:
-- no horizontal overflow;
-- 10/10 specimen links remained rendered;
-- 4/4 specimen headings remained rendered.
-
-All intended bounded assertions passed.
-
-### What W001 does not prove
-
-No claim of:
-- universal superiority of fluid layouts;
-- universal 320px-fit requirement for intrinsically two-dimensional content;
-- WCAG conformance;
-- actual 400% browser-zoom behavior;
-- keyboard/focus or screen-reader quality;
-- production font loading/fallback quality;
-- production localization quality;
-- Firefox/Safari/physical mobile parity;
-- human preference or task-performance superiority.
-
-Those remain separate validation gates.
+Each includes KEEP / REWORK / REJECT conditions. Direction B remains the default STUDIO JUDGMENT for a general tracker, not a human-performance result.
 
 ---
 
-## W001 failure taxonomy
+## Latest completed block — W002 browser validation
 
-### A. Canvas transplant failure
+Engine: Chromium `144.0.7559.96` via Playwright.
 
-A reference screenshot is preserved while content/viewport variation breaks the product because coordinates were specified where relationships/constraints were required.
+Controlled cases:
 
-### B. Device-folklore responsiveness
+1. 1280px normal;
+2. 768px normal;
+3. 320px normal;
+4. 320px + long bilingual English/Korean content;
+5. 320px + long bilingual content + controlled 200% text-size stress.
 
-Breakpoints are selected from assumed device categories rather than actual content/layout/task stress.
+Assertions covered:
 
-### C. Visual-semantic inversion
+- no unintended document-level horizontal overflow;
+- expected two-column vs one-column workspace relation;
+- expected table-local overflow state;
+- semantic table/header structure retained;
+- stable source/focusable sequence.
 
-Semantic/source order or browser behavior is distorted solely to reproduce a visual arrangement.
+### Failure → revision
 
-### D. Author-control illusion
+Initial `320px + 200% text` stress produced unwanted document overflow (`420px` scroll width against a `320px` client width).
 
-The design assumes exact fonts, colors, dimensions, pointer input, or uninterrupted resources and omits valid browser/user/runtime participation.
+The specimen was revised with:
 
-### E. App exceptionalism
+- `overflow-wrap:anywhere` for emergency heading/paragraph break opportunities;
+- `min-width:0` on relevant Grid/Flex children so intrinsic minimums do not force ancestor expansion.
 
-A web application treats URLs, history, document semantics, native controls, or focus as irrelevant because it is “an app.”
+The harness also corrected one false assumption: at 768px the table is already narrower than its intrinsic minimum, so local overflow is expected and semantically valid even while the comparison workspace remains side-by-side.
 
-### F. Screenshot-only QA
+### Final result
 
-Pixel similarity is treated as proof of interaction, semantics, focus, navigation, overflow, loading, or accessibility correctness.
+**25/25 bounded assertions true across 5/5 cases.**
 
----
+Representative measurements:
 
-## Current Web Design method
+- 1280px: document fits; comparison workspace remains ~697px + 336px; table fits without local overflow.
+- 768px: document fits; workspace remains ~362px + 288px; table scrolls locally (`729px` content inside `674px`).
+- 320px: document fits; workspace stacks to `254px`; table remains local overflow (`729px` inside `254px`).
+- 320px long bilingual: no document overflow.
+- 320px long bilingual + 200% text: after revision, document returns to `320/320`; table expands internally to ~1330px but remains inside the local scroll region.
 
-W001 establishes this working sequence for major surfaces:
-
-1. purpose and user task;
-2. resource/context and direct-entry behavior;
-3. content model;
-4. semantic/source order;
-5. browser-native baseline;
-6. relationship model;
-7. intrinsic geometry;
-8. constraints;
-9. adaptation/recomposition;
-10. enhancement and state;
-11. stress under real content/preferences/failure;
-12. browser/device/human validation at the evidence level the claim requires.
-
-This is a diagnostic framework, not a mandatory waterfall.
+This is not browser-UI 400% zoom proof, WCAG conformance, screen-reader PASS, Firefox/Safari parity or human validation.
 
 ---
 
@@ -190,42 +139,15 @@ This is a diagnostic framework, not a mandatory waterfall.
 
 ### Typography / Type
 
-Type is through **T014** at the latest Web synchronization.
-
-Highest-value incoming contracts:
-- loading/failure/script/user-substitution fallback are distinct;
-- exact font metrics and normalization/subset closure can alter actual browser layout;
-- Web must validate delivered WOFF2, font loading/fallback, Korean/English wrapping, zoom/DPR, normalization, and browser/platform behavior.
-
-W001 consequence:
-- page structure and core actions should not depend on one exact font metric realization.
+Type is through T016. Highest-value incoming contract: exact font/loading/fallback geometry can change wrapping and downstream page layout. W002 transfers that principle but does not yet reproduce downloadable-font lifecycle behavior inside the complete page.
 
 ### Color
 
-Color is through **C012** at the latest Web synchronization.
-
-Highest-value incoming contracts:
-- authored color is not always final used color;
-- forced-colors can remove/replace visual channels;
-- semantic color, wide-gamut delivery, chart/SVG behavior and browser/device color management require Web transfer.
-
-W001 consequence:
-- final Web presentation is a browser/user/runtime negotiation rather than exclusive author pixel ownership.
+Color Stage 1 is PASS. Web should apply Color after structural hierarchy exists and later test semantic/theme/state behavior in actual browser/user override conditions.
 
 ### Layout / Interaction
 
-Layout/Interaction is through **L006 / I004** at the latest Web synchronization.
-
-Highest-value incoming contracts:
-- responsive systems preserve semantic relationships rather than coordinates;
-- density is task-dependent;
-- type/color can change perceived or actual geometry;
-- visual, pointer, active gesture, focus, semantic/AT, data, stack and restoration ownership are separate;
-- screenshot QA cannot validate these behavioral layers;
-- history/focus restoration, pending/retry, forced-color state resilience, and concurrent conflict/recovery have controlled evidence awaiting full Web product transfer.
-
-W001 consequence:
-- later Web studies must integrate spatial and behavioral contracts into complete page systems rather than isolated components.
+Layout/Interaction Stage 1 is PASS and now entering Stage 2 audit. W002 directly reuses L002 density/rhythm, L003 Type-dependent reflow and L006 ownership principles. W002 returns Web-specific evidence that separate relationship classes can require different stress thresholds: the table enters local overflow at 768px while the comparison workspace remains side-by-side.
 
 ---
 
@@ -233,89 +155,77 @@ W001 consequence:
 
 | Module | Status | Remaining gate |
 | --- | --- | --- |
-| Web as a medium / historical evolution | **PRACTICE / CRITIQUE** | broader browser/device/project transfer; human evidence where relevant |
-| Document/semantic vs presentation model | **PRACTICE / CRITIQUE** | production semantic/source-order and accessibility-tree transfer |
-| Responsive/adaptive design philosophy | **PRACTICE / CRITIQUE** | W002/W003 deeper layout/recomposition, zoom, localization, cross-browser/device proof |
-| Normal flow / intrinsic geometry | **PRACTICE / CRITIQUE baseline** | deeper Grid/Flex/intrinsic sizing/composition evidence |
-| Information architecture / page hierarchy | NOT YET WEB-BASELINED | complete Web-specific study/practice required |
-| Navigation / wayfinding | NOT YET WEB-BASELINED | real URL/router/history/direct-entry patterns required |
-| Page composition / visual hierarchy / density | **NEXT** | W002 |
+| Web as a medium / historical evolution | PRACTICE / CRITIQUE | broader project/browser/device transfer |
+| Document/semantic vs presentation model | PRACTICE / CRITIQUE | accessibility-tree/production source-order transfer |
+| Responsive/adaptive philosophy | PRACTICE / CRITIQUE | W003 deeper recomposition, actual zoom, component-local adaptation |
+| Normal flow / intrinsic geometry | PRACTICE / CRITIQUE | broader content/media/form systems |
+| Page composition / hierarchy / density | **PRACTICE / CRITIQUE — W002** | cross-browser/device + real project/human evidence |
+| Information architecture / page hierarchy | NOT YET WEB-BASELINED | dedicated Web practice required |
+| Navigation / wayfinding | NOT YET WEB-BASELINED | URL/router/history/direct-entry/wayfinding practice |
 | Component/page systems | NOT YET WEB-BASELINED | variants/states/tokens/templates + project transfer |
-| Forms/search/tables/dashboards/settings | NOT YET WEB-BASELINED | task-specific pattern and browser-native/custom decisions |
-| Web interaction/state systems | INCOMING PEER EVIDENCE ONLY | complete Web page/product transfer required |
-| Web typography | INCOMING TYPE EVIDENCE ONLY | exact delivered-font/browser/fallback/zoom practice required |
-| Web color/theme/state | INCOMING COLOR EVIDENCE ONLY | real page/browser/device/forced-color practice required |
-| Accessibility / zoom / localization | PARTIAL BASELINE | reflow concept only; semantics, keyboard, AT, real zoom, language stress open |
-| Performance-sensitive design | NOT YET WEB-BASELINED | runtime-cost/design trade-off study required |
-| Design-to-code/browser validation | **PRACTICE baseline** | broader cross-browser/device/production methods required |
+| Forms/search/tables/dashboards/settings | PARTIAL via W002 table only | complete task-specific browser-native/custom practice |
+| Web interaction/state systems | INCOMING PEER EVIDENCE ONLY | complete page/product transfer required |
+| Web typography | PARTIAL TRANSFER | exact delivered-font loading/fallback/zoom practice required |
+| Web color/theme/state | INCOMING COLOR EVIDENCE ONLY | real page/browser/device/forced-color practice |
+| Accessibility / zoom / localization | PARTIAL PRACTICE | actual browser zoom, keyboard/AT, language stress beyond specimen |
+| Performance-sensitive design | NOT YET WEB-BASELINED | runtime-cost/design trade-off study |
+| Design-to-code/browser validation | PRACTICE | Firefox/Safari/physical device/production methods |
 
 ---
 
-## Active next queue
+## Current next queue
 
-### 1. W002 — Page Composition, Flow, Grid, Density & Visual Hierarchy
+### 1. W003 — Responsive / Adaptive Recomposition
 
-Highest-priority next integrated block.
+Highest-value next integrated Foundation block unless a newer repository state changes the balance.
 
-Required scope:
-- normal flow as a design baseline, not a coding detail;
-- intrinsic sizing and content-driven geometry;
-- block/inline flow and writing-direction implications;
-- Flexbox vs Grid vs ordinary flow by relationship type;
-- fixed, fluid, min/max/clamp constraints;
-- page/container measure and readable/content widths without universal constants;
-- alignment systems and visual hierarchy;
-- whitespace, density and rhythm using Layout L002 rather than “more whitespace is better”;
-- full-bleed vs constrained content regions;
-- section composition and page-level rhythm;
-- simultaneous comparison vs sequential stacking;
-- cards, split layouts, sidebars and multi-column structures as task relationships rather than pattern catalogues;
-- long Korean/English content and font-metric stress;
-- actual zoom/reflow distinction;
-- browser-rendered failure→revision practice;
-- explicit reasons to choose ordinary flow, Flexbox, Grid, positioning, or local overflow.
+Required questions:
 
-W002 must **not** become a CSS feature catalogue. The output must improve page-design judgment.
+- detect layout stress from content/task failure rather than device folklore;
+- media query vs container query by ownership/relationship;
+- component-local vs page-global adaptation;
+- preserve priority while stacking/wrapping/hiding/reordering;
+- navigation, table, form and dashboard recomposition;
+- long Korean/English strings;
+- exact Type loading/fallback transfer where executable;
+- actual browser zoom distinct from viewport and text-size proxies;
+- source/focus order under visual rearrangement;
+- mixed input implications.
 
-### 2. W003 candidate — Responsive / Adaptive Recomposition
+W003 must remain design-led; it should not become a query-syntax catalogue.
 
-After W002 geometry is grounded:
-- layout stress points;
-- media vs container query decision;
-- component-local adaptation;
-- priority changes vs hiding;
-- navigation/table/form/dashboard recomposition;
-- zoom/text growth/localization/device/input transfer.
+### 2. IA / navigation / wayfinding
 
-### 3. Later Foundation blocks
+After or alongside responsive foundations, establish URL/resource hierarchy, direct entry, navigation models, history/resume and wayfinding as complete Web design decisions.
 
-- IA / navigation / wayfinding;
-- components / page systems / design systems;
-- forms, search, tables, dashboards and data-dense surfaces;
-- browser-native vs custom controls;
-- async/loading/error/empty/partial states;
-- integrated Web typography and Color transfer;
-- accessibility and actual AT/browser/device validation;
-- performance-sensitive design;
-- one or more complete website/web-app design/redesign exercises.
+### 3. Component/page systems and task surfaces
+
+Build Foundation evidence for forms, search, filters, settings, tables, dashboards, list/detail, loading/error/empty/partial states and browser-native vs custom controls.
+
+### 4. Integrated Web Type / Color / accessibility
+
+Transfer exact delivered fonts, themes/system colors, forced colors, real zoom, keyboard/focus/AT and cross-browser/device behavior into complete page systems.
 
 ---
 
 ## Open research-quality gaps
 
+- actual browser-UI zoom rather than viewport/text-size proxy;
 - Firefox/Safari and physical iOS/Android browser evidence;
-- actual browser zoom rather than narrow viewport proxy;
-- long Korean/English production content and localization stress;
-- exact delivered webfont loading/fallback/normalization transfer;
-- forced-colors and actual OS high-contrast transfer;
-- real keyboard/focus/screen-reader behavior;
 - routed URL/history/direct-entry/resume evidence;
+- navigation/wayfinding baseline;
+- component/page-system baseline;
+- forms/search/filter/settings/dashboards as complete task systems;
+- exact downloadable webfont loading/fallback/normalization in full page context;
+- forced-colors and real OS high-contrast transfer;
+- real keyboard/focus/screen-reader behavior;
 - native/custom control comparison;
-- image/media/aspect-ratio composition under real content;
-- responsive tables/forms/navigation/dashboards;
-- performance/loading effects on visual hierarchy and interaction;
-- real project design exercises;
+- image/media/aspect-ratio composition;
+- performance/loading effects on hierarchy and interaction;
+- complete real-project design/redesign exercise;
 - human comprehension/search/comparison/task evidence where claims require it.
+
+Human evidence is not fabricated and remains project-stage work when suitable participants/context exist.
 
 ---
 
@@ -323,23 +233,22 @@ After W002 geometry is grounded:
 
 ### Typography / Type
 
-W001 supports T001's project-level premise: Web layouts should not require exact preferred-font metrics to preserve core structure/actions. Future W work should validate exact delivered fonts, Korean/English reflow, fallback, loading, normalization and actual browser zoom.
+W002 adds a project-level text-growth failure→revision case and confirms that page resilience requires more than one preferred-font screenshot. Exact downloadable-font lifecycle transfer remains open.
 
 ### Color
 
-W001 incorporates C001's broader implication that browser/user participation can change final presentation. Future Web specimens should combine responsive geometry with forced colors and system-color behavior rather than treating geometry and color resilience as independent forever.
+W002 preserves structural hierarchy before chromatic reinforcement; later Web theme/state work should test whether Color strengthens or flattens that hierarchy.
 
 ### Layout / Interaction
 
-W001 browser practice provides a bounded Web confirmation of the relationship-over-coordinate direction. It does not replace L002/L003/L006 or I-series evidence. W002 will deepen actual page composition; later Web studies must carry focus/history/layer/state contracts into complete page systems.
+W002 provides complete-page transfer evidence for relationship-specific breakpoints, local 2-D overflow, source/focus sequence and text-growth resilience. It supports choosing recomposition from relationship failure rather than one global device breakpoint.
 
 ---
 
 ## Latest checkpoint
 
-- Initial repository synchronization: complete.
-- First substantive Web study: **W001 complete at PRACTICE + CRITIQUE**.
-- First reproducible Web browser specimen/harness/results: committed.
-- Foundation baseline: **established but NOT PASSED**.
-- Next new-study ID: **W002**.
-- Current next major work: **Page Composition, Flow, Grid, Density & Visual Hierarchy**.
+- W001: PRACTICE + CRITIQUE baseline complete.
+- W002: **PRACTICE + CRITIQUE with reproducible Chromium validation complete; 25/25 bounded assertions after one real failure→revision cycle.**
+- Web Foundation: **NOT PASSED**.
+- Next new Web study ID: **W003**.
+- Current largest Web Foundation gaps: responsive/adaptive recomposition depth, IA/navigation, component/page systems, task surfaces, integrated accessibility/Type/Color and broader browser/device transfer.
