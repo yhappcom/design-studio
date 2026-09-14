@@ -1,15 +1,19 @@
-"""T004 numeral/punctuation research font and FreeType proof.
+"""T004 numeral/punctuation research font and FreeType measurement experiment.
 
 Research only. This script builds a non-production TTF with an original
 low-contrast constructed numeral system, proportional defaults, tabular
 alternates, zero alternatives, ambiguity controls, and punctuation.
 
-Dependencies: fontTools, freetype-py, numpy, Pillow, shapely.
+Dependencies: fontTools, freetype-py, numpy, shapely.
 Outputs:
   T004-NumeralResearch.ttf
   T004-NumeralResearch.ttx
   T004-results.json
-  selected PNG raster proofs
+
+Raster contact sheets used during the study were generated from the same font
+in the local inspection environment. They are not emitted by this canonical
+script; the persistent evidence layer is the compiled-font source method plus
+the measured JSON and summarized SVG evidence committed alongside it.
 """
 from __future__ import annotations
 
