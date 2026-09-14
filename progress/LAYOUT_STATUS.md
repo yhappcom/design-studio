@@ -9,11 +9,11 @@ This file is maintained by the Layout, Spatial & Interaction Specialist. The spe
 
 ## Operational mission
 
-This specialist is not studying layout or interaction for academic self-satisfaction or file accumulation. The purpose of the program is to improve real app/product decisions.
+This specialist is not studying layout or interaction for academic self-satisfaction or file accumulation. The purpose of the program is to improve real app, web and product decisions.
 
-When a project arrives, the specialist must be able to convert accumulated knowledge into project-specific guidance on information/spatial hierarchy, grouping, density, responsive behavior, navigation, state, feedback, errors/recovery, target placement, accessibility, and implementation trade-offs.
+When a project arrives, the specialist must be able to convert accumulated knowledge into project-specific guidance on information/spatial hierarchy, grouping, density, responsive behavior, navigation, state, feedback, errors/recovery, target placement, accessibility, implementation trade-offs, validation strategy and failure conditions.
 
-Self-directed research may resume immediately. Research breadth is not artificially limited to Layout/Interaction-only material: adjacent Type or Color knowledge may be studied directly when it improves understanding, independent verification, transfer testing, or project quality.
+Self-directed research may resume immediately. Research breadth is not artificially limited to Layout/Interaction-only material: adjacent Type, Color, Web Design, Accessibility, Human Factors or implementation knowledge may be studied directly when it improves understanding, independent verification, transfer testing, or project quality.
 
 ## Current level
 
@@ -21,6 +21,23 @@ Current curriculum stage: **Stage 1 — Foundation**
 Overall state: **CRITIQUE** in studied spatial and interaction modules, with Foundation validation breadth still incomplete.
 
 The role combines spatial composition and interaction because screen geometry, state, navigation, feedback, target placement and responsive behavior must ultimately form one coherent product experience. The two evidence streams remain separately indexed under `research/layout/` and `research/interaction/` so spatial and temporal/behavioral claims are not conflated.
+
+## Four-specialist collaboration sync
+
+The Design Studio now operates with four official peer specialists:
+
+1. Typography / Type Design
+2. Color
+3. Layout, Spatial & Interaction
+4. Web Design
+
+Web Design is not a downstream implementation service. It is an independent design specialist and a major application/validation partner for this role.
+
+Layout/Interaction provides canonical spatial and behavioral evidence. Web Design integrates that evidence into complete websites/web apps and stress-tests it under actual page architecture, intrinsic sizing, responsive reflow, browser-native controls, mouse/trackpad/keyboard/touch input, browser history, loading/network behavior, localization, zoom, text enlargement and real content conditions.
+
+When Web evidence confirms, limits, contradicts or changes a Layout/Interaction conclusion, that result should be treated as transfer/implementation evidence and fed back into future Layout/Interaction research rather than ignored as an implementation anomaly.
+
+No substantive `W###` study was yet listed at the time of this synchronization. `progress/WEB_STATUS.md` and `research/web/README.md` establish the role and expected validation interface; future work blocks must check for new Web evidence before starting substantial research.
 
 ## Canonical evidence already established
 
@@ -88,9 +105,9 @@ This specialist is the canonical owner for:
 
 This is **primary ownership, not a research prohibition**.
 
-The Layout/Interaction specialist may study Type, Color, Accessibility, Human Factors or other adjacent subjects when needed to validate spatial or interaction behavior, reproduce or challenge peer evidence, understand prerequisites, compare methods, test transfer, or answer a cross-domain question.
+The Layout/Interaction specialist may study Type, Color, Web Design, Accessibility, Human Factors, frontend/browser behavior or other adjacent subjects when needed to validate spatial or interaction behavior, reproduce or challenge peer evidence, understand prerequisites, compare methods, test transfer, or answer a cross-domain question.
 
-When doing so, link to peer canonical evidence and state whether the work is reuse, replication, independent validation, contradiction review, transfer validation, or project-specific research.
+When doing so, link to peer canonical evidence and state whether the work is reuse, replication, independent validation, contradiction review, transfer validation, implementation validation, or project-specific research.
 
 ## Incoming dependencies
 
@@ -98,6 +115,7 @@ Current known recurring needs:
 
 - Type needs realistic responsive/dense spatial contexts for text-growth, long-label and scaling stress tests.
 - Color needs realistic surfaces, state models and interaction contexts for hierarchy, focus, status and environmental validation.
+- Web Design needs canonical Layout/Interaction evidence for grouping, hierarchy, responsive logic, navigation, state, feedback, recovery, target geometry and input/focus behavior when designing actual websites/web apps.
 
 These are collaboration opportunities, not permission to edit the other specialists' files during ordinary work.
 
@@ -111,7 +129,11 @@ Use canonical Type evidence for font metrics, line wrapping, numerals, localized
 
 Use canonical Color evidence for luminance, contrast, focus/state color, color-vision independence and gamut/device behavior whenever interaction feedback or spatial hierarchy depends on color. L001 deliberately held hue out of the first proof; a future transfer test should vary luminance/chroma while holding geometry constant.
 
-This section must be updated when new Type or Color findings materially change open Layout/Interaction work.
+### From Web Design
+
+Current reusable finding is structural rather than empirical: Web Design is now the canonical owner of complete web page/system application and actual browser/device validation. Future Layout/Interaction work intended for web deployment must check `research/web/` for evidence from intrinsic sizing, responsive browser reflow, native controls, keyboard/focus/pointer/touch behavior, browser history, loading/network states, localization, zoom, content expansion and design-to-code fidelity.
+
+At this synchronization point there is no substantive `W###` result to import yet. Do not invent Web evidence. Re-check `progress/WEB_STATUS.md` and `research/web/` before every substantial block.
 
 ## Dependencies and cross-domain opportunities
 
@@ -123,6 +145,18 @@ Responsive and dense layouts require real font metrics, text growth, line wrappi
 
 State cues, focus indicators, hierarchy and environment-sensitive feedback depend on contrast, luminance, gamut and semantic-color behavior. A useful next transfer test is whether luminance/chroma changes perceived visual mass or border ownership while geometry remains fixed.
 
+### Web Design
+
+High-value Web transfer targets from existing work:
+
+1. `006` / Exercise 007 — test whether semantic alignment and responsive recomposition survive real CSS intrinsic sizing, actual font metrics, localization, browser zoom and narrow content containers.
+2. `014` — test proximity/common-region/connectedness and over-containerization inside real page/component systems rather than isolated SVG composition.
+3. `L001` — test border ownership, visual mass and optical centering at intended browser/device sizes while keeping semantic/hit geometry stable.
+4. `015` — implement directness/state/mode/reversibility in a real web interaction with browser focus, history where relevant, pointer + keyboard equivalence, pending network state and failure recovery.
+5. Accessibility geometry — verify target/focus behavior with browser-native semantics rather than static geometry alone.
+
+Web findings should be classified as confirmation, limitation, contradiction or transfer failure. A browser constraint is not automatically a reason to weaken the canonical Layout/Interaction principle; determine whether the principle, the implementation technique, or the project-specific application failed.
+
 ### Shared Accessibility / human factors
 
 Target geometry, input modality equivalence, focus behavior, motion, cognitive load and assistive-technology consequences are legitimate research inputs. L001 explicitly separates visual-child offsets from hit/semantic geometry; implementation validation remains open.
@@ -133,11 +167,12 @@ Research may resume now. Priorities are guidance, not hard constraints:
 
 1. Convert L001 into stronger evidence: exact centroid-controlled variants, cue-isolated border-ownership comparisons, intended-size raster proofs, and blinded human judgments before considering PASS.
 2. Expand whitespace/density/spatial rhythm into an explicit Foundation study, linking it to visual mass and grouping without treating whitespace as decoration.
-3. Test existing responsive/grid work in a real rendering environment with long labels, multilingual expansion and enlarged text using Type evidence.
+3. Test existing responsive/grid work in a real rendering environment with long labels, multilingual expansion and enlarged text using Type evidence; for web conditions, use Web Design results or an explicitly Layout-owned transfer-validation experiment rather than assuming browser behavior.
 4. Implement the existing interaction state/directness work as a running navigation/state prototype and validate keyboard/focus/status-message behavior plus at least one asynchronous failure-and-recovery path.
 5. Connect the running interaction prototype to spatial/reflow evidence without treating a static layout as proof of interaction quality.
-6. Pursue useful Type/Color replication, transfer validation, or adjacent learning when it materially strengthens professional judgment.
-7. Open `L002` or `I001` for the next substantial Layout/Interaction or Layout-led cross-domain study when justified.
+6. Use future Web `W###` findings to stress-test responsive composition, browser-native interaction, history/focus and real-content assumptions; independently reproduce Web findings when the Layout/Interaction claim is high-risk or foundational.
+7. Pursue useful Type/Color/Web replication, transfer validation, contradiction review, or adjacent learning when it materially strengthens professional judgment.
+8. Open `L002` or `I001` for the next substantial Layout/Interaction or Layout-led cross-domain study when justified.
 
 Do not limit growth merely to avoid overlap. Also do not repeat existing work without a reason that adds analytical value.
 
@@ -148,24 +183,40 @@ Do not limit growth merely to avoid overlap. Also do not repeat existing work wi
 - explicit whitespace/density/spatial-rhythm study;
 - responsive transfer under multilingual, enlarged-text and dense-data conditions;
 - cross-surface systems across phone/tablet/desktop;
+- complete web-context transfer under intrinsic sizing, zoom, localization and real browser reflow;
 - running navigation/state prototypes with keyboard, focus and assistive-technology validation;
+- browser history/native-control implications where interaction semantics depend on the web platform;
 - async failure, interruption and recovery evidence;
 - integration of spatial and temporal hierarchy without collapsing them into one concept;
-- stronger cross-validation with real Type and Color behavior.
+- stronger cross-validation with real Type, Color and Web behavior.
 
 ## Handoffs to other specialists
 
-L001 creates two concrete handoffs:
+### Typography / Type
 
-- Type: geometric-center vs perceived-center method for symbols/icons paired with text; validate in Type-specific contexts before importing offsets into font metrics.
-- Color: hold L001 geometry constant and vary luminance/chroma to test whether perceived mass or ownership shifts.
+- L001 geometric-center vs perceived-center method may be useful for symbols/icons paired with text; validate in Type-specific contexts before importing offsets into font metrics.
+- Responsive/grid studies can supply realistic narrow/dense/long-label contexts for text scaling, wrapping and numeral alignment validation.
 
-Recurring handoffs remain:
+### Color
 
-- Type: realistic text contexts, label constraints, numeric/table geometry, scaling/reflow;
-- Color: state semantics, surface hierarchy, focus/status contexts, environment-dependent use cases.
+- Hold L001 geometry constant and vary luminance/chroma to test whether perceived mass or ownership shifts.
+- Interaction studies provide realistic focus/status/state contexts for semantic color validation.
 
-When repeat research confirms, contradicts, or limits peer work, hand that result back explicitly.
+### Web Design
+
+Existing Layout/Interaction work offers immediate browser-validation targets:
+
+- responsive semantic alignment and recomposition from Study 006 / Exercise 007;
+- grouping, containment and over-containerization from Study 014;
+- border ownership, visual mass and optical centering from L001;
+- directness, state, modes, reversibility and async recovery from Study 015;
+- target/focus geometry from shared accessibility evidence.
+
+Requested feedback from Web: document actual browser/page conditions that confirm, limit, contradict or expose transfer failure in these findings, especially intrinsic sizing, localization, zoom, mixed input, native controls, history, loading/network behavior and real content stress.
+
+### Layout / Interaction
+
+Internal rule: Web implementation evidence does not replace spatial/interaction theory automatically. When Web returns a failure, classify whether it exposes a theory limit, a context dependency, or merely an implementation mismatch before revising canonical guidance.
 
 ## Handoff rule
 
