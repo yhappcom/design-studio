@@ -1,258 +1,239 @@
 # Layout, Spatial & Interaction Specialist Status
 
-Operating state: **ACTIVE — RESEARCH MAY RESUME**  
+Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 ENTRY AUDIT NEXT**  
 Governance sync: 2026-09-15  
 Canonical paths: `research/layout/`, `research/interaction/`  
-Next new-study IDs: Layout `L007`; Interaction `I007`
+Next new-study IDs: Layout `L008`; Interaction `I007`
 
 This file is maintained by the Layout, Spatial & Interaction Specialist. It does not update global `progress/STATUS.md` during ordinary research.
 
-## Mission / stage
+## Mission / current level
 
 Research exists to improve real app, web and product decisions. Research volume is not the objective.
 
-Current stage: **Stage 1 — Foundation**  
-Overall state: **CRITIQUE** in studied modules  
-Foundation: **NOT PASSED**
+Stage 1 — Foundations: **PASS**  
+Next curriculum step: **Stage 2 — Intermediate Professional Practice / entry audit pending**
 
-Human-observer/user-task validation is **DEFERRED TO APP-DEVELOPMENT VALIDATION**. It is not treated as completed or simulated. Non-human research continues.
+This PASS is deliberately narrow. L007 re-read the actual `curriculum/MASTER_CURRICULUM.md` and separated Foundation requirements from later production, platform, human and research gates.
+
+Human-observer/user-task validation remains **DEFERRED TO APP-DEVELOPMENT VALIDATION** exactly as instructed by the user. No human evidence is fabricated or implied.
+
+Stage 1 PASS does **not** mean:
+- production/browser/device/AT validation is complete;
+- every individual module has no OPEN items;
+- Stage 2+ is passed;
+- the specialist curriculum is complete.
+
+The coordinator-maintained `progress/STATUS.md` may remain stale until coordinator sync. This specialist does not edit it directly.
+
+---
 
 ## Four-specialist sync
 
-- **Type:** through **T015**; next T016. Bounded Chromium Hangul canonical-equivalent rendering evidence exists; cross-browser/native/production Korean shaping remains open.
-- **Color:** **Stage 1 PASS** after C014/C015 closure; next C016 / Stage 2 entry audit. This does not imply production/device/human Color completion.
-- **Web:** **W001 completed**; next W002. Web has a Stage 1 PRACTICE/CRITIQUE baseline, not production integration PASS.
-- **Layout/Interaction:** L001–L006 plus I001–I006; Stage 1 remains NOT PASSED.
+- **Type:** through T015 at latest synchronized checkpoint; cross-browser/native/production shaping remains Type-owned.
+- **Color:** Stage 1 PASS after C014/C015 closure; no production/device/human Color completion is inferred.
+- **Web:** W001 completed; W002 next. Web has a Stage 1 baseline, not production integration PASS.
+- **Layout/Interaction:** Stage 1 PASS established by L007; Stage 2 entry audit next.
+
+---
+
+# Stage 1 closure authority — L007
+
+Canonical:
+- `research/layout/L007-stage1-foundation-closure-audit.md`
+
+L007 maps every Master Stage 1 visual and interaction requirement to existing original evidence and corrects the earlier stage-boundary error in which Stage 3–5/platform/human gaps were treated as perpetual Foundation blockers.
+
+## Visual Foundation verdict
+
+**PASS under the current Master Curriculum Stage 1 gate.**
+
+Evidence map:
+- figure/ground + Gestalt → Study 014, L001, L006;
+- visual mass / balance / tension → L001 + raster practice;
+- proportion / scale → Study 006 + Exercises 003/007;
+- rhythm / repetition → Study 006 + Exercise 003 + L002;
+- contrast → Exercise 003 + L001 + L005;
+- negative space → Study 014 + L002;
+- edge relationships → L001/L006;
+- grid systems / intentional grid breaking → Study 006 + Exercises 003/007 + responsive transfer;
+- color perception / luminance / simultaneous contrast → canonical Color Stage 1 PASS reused, especially C015;
+- typography as composition / IA → Type Study 009 + Exercise 006 reused, with L003/L004 browser transfer;
+- design history / precedent literacy → Study 006 modernist grid precedent + reaction/critique;
+- original exercises and peer-domain reuse → satisfied across L001–L006 and legacy exercises.
+
+## Interaction Foundation verdict
+
+**PASS under the current Master Curriculum Stage 1 gate.**
+
+Evidence map:
+- affordance / feedback / mapping / consistency → Study 007 + Exercise 004 + I002/L006;
+- recognition vs recall → Study 007 + Exercise 004;
+- task/object/action relationships → Studies 007/015;
+- navigation models → I001 **14/14**;
+- system status / error prevention → Study 007 + Exercise 004 + I002 **19/19**;
+- reversibility / modes / recovery → Study 015 + I002/I004;
+- accessibility as a design constraint → research/004 + Exercise 001 + I001/I003/L006;
+- original exercises / peer reuse → satisfied across I001–I006 and cross-specialist transfers.
+
+Important historical correction:
+- Study 007/015 originally withheld PASS because interactive prototype, keyboard traversal and navigation/state evidence were missing;
+- later I001/I002/I003/L006 directly supplied those gaps.
 
 ---
 
 ## Canonical evidence
 
-### Layout
+### Layout / spatial
 - `006-grid-composition-hierarchy.md`
 - `014-perceptual-grouping-spatial-grammar.md`
 - `L001-figure-ground-balance-optical-centering.md`
-- `L001-optical-centering-raster-validation.md` + Playwright/results
-- `L001-border-ownership-cue-isolation-validation.md` + specimen/Playwright/results
+- `L001-optical-centering-raster-validation.md`
+- `L001-border-ownership-cue-isolation-validation.md`
 - `L002-whitespace-density-spatial-rhythm.md` + **216-condition** validation
-- `L003-type-fallback-density-reflow-transfer.md` + Playwright/results
-- `L004-tabular-numerals-dense-comparison-transfer.md` + Playwright/results
-- `L005-color-driven-density-salience-transfer.md` + Playwright/results
-- `L006-layer-ownership-cross-contract.md` + specimen/Playwright/results
-- `L006-native-layer-primitives-transfer.md` + specimen/Playwright/results
-- `L006-pointer-capture-touch-lost-invoker-transfer.md` + specimen/Playwright/results
-- `L006-forced-colors-touch-ax-transfer.md` + specimen/Playwright/results
-- `L006-custom-aria-modal-inertness-transfer.md` + specimen/Playwright/results
+- `L003-type-fallback-density-reflow-transfer.md`
+- `L004-tabular-numerals-dense-comparison-transfer.md`
+- `L005-color-driven-density-salience-transfer.md`
+- `L006-layer-ownership-cross-contract.md` and four higher-fidelity extensions
+- `L007-stage1-foundation-closure-audit.md`
 
 ### Interaction
 - `007-interaction-agency-feedback-errors.md`
 - `015-directness-state-modes-reversibility.md`
-- `I001-navigation-history-focus-restoration-interruption.md` + **14 assertions**
-- `I002-latency-pending-optimistic-retry.md` + **19 assertions**
-- `I003-forced-colors-state-semantic-resilience.md` + **14 assertions**
-- `I004-concurrent-edits-conflict-merge-recovery.md` + **17 controlled assertions**
-- `I004-http-precondition-etag-transfer.md` + **16 real HTTP precondition assertions**
-- `I004-offline-outbox-reconnect-transfer.md` + **18 durable offline/restart/reconnect assertions**
-- `I004-ambiguous-outcome-idempotency-transfer.md` + **15 real HTTP ambiguous-result/idempotency assertions**
-- `I004-multi-operation-queue-semantics.md` + **20 ordering/compaction/dependency assertions**
-- `I004-offline-authorization-finalization-transfer.md` + **18 authorization/finalization/account assertions**
-- `I005-ambiguous-outcome-idempotency.md` + **18 independent HTTP replication/extension assertions**
-- `I005-business-effect-dedupe-atomicity-transfer.md` + **26 effect/dedupe/outbox/inbox assertions**
-- `I006-sequence-collaboration-ot-crdt-boundary.md` + **18 sequence-concurrency boundary assertions**
+- `I001-navigation-history-focus-restoration-interruption.md` + **14** assertions
+- `I002-latency-pending-optimistic-retry.md` + **19** assertions
+- `I003-forced-colors-state-semantic-resilience.md` + **14** assertions
+- I004 concurrency/offline family: **17 + 16 + 18 + 15 + 20 + 18** controlled assertions across state, HTTP, durable reconnect, ambiguous outcome, multi-operation queue, and authorization/finalization
+- `I005-ambiguous-outcome-idempotency.md` + **18** assertions
+- `I005-business-effect-dedupe-atomicity-transfer.md` + **26** assertions
+- `I006-sequence-collaboration-ot-crdt-boundary.md` + **18** assertions
 
 Shared accessibility baseline: `research/004-accessibility-reflow-targets-focus.md`.
 
 ---
 
-# L006 — layer ownership checkpoint
+# Current reusable evidence beyond Foundation
+
+## L006 — layer ownership
 
 Ownership vector:
 
 `visual owner / pointer hit owner / active gesture-capture owner / keyboard-focus owner / semantic-AT owner / action-data owner / layer-stack position / restoration target`
 
-Consistency check:
+Five controlled layers:
+- custom ownership **15/15**;
+- native popover/dialog **13/13**;
+- pointer capture/dismissal/lost invoker **13/13**;
+- forced-colors/touch implicit capture/Chromium AX **28/28**;
+- custom `aria-modal=true` versus actual modality **14/14**.
 
-`declared semantic modality ↔ actual operational modality`
+Standing rules:
+- screenshot appearance cannot prove operational ownership;
+- `aria-modal=true` describes but does not implement modality;
+- pointer capture can survive modal entry;
+- forced-colors can remove authored elevation while behavior remains foreground-owned;
+- AX-tree evidence is not screen-reader PASS.
 
-Evidence layers:
-1. **Custom visual/interaction ownership — 15/15**.
-2. **Native HTML popover/dialog — 13/13**.
-3. **Pointer capture/dismissal/lost invoker — 13/13**.
-4. **Forced-colors/touch implicit capture/Chromium AX tree — 28/28**.
-5. **Custom `aria-modal=true` versus actual modality — 14/14**.
+## I004 — concurrency / offline / queue
 
-Key rules:
-- screenshot appearance cannot prove hit/focus/data ownership;
-- pre-existing pointer capture can survive modal entry;
-- forced-colors can remove authored elevation while interaction ownership remains;
-- AX-tree evidence is not screen-reader PASS;
-- `aria-modal=true` describes modality but does not implement inertness, pointer blocking, focus containment or restoration.
+Six evidence layers:
+- conflict state machine **17/17**;
+- real HTTP ETag/If-Match **16/16**;
+- durable offline/restart/reconnect **18/18**;
+- applied-but-response-lost operation identity **15/15**;
+- ordering/compaction/dependencies/temp identity **20/20**;
+- authorization/finalization/account switch **18/18**.
 
-Evidence level: **PRACTICE + CRITIQUE**.
+Standing rules:
+- historical base, current authoritative state and local intent are separate;
+- retry is not conflict resolution;
+- queue is a dependency-aware preserved-intention structure, not just FIFO requests;
+- compaction safety depends on operation algebra, not path equality;
+- actor/account, authorization and workflow mutability are part of queued-operation validity.
 
-Remaining: real Windows High Contrast/AT; Firefox/Safari; physical iOS/Android; stylus/multi-touch/OS gestures; production portals/focus scopes/native frameworks; human layer comprehension.
+## I005 — duplicate-sensitive intent / atomicity
 
----
+Stable-intent HTTP replication/extension: **18/18**.
 
-# I004 — concurrency, offline sync, queue and policy-state
+Atomicity extension: **26/26**.
 
-I004 spans **six controlled evidence layers**:
+Key finding:
 
-1. **Conflict state machine — 17/17**: lost update, safe disjoint merge, same-field preservation, delete-vs-edit identity and recovery.
-2. **Real HTTP ETag / If-Match — 16/16**: stale-write prevention, 412 classification, current-validator rebase and create-new-identity recovery.
-3. **Durable offline outbox / restart / reconnect — 18/18**: network-pending persistence, historical-base preservation, durable unresolved conflict and delete-vs-edit recovery.
-4. **Applied-but-response-lost / operation identity — 15/15**: outcome unknown, own-success 412 ambiguity, duplicate POST and stable operation-ID replay.
-5. **Multiple queued operations — 20/20**: order semantics, safe/unsafe compaction, dependency-aware conflict propagation and temp→server identity mapping.
-6. **Offline authorization / finalization / account switch — 18/18**: permission block, finalized-record amendment recovery, stale revalidation after permission restoration, actor-bound queue safety.
+> Idempotency protection is only as strong as the atomicity or reconciliation boundary connecting the protected business effect and the dedupe result.
 
-Critical rules:
-- `base state` is historical fact; reconnect `current state` must not rewrite it.
-- compaction safety is defined by operation algebra/dependencies, not JSON path equality.
-- an outbox is a dependency-aware preserved-intention structure, not merely FIFO retries.
-- authorization, version validity, actor ownership and workflow mutability are distinct gates.
-- a valid historical edit can become an invalid future mutation without becoming meaningless work.
+Evidence distinguishes:
+- same-DB split commit duplicate failure;
+- same-DB effect+ledger transaction;
+- external-provider/local-ledger dual-write failure;
+- provider-owned stable operation identity;
+- transactional outbox producer boundary;
+- duplicate delivery and consumer inbox/dedupe boundary.
 
-Queued-operation validity can depend on:
+Do not claim generic `exactly once` without naming effect/store/consumer/failure boundary.
 
-`intent / local-server identity / historical base / current state / operation identity / actor-account / authorization / workflow mutability / sequence / dependencies / external side-effect state`
-
-Evidence level: **PRACTICE + CRITIQUE**.
-
----
-
-# I005 — duplicate-sensitive intent and atomicity boundary
-
-## Stable intent identity / concurrent duplicate — **18/18**
-
-I005 independently replicated I004's ambiguous-outcome finding and extended it with concurrent same-key processing.
-
-Core model:
-
-`one user intent id → one payload/fingerprint contract → many transport attempts → at most one duplicate-sensitive side effect`
-
-Key rule:
-
-> Retry attempts may multiply; user intent identity must not.
-
-## Business effect ↔ dedupe atomicity — **26/26**
-
-New extension separates the commit boundaries beneath an idempotency ledger.
-
-### Same database, split commits
-`effect COMMIT → crash → dedupe absent → retry` produced **two effects**.
-
-### Same database, one transaction
-`BEGIN → effect + dedupe → COMMIT`:
-- pre-COMMIT crash rolled both back;
-- successful retry committed one effect+ledger;
-- post-COMMIT response-loss retry replayed the original result; effect count remained one.
-
-### External provider + local ledger
-Provider effect committed, local ledger write was lost, and retry duplicated the provider effect. A local transaction cannot make a separately committed external side effect atomic.
-
-### Provider-owned idempotency
-Stable operation identity at the provider returned the original result on retry; provider effect count remained one.
-
-### Transactional outbox / consumer inbox
-Producer transaction atomically persisted business state + outbox row. Duplicate relay still duplicated a naive consumer. Consumer-side inbox + effect in one transaction reduced repeated delivery to one effect.
-
-Critical rule:
-
-> **Idempotency protection is only as strong as the atomicity/reconciliation boundary connecting the protected business effect and the dedupe result.**
-
-Do not use `exactly once` without naming which effect/store/consumer/failure boundary is meant.
-
-Evidence level: **PRACTICE + CRITIQUE / deliberate replication + SQLite crash-window + dual-write/outbox/inbox transfer**.
-
-Remaining: production DBs/providers/gateways/distributed systems, retention/security, real browser/mobile stack, AT and app-stage human validation.
-
----
-
-# I006 — sequence collaboration boundary
-
-I006 asks when I004-style record/field merge is structurally too coarse for collaborative text/list/document data.
+## I006 — sequence collaboration boundary
 
 Controlled matrix: **18/18**.
 
-Established:
-- whole-field LWW converged by discarding one concurrent insertion;
-- raw base-index operations kept both edits but diverged across replicas (`AYXB` vs `AXYB`);
-- a deliberately minimal OT-like transform control preserved both inserts and converged to `AXYB`;
-- a deliberately minimal stable-anchor/operation-ID CRDT-like control converged independent of delivery order;
-- retaining a deleted anchor as a tombstone-like reference allowed a concurrent insertion to remain positionable in the bounded control;
-- deterministic concurrent list-move resolution converged but discarded one participant's move intent;
-- whole-field conflict detection can also over-escalate disjoint text edits that a sequence-aware model could combine.
+Key finding:
 
-Central distinction:
+> Convergence, intent preservation and domain-semantic correctness are different gates.
 
-> **Convergence, intent preservation, and domain-semantic correctness are three different gates.**
+Whole-field LWW and raw index replay can be structurally inadequate for concurrently authored sequences. OT/CRDT/serialization/locking/domain-specific operations should be considered only when product requirements justify a sequence-aware model.
 
-Decision boundary:
-- versioned record/field merge remains suitable for many scalar/map business records;
-- investigate OT/CRDT/serialization/locking/domain operations when the same sequence is concurrently authored, offline multi-writer editing matters, positions shift under concurrency, and independent edits should normally survive automatically.
-
-The OT-like and CRDT-like controls are didactic failure-isolation models, not production algorithm proofs.
-
-Evidence level: **PRACTICE + CRITIQUE / sequence concurrency boundary study**.
-
-Remaining: production OT/CRDT library correctness, rich text, Unicode/IME, selections, collaborative undo, schema evolution, metadata GC, performance/network/security, real app/browser/native integration and human collaboration quality.
+The I006 OT-like/CRDT-like controls are didactic boundary evidence, not production algorithm proofs.
 
 ---
 
-## Other established blocks
+# Individual module state after Stage 1 PASS
 
-- **L001**: border-ownership cue isolation + optical raster proof. Human observation deferred.
-- **L002**: 216-condition density/reflow proof; fake compactness rejected.
-- **L003**: mixed-script/fallback wrap-threshold transfer.
-- **L004**: tabular-number alignment plus intrinsic-width consequence.
-- **L005**: fixed-geometry Color density/salience; independent C007 confirmation.
-- **I001** navigation/state: 14/14.
-- **I002** async/retry/cancel: 19/19 plus ambiguous-outcome transfer.
-- **I003** forced-colors semantic resilience: 14/14.
+Stage 1 PASS does not erase later validation gaps.
 
-None is production PASS.
-
----
-
-## Foundation module status
-
-| Module | Status | Remaining gate |
+| Area | Current evidence state | Later-stage/open work |
 | --- | --- | --- |
-| Composition / visual grammar | CRITIQUE | human deferred; broader multilingual/device transfer |
-| Grid / alignment systems | CRITIQUE | broader real rendering/text-growth transfer |
-| Perceptual grouping | CRITIQUE | broader context; human deferred |
-| Figure-ground / border ownership | PRACTICE / CRITIQUE | cue isolation + realistic transfer; human/platform pending |
-| Layer ownership | PRACTICE / CRITIQUE | **15+13+13+28+14**; real OS/AT/cross-browser/mobile/production/human pending |
-| Visual mass / optical centering | PRACTICE / CRITIQUE | raster evidence; human/physical-device/RTL/context transfer pending |
-| Whitespace / density / responsive | PRACTICE / CRITIQUE | human/project + real zoom/cross-browser/device pending |
-| Type-dependent spatial robustness | PRACTICE / CRITIQUE | exact delivered font/package/axis/normalization/shaping/cross-platform pending |
-| Dense numeric comparison | PRACTICE / CRITIQUE | locale/accounting/dynamic/human pending |
-| Color-driven density/salience | PRACTICE / CRITIQUE | device/environment/human pending |
-| Interaction agency/state/navigation | CRITIQUE | broader real platform/AT/human pending |
-| Async/retry/cancel | PRACTICE / CRITIQUE | production API/proxy/background-sync/AT pending |
-| Color-channel-independent semantics | PRACTICE / CRITIQUE | real OS/AT/production pending |
-| Concurrent edits/offline conflict | PRACTICE / CRITIQUE | **I004: 17+16+18+15+20+18**; production DB/storage/multi-device pending |
-| Ambiguous outcome / duplicate-sensitive intent | PRACTICE / CRITIQUE | **I005: 18+26**; production/distributed/provider/gateway/browser/mobile pending |
-| Sequence collaboration / OT-CRDT boundary | PRACTICE / CRITIQUE | **I006: 18** bounded assertions; production algorithms/editor/platform/human pending |
+| Figure-ground / grouping / balance / optical centering | PRACTICE / CRITIQUE beyond Foundation | app-stage human judgments; physical/platform transfer |
+| Grid / whitespace / density / responsive | PRACTICE / CRITIQUE beyond Foundation | Stage 2 multi-solution/product systems; real zoom/cross-browser/device |
+| Type-dependent spatial robustness | PRACTICE / CRITIQUE | exact production fonts/packages/shaping/platform transfer |
+| Color-driven spatial salience | PRACTICE / CRITIQUE | physical environment/device/human transfer |
+| Layer ownership | PRACTICE / CRITIQUE | real OS/AT, Firefox/Safari, physical mobile, production frameworks |
+| Navigation/state | CRITIQUE beyond Foundation | complete product/router/multi-form-factor transfer |
+| Async/retry/cancel | PRACTICE / CRITIQUE | production API/proxy/background-sync/AT |
+| Concurrent/offline sync | PRACTICE / CRITIQUE | production DB/storage/multi-device/security/operations |
+| Duplicate-sensitive intent | PRACTICE / CRITIQUE | production provider/gateway/distributed guarantees |
+| Sequence collaboration | PRACTICE / CRITIQUE | production OT/CRDT/editor integration only when product requires it |
+
+---
+
+# Stage 2 entry policy
+
+The Master Curriculum Stage 2 gate requires **multiple solutions to the same problem and a defended selected direction using explicit criteria, including correct adjacent-specialist evidence reuse**.
+
+Stage 2 topics relevant to this specialist include:
+- task analysis and primary-question framing;
+- information hierarchy and IA;
+- dense-data vs low-density composition;
+- forms, tables, search, settings, empty/error/loading states;
+- responsive/adaptive composition;
+- iconography and non-text signals;
+- component systems without component-driven sameness;
+- interaction states, async behavior and recovery paths;
+- comparative studies / hypothesis / experiment design / KEEP-REWORK-REJECT critique / dependency handoffs.
+
+Existing L002–L006/I001–I006 provide substantial **early Stage 2 evidence**, but Stage 2 is not passed. The next step is an explicit entry audit rather than more unstructured expansion.
 
 ---
 
 ## Active next queue
 
-Human work is deferred to app-development validation and does not block non-human research.
-
-1. **Stage 1 Layout/Interaction closure audit** — re-read the actual Master Curriculum and distinguish true Foundation blockers from later production/human/platform validation, following the useful Color C014 precedent without copying its conclusions.
-2. **I004 production local-store / multi-device partitioning** when suitable real framework/storage infrastructure becomes available.
-3. **I005 production provider/gateway retry transfer** when a real project/API stack exists.
-4. **I006 production sequence-collaboration transfer** only if a live product actually requires collaborative text/list editing; do not adopt CRDT/OT for study volume.
-5. **L006 production/platform transfer** when real OS/AT/cross-browser/mobile/framework environments become available.
-6. **Consume W001/W002+ evidence** and independently reproduce high-risk Web findings where useful.
-7. **L004 only if project-relevant** — delivered font, locale/accounting, dynamic update, actual zoom/DPR.
-8. Open `L007` or `I007` only for a genuinely higher-value new question after the closure audit.
+1. **Stage 2 entry audit** against the exact Master Curriculum; map existing evidence and identify only genuine intermediate-practice gaps.
+2. Use the audit to select the next project-useful exercise, likely one requiring multiple materially different complete solutions rather than another isolated mechanism proof.
+3. Consume W001/W002+ and current Type/Color evidence where the Stage 2 task depends on them.
+4. Production/platform studies remain active when the required environment becomes available, but are no longer mislabeled as Foundation blockers.
+5. Open `L008` or `I007` according to the highest-value Stage 2 gap revealed by the audit.
 
 ## APP-DEVELOPMENT VALIDATION queue
 
-Execute only with live app/prototype and suitable participants:
+Execute with live app/prototype and suitable participants:
 - L001 border ownership and optical-centering judgments;
 - L002/L005/C007 task performance/error vs preference/workload;
 - L006 layer comprehension/dismissal expectations;
@@ -265,29 +246,24 @@ Execute only with live app/prototype and suitable participants:
 ## HANDOFFS TO OTHER SPECIALISTS
 
 ### Type
-- T015 strengthens exact runtime-state testing before Layout geometry conclusions.
-- I006 adds a collaboration boundary: text operation identity must not be confused with Unicode normalization, grapheme segmentation, shaping or raster position.
+- Layout Stage 1 typography-as-composition requirement is satisfied by correct reuse of Type Study 009/Exercise 006 plus Layout browser transfer; no Type production PASS is inferred.
+- I006 operation identity must not be confused with Unicode/grapheme/shaping identity.
 
 ### Color
-- Color Stage 1 PASS is acknowledged without implying production/device/human PASS.
-- Sync/collaboration states remain semantic Interaction roles; Color may reinforce but not define them.
+- Color C014 directly exposed the same stage-boundary problem and informed L007's audit method.
+- L005/C007 and I003/C011 remain strong valid transfer examples.
 
 ### Web Design
-- W001 is now available as the first Web baseline.
-- Highest-value future transfer includes L006 overlay matrices, I004/I005 offline/idempotency contracts, and I006 only where a real collaborative editor exists.
-- W001's relationship-first model supports the queue conclusion: correctness depends on relationships among operations, resources, actors, identities and states—not only request order or pixels.
-- Web should verify actual `fetch`/retry/storage behavior, dependency-aware queues, account partitioning, provider idempotency boundaries, and—when applicable—browser editor/IME/selection behavior with the chosen collaboration library.
+- W001 is reused as independent support for relationship-preserving Web composition.
+- Production Web integration remains later evidence, not a Foundation prerequisite.
+- Highest-value future transfers remain L006 overlay ownership and I004/I005 sync/retry contracts; I006 only if a real collaborative editor exists.
 
 ---
 
 ## Latest checkpoint
 
-- `L001`–`L006`: studied spatial modules remain PRACTICE / CRITIQUE where applicable.
-- `I001`: CRITIQUE.
-- `I002` / `I003` / `I004` / `I005` / `I006`: PRACTICE / CRITIQUE.
-- I004 evidence: **17/17 + 16/16 + 18/18 + 15/15 + 20/20 + 18/18**.
-- I005 evidence: **18/18 + 26/26**.
-- I006 boundary evidence: **18/18**.
-- Next IDs: Layout `L007`; Interaction `I007`.
-- Human validation remains explicitly deferred to app-development stage.
-- No Layout/Interaction Foundation PASS promotion claimed.
+- **Stage 1 — Foundations: PASS** by L007 audit under the current Master Curriculum.
+- No human/production/platform PASS is implied.
+- `L001`–`L006` and `I001`–`I006` retain their own higher-fidelity OPEN items.
+- Next IDs: Layout `L008`; Interaction `I007`.
+- Next action: **Stage 2 entry audit**.
