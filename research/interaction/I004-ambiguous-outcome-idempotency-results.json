@@ -1,0 +1,50 @@
+{
+  "environment": {
+    "transport": "real HTTP/1.1 localhost",
+    "ambiguity": "server applies then closes connection before response"
+  },
+  "scenarios": {
+    "strict_put": {
+      "first": {"kind":"outcome_unknown","error":"RemoteDisconnected: Remote end closed connection without response"},
+      "after": {"kind":"response","status":200,"body":{"id":"r1","title":"Flight 101","notes":"Weather diversion","version":2},"etag":"\"r1-v2\"","outcome":null},
+      "retry": {"kind":"response","status":412,"body":{"error":"precondition_failed"},"etag":"\"r1-v2\"","outcome":null}
+    },
+    "smart_put": {
+      "first": {"kind":"outcome_unknown","error":"RemoteDisconnected: Remote end closed connection without response"},
+      "retry": {"kind":"response","status":200,"body":{"id":"r1","title":"Flight 101","notes":"Weather diversion","version":2},"etag":"\"r1-v2\"","outcome":"already-applied"},
+      "after": {"kind":"response","status":200,"body":{"id":"r1","title":"Flight 101","notes":"Weather diversion","version":2},"etag":"\"r1-v2\"","outcome":null}
+    },
+    "naive_post": {
+      "first": {"kind":"outcome_unknown","error":"RemoteDisconnected: Remote end closed connection without response"},
+      "mid_count": 1,
+      "retry_transfer_id": "t2",
+      "final_count": 2
+    },
+    "deduped_post": {
+      "first": {"kind":"outcome_unknown","error":"RemoteDisconnected: Remote end closed connection without response"},
+      "mid_count": 1,
+      "retry_transfer_id": "t1",
+      "retry_outcome": "replayed",
+      "final_count": 1,
+      "mismatched_reuse_status": 409
+    }
+  },
+  "assertions": [
+    {"name":"S1 lost response becomes outcome unknown, not known failure","pass":true},
+    {"name":"S1 server actually applied first PUT once","pass":true},
+    {"name":"S1 naive stale retry returns 412","pass":true},
+    {"name":"S1 strict 412 alone cannot distinguish own prior success from external conflict","pass":true},
+    {"name":"S2 smart first response is outcome unknown","pass":true},
+    {"name":"S2 retry confirms already-applied outcome","pass":true},
+    {"name":"S2 confirmation does not create duplicate PUT effect/version","pass":true},
+    {"name":"S3 POST response loss is outcome unknown","pass":true},
+    {"name":"S3 first POST side effect actually happened","pass":true},
+    {"name":"S3 blind POST retry duplicates side effect","pass":true},
+    {"name":"S4 keyed POST first response remains outcome unknown","pass":true},
+    {"name":"S4 keyed POST first effect occurred exactly once","pass":true},
+    {"name":"S4 same operation identity replays original result","pass":true},
+    {"name":"S4 keyed retry does not duplicate side effect","pass":true},
+    {"name":"S4 operation identity reuse with different payload is rejected","pass":true}
+  ],
+  "summary": {"passed":15,"total":15,"all_pass":true}
+}
