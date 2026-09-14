@@ -102,7 +102,7 @@ with tempfile.TemporaryDirectory(prefix='c007-') as td, sync_playwright() as p:
         page.wait_for_timeout(60)
         geom = page.evaluate('() => window.geometry()')
         if base_geom is None:
-            base_geom = geom
+            base_geom = json.loads(json.dumps(geom))
         same = geom == base_geom
 
         shot = td / f'{variant}.png'
@@ -132,6 +132,9 @@ with tempfile.TemporaryDirectory(prefix='c007-') as td, sync_playwright() as p:
 
     browser.close()
 
+baseline_persist = json.loads(json.dumps(base_geom))
+baseline_persist.pop('cells', None)
+
 payload = {
     'environment': {
         'chromium_executable': '/usr/bin/chromium',
@@ -144,7 +147,7 @@ payload = {
         'geometry': 'DOM rectangles must be identical across variants; only CSS color custom properties change.',
         'image_metrics': 'Screenshots are downsampled 4x. Oklab statistics and a study-specific local feature-variability proxy are computed. The proxy is not Rosenholtz Feature Congestion and is not a human-clutter score.',
     },
-    'baseline_geometry': base_geom,
+    'baseline_geometry': baseline_persist,
     'results': results,
 }
 RESULTS.write_text(json.dumps(payload, indent=2), encoding='utf-8')
