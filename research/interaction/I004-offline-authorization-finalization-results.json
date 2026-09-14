@@ -1,0 +1,50 @@
+{
+  "environment": "Python HTTP/1.1 origin + actor-bound SQLite outbox",
+  "passed": 18,
+  "total": 18,
+  "all_pass": true,
+  "assertions": [
+    "revoked_permission_returns_403",
+    "403_reason_explicit",
+    "permission_failure_does_not_mutate",
+    "blocked_intent_preserved",
+    "finalized_returns_409_before_stale_412",
+    "finalized_reason_explicit",
+    "finalized_original_unchanged",
+    "compensating_amendment_created",
+    "original_remains_finalized_after_amendment",
+    "initial_permission_block",
+    "remote_change_after_block_commits",
+    "restored_permission_still_requires_stale_detection",
+    "revalidated_disjoint_rebase_succeeds",
+    "remote_and_local_preserved_after_reauth",
+    "naive_account_switch_can_apply_wrong_actor_intent",
+    "actor_mismatch_blocks_before_send",
+    "blocked_account_mismatch_leaves_server_unchanged",
+    "queued_actor_identity_preserved"
+  ],
+  "scenarios": {
+    "permission_revoked": {
+      "http_status": 403,
+      "queue_status": "blocked_permission",
+      "server_mutated": false
+    },
+    "finalized": {
+      "http_status": 409,
+      "queue_status": "recovered_as_amendment",
+      "original_mutated": false,
+      "amendment_created": true
+    },
+    "permission_restored": {
+      "historical_retry_status": 412,
+      "rebase_status": 200,
+      "remote_title_preserved": true,
+      "local_note_preserved": true
+    },
+    "account_switch": {
+      "naive_current_account_replay_succeeded": true,
+      "revised_queue_status": "blocked_account_mismatch",
+      "revised_server_mutated": false
+    }
+  }
+}
