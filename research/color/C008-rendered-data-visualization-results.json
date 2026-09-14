@@ -1,0 +1,129 @@
+{
+  "environment": {
+    "chromium": "/usr/bin/chromium",
+    "version": "144.0.7559.96",
+    "viewport": [1280, 820],
+    "dpr": 1
+  },
+  "conditions": {
+    "light-failure": {
+      "geometry_equal_to_baseline": true,
+      "sequential": {
+        "oklab_L": [0.4520137183853429,0.6151653585843693,0.9053992300557676,0.8750742367323052,0.8664396115356694,0.8906570709703181,0.9679827203267873,0.7318948427227374,0.6279553606145516],
+        "delta_L": [0.1631516401990264,0.29023387147139834,-0.03032499332346239,-0.008634625196635826,0.024217459434648703,0.07732564935646924,-0.23608787760404992,-0.10393948210818582],
+        "direction_reversals": 3,
+        "monotonic": false
+      },
+      "diverging": {
+        "visual_classes": ["negative-side","negative-side","negative-side","positive-side","positive-side","positive-side","missing"],
+        "expected_classes": ["negative-side","center","positive-side","positive-side","positive-side","positive-side","missing"],
+        "semantic_mismatch_indices": [1,2],
+        "semantic_mismatch_count": 2
+      },
+      "categorical": {
+        "selected_series_C_identity_color": "#2C7BB6",
+        "selected_series_C_rendered_stroke": "#E69F00",
+        "identity_preserved_under_selection": false,
+        "direct_labels_visible": false,
+        "selection_halo_present": false,
+        "marker_element_count": 0
+      },
+      "sequential_palette": ["#0000FF","#0080FF","#00FFFF","#00FF80","#00FF00","#80FF00","#FFFF00","#FF8000","#FF0000"],
+      "zero_line_present": false
+    },
+    "light-revised": {
+      "geometry_equal_to_baseline": true,
+      "sequential": {
+        "oklab_L": [0.9903755785330246,0.9541904838502149,0.8959806868762432,0.7925684738266849,0.717141606376609,0.6179247525089964,0.4837254159216444,0.37948955256403416,0.2604406819017491],
+        "delta_L": [-0.036185094682809726,-0.05820979697397166,-0.10341221304955828,-0.07542686745007599,-0.09921685386761259,-0.13419933658735195,-0.10423586335761026,-0.11904887066228503],
+        "direction_reversals": 0,
+        "monotonic": true
+      },
+      "diverging": {
+        "visual_classes": ["negative-side","center","positive-side","positive-side","positive-side","positive-side","missing"],
+        "expected_classes": ["negative-side","center","positive-side","positive-side","positive-side","positive-side","missing"],
+        "semantic_mismatch_indices": [],
+        "semantic_mismatch_count": 0
+      },
+      "categorical": {
+        "selected_series_C_identity_color": "#009E73",
+        "selected_series_C_rendered_stroke": "#009E73",
+        "identity_preserved_under_selection": true,
+        "direct_labels_visible": true,
+        "selection_halo_present": true,
+        "marker_element_count": 30
+      },
+      "sequential_palette": ["#ffffd9","#edf8b1","#c7e9b4","#7fcdbb","#41b6c4","#1d91c0","#225ea8","#253494","#081d58"],
+      "zero_line_present": true
+    },
+    "dark-failure": {
+      "geometry_equal_to_baseline": true,
+      "sequential": {
+        "oklab_L": [0.4520137183853429,0.6151653585843693,0.9053992300557676,0.8750742367323052,0.8664396115356694,0.8906570709703181,0.9679827203267873,0.7318948427227374,0.6279553606145516],
+        "delta_L": [0.1631516401990264,0.29023387147139834,-0.03032499332346239,-0.008634625196635826,0.024217459434648703,0.07732564935646924,-0.23608787760404992,-0.10393948210818582],
+        "direction_reversals": 3,
+        "monotonic": false
+      },
+      "diverging": {
+        "visual_classes": ["negative-side","negative-side","negative-side","positive-side","positive-side","positive-side","missing"],
+        "expected_classes": ["negative-side","center","positive-side","positive-side","positive-side","positive-side","missing"],
+        "semantic_mismatch_indices": [1,2],
+        "semantic_mismatch_count": 2
+      },
+      "categorical": {
+        "selected_series_C_identity_color": "#2C7BB6",
+        "selected_series_C_rendered_stroke": "#E69F00",
+        "identity_preserved_under_selection": false,
+        "direct_labels_visible": false,
+        "selection_halo_present": false,
+        "marker_element_count": 0
+      },
+      "sequential_palette": ["#0000FF","#0080FF","#00FFFF","#00FF80","#00FF00","#80FF00","#FFFF00","#FF8000","#FF0000"],
+      "zero_line_present": false
+    },
+    "dark-revised": {
+      "geometry_equal_to_baseline": true,
+      "sequential": {
+        "oklab_L": [0.27890632850816055,0.3769912669871131,0.4588759899027609,0.5366503496539485,0.6116826758196314,0.6980790949689031,0.7742143784456537,0.8482783622587973,0.9299641483328897],
+        "delta_L": [0.09808493847895255,0.0818847229156478,0.07777435975118763,0.0750323261656829,0.08639641914927165,0.07613528347675058,0.07406398381314361,0.08168578607409238],
+        "direction_reversals": 0,
+        "monotonic": true
+      },
+      "diverging": {
+        "visual_classes": ["negative-side","center","positive-side","positive-side","positive-side","positive-side","missing"],
+        "expected_classes": ["negative-side","center","positive-side","positive-side","positive-side","positive-side","missing"],
+        "semantic_mismatch_indices": [],
+        "semantic_mismatch_count": 0
+      },
+      "categorical": {
+        "selected_series_C_identity_color": "#009E73",
+        "selected_series_C_rendered_stroke": "#009E73",
+        "identity_preserved_under_selection": true,
+        "direct_labels_visible": true,
+        "selection_halo_present": true,
+        "marker_element_count": 30
+      },
+      "sequential_palette": ["#2B2A0F","#3B4720","#3E6240","#3A7C67","#3B948E","#4EADC0","#72C2E1","#A0D6F2","#D2ECFF"],
+      "zero_line_present": true
+    }
+  },
+  "categorical_cvd": {
+    "failure": {
+      "normal": {"min_oklab_distance": 0.1696137671627019,"pair_indices": [2,3]},
+      "protanopia": {"min_oklab_distance": 0.04507033998759248,"pair_indices": [1,4]},
+      "deuteranopia": {"min_oklab_distance": 0.03301871011955418,"pair_indices": [2,3]},
+      "tritanopia": {"min_oklab_distance": 0.04056438224204206,"pair_indices": [1,2]}
+    },
+    "revised": {
+      "normal": {"min_oklab_distance": 0.15582058275020352,"pair_indices": [1,3]},
+      "protanopia": {"min_oklab_distance": 0.09554096488496698,"pair_indices": [0,4]},
+      "deuteranopia": {"min_oklab_distance": 0.07609385337089068,"pair_indices": [2,4]},
+      "tritanopia": {"min_oklab_distance": 0.08541871104226909,"pair_indices": [1,4]}
+    }
+  },
+  "notes": {
+    "cvd": "Machado et al. 2009 severity-1 transformation matrices are used as a diagnostic simulation. Simulation is not human CVD validation and Oklab distance is not a categorical-identification threshold.",
+    "sequential": "Monotonic Oklab L is a diagnostic for ordered lightness direction, not proof of perceptual uniformity or task accuracy.",
+    "geometry": "All conditions use identical panel/chart geometry; only theme/mode rendering changes."
+  }
+}
