@@ -1,0 +1,151 @@
+{
+  "environment": {
+    "chromium_executable": "/usr/bin/chromium",
+    "chromium_version": "144.0.7559.96",
+    "playwright_python": true,
+    "viewport": [
+      1024,
+      900
+    ],
+    "device_scale_factor": 1
+  },
+  "method_notes": {
+    "geometry": "DOM rectangles must be identical across variants; only CSS color custom properties change.",
+    "image_metrics": "Screenshots are downsampled 4x. Oklab statistics and a study-specific local feature-variability proxy are computed. The proxy is not Rosenholtz Feature Congestion and is not a human-clutter score."
+  },
+  "baseline_geometry": {
+    "body": [
+      1024,
+      1013
+    ],
+    "app": [
+      0,
+      0,
+      1024,
+      1012.781
+    ],
+    "summary": [
+      [24, 88, 318.656, 108.781],
+      [352.656, 88, 318.672, 108.781],
+      [681.328, 88, 318.656, 108.781]
+    ],
+    "rows": [
+      [25, 217.781, 974, 39],
+      [25, 256.781, 974, 61],
+      [25, 317.781, 974, 61],
+      [25, 378.781, 974, 61],
+      [25, 439.781, 974, 61],
+      [25, 500.781, 974, 61],
+      [25, 561.781, 974, 61],
+      [25, 622.781, 974, 61],
+      [25, 683.781, 974, 61],
+      [25, 744.781, 974, 61],
+      [25, 805.781, 974, 61],
+      [25, 866.781, 974, 61],
+      [25, 927.781, 974, 60]
+    ],
+    "buttons": [
+      [24, 24, 59.969, 44],
+      [93.969, 24, 52.859, 44],
+      [156.828, 24, 104.875, 44],
+      [925.75, 264.781, 63.25, 44],
+      [925.75, 325.781, 63.25, 44],
+      [925.75, 386.781, 63.25, 44],
+      [925.75, 447.781, 63.25, 44],
+      [925.75, 508.781, 63.25, 44],
+      [925.75, 569.781, 63.25, 44],
+      [925.75, 630.781, 63.25, 44],
+      [925.75, 691.781, 63.25, 44],
+      [925.75, 752.781, 63.25, 44],
+      [925.75, 813.781, 63.25, 44],
+      [925.75, 874.781, 63.25, 44],
+      [925.75, 935.781, 63.25, 44]
+    ]
+  },
+  "results": {
+    "neutral": {
+      "geometry_identical_to_neutral": true,
+      "metrics": {
+        "mean_oklab_L": 0.9716946463629242,
+        "std_oklab_L": 0.06892748116141383,
+        "mean_oklab_chroma": 0.0016628011831871178,
+        "std_oklab_chroma": 0.0027841585911501415,
+        "p95_oklab_chroma": 0.0059475921377104175,
+        "high_chroma_pixel_share_C_gt_0_04": 0.0,
+        "high_chroma_pixel_share_C_gt_0_08": 0.0,
+        "adjacent_L_absdiff_mean": 0.01762862205797653,
+        "adjacent_L_absdiff_p95": 0.11873857694304912,
+        "adjacent_chroma_absdiff_mean": 0.0006582958697958417,
+        "local_feature_variability_mean": 0.030015900927929946,
+        "local_feature_variability_p95": 0.12183252562711054,
+        "image_size": [1024, 1013],
+        "analysis_size": [256, 253],
+        "primary_vs_normal_button_region_oklab_distance": 0.4217388477213609,
+        "selected_vs_adjacent_row_region_oklab_distance": 0.03459357415545354
+      }
+    },
+    "overloaded": {
+      "geometry_identical_to_neutral": true,
+      "metrics": {
+        "mean_oklab_L": 0.9541950389623525,
+        "std_oklab_L": 0.06609667779310525,
+        "mean_oklab_chroma": 0.017627739880866095,
+        "std_oklab_chroma": 0.021291524765523356,
+        "p95_oklab_chroma": 0.049230467809165734,
+        "high_chroma_pixel_share_C_gt_0_04": 0.13312129446640317,
+        "high_chroma_pixel_share_C_gt_0_08": 0.01204298418972332,
+        "adjacent_L_absdiff_mean": 0.017941000772864833,
+        "adjacent_L_absdiff_p95": 0.11678530219522887,
+        "adjacent_chroma_absdiff_mean": 0.003573116150518592,
+        "local_feature_variability_mean": 0.03248785482334805,
+        "local_feature_variability_p95": 0.11539297724830516,
+        "image_size": [1024, 1013],
+        "analysis_size": [256, 253],
+        "primary_vs_normal_button_region_oklab_distance": 0.4189368532528404,
+        "selected_vs_adjacent_row_region_oklab_distance": 0.05014225789054132
+      }
+    },
+    "high-contrast-mono": {
+      "geometry_identical_to_neutral": true,
+      "metrics": {
+        "mean_oklab_L": 0.9392793715752188,
+        "std_oklab_L": 0.0989929434746544,
+        "mean_oklab_chroma": 3.501069528544773e-08,
+        "std_oklab_chroma": 3.6898625706215286e-09,
+        "p95_oklab_chroma": 3.727399553519285e-08,
+        "high_chroma_pixel_share_C_gt_0_04": 0.0,
+        "high_chroma_pixel_share_C_gt_0_08": 0.0,
+        "adjacent_L_absdiff_mean": 0.027240855168317955,
+        "adjacent_L_absdiff_p95": 0.1796811650932265,
+        "adjacent_chroma_absdiff_mean": 1.0153755215105984e-09,
+        "local_feature_variability_mean": 0.04801894713196032,
+        "local_feature_variability_p95": 0.14498154943446764,
+        "image_size": [1024, 1013],
+        "analysis_size": [256, 253],
+        "primary_vs_normal_button_region_oklab_distance": 0.6885162874177462,
+        "selected_vs_adjacent_row_region_oklab_distance": 0.03456564791818531
+      }
+    },
+    "semantic-sparse": {
+      "geometry_identical_to_neutral": true,
+      "metrics": {
+        "mean_oklab_L": 0.9727530561960953,
+        "std_oklab_L": 0.06543683878600515,
+        "mean_oklab_chroma": 0.00403351242572913,
+        "std_oklab_chroma": 0.016633094938516765,
+        "p95_oklab_chroma": 0.018054604165969927,
+        "high_chroma_pixel_share_C_gt_0_04": 0.013556077075098814,
+        "high_chroma_pixel_share_C_gt_0_08": 0.007349308300395257,
+        "adjacent_L_absdiff_mean": 0.017080915066220285,
+        "adjacent_L_absdiff_p95": 0.11365154853422088,
+        "adjacent_chroma_absdiff_mean": 0.0016739482334318673,
+        "local_feature_variability_mean": 0.02936862906044544,
+        "local_feature_variability_p95": 0.1194092600119808,
+        "image_size": [1024, 1013],
+        "analysis_size": [256, 253],
+        "primary_vs_normal_button_region_oklab_distance": 0.4285459157507574,
+        "selected_vs_adjacent_row_region_oklab_distance": 0.03388327732238388
+      }
+    }
+  }
+}
