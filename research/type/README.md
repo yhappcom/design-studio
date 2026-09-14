@@ -4,90 +4,64 @@ This directory is the canonical research home for the **Typography / Type Design
 
 ## Primary scope
 
-Research belongs here when its primary question concerns:
-
-- type anatomy, construction, stroke logic, curves and optical correction;
-- metrics, spacing, kerning, rhythm and raster behavior;
-- numeral and punctuation systems;
-- family planning, variable fonts, OpenType, multiscript/fallback behavior;
-- typography as information architecture and semantic text-role systems;
-- type production, rendering, packaging, licensing and font engineering.
+Research belongs here when its primary question concerns type anatomy/construction, curves and optical correction; metrics/spacing/kerning/rhythm/raster behavior; numerals/punctuation; family planning, variable fonts, OpenType and multiscript/fallback behavior; typography as information architecture; and type production, rendering, packaging, licensing and font engineering.
 
 ## Relationship with other disciplines
 
 - **Layout, Spatial & Interaction** owns screen geometry, grouping, responsive recomposition, navigation, state, feedback and interaction behavior.
 - **Color** owns colorimetry, color perception, gamut, contrast/color systems and color management.
-- **Web Design** owns real website/web-app page systems, responsive composition, web-specific interaction, frontend-aware application, and browser/device validation.
+- **Web Design** owns real website/web-app page systems, responsive composition, web-specific interaction, frontend-aware application and browser/device validation.
 
-These boundaries define canonical ownership, not limits on learning. Type may investigate adjacent domains for realistic typography validation, replication, method comparison, contradiction review, transfer testing, prerequisite learning or project-specific work. Ordinary cross-domain verification remains in the Type writable area and links back to peer canonical evidence.
-
-For web typography, Type owns font/type intent, metrics, numeral/punctuation behavior, fallback criteria, rendering questions, packaged-font behavior and typographic failure conditions. Web Design applies and stress-tests those findings under actual loading, fallback, wrapping, zoom, localization, responsive layout, browser and device conditions.
+Canonical ownership is not a learning restriction. Type may reproduce, challenge or transfer-test adjacent-domain findings when that improves typography judgment. For web typography, Type owns font/type intent, metrics, OpenType behavior, fallback criteria, rendering questions, packaged-font semantics and typographic failure conditions; Web Design applies and stress-tests those findings in actual browsers/pages/devices.
 
 ## Mandatory cross-domain scan
 
-Before substantial Type work:
-
-1. read `AGENTS.md`, `progress/STATUS.md` and all four specialist status files;
-2. read this README and relevant Type studies;
-3. inspect materially related Color, Layout/Interaction and Web evidence;
-4. identify reusable, uncertain, disputed or test-worthy findings;
-5. choose reuse, replication, challenge, transfer or extension deliberately;
-6. record the result under `RELATED DOMAIN CHECK`;
-7. add `HANDOFFS TO OTHER SPECIALISTS` when useful;
-8. update `progress/TYPE_STATUS.md` before moving to materially different work.
+Before substantial Type work: read `AGENTS.md`, `progress/STATUS.md`, all four specialist statuses, this README and related Type work; inspect materially related peer research; choose reuse/replication/challenge/transfer/extension deliberately; record `RELATED DOMAIN CHECK`; add handoffs when useful; and update `progress/TYPE_STATUS.md` before moving to materially different work.
 
 ## Current studies
 
-Legacy studies:
+Legacy: `001-type-as-system.md`, `002-metrics-spacing-optical-rhythm.md`, `003-stroke-contrast-bezier-optics.md`, `005-numerals-punctuation-systems.md`, `009-typography-as-information-architecture.md`.
 
-- `001-type-as-system.md`
-- `002-metrics-spacing-optical-rhythm.md`
-- `003-stroke-contrast-bezier-optics.md`
-- `005-numerals-punctuation-systems.md`
-- `009-typography-as-information-architecture.md`
+T-series:
 
-New Type studies:
+- `T001-web-typography-fallback-metrics-reflow-transfer.md` — web loading/failure/script fallback and metrics/reflow transfer baseline.
+- `T002-raster-proof-redraw-cycle.md` — controlled failure→redraw→re-proof.
+- `T003-minimal-font-renderer-matrix.md` — compiled TrueType / FreeType renderer dependence.
+- `T004-native-numeral-punctuation-renderer-proof.md` — original numeral/punctuation system and `tnum`/raster practice.
+- `T005-latin-korean-mixed-script-fallback.md` — Latin/Korean fallback metrics, apparent size and reflow.
+- `T006-production-outline-audit.md` — production-style source topology, CFF/TTF conversion and raster transfer.
+- `T007-variable-interpolation-source-compatibility.md` — two-master compatibility and adversarial correspondence proof.
+- `T008-production-build-release-qa.md` — generated-VF binary/reproducible-build release QA.
+- `T009-webfont-subset-feature-contract.md` — WOFF2/subset `tnum` semantic contract and feature-drop failure.
+- `T010-variable-webfont-axis-contract.md` — WOFF2/subset variable-axis semantic contract; deliberate `avar` loss changes the same `wght=500` meaning.
+- `T011-layout-multiscript-release-contract.md` — static WOFF2/subset contract for GPOS `kern`, language-bound GSUB `locl`, Latin+Hangul cmap closure and exact `hhea`/`OS/2` metrics; proves cmap can survive while layout semantics fail, and metrics can drift while layout features survive.
 
-- `T001-web-typography-fallback-metrics-reflow-transfer.md` — loading/failure/script fallback, font metrics, zoom/reflow and data-stability transfer baseline.
-- `T002-raster-proof-redraw-cycle.md` + SVG — controlled failure→redraw→re-proof for join darkness and compact survival.
-- `T003-minimal-font-renderer-matrix.md` + Python/SVG — compiled TrueType and FreeType no-hint/autohint comparison; renderer/size/positioning dependence.
-- `T004-native-numeral-punctuation-renderer-proof.md` + Python/JSON/SVG — original `0–9`/punctuation system, proportional/tabular metrics, ambiguity alternatives, compact colon redraw and renderer-aware tabular proof.
-- `T005-latin-korean-mixed-script-fallback.md` + Python/JSON/SVG — Latin/Korean fallback, vertical metrics, apparent size and long-label transfer; rejects blind Latin x-height matching as a generic Hangul normalization method.
-- `T006-production-outline-audit.md` + Python/JSON/SVG — production-style `H O n o` source-topology audit, overlap/extrema/winding failure→revision, cubic CFF vs quadratic TrueType export and raster-transfer evidence.
-- `T007-variable-interpolation-source-compatibility.md` + Python/JSON/SVG — two-master `wght` interpolation compatibility, independent-conversion failure, shared conversion revision, and adversarial same-point-count/wrong-correspondence failure.
-- `T008-production-build-release-qa.md` + Python/JSON/SVG — generated variable-font release QA: real LSB/xMin/head-flags failure→revision, required-table/axis/name/gvar/checksum audit, deliberate `STAT` removal rejection, and bounded reproducible-build proof.
-- `T009-webfont-subset-feature-contract.md` + Python/JSON — TTF→WOFF2 and feature-aware subsetting release proof using `tnum`; includes a deliberate feature-dropping artifact that remains parseable but violates the numeric contract, plus a QA-checker failure→revision when subset glyph names change.
-- `T010-variable-webfont-axis-contract.md` + Python/JSON — variable TTF→WOFF2/subset axis-semantics proof using `fvar`/`gvar`/`STAT`/`avar`; a deliberate `avar` removal remains parseable and keeps the visible `wght` axis/named instances yet changes the H advance at user-space `wght=500` from `641u` to `650u`.
-
-Generated experimental font binaries remain local outputs; they are not product assets and are not canonical source authority.
+T-series reproducibility scripts and measured JSON live beside the studies. Generated experimental font binaries remain local outputs and are not product assets or canonical source authority.
 
 ## Current research direction
 
-T006 moved the studio from procedural outline geometry into explicit source/build QA. T007 extended that discipline into variable-family correspondence. T008 extended the chain into generated-binary release QA. T009 established a **distribution transformation contract** for required OpenType features/glyph closure/metrics. T010 now extends that contract to **variable-font axis semantics**: preserving `fvar`/`gvar`/`STAT` and parseability does not by itself prove that the same user-space axis coordinate still resolves to the intended intermediate instance when an authored `avar` mapping is lost.
+T006–T011 establish a progressively stricter production chain:
 
-Current production model:
-
-1. **source/design validity** — contours, master correspondence, spacing/metric intent;
-2. **build/interpolation compatibility** — generated topology, variation coverage, intermediate behavior, warnings;
-3. **binary/spec sanity** — required tables, variable-font metric/head requirements, axis/name/STAT consistency, checksum/integrity;
-4. **distribution transformation contract** — WOFF2/app packaging, subsetting, required feature/glyph/metric retention, variation-table retention and authored user-space→variation-space semantics;
-5. **target shaping/rendering/layout integration** — exact shipped artifact in browser/OS/app, fallback/script, CSS/app axis application, zoom/DPR and layout regression;
+1. **source/design validity** — contours, correspondence, spacing/metric intent;
+2. **build/interpolation compatibility** — topology, variation coverage, intermediate behavior;
+3. **binary/spec sanity** — required tables, axis/name/STAT/head/metric integrity;
+4. **distribution transformation contract** — exact packaged/subset artifact preserves required Unicode/script coverage, GSUB/GPOS behavior, language-system binding, non-cmap glyph closure, line metrics and variable-axis semantics;
+5. **target shaping/rendering/layout integration** — exact shipped artifact in browser/OS/app, including language selection, fallback, CSS/app axis application, line boxes, zoom/DPR and layout regression;
 6. **human/product validation**.
 
-No layer substitutes for the next one.
+T011 materially sharpens layer 4: `character closure ≠ layout-feature closure ≠ language binding ≠ metric identity`. A parseable font containing every requested character can still be wrong for the product.
 
-Highest-value next directions are now:
+Highest-value next directions:
 
-1. **T011 external broad QA + sanitizer integration** — execute FontBakery/Fontspector/OTS or equivalent when tooling is available, classify OpenType/universal/vendor-policy findings, and integrate them with studio-specific semantic assertions rather than treating one profile as universal truth;
-2. **broader feature/metric release QA** — GPOS/kerning, marks/anchors, `locl`, vertical metrics and multi-script closure through packaging/subsetting;
-3. **broader variable-family compatibility** — three masters, multiple axes, richer `avar`, components/diacritics, overlap strategy and CFF2;
-4. browser/platform transfer of T001–T010 when substantive Web or a live target stack exists;
-5. Type→Layout regression using exact shipped artifacts and actual axis mappings near known wrap/column/density thresholds;
-6. Type→Color transfer with exact packaged artifact/axis/render condition pinned;
-7. broader production-outline/family audit of diagonals, `S`, bowl+stem forms, figures, punctuation, components, marks and anchors;
-8. target-platform Korean/Latin proof for Flutter/CoreText/Skia/DirectWrite when project value justifies it.
+1. **T012 — external broad QA + sanitizer integration** when FontBakery/Fontspector/OTS or equivalent executables are available; classify universal/spec/vendor-policy checks separately from product-semantic assertions.
+2. Expand layout-feature release QA into `mark`/`mkmk`, anchors/combining marks, `locl`/script closure, vertical-writing metrics/features and real shaping.
+3. Broaden variable-family compatibility: three masters, multiple axes, richer `avar`, components/diacritics, overlap strategy and CFF2.
+4. Browser/platform transfer of T001–T011 when substantive Web or a live target stack exists.
+5. Type→Layout regression using exact shipped artifacts near known wrap/column/density thresholds.
+6. Type→Color transfer with exact packaged artifact/axis/render condition pinned.
+7. Broader family/design proof and target-platform Korean/Latin work for Flutter/CoreText/Skia/DirectWrite when project value justifies it.
 
-External FontBakery/Fontspector/OTS execution remains **OPEN** because those executables were unavailable in the latest T010 environment and network installation failed. This is not treated as a simulated PASS.
+External FontBakery/Fontspector/OTS and HarfBuzz execution remain **OPEN** in the current environment; no simulated PASS is claimed.
 
 Foundation remains **NOT PASSED**.
 
