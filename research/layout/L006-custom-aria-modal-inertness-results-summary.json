@@ -1,0 +1,79 @@
+{
+  "environment": {
+    "chromium_version": "144.0.7559.96"
+  },
+  "broken": {
+    "initial": {
+      "mode": "broken",
+      "active": "confirm",
+      "appInert": false,
+      "counts": {"bg": 0, "confirm": 0},
+      "dialogExists": true
+    },
+    "dialog_ax": {
+      "role": "dialog",
+      "name": "Confirm deletion",
+      "properties": {"modal": true, "labelledby": null}
+    },
+    "background_button_ax": {
+      "role": "button",
+      "name": "Background destructive action",
+      "properties": {"invalid": "false", "focusable": true}
+    },
+    "reverse_active": ["danger", "open"],
+    "forward_active": ["BODY"],
+    "background_point": {
+      "x": 175.0,
+      "y": 274.0,
+      "hit": {"id": "danger", "tag": "BUTTON", "className": ""}
+    },
+    "after_click_counts": {"bg": 1, "confirm": 0}
+  },
+  "revised": {
+    "initial": {
+      "mode": "revised",
+      "active": "confirm",
+      "appInert": true,
+      "counts": {"bg": 0, "confirm": 0},
+      "dialogExists": true
+    },
+    "dialog_ax": {
+      "role": "dialog",
+      "name": "Confirm deletion",
+      "properties": {"modal": true, "labelledby": null}
+    },
+    "background_button_ax": null,
+    "reverse_active": ["cancel", "confirm"],
+    "forward_active": ["confirm"],
+    "background_point": {
+      "x": 175.0,
+      "y": 274.0,
+      "hit": {"id": "", "tag": "DIV", "className": "backdrop"}
+    },
+    "after_click_counts": {"bg": 0, "confirm": 0},
+    "after_close": {
+      "mode": null,
+      "active": "open",
+      "appInert": false,
+      "counts": {"bg": 0, "confirm": 0},
+      "dialogExists": false
+    }
+  },
+  "assertions": [
+    {"name": "B1 broken ARIA dialog is exposed with modal=true", "pass": true},
+    {"name": "B2 aria-modal alone does not make application DOM inert", "pass": true},
+    {"name": "B3 background destructive action remains exposed and focusable in Chromium AX tree", "pass": true},
+    {"name": "B4 broken reverse Tab escapes dialog to background controls", "pass": true},
+    {"name": "B5 broken forward Tab leaves dialog task", "pass": true},
+    {"name": "B6 broken visual backdrop does not own outside-dialog background point", "pass": true},
+    {"name": "B7 broken background destructive action activates despite aria-modal=true", "pass": true},
+    {"name": "R1 revised dialog remains exposed with modal=true", "pass": true},
+    {"name": "R2 revised application background is actually inert", "pass": true},
+    {"name": "R3 revised inert background is absent from Chromium AX tree", "pass": true},
+    {"name": "R4 revised reverse traversal stays within dialog controls", "pass": true},
+    {"name": "R5 revised forward traversal cycles to first dialog control", "pass": true},
+    {"name": "R6 revised backdrop owns outside-dialog point and blocks underlying action", "pass": true},
+    {"name": "R7 revised close restores focus to logical invoker", "pass": true}
+  ],
+  "summary": {"passed": 14, "total": 14}
+}
