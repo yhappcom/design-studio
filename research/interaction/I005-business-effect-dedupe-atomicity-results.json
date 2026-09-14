@@ -1,0 +1,43 @@
+{
+  "environment": "three SQLite databases modelling app / external provider / consumer boundaries",
+  "passed": 26,
+  "total": 26,
+  "all_pass": true,
+  "assertions": [
+    "split_commit_first_effect_committed",
+    "split_commit_ledger_missing_after_crash",
+    "split_commit_retry_duplicates_effect",
+    "split_commit_retry_created_new_effect",
+    "atomic_precommit_crash_rolls_back_effect",
+    "atomic_precommit_crash_rolls_back_ledger",
+    "atomic_retry_commits_one_effect",
+    "atomic_postcommit_retry_replays_same_result",
+    "atomic_postcommit_retry_no_duplicate",
+    "atomic_key_payload_mismatch_rejected",
+    "external_provider_effect_committed",
+    "local_ledger_missing_after_external_success_crash",
+    "external_retry_duplicates_without_provider_idempotency",
+    "local_transaction_cannot_retroactively_merge_external_effects",
+    "provider_idempotent_first_commits_once",
+    "provider_success_can_exist_without_local_ledger",
+    "provider_same_key_retry_replays",
+    "provider_same_key_retry_no_duplicate",
+    "local_reconciliation_records_provider_result",
+    "outbox_precommit_crash_rolls_back_business",
+    "outbox_precommit_crash_rolls_back_message",
+    "outbox_commit_persists_business_and_message",
+    "outbox_relay_can_duplicate_without_consumer_dedupe",
+    "consumer_atomic_precommit_crash_rolls_back_effect_and_inbox",
+    "consumer_inbox_retry_replays",
+    "consumer_inbox_prevents_duplicate_effect"
+  ],
+  "key_results": {
+    "split_commit_same_db": {"effects_after_retry": 2, "dedupe_rows": 1},
+    "single_transaction_same_db": {"effects_after_retry": 1, "dedupe_rows": 1},
+    "external_provider_without_provider_idempotency": {"provider_effects_after_retry": 2},
+    "external_provider_with_provider_idempotency": {"provider_effects_after_retry": 1},
+    "transactional_outbox": {"business_rows": 1, "outbox_rows": 1},
+    "naive_duplicate_delivery": {"consumer_effects": 2},
+    "consumer_inbox_revision": {"consumer_effects": 1, "inbox_rows": 1}
+  }
+}
