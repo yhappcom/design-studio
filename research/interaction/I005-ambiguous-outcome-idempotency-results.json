@@ -1,0 +1,42 @@
+{
+  "environment": {
+    "protocol": "HTTP/1.1",
+    "server": "Python ThreadingHTTPServer",
+    "client": "http.client"
+  },
+  "assertions": {
+    "passed": 18,
+    "total": 18,
+    "details": [
+      {"name":"A1 first response is transport-unknown","pass":true},
+      {"name":"A2 first request nevertheless committed","pass":true},
+      {"name":"A3 naive retry creates duplicate side effect","pass":true},
+      {"name":"A4 duplicate has distinct identities","pass":true},
+      {"name":"B1 keyed first response is transport-unknown","pass":true},
+      {"name":"B2 only one effect exists after same-key retry","pass":true},
+      {"name":"B3 retry returns original effect identity","pass":true},
+      {"name":"B4 replay is explicitly detectable in harness","pass":true},
+      {"name":"C1 first result unknown","pass":true},
+      {"name":"C2 fresh retry key duplicates original intent","pass":true},
+      {"name":"D1 first keyed request committed","pass":true},
+      {"name":"D2 same key different payload rejected","pass":true},
+      {"name":"D3 rejected reuse creates no second effect","pass":true},
+      {"name":"E1 concurrent same-key request is not processed twice","pass":true},
+      {"name":"E2 original eventually commits once","pass":true},
+      {"name":"E3 later retry replays completed result","pass":true},
+      {"name":"E4 later replay keeps original identity","pass":true},
+      {"name":"F1 ambiguous transport result maps to outcome_unknown, not safe failure","pass":true}
+    ]
+  },
+  "scenarios_summary": {
+    "naive_unknown_retry": "response lost after e1 commit; naive retry created e2",
+    "stable_key_retry": "response lost after e1 commit; same-key retry returned e1; one effect",
+    "fresh_key_retry_bug": "new key on retry created duplicate e2",
+    "payload_mismatch": "same key with different payload rejected 422; one effect",
+    "concurrent_duplicate": "same-key concurrent request rejected 409; later retry replayed e1"
+  },
+  "notes": [
+    "Idempotency-Key draft-07 is expired work-in-progress, not an RFC.",
+    "Harness uses its key/fingerprint/replay/conflict pattern as bounded practice, not a standards-conformance claim."
+  ]
+}
