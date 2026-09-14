@@ -61,22 +61,26 @@ After completion, add `HANDOFFS TO OTHER SPECIALISTS` when the Type result can m
 - `T005-mixed-script-fallback-proof.py` — reproducible Fontconfig/fontTools/FreeType measurement source; no font binaries are committed.
 - `T005-mixed-script-results.json` — exact font versions/hashes, OpenType metrics, Hangul/Latin raster measurements, fallback-pair data and long-label widths.
 - `T005-mixed-script-evidence.svg` — compact metric/raster evidence summary for T005.
+- `T006-production-outline-audit.md` — production-style source-topology audit on `H O n o`, explicit overlap/extrema/winding failure→revision, cubic CFF vs quadratic TrueType export comparison, and compact raster-transfer evidence.
+- `T006-production-outline-audit.py` — reproducible T006 source/audit/build/raster experiment; generated font binaries remain local evidence outputs rather than repository product assets.
+- `T006-production-outline-results.json` — measured source-audit, CFF/TTF geometry, point-structure and FreeType raster results.
+- `T006-production-outline-evidence.svg` — compact source-failure/export/raster evidence summary for T006.
 
 Existing study numbers remain stable. New Type studies use `T###` IDs. The next available Type study ID is tracked in `progress/TYPE_STATUS.md`.
 
 ## Current research direction
 
-T004 closed the largest numeral/punctuation **practice** gap and T005 advances mixed-script/fallback from an abstract/open problem into **PRACTICE / CRITIQUE** evidence.
+T004 closed the largest numeral/punctuation **practice** gap, T005 advanced Latin/Korean mixed-script fallback into **PRACTICE / CRITIQUE**, and T006 advances Bézier/outline discipline from procedural research geometry toward explicit **PRACTICE / CRITIQUE** source/build evidence.
 
-T005 materially changes the Type method: Latin x-height matching may be useful for some same-script fallback problems, but it is not a generic Latin→Korean optical solution. Korean fallback must be evaluated with Hangul body size, baseline relation, stroke/color, punctuation, numerals, vertical metrics, long localized labels, line boxes and the actual target renderer/layout.
+T006 materially changes the production method: “minimum points” is not “fewest possible points”; required extrema, contour direction, overlap strategy and authoritative source topology must be explicit. Cubic→quadratic export can preserve geometry closely while materially changing point topology, and even sub-unit geometric differences can alter compact raster coverage. Editable source, build conversion, binary QA and target-render/use QA are therefore separate approval layers.
 
 Highest-value next directions are now:
 
-1. a small production-outline audit with manually inspectable curves/extrema/overlaps/export QA;
-2. browser/platform transfer of T001/T003/T004/T005 when substantive Web or target-platform evidence is available;
-3. Type→Layout transfer using the L002 compact/intermediate/spacious density matrix with real mixed-script/numeric conditions;
-4. Type→Color transfer using actual renderer alpha/ink behavior under representative viewing conditions;
-5. target-platform Korean/Latin proof for Flutter/CoreText/Skia/DirectWrite when a real project requires it.
+1. **T007 multi-master interpolation/source compatibility + reproducible build QA** — move T006 from one clean master to compatible variation; reproduce a real incompatibility and verify instances/metrics/raster output;
+2. browser/platform transfer of T001/T003/T004/T005/T006 when substantive Web or target-platform evidence is available;
+3. Type→Layout regression transfer using L003/L004 constraints when production outline/build changes can alter widths or compact raster behavior;
+4. Type→Color transfer using T003–T006 actual renderer alpha/ink behavior under C006/C007 foreground/surface conditions;
+5. target-platform Korean/Latin proof for Flutter/CoreText/Skia/DirectWrite when a live project requires it.
 
 Foundation remains **NOT PASSED**.
 
