@@ -1,0 +1,77 @@
+{
+  "environment": {
+    "fonttools": "4.63.0",
+    "external_tools": {
+      "fontbakery": null,
+      "fontspector": null,
+      "ots-sanitize": null,
+      "hb-shape": null
+    }
+  },
+  "contract_definition": {
+    "text": "A + U+0301 COMBINING ACUTE + U+0307 COMBINING DOT ABOVE",
+    "mark": "acutecomb attach [100,0] -> A base anchor [300,700]",
+    "mkmk": "dotabovecomb attach [100,0] -> acutecomb mark2 anchor [100,220]",
+    "combining_advances": "0 units"
+  },
+  "source_woff2": {
+    "sha256": "d19d0547ceb7d93d30574154c4f71b93feed088ff26c42a66d5add97bc840a2a",
+    "size": 508,
+    "bindings": [["DFLT","dflt","mark"],["DFLT","dflt","mkmk"],["latn","dflt","mark"],["latn","dflt","mkmk"]],
+    "contract_pass": true
+  },
+  "preserve_woff2": {
+    "sha256": "d5fac35c4df7c59d1dfa583489de6b2b9037a262cc84d759b704781c917f5fad",
+    "size": 476,
+    "glyphs": [".notdef","A","acutecomb","uni0307"],
+    "bindings": [["DFLT","dflt","mark"],["DFLT","dflt","mkmk"],["latn","dflt","mark"],["latn","dflt","mkmk"]],
+    "advances": {".notdef":500,"A":600,"acutecomb":0,"uni0307":0},
+    "mark_to_base": {"acute_attach":[100,0],"A_base":[300,700]},
+    "mark_to_mark": {"dot_attach":[100,0],"acute_mark2":[100,220]},
+    "contract_pass": true
+  },
+  "drop_mark_woff2": {
+    "sha256": "6b52f2869ce9c859d873c15aeada7e66448be38d93d31b8a3fc6a9b3f72fbab3",
+    "size": 456,
+    "cmap_and_zero_advances_intact": true,
+    "mark_bound_latn": false,
+    "mkmk_bound_latn": true,
+    "mark_to_base_anchor_contract": false,
+    "mark_to_mark_anchor_contract": true,
+    "contract_pass": false
+  },
+  "drop_mkmk_woff2": {
+    "sha256": "a38590e34fb95469246a78a9ac7d5bff59a5f8d21af5646080f0190311512552",
+    "size": 452,
+    "cmap_and_zero_advances_intact": true,
+    "mark_bound_latn": true,
+    "mkmk_bound_latn": false,
+    "mark_to_base_anchor_contract": true,
+    "mark_to_mark_anchor_contract": false,
+    "contract_pass": false
+  },
+  "drop_layout_woff2": {
+    "sha256": "566f36301de11426dd8005faadbffee381657363d4488d6daf8675374cbd3b50",
+    "size": 416,
+    "cmap_and_zero_advances_intact": true,
+    "mark_bound_latn": false,
+    "mkmk_bound_latn": false,
+    "mark_to_base_anchor_contract": false,
+    "mark_to_mark_anchor_contract": false,
+    "contract_pass": false
+  },
+  "derived": {
+    "source_woff2_pass": true,
+    "preserving_subset_pass": true,
+    "drop_mark_parseable_cmap_intact_but_chain_fails": true,
+    "drop_mkmk_parseable_cmap_intact_but_chain_fails": true,
+    "drop_layout_keeps_unicode_but_loses_attachment_semantics": true,
+    "checker_revision_required_after_subset_glyph_rename": true
+  },
+  "scope_limits": [
+    "Structural GPOS inspection only; no HarfBuzz/browser shaping was available.",
+    "Synthetic Latin combining-mark specimen, not production diacritic or complex-script design evidence.",
+    "No cursive attachment, ligature marks, Indic/Arabic shaping, variation, CFF2, hinting, platform/device or human evidence.",
+    "External FontBakery/Fontspector/OTS unavailable; no sanitizer PASS claimed."
+  ]
+}
