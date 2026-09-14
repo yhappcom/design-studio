@@ -3,7 +3,7 @@
 Operating state: **ACTIVE — RESEARCH MAY RESUME**  
 Governance sync: 2026-09-15  
 Primary path: `research/type/`  
-Next new-study ID: `T016`
+Next new-study ID: `T017`
 
 This file is maintained by the Typography / Type Design Specialist. The specialist must not update global `progress/STATUS.md` directly.
 
@@ -17,9 +17,9 @@ Current curriculum stage: **Stage 1 — Foundation**
 Overall state: **PRACTICE / CRITIQUE**  
 Foundation: **NOT PASSED**
 
-The program now has controlled evidence across source construction, raster behavior, numerals/punctuation, mixed-script fallback, production outline QA, two-master interpolation, variable-font binary QA, static/variable WOFF2 subset semantics, `kern`/`locl` package contracts, `mark`/`mkmk` anchor-chain release QA, Unicode normalization-sensitive subset closure, Hangul NFC↔NFD structural package transfer, and **bounded Chromium canonical-equivalent Hangul cluster matching/render transfer**.
+The program now has controlled evidence across source construction, raster behavior, numerals/punctuation, mixed-script fallback, production outline QA, two-master interpolation, variable-font binary QA, static/variable WOFF2 subset semantics, `kern`/`locl` package contracts, `mark`/`mkmk` anchor-chain release QA, Unicode normalization-sensitive subset closure, Hangul NFC↔NFD structural package transfer, bounded Chromium canonical-equivalent Hangul cluster matching/render transfer, and **downloadable-webfont loading/failure/fallback geometry with a controlled metric-matching revision**.
 
-Major unresolved gates remain: external broad QA/sanitizers; direct HarfBuzz trace; Firefox/Safari/native platform shaping; production Korean and complex-script systems; real product normalization/loading/fallback behavior; vertical writing; three-master/multi-axis/CFF2 work; components/diacritics/family coherence; complete naming/style linking; hinting strategy; mixed-script line layout; and human reading/recognition evidence.
+Major unresolved gates remain: external broad QA/sanitizers; direct HarfBuzz trace; Firefox/Safari/native platform shaping; real HTTP/CDN/cache/service-worker font delivery; non-proportional production fallback calibration; production Korean and complex-script systems; vertical writing; three-master/multi-axis/CFF2 work; components/diacritics/family coherence; complete naming/style linking; hinting strategy; mixed-script line layout; and human reading/recognition evidence.
 
 ---
 
@@ -50,127 +50,155 @@ T-series:
 - `T013-normalization-sensitive-subset-contract.md`
 - `T014-hangul-normalization-subset-contract.md`
 - `T015-hangul-browser-canonical-cluster-transfer.md`
+- `T016-webfont-loading-fallback-metric-contract.md`
 
-T015 reproducibility artifacts:
+T016 reproducibility artifacts:
 
-- `research/type/T015-hangul-browser-canonical-cluster-transfer.py`
-- `research/type/T015-hangul-browser-canonical-cluster-transfer-results.json`
+- `research/type/T016-webfont-loading-fallback-metric-contract.py`
+- `research/type/T016-webfont-loading-fallback-metric-contract-results.json`
 
 Generated experimental font binaries/screenshots remain runtime outputs, not product assets or source authority.
 
 ---
 
-## Latest completed block — T015 Hangul canonical-equivalent browser cluster transfer
+## Latest completed block — T016 webfont loading / fallback metric contract
 
-T015 was selected only after rechecking the top queue item. `fontbakery`, `fontspector`, `ots-sanitize`, `hb-shape`, and Python `uharfbuzz` were unavailable. No external QA, sanitizer or direct HarfBuzz PASS is claimed.
+T016 was selected only after rechecking the top queue item. `fontbakery`, `fontspector`, `ots-sanitize`, `hb-shape`, and Python `uharfbuzz` were unavailable. No external QA, sanitizer, or direct HarfBuzz PASS is claimed.
 
-Chromium `144.0.7559.96` + Playwright were available, so the highest-value executable next gap was the browser/shaping transfer that T014 explicitly left OPEN.
+Chromium `144.0.7559.96`, Playwright, and fontTools were available. T015 had already demonstrated that structural package evidence does not automatically predict browser rendering, so T016 moved to the next executable production gap: **the actual downloadable-font lifecycle**.
 
 ### SOURCE
 
-- Unicode UAX #15 defines NFC/NFD and Hangul algorithmic canonical decomposition/composition.
-- CSS Fonts Module Level 4 separates ordinary character-map matching from cluster matching. Its canonical-equivalent cluster rule allows a decomposed multi-codepoint sequence to use a supported canonically equivalent single-character glyph.
-- T014 established structural package closure only; it did not establish browser failure.
+- CSS Fonts Level 4 defines font block/swap/failure periods and `font-display`; it explicitly notes that fallback metrics can create reflow and advises closer metric matching where appropriate.
+- CSS Font Loading Level 3 defines `FontFaceSet.status`, `check()`, and `ready` for observing font availability/loading completion.
+- CSS Fonts Level 5 defines `size-adjust` as a multiplier for glyph outlines and metrics used to harmonize font designs at the same nominal `font-size`.
 
 ### Controlled specimen
 
-Synthetic 1000-UPM WOFF2 controls:
+Mixed Latin/Hangul string:
 
-1. NFC-only: U+AC00/U+AC01, advances 420u/680u;
-2. NFD-only: U+1100/U+1161/U+11A8, advances 260u/310u/370u;
-3. dual: both sets.
+`AB7C101 HL8301 99,999+59 가각 비행기록`
 
-The deliberately different advance systems make runtime path selection observable:
+Synthetic deterministic WOFF2 pair:
 
-- NFC path at 40px = `44px` expected;
-- NFD/Jamo path at 40px = `60.4px` expected.
+- preferred: Latin `460u`, Hangul `420u`, space `300u`;
+- fallback: exact `1.25×` corresponding metrics.
+
+Fallback was available before measurement. Preferred face used `font-display: swap` and was requested through `@font-face`; Playwright intercepted the request.
 
 Matrix:
 
-- 16px + 40px;
-- DPR1 + DPR2;
-- NFC/NFD `가각`;
-- mixed Latin+Hangul `AB가각12` / `AB가각12`;
-- unsupported NFD `간` control.
+1. unadjusted fallback + delayed successful preferred (`1000ms`);
+2. unadjusted fallback + preferred request aborted;
+3. fallback with `size-adjust:80%` + delayed successful preferred;
+4. fallback with `size-adjust:80%` + preferred request aborted.
 
-### Result A — NFC-only package did not fail NFD rendering
+Probes at `32px`:
 
-The NFC-only font structurally lacks U+1100/U+1161/U+11A8, exactly as T014 predicts. Yet Chromium rendered NFD `가각` identically to NFC `가각` in all four size/DPR conditions.
+- nowrap width;
+- 500px wrapping-row height;
+- downstream marker position;
+- `document.fonts.status`;
+- primary/fallback `document.fonts.check()`.
 
-At 40px:
+### Failure A — unadjusted loading fallback changed product geometry
 
-- NFC width = `44px`;
-- NFD width = `44px`;
-- PNG raster = byte-identical;
-- changed pixels = `0`.
+During preferred loading:
 
-### Result B — NFD-only package also rendered NFC identically
+- primary check false;
+- fallback check true;
+- width `541.1719px`;
+- row `76.7813px` high (two lines);
+- downstream marker top `115.1719px`.
 
-The NFD-only font omits U+AC00/U+AC01 but Chromium rendered NFC and NFD through the same bounded Jamo path.
+After preferred loaded:
 
-At 40px:
+- primary check true;
+- width `440.0469px`;
+- row `38.3906px` high (one line);
+- marker top `76.7813px`.
 
-- NFD width = `60.40625px`;
-- NFC width = `60.40625px`;
-- PNG raster = byte-identical;
-- changed pixels = `0`.
+The successful swap therefore changed nowrap width by about `101.125px`, changed a 500px row from two lines to one, and moved following content by about `38.3906px`.
 
-This reverse direction is **observed Chromium implementation evidence**, not a universal standards claim.
+### Failure B — failed preferred made fallback geometry persistent
 
-### Result C — dual package and mixed-script transfer
+When the preferred request was aborted:
 
-The dual package rendered NFC/NFD identically at 44px/40px size, matching the precomposed path. `AB가각12` and its NFD equivalent also had identical width and raster at 16/40px and DPR1/2.
+- primary check remained false;
+- width remained `541.1719px`;
+- row remained `76.7813px`.
 
-### Adversarial control
+A failed webfont is therefore a stable typography/layout state, not merely a temporary loading artifact.
 
-NFD `간` includes U+11AB and has canonical equivalent U+AC04; neither is supported by the NFC-only synthetic font. It produced a different width/raster. The harness therefore did not merely normalize every input outside the browser before measurement.
+### Revision — proportional metric matching
+
+With `size-adjust:80%` on the deliberately proportional fallback:
+
+During loading:
+
+- width `439.9531px`;
+- row `38.3906px`;
+- marker top `76.7813px`.
+
+After preferred loaded:
+
+- width `440.0469px`;
+- row and marker unchanged.
+
+Width delta was about `0.0938px`.
+
+When the preferred failed, the adjusted fallback retained the same one-line geometry (`439.9531px`).
 
 ### Bounded assertion result
 
-`40/40` experiment-local assertions were true.
+`12/12` experiment-local assertions were true.
 
-This count is **not** a Foundation PASS metric.
+This is **not** a Foundation PASS metric.
 
 ### SYNTHESIS
 
-T013–T015 now require both statements:
+T016 adds:
 
-`canonical equivalence ≠ identical codepoint sequence ≠ identical cmap/subset closure`
+`font artifact integrity → font request state → fallback selection/metrics → optional swap → rendered geometry → layout consequence`.
 
-and:
+A web typography role may therefore have materially distinct states:
 
-`different cmap/subset closure ≠ automatic target-rendering divergence`.
+1. preferred loaded;
+2. fallback visible while preferred loads;
+3. fallback persistent because preferred failed.
 
-Updated production chain:
+A preferred-font screenshot validates only the first state.
 
-`content representation → binary cmap/feature closure → target cluster matching/shaping → fallback/glyph selection → rendered geometry/raster → layout/color consequence → human/product result`.
+T016 also establishes a narrow controlled mitigation result: when fallback metrics differ from preferred metrics by a known proportional factor, `size-adjust` can sharply reduce swap-driven geometry change.
 
 ### STUDIO JUDGMENT
 
-- Keep structural package QA and target-rendering QA separate.
-- T014 remains valid; T015 limits the stronger inference that missing exact input codepoints necessarily cause browser fallback/render failure.
-- Do not require dual NFC+NFD packaging solely from structural fear when a product owns and proves a narrower content/runtime contract.
-- Do not remove coverage or rely on Chromium's canonical-equivalence behavior without replicating every supported target stack on which the product decision depends.
-- Explicit NFC normalization may still be preferable for storage/search/cache/subset consistency even when rendering is robust.
+- Treat font loading and font failure as typography QA states when downloadable fonts are used.
+- Do not choose `font-display` only as a performance flag; it determines visible Type states and whether later swaps can alter layout.
+- Metric matching is risk reduction, not proof of design equivalence. It does not normalize x-height, Hangul body, stroke mass, punctuation, shaping, or readability.
+- Robust layout and Type-side metric calibration are complementary. If modest metric variation breaks the product, Layout may need semantic recomposition rather than ever-more-exact fallback tuning.
+- Production decisions require exact preferred/fallback fonts, scripts, content, delivery path, `font-display`, and target browsers/devices.
 
 ### OPEN
 
-- direct `hb-shape`/`uharfbuzz` glyph/cluster traces;
-- Firefox and Safari/WebKit;
-- Windows DirectWrite/Edge, macOS/iOS CoreText;
-- Android/Skia/Flutter;
-- production Korean fonts and larger corpus/Jamo shaping;
-- Korean paragraph line breaking/mixed-script line boxes;
-- real `@font-face` network loading, `font-display`, cache/failure states;
-- real CMS/API/database/client normalization behavior;
-- external FontBakery/Fontspector/OTS QA;
-- human reading/recognition evidence.
+- FontBakery/Fontspector/OTS broad QA and exception policy;
+- direct HarfBuzz glyph/cluster tracing;
+- real HTTP/CDN/cache/service-worker/preload behavior;
+- cache-warm/cold comparison;
+- `font-display: block`, `fallback`, `optional`;
+- ascent/descent/line-gap override transfer;
+- real non-proportional Latin/Hangul fallback pairs;
+- production Korean corpus/line breaking;
+- Firefox/Safari/DirectWrite/CoreText/Android/Skia/Flutter;
+- actual zoom/text enlargement;
+- page-level CLS/performance evidence;
+- human reading/recognition/task evidence.
 
 ### Evidence level
 
-**PRACTICE + CRITIQUE / asymmetric synthetic Hangul WOFF2 + Chromium 144 browser shaping/rendering + 16/40px × DPR1/2 + mixed-script transfer + unsupported control + width/raster identity; 40/40 bounded assertions true.**
+**PRACTICE + CRITIQUE / deterministic synthetic WOFF2 pair + real Chromium `@font-face` request path via Playwright interception + delayed success + abort failure + FontFaceSet state checks + wrapping/downstream geometry + controlled `size-adjust` revision; 12/12 bounded assertions true.**
 
-T015 is **not PASS**.
+T016 is **not PASS**.
 
 ---
 
@@ -187,9 +215,9 @@ T015 is **not PASS**.
 | Spacing / kerning / GPOS | PRACTICE / CRITIQUE | broader classes/complex shaping/cross-browser proof open |
 | Numerals / punctuation | PRACTICE / CRITIQUE | production figures, browser shaping, localization, human evidence |
 | Typography as information architecture | CRITIQUE | production reflow/localization/enlarged-text transfer |
-| Web fallback / metric transfer | **PRACTICE / TRANSFER BASELINE** | T015 adds exact embedded-WOFF2 Chromium canonical-cluster proof; real network loading/failure, metric overrides, zoom/cross-browser open |
-| Mixed-script / fallback / normalization | **PRACTICE / CRITIQUE** | T005 + T011–T015 cover structural and bounded Chromium normalization transfer; production Korean/line boxes/cross-platform/human evidence open |
-| Source/build/release pipeline | **PRACTICE / CRITIQUE** | T006–T015 span source→interpolation→binary→package→bounded browser semantic transfer; external broad QA and production target integration open |
+| Web fallback / metric transfer | **PRACTICE / CRITIQUE** | T016 adds delayed/failed downloadable-font geometry + proportional metric-matching proof; real delivery/cache/cross-browser/zoom open |
+| Mixed-script / fallback / normalization | **PRACTICE / CRITIQUE** | T005 + T011–T016 cover structural and bounded Chromium transfer; production Korean/line boxes/cross-platform/human evidence open |
+| Source/build/release pipeline | **PRACTICE / CRITIQUE** | T006–T016 span source→interpolation→binary→package→browser shaping/loading states; external broad QA and production target integration open |
 
 ---
 
@@ -197,51 +225,30 @@ T015 is **not PASS**.
 
 ### Color
 
-C009 shows fixed semantic Color pairs do not normalize Type weight/fallback/rendered mass. T015 limits a naive extension of that risk: **normalization-form mismatch does not itself prove a changed rendered glyph state** when the target browser resolves canonical equivalence. Color should measure the actual target artifact/runtime state.
+C009's retained conclusion is still relevant: fixed semantic Color does not normalize actual Type rendering. T016 adds a loading-state dimension — the rendered face/geometry can change while Color tokens remain unchanged.
 
 ### Layout / Interaction
 
-L003 shows browser font selection can cross wrap thresholds and standalone font measurements are not enough for production geometry. T015 directly confirms that methodological principle: structural `cmap` difference alone did not predict Chromium width/raster divergence.
+L003 showed browser font selection can cross wrap thresholds and standalone font measurements are not production geometry proof. T016 **confirms and extends** that result with real downloadable-font state: the same controlled row changed two lines→one across a delayed swap.
 
 ### Web Design
 
-No substantive `W###` evidence exists at this checkpoint. T015 supplies a concrete future Web transfer contract: exact WOFF2 + actual normalization + `@font-face` lifecycle + cross-browser/OS/device + zoom/loading/failure must be tested before subset minimization is treated as safe.
+W001 now exists at PRACTICE + CRITIQUE. Its browser-native model supports treating font loading/failure as runtime participation rather than assuming author-perfect pixels. T016 provides a concrete Type→Web transfer contract for future production font delivery/cache/zoom/browser testing.
 
 ---
 
 ## Active next queue
 
-1. **T016 — external broad QA + sanitizer integration** when FontBakery/Fontspector/OTS or equivalent executables are available; keep universal/spec/vendor-policy checks separate from studio semantic assertions.
-2. Direct HarfBuzz glyph/cluster trace and cross-browser/platform replication of T015: Firefox/Safari/Windows/macOS/Android/Flutter.
-3. Production Korean transfer using a real Korean font and larger corpus: conjoining Jamo, fallback, line breaking and mixed-script line boxes.
-4. Real `@font-face` network loading/failure/`font-display`/cache/zoom transfer, ideally with substantive Web/live-product work.
-5. Extend attachment QA into ligature marks, multiple mark classes, cursive attachment and production complex scripts.
-6. Study vertical-writing release semantics: `vhea`, `vmtx`, `vert`, `vrt2` where project relevance justifies it.
-7. Broaden variable-family compatibility: three masters, multiple axes, richer `avar`, components/diacritics, variable anchors, overlap strategy and CFF2.
-8. Type→Layout regression against exact shipped artifacts.
-9. Type→Color transfer with exact package/build/axis/render condition.
+1. **T017 — external broad QA + sanitizer integration** when FontBakery/Fontspector/OTS or equivalent executables are available; keep universal/spec/vendor-policy checks separate from studio semantic assertions.
+2. Transfer T016 to **real non-proportional Latin/Hangul font pairs** and measure whether `size-adjust` plus ascent/descent/line-gap overrides reduce layout shifts without creating unacceptable apparent-size/script mismatch.
+3. Direct HarfBuzz glyph/cluster trace and cross-browser/platform replication: Firefox/Safari/Windows/macOS/Android/Flutter.
+4. Production Korean transfer using a real Korean font and larger corpus: conjoining Jamo, fallback, line breaking and mixed-script line boxes.
+5. Real HTTP/CDN/cache/preload/service-worker plus `font-display` mode transfer through Web/live-product work.
+6. Extend attachment QA into ligature marks, multiple mark classes, cursive attachment and production complex scripts.
+7. Study vertical-writing release semantics where project relevance justifies it.
+8. Broaden variable-family compatibility: three masters, multiple axes, richer `avar`, components/diacritics, variable anchors, overlap strategy and CFF2.
+9. Type→Layout regression against exact shipped artifacts.
 10. Broader family coherence and human reading/recognition evidence after target rendering/layout stabilizes.
-
----
-
-## Open research-quality gaps
-
-- FontBakery/Fontspector/OTS and exception policy;
-- direct HarfBuzz shaping trace;
-- cross-browser/native canonical-equivalent shaping behavior;
-- production Hangul/Jamo and larger Korean corpus closure;
-- real content-pipeline normalization and webfont-loading behavior;
-- ligature marks/multiple mark classes/cursive attachment/complex scripts;
-- vertical metrics/writing features;
-- complete naming/style-linking/STAT/avar metadata;
-- three-master/multi-axis/CFF2/variable-anchor expansion;
-- components/diacritics and broad family coherence;
-- hinting strategy;
-- cross-machine/toolchain provenance;
-- CoreText/DirectWrite/Android/Skia/Flutter/Safari/Firefox transfer;
-- mixed-script line-box construction and Korean line breaking;
-- human recognition/reading evidence;
-- release-artifact regression against Layout and Color contracts.
 
 ---
 
@@ -249,15 +256,15 @@ No substantive `W###` evidence exists at this checkpoint. T015 supplies a concre
 
 ### Color
 
-T015 limits the inference from T014: a normalization-form package mismatch does not automatically create different rendered Type/Color conditions in Chromium. Pin exact artifact + target runtime, then measure. No Color threshold is inferred.
+Pin font loading state (`preferred loaded` / `fallback visible` / `preferred failed`) when Type materially affects rendered Color judgments. T016 establishes no Color threshold.
 
 ### Layout / Interaction
 
-L003's browser-first geometry rule is directly reinforced. Do not predict localized wrap/density from structural `cmap` coverage alone; measure exact shipped font + normalization + shaping/browser state near real thresholds.
+T016 confirms L003 with a downloadable-font lifecycle: `541.1719px → 440.0469px` changed a 500px controlled row from two lines to one and moved following content `38.3906px`. Validate loading/failure states and robust recomposition; do not tune only the preferred-loaded state.
 
 ### Web Design
 
-Reproduce T015 with production `@font-face` delivery, exact content-source normalization, target browsers/OSes/devices, zoom/DPR and loading/failure/cache states. Chromium/Linux 40/40 bounded assertions are not Web PASS or cross-platform package approval.
+Reproduce T016 using production `@font-face` delivery, selected `font-display`, real CDN/cache/preload/service-worker behavior, actual content, zoom, target browsers/devices, and page-level layout-shift/performance tooling. Playwright-intercepted Chromium evidence is not Web production PASS.
 
 ## Handoff rule
 
@@ -280,6 +287,7 @@ Answer peer requests with canonical Type evidence or new investigation as approp
 - T012: `mark`/`mkmk` + exact anchor-chain package contract.
 - T013: Latin NFC/NFD normalization-sensitive subset closure.
 - T014: Hangul NFC/NFD structural package transfer + deterministic rebuild proof.
-- **T015: Chromium canonical-equivalent Hangul cluster transfer; asymmetric NFC-only/NFD-only/dual WOFF2 all produced NFC↔NFD width+raster identity across 16/40px × DPR1/2; mixed-script identity held; unsupported control differed; 40/40 bounded assertions true.**
-- Next Type study ID: `T016`.
+- T015: bounded Chromium canonical-equivalent Hangul cluster transfer.
+- **T016: delayed/failed downloadable-font lifecycle; unadjusted swap changed mixed-script width by ~101.125px and a 500px row 2→1 lines; proportional `size-adjust:80%` reduced width delta to ~0.0938px with stable row/downstream geometry; 12/12 bounded assertions true.**
+- Next Type study ID: `T017`.
 - Overall Type state remains **Stage 1 / PRACTICE + CRITIQUE / Foundation NOT PASSED**.
