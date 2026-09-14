@@ -48,8 +48,10 @@ After completion, add `HANDOFFS TO OTHER SPECIALISTS` when the Type result can m
 - `005-numerals-punctuation-systems.md`
 - `009-typography-as-information-architecture.md`
 - `T001-web-typography-fallback-metrics-reflow-transfer.md` — Type→Web transfer baseline for font loading, fallback metrics, zoom/reflow, and data stability; real browser proof remains open.
+- `T002-raster-proof-redraw-cycle.md` — controlled surrogate-raster failure → redraw → re-proof study for join darkness and compact survival; compiled-font/device proof remains open.
+- `T002-raster-proof-redraw-cycle.svg` — exact embedded raster evidence for the T002 R0/R1 comparison at 14/24/48px x-height-equivalent roles.
 
-Existing study numbers remain stable. New Type studies use `T###` IDs.
+Existing study numbers remain stable. New Type studies use `T###` IDs. The next available Type study ID is tracked in `progress/TYPE_STATUS.md`.
 
 ## Status authority
 
