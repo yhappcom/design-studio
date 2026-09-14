@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1120" viewBox="0 0 1500 1120">
+<rect width="1500" height="1120" fill="#f7f7f5"/>
+<style>
+.title{font:700 32px Arial,sans-serif;fill:#111}.h{font:700 20px Arial,sans-serif;fill:#111}.p{font:400 15px Arial,sans-serif;fill:#333}.s{font:400 13px Arial,sans-serif;fill:#555}.m{font:400 14px "Courier New",monospace;fill:#222}.box{fill:#fff;stroke:#d7d7d2}.line{fill:none;stroke:#222;stroke-width:3}.accent{fill:none;stroke:#555;stroke-width:3;stroke-dasharray:8 6}.danger{fill:none;stroke:#999;stroke-width:3}.dot{fill:#111}.guide{stroke:#ddd;stroke-width:1}
+</style>
+<text class="title" x="60" y="65">T007 — Multi-master interpolation compatibility</text>
+<text class="p" x="60" y="95">Source compatibility → gvar coverage → intermediate geometry → raster proof</text>
+<rect class="box" x="50" y="130" width="440" height="300" rx="12"/>
+<rect class="box" x="530" y="130" width="920" height="300" rx="12"/>
+<rect class="box" x="50" y="465" width="1400" height="280" rx="12"/>
+<rect class="box" x="50" y="780" width="1400" height="275" rx="12"/>
+<text class="h" x="75" y="170">A. Independent conversion failure</text>
+<text class="m" x="75" y="205">Light O: [16,16]</text>
+<text class="m" x="75" y="230">Bold O:  [16,12]</text>
+<text class="p" x="75" y="270">FontTools 4.63.0 warning:</text>
+<text class="m" x="75" y="298">glyph O has incompatible masters; skipping</text>
+<text class="p" x="75" y="340">gvar tuples: H=1, O=0, n=1, o=1</text>
+<text class="p" x="75" y="375">O freezes at default: adv 600 / area 104,025.67</text>
+<text class="p" x="75" y="400">Build success ≠ family compatibility.</text>
+<text class="h" x="555" y="170">B. Shared conversion restores interpolation</text>
+<text class="p" x="555" y="200">Cu2QuMultiPen produces [16,16] in both O masters; O gets one gvar tuple.</text>
+<line class="guide" x1="590.0" y1="235" x2="590.0" y2="380"/>
+<text class="s" x="575.0" y="390">300</text>
+<line class="guide" x1="970.0" y1="235" x2="970.0" y2="380"/>
+<text class="s" x="955.0" y="390">500</text>
+<line class="guide" x1="1350.0" y1="235" x2="1350.0" y2="380"/>
+<text class="s" x="1335.0" y="390">700</text>
+<polyline class="line" points="590.0,329.7 970.0,294.9 1350.0,268.6"/>
+<circle class="dot" cx="590.0" cy="329.7" r="5"/>
+<circle class="dot" cx="970.0" cy="294.9" r="5"/>
+<circle class="dot" cx="1350.0" cy="268.6" r="5"/>
+<text class="m" x="555" y="415">O: advance 600 → 610 → 620 | area 104,026 → 176,096 → 230,546</text>
+<text class="h" x="75" y="505">C. Adversarial same-count failure</text>
+<text class="p" x="75" y="535">Bold O counter start point rotated 180°. Point counts still match: [16,16] ↔ [16,16]. varLib builds and gvar exists.</text>
+<line class="guide" x1="135.0" y1="570" x2="135.0" y2="680"/>
+<text class="s" x="120.0" y="702">300</text>
+<line class="guide" x1="735.0" y1="570" x2="735.0" y2="680"/>
+<text class="s" x="720.0" y="702">500</text>
+<line class="guide" x1="1335.0" y1="570" x2="1335.0" y2="680"/>
+<text class="s" x="1320.0" y="702">700</text>
+<polyline class="line" points="135.0,641.9 735.0,615.4 1335.0,595.5"/>
+<polyline class="danger" points="135.0,641.9 735.0,579.3 1335.0,595.5"/>
+<circle cx="135.0" cy="641.8572555555555" r="5" fill="#111"/>
+<circle cx="735.0" cy="615.4313299795188" r="5" fill="#111"/>
+<circle cx="1335.0" cy="595.4665950044415" r="5" fill="#111"/>
+<circle cx="135.0" cy="641.8572555555555" r="5" fill="#888"/>
+<circle cx="735.0" cy="579.3036341893687" r="5" fill="#888"/>
+<circle cx="1335.0" cy="595.4665950044416" r="5" fill="#888"/>
+<text class="s" x="1060" y="605">solid = shared/correct</text>
+<text class="s" x="1060" y="628">gray = wrong correspondence</text>
+<text class="m" x="75" y="720">Wrong midpoint area = 274,626.45 → +19.12% above Bold endpoint; raster coverage +19.18%.</text>
+<text class="h" x="75" y="820">Production lesson</text>
+<text class="p" x="75" y="855">1. Same point count is necessary, not sufficient. Point indices must represent corresponding structural locations.</text>
+<text class="p" x="75" y="885">2. A generated VF can exist while a required glyph has been skipped from variation.</text>
+<text class="p" x="75" y="915">3. QA must inspect warnings, variation coverage, endpoint/intermediate metrics, geometry, and target rendering.</text>
+<text class="p" x="75" y="945">4. Joint cubic→quadratic conversion protects generated topology, but it does not prove perceptually good interpolation.</text>
+<text class="m" x="75" y="995">Evidence: original H/O/n/o research family · wght 300–700 · FontTools 4.63.0 · FreeType 2.13.2 · 20 ppem no-hint</text>
+<text class="s" x="75" y="1025">Research evidence only — not a product font, not Foundation PASS.</text>
+</svg>
