@@ -113,8 +113,8 @@ def srgb_to_oklab(rgb8: np.ndarray):
 def analyze_png(png: bytes):
     arr = np.asarray(Image.open(BytesIO(png)).convert("RGB"))
     L, C = srgb_to_oklab(arr)
-    gx, gy = np.abs(np.diff(L, 1)), np.abs(np.diff(L, 0))
-    cx, cy = np.abs(np.diff(C, 1)), np.abs(np.diff(C, 0))
+    gx, gy = np.abs(np.diff(L, axis=1)), np.abs(np.diff(L, axis=0))
+    cx, cy = np.abs(np.diff(C, axis=1)), np.abs(np.diff(C, axis=0))
     return {
         "L_mean": float(L.mean()), "L_std": float(L.std()),
         "C_mean": float(C.mean()), "C_std": float(C.std()),
