@@ -1,0 +1,58 @@
+{
+  "overall": {
+    "naive": {
+      "configs": 72,
+      "target_below_44_count": 32,
+      "horizontal_overflow_count": 0,
+      "clipped_critical_cells": 580,
+      "hidden_critical_cells": 432,
+      "mean_scroll_ratio": 1.4709,
+      "mean_max_rows_per_viewport": 10.6944
+    },
+    "preserve": {
+      "configs": 72,
+      "target_below_44_count": 0,
+      "horizontal_overflow_count": 0,
+      "clipped_critical_cells": 0,
+      "hidden_critical_cells": 0,
+      "mean_scroll_ratio": 2.0921,
+      "mean_max_rows_per_viewport": 8.6389
+    },
+    "adaptive": {
+      "configs": 72,
+      "target_below_44_count": 0,
+      "horizontal_overflow_count": 0,
+      "clipped_critical_cells": 0,
+      "hidden_critical_cells": 0,
+      "mean_scroll_ratio": 1.9799,
+      "mean_max_rows_per_viewport": 8.6667
+    }
+  },
+  "stress_mobile_390_scale2_ko": {
+    "naive": {
+      "compact": {"scrollRatio":1.763,"maxRowsPerViewport":11,"avgRowHeight":71.9167,"wrappedCellCount":0,"clippedCount":16,"hiddenCriticalCount":24,"minButtonHeight":59,"horizontalOverflow":false},
+      "intermediate": {"scrollRatio":1.9799,"maxRowsPerViewport":10,"avgRowHeight":79.9167,"wrappedCellCount":0,"clippedCount":24,"hiddenCriticalCount":24,"minButtonHeight":59,"horizontalOverflow":false},
+      "spacious": {"scrollRatio":2.2962,"maxRowsPerViewport":8,"avgRowHeight":91.9167,"wrappedCellCount":0,"clippedCount":24,"hiddenCriticalCount":24,"minButtonHeight":59,"horizontalOverflow":false}
+    },
+    "preserve": {
+      "compact": {"scrollRatio":5.1742,"maxRowsPerViewport":2,"avgRowHeight":321.9167,"wrappedCellCount":24,"clippedCount":0,"hiddenCriticalCount":0,"minButtonHeight":59,"horizontalOverflow":false},
+      "intermediate": {"scrollRatio":6.3057,"maxRowsPerViewport":2,"avgRowHeight":395.25,"wrappedCellCount":24,"clippedCount":0,"hiddenCriticalCount":0,"minButtonHeight":59,"horizontalOverflow":false},
+      "spacious": {"scrollRatio":8.6055,"maxRowsPerViewport":1,"avgRowHeight":548.25,"wrappedCellCount":24,"clippedCount":0,"hiddenCriticalCount":0,"minButtonHeight":59,"horizontalOverflow":false}
+    },
+    "adaptive": {
+      "compact": {"scrollRatio":5.1742,"maxRowsPerViewport":2,"avgRowHeight":321.9167,"wrappedCellCount":24,"clippedCount":0,"hiddenCriticalCount":0,"minButtonHeight":59,"horizontalOverflow":false},
+      "intermediate": {"scrollRatio":5.3235,"maxRowsPerViewport":2,"avgRowHeight":329.9167,"wrappedCellCount":24,"clippedCount":0,"hiddenCriticalCount":0,"minButtonHeight":59,"horizontalOverflow":false},
+      "spacious": {"scrollRatio":5.6754,"maxRowsPerViewport":2,"avgRowHeight":352.25,"wrappedCellCount":24,"clippedCount":0,"hiddenCriticalCount":0,"minButtonHeight":59,"horizontalOverflow":false}
+    }
+  },
+  "desktop_1024_scale1_en": {
+    "compact": {"scrollRatio":1.0885,"maxRowsPerViewport":12,"avgRowHeight":52.9167,"wrappedCellCount":0,"clippedCount":0,"hiddenCriticalCount":0,"minButtonHeight":44,"horizontalOverflow":false},
+    "intermediate": {"scrollRatio":1.2799,"maxRowsPerViewport":12,"avgRowHeight":60.9167,"wrappedCellCount":0,"clippedCount":0,"hiddenCriticalCount":0,"minButtonHeight":44,"horizontalOverflow":false},
+    "spacious": {"scrollRatio":1.5547,"maxRowsPerViewport":10,"avgRowHeight":72.9167,"wrappedCellCount":0,"clippedCount":0,"hiddenCriticalCount":0,"minButtonHeight":44,"horizontalOverflow":false}
+  },
+  "mobile_390_scale1_ko": {
+    "compact": {"scrollRatio":1.9265,"maxRowsPerViewport":7,"avgRowHeight":108.9167,"wrappedCellCount":8,"clippedCount":0,"hiddenCriticalCount":0,"minButtonHeight":44,"horizontalOverflow":false},
+    "intermediate": {"scrollRatio":2.2382,"maxRowsPerViewport":6,"avgRowHeight":124.9167,"wrappedCellCount":11,"clippedCount":0,"hiddenCriticalCount":0,"minButtonHeight":44,"horizontalOverflow":false},
+    "spacious": {"scrollRatio":2.6967,"maxRowsPerViewport":5,"avgRowHeight":148.9167,"wrappedCellCount":12,"clippedCount":0,"hiddenCriticalCount":0,"minButtonHeight":44,"horizontalOverflow":false}
+  }
+}
