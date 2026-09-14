@@ -1,0 +1,61 @@
+{
+  "method": {
+    "alpha_proxy": "Projection of encoded-RGB screenshot pixels between the declared background and foreground. This is a grayscale-antialiasing mixture diagnostic, not CSS opacity or physical-light mixing.",
+    "pixel_contrast": "WCAG relative-luminance contrast calculated per already-composited screenshot pixel against the declared background. Diagnostic only: WCAG conformance uses declared foreground/background colors and permits anti-aliasing to be ignored.",
+    "scope": "Single Chromium/Linux font environment at DPR 1 and 2. No human readability, cross-platform, physical-device, or production PASS."
+  },
+  "environment": {
+    "chromium_executable": "/usr/bin/chromium",
+    "chromium_version": "144.0.7559.96",
+    "viewport_css_px": [1400,700],
+    "dpr_values": [1,2],
+    "fonts_check": {"Inter":true,"Noto Sans CJK KR":true,"NanumGothic":true}
+  },
+  "declared_pairs": {
+    "light-near@dpr1": {"background":"#FFFFFF","foreground":"#767676","nominal_contrast_ratio":4.542224959605253},
+    "light-strong@dpr1": {"background":"#FFFFFF","foreground":"#595959","nominal_contrast_ratio":7.004729208035935},
+    "dark-near@dpr1": {"background":"#11161B","foreground":"#7A858E","nominal_contrast_ratio":4.827623238254443},
+    "dark-strong@dpr1": {"background":"#11161B","foreground":"#9CA6AE","nominal_contrast_ratio":7.34502042087441},
+    "light-near@dpr2": {"background":"#FFFFFF","foreground":"#767676","nominal_contrast_ratio":4.542224959605253},
+    "light-strong@dpr2": {"background":"#FFFFFF","foreground":"#595959","nominal_contrast_ratio":7.004729208035935},
+    "dark-near@dpr2": {"background":"#11161B","foreground":"#7A858E","nominal_contrast_ratio":4.827623238254443},
+    "dark-strong@dpr2": {"background":"#11161B","foreground":"#9CA6AE","nominal_contrast_ratio":7.34502042087441}
+  },
+  "weight_light_near_dpr1": {
+    "latin-thin": {"dom_width":186.265625,"dom_height":32.796875,"font_family":"Inter, sans-serif","font_weight":"100","ink_bbox_px":[11,9,165,15],"nonbg_pixel_count":626,"coverage_density_in_ink_bbox":0.06058836540588366,"strong_core_share_bbox_alpha_ge_0_8":0.0,"pixel_contrast_median_nonbg":1.4115336199566344,"share_nonbg_pixels_contrast_ge_4_5":0.0},
+    "latin-regular": {"dom_width":193.75,"dom_height":32.796875,"font_family":"Inter, sans-serif","font_weight":"400","ink_bbox_px":[11,9,172,16],"nonbg_pixel_count":983,"coverage_density_in_ink_bbox":0.19696358852486845,"strong_core_share_bbox_alpha_ge_0_8":0.11010174418604651,"pixel_contrast_median_nonbg":2.193484114323017,"share_nonbg_pixels_contrast_ge_4_5":0.08341810783316378},
+    "latin-semibold": {"dom_width":198.796875,"dom_height":32.796875,"font_family":"Inter, sans-serif","font_weight":"600","ink_bbox_px":[11,9,178,16],"nonbg_pixel_count":1135,"coverage_density_in_ink_bbox":0.25787593291232674,"strong_core_share_bbox_alpha_ge_0_8":0.17099719101123595,"pixel_contrast_median_nonbg":2.6791562985840893,"share_nonbg_pixels_contrast_ge_4_5":0.23700440528634362}
+  },
+  "weight_light_near_dpr2": {
+    "latin-thin": {"dom_width":186.265625,"dom_height":32.796875,"font_family":"Inter, sans-serif","font_weight":"100","ink_bbox_px":[23,17,328,29],"nonbg_pixel_count":1601,"coverage_density_in_ink_bbox":0.06391542300774128,"strong_core_share_bbox_alpha_ge_0_8":0.0023128679562657694,"pixel_contrast_median_nonbg":1.6059285649300714,"share_nonbg_pixels_contrast_ge_4_5":0.0},
+    "latin-regular": {"dom_width":193.75,"dom_height":32.796875,"font_family":"Inter, sans-serif","font_weight":"400","ink_bbox_px":[22,18,344,30],"nonbg_pixel_count":3037,"coverage_density_in_ink_bbox":0.20095413908221582,"strong_core_share_bbox_alpha_ge_0_8":0.15465116279069768,"pixel_contrast_median_nonbg":3.407068206572572,"share_nonbg_pixels_contrast_ge_4_5":0.3789924267369114},
+    "latin-semibold": {"dom_width":198.796875,"dom_height":32.796875,"font_family":"Inter, sans-serif","font_weight":"600","ink_bbox_px":[22,18,355,30],"nonbg_pixel_count":3724,"coverage_density_in_ink_bbox":0.26250916692368326,"strong_core_share_bbox_alpha_ge_0_8":0.2175586854460094,"pixel_contrast_median_nonbg":4.542224959605253,"share_nonbg_pixels_contrast_ge_4_5":0.5024167561761547}
+  },
+  "color_margin_dpr1": {
+    "near_regular": {"dom_width":193.75,"dom_height":32.796875,"font_family":"Inter, sans-serif","font_weight":"400","ink_bbox_px":[11,9,172,16],"nonbg_pixel_count":983,"coverage_density_in_ink_bbox":0.19696358852486845,"strong_core_share_bbox_alpha_ge_0_8":0.11010174418604651,"pixel_contrast_median_nonbg":2.193484114323017,"share_nonbg_pixels_contrast_ge_4_5":0.08341810783316378},
+    "strong_regular": {"dom_width":193.75,"dom_height":32.796875,"font_family":"Inter, sans-serif","font_weight":"400","ink_bbox_px":[11,9,172,16],"nonbg_pixel_count":983,"coverage_density_in_ink_bbox":0.19573278579434017,"strong_core_share_bbox_alpha_ge_0_8":0.11010174418604651,"pixel_contrast_median_nonbg":2.6149807046958116,"share_nonbg_pixels_contrast_ge_4_5":0.28382502543234994},
+    "near_thin": {"dom_width":186.265625,"dom_height":32.796875,"font_family":"Inter, sans-serif","font_weight":"100","ink_bbox_px":[11,9,165,15],"nonbg_pixel_count":626,"coverage_density_in_ink_bbox":0.06058836540588366,"strong_core_share_bbox_alpha_ge_0_8":0.0,"pixel_contrast_median_nonbg":1.4115336199566344,"share_nonbg_pixels_contrast_ge_4_5":0.0},
+    "strong_thin": {"dom_width":186.265625,"dom_height":32.796875,"font_family":"Inter, sans-serif","font_weight":"100","ink_bbox_px":[11,9,165,15],"nonbg_pixel_count":626,"coverage_density_in_ink_bbox":0.059839357429718874,"strong_core_share_bbox_alpha_ge_0_8":0.0,"pixel_contrast_median_nonbg":1.511923281931922,"share_nonbg_pixels_contrast_ge_4_5":0.0},
+    "dark_near_regular": {"dom_width":193.75,"dom_height":32.796875,"font_family":"Inter, sans-serif","font_weight":"400","ink_bbox_px":[11,9,172,16],"nonbg_pixel_count":962,"coverage_density_in_ink_bbox":0.19523229105791662,"strong_core_share_bbox_alpha_ge_0_8":0.11010174418604651,"pixel_contrast_median_nonbg":2.5065195939281484,"share_nonbg_pixels_contrast_ge_4_5":0.12785862785862787},
+    "dark_strong_regular": {"dom_width":193.75,"dom_height":32.796875,"font_family":"Inter, sans-serif","font_weight":"400","ink_bbox_px":[11,9,172,16],"nonbg_pixel_count":966,"coverage_density_in_ink_bbox":0.19734862941321551,"strong_core_share_bbox_alpha_ge_0_8":0.11409883720930232,"pixel_contrast_median_nonbg":3.4588556297030286,"share_nonbg_pixels_contrast_ge_4_5":0.37267080745341613}
+  },
+  "fallback_light_near_dpr1": {
+    "noto": {"dom_width":362.96875,"dom_height":32.796875,"font_family":"Inter, \"Noto Sans CJK KR\", sans-serif","font_weight":"400","ink_bbox_px":[10,8,342,16],"nonbg_pixel_count":1733,"coverage_density_in_ink_bbox":0.19401625261450464,"strong_core_share_bbox_alpha_ge_0_8":0.11878654970760234,"pixel_contrast_median_nonbg":2.4926545004666014,"share_nonbg_pixels_contrast_ge_4_5":0.24350836699365264},
+    "nanum": {"dom_width":367.71875,"dom_height":32.796875,"font_family":"Inter, NanumGothic, sans-serif","font_weight":"400","ink_bbox_px":[10,8,347,16],"nonbg_pixel_count":1652,"coverage_density_in_ink_bbox":0.1670707208818023,"strong_core_share_bbox_alpha_ge_0_8":0.0670028818443804,"pixel_contrast_median_nonbg":2.3097545035170493,"share_nonbg_pixels_contrast_ge_4_5":0.03571428571428571}
+  },
+  "fallback_light_near_dpr2": {
+    "noto": {"dom_width":362.96875,"dom_height":32.796875,"font_family":"Inter, \"Noto Sans CJK KR\", sans-serif","font_weight":"400","ink_bbox_px":[21,16,682,29],"nonbg_pixel_count":5777,"coverage_density_in_ink_bbox":0.2034469472458154,"strong_core_share_bbox_alpha_ge_0_8":0.14126807563959956,"pixel_contrast_median_nonbg":2.9953461357088114,"share_nonbg_pixels_contrast_ge_4_5":0.4048814263458542},
+    "nanum": {"dom_width":367.71875,"dom_height":32.796875,"font_family":"Inter, NanumGothic, sans-serif","font_weight":"400","ink_bbox_px":[20,16,693,29],"nonbg_pixel_count":5452,"coverage_density_in_ink_bbox":0.18199433477560836,"strong_core_share_bbox_alpha_ge_0_8":0.11852515300791162,"pixel_contrast_median_nonbg":2.9953461357088114,"share_nonbg_pixels_contrast_ge_4_5":0.3241012472487161}
+  },
+  "wrap_threshold_365px": {
+    "noto_dpr1": {"dom_width":365,"dom_height":32.796875,"font_family":"Inter, \"Noto Sans CJK KR\", sans-serif","font_weight":"400","ink_bbox_px":[10,9,342,16],"nonbg_pixel_count":1733,"coverage_density_in_ink_bbox":0.19401625261450464,"strong_core_share_bbox_alpha_ge_0_8":0.11878654970760234,"pixel_contrast_median_nonbg":2.4926545004666014,"share_nonbg_pixels_contrast_ge_4_5":0.24350836699365264},
+    "nanum_dpr1": {"dom_width":365,"dom_height":49.59375,"font_family":"Inter, NanumGothic, sans-serif","font_weight":"400","ink_bbox_px":[10,9,302,29],"nonbg_pixel_count":1658,"coverage_density_in_ink_bbox":0.1059294276098766,"strong_core_share_bbox_alpha_ge_0_8":0.041219456496917106,"pixel_contrast_median_nonbg":2.3231230535045992,"share_nonbg_pixels_contrast_ge_4_5":0.03558504221954162},
+    "noto_dpr2": {"dom_width":365,"dom_height":32.796875,"font_family":"Inter, \"Noto Sans CJK KR\", sans-serif","font_weight":"400","ink_bbox_px":[21,18,682,29],"nonbg_pixel_count":5777,"coverage_density_in_ink_bbox":0.2034469472458154,"strong_core_share_bbox_alpha_ge_0_8":0.14126807563959956,"pixel_contrast_median_nonbg":2.9953461357088114,"share_nonbg_pixels_contrast_ge_4_5":0.4048814263458542},
+    "nanum_dpr2": {"dom_width":365,"dom_height":49.59375,"font_family":"Inter, NanumGothic, sans-serif","font_weight":"400","ink_bbox_px":[20,18,604,57],"nonbg_pixel_count":5470,"coverage_density_in_ink_bbox":0.1062341889431366,"strong_core_share_bbox_alpha_ge_0_8":0.0695654699663065,"pixel_contrast_median_nonbg":2.9953461357088114,"share_nonbg_pixels_contrast_ge_4_5":0.32705667276051187}
+  },
+  "derived": {
+    "light_near_dpr1_regular_to_thin_coverage_density_ratio":3.2508483634671808,
+    "light_near_dpr1_semibold_to_regular_coverage_density_ratio":1.3092568775967826,
+    "light_near_dpr1_noto_to_nanum_coverage_density_ratio":1.1612821899042713
+  }
+}
