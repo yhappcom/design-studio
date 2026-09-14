@@ -1,9 +1,9 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 CLOSURE SPRINT**  
+Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 ENTRY AUDIT NEXT**  
 Governance sync: 2026-09-15  
 Primary path: `research/color/`  
-Next new-study ID: `C015`
+Next new-study ID: `C016`
 
 This file is maintained by the Color Specialist. The specialist must not update global `progress/STATUS.md` directly.
 
@@ -11,148 +11,200 @@ This file is maintained by the Color Specialist. The specialist must not update 
 
 Color research exists to improve real app, web, and product decisions. Research volume, palette count, token count, or curriculum speed are not success metrics.
 
-Current priority is **finish Stage 1 correctly before expanding further**. Advanced ICC, spectral, browser, device, human-observer and production topics remain preserved as later-stage backlog rather than being erased or mislabeled as complete.
+The user requested that Stage 1 be closed before continuing advanced expansion. C014 audited the real Foundation gate; C015 completed the remaining perceptual-context exercises and final gate review.
 
 ---
 
 ## Current level
 
-Current curriculum stage: **Stage 1 — Foundation / CLOSURE SPRINT**  
-Overall state: **CRITIQUE**  
-Foundation: **NOT PASSED — blocker set narrowed by C014**
+Stage 1 — Foundations: **PASS**  
+Next curriculum step: **Stage 2 — Intermediate Professional Practice / entry audit pending**
 
-`C014-stage1-foundation-closure-audit.md` re-read the actual `curriculum/MASTER_CURRICULUM.md` and separated true Stage 1 blockers from Stage 2–4 validation work.
+This Stage 1 PASS is narrow and explicit. It means Foundation requirements are supported by original exercises, critique, peer-domain reuse and a closure capstone. It does **not** mean advanced Color, production Color, physical-device validation, human-observer research, Web integration or the full specialist curriculum is complete.
 
-### Stage 1 blockers that remain
-
-One integrated capstone is still required to close:
-
-1. an original simultaneous-contrast demonstration;
-2. an explicit grayscale-first hierarchy construction cycle;
-3. simulated low-light and high-glare stress variants of the same hierarchy;
-4. an explicit `attractive swatches → context failure → revision` critique;
-5. Color-relevant design-history / precedent literacy.
-
-After that capstone, run a final gate review against both the Master Curriculum and Study 008.
-
-### Stage 1 requirements already supported for closure review
-
-- color perception theory + original exercises;
-- luminance reasoning and numerical contrast work;
-- contextual hierarchy/contrast practice;
-- representative text and non-text contrast measurement;
-- state meaning that survives loss of hue/color-only encoding;
-- application to two unrelated product contexts;
-- substantial original practice rather than reading only;
-- explicit reuse/transfer of peer-domain evidence.
+The coordinator-maintained `progress/STATUS.md` may still show the older global summary until the coordinator synchronizes it. The Color Specialist does not edit that file directly.
 
 ---
 
-## Canonical evidence
+## Stage 1 closure evidence
 
-### Legacy Color studies
-- `research/color/008-color-luminance-contrast-hierarchy.md`
-- `research/color/010-color-science-colorimetry-foundations.md`
-- `research/color/011-lms-cone-fundamentals-observer-models.md`
-- `research/color/012-chromatic-adaptation-white-points.md`
-- `research/color/013-perceptual-color-spaces-difference.md`
-- `research/color/016-color-gamut-wide-gamut-mapping.md`
-- `research/color/017-perceptual-ramp-authoring.md`
+### C014 — Foundation closure audit
 
-### C-series
-- `C001` browser/user color override resilience
-- `C002` semantic color/token architecture
-- `C003` data-visualization color systems
-- `C004` spectral integration / observer metamerism
-- `C005` ICC/CMM round-trip validation
-- `C006` semantic-token transfer across two product contexts
-- `C007` fixed-geometry color density/salience transfer
-- `C008` rendered data-visualization validation
-- `C009` Type→Color rendering/contrast transfer
-- `C010` high-precision Display-P3→sRGB color management
-- `C011` forced-colors semantic/data resilience
-- `C012` spectral provenance / sampling resolution
-- `C013` authoritative dataset identity conflict
-- `C014` **Stage 1 Foundation closure audit**
+`research/color/C014-stage1-foundation-closure-audit.md`
 
-Full artifacts remain under `research/color/` and are indexed in `research/color/README.md` through C013; C014 is canonical by file path and will be added to the README during the closure sequence.
+C014 re-read `curriculum/MASTER_CURRICULUM.md` and corrected a stage-boundary problem: later-stage ICC/device/browser/human/profile work had been mixed into the Foundation blocker list.
+
+It identified the actual remaining Stage 1 gaps:
+
+- original simultaneous-contrast demonstration;
+- explicit grayscale-first hierarchy cycle;
+- low-light/high-glare stress variants;
+- attractive-swatches → context-failure critique;
+- Color-relevant history/precedent literacy.
+
+### C015 — perceptual-context capstone
+
+Canonical artifacts:
+
+- `research/color/C015-stage1-perceptual-context-capstone.md`
+- `research/color/C015-stage1-perceptual-context-specimen.html`
+- `research/color/C015-stage1-perceptual-context-validation.py`
+- `research/color/C015-stage1-perceptual-context-results.json`
+
+C015 closes all five gaps and includes the final Foundation gate review.
 
 ---
 
-## Stage 1 closure matrix
+## Final Stage 1 gate matrix
 
-| Requirement | Evidence | Current verdict |
+| Requirement | Evidence | Verdict |
 | --- | --- | --- |
-| Color perception | Study 008; Studies 010/011/013; C004/C007 | **READY FOR FINAL REVIEW** |
-| Luminance | Study 008; C006; C007; C009 | **READY FOR FINAL REVIEW** |
-| Simultaneous contrast | Study 008 theory only | **OPEN — original specimen required** |
-| Contrast / hierarchy in context | Study 008; C006/C007/C009/C011 | **READY FOR FINAL REVIEW** |
-| Original exercises | C004–C013 contain reproducible numerical/rendered/browser practice | **SATISFIED** |
-| Peer evidence reuse | C007 Layout transfer; C009 Type transfer; C011 Interaction transfer | **SATISFIED** |
-| Design history / precedent literacy | no explicit canonical Color closure evidence yet | **OPEN** |
+| Color perception | Study 008 + C007 + C015 contextual specimen | **PASS** |
+| Luminance | Study 008 + C006/C007/C009 + C015 | **PASS** |
+| Simultaneous contrast | Study 008 theory + C015 identical-target/different-surround specimen | **PASS** |
+| Contrast/hierarchy in context | Study 008 + C006/C007/C009/C011 + C015 | **PASS** |
+| Design history / precedent literacy | C015 Chevreul → Albers → CIE distinction | **PASS** |
+| Original exercises | C004–C015 reproducible numerical/rendered/browser/static exercises | **PASS** |
+| Peer evidence checked/reused | C007 Layout transfer; C009 Type transfer; C011 Interaction transfer; C015 explicit reuse | **PASS** |
 
 ### Study 008 local PASS requirements
 
-| Study 008 requirement | Verdict |
-| --- | --- |
-| grayscale-first hierarchy exercise | **PARTIAL — make explicit in C015** |
-| representative text/non-text contrast | **SATISFIED** via C006/C009/C011 |
-| state understandable without hue | **SATISFIED** via C011/C008 |
-| low-light + high-glare stress variants | **OPEN — C015** |
-| attractive swatches that fail in context | **PARTIAL / OPEN — C015** |
-| method applied to two unrelated products | **SATISFIED** via C006 |
+| Requirement | Evidence | Verdict |
+| --- | --- | --- |
+| grayscale-first hierarchy exercise | C015 | **PASS** |
+| representative text/non-text contrast | C006/C009/C011 | **PASS** |
+| state understandable without hue | C011/C008 | **PASS** |
+| low-light + high-glare stress variants | C015, explicitly bounded as design/math stress | **PASS** |
+| attractive swatches fail in context | C015 | **PASS** |
+| two unrelated product contexts | C006 | **PASS** |
 
 ---
 
-## Stage-boundary correction from C014
+## C015 measured highlights
 
-The Master Curriculum explicitly places the following **after Stage 1**, so these remain active but no longer act as automatic Foundation blockers.
+### Simultaneous contrast
 
-### Stage 2 — Intermediate Color systems
+Both center targets are exactly `#808080` / RGB `(128,128,128)` with identical relative luminance `0.2158605001`; only surrounds differ (`#202020` vs `#E8E8E8`).
+
+Evidence boundary: this is an original contextual-color stimulus, not measured human effect magnitude.
+
+### Grayscale-first hierarchy
+
+Representative ratios:
+
+- primary text / canvas: `15.27:1`;
+- secondary text / canvas: `5.26:1`;
+- grayscale primary action / white: `14.35:1`;
+- revised blue action / white: `5.41:1`;
+- brand mint / dark content: `12.85:1`.
+
+Chroma is added after information priority exists.
+
+### Low-light design stress
+
+Representative bounded ratios remain structurally strong in the controlled dark variant:
+
+- primary text / canvas: `15.98:1`;
+- secondary text / canvas: `9.04:1`;
+- dark content / light-blue action: `8.50:1`;
+- boundary / surface: `3.66:1`.
+
+This is not physical low-light comfort validation.
+
+### High-glare sensitivity diagnostic
+
+A simple relative-luminance white-veiling sensitivity model with `v = 0.15` compresses example ratios:
+
+- primary text / canvas: `15.27 → 4.62`;
+- secondary text / canvas: `5.26 → 3.12`;
+- white / blue action: `5.41 → 3.26`.
+
+This is not an optical glare model or WCAG re-test. It demonstrates why small contrast margins are vulnerable and why later physical validation remains necessary.
+
+### Swatch-to-context failure
+
+Four attractive light swatches used naively as filled controls with white text produce only about `1.29:1`–`1.77:1` contrast. With dark content, the same light swatches produce about `9.32:1`–`12.85:1`.
+
+Foundation lesson:
+
+`palette attractiveness != semantic fitness != pair contrast != hierarchy quality`.
+
+---
+
+## Canonical Color evidence to date
+
+Legacy studies:
+
+- `008-color-luminance-contrast-hierarchy.md`
+- `010-color-science-colorimetry-foundations.md`
+- `011-lms-cone-fundamentals-observer-models.md`
+- `012-chromatic-adaptation-white-points.md`
+- `013-perceptual-color-spaces-difference.md`
+- `016-color-gamut-wide-gamut-mapping.md`
+- `017-perceptual-ramp-authoring.md`
+
+C-series:
+
+- C001 browser/user color override resilience
+- C002 semantic color/token architecture
+- C003 data-visualization color systems
+- C004 spectral integration / observer metamerism
+- C005 ICC/CMM round-trip validation
+- C006 semantic-token transfer across two product contexts
+- C007 fixed-geometry Color density/salience transfer
+- C008 rendered data-visualization validation
+- C009 Type→Color rendering/contrast transfer
+- C010 high-precision Display-P3→sRGB color management
+- C011 forced-colors semantic/data resilience
+- C012 spectral provenance / sampling resolution
+- C013 authoritative dataset identity conflict
+- C014 Stage 1 Foundation closure audit
+- C015 Stage 1 perceptual-context capstone
+
+---
+
+## Stage-boundary policy after Foundation PASS
+
+The following unresolved work remains active but belongs primarily after Stage 1 under the current Master Curriculum.
+
+### Stage 2 — Intermediate Professional Practice
+
 - palette/ramp construction with explicit authoring models;
 - semantic color-role systems;
 - state/focus color coupled to interaction semantics;
-- gamut-aware production values/fallback;
-- viewing-condition/device-aware validation.
+- gamut-aware production values and fallback behavior;
+- viewing-condition/device-aware validation;
+- multiple viable solutions to the same problem with explicit selection criteria.
 
-### Stage 3 — Advanced Color
+Existing early bridge evidence: Study 017, C001, C002, C006, C010.
+
+### Stage 3 — Advanced / Systems
+
 - cross-gamut systems;
 - ICC/color-management literacy;
-- perceptual-model and color-difference limits;
+- perceptual-model/color-difference limits;
 - environment/display validation;
 - data-visualization palette systems;
 - dark/light/adaptive color behavior.
 
-### Stage 4 — Production Color
+Existing early bridge evidence: Studies 013/016, C003/C005/C008/C010/C011.
+
+### Stage 4 — Production
+
 - reproducible color-token generation/conversion;
 - production-space encoding/fallback documentation;
 - managed vs unmanaged rendering awareness;
 - real device/browser/profile validation;
-- production discrepancy tracking and no undocumented manual corrections.
+- discrepancy tracking and no undocumented manual correction.
 
-### Stage 5 / research-advisory backlog
+### Stage 5 — Research / Advisory
+
 - human/CVD-observer studies;
-- stronger external-validity/statistical research;
-- measured-device spectral work when justified;
-- enterprise/multi-project advisory validation.
+- stronger experimental/statistical/external-validity work;
+- measured spectral/device research where justified;
+- enterprise/multi-project advisory evidence.
 
-This is a **stage correction, not a standards reduction**.
-
----
-
-## Advanced evidence already accumulated early
-
-The program already contains evidence that will become useful in later stages:
-
-- C005/C010: ICC/CMM and high-precision P3→sRGB production paths;
-- C004/C012/C013: observer/spectral/provenance research;
-- C002/C006: semantic-token systems and two-context transfer;
-- C003/C008/C011: data visualization and forced-color resilience;
-- C007: Color-driven salience under fixed geometry;
-- C009: Type-dependent Color rendering;
-- C001/C011: browser/user override behavior.
-
-These studies remain `PRACTICE / CRITIQUE / TRANSFER VALIDATION` evidence. They are not retroactively declared PASS merely because Stage 1 closure has been narrowed.
+No later-stage module is marked PASS merely because Stage 1 is complete.
 
 ---
 
@@ -160,78 +212,65 @@ These studies remain `PRACTICE / CRITIQUE / TRANSFER VALIDATION` evidence. They 
 
 ### Typography / Type
 
-Type is through **T014**, next ID T015 at latest sync.
-
-Relevant consequences:
-
-- C009/T005 show semantic Color values do not normalize actual text rendering;
-- T013/T014 reinforce exact artifact/normalization provenance;
-- C015 should use stable representative Type roles but must not claim Type production PASS.
+Type is through T014 at latest synchronization. C009/T005/T013/T014 remain relevant when Color decisions depend on exact shipped text artifacts, fallback or normalization.
 
 ### Layout / Interaction
 
-Layout/Interaction is through **L006/I004** at latest sync.
-
-Relevant consequences:
-
-- C007 ↔ L005 provides compatible evidence that spatial density and Color-driven feature competition are distinct;
-- C011 independently transfers I003 state/focus resilience;
-- C015 should keep geometry/state meaning fixed while testing the remaining Color Foundation questions.
+Layout/Interaction is through L006/I004 at latest synchronization. C007↔L005 and C011↔I003 remain strong examples of valid transfer/reuse.
 
 ### Web Design
 
-Web still lists **W001** as next with no substantive W### evidence at this checkpoint.
-
-Real browser/device integration remains necessary in later stages. A controlled browser may be used as a renderer for C015, but this must not be called Web production validation.
+Web still lists W001 as next with no substantive W### evidence at the latest synchronization. Real page/browser/device Color integration remains a later-stage dependency; no Web PASS is inferred.
 
 ---
 
-## Active next queue
+## Preserved later-stage open gaps
 
-1. **C015 — Stage 1 perceptual-context capstone**: simultaneous contrast, grayscale-first hierarchy, simulated low-light/high-glare stress, swatch-to-context failure/revision, and Color history/precedent literacy in one bounded original exercise.
-2. **Final Stage 1 gate review** against `MASTER_CURRICULUM.md` and Study 008. If all required evidence is present, mark Color Stage 1 `PASS` and move the current advanced backlog to Stage 2+ explicitly.
-3. Only after Stage 1 closure resume the highest-value later-stage work; do not return automatically to spectral research merely because it was previously next.
-
----
-
-## Open later-stage research-quality gaps
-
-Preserved, not deleted:
-
-- exact raw-file identity for current CIE 1964 10° and CIE 2006 2° LMS;
-- verified CIE 170-2 CFB 2°/10° raw tables and complete observer comparison;
+- exact current CIE 1964/LMS raw-file identity and observer-comparison cleanup;
+- verified CIE 170-2 CFB raw tables;
 - measured display/LED/projector SPDs and instrument evidence;
-- real Windows High Contrast / Edge and broader browser evidence;
+- real Windows High Contrast / broader browser/OS behavior;
 - assistive-technology behavior;
-- production SVG/canvas chart-library transfer;
+- production chart-library transfer;
 - human readability/low-vision and real-CVD-observer evidence;
 - production webfont/localization transfer;
 - real measured display/output ICC profiles;
 - second CMM/toolchain and soft-proof/print validation;
-- browser/OS CSS P3, tagged-image and screenshot/export color management;
+- browser/OS CSS P3 and export color-management evidence;
 - physical-display/environment testing;
 - cultural/localization evidence;
 - production-fidelity multi-project transfer.
+
+These are preserved for the correct later stage rather than deleted.
 
 ---
 
 ## HANDOFFS TO OTHER SPECIALISTS
 
 ### Typography / Type
-- Stage 1 Color closure now depends on representative stable text roles, not unresolved Type production/platform work.
-- Later production Color review must still use exact shipped Type artifacts where text rendering is material.
+- Color Foundation is closed without claiming Type platform/production closure.
+- Later-stage Color text validation must still use exact shipped Type artifacts when relevant.
 
 ### Layout / Interaction
-- C015 will hold geometry/state semantics stable and isolate Color perception/hierarchy questions.
-- Existing L005/I003 reuse already satisfies meaningful peer-domain integration for the current Foundation closure.
+- Foundation closure confirms that Color questions can be isolated while geometry/state semantics remain canonical L/I concerns.
+- Continue using L/I evidence rather than encoding interaction meaning with hue alone.
 
 ### Web Design
-- Absence of W### evidence no longer blocks the narrowly defined Color Foundation gate.
-- Real browser/device Color integration remains an explicit later-stage dependency.
+- C015 HTML is a Color exercise artifact, not Web validation.
+- Stage 2+ should transfer Foundation principles into real page/theme/browser/device contexts when W### evidence exists.
+
+---
+
+## Active next queue
+
+1. **C016 — Stage 2 entry audit:** map the Master Curriculum's Intermediate Color requirements against existing C001/C002/C006/C010/Study 017 evidence; identify only true gaps before new research.
+2. Build Stage 2 work around multiple viable solutions and explicit selection criteria rather than more isolated theory.
+3. Prioritize real project usefulness over resuming the old spectral queue automatically.
 
 ## Latest checkpoint
 
-- **C014 completed:** Stage 1 closure audit mapped the Master Curriculum and Study 008 to existing evidence.
-- True remaining Foundation work is narrow and executable in one C015 capstone.
-- Next Color study ID: **C015**.
-- Overall state: **Stage 1 / CLOSURE SPRINT / CRITIQUE / Foundation NOT PASSED**.
+- **C014 completed:** Foundation blocker audit and stage-boundary correction.
+- **C015 completed:** simultaneous contrast, grayscale-first hierarchy, low/high stress, swatch-context critique, history/precedent and final gate review.
+- **Color Stage 1 — Foundations: PASS.**
+- Next new Color study ID: **C016**.
+- Global coordinator status may remain stale until its next synchronization; Color does not edit it directly.
