@@ -1,0 +1,42 @@
+{
+  "study": "L005",
+  "evidence_level": "controlled Chromium rendering + image-feature proxies; not human perceived-clutter evidence",
+  "chromium": "144.0.7559.96",
+  "viewport": [1280, 900],
+  "geometry_equal": true,
+  "variants": {
+    "neutral_minimal": {
+      "metrics": {"L_mean": 0.9578481521, "L_std": 0.1386219785, "C_mean": 0.0025939882, "C_std": 0.0075696382, "high_chroma_fraction_C_gt_0_06": 0.0, "high_chroma_fraction_C_gt_0_10": 0.0, "luminance_gradient_mean": 0.0132685384, "chroma_gradient_mean": 0.0006385301, "token_unique_values": 8},
+      "min_declared_text_contrast": 6.4005799325
+    },
+    "role_separated": {
+      "metrics": {"L_mean": 0.9586166304, "L_std": 0.1239060584, "C_mean": 0.0108868849, "C_std": 0.0421892092, "high_chroma_fraction_C_gt_0_06": 0.0402925347, "high_chroma_fraction_C_gt_0_10": 0.0377447917, "luminance_gradient_mean": 0.0166206733, "chroma_gradient_mean": 0.0016290603, "token_unique_values": 15},
+      "min_declared_text_contrast": 4.8630969506
+    },
+    "chroma_overloaded": {
+      "metrics": {"L_mean": 0.9516592589, "L_std": 0.1271269932, "C_mean": 0.0181874799, "C_std": 0.0441775053, "high_chroma_fraction_C_gt_0_06": 0.0701024306, "high_chroma_fraction_C_gt_0_10": 0.0637925347, "luminance_gradient_mean": 0.0166025138, "chroma_gradient_mean": 0.0044623365, "token_unique_values": 17},
+      "min_declared_text_contrast": 5.2842702248
+    },
+    "luminance_overloaded": {
+      "metrics": {"L_mean": 0.8664256272, "L_std": 0.1775123663, "C_mean": 0.0000000323, "C_std": 0.0000000066, "high_chroma_fraction_C_gt_0_06": 0.0, "high_chroma_fraction_C_gt_0_10": 0.0, "luminance_gradient_mean": 0.0210874814, "chroma_gradient_mean": 0.0000000008, "token_unique_values": 12},
+      "min_declared_text_contrast": 5.0989075474
+    },
+    "semantic_collision": {
+      "metrics": {"L_mean": 0.9593154527, "L_std": 0.1213573940, "C_mean": 0.0077050034, "C_std": 0.0209377180, "high_chroma_fraction_C_gt_0_06": 0.06384375, "high_chroma_fraction_C_gt_0_10": 0.0008029514, "luminance_gradient_mean": 0.0146937905, "chroma_gradient_mean": 0.0020958017, "token_unique_values": 12},
+      "min_declared_text_contrast": 5.2302826982
+    }
+  },
+  "semantic_job_analysis": {
+    "neutral_minimal": {"distinct_job_color_groups": 3, "intentional_collision_risk": "low but weak state emphasis"},
+    "role_separated": {"distinct_job_color_groups": 9, "intentional_collision_risk": "low; roles separated"},
+    "chroma_overloaded": {"distinct_job_color_groups": 10, "intentional_collision_risk": "moderate; broad chroma coverage competes"},
+    "luminance_overloaded": {"distinct_job_color_groups": 6, "intentional_collision_risk": "moderate; strong luminance competition"},
+    "semantic_collision": {"distinct_job_color_groups": 5, "intentional_collision_risk": "high; accent reused for action/selection/positive/success/focus"}
+  },
+  "scope_limits": [
+    "Image-feature proxies are not a validated implementation of Rosenholtz Feature Congestion.",
+    "No human perceived-complexity, search-time, error-rate, preference, or workload data are claimed.",
+    "One viewport, one Chromium build, one content set, and one light-surface specimen were tested.",
+    "Semantic-collision risk is a design-semantic classification, not a pixel-statistic result."
+  ]
+}
