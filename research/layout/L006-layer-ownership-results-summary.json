@@ -1,0 +1,53 @@
+{
+  "chromium": "144.0.7559.96",
+  "pairs": {
+    "popover": {
+      "workspace_diff": 0.0,
+      "layer_diff": 0.0
+    },
+    "sticky": {
+      "workspace_diff": 0.0,
+      "layer_diff": 0.0
+    },
+    "sheet": {
+      "workspace_diff": 0.0,
+      "layer_diff": 0.0
+    }
+  },
+  "assertions": [
+    {"name": "popover_workspace_pixels_equal", "pass": true},
+    {"name": "popover_layer_pixels_equal", "pass": true},
+    {"name": "sticky_workspace_pixels_equal", "pass": true},
+    {"name": "sticky_layer_pixels_equal", "pass": true},
+    {"name": "sheet_workspace_pixels_equal", "pass": true},
+    {"name": "sheet_layer_pixels_equal", "pass": true},
+    {"name": "popover_broken_activates_background", "pass": true},
+    {"name": "popover_revised_activates_foreground", "pass": true},
+    {"name": "sticky_broken_activates_background", "pass": true},
+    {"name": "sticky_revised_activates_foreground", "pass": true},
+    {"name": "sheet_broken_activates_background", "pass": true},
+    {"name": "sheet_revised_activates_foreground", "pass": true},
+    {"name": "sheet_broken_keyboard_escapes", "pass": true},
+    {"name": "sheet_revised_background_inert", "pass": true},
+    {"name": "sheet_revised_keyboard_contained", "pass": true}
+  ],
+  "popover_broken_hit": "bgAction popbg",
+  "popover_broken_counts": {"bg": 1, "fg": 0},
+  "popover_revised_hit": "fgAction",
+  "popover_revised_counts": {"bg": 0, "fg": 1},
+  "sticky_broken_hit": "bgAction stickybg",
+  "sticky_broken_counts": {"bg": 1, "fg": 0},
+  "sticky_revised_hit": "fgAction",
+  "sticky_revised_counts": {"bg": 0, "fg": 1},
+  "sheet_broken_hit": "bgAction sheetbg",
+  "sheet_broken_counts": {"bg": 1, "fg": 0},
+  "sheet_revised_hit": "fgAction",
+  "sheet_revised_counts": {"bg": 0, "fg": 1},
+  "sheet_broken_tab_sequence": ["fgAction", "bgInput", "bgAction sheetbg"],
+  "sheet_broken_escaped_to_background": true,
+  "sheet_revised_tab_sequence": ["fgAction", "cancel", "fgAction", "cancel", "fgAction", "cancel", "fgAction"],
+  "sheet_revised_focus_contained": true,
+  "sheet_revised_bg_inert": true,
+  "pass_count": 15,
+  "total": 15
+}
