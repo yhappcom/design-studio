@@ -15,7 +15,7 @@ Current stage: **Stage 1 — Foundation**
 Overall state: **CRITIQUE** in studied modules  
 Foundation: **NOT PASSED**
 
-Human-observer/user-task validation is **DEFERRED TO APP-DEVELOPMENT VALIDATION**. It is not treated as completed or simulated.
+Human-observer/user-task validation is **DEFERRED TO APP-DEVELOPMENT VALIDATION**. It is not treated as completed or simulated. Non-human research continues.
 
 ## Four-specialist sync
 
@@ -54,6 +54,8 @@ Human-observer/user-task validation is **DEFERRED TO APP-DEVELOPMENT VALIDATION*
 - `I004-http-precondition-etag-transfer.md` + **16 real HTTP precondition assertions**
 - `I004-offline-outbox-reconnect-transfer.md` + **18 durable offline/restart/reconnect assertions**
 - `I004-ambiguous-outcome-idempotency-transfer.md` + **15 real HTTP ambiguous-result/idempotency assertions**
+- `I004-multi-operation-queue-semantics.md` + **20 ordering/compaction/dependency assertions**
+- `I004-offline-authorization-finalization-transfer.md` + **18 authorization/finalization/account assertions**
 - `I005-ambiguous-outcome-idempotency.md` + **18 independent HTTP replication/extension assertions**
 
 Shared accessibility baseline: `research/004-accessibility-reflow-targets-focus.md`.
@@ -84,9 +86,9 @@ Remaining: real Windows High Contrast/AT; Firefox/Safari; physical iOS/Android; 
 
 ---
 
-# I004 / I002 — concurrency, offline sync, and ambiguous outcomes
+# I004 / I002 — concurrency, offline sync, retry, queue semantics and policy state
 
-I004 now has four evidence layers.
+I004 now spans **six controlled evidence layers**.
 
 ## 1. Conflict state machine — **17/17**
 Established naive lost update, semantically safe disjoint merge, same-field preservation, delete-vs-edit identity semantics and resolution recovery.
@@ -106,7 +108,64 @@ Established outcome-unknown after response loss; own-success 412 ambiguity; desi
 
 The lab `X-Operation-Id` is an application contract, not a standardized HTTP field.
 
-Evidence level: **PRACTICE + CRITIQUE**.
+## 5. Multiple queued operations / ordering / compaction / dependencies — **20/20**
+Established:
+- operation order can be semantic (`departed → arrived` differs from reverse);
+- pure replace→replace can be compactable in a bounded no-side-effect case;
+- generic same-path keep-last compaction lost additive intent (`+1,+1` became `+1`);
+- semantic compaction preserved additive intent (`+2`);
+- conflict blocks semantic descendants but does not need to freeze independent work;
+- create→edit requires temp→server identity mapping plus the returned validator.
+
+Critical rule:
+
+> **Compaction safety is defined by operation algebra and dependencies, not by JSON path equality.**
+
+An outbox is a **dependency-aware preserved-intention structure**, not merely FIFO retries.
+
+## 6. Offline authorization / finalization / account switch — **18/18**
+Established:
+- permission can be revoked while representation/ETag is unchanged; 403 is not a version conflict;
+- finalized/locked workflow can make an old edit invalid as a direct mutation while preserving the value of the work;
+- recovery can change operation type from edit to amendment/compensating action;
+- restored permission does not eliminate stale-data revalidation;
+- replaying A's queued intent under newly active account B can technically succeed while violating product ownership;
+- queued actor/account identity therefore belongs to operation validity.
+
+RFC 9110 consequence retained: normal request checks can take precedence over conditional-precondition evaluation. Lab `409 record_finalized` is an application contract, not a universal finalization status rule.
+
+### Updated queued-operation validity model
+
+A queued mutation can depend on:
+
+`intent payload / object-local-server identity / historical base validator / current authoritative state / operation identity / actor-account identity / current authorization / workflow mutability-finalization / sequence / dependencies / external side-effect state`
+
+Relevant states now include:
+
+`local draft / queued / syncing / network pending / outcome unknown / confirmed / already applied / mergeable stale / conflict / blocked dependency / identity mapping pending / blocked permission / blocked account mismatch / blocked finalized / deleted-finalized remotely / recovered as new-amendment`
+
+### Reusable rules
+
+- Local persistence success is not remote commit success.
+- Retry is not conflict resolution.
+- Outcome unknown is not failure.
+- A 412 after outcome-unknown needs own-success detection before conflict escalation.
+- `If-Match` prevents stale mutation but does not choose semantic winners.
+- Base/current/local are separate state dimensions.
+- Do not replace queued historical base with the latest fetched ETag.
+- Queue clearing follows authoritative confirmation.
+- Auto-merge only semantically independent changes.
+- Preserve local drafts across conflicts/restarts.
+- Delete-vs-edit/finalization may require a new identity or compensating action.
+- Do not blindly retry non-idempotent side effects after ambiguous outcomes.
+- Persist stable semantic operation identity when dedupe depends on it.
+- Preserve ordering when operations do not commute.
+- Compact only when semantic equivalence is established.
+- Block dependent descendants of unresolved work while allowing independent work to continue.
+- Bind queued intent to actor/account identity when authorization, privacy, attribution or audit depends on it.
+- Restored permission requires fresh concurrency validation before mutation.
+
+Evidence level: **PRACTICE + CRITIQUE / state-machine + real HTTP + durable offline/restart + ambiguous-result + multi-operation queue + authorization/workflow transfer**.
 
 ---
 
@@ -183,7 +242,7 @@ None is production PASS.
 | Interaction agency/state/navigation | CRITIQUE | broader real platform/AT/human pending |
 | Async/retry/cancel | PRACTICE / CRITIQUE | production API/proxy/background-sync/AT pending |
 | Color-channel-independent semantics | PRACTICE / CRITIQUE | real OS/AT/production pending |
-| Concurrent edits/offline conflict | PRACTICE / CRITIQUE | **17 state + 16 HTTP + 18 offline + 15 ambiguous**; production DB/storage/multi-device/queue-ordering/CRDT-OT pending |
+| Concurrent edits/offline conflict | PRACTICE / CRITIQUE | **17+16+18+15+20+18** controlled assertions; production DB/storage/multi-device/atomicity/CRDT-OT pending |
 | Ambiguous outcome / duplicate-sensitive intent | PRACTICE / CRITIQUE | **I004 15 + I005 18 replication/extension**; atomicity/distributed/gateway/browser/mobile pending |
 
 ---
@@ -192,11 +251,11 @@ None is production PASS.
 
 Human work is deferred to app-development validation and does not block non-human research.
 
-1. **Multiple queued operation semantics** — ordering, dependencies, compaction/squashing, partial failure and conflict propagation.
-2. **Authorization/finalization while offline** — permission change, locked/finalized records and compensating actions.
-3. **Production retry boundaries** — proxy/middleware behavior and business-effect/dedupe-ledger atomicity when suitable infrastructure exists.
+1. **I002/I004 atomicity/retry boundary** — crash between business side effect and dedupe-ledger commit; transactional outbox/inbox and database isolation/atomicity.
+2. **I004 production local-store / multi-device partitioning** when suitable real framework/storage infrastructure becomes available.
+3. **I004 CRDT/OT boundary study** — identify when record/field merge rules stop being adequate for text/list/order domains; do not implement CRDT merely for study volume.
 4. **L006 production/platform transfer** when real OS/AT/cross-browser/mobile/framework environments become available.
-5. **Web W001 transfer consumption** — inspect/reproduce high-risk Web findings as W-series grows.
+5. **Consume W001/W002+ evidence** and independently reproduce high-risk Web findings where useful.
 6. **L004 only if project-relevant** — delivered font, locale/accounting, dynamic update, actual zoom/DPR.
 7. Open `L007` or `I006` only for a genuinely higher-value new question.
 
@@ -206,7 +265,7 @@ Execute only with live app/prototype and suitable participants:
 - L001 border ownership and optical-centering judgments;
 - L002/L005/C007 task performance/error vs preference/workload;
 - L006 layer comprehension/dismissal expectations;
-- I004/I005 conflict/retry-state comprehension/error;
+- I004/I005 conflict/retry/sync/authorization-recovery comprehension/error;
 - real accessibility-user validation.
 
 ---
@@ -219,12 +278,13 @@ Execute only with live app/prototype and suitable participants:
 
 ### Color
 - Color Stage 1 PASS is acknowledged; Layout/Interaction does not infer production/device/human Color PASS.
-- Sync/retry states `queued`, `outcome unknown`, `processing duplicate`, `conflict`, `deleted`, `confirmed`, `replay-confirmed`, `identity mismatch` remain distinct semantics; Color must not collapse them or become sole channel.
+- New sync semantics include `blocked dependency`, `blocked permission`, `blocked account mismatch`, `blocked finalized`, `identity mapping pending`, `outcome unknown`, `conflict`, `confirmed`, and recovery states. Color may encode but must not collapse or solely communicate them.
 
 ### Web Design
 - W001 is now available as the first Web baseline.
 - Highest-value future transfer includes L006 overlay matrices and I004/I005 network/offline contracts using actual browser/framework/page behavior.
-- Web should verify stable operation identity across `fetch` retries/reload/offline, page-level outcome-unknown messaging, concurrent activation, and framework retry middleware.
+- W001's relationship-first model directly supports the queue finding: synchronization correctness depends on relationships among operations, resources, actors and states—not only request order.
+- Web should verify stable operation identity across fetch retries/reload/offline, dependency-aware ordering, safe compaction, temp-ID remapping, account switch/logout partitioning, authorization/finalization change, concurrent activation, and framework retry middleware.
 
 ---
 
@@ -233,8 +293,8 @@ Execute only with live app/prototype and suitable participants:
 - `L001`–`L006`: studied spatial modules remain PRACTICE / CRITIQUE where applicable.
 - `I001`: CRITIQUE.
 - `I002` / `I003` / `I004` / `I005`: PRACTICE / CRITIQUE.
-- I004 evidence: **17/17 + 16/16 + 18/18 + 15/15**.
+- I004 evidence now spans **17/17 + 16/16 + 18/18 + 15/15 + 20/20 + 18/18**.
 - I005 independent replication/extension: **18/18**.
-- Next IDs: Layout `L007`; Interaction `I006`.
+- Next IDs remain Layout `L007`; Interaction `I006`.
 - Human validation remains explicitly deferred to app-development stage.
 - No Layout/Interaction Foundation PASS promotion claimed.
