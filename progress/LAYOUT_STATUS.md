@@ -20,7 +20,7 @@ Self-directed research remains ACTIVE. Adjacent Type, Color, Web Design, Accessi
 Current curriculum stage: **Stage 1 — Foundation**  
 Overall state: **CRITIQUE** in studied spatial and interaction modules; Foundation is not passed.
 
-The role combines spatial composition and interaction because geometry, state, navigation, feedback, target placement and responsive behavior must form one product experience. Spatial and temporal/behavioral evidence remain separately indexed under `research/layout/` and `research/interaction/` so those claim types are not conflated.
+Spatial and temporal/behavioral evidence remain separately indexed under `research/layout/` and `research/interaction/` so those claim types are not conflated.
 
 ## Four-specialist collaboration sync
 
@@ -31,9 +31,7 @@ Design Studio operates with four official peer specialists:
 3. Layout, Spatial & Interaction
 4. Web Design
 
-Web Design is an independent design specialist and the main real-web application/validation partner for this role. Layout/Interaction provides canonical spatial and behavioral evidence; Web integrates and stress-tests it in complete page systems, responsive/browser contexts, native controls, real content, mixed input, history, loading/network, localization and implementation conditions.
-
-At the latest synchronization point, `progress/WEB_STATUS.md` still listed `W001` as not yet begun. Do not invent Web evidence. Re-check Web status and `research/web/` before every substantial block.
+Web Design is the main real-web application/validation partner for this role. At the latest synchronization point, `progress/WEB_STATUS.md` still listed `W001` as not yet begun. Do not invent Web evidence; re-check Web status and `research/web/` before every substantial block.
 
 ## Canonical evidence already established
 
@@ -43,6 +41,10 @@ At the latest synchronization point, `progress/WEB_STATUS.md` still listed `W001
 - `research/layout/014-perceptual-grouping-spatial-grammar.md`
 - `research/layout/L001-figure-ground-balance-optical-centering.md`
 - `research/layout/L002-whitespace-density-spatial-rhythm.md`
+- `research/layout/L002-density-validation-specimen.html`
+- `research/layout/L002-density-validation-playwright.py`
+- `research/layout/L002-density-validation-results-summary.json`
+- `research/layout/L002-density-validation-report.md`
 - retained product-design exercises for grid, responsive transfer, grouping and L001 critique.
 
 ### Interaction
@@ -60,87 +62,98 @@ At the latest synchronization point, `progress/WEB_STATUS.md` still listed `W001
 - `research/004-accessibility-reflow-targets-focus.md`
 - retained accessibility geometry practice and critique under `product-design/exercises/`.
 
-## Latest completed block — I001 running validation cycle
+## Latest completed block — L002 rendered density validation
 
-The I001 source framework was converted into a running HTML/JavaScript state specimen and exercised with Playwright in headless Chromium.
+L002 was converted from a source/project framework into a running browser-rendered density experiment.
 
-### Controlled scenario
+### Controlled matrix
 
-- Records list → detail → edit;
-- top-level Records / Reports switch;
-- hierarchy `Up`;
-- session-history `Back` / `Forward`;
-- deep-link-style detail entry;
-- dirty draft navigation;
-- modal discard confirmation and `Escape`;
-- route focus and modal focus restoration;
-- async save pending → failure → retry → success;
-- top-level workspace resumption with object identity.
+The specimen compares the same 12-row portfolio dataset across:
+
+- three policies: `naive`, `preserve`, `adaptive`;
+- compact / intermediate / spacious density;
+- 1440×900, 1024×768, 768×800, 390×844 viewports;
+- 1.0×, 1.25× and 2.0× text scale;
+- English and long Korean strings.
+
+This produces **72 conditions per policy / 216 rendered conditions total**.
 
 ### Failure → revision evidence
 
-The first executions exposed concrete defects:
+`naive` compactness intentionally used smaller controls, truncation and narrow-screen field hiding.
 
-1. route focus landed on `Up` rather than route context;
-2. dirty Back traversal had no explicit restorable draft policy;
-3. save-success status was erased during rerender;
-4. top-level restoration remembered view type but lost the semantic object;
-5. focusing a heading while `Up` preceded it in DOM order caused forward-Tab skip risk;
-6. Retry was incorrectly placed inside the live `role="status"` region;
-7. top-level resume state could become stale after history traversal.
+Across its 72 conditions:
 
-The specimen was revised to:
+- 32 conditions rendered a control below the specimen's 44px contract;
+- 580 critical cells were clipped/ellipsized;
+- 432 critical cells were hidden.
 
-- focus the route heading on route transitions;
-- align DOM order with route-focus behavior;
-- preserve and restore a local draft in this controlled policy;
-- preserve object identity in resumable top-level state;
-- keep success status through the destination render;
-- separate non-interactive live status from recovery action;
-- update resumable state from the actual rendered route.
+This demonstrated that rows-per-screen or low scroll height are invalid density-quality metrics when content or interaction geometry changes to obtain them.
 
-### Re-proof
+`preserve` then held semantic content and target geometry constant:
 
-The final Playwright harness executed **14/14 PASS** checks covering keyboard route entry, Tab reachability of Up, modal entry/exit focus, dirty-draft Back traversal, workspace object restoration, draft restoration, async failure/retry/success, deep-link entry, hierarchy Up and session-history Back.
+- below-contract controls: 0;
+- horizontal overflow: 0;
+- clipped critical cells: 0;
+- hidden critical cells: 0.
 
-Evidence level: **PRACTICE + CRITIQUE / controlled Chromium prototype evidence**.
+The true spatial cost became visible: average scroll ratio rose from about 1.47 to 2.09.
 
-This is not production PASS. The environment used same-document hash routing on `about:blank` because browser access to localhost/network origins was blocked. Real router/URL navigation, assistive technology, cross-browser/device, real network, localization/fallback stress and representative human resumption evidence remain open.
+### Second failure — rigid spaciousness under extreme text/container stress
 
-## Previous completed block — I001 source framework
+At 390×844, 200% text and long Korean labels under `preserve`:
 
-`I001-navigation-history-focus-restoration-interruption.md` established navigation as a user-facing state model rather than a menu/arrow/animation problem.
+- compact: scroll ratio 5.17, max 2 rows/viewport;
+- intermediate: 6.31, max 2 rows;
+- spacious: 8.61, max 1 row; average row height about 548.2px.
 
-Key distinctions:
+The layout was semantically intact but operationally expensive because comfort whitespace remained too rigid after text had already consumed the available geometry.
 
-- semantic location;
-- traversal history;
-- product hierarchy;
-- task/work state;
-- presentation state;
-- focus/selection state;
-- transient-layer state;
-- data/commitment state;
-- Back vs Up vs Close vs top-level switching;
-- deep-link/context-poor entry;
-- interruption/resumption and restoration validity.
+### Adaptive re-proof
 
-## Previous spatial block — L002
+`adaptive` preserves content, target geometry and grouping while compressing discretionary intermediate/spacious whitespace under the strongest constraint.
 
-`L002-whitespace-density-spatial-rhythm.md` established a task-dependent density model rather than a universal “more whitespace is better” rule.
+Across all 72 adaptive conditions:
 
-Key distinctions:
+- below-contract controls: 0;
+- horizontal overflow: 0;
+- clipped critical cells: 0;
+- hidden critical cells: 0.
 
-- information density;
-- visual density;
-- interaction density;
-- navigation/temporal density;
-- local vs global density;
-- whitespace as a structural resource with explicit jobs;
-- progressive disclosure as an exchange of spatial density for interaction/navigation cost;
-- objective task performance vs visual preference.
+At the extreme Korean condition:
 
-Controlled matched-content rendered practice and human/task evidence remain open.
+- intermediate scroll ratio improved 6.31 → 5.32;
+- spacious improved 8.61 → 5.68;
+- spacious max simultaneous rows improved 1 → 2;
+- spacious average row height reduced about 548.2px → 352.2px.
+
+### Professional conclusion
+
+A density mode should be treated as a **relational policy**, not an immutable pixel identity.
+
+Preserve, in order:
+
+1. task-critical content;
+2. required interaction geometry;
+3. semantic grouping;
+4. reading/focus order;
+5. distinguishability of actions and values;
+
+then adapt discretionary comfort whitespace and recompose structure as constraints tighten.
+
+Evidence level: **PRACTICE + CRITIQUE / controlled Chromium rendering evidence**.
+
+This does not establish human search time, comparison accuracy, preference, motor error, actual browser zoom, cross-browser/device behavior, screen reader behavior, real T004/T005 font transfer or real Web page-system behavior.
+
+## Previous completed block — I001 running validation
+
+The I001 source framework was converted into a running HTML/JavaScript state specimen and exercised with Playwright in headless Chromium.
+
+The controlled flow includes list → detail → edit, top-level switching, hierarchy Up, session-history Back/Forward, deep-link entry, dirty drafts, modal Escape/Close, route/modal focus restoration, async failure/retry/success and workspace resumption.
+
+A failure → revision → re-proof cycle corrected seven state/focus defects. The final harness reached **14/14 controlled assertions PASS**.
+
+Evidence level: **PRACTICE + CRITIQUE / controlled Chromium prototype evidence**, not production PASS. Real router/URL, assistive technology, cross-browser/device, real network and human resumption evidence remain open.
 
 ## Foundation module status
 
@@ -152,168 +165,158 @@ Controlled matched-content rendered practice and human/task evidence remain open
 | Figure-ground / border ownership | PRACTICE / CRITIQUE | cue-isolated variants; realistic layering; blinded human comparison |
 | Visual mass / balance / tension | PRACTICE / CRITIQUE | controlled centroid dataset; observer ratings; broader transfer |
 | Optical centering | PRACTICE / CRITIQUE | intended-size device proof; blinded comparison; RTL/text-context transfer |
-| Whitespace / density / spatial rhythm | IN STUDY | L002 framework complete; controlled density variants; objective task evidence; localization/zoom/browser/human validation |
-| Responsive/adaptive recomposition | PRACTICE / CRITIQUE | real content; multilingual labels; enlarged text; browser/device proof |
+| Whitespace / density / spatial rhythm | **PRACTICE / CRITIQUE** | L002 216-condition rendered cycle complete; human search/comparison/action evidence, actual zoom, Type/Color/Web transfer and broader product validation pending |
+| Responsive/adaptive recomposition | PRACTICE / CRITIQUE | L002 adds narrow/enlarged/localized reflow evidence; actual browser zoom/device and broader real-content transfer pending |
 | Interaction agency / feedback / errors | CRITIQUE | controlled running proof exists; broader recovery, real platform and assistive-technology validation |
 | State / modes / reversibility / directness | CRITIQUE | controlled async failure/retry proof exists; broader real network/conflict/input/AT validation |
-| Navigation / task-flow integration | **CRITIQUE** | I001 running Back/Up/deep-link/focus/workspace/draft proof complete; real router/URL, AT, cross-browser/device, richer interruption/resumption and human evidence pending |
+| Navigation / task-flow integration | CRITIQUE | I001 running Back/Up/deep-link/focus/workspace/draft proof complete; real router/URL, AT, cross-browser/device, richer interruption/resumption and human evidence pending |
 
 ## Primary ownership
 
 ### Spatial
 
-Canonical ownership includes:
-
-- grouping, regions, figure-ground, grid, alignment and hierarchy through geometry;
-- whitespace, density, proportion, visual mass, balance and optical centering;
-- responsive/adaptive recomposition, reflow and target geometry.
+Canonical ownership includes grouping, regions, figure-ground, grid, alignment, geometry-driven hierarchy, whitespace, density, rhythm, proportion, visual mass, balance, optical centering, responsive/adaptive recomposition, reflow and target geometry.
 
 ### Interaction
 
-Canonical ownership includes:
+Canonical ownership includes affordance/signifiers, mapping, feedback, agency, actions, destinations, navigation, task flow, state, modes, directness, reversibility, async/pending behavior, errors/recovery, pointer/touch/keyboard/gesture paths, focus flow and status communication.
 
-- affordance/signifiers, mapping, feedback, agency and discoverability;
-- actions, destinations, navigation and task flow;
-- state, modes, directness, reversibility and temporal behavior;
-- async/pending behavior, interruption, errors and recovery;
-- keyboard/pointer/touch/gesture paths, focus-flow consequences and status communication.
-
-Primary ownership is not a learning prohibition. Cross-domain replication, transfer validation and adjacent study are allowed when they materially improve project judgment.
+Primary ownership is not a learning prohibition. Cross-domain replication and transfer validation are encouraged when they improve project judgment.
 
 ## Peer evidence currently affecting Layout / Interaction
 
 ### From Type
 
-Type now includes `T001`, `T002` and `T003`.
+Type now includes T001–T004.
 
-Most relevant current findings:
+Most relevant findings:
 
-- T001: fallback and vertical metrics can change wrapping, row height, navigation-label width and reflow;
-- T003: identical source metrics can produce different rendered advances/coverage depending on renderer, hinting and positioning.
+- T001: fallback and vertical metrics can change wrapping, row height and reflow;
+- T003: identical source metrics can produce different rendered advances/coverage depending on renderer/hinting/positioning;
+- T004: even equal source tabular advances can split under some hinted rendering modes; compact numeric systems require actual-stack validation.
 
-Consequences for this role:
+Consequences:
 
-- compact density cannot be validated with placeholder rectangles or source geometry alone;
-- route labels, tabs, breadcrumbs, dense rows and target placement must eventually be tested with actual renderer output, fallback and enlargement;
-- a Layout failure may originate in Type/rendering, so diagnosis must preserve ownership boundaries.
+- density cannot be validated with placeholder rectangles;
+- rows, navigation labels and numeric comparisons need actual typography/fallback/rendering transfer;
+- L002's current system-font specimen is Layout evidence, not a Type PASS.
 
 ### From Color
 
-Color now includes `C001` and `C002`.
+Color now includes C001–C003.
 
-Most relevant current findings:
+Most relevant findings:
 
-- C001: forced-colors/user overrides can replace or remove authored fills, shadows, borders and color channels;
-- C002: primitive color values, semantic roles, component roles and context resolution should remain separate; state semantics must precede Color encoding.
+- C001: forced-colors/user overrides can replace or remove authored color channels;
+- C002: semantic roles must remain separate from primitive/component color values;
+- C003: information semantics and interaction state must not collide, and visual density may change through chroma/luminance even when geometry is fixed.
 
-Consequences for this role:
+Consequences:
 
-- current location, selection, focus, pending/error/success and navigation state must survive without color-only meaning;
-- status and recovery action should be semantically separate before Color assigns roles;
-- apparent density or mass may be partly color-driven and should not automatically be diagnosed as geometry.
+- current location, focus, pending/error/success must survive without color-only meaning;
+- L002 isolates geometry by holding color nearly constant; a later transfer should hold geometry constant and vary Color conditions.
 
 ### From Web Design
 
 No substantive `W###` study was available at the latest synchronization point.
 
-Current Web relationship remains a validation contract:
-
-- Web should test Layout/Interaction findings in real page systems, routers, intrinsic sizing, responsive reflow, native controls, browser history, mixed input, zoom, localization and actual network/content conditions;
-- Layout/Interaction should classify returned failures as theory limits, platform conventions, context dependencies, implementation mismatches or project-specific errors rather than silently rewriting principles.
+Web should reproduce current Layout/Interaction matrices in complete page systems and return confirmation, limitation, contradiction or transfer failure rather than silently adapting conclusions.
 
 ## Incoming dependencies
 
-- Type needs realistic responsive/dense contexts for text-growth, long-label, navigation and scaling stress.
-- Color needs realistic surface/state/navigation/focus/error contexts for semantic-color validation.
-- Web Design needs canonical grouping, hierarchy, density, responsive logic, navigation/history, focus restoration, state, feedback, recovery and target-geometry evidence.
+- Type needs realistic dense/responsive contexts for text growth, numeric alignment, localization and fallback stress.
+- Color needs realistic surface/state/navigation/focus/data-density contexts for semantic-color validation.
+- Web Design needs grouping, density, responsive logic, navigation/history, state, focus, recovery and target-geometry evidence.
 
 ## Cross-domain opportunities
 
 ### Type
 
-High-value tests:
+High-value next transfers:
 
-- L002 compact/intermediate/spacious layouts with actual T003 renderer output;
-- navigation titles/tabs/breadcrumbs under T001 fallback and Korean/Latin long labels;
-- enlarged text and narrow-container route focus/order checks.
+- load T004/T005 evidence into L002 compact/intermediate/spacious data surfaces;
+- test Korean/Latin fallback, real numeric alignment, long route labels and enlarged text;
+- distinguish Layout wrapping failure from Type metric/fallback failure.
 
 ### Color
 
-High-value tests:
+High-value next transfers:
 
-- hold geometry constant while varying luminance/chroma to separate spatial from color-driven mass/clutter;
-- run I001 current-location/focus/pending/error/success states under C001 forced-color conditions;
-- map I001 semantic states into C002 semantic roles without collisions such as brand = selected = success.
+- hold L002 geometry constant while varying C002/C003 luminance/chroma/state roles;
+- run I001 current-location/focus/pending/error/success under C001 override conditions;
+- detect semantic collisions between data color and interaction state.
 
 ### Web Design
 
 Immediate transfer targets:
 
-1. Study 006 / responsive Exercise 007 — intrinsic sizing, real font metrics, localization, zoom and narrow containers;
-2. Study 014 — grouping/containment/over-containerization in complete page/component systems;
+1. Study 006 / Exercise 007 — intrinsic sizing, actual font metrics, localization, zoom and narrow containers;
+2. Study 014 — grouping/containment in complete page/component systems;
 3. L001 — border ownership, mass and optical centering at real browser/device sizes;
-4. L002 — compact/intermediate/spacious task-performance comparison in dashboards/forms/settings/lists/tables;
-5. Study 015 + I001 validation matrix — Back/Forward, Up, Close/Escape, route focus, modal focus restoration, dirty drafts, async failure/retry, top-level workspace restoration and deep-link entry;
-6. shared accessibility geometry — native semantics and actual focus/target behavior.
+4. L002 — reproduce the 216-condition density matrix using actual browser zoom, project typography, real components and page constraints;
+5. Study 015 + I001 — Back/Forward, Up, Close/Escape, focus restoration, drafts, async recovery, top-level workspace and deep-link entry;
+6. shared accessibility geometry — native semantics and actual target/focus behavior.
 
 ## Active next queue
 
 Research remains ACTIVE. Expected-value priorities:
 
-1. **Convert L002 into controlled practice**: matched-content compact/intermediate/spacious variants; known-item search and comparison tasks; separate objective performance from preference; include narrow, enlarged-text and localized stress.
-2. **Extend I001 validation only where evidence value is high**: real URL/router when possible, assistive technology, richer async/network conflict and human interruption/resumption. Do not create complexity merely to increase test count.
-3. Convert L001 into stronger evidence with controlled centroid/border-ownership variants, intended-size raster proof and blinded comparison.
-4. Test responsive/grid work with real text metrics, long labels, multilingual expansion and enlarged text using Type evidence.
-5. Use C001/C002 to run state/focus/current-location transfer tests without relying on authored color.
-6. Consume future `W###` findings and independently reproduce high-risk Web results when useful.
-7. Open `L003` or `I002` for the next genuinely new question only when validation work or a live project no longer has higher expected value.
+1. **L002 human task validation** — use matched preserve/adaptive variants for known-item search, comparison and action selection; record objective performance separately from preference/workload. Do not infer human performance from geometry.
+2. **Type→Layout transfer** — rerun L002 with actual T004/T005 typography/fallback evidence when suitable artifacts are available.
+3. **Color→Layout transfer** — hold geometry fixed and vary Color-defined luminance/chroma/state conditions to separate color-driven from spatial clutter.
+4. Extend I001 only where evidence value is high: real router/URL, assistive technology, real network conflict and representative interruption/resumption.
+5. Convert L001 into stronger controlled observer/raster evidence.
+6. Consume future `W###` work and independently reproduce high-risk Web results when useful.
+7. Open `L003` or `I002` only when a genuinely new question has higher expected value than the current validation gaps or a live project requires it.
 
 ## Open research-quality gaps
 
-- controlled human-observation evidence for grouping, figure-ground, balance and optical-centering;
+- human search/comparison/action evidence for density variants and preference/performance separation;
+- controlled human-observation evidence for grouping, figure-ground, balance and optical centering;
 - real rendered/device validation of optical corrections;
-- controlled density variants with objective task evidence and preference/performance separation;
-- responsive transfer under multilingual, enlarged-text and dense-data conditions;
+- actual browser zoom and broader localization/data stress beyond the controlled L002 surrogate;
+- actual T004/T005 font/fallback transfer into density surfaces;
+- Color transfer with geometry held constant;
 - cross-surface systems across phone/tablet/desktop;
-- actual router/URL navigation and browser-history transfer beyond same-document controlled history;
-- screen-reader/assistive-technology validation of route headings, status, modal focus and recovery;
+- actual router/URL navigation beyond same-document controlled history;
+- screen-reader/assistive-technology validation;
 - cross-browser/device mixed-input validation;
 - real network abort/timeout/conflict/duplicate-submission behavior;
 - interruption/resumption evidence on representative product tasks;
-- integration of spatial and temporal hierarchy without collapsing them into one concept;
-- stronger cross-validation with real Type, Color and future Web behavior.
+- stronger integration with future Web evidence.
 
 ## Handoffs to other specialists
 
 ### Typography / Type
 
-- I001 validation shows route titles, Up/Back/Close labels and workspace identity are part of orientation, so wrapping/fallback can become interaction failures rather than cosmetic differences.
-- L002 provides compact/standard/spacious contexts for T003 renderer and T001 fallback transfer.
-- Scope limit: Layout/Interaction does not select font internals or rendering strategy.
+- L002 now supplies a reproducible density/reflow matrix rather than placeholder rectangles.
+- Long Korean labels materially change row-height and wrap cost.
+- T004/T005 can be transfer-tested inside the compact/intermediate/spacious surfaces, especially numeric alignment and fallback.
+- Scope limit: current specimen uses system-font browser rendering and does not validate Type internals.
 
 ### Color
 
-- I001 validation confirms state meaning is structurally defined before visual encoding.
-- Live status and recovery action are separate semantic channels; C002 can assign Color roles without collapsing them.
-- Current location/focus/error/pending/success remain strong C001 forced-colors transfer targets.
-- Scope limit: no forced-color or display validation was performed in this block.
+- L002 now supplies fixed geometry for future color-driven clutter tests.
+- Hold the adaptive geometry constant while varying luminance/chroma/state roles from C002/C003.
+- I001 current-location/focus/error/pending/success remains a C001 forced-colors transfer target.
+- Scope limit: no Color override/environmental validation was performed in the L002 block.
 
 ### Web Design
 
-- `I001-navigation-state-validation-specimen.html` and the Playwright harness provide a reusable **14-assertion transfer matrix**.
-- Web should reproduce it with a real router, real URLs, native/custom controls, browser/device matrix, page refresh where relevant, actual network behavior and assistive technology.
-- Return confirmation, limitation, contradiction or transfer failure rather than silently adapting the behavior.
-- Scope limit: current result is controlled Chromium same-document prototype evidence, not Web canonical PASS evidence.
+- `L002-density-validation-specimen.html` and harness provide a reproducible **216-condition density/reflow transfer matrix**.
+- Web should reproduce it with actual browser zoom, project fonts, real design tokens/components, localization, framework containers and representative dashboard/form/table contexts.
+- `I001-navigation-state-validation-specimen.html` remains the reusable **14-assertion navigation/state transfer matrix**.
+- Return browser/page-system limitations explicitly rather than silently adapting behavior.
 
 ### Layout / Interaction
 
-Internal revision from the running cycle:
+Internal revisions from current practice:
 
-- route-entry focus and sequential DOM order must be designed jointly;
-- resumable state must include semantic object identity, not just view type;
-- dirty-state navigation requires an explicit data-lifecycle policy;
-- status and recovery actions are distinct interaction channels;
-- Back/history and Up/hierarchy can legitimately diverge.
+- compactness must not be credited when it is achieved through lost content or reduced required target geometry;
+- required interaction geometry and semantic content are separate from discretionary whitespace;
+- spacious/intermediate modes may compress absolute gaps under extreme constraints while preserving their relational hierarchy;
+- density tokens should be treated as bounded relationships plus recomposition rules, not immutable pixels;
+- human task efficiency remains unproven until observed.
 
 ## Handoff rule
 
@@ -321,9 +324,8 @@ If another specialist requests Layout/Interaction evidence, answer with canonica
 
 ## Latest checkpoint
 
-- `I001` source framework completed.
-- `I001` running validation specimen + Playwright harness + validation report completed.
-- Controlled specimen reached **14/14 assertions PASS after a documented failure → revision → re-proof cycle**.
-- `Navigation / task-flow integration` advanced from `IN STUDY` to **CRITIQUE**.
-- Interaction next new-study ID remains `I002`; Layout remains `L003`.
-- No PASS promotion claimed. Highest-value next work shifts back toward L002 controlled density practice while I001 awaits higher-fidelity AT/router/network/human validation.
+- `I001` source framework and controlled 14-assertion running validation are complete at CRITIQUE evidence level.
+- `L002` source framework plus **216-condition naive → preserve → adaptive Chromium validation** are complete.
+- `Whitespace / density / spatial rhythm` advanced from `IN STUDY` to **PRACTICE / CRITIQUE**.
+- Layout next new-study ID remains `L003`; Interaction remains `I002`.
+- No PASS promotion claimed. Highest-value L002 evidence gap is now human task validation, not another spacing variant.
