@@ -1,0 +1,161 @@
+{
+  "environment": {
+    "chromium_version": "144.0.7559.96"
+  },
+  "forced_colors": {
+    "broken_normal_shadow": "rgba(0, 0, 0, 0.45) 0px 14px 36px 0px",
+    "broken_forced": {
+      "shadow": "none",
+      "background": "rgb(255, 255, 255)",
+      "page_background": "rgb(255, 255, 255)",
+      "outline_width": "0px",
+      "boundary_signal": {
+        "diff_pixels": 0,
+        "total_pixels": 660,
+        "diff_fraction": 0.0,
+        "unique_colors": 1
+      },
+      "hit_owner": "fc-front",
+      "activation": {
+        "front": 1,
+        "back": 0
+      }
+    },
+    "revised_forced": {
+      "shadow": "none",
+      "outline_width": "3px",
+      "outline_style": "solid",
+      "outline_color": "rgb(0, 0, 0)",
+      "boundary_signal": {
+        "diff_pixels": 660,
+        "total_pixels": 660,
+        "diff_fraction": 1.0,
+        "unique_colors": 1
+      },
+      "hit_owner": "fc-front",
+      "activation": {
+        "front": 1,
+        "back": 0
+      }
+    },
+    "optout_forced": {
+      "forced_color_adjust": "none",
+      "shadow": "rgba(0, 0, 0, 0.45) 0px 14px 36px 0px",
+      "boundary_signal": {
+        "diff_pixels": 660,
+        "total_pixels": 660,
+        "diff_fraction": 1.0,
+        "unique_colors": 16
+      }
+    }
+  },
+  "touch_implicit_capture": {
+    "broken": {
+      "before_captured": true,
+      "after_modal_captured": true,
+      "events": [
+        "pointerdown",
+        "gotpointercapture",
+        "pointermove",
+        "pointermove",
+        "pointerup",
+        "lostpointercapture"
+      ],
+      "commit": 1
+    },
+    "revised": {
+      "before_captured": true,
+      "after_modal_captured": false,
+      "cancelled": true,
+      "events": [
+        "pointerdown",
+        "gotpointercapture",
+        "pointermove",
+        "lostpointercapture"
+      ],
+      "commit": 0
+    }
+  },
+  "accessibility_tree": {
+    "base": [
+      "heading::Forced-colors layer cue test",
+      "heading::Touch implicit-capture modal transition",
+      "heading::Accessibility-tree ownership",
+      "button::Background action",
+      "button::Open popover",
+      "button::Open dialog",
+      "paragraph::",
+      "button::Background delete"
+    ],
+    "popover": [
+      "heading::Forced-colors layer cue test",
+      "heading::Touch implicit-capture modal transition",
+      "heading::Accessibility-tree ownership",
+      "button::Background action",
+      "button::Open popover",
+      "region::Quick tools",
+      "button::Open dialog",
+      "paragraph::",
+      "button::Background delete",
+      "button::Popover action"
+    ],
+    "dialog": [
+      "dialog::Confirm task",
+      "heading::Confirm task",
+      "button::Dialog action",
+      "button::Open nested"
+    ],
+    "nested": [
+      "dialog::Confirm task",
+      "heading::Confirm task",
+      "button::Dialog action",
+      "button::Open nested",
+      "region::Nested tools",
+      "button::Nested action"
+    ],
+    "closed": [
+      "heading::Forced-colors layer cue test",
+      "heading::Touch implicit-capture modal transition",
+      "heading::Accessibility-tree ownership",
+      "button::Background action",
+      "button::Open popover",
+      "button::Open dialog",
+      "paragraph::",
+      "button::Background delete"
+    ]
+  },
+  "assertions": [
+    {"name": "FC1 broken normal shadow is present", "pass": true},
+    {"name": "FC2 forced-colors removes broken shadow", "pass": true},
+    {"name": "FC3 broken panel surface merges with page Canvas", "pass": true},
+    {"name": "FC4 broken has no structural outline", "pass": true},
+    {"name": "FC5 broken top boundary signal disappears", "pass": true},
+    {"name": "FC6 broken visual-cue loss does not change hit owner", "pass": true},
+    {"name": "FC7 broken forced-colors activation still goes foreground only", "pass": true},
+    {"name": "FC8 revised structural outline remains", "pass": true},
+    {"name": "FC9 revised boundary signal survives forced colors", "pass": true},
+    {"name": "FC10 revised activation remains foreground only", "pass": true},
+    {"name": "FC11 opt-out reports forced-color-adjust none", "pass": true},
+    {"name": "FC12 opt-out preserves author shadow in emulation", "pass": true},
+    {"name": "FC13 opt-out boundary signal remains, diagnostic only", "pass": true},
+    {"name": "T1 touch pointerdown has implicit capture", "pass": true},
+    {"name": "T2 gotpointercapture observed for touch", "pass": true},
+    {"name": "T3 modal entry alone leaves implicit capture active", "pass": true},
+    {"name": "T4 broken captured touch stream continues to background after modal entry", "pass": true},
+    {"name": "T5 broken touch gesture commits background mutation", "pass": true},
+    {"name": "T6 revised policy releases implicit capture before modal interaction", "pass": true},
+    {"name": "T7 revised touch gesture produces no background commit", "pass": true},
+    {"name": "AX1 baseline background action exposed", "pass": true},
+    {"name": "AX2 non-modal popover region/action exposed", "pass": true},
+    {"name": "AX3 non-modal popover keeps background action exposed", "pass": true},
+    {"name": "AX4 modal dialog role/name exposed", "pass": true},
+    {"name": "AX5 modal removes background action from exposed AX tree", "pass": true},
+    {"name": "AX6 nested popover is exposed inside modal", "pass": true},
+    {"name": "AX7 nested popover does not re-expose page background", "pass": true},
+    {"name": "AX8 closing modal restores page background to exposed AX tree", "pass": true}
+  ],
+  "summary": {
+    "passed": 28,
+    "total": 28
+  }
+}
