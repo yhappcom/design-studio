@@ -2,7 +2,7 @@
 
 Governance model: **three current specialist roles + coordinator + future specialist onboarding**
 Governance sync: 2026-09-14
-Current operating state: **ALL CURRENT SPECIALISTS PAUSED BY OWNER**
+Current operating state: **ACTIVE — ALL CURRENT SPECIALISTS MAY RESUME RESEARCH**
 
 This is the coordinator-maintained studio summary. Specialists must not edit this file during ordinary research work.
 
@@ -20,28 +20,32 @@ Detailed specialist status lives in:
 - `CRITIQUE` — work exists and is being evaluated
 - `PASS` — evidence satisfies the gate
 - `REVISIT` — later work exposed a foundational gap
-- `PAUSED` — deliberately stopped; no new work begins until explicitly restarted
+- `ACTIVE` — research may proceed
+
+The previous owner-imposed pause was temporary and has been lifted.
 
 ## Current specialist map
 
 | Specialist | Canonical research | Specialist status | Current stage/state |
 | --- | --- | --- | --- |
-| Typography / Type Design | `research/type/` | `progress/TYPE_STATUS.md` | Stage 1; PRACTICE / CRITIQUE; PAUSED |
-| Color | `research/color/` | `progress/COLOR_STATUS.md` | Stage 1 with early intermediate bridge; CRITIQUE; PAUSED |
-| Layout, Spatial & Interaction | `research/layout/`, `research/interaction/` | `progress/LAYOUT_STATUS.md` | Stage 1; CRITIQUE in studied modules; PAUSED |
+| Typography / Type Design | `research/type/` | `progress/TYPE_STATUS.md` | Stage 1; PRACTICE / CRITIQUE; ACTIVE |
+| Color | `research/color/` | `progress/COLOR_STATUS.md` | Stage 1 with early intermediate bridge; CRITIQUE; ACTIVE |
+| Layout, Spatial & Interaction | `research/layout/`, `research/interaction/` | `progress/LAYOUT_STATUS.md` | Stage 1; CRITIQUE in studied modules; ACTIVE |
 
-These are the current specialist roles, not a permanently closed list. Future specialists may be added only through the onboarding and ownership-definition protocol in `AGENTS.md` and `coordination/ONBOARDING.md`.
+These are primary/canonical ownership roles, not intellectual silos. A specialist may study adjacent domains when the overlap has a useful reason such as replication, independent validation, method comparison, contradiction review, transfer testing, prerequisite learning, or project-specific research.
+
+Future specialists may be added through the onboarding and ownership-definition protocol in `AGENTS.md` and `coordination/ONBOARDING.md`.
 
 ## Cross-cutting evidence
 
-Accessibility, Human Factors, research methodology, platform behavior and other shared concerns are not currently separate specialist roles. Existing evidence remains valid and may be used by all specialists.
+Accessibility, Human Factors, research methodology, platform behavior and other shared concerns are not currently separate specialist roles. Existing evidence remains valid and may be used or independently investigated by all specialists when useful.
 
 Examples:
 
 - `research/004-accessibility-reflow-targets-focus.md`
 - related `product-design/exercises/` evidence
 
-Interaction is no longer a fourth independent specialist: it is owned by the **Layout, Spatial & Interaction Specialist**, while its evidence remains separately indexed in `research/interaction/` to avoid mixing spatial and temporal/behavioral claims.
+Interaction is owned by the **Layout, Spatial & Interaction Specialist**, while its evidence remains separately indexed in `research/interaction/` to avoid mixing spatial and temporal/behavioral claims.
 
 ## Current Foundation picture
 
@@ -72,33 +76,53 @@ Before any specialist begins a new substantial work block, it must:
 1. read this global status;
 2. read **all specialist status files**;
 3. inspect related canonical research from the other specialists;
-4. identify reusable evidence before planning new work;
-5. confirm the question is not already answered or actively being studied elsewhere;
+4. identify reusable, uncertain, disputed, or test-worthy peer evidence;
+5. decide whether to reuse, independently verify, challenge, transfer-test, or extend that evidence;
 6. record this in the new study under `RELATED DOMAIN CHECK`.
 
-After a study finishes, it must identify `HANDOFFS TO OTHER SPECIALISTS` whenever its findings could help another domain.
+After a study finishes, identify `HANDOFFS TO OTHER SPECIALISTS` whenever its findings could help another domain.
 
-The objective is not only non-duplication. The objective is active reuse of one another's research.
+The objective is **active shared learning**, not absolute non-duplication.
+
+## Overlap rule
+
+Duplicate or overlapping research is allowed when it has a stated purpose.
+
+Valid reasons include:
+
+- replication / calculation check;
+- independent validation;
+- adversarial review;
+- contradiction investigation;
+- method / standard / dataset comparison;
+- cross-domain or project transfer validation;
+- prerequisite learning needed to correctly apply peer work;
+- second-specialist interpretation;
+- project urgency or risk reduction.
+
+Avoid only repetition that adds no new analytical value.
+
+When overlap is deliberate, label its purpose and link to the peer canonical evidence.
 
 ## Concurrency rules
 
-1. Each specialist edits only its own canonical research paths and its own specialist status file.
-2. Specialists do not edit this global status, `AGENTS.md`, global indexes, curriculum, coordination documents, or another specialist's files unless explicitly authorized.
-3. No specialist moves, renames, deletes or renumbers existing research during ordinary study work.
-4. Existing studies `001`–`017` retain their identifiers.
-5. New studies use collision-resistant prefixes:
+1. Each specialist ordinarily edits only its own canonical research paths and its own specialist status file.
+2. Cross-domain verification may be stored in the investigating specialist's own writable area with explicit links and overlap rationale.
+3. Specialists do not edit this global status, `AGENTS.md`, global indexes, curriculum, coordination documents, or another specialist's files unless explicitly authorized.
+4. No specialist moves, renames, deletes or renumbers existing research during ordinary study work.
+5. Existing studies `001`–`017` retain their identifiers.
+6. New studies use collision-resistant prefixes:
    - Type `T###`
    - Color `C###`
    - Layout `L###`
    - Interaction `I###` under the Layout & Interaction specialist
    - future specialist prefix assigned by coordinator
-   - coordinator-owned cross-cutting `X###` when needed
-6. Dependencies are recorded in the requesting specialist's own status instead of solved by duplicating another domain.
-7. Conflicting conclusions are preserved and escalated to coordinator review rather than silently overwritten.
+   - coordinator/shared cross-cutting `X###` when needed
+7. Conflicting conclusions are preserved and reviewed rather than silently overwritten.
 
 ## Future specialist entry
 
-A new specialist chat must not begin research immediately. It must first read:
+A new specialist chat first reads:
 
 - `AGENTS.md`
 - root `README.md`
@@ -109,17 +133,26 @@ A new specialist chat must not begin research immediately. It must first read:
 - `coordination/ONBOARDING.md`
 - `coordination/COLLABORATION_PROTOCOL.md`
 
-It then submits an onboarding report defining its unique scope, overlap risks, reusable existing evidence, canonical path and proposed prefix. No research files are created until the user/coordinator approves the boundary.
+It then submits an onboarding report defining proposed primary ownership, overlap/collaboration opportunities, reusable or test-worthy existing evidence, unique contribution, canonical path and proposed prefix.
+
+Approval is required before creating a new canonical specialist structure. It is not required merely to learn, critique, or reason about overlapping topics.
 
 ## Current next-work queues
 
-All queues are **paused** until explicitly restarted.
+Research may resume immediately. Specialists should use their own status files plus the following principles:
 
-When restarted, specialists follow their own status files. In broad terms:
+- live project need takes priority;
+- close important evidence gaps when they materially improve reliability;
+- answer dependencies that help peers;
+- independently verify or challenge high-impact peer findings when useful;
+- expand breadth where doing so increases professional capability;
+- do not restrict learning merely to avoid overlap.
 
-- Type closes raster/native-outline/scaling evidence gaps before expanding breadth.
-- Color closes spectral/browser/ICC/device validation gaps before expanding breadth.
-- Layout & Interaction deepens spatial foundations and builds running interaction validation before expanding breadth.
+In broad terms:
+
+- Type can continue raster/native-outline/scaling work and may also pursue useful cross-domain validation;
+- Color can continue spectral/browser/ICC/device work and may also pursue useful cross-domain validation;
+- Layout & Interaction can deepen spatial foundations and running interaction validation while using or independently testing Type/Color evidence where necessary.
 
 ## Curriculum progression
 
@@ -135,4 +168,6 @@ No stage or specialist is considered complete from reading alone.
 
 ## Completion rule
 
-No global mastery announcement until all required curriculum gates are `PASS` with linked evidence and the specialist can explain, critique, apply, defend, revise, integrate peer-domain evidence, identify uncertainty, and advise across realistic constraints.
+No global mastery announcement until required curriculum gates are `PASS` with linked evidence and the specialist can explain, critique, apply, defend, revise, independently assess peer evidence, identify uncertainty, collaborate across domains, and advise across realistic project constraints.
+
+The final measure is project usefulness, not research volume.
