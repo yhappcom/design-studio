@@ -15,8 +15,8 @@ Status vocabulary:
 | --- | --- | --- |
 | Composition / visual grammar | PRACTICE | `research/006-grid-composition-hierarchy.md`; `product-design/exercises/003-grid-composition-comparison.svg`; `product-design/exercises/003-grid-composition-comparison-critique.md`; narrow-format and second-context proof still pending |
 | Grid / alignment systems | PRACTICE | `research/006-grid-composition-hierarchy.md`; three structural hypotheses in Exercise 003; responsive semantic-alignment proof pending |
-| Color / luminance / contrast | IN STUDY | focus/contrast research begun in `research/004-accessibility-reflow-targets-focus.md`; dedicated color-perception work pending |
-| Typography as information architecture | IN STUDY | grid exercise uses typographic hierarchy, but dedicated multi-role typography composition exercise is still pending |
+| Color / luminance / contrast | CRITIQUE | `research/008-color-luminance-contrast-hierarchy.md`; `product-design/exercises/005-color-luminance-cross-context-practice.md`; cross-context grayscale/state critique and representative WCAG text probes complete; rendered device stress and measured non-text example pending |
+| Typography as information architecture | CRITIQUE | `research/009-typography-as-information-architecture.md`; `product-design/exercises/006-typography-information-architecture-practice.md`; three hypotheses, dense-table adaptation, distinction-removal critique, and second-context transfer complete; rendered enlarged-text failure/revision cycle pending |
 | Type anatomy / metrics | PRACTICE | `research/001-type-as-system.md`; `research/002-metrics-spacing-optical-rhythm.md`; `type-design/exercises/001-ho-metrics-critique.md` |
 | Stroke / contrast / construction | PRACTICE | `research/003-stroke-contrast-bezier-optics.md`; `type-design/exercises/002-construction-curve-optics.svg`; critique documents limits and required family extension |
 | Bézier drawing discipline | PRACTICE | `research/003-stroke-contrast-bezier-optics.md`; `type-design/exercises/002-construction-curve-optics.svg`; `type-design/exercises/002-construction-curve-optics-critique.md`; real font-source/raster audit still required |
@@ -50,6 +50,6 @@ The first immediate objective is not to design a font or app. It is to complete 
 1. raster proof Exercise 002 at multiple sizes and record a failure → redraw cycle;
 2. execute Exercise 003 numeral/punctuation brief with native outlines and ambiguity alternatives;
 3. recompose Grid Exercise 003 into a narrow format and a second unrelated information set;
-4. begin dedicated color/luminance perception study;
-5. begin typography-as-information-architecture exercise with editorial/UI/data roles;
+4. render Color Exercise 005 with a measured non-text state/focus example and record environmental stress findings;
+5. render Typography Exercise 006 at normal/enlarged sizes and record a failure → revision cycle;
 6. extend interaction work into a navigation-model prototype and keyboard/status-message validation.
