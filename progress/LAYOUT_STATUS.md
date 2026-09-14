@@ -47,7 +47,8 @@ Spatial evidence remains under `research/layout/`; behavioral evidence remains u
 - `I001-navigation-history-focus-restoration-interruption.md` + **14 assertions**
 - `I002-latency-pending-optimistic-retry.md` + **19 assertions**
 - `I003-forced-colors-state-semantic-resilience.md` + **14 assertions**
-- `I004-concurrent-edits-conflict-merge-recovery.md` + **17 assertions**
+- `I004-concurrent-edits-conflict-merge-recovery.md` + **17 controlled assertions**
+- `I004-http-precondition-etag-transfer.md` + real HTTP/1.1 ETag/If-Match harness + **16 assertions**
 
 Shared accessibility baseline: `research/004-accessibility-reflow-targets-focus.md`.
 
@@ -165,7 +166,7 @@ Fixed geometry separated spatial density from Color-driven feature variability a
 - I001 navigation/state: **14/14** controlled assertions.
 - I002 async/retry/cancel: **19/19**.
 - I003 forced-colors state resilience: **14/14**.
-- I004 concurrent edit/conflict/merge/recovery: **17/17**.
+- I004 concurrent edit/conflict/merge/recovery: **17/17 controlled state-machine + 16/16 real HTTP precondition assertions**.
 
 None is production PASS.
 
@@ -209,7 +210,7 @@ No substantive W### yet. Web should reproduce L001–L006 and I001–I004 using 
 | Navigation / task-flow integration | CRITIQUE | real router/URL, AT, cross-browser/device/human resumption pending |
 | Latency / pending / optimistic / retry / cancellation | PRACTICE / CRITIQUE | real HTTP/API/idempotency/abort/offline/AT/cross-browser pending |
 | Color-channel-independent state semantics | PRACTICE / CRITIQUE | real OS/other browsers/AT/production components pending |
-| Concurrent edits / conflict / merge / recovery | PRACTICE / CRITIQUE | real service/offline/multi-device/CRDT-OT/AT/human pending |
+| Concurrent edits / conflict / merge / recovery | PRACTICE / CRITIQUE | controlled 17 + real HTTP ETag/If-Match 16 assertions; production backend/DB/offline/multi-device/CRDT-OT/AT/human pending |
 
 ---
 
@@ -217,7 +218,7 @@ No substantive W### yet. Web should reproduce L001–L006 and I001–I004 using 
 
 1. **Human evidence when participants exist** — L001 border ownership, optical centering; L002/L005/C007 task performance/error separate from preference/workload.
 2. **L006 production/platform transfer** — actual Windows High Contrast and screen readers; Firefox/Safari; physical mobile; stylus/multi-touch/OS gestures; real framework portals/focus scopes; complex nested/routing/remount restoration; native mobile overlays.
-3. **I004 higher fidelity** — real ETag/If-Match or transaction backend, offline/reconnect, multi-device/tab, delete/finalization and AT.
+3. **I004 production transfer** — real project backend/DB transaction semantics, offline/reconnect, multi-device/tab, authorization/finalization, CRDT/OT where relevant, AT and human conflict resolution.
 4. **L004 only if project-relevant** — delivered production font/exact T004, locale/accounting, dynamic update, actual zoom/DPR.
 5. **I003 higher fidelity** — real OS high contrast/AT/production tokens using L006 realistic layer cases.
 6. Consume future W### evidence and independently reproduce high-risk findings.
@@ -237,7 +238,7 @@ No substantive W### yet. Web should reproduce L001–L006 and I001–I004 using 
 - complex custom nested overlay/routing/remount restoration;
 - actual browser zoom;
 - production delivered static/variable font regression;
-- real multi-device/offline conflict/sync; CRDT/OT/list/text/order conflicts;
+- production backend/database transaction behavior, real multi-device/offline conflict/sync, CRDT/OT/list/text/order conflicts;
 - real router/history/service/network evidence;
 - representative interruption/resumption evidence;
 - stronger Web integration.
@@ -274,6 +275,8 @@ No substantive W### yet. Web should reproduce L001–L006 and I001–I004 using 
 - nested overlays require stack reasoning;
 - dimming does not create inertness;
 - timeout, failure and outcome-unknown are distinct; retry is not conflict resolution;
+- 412 Precondition Failed is conflict detection, not a generic Save failure; resolve/rebase against the newest validator before another write;
+- `If-Match` prevents stale mutation but does not decide same-field semantic winners; `If-None-Match:*` can protect create-new-identity recovery;
 - auto-merge only semantically independent changes; preserve local drafts across conflict;
 - critical state meaning must survive authored color-channel loss.
 
@@ -289,7 +292,7 @@ No substantive W### yet. Web should reproduce L001–L006 and I001–I004 using 
 - L006 **13** gesture/restoration assertions;
 - L006 **28** forced-colors/implicit-capture/AX assertions;
 - L006 **14** custom ARIA-modal vs actual-modality assertions;
-- I001 14; I002 19; I003 14; I004 17 assertions.
+- I001 14; I002 19; I003 14; I004 **17 controlled + 16 real HTTP precondition** assertions.
 
 ---
 
@@ -302,6 +305,7 @@ No substantive W### yet. Web should reproduce L001–L006 and I001–I004 using 
 - `L005` → PRACTICE / CRITIQUE; independently confirmed/complemented by C007.
 - `L006` → **PRACTICE / CRITIQUE**, now spanning **15 + 13 + 13 + 28 + 14** controlled assertions across visual/pointer/focus/gesture/forced-color/AX/semantic-modal mismatches.
 - `I001` → CRITIQUE.
-- `I002` / `I003` / `I004` → PRACTICE / CRITIQUE.
+- `I002` / `I003` → PRACTICE / CRITIQUE.
+- `I004` → **PRACTICE / CRITIQUE**, with **17/17 controlled state-machine + 16/16 real HTTP ETag/If-Match** evidence; production/offline/multi-device/human gates remain.
 - Next IDs remain Layout `L007`; Interaction `I005`.
 - No PASS promotion. Highest-value next evidence is real OS/AT/cross-browser/production-framework/human transfer, not more isolated Chromium volume.
