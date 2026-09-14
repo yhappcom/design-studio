@@ -13,6 +13,8 @@
 
 Shared research that does not yet have a dedicated specialist directory may remain at `research/` root. Accessibility is currently cross-cutting and is tracked through its research/evidence plus `progress/STATUS.md`.
 
+Legacy numbered files remaining directly under `research/` for moved domains are **compatibility pointers only**. They preserve older references and direct readers to the canonical specialist file. They are not canonical research records and must not receive new study content.
+
 ## Mandatory pre-study check
 
 Before beginning a new research block, every specialist must:
