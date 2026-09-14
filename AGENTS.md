@@ -24,6 +24,40 @@ This repository is a reusable professional design knowledge base and studio prac
 - `case-studies/` contains product-specific decisions and experiments.
 - Product-specific decisions must never silently become universal studio rules.
 
+### Canonical specialist research ownership
+
+Source-grounded research is organized by primary specialist ownership:
+
+- `research/type/` — Typography / Type Design Specialist
+- `research/color/` — Color Specialist
+- `research/layout/` — Layout & Spatial Design Specialist
+- `research/interaction/` — Interaction Specialist
+
+`research/README.md` is the canonical domain index. A study number is studio-wide chronology and does not reset or change when a file moves into a specialist directory.
+
+### Mandatory cross-domain awareness
+
+Before beginning any substantial research, critique, or product-design block:
+
+1. read `progress/STATUS.md` to identify current evidence, unresolved gaps, and immediate priorities;
+2. identify the primary specialist owner of the question;
+3. read `research/README.md`, that specialist directory's `README.md`, and the relevant existing studies;
+4. inspect adjacent specialist domains whenever the decision depends on their evidence;
+5. reference the canonical study instead of duplicating established knowledge;
+6. add a new file only for genuinely new evidence, synthesis, contradiction, transfer validation, practice, or failure analysis.
+
+Cross-domain dependencies are expected. For example:
+
+- Layout must consult Type when font metrics, text growth, numerals, or typographic hierarchy affect geometry;
+- Layout and Interaction must consult Color when luminance, contrast, state color, or gamut behavior affects a design decision;
+- Interaction must consult Layout when grouping, target placement, or spatial context affects action understanding;
+- Color must consult Interaction when a color is being used to encode a state or action;
+- Type must consult Layout when typographic choices are evaluated inside responsive or dense interfaces.
+
+**Ownership does not imply isolation.** A specialist must know relevant conclusions from the other specialist domains before making a dependent judgment.
+
+When an adjacent domain's evidence is incomplete, mark that dependency explicitly rather than filling the gap with speculation.
+
 ## Persistence and continuity
 
 GitHub is the canonical record of Design Studio learning. Chat history is a temporary working context and must not be treated as the persistence boundary.
