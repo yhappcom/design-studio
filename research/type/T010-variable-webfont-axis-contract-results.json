@@ -1,0 +1,104 @@
+{
+  "environment": {
+    "fonttools": "4.63.0"
+  },
+  "experiment": {
+    "axis": "wght 300/300/700",
+    "named_instances": [300, 500, 700],
+    "avar_contract": {"normalized_0.5": 0.35},
+    "subset_unicode": ["U+0048 H"]
+  },
+  "artifacts": {
+    "T010-VF.ttf": {
+      "file": "T010-VF.ttf",
+      "bytes": 1480,
+      "sha256": "3f3f4aa1e01baf5f8ad7e0c61ba76e94cb5145d607a4c9e3f9655ace4bc57f54",
+      "flavor": null,
+      "tables": ["GlyphOrder", "HVAR", "OS/2", "STAT", "avar", "cmap", "fvar", "glyf", "gvar", "head", "hhea", "hmtx", "loca", "maxp", "name", "post"],
+      "required_variation_tables": {"fvar": true, "gvar": true, "STAT": true, "avar": true},
+      "axis": {"tag": "wght", "min": 300.0, "default": 300.0, "max": 700.0},
+      "named_instances": [{"wght": 300.0}, {"wght": 500.0}, {"wght": 700.0}],
+      "avar": {"wght": {"-1.0": -1.0, "0.0": 0.0, "0.5": 0.3499755859375, "1.0": 1.0}},
+      "glyph_order": [".notdef", "space", "H", "O"],
+      "gvar_glyphs": [".notdef", "H", "O", "space"],
+      "instance_advances": {"300": {"H": 620}, "500": {"H": 641}, "700": {"H": 680}}
+    },
+    "T010-VF.woff2": {
+      "file": "T010-VF.woff2",
+      "bytes": 648,
+      "sha256": "5b2fe268de27b50c377efcf80107d39f06e49f2786b9720e190f5a49f6d97423",
+      "flavor": "woff2",
+      "tables": ["GlyphOrder", "HVAR", "OS/2", "STAT", "avar", "cmap", "fvar", "glyf", "gvar", "head", "hhea", "hmtx", "loca", "maxp", "name", "post"],
+      "required_variation_tables": {"fvar": true, "gvar": true, "STAT": true, "avar": true},
+      "axis": {"tag": "wght", "min": 300.0, "default": 300.0, "max": 700.0},
+      "named_instances": [{"wght": 300.0}, {"wght": 500.0}, {"wght": 700.0}],
+      "avar": {"wght": {"-1.0": -1.0, "0.0": 0.0, "0.5": 0.3499755859375, "1.0": 1.0}},
+      "glyph_order": [".notdef", "space", "H", "O"],
+      "gvar_glyphs": [".notdef", "H", "O", "space"],
+      "instance_advances": {"300": {"H": 620}, "500": {"H": 641}, "700": {"H": 680}}
+    },
+    "T010-H-subset.ttf": {
+      "file": "T010-H-subset.ttf",
+      "bytes": 1348,
+      "sha256": "84af097656d9537dd9bb9f2bc151014b7fa310761f13c88ff14bcf4abdf877c4",
+      "flavor": null,
+      "tables": ["GlyphOrder", "HVAR", "OS/2", "STAT", "avar", "cmap", "fvar", "glyf", "gvar", "head", "hhea", "hmtx", "loca", "maxp", "name", "post"],
+      "required_variation_tables": {"fvar": true, "gvar": true, "STAT": true, "avar": true},
+      "axis": {"tag": "wght", "min": 300.0, "default": 300.0, "max": 700.0},
+      "named_instances": [{"wght": 300.0}, {"wght": 500.0}, {"wght": 700.0}],
+      "avar": {"wght": {"-1.0": -1.0, "0.0": 0.0, "0.5": 0.3499755859375, "1.0": 1.0}},
+      "glyph_order": [".notdef", "H"],
+      "gvar_glyphs": [".notdef", "H"],
+      "instance_advances": {"300": {"H": 620}, "500": {"H": 641}, "700": {"H": 680}}
+    },
+    "T010-H-subset.woff2": {
+      "file": "T010-H-subset.woff2",
+      "bytes": 568,
+      "sha256": "d5b1b307cfb5d25a46020c0c95a20db950c65c72ee4d96ce1f98bc3a8f3c928d",
+      "flavor": "woff2",
+      "tables": ["GlyphOrder", "HVAR", "OS/2", "STAT", "avar", "cmap", "fvar", "glyf", "gvar", "head", "hhea", "hmtx", "loca", "maxp", "name", "post"],
+      "required_variation_tables": {"fvar": true, "gvar": true, "STAT": true, "avar": true},
+      "axis": {"tag": "wght", "min": 300.0, "default": 300.0, "max": 700.0},
+      "named_instances": [{"wght": 300.0}, {"wght": 500.0}, {"wght": 700.0}],
+      "avar": {"wght": {"-1.0": -1.0, "0.0": 0.0, "0.5": 0.3499755859375, "1.0": 1.0}},
+      "glyph_order": [".notdef", "H"],
+      "gvar_glyphs": [".notdef", "H"],
+      "instance_advances": {"300": {"H": 620}, "500": {"H": 641}, "700": {"H": 680}}
+    },
+    "T010-H-subset-no-avar.woff2": {
+      "file": "T010-H-subset-no-avar.woff2",
+      "bytes": 560,
+      "sha256": "5dd339e5f304cb1fb28f2087b11fc27a3a7d21cd3adb5da1e7ffdf85217b63a0",
+      "flavor": "woff2",
+      "tables": ["GlyphOrder", "HVAR", "OS/2", "STAT", "cmap", "fvar", "glyf", "gvar", "head", "hhea", "hmtx", "loca", "maxp", "name", "post"],
+      "required_variation_tables": {"fvar": true, "gvar": true, "STAT": true, "avar": false},
+      "axis": {"tag": "wght", "min": 300.0, "default": 300.0, "max": 700.0},
+      "named_instances": [{"wght": 300.0}, {"wght": 500.0}, {"wght": 700.0}],
+      "avar": null,
+      "glyph_order": [".notdef", "H"],
+      "gvar_glyphs": [".notdef", "H"],
+      "instance_advances": {"300": {"H": 620}, "500": {"H": 650}, "700": {"H": 680}}
+    }
+  },
+  "checks": {
+    "T010-VF.ttf": {"required_tables": true, "axis_range": true, "named_instances": true, "nonlinear_avar": true, "mid_H_advance": 641},
+    "T010-VF.woff2": {"required_tables": true, "axis_range": true, "named_instances": true, "nonlinear_avar": true, "mid_H_advance": 641},
+    "T010-H-subset.ttf": {"required_tables": true, "axis_range": true, "named_instances": true, "nonlinear_avar": true, "mid_H_advance": 641},
+    "T010-H-subset.woff2": {"required_tables": true, "axis_range": true, "named_instances": true, "nonlinear_avar": true, "mid_H_advance": 641},
+    "T010-H-subset-no-avar.woff2": {"required_tables": false, "axis_range": true, "named_instances": true, "nonlinear_avar": false, "mid_H_advance": 650}
+  },
+  "key_comparison": {
+    "good_subset_woff2_mid_H_advance": 641,
+    "no_avar_subset_woff2_mid_H_advance": 650,
+    "advance_delta_units": 9,
+    "good_contract_pass": true,
+    "bad_contract_pass": false,
+    "bad_font_parseable": true
+  },
+  "tool_availability": {
+    "fontbakery": false,
+    "fontspector": false,
+    "ots_sanitize": false,
+    "network_install_attempt": "failed: name resolution unavailable"
+  }
+}
