@@ -1,0 +1,221 @@
+{
+  "environment": {
+    "chromium": "Chromium 144.0.7559.96 built on Debian GNU/Linux 13 (trixie)",
+    "python_unicode_data": "15.1.0",
+    "fonttools": "4.63.0",
+    "font_sizes_px": [16, 40],
+    "dprs": [1, 2],
+    "fallback": "NanumGothic"
+  },
+  "strings": {
+    "nfc": {
+      "text": "가각",
+      "codepoints": ["U+AC00", "U+AC01"]
+    },
+    "nfd": {
+      "text": "가각",
+      "codepoints": ["U+1100", "U+1161", "U+1100", "U+1161", "U+11A8"]
+    },
+    "mixed_nfc": {
+      "text": "AB가각12",
+      "codepoints": ["U+0041", "U+0042", "U+AC00", "U+AC01", "U+0031", "U+0032"]
+    },
+    "mixed_nfd": {
+      "text": "AB가각12",
+      "codepoints": ["U+0041", "U+0042", "U+1100", "U+1161", "U+1100", "U+1161", "U+11A8", "U+0031", "U+0032"]
+    },
+    "unsupported_nfd": {
+      "text": "간",
+      "codepoints": ["U+1100", "U+1161", "U+11AB"]
+    }
+  },
+  "source_cmaps": {
+    "nfc_only": ["U+AC00", "U+AC01"],
+    "nfd_only": ["U+1100", "U+1161", "U+11A8"],
+    "dual": ["U+1100", "U+1161", "U+11A8", "U+AC00", "U+AC01"]
+  },
+  "conditions": {
+    "16px_dpr1": {
+      "widths_px": {
+        "nfc_font_nfc": 17.609375,
+        "nfc_font_nfd": 17.609375,
+        "nfc_font_mixed_nfc": 58.328125,
+        "nfc_font_mixed_nfd": 58.328125,
+        "nfc_font_unsupported_nfd": 15.046875,
+        "nfd_font_nfd": 24.171875,
+        "nfd_font_nfc": 24.171875,
+        "dual_font_nfd": 17.609375,
+        "dual_font_nfc": 17.609375
+      },
+      "png_sha256": {
+        "nfc_font_nfc": "cd83721949f099b619f4ba2fde27cf89ec65e8f36bc0b467804b7516ced96d82",
+        "nfc_font_nfd": "cd83721949f099b619f4ba2fde27cf89ec65e8f36bc0b467804b7516ced96d82",
+        "nfc_font_mixed_nfc": "93d764428eb06c773f1c8fa025c33029ead14309ff6577f03fe99de6c691d073",
+        "nfc_font_mixed_nfd": "93d764428eb06c773f1c8fa025c33029ead14309ff6577f03fe99de6c691d073",
+        "nfc_font_unsupported_nfd": "fae40f83dfe276bf1ff8477c218869ff4a050ef30e2f02454aa27d4f42f435b5",
+        "nfd_font_nfd": "afebeaa8f9309e296b8404524813ca93c2ba2cba501f41793860e2b53c3e2d14",
+        "nfd_font_nfc": "afebeaa8f9309e296b8404524813ca93c2ba2cba501f41793860e2b53c3e2d14",
+        "dual_font_nfd": "cd83721949f099b619f4ba2fde27cf89ec65e8f36bc0b467804b7516ced96d82",
+        "dual_font_nfc": "cd83721949f099b619f4ba2fde27cf89ec65e8f36bc0b467804b7516ced96d82"
+      },
+      "pixel_diffs": {
+        "nfc_only_nfc_vs_nfd": {"same_size": true, "size": [18, 16], "changed_pixels": 0, "max_channel_delta": 0},
+        "nfc_only_mixed_nfc_vs_nfd": {"same_size": true, "size": [59, 16], "changed_pixels": 0, "max_channel_delta": 0},
+        "nfc_only_nfc_vs_normalized": {"same_size": true, "size": [18, 16], "changed_pixels": 0, "max_channel_delta": 0},
+        "nfd_only_nfd_vs_nfc": {"same_size": true, "size": [25, 16], "changed_pixels": 0, "max_channel_delta": 0},
+        "dual_nfd_vs_nfc": {"same_size": true, "size": [18, 16], "changed_pixels": 0, "max_channel_delta": 0}
+      },
+      "assertions": {
+        "nfc_only_nfc_vs_nfd_width_identical": true,
+        "nfc_only_nfc_vs_nfd_raster_identical": true,
+        "nfc_only_mixed_nfc_vs_nfd_width_identical": true,
+        "nfc_only_mixed_nfc_vs_nfd_raster_identical": true,
+        "nfc_only_normalization_revision_identical": true,
+        "unsupported_control_differs_from_supported_cluster": true,
+        "nfd_only_nfd_vs_nfc_width_identical": true,
+        "nfd_only_nfd_vs_nfc_raster_identical": true,
+        "dual_nfd_vs_nfc_width_identical": true,
+        "dual_nfd_vs_nfc_raster_identical": true
+      },
+      "expected_custom_widths_px": {"nfc_only": 17.6, "nfd_only": 24.16}
+    },
+    "16px_dpr2": {
+      "widths_px": {
+        "nfc_font_nfc": 17.609375,
+        "nfc_font_nfd": 17.609375,
+        "nfc_font_mixed_nfc": 58.328125,
+        "nfc_font_mixed_nfd": 58.328125,
+        "nfc_font_unsupported_nfd": 15.046875,
+        "nfd_font_nfd": 24.171875,
+        "nfd_font_nfc": 24.171875,
+        "dual_font_nfd": 17.609375,
+        "dual_font_nfc": 17.609375
+      },
+      "png_sha256": {
+        "nfc_font_nfc": "371eefe745169e7eb28cdd8dba945e9509b78897da2ba87c822b91ce9ff979f7",
+        "nfc_font_nfd": "371eefe745169e7eb28cdd8dba945e9509b78897da2ba87c822b91ce9ff979f7",
+        "nfc_font_mixed_nfc": "b0d58f463203d804f4d20982d789a90744cf6da85f2b1e925461f5fe1ff92285",
+        "nfc_font_mixed_nfd": "b0d58f463203d804f4d20982d789a90744cf6da85f2b1e925461f5fe1ff92285",
+        "nfc_font_unsupported_nfd": "a7db956db22c0773a8748803dfb7ac9fac417dbc1f83773f85a1a27cfcadf12c",
+        "nfd_font_nfd": "2bf2921bec08e5f0864db0e1ed8040f027c0d3f406a08d4fbf4f8aa5826905a2",
+        "nfd_font_nfc": "2bf2921bec08e5f0864db0e1ed8040f027c0d3f406a08d4fbf4f8aa5826905a2",
+        "dual_font_nfd": "371eefe745169e7eb28cdd8dba945e9509b78897da2ba87c822b91ce9ff979f7",
+        "dual_font_nfc": "371eefe745169e7eb28cdd8dba945e9509b78897da2ba87c822b91ce9ff979f7"
+      },
+      "pixel_diffs": {
+        "nfc_only_nfc_vs_nfd": {"same_size": true, "size": [36, 32], "changed_pixels": 0, "max_channel_delta": 0},
+        "nfc_only_mixed_nfc_vs_nfd": {"same_size": true, "size": [118, 32], "changed_pixels": 0, "max_channel_delta": 0},
+        "nfc_only_nfc_vs_normalized": {"same_size": true, "size": [36, 32], "changed_pixels": 0, "max_channel_delta": 0},
+        "nfd_only_nfd_vs_nfc": {"same_size": true, "size": [50, 32], "changed_pixels": 0, "max_channel_delta": 0},
+        "dual_nfd_vs_nfc": {"same_size": true, "size": [36, 32], "changed_pixels": 0, "max_channel_delta": 0}
+      },
+      "assertions": {
+        "nfc_only_nfc_vs_nfd_width_identical": true,
+        "nfc_only_nfc_vs_nfd_raster_identical": true,
+        "nfc_only_mixed_nfc_vs_nfd_width_identical": true,
+        "nfc_only_mixed_nfc_vs_nfd_raster_identical": true,
+        "nfc_only_normalization_revision_identical": true,
+        "unsupported_control_differs_from_supported_cluster": true,
+        "nfd_only_nfd_vs_nfc_width_identical": true,
+        "nfd_only_nfd_vs_nfc_raster_identical": true,
+        "dual_nfd_vs_nfc_width_identical": true,
+        "dual_nfd_vs_nfc_raster_identical": true
+      },
+      "expected_custom_widths_px": {"nfc_only": 17.6, "nfd_only": 24.16}
+    },
+    "40px_dpr1": {
+      "widths_px": {
+        "nfc_font_nfc": 44.0,
+        "nfc_font_nfd": 44.0,
+        "nfc_font_mixed_nfc": 145.8125,
+        "nfc_font_mixed_nfd": 145.8125,
+        "nfc_font_unsupported_nfd": 37.609375,
+        "nfd_font_nfd": 60.40625,
+        "nfd_font_nfc": 60.40625,
+        "dual_font_nfd": 44.0,
+        "dual_font_nfc": 44.0
+      },
+      "png_sha256": {
+        "nfc_font_nfc": "f67613e96827608b395301e23c22d24e2d591a981b4bfb7044dc56cde450c624",
+        "nfc_font_nfd": "f67613e96827608b395301e23c22d24e2d591a981b4bfb7044dc56cde450c624",
+        "nfc_font_mixed_nfc": "ef744638095de619d023cf877b78e51b72ca77d92dc618f7fbe005a54b40fa22",
+        "nfc_font_mixed_nfd": "ef744638095de619d023cf877b78e51b72ca77d92dc618f7fbe005a54b40fa22",
+        "nfc_font_unsupported_nfd": "94edc003132634b014ab1f104394387b6481ea8c2109818f32570a160f94c04c",
+        "nfd_font_nfd": "7974dab8991ceedf32b9132810e1da2c4bfff2f95f3fcd1912f66227825f9083",
+        "nfd_font_nfc": "7974dab8991ceedf32b9132810e1da2c4bfff2f95f3fcd1912f66227825f9083",
+        "dual_font_nfd": "f67613e96827608b395301e23c22d24e2d591a981b4bfb7044dc56cde450c624",
+        "dual_font_nfc": "f67613e96827608b395301e23c22d24e2d591a981b4bfb7044dc56cde450c624"
+      },
+      "pixel_diffs": {
+        "nfc_only_nfc_vs_nfd": {"same_size": true, "size": [44, 40], "changed_pixels": 0, "max_channel_delta": 0},
+        "nfc_only_mixed_nfc_vs_nfd": {"same_size": true, "size": [146, 40], "changed_pixels": 0, "max_channel_delta": 0},
+        "nfc_only_nfc_vs_normalized": {"same_size": true, "size": [44, 40], "changed_pixels": 0, "max_channel_delta": 0},
+        "nfd_only_nfd_vs_nfc": {"same_size": true, "size": [61, 40], "changed_pixels": 0, "max_channel_delta": 0},
+        "dual_nfd_vs_nfc": {"same_size": true, "size": [44, 40], "changed_pixels": 0, "max_channel_delta": 0}
+      },
+      "assertions": {
+        "nfc_only_nfc_vs_nfd_width_identical": true,
+        "nfc_only_nfc_vs_nfd_raster_identical": true,
+        "nfc_only_mixed_nfc_vs_nfd_width_identical": true,
+        "nfc_only_mixed_nfc_vs_nfd_raster_identical": true,
+        "nfc_only_normalization_revision_identical": true,
+        "unsupported_control_differs_from_supported_cluster": true,
+        "nfd_only_nfd_vs_nfc_width_identical": true,
+        "nfd_only_nfd_vs_nfc_raster_identical": true,
+        "dual_nfd_vs_nfc_width_identical": true,
+        "dual_nfd_vs_nfc_raster_identical": true
+      },
+      "expected_custom_widths_px": {"nfc_only": 44.0, "nfd_only": 60.4}
+    },
+    "40px_dpr2": {
+      "widths_px": {
+        "nfc_font_nfc": 44.0,
+        "nfc_font_nfd": 44.0,
+        "nfc_font_mixed_nfc": 145.8125,
+        "nfc_font_mixed_nfd": 145.8125,
+        "nfc_font_unsupported_nfd": 37.609375,
+        "nfd_font_nfd": 60.40625,
+        "nfd_font_nfc": 60.40625,
+        "dual_font_nfd": 44.0,
+        "dual_font_nfc": 44.0
+      },
+      "png_sha256": {
+        "nfc_font_nfc": "9feb83280476d78dd4b27360ce8e7aac3cad49a13b44aad84e5e6dc2cd26edbc",
+        "nfc_font_nfd": "9feb83280476d78dd4b27360ce8e7aac3cad49a13b44aad84e5e6dc2cd26edbc",
+        "nfc_font_mixed_nfc": "47b7f726e52722bf68bbf36f24c7012bb74b5015de103f18467b76b7ee4fbe10",
+        "nfc_font_mixed_nfd": "47b7f726e52722bf68bbf36f24c7012bb74b5015de103f18467b76b7ee4fbe10",
+        "nfc_font_unsupported_nfd": "24ac380fcba2ae580f1e82f3402d1d82997762fea1da92d24e69c5896ca3ae77",
+        "nfd_font_nfd": "b9f42316c8d766c6470c2be7c132605a6282443b79a8b8b0eb2aa545635cf09e",
+        "nfd_font_nfc": "b9f42316c8d766c6470c2be7c132605a6282443b79a8b8b0eb2aa545635cf09e",
+        "dual_font_nfd": "9feb83280476d78dd4b27360ce8e7aac3cad49a13b44aad84e5e6dc2cd26edbc",
+        "dual_font_nfc": "9feb83280476d78dd4b27360ce8e7aac3cad49a13b44aad84e5e6dc2cd26edbc"
+      },
+      "pixel_diffs": {
+        "nfc_only_nfc_vs_nfd": {"same_size": true, "size": [88, 80], "changed_pixels": 0, "max_channel_delta": 0},
+        "nfc_only_mixed_nfc_vs_nfd": {"same_size": true, "size": [292, 80], "changed_pixels": 0, "max_channel_delta": 0},
+        "nfc_only_nfc_vs_normalized": {"same_size": true, "size": [88, 80], "changed_pixels": 0, "max_channel_delta": 0},
+        "nfd_only_nfd_vs_nfc": {"same_size": true, "size": [122, 80], "changed_pixels": 0, "max_channel_delta": 0},
+        "dual_nfd_vs_nfc": {"same_size": true, "size": [88, 80], "changed_pixels": 0, "max_channel_delta": 0}
+      },
+      "assertions": {
+        "nfc_only_nfc_vs_nfd_width_identical": true,
+        "nfc_only_nfc_vs_nfd_raster_identical": true,
+        "nfc_only_mixed_nfc_vs_nfd_width_identical": true,
+        "nfc_only_mixed_nfc_vs_nfd_raster_identical": true,
+        "nfc_only_normalization_revision_identical": true,
+        "unsupported_control_differs_from_supported_cluster": true,
+        "nfd_only_nfd_vs_nfc_width_identical": true,
+        "nfd_only_nfd_vs_nfc_raster_identical": true,
+        "dual_nfd_vs_nfc_width_identical": true,
+        "dual_nfd_vs_nfc_raster_identical": true
+      },
+      "expected_custom_widths_px": {"nfc_only": 44.0, "nfd_only": 60.4}
+    }
+  },
+  "summary": {
+    "bounded_assertions_passed": 40,
+    "bounded_assertions_total": 40,
+    "all_bounded_assertions_passed": true,
+    "finding": "Chromium rendered canonically equivalent Hangul NFC/NFD inputs identically with NFC-only, NFD-only, and dual synthetic fonts across 16/40px and DPR1/2; mixed Latin+Hangul was also identical. The unsupported NFD control differed, proving the harness could observe fallback/non-equivalent coverage."
+  }
+}
