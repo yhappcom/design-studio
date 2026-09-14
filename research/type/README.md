@@ -48,8 +48,11 @@ After completion, add `HANDOFFS TO OTHER SPECIALISTS` when the Type result can m
 - `005-numerals-punctuation-systems.md`
 - `009-typography-as-information-architecture.md`
 - `T001-web-typography-fallback-metrics-reflow-transfer.md` — Type→Web transfer baseline for font loading, fallback metrics, zoom/reflow, and data stability; real browser proof remains open.
-- `T002-raster-proof-redraw-cycle.md` — controlled surrogate-raster failure → redraw → re-proof study for join darkness and compact survival; compiled-font/device proof remains open.
-- `T002-raster-proof-redraw-cycle.svg` — exact embedded raster evidence for the T002 R0/R1 comparison at 14/24/48px x-height-equivalent roles.
+- `T002-raster-proof-redraw-cycle.md` — controlled surrogate-raster failure → redraw → re-proof study for join darkness and compact survival.
+- `T002-raster-proof-redraw-cycle.svg` — embedded surrogate-raster evidence for the T002 R0/R1 comparison.
+- `T003-minimal-font-renderer-matrix.md` — compiled minimal TrueType + FreeType no-hint/autohint method comparison; demonstrates that compact form and hinted metrics are renderer/size dependent.
+- `T003-minimal-research-font-renderer-matrix.py` — reproducible research-font build and renderer-measurement source.
+- `T003-minimal-font-renderer-matrix.svg` — embedded FreeType bitmap evidence at 14/16/24/48 ppem.
 
 Existing study numbers remain stable. New Type studies use `T###` IDs. The next available Type study ID is tracked in `progress/TYPE_STATUS.md`.
 
