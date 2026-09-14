@@ -72,6 +72,10 @@ New Color studies use `C###` IDs:
 - `C010-high-precision-p3-srgb-color-management.md` — high-precision Display-P3→sRGB production-path validation across float/16-bit/8-bit, in/out-of-gamut semantics, profile differences and delivery boundaries.
 - `C010-high-precision-p3-srgb-color-management.py` — reproducible LittleCMS 2.19 float/integer P3→sRGB harness.
 - `C010-high-precision-p3-srgb-results.json` — measured 35,937-sample grid, round-trip, quantization, gradient and independent-profile results.
+- `C011-forced-colors-semantic-data-resilience.md` — forced-colors state/focus/SVG transfer, computed-vs-used-value distinction, SVG preserve-parent-color behavior, explicit auto-adjust, and opt-out policy.
+- `C011-forced-colors-semantic-data-specimen.html` — matched HTML/SVG failure/revision specimen.
+- `C011-forced-colors-semantic-data-playwright.py` — Chromium forced-colors + raster verification harness.
+- `C011-forced-colors-semantic-data-results.json` — 21-assertion measured state/SVG/focus/opt-out result summary.
 
 Next new Color study ID is tracked in `progress/COLOR_STATUS.md`.
 
@@ -90,7 +94,7 @@ Research should distinguish as appropriate:
 
 A color topic is not project-ready merely because a palette, formula, chart, token file, profile transform, screenshot statistic, simulation, raster metric or colorimetric calculation exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
 
-Computational salience/clutter proxies, CVD simulations, screenshot-pixel/raster diagnostics, unbounded float round trips and profile-to-profile comparisons are not human-task, perceived-clutter, real-observer accessibility, WCAG-conformance, device-match or physical-appearance evidence unless the relevant method explicitly establishes that role.
+Computational salience/clutter proxies, CVD simulations, screenshot-pixel/raster diagnostics, unbounded float round trips, profile-to-profile comparisons and forced-colors emulation are not human-task, perceived-clutter, real-observer accessibility, WCAG-conformance, OS-wide high-contrast, device-match or physical-appearance evidence unless the relevant method explicitly establishes that role.
 
 ## Status authority
 
