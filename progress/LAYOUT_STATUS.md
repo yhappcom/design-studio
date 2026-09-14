@@ -3,7 +3,7 @@
 Operating state: **ACTIVE — RESEARCH MAY RESUME**  
 Governance sync: 2026-09-15  
 Canonical paths: `research/layout/`, `research/interaction/`  
-Next new-study IDs: Layout `L007`; Interaction `I005`
+Next new-study IDs: Layout `L007`; Interaction `I006`
 
 This file is maintained by the Layout, Spatial & Interaction Specialist. It does not update global `progress/STATUS.md` during ordinary research.
 
@@ -19,9 +19,10 @@ Human-observer/user-task validation is **DEFERRED TO APP-DEVELOPMENT VALIDATION*
 
 ## Four-specialist sync
 
-- **Type:** through **T014**. Exact delivered font/package plus normalization/fallback state are prerequisites for stable Korean Layout regression.
-- **Color:** through **C012**. C011 adds forced-colors/SVG transfer and C012 strengthens provenance discipline; appearance, semantic state and operational ownership remain separate validation layers.
-- **Web:** no substantive `W###` yet; `W001` remains next. Do not invent Web production evidence.
+- **Type:** through **T015**; next T016. Bounded Chromium Hangul canonical-equivalent rendering evidence now exists, but Firefox/Safari/native platform/production Korean shaping remain open.
+- **Color:** **Stage 1 PASS** after C014/C015 closure; next C016 / Stage 2 entry audit. This does not imply production/device/human Color completion.
+- **Web:** **W001 completed**; next W002. Web now has a Stage 1 PRACTICE/CRITIQUE baseline, but no production integration PASS.
+- **Layout/Interaction:** L001–L006 plus I001–I005; Stage 1 remains NOT PASSED.
 
 ---
 
@@ -53,6 +54,7 @@ Human-observer/user-task validation is **DEFERRED TO APP-DEVELOPMENT VALIDATION*
 - `I004-http-precondition-etag-transfer.md` + **16 real HTTP precondition assertions**
 - `I004-offline-outbox-reconnect-transfer.md` + **18 durable offline/restart/reconnect assertions**
 - `I004-ambiguous-outcome-idempotency-transfer.md` + **15 real HTTP ambiguous-result/idempotency assertions**
+- `I005-ambiguous-outcome-idempotency.md` + **18 independent HTTP replication/extension assertions**
 
 Shared accessibility baseline: `research/004-accessibility-reflow-targets-focus.md`.
 
@@ -87,83 +89,65 @@ Remaining: real Windows High Contrast/AT; Firefox/Safari; physical iOS/Android; 
 I004 now has four evidence layers.
 
 ## 1. Conflict state machine — **17/17**
-
 Established naive lost update, semantically safe disjoint merge, same-field preservation, delete-vs-edit identity semantics and resolution recovery.
 
 ## 2. Real HTTP ETag / If-Match — **16/16**
-
 Established real stale-write prevention, 412 classification, current-validator rebase, same-field no-auto-winner and `If-None-Match:*` create-new-identity recovery.
 
 ## 3. Durable offline outbox / restart / reconnect — **18/18**
-
-Real HTTP/1.1 server + two durable SQLite client stores used as a lab persistence substrate.
-
-Established:
-- network-unavailable queue retention;
-- draft/outbox survival across client restart;
-- historical base ETag preservation;
-- stale detection before merge;
-- current-state fetch + semantic rebase;
-- same-field durable conflict hold;
-- delete-vs-edit without resurrection;
-- keep-as-new recovery;
-- queue clearing only after authoritative success.
+Established network-unavailable queue retention; restart persistence; historical base ETag preservation; stale detection before merge; current-state fetch + semantic rebase; same-field durable conflict hold; delete-vs-edit without resurrection; keep-as-new recovery; queue clearing only after authoritative success.
 
 Critical rule:
 
 > `base state` is a historical fact attached to the queued intent. Reconnect produces `current state`; it must not rewrite the remembered base.
 
-The intended Chromium+localhost+IndexedDB integration was blocked by environment policy `ERR_BLOCKED_BY_ADMINISTRATOR`; no browser conclusion is inferred. Exact IndexedDB/service-worker transfer remains Web/live-project work.
+## 4. Applied-but-response-lost / application operation identity — **15/15**
+Established outcome-unknown after response loss; own-success 412 ambiguity; desired-state already-applied confirmation; blind non-idempotent POST duplicate; application-specific operation identity dedupe; payload mismatch rejection.
 
-## 4. Applied-but-response-lost / idempotency — **15/15**
+The lab `X-Operation-Id` is an application contract, not a standardized HTTP field.
 
-Real HTTP server deliberately applied state changes then closed the connection before sending a response.
+Evidence level: **PRACTICE + CRITIQUE**.
 
-Established:
-- transport correctly becomes **outcome unknown**, not known failure;
-- a successful conditional PUT whose response was lost can later return 412 against its own changed validator;
-- therefore 412 after outcome-unknown does not prove another actor caused a conflict;
-- if server/domain can establish requested PUT state is already current, retry can confirm `already-applied` without a second effect;
-- blind retry of non-idempotent POST duplicated a side effect (`1 → 2`);
-- application-specific semantic operation identity replayed the original result without duplication (`1 → 1`);
-- reusing the same operation identity with a different payload was rejected.
+---
 
-The lab `X-Operation-Id` is an application contract, **not claimed as a standardized HTTP field**. Current HTTPAPI Idempotency-Key draft material is not treated as a standard.
+# I005 — stable intent identity and concurrent duplicate recovery
 
-Updated result-state model:
+I005 deliberately **replicates and extends** I004's ambiguous-outcome result rather than pretending the topic was new.
 
-`not sent / sending / known rejected / outcome unknown / confirmed applied / confirmed already-applied-replayed / actual external conflict / operation-identity mismatch`.
+Authoritative basis:
+- RFC 9110 idempotent-method semantics;
+- HTTPAPI `draft-ietf-httpapi-idempotency-key-header-07`, explicitly treated as an **expired Internet-Draft / work in progress**, not an RFC.
 
-### I004/I002 reusable rules
+Fresh real HTTP/1.1 harness: **18/18 assertions PASS**.
 
-- Local persistence success is not remote commit success.
-- Retry is not conflict resolution.
-- Outcome unknown is not failure.
-- A 412 after outcome-unknown needs own-success detection before conflict escalation.
-- `If-Match` prevents stale mutation but does not choose semantic winners.
-- Base/current/local are separate state dimensions.
-- A durable outbox is a preserved-intention store, not merely a retry list.
-- Do not replace queued base validator with the latest fetched ETag.
-- Queue clearing follows authoritative confirmation.
-- Auto-merge only semantically independent changes.
-- Preserve local drafts across conflicts/restarts.
-- Delete-vs-edit may require new identity rather than resurrection.
-- Do not blindly retry non-idempotent side effects after an ambiguous response.
-- If retry safety depends on semantic operation identity, persist the **same identity** across retries and bind it to the exact intent/payload.
+Confirmed independently:
+- server can commit a side effect while the client receives only a transport error;
+- naive POST retry can create a second side effect;
+- same stable intent key + same payload can replay the original result without duplication;
+- generating a fresh key for the retry defeats the protection;
+- same key + different payload is rejected in the bounded draft-pattern harness.
 
-Evidence level: **PRACTICE + CRITIQUE / state-machine + real HTTP + durable offline/restart + applied-response-lost/idempotency transfer**.
+New evidence beyond I004:
+- when a duplicate with the same key arrives **while the first request is still processing**, the harness rejects concurrent execution with 409;
+- after the first completes, the same-key retry returns the original result and side-effect count remains one.
 
-Remaining I004/I002 gates:
-- production DB transaction/isolation and dedupe-ledger atomicity;
-- browser/mobile local database and background sync;
-- physical multi-device races;
-- multiple queued operation ordering/compaction/dependencies;
-- crashes between external side effect and dedupe-record commit;
-- authorization/account change/finalization while offline;
-- CRDT/OT for text/list/order domains;
-- reverse proxies/API gateways/retry middleware;
-- external payment/booking/message APIs;
-- AT and human comprehension.
+Core model:
+
+`one user intent id → one payload/fingerprint contract → potentially many transport attempts → at most one duplicate-sensitive side effect`
+
+and separately:
+
+`client knowledge = queued / in flight / outcome unknown / confirmed / replay-confirmed / concurrent duplicate / identity mismatch / rejected`.
+
+Reusable rule:
+
+> Retry attempts may multiply; user intent identity must not.
+
+For duplicate-sensitive actions, stable operation identity belongs to the durable interaction/data lifecycle, not merely to a transient HTTP request function.
+
+Evidence level: **PRACTICE + CRITIQUE / deliberate replication + concurrent-duplicate extension**.
+
+Not PASS: production business-effect/dedupe-ledger atomicity, gateway/proxy retries, distributed systems, key expiry/security, real browser/mobile stack, AT and app-stage human validation remain open.
 
 ---
 
@@ -171,11 +155,11 @@ Remaining I004/I002 gates:
 
 - **L001**: local-edge-controlled border-ownership stimuli; optical raster proof. Human observation deferred.
 - **L002**: 216-condition density/reflow proof; fake compactness rejected.
-- **L003**: Korean/Latin fallback wrap thresholds; T013/T014 now add normalization prerequisite.
+- **L003**: Korean/Latin fallback wrap thresholds; normalization/runtime font state remain prerequisites.
 - **L004**: tabular-number alignment plus intrinsic-width consequence.
 - **L005**: fixed-geometry Color density/salience; independent C007 confirmation.
 - **I001** navigation/state: 14/14.
-- **I002** async/retry/cancel: 19/19 plus ambiguous-outcome transfer above.
+- **I002** async/retry/cancel: 19/19 plus ambiguous-outcome transfer.
 - **I003** forced-colors semantic resilience: 14/14.
 
 None is production PASS.
@@ -199,7 +183,8 @@ None is production PASS.
 | Interaction agency/state/navigation | CRITIQUE | broader real platform/AT/human pending |
 | Async/retry/cancel | PRACTICE / CRITIQUE | production API/proxy/background-sync/AT pending |
 | Color-channel-independent semantics | PRACTICE / CRITIQUE | real OS/AT/production pending |
-| Concurrent edits/offline conflict | PRACTICE / CRITIQUE | **17 state + 16 HTTP + 18 offline + 15 ambiguous/idempotency**; production DB/storage/multi-device/queue-ordering/CRDT-OT/AT/human pending |
+| Concurrent edits/offline conflict | PRACTICE / CRITIQUE | **17 state + 16 HTTP + 18 offline + 15 ambiguous**; production DB/storage/multi-device/queue-ordering/CRDT-OT pending |
+| Ambiguous outcome / duplicate-sensitive intent | PRACTICE / CRITIQUE | **I004 15 + I005 18 replication/extension**; atomicity/distributed/gateway/browser/mobile pending |
 
 ---
 
@@ -207,13 +192,13 @@ None is production PASS.
 
 Human work is deferred to app-development validation and does not block non-human research.
 
-1. **I004 queue semantics** — multiple queued operations, ordering, compaction/squashing, dependencies and conflict propagation.
-2. **I004 authorization/finalization while offline** — permission change, locked/finalized records and compensating actions.
-3. **I002/I004 production retry boundaries** — backoff/retry middleware/proxy behavior and dedupe-ledger atomicity when suitable infrastructure exists.
+1. **Multiple queued operation semantics** — ordering, dependencies, compaction/squashing, partial failure and conflict propagation.
+2. **Authorization/finalization while offline** — permission change, locked/finalized records and compensating actions.
+3. **Production retry boundaries** — proxy/middleware behavior and business-effect/dedupe-ledger atomicity when suitable infrastructure exists.
 4. **L006 production/platform transfer** when real OS/AT/cross-browser/mobile/framework environments become available.
-5. **L004 only if project-relevant** — delivered font, locale/accounting, dynamic update, actual zoom/DPR.
-6. Consume future W### evidence and independently reproduce high-risk findings.
-7. Open `L007` or `I005` only for a genuinely higher-value new question.
+5. **Web W001 transfer consumption** — inspect/reproduce high-risk Web findings as W-series grows.
+6. **L004 only if project-relevant** — delivered font, locale/accounting, dynamic update, actual zoom/DPR.
+7. Open `L007` or `I006` only for a genuinely higher-value new question.
 
 ## APP-DEVELOPMENT VALIDATION queue
 
@@ -221,7 +206,7 @@ Execute only with live app/prototype and suitable participants:
 - L001 border ownership and optical-centering judgments;
 - L002/L005/C007 task performance/error vs preference/workload;
 - L006 layer comprehension/dismissal expectations;
-- I004 conflict-resolution comprehension/error;
+- I004/I005 conflict/retry-state comprehension/error;
 - real accessibility-user validation.
 
 ---
@@ -229,18 +214,17 @@ Execute only with live app/prototype and suitable participants:
 ## HANDOFFS TO OTHER SPECIALISTS
 
 ### Type
-- T013/T014 normalization representation is a prerequisite for stable Korean Layout and exact conflict/diff text identity.
+- T015 strengthens the need to test exact delivered/runtime Korean text state before treating Layout geometry as stable.
+- Recovery/conflict surfaces need exact long/localized strings without destroying semantic distinctions.
 
 ### Color
-- Sync states `queued`, `network pending`, `outcome unknown`, `conflict`, `deleted`, `confirmed`, `already applied` are semantically distinct; Color must not collapse them or become sole channel.
+- Color Stage 1 PASS is acknowledged; Layout/Interaction does not infer production/device/human Color PASS.
+- Sync/retry states `queued`, `outcome unknown`, `processing duplicate`, `conflict`, `deleted`, `confirmed`, `replay-confirmed`, `identity mismatch` remain distinct semantics; Color must not collapse them or become sole channel.
 
 ### Web Design
-Highest-value transfer contracts now include:
-- L006 five overlay/modality assertion layers;
-- I001 14, I002 19, I003 14;
-- I004 **17 state + 16 HTTP + 18 durable offline + 15 ambiguous/idempotency assertions**.
-
-Web should reproduce I004 using actual IndexedDB/service worker/background sync or chosen framework, including reload/crash persistence, concurrent tabs, ETag handling, operation identity persistence, applied-but-response-lost cases, automatic retry middleware, queue ordering and UI/AT status behavior.
+- W001 is now available as the first Web baseline.
+- Highest-value future transfer includes L006 overlay matrices and I004/I005 network/offline contracts using actual browser/framework/page behavior.
+- Web should verify stable operation identity across `fetch` retries/reload/offline, page-level outcome-unknown messaging, concurrent activation, and framework retry middleware.
 
 ---
 
@@ -248,8 +232,9 @@ Web should reproduce I004 using actual IndexedDB/service worker/background sync 
 
 - `L001`–`L006`: studied spatial modules remain PRACTICE / CRITIQUE where applicable.
 - `I001`: CRITIQUE.
-- `I002` / `I003` / `I004`: PRACTICE / CRITIQUE.
-- `I004` now spans **17/17 + 16/16 + 18/18 + 15/15** controlled evidence layers.
-- Next IDs remain Layout `L007`; Interaction `I005`.
-- Human validation explicitly deferred to app-development stage.
-- No PASS promotion claimed.
+- `I002` / `I003` / `I004` / `I005`: PRACTICE / CRITIQUE.
+- I004 evidence: **17/17 + 16/16 + 18/18 + 15/15**.
+- I005 independent replication/extension: **18/18**.
+- Next IDs: Layout `L007`; Interaction `I006`.
+- Human validation remains explicitly deferred to app-development stage.
+- No Layout/Interaction Foundation PASS promotion claimed.
