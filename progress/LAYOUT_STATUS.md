@@ -16,14 +16,19 @@ For live projects, accumulated evidence must become project-specific guidance on
 ## Current level
 
 Current curriculum stage: **Stage 1 — Foundation**  
-Overall state: **CRITIQUE** in studied modules; Foundation is **not passed**.
+Overall state: **CRITIQUE** in studied modules  
+Foundation: **NOT PASSED**
 
-Spatial evidence stays under `research/layout/`; temporal/behavioral evidence stays under `research/interaction/`.
+Spatial evidence remains under `research/layout/`; temporal/behavioral evidence remains under `research/interaction/`.
+
+---
 
 ## Four-specialist sync
 
-- **Type:** through `T005`; numeral/runtime and Latin/Korean fallback evidence remain active transfer inputs.
-- **Color:** through `C007`; its fixed-geometry density/salience study independently confirms and complements Layout L005.
+Latest synchronized peer state:
+
+- **Type:** through `T006`; source→CFF/TTF production-outline transfer now exists in addition to T004 numerals and T005 Latin/Korean fallback evidence.
+- **Color:** through `C009`; C007 independently confirms L005 fixed-geometry density/salience findings, while C009 shows fixed semantic Color pairs do not normalize Type weight/fallback rendering or spatial footprint.
 - **Web:** no substantive `W###` yet; `W001` remains next. Do not invent Web evidence.
 
 Web remains the complete page/browser integration partner. Layout/Interaction may independently validate browser behavior in its own domain when useful, without replacing Web canonical ownership.
@@ -45,6 +50,7 @@ Web remains the complete page/browser integration partner. Layout/Interaction ma
 - `L005-color-driven-density-salience-transfer.md` + Playwright/results
 - `L006-layer-ownership-cross-contract.md` + specimen/Playwright/results
 - `L006-native-layer-primitives-transfer.md` + specimen/Playwright/results
+- `L006-pointer-capture-touch-lost-invoker-transfer.md` + specimen/Playwright/results
 - retained earlier grid/responsive/grouping/L001 product-design exercises.
 
 ### Interaction
@@ -64,96 +70,152 @@ Web remains the complete page/browser integration partner. Layout/Interaction ma
 
 ---
 
-## Latest completed block — L006 layer ownership
+# Latest completed block — L006 higher-fidelity layer ownership
 
-L006 transfers L001 figure-ground/border ownership into realistic overlapping UI and couples it to Interaction ownership.
+L006 now spans three evidence layers:
 
-### Custom paired proof
+1. custom visual/interaction ownership pairs;
+2. native HTML popover/dialog transfer;
+3. transition-time pointer capture, touch, nested dismissal and lost-invoker recovery.
 
-Three structures were rendered as broken/revised pairs:
+## 1. Custom paired proof
 
-1. non-modal popover;
-2. sticky controls over row content;
-3. modal sheet over an editor.
+Three broken/revised structures were rendered with pixel-identical foreground/background geometry:
 
-For every pair:
+- non-modal popover;
+- sticky controls over row content;
+- modal sheet over an editor.
 
-- foreground/background geometry is identical;
-- borders/shadows/surfaces are identical;
-- foreground/background actions share the same screen coordinate;
-- workspace and foreground screenshots are pixel-identical.
-
-Only behavioral ownership differs.
-
-#### Broken result
-
-With the visual foreground using `pointer-events:none`:
-
-- popover: visible foreground action position activates background `Delete record`;
-- sticky layer: visible `Filter` position activates the row beneath;
-- modal sheet: visible `Confirm` position activates background commit;
-- reverse keyboard traversal escapes: `Confirm → background input → background Commit`.
-
-#### Revised result
-
-The same pixels are retained while:
-
-- foreground receives pointer input inside its visible overlap;
-- modal background is `inert`;
-- forward and reverse traversal stay within the foreground task.
+Broken versions allowed foreground-looking regions to pass pointer or keyboard ownership to obscured background controls. Revised versions retained the same pixels while repairing hit ownership, background inertness and keyboard containment.
 
 Controlled custom-DOM result: **15/15 assertions PASS**.
 
-### Native HTML transfer
+Key conclusion:
 
-The same ownership contract was then tested with actual browser primitives in Chromium `144.0.7559.96`.
+> A screenshot cannot tell whether the visible foreground owns input, focus, semantics or mutation.
 
-#### Native popover
+## 2. Native HTML transfer
 
-Confirmed:
+Chromium `144.0.7559.96`:
 
-- `:popover-open` is active;
-- overlap hit-testing resolves to the popover action;
+### Native popover
+- shown popover owns its overlap coordinate;
 - underlying action does not fire;
-- opening a non-modal popover does **not** globally inert the page.
+- non-modal popover does not globally inert the page.
 
-#### Native `<dialog>.showModal()`
-
-Confirmed:
-
-- dialog enters `:modal` / top-layer modality;
-- background pointer activation is blocked;
-- controlled keyboard traversal never reached background page controls;
-- a nested popover inside the modal becomes the topmost hit owner;
-- closing the dialog restores focus to the invoker in the controlled case.
+### Native `<dialog>.showModal()`
+- modal enters top-layer modality;
+- outside pointer activation is blocked;
+- tested keyboard traversal did not reach background page controls;
+- nested popover can become the topmost hit owner;
+- closing the dialog restored focus to the invoker in the bounded case.
 
 Important limitation:
 
 - `document.activeElement` transiently became `<body>` at some Tab/Shift+Tab boundaries;
-- therefore **background controls were not reached**, but **strict “activeElement always remains a dialog descendant” containment was false** in this run.
+- therefore outside controls were unreachable, but strict “activeElement is always a dialog descendant” was not established.
 
-This distinguishes HTML modal inertness/top-layer behavior from the stronger APG cyclic focus-containment interaction pattern.
+This keeps HTML modal inertness distinct from the stronger APG cyclic focus-containment pattern.
 
-Native-primitives matrix: **13/13 PASS for the bounded assertions**.
+Native-primitives matrix: **13/13 bounded assertions PASS**.
 
-### Ownership vector
+## 3. Pointer capture / touch / nested dismissal / lost invoker
 
-For layered components, record separately:
+New controlled Chromium matrix: **13/13 assertions PASS**.
 
-`visual owner / pointer owner / keyboard-focus owner / semantic-AT owner / action-data owner / layer-stack position`
+### Failure reproduced — captured background gesture survives modal entry
 
-Modality changes the contract:
+Sequence:
 
-- non-modal popover: foreground owns its overlap; outside background may remain active;
-- sticky header/toolbar: foreground owns the region it covers, not the whole page;
-- modal sheet/dialog: foreground owns the active task; underlay is inert;
-- nested overlays: ownership is a stack, not a single foreground/background boolean.
+- background drag receives `pointerdown`;
+- `setPointerCapture()` succeeds;
+- modal `showModal()` opens while pointer remains down;
+- pointer moves over the visible modal action;
+- captured background still receives subsequent moves and `pointerup`;
+- controlled background drag commit becomes `1`.
 
-### Evidence level
+Observed broken event path included:
 
-**PRACTICE + CRITIQUE / realistic L001 transfer + Interaction coupling + bounded native-browser transfer**.
+`gotpointercapture → move… → modal opens → move… → pointerup(capture=true, commit=true) → lostpointercapture`
 
-Not PASS: human layer perception, screen-reader/AT, browser-chrome focus behavior, Firefox/Safari/mobile, touch/gesture/pointer capture, framework portals, lost-invoker cases, production content/localization and native mobile remain open.
+Therefore, in this Chromium run:
+
+> **modal inertness did not cancel a pointer stream that was already captured before the modal transition.**
+
+### Revision
+
+Before modal entry:
+
+- explicitly release capture;
+- cancel the underlying gesture/data commit;
+- then open the modal.
+
+Observed revised result:
+
+- `lostpointercapture` occurs before modal interaction proceeds;
+- no background `pointerup` commit is used;
+- background drag commit changes `1 → 0`.
+
+### Touch overlap transfer
+
+With a Playwright touch source and popover/underlay controls at the same coordinate:
+
+- hit testing resolved to the popover action;
+- foreground touch action count = `1`;
+- underlying action count = `0`.
+
+This is bounded Chromium touch evidence, not physical mobile-browser PASS.
+
+### Nested dismissal stack
+
+Controlled stack:
+
+`page → modal dialog → nested auto popover`
+
+Observed:
+
+- first `Escape` dismisses the topmost popover only;
+- second `Escape` dismisses the parent dialog;
+- focus returns to the parent dialog invoker when that invoker remains present.
+
+### Lost invoker
+
+When the dialog opener is removed before dismissal:
+
+- native dismissal settled with focus on `BODY` rather than an adjacent logical workflow control.
+
+With an explicit application fallback:
+
+- focus moves to the declared logical fallback control.
+
+This confirms I001/APG continuity logic: “return to opener” is conditional, not universal.
+
+## Updated ownership vector
+
+Layer review now records separately:
+
+`visual owner / pointer hit owner / active gesture-capture owner / keyboard-focus owner / semantic-AT owner / action-data owner / layer-stack position / restoration target`
+
+The new distinction is critical:
+
+- **pointer hit owner** describes a new hit now;
+- **active gesture-capture owner** describes an input stream that may have started before the layer transition.
+
+They can differ.
+
+## Professional rules from L006
+
+- modal transition requires an explicit policy for active drag/resize/press-hold gestures;
+- do not assume `inert`, backdrop or top-layer entry cancels prior pointer capture;
+- nested overlays are a stack, not one foreground/background boolean;
+- one Escape/back action should have a defined topmost dismissal target;
+- focus restoration needs a lost-invoker fallback when the opener can disappear;
+- visual elevation cannot establish pointer/focus/gesture/data ownership by itself;
+- modal testing must include reverse Tab, active-gesture transition and dismissal restoration.
+
+Evidence level: **PRACTICE + CRITIQUE / realistic + native-browser + transition-time input validation**.
+
+Not PASS: Firefox/Safari, physical iOS/Android, touch drag/implicit capture, stylus/multi-touch, AT, browser chrome, framework portals, native frameworks and human layer comprehension remain open.
 
 ---
 
@@ -202,22 +264,35 @@ None is production PASS.
 
 ---
 
-## Cross-specialist comparison — Color C007 ↔ Layout L005
+## Cross-specialist evidence affecting this role
 
-Classification: **CONFIRMATION + COMPLEMENTARY METHOD**.
+### Type — through T006
 
-Both studies independently establish under fixed geometry that:
+- L003/L004 already establish browser-level Layout transfer for fallback/numerals.
+- T006 adds source→CFF/TTF evidence: technically clean production-outline/export changes can still alter compact raster coverage.
+- Consequence for Layout: use delivered font builds near wrapping, numeric-column and overlay-boundary thresholds; do not validate geometry from source/editor appearance alone.
 
-- distributed chroma can materially change the rendered feature field without changing spatial density;
-- zero/low chroma does not guarantee a calmer field because luminance segmentation may remain strong;
-- semantic emphasis should be localized by task value rather than assigned to every difference;
-- screenshot/image proxies are not human perceived-clutter/performance measures.
+### Color — through C009
 
-Complement:
-- L005 adds explicit semantic-collision diagnosis;
-- C007 adds stronger local feature/action-region comparison.
+- C007 ↔ L005 remains **CONFIRMATION + COMPLEMENTARY METHOD**.
+- C009 shows identical semantic foreground/background pairs can render with materially different Type weight/fallback coverage and can cross wrap thresholds while Color values remain fixed.
+- Consequence for Layout: do not use Color changes to disguise Type/Layout fallback failures; overlay and dense-surface geometry must be retested with actual fallback/render conditions.
+- L006 reciprocally shows pixel-identical appearance can hide opposite interaction/gesture ownership.
 
-Do not merge the studies or promote either proxy into a universal clutter score.
+### Web Design
+
+No substantive `W###` at latest synchronization.
+
+Web should independently reproduce L001–L006 and I001–I004 inside complete page/component systems, especially:
+
+- native `<dialog>` and `popover`;
+- framework portals/overlay managers;
+- active pointer capture during modal transitions;
+- sticky headers/toolbars;
+- lost-invoker restoration;
+- production focus/inertness/AT behavior;
+- actual font loading/localization/zoom;
+- Firefox/Safari/mobile/browser-OS matrices.
 
 ---
 
@@ -228,15 +303,15 @@ Do not merge the studies or promote either proxy into a universal clutter score.
 | Composition / visual grammar | CRITIQUE | rendered human observation; broader multilingual/device transfer |
 | Grid / alignment systems | CRITIQUE | broader real-rendering proof; text-growth/cross-surface transfer |
 | Perceptual grouping | CRITIQUE | broader context and human observation |
-| Figure-ground / border ownership | **PRACTICE / CRITIQUE** | cue isolation + realistic L006 transfer complete; blinded observers and broader platform transfer pending |
-| Layer ownership / visual-interaction coupling | **PRACTICE / CRITIQUE** | custom 15-assertion + native 13-assertion proof; strict focus-policy nuance, AT, touch/gesture, cross-browser/native/framework and human layer judgment pending |
+| Figure-ground / border ownership | PRACTICE / CRITIQUE | cue isolation + realistic L006 transfer complete; blinded observers and broader platform transfer pending |
+| Layer ownership / visual-interaction coupling | **PRACTICE / CRITIQUE** | custom 15 + native 13 + higher-fidelity 13 assertion matrices; Firefox/Safari/mobile/AT, implicit touch capture, framework/native and human evidence pending |
 | Visual mass / balance / tension | PRACTICE / CRITIQUE | stronger centroid datasets; observer ratings; broader transfer |
 | Optical centering | PRACTICE / CRITIQUE | raster mass/size/DPR proof; blinded human comparison, physical device, icon+text/RTL/platform transfer pending |
 | Whitespace / density / spatial rhythm | PRACTICE / CRITIQUE | L002 rendered cycle complete; human task/broader project transfer pending |
 | Responsive/adaptive recomposition | PRACTICE / CRITIQUE | L002/L003 evidence; actual zoom/cross-browser/device/production page transfer pending |
-| Type-dependent spatial robustness | PRACTICE / CRITIQUE | L003 fallback + L004 numeric transfer; production-font/cross-platform/human evidence pending |
+| Type-dependent spatial robustness | PRACTICE / CRITIQUE | L003/L004 + T006 dependency established; production delivered-font/cross-platform/human evidence pending |
 | Dense numeric comparison geometry | PRACTICE / CRITIQUE | L004 proof; locale/accounting/dynamic-update/human comparison evidence pending |
-| Color-driven feature density / salience | PRACTICE / CRITIQUE | L005 + independent C007 confirmation; human task/CVD/device/environment transfer pending |
+| Color-driven feature density / salience | PRACTICE / CRITIQUE | L005 + independent C007 confirmation; C009 Type/Color transfer noted; human task/CVD/device/environment pending |
 | Interaction agency / feedback / errors | CRITIQUE | broader real-platform/AT/human validation |
 | State / modes / reversibility / directness | CRITIQUE | broader multi-user/input/AT validation |
 | Navigation / task-flow integration | CRITIQUE | real router/URL, AT, cross-browser/device/human resumption pending |
@@ -246,59 +321,24 @@ Do not merge the studies or promote either proxy into a universal clutter score.
 
 ---
 
-## Peer evidence affecting this role
-
-### Type
-
-Type is through T005.
-
-- L003/L004 provide browser transfer evidence for fallback and numeric-feature dependencies.
-- L001 reinforces separation of source geometry, raster result and perception.
-- L006 adds future localization stress cases because text growth can move overlay edges/hit regions.
-
-### Color
-
-Color is through C007.
-
-- C001/C002/I003: critical state meaning must survive authored color replacement.
-- C003: data color and interaction state remain separate semantics.
-- C006: action/selection/focus/status remain separate jobs.
-- C007 independently confirms L005 and rejects `desaturate = declutter`.
-- L006 proves the reciprocal boundary: pixel-identical visual layers can still have opposite interaction ownership.
-
-### Web Design
-
-No substantive W### at latest synchronization.
-
-Web should independently reproduce L001–L006 and I001–I004 inside complete page/component systems, especially:
-
-- native `<dialog>` and `popover`;
-- framework portals/overlay managers;
-- sticky headers/toolbars;
-- production focus/inertness/restoration handling;
-- actual font loading/localization/zoom;
-- browser/OS/device/AT matrices.
-
----
-
 ## Active next queue
 
 1. **Human evidence when participants are available**
    - L001 border ownership Left/Right/Ambiguous judgments;
    - L001 optical `0/+δ/−δ` perceived-centering comparisons;
    - L002/L005/C007 known-item search/comparison/action/error tests.
-2. **L006 higher-fidelity layer transfer**
-   - Firefox/Safari/mobile and AT;
-   - browser-chrome / strict focus-scope behavior;
-   - touch/gesture/pointer capture;
-   - lost-invoker and nested overlay/portal stacks;
+2. **L006 remaining higher-fidelity transfer**
+   - Firefox/Safari and physical mobile browsers;
+   - screen reader / AT layer ownership;
+   - touch drag/implicit capture, stylus, multi-touch and OS gesture competition;
+   - framework portals/overlay managers;
    - forced-colors/reduced-visual-effect conditions;
-   - production framework portals when Web/project context exists.
+   - complex lost-invoker/replacement cases.
 3. **I004 higher-fidelity transfer** — real ETag/If-Match or transaction backend, offline/reconnect, multi-device/tab, delete/finalization semantics and AT.
-4. **L004 extension only if project-relevant** — production font/exact T004, locale/accounting formats, dynamic updates, actual zoom/DPR.
+4. **L004 extension only if project-relevant** — delivered production font/exact T004, locale/accounting formats, dynamic updates, actual zoom/DPR.
 5. **I003 higher-fidelity transfer** — real OS high-contrast/AT/production tokens.
 6. Consume future W### evidence and independently reproduce high-risk findings where useful.
-7. Open `L007` or `I005` only for a genuinely new question with higher value than current validation gaps.
+7. Open `L007` or `I005` only for a genuinely new question with higher value than these validation gaps.
 
 ---
 
@@ -308,12 +348,13 @@ Web should independently reproduce L001–L006 and I001–I004 inside complete p
 - human perceived-clutter/search/comparison/action evidence for L002/L005/C007;
 - human layer-ownership/comprehension evidence in realistic overlays;
 - screen-reader/AT layer ownership and modal/non-modal semantics;
-- browser-chrome and strict focus-scope behavior for modal dialogs;
-- touch/gesture/pointer capture across layers;
-- nested overlay/portal ownership beyond the bounded popover-inside-dialog case;
-- lost-invoker restoration and complex dismissal stacks;
+- Firefox/Safari/browser-chrome focus behavior;
+- physical mobile-browser layer behavior;
+- touch drag/implicit pointer capture, stylus, multi-touch and OS gesture arbitration;
+- nested portal/overlay ownership beyond native bounded cases;
+- complex lost-invoker replacement/restoration;
 - actual browser zoom rather than synthetic scaling;
-- production font loading/fallback and exact T004 browser transfer;
+- production font loading/fallback and exact delivered-font regression;
 - real OS forced-color/high-contrast environments;
 - real multi-device/offline conflict and sync reconciliation;
 - CRDT/OT/list/text/order conflict behavior where relevant;
@@ -329,16 +370,16 @@ Web should independently reproduce L001–L006 and I001–I004 inside complete p
 
 - L003 confirms fallback width can cross Layout thresholds.
 - L004 confirms browser tabular alignment while exposing numeric-column width cost.
-- L001 reinforces geometry/raster/perception method isolation.
-- L006 adds overlay/localization cases where wrapping can change boundary and hit-test geometry.
+- T006 increases the need to regression-test actual delivered font output near those thresholds.
+- L006 adds overlay/localization cases where wrapping can change boundaries, hit regions and restoration targets.
 - Scope limit: Layout/Interaction does not define font/glyph production decisions.
 
 ### Color
 
 - C007 ↔ L005 remains **CONFIRMATION + COMPLEMENTARY METHOD**.
-- L006 shows pixel-identical visual layers can have opposite interaction ownership, so elevation/color treatment cannot establish behavior by itself.
-- Future L006 transfer should test forced-colors/dark/reduced-effect conditions without using extra color as a behavioral fix.
-- Scope limit: no human salience or color threshold claim.
+- C009 reinforces that semantic Color values do not normalize Type/rendered geometry.
+- L006 shows appearance, inertness and active gesture ownership are separate; more elevation/color cannot cancel a captured background pointer stream.
+- Scope limit: no human salience or Color threshold claim.
 
 ### Layout / Interaction
 
@@ -348,11 +389,12 @@ Current reusable rules:
 - density modes are relational policies, not immutable spacing tokens;
 - diagnose “busy/dense” across spatial density, feature variability, emphasis distribution and semantic collision;
 - border ownership is contextual; diagnose remote cues while controlling local edges;
-- visual, pointer, keyboard, semantic, data ownership and layer-stack position are separate contracts;
+- visual owner, new-hit owner, active gesture/capture owner, focus owner, semantic owner, data owner, stack position and restoration target are distinct contracts;
 - a screenshot cannot validate overlay interaction ownership;
 - modal and non-modal ownership require different background policies;
-- modal testing must include `Shift+Tab`, not only forward Tab;
-- distinguish `outside controls are inert/unreachable` from the stronger `activeElement always stays on a dialog descendant` contract;
+- modal transition during an active gesture needs an explicit finish/cancel/release policy;
+- `inert`/top-layer entry does not prove prior pointer capture was canceled;
+- modal testing must include `Shift+Tab`, active gesture transitions, topmost-first dismissal and lost-invoker restoration;
 - native `showModal()` provides valuable modality/inertness but does not remove target-browser keyboard/AT validation;
 - nested overlays require ownership-stack reasoning;
 - dimming does not create inertness;
@@ -366,22 +408,23 @@ Current reusable rules:
 
 ### Web Design
 
-Reusable transfer evidence:
+Reusable transfer evidence now includes:
 
-- L001 border ownership: pixel-identical local-edge cue-isolation set + blinded observer protocol;
+- L001 border ownership: local-edge cue-isolation set + blinded observer protocol;
 - L001 optical centering: fixed-target raster/size/DPR matrix;
 - L002: 216-condition density/reflow matrix;
 - L003: mixed-script fallback/wrap-threshold/semantic-lane transfer;
-- L004: browser tabular-numeral/decimal/intrinsic-width transfer;
+- L004: tabular numeral/decimal/intrinsic-width transfer;
 - L005 + C007: independent fixed-geometry Color/feature-density validation;
 - L006 custom: **15-assertion visual/pointer/keyboard ownership matrix**;
-- L006 native: **13-assertion popover/dialog/top-layer/inertness/restoration matrix**, including a strict-focus-containment limitation;
+- L006 native: **13-assertion popover/dialog/top-layer/inertness matrix**;
+- L006 higher fidelity: **13-assertion pointer-capture/touch/nested-dismissal/lost-invoker matrix**;
 - I001: 14-assertion navigation/state matrix;
 - I002: 19-assertion latency/retry/cancel matrix;
 - I003: 14-assertion forced-colors matrix;
 - I004: 17-assertion conflict matrix.
 
-Web should reproduce with production components, portals, fonts/tokens, zoom/localization, router/API/offline behavior, target browser/device matrix, OS accessibility modes and AT.
+Web should reproduce these with production components, portals, delivered fonts/tokens, zoom/localization, router/API/offline behavior, target browser/device matrix, OS accessibility modes and AT.
 
 ---
 
@@ -392,7 +435,7 @@ Web should reproduce with production components, portals, fonts/tokens, zoom/loc
 - `L003`: T005 fallback→Layout transfer → **PRACTICE / CRITIQUE**.
 - `L004`: browser `tnum`/decimal/intrinsic-width transfer → **PRACTICE / CRITIQUE**.
 - `L005`: fixed-geometry Color→Layout transfer → **PRACTICE / CRITIQUE**; independently confirmed/complemented by C007.
-- `L006`: custom layer ownership **15/15** + native popover/dialog **13/13 bounded assertions**, with strict focus-containment nuance → **PRACTICE / CRITIQUE**.
+- `L006`: custom **15/15** + native **13/13** + higher-fidelity pointer/touch/restoration **13/13 bounded assertions** → **PRACTICE / CRITIQUE**.
 - `I001`: navigation/state → **CRITIQUE**.
 - `I002`: async/retry/cancel → **PRACTICE / CRITIQUE**.
 - `I003`: forced-colors resilience → **PRACTICE / CRITIQUE**.
