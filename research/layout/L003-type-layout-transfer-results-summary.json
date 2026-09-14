@@ -1,0 +1,50 @@
+{
+  "study": "L003",
+  "browser": "Chromium 144.0.7559.96 on Debian",
+  "direct_20px_widths": {
+    "Inter_NotoCJK": 489.953125,
+    "Inter_NanumGothic": 496.75,
+    "Inter_NanumBarun": 480.421875,
+    "Noto_NotoCJK": 486.953125
+  },
+  "one_line_threshold_px": {
+    "Inter_NotoCJK": 490,
+    "Inter_NanumGothic": 497,
+    "Inter_NanumBarun": 481,
+    "Noto_NotoCJK": 487
+  },
+  "key_conditions": {
+    "base_500_1.25_intermediate": {
+      "Inter_NotoCJK": {"avgRowHeight": 136.0, "wrappedNames": 1, "targetLongLabelLines": 2, "scrollRatio": 2.103},
+      "Inter_NanumGothic": {"avgRowHeight": 129.25, "wrappedNames": 1, "targetLongLabelLines": 2, "scrollRatio": 2.001},
+      "Inter_NanumBarun": {"avgRowHeight": 129.92, "wrappedNames": 0, "targetLongLabelLines": 1, "scrollRatio": 2.011},
+      "Noto_NotoCJK": {"avgRowHeight": 139.0, "wrappedNames": 1, "targetLongLabelLines": 2, "scrollRatio": 2.147}
+    },
+    "robust_500_1.25_intermediate": {
+      "Inter_NotoCJK": {"avgRowHeight": 134.92, "wrappedNames": 0, "targetLongLabelLines": 1, "scrollRatio": 2.086},
+      "Inter_NanumGothic": {"avgRowHeight": 128.92, "wrappedNames": 0, "targetLongLabelLines": 1, "scrollRatio": 1.996},
+      "Inter_NanumBarun": {"avgRowHeight": 129.92, "wrappedNames": 0, "targetLongLabelLines": 1, "scrollRatio": 2.011},
+      "Noto_NotoCJK": {"avgRowHeight": 137.92, "wrappedNames": 0, "targetLongLabelLines": 1, "scrollRatio": 2.131}
+    },
+    "base_390_2_compact": {
+      "Inter_NotoCJK": {"avgRowHeight": 305.92, "targetLongLabelLines": 5, "scrollRatio": 4.39},
+      "Inter_NanumGothic": {"avgRowHeight": 274.42, "targetLongLabelLines": 4, "scrollRatio": 3.942},
+      "Inter_NanumBarun": {"avgRowHeight": 262.92, "targetLongLabelLines": 3, "scrollRatio": 3.778},
+      "Noto_NotoCJK": {"avgRowHeight": 273.0, "targetLongLabelLines": 4, "scrollRatio": 3.922}
+    },
+    "robust_390_2_compact": {
+      "Inter_NotoCJK": {"avgRowHeight": 252.92, "targetLongLabelLines": 2, "scrollRatio": 3.636},
+      "Inter_NanumGothic": {"avgRowHeight": 239.58, "targetLongLabelLines": 2, "scrollRatio": 3.447},
+      "Inter_NanumBarun": {"avgRowHeight": 237.92, "targetLongLabelLines": 2, "scrollRatio": 3.423},
+      "Noto_NotoCJK": {"avgRowHeight": 243.0, "targetLongLabelLines": 2, "scrollRatio": 3.495}
+    }
+  },
+  "scope_limits": [
+    "system-installed fonts, not production @font-face delivery",
+    "synthetic root text scaling, not actual browser zoom",
+    "Chromium only",
+    "no human task-performance evidence",
+    "no screen-reader evidence",
+    "no T004 custom research-font browser feature test"
+  ]
+}
