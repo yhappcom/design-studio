@@ -65,6 +65,10 @@ New Color studies use `C###` IDs:
 - `C008-rendered-data-visualization-specimen.html` — matched SVG chart specimen for failure/revised light/dark conditions.
 - `C008-rendered-data-visualization-playwright.py` — Chromium + Oklab + Machado-model diagnostic harness.
 - `C008-rendered-data-visualization-results.json` — measured geometry, scale-order, CVD, selection-identity, and midpoint-semantic results.
+- `C009-type-rendering-color-contrast-transfer.md` — Type→Color transfer: declared contrast versus rendered raster coverage, weight/fallback/DPR dependence, and project diagnosis method.
+- `C009-type-color-rendering-specimen.html` — controlled 14px Inter/Noto/Nanum browser specimen with fixed Color pairs and Korean wrap stress.
+- `C009-type-color-rendering-playwright.py` — Chromium screenshot/raster diagnostic harness with explicit non-normative pixel-metric boundaries.
+- `C009-type-color-rendering-results.json` — compact measured results for weight, fallback, DPR, contrast-margin, and wrap-threshold comparisons.
 
 Next new Color study ID is tracked in `progress/COLOR_STATUS.md`.
 
@@ -81,9 +85,9 @@ Research should distinguish as appropriate:
 - `CONTRADICTION`
 - `TRANSFER VALIDATION`
 
-A color topic is not project-ready merely because a palette, formula, chart, token file, profile transform, screenshot statistic, simulation, or colorimetric calculation exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
+A color topic is not project-ready merely because a palette, formula, chart, token file, profile transform, screenshot statistic, simulation, raster metric, or colorimetric calculation exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
 
-Computational salience/clutter proxies and CVD simulations are not human-task, perceived-clutter, or real-observer accessibility evidence unless separately validated.
+Computational salience/clutter proxies, CVD simulations, and screenshot-pixel/raster diagnostics are not human-task, perceived-clutter, real-observer accessibility, or WCAG-conformance evidence unless the relevant method explicitly establishes that role.
 
 ## Status authority
 
