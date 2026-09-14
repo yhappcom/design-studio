@@ -57,35 +57,37 @@ New Type studies:
 - `T007-variable-interpolation-source-compatibility.md` + Python/JSON/SVG — two-master `wght` interpolation compatibility, independent-conversion failure, shared conversion revision, and adversarial same-point-count/wrong-correspondence failure.
 - `T008-production-build-release-qa.md` + Python/JSON/SVG — generated variable-font release QA: real LSB/xMin/head-flags failure→revision, required-table/axis/name/gvar/checksum audit, deliberate `STAT` removal rejection, and bounded reproducible-build proof.
 - `T009-webfont-subset-feature-contract.md` + Python/JSON — TTF→WOFF2 and feature-aware subsetting release proof using `tnum`; includes a deliberate feature-dropping artifact that remains parseable but violates the numeric contract, plus a QA-checker failure→revision when subset glyph names change.
+- `T010-variable-webfont-axis-contract.md` + Python/JSON — variable TTF→WOFF2/subset axis-semantics proof using `fvar`/`gvar`/`STAT`/`avar`; a deliberate `avar` removal remains parseable and keeps the visible `wght` axis/named instances yet changes the H advance at user-space `wght=500` from `641u` to `650u`.
 
 Generated experimental font binaries remain local outputs; they are not product assets and are not canonical source authority.
 
 ## Current research direction
 
-T006 moved the studio from procedural outline geometry into explicit source/build QA. T007 extended that discipline into variable-family correspondence. T008 extended the chain into generated-binary release QA. T009 now adds a distinct **distribution transformation contract**: packaging and subsetting must preserve the product-required OpenType features, glyph closure and metrics rather than merely produce a smaller readable file.
+T006 moved the studio from procedural outline geometry into explicit source/build QA. T007 extended that discipline into variable-family correspondence. T008 extended the chain into generated-binary release QA. T009 established a **distribution transformation contract** for required OpenType features/glyph closure/metrics. T010 now extends that contract to **variable-font axis semantics**: preserving `fvar`/`gvar`/`STAT` and parseability does not by itself prove that the same user-space axis coordinate still resolves to the intended intermediate instance when an authored `avar` mapping is lost.
 
 Current production model:
 
 1. **source/design validity** — contours, master correspondence, spacing/metric intent;
 2. **build/interpolation compatibility** — generated topology, variation coverage, intermediate behavior, warnings;
 3. **binary/spec sanity** — required tables, variable-font metric/head requirements, axis/name/STAT consistency, checksum/integrity;
-4. **distribution transformation contract** — WOFF2/app packaging, subsetting, required feature/glyph/metric retention;
-5. **target shaping/rendering/layout integration** — exact shipped artifact in browser/OS/app, fallback/script, zoom/DPR and layout regression;
+4. **distribution transformation contract** — WOFF2/app packaging, subsetting, required feature/glyph/metric retention, variation-table retention and authored user-space→variation-space semantics;
+5. **target shaping/rendering/layout integration** — exact shipped artifact in browser/OS/app, fallback/script, CSS/app axis application, zoom/DPR and layout regression;
 6. **human/product validation**.
 
 No layer substitutes for the next one.
 
 Highest-value next directions are now:
 
-1. **T010 external broad QA + sanitizer integration** — execute FontBakery/Fontspector/OTS or equivalent when tooling is available, classify OpenType/universal/vendor-policy findings, and integrate them with studio-specific assertions rather than treating one profile as universal truth;
-2. **variable-font packaging/subsetting** — verify `fvar`/`gvar`/`STAT`/`avar`, named instances and required feature retention in WOFF2/subsets;
-3. broader feature/metric release QA — GPOS/kerning, marks/anchors, `locl`, vertical metrics and multi-script closure;
-4. broader variable-family compatibility — three masters, `avar`, multiple axes, components/diacritics, overlap strategy and CFF2;
-5. browser/platform transfer of T001–T009 when substantive Web or a live target stack exists;
-6. Type→Layout regression using exact shipped artifacts near known wrap/column/density thresholds;
-7. Type→Color transfer with exact build/axis/render condition pinned;
-8. broader production-outline/family audit of diagonals, `S`, bowl+stem forms, figures, punctuation, components, marks and anchors;
-9. target-platform Korean/Latin proof for Flutter/CoreText/Skia/DirectWrite when project value justifies it.
+1. **T011 external broad QA + sanitizer integration** — execute FontBakery/Fontspector/OTS or equivalent when tooling is available, classify OpenType/universal/vendor-policy findings, and integrate them with studio-specific semantic assertions rather than treating one profile as universal truth;
+2. **broader feature/metric release QA** — GPOS/kerning, marks/anchors, `locl`, vertical metrics and multi-script closure through packaging/subsetting;
+3. **broader variable-family compatibility** — three masters, multiple axes, richer `avar`, components/diacritics, overlap strategy and CFF2;
+4. browser/platform transfer of T001–T010 when substantive Web or a live target stack exists;
+5. Type→Layout regression using exact shipped artifacts and actual axis mappings near known wrap/column/density thresholds;
+6. Type→Color transfer with exact packaged artifact/axis/render condition pinned;
+7. broader production-outline/family audit of diagonals, `S`, bowl+stem forms, figures, punctuation, components, marks and anchors;
+8. target-platform Korean/Latin proof for Flutter/CoreText/Skia/DirectWrite when project value justifies it.
+
+External FontBakery/Fontspector/OTS execution remains **OPEN** because those executables were unavailable in the latest T010 environment and network installation failed. This is not treated as a simulated PASS.
 
 Foundation remains **NOT PASSED**.
 
