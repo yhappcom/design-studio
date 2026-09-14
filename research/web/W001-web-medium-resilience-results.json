@@ -1,0 +1,113 @@
+{
+  "engine": "Chromium via Playwright set_content",
+  "conditions": [
+    {
+      "shell_left": 42,
+      "shell_right": 1002,
+      "shell_width": 960,
+      "shell_overflows_viewport": false,
+      "document_horizontal_overflow": false,
+      "nav_overflow": false,
+      "hero_overflow": false,
+      "actions_in_viewport": true,
+      "action_count": 2,
+      "max_action_right": 494.89,
+      "viewport_width": 1280,
+      "variant": "fixed",
+      "requested_viewport": 1280
+    },
+    {
+      "shell_left": 80,
+      "shell_right": 1200,
+      "shell_width": 1120,
+      "shell_overflows_viewport": false,
+      "document_horizontal_overflow": false,
+      "nav_overflow": false,
+      "hero_overflow": false,
+      "actions_in_viewport": true,
+      "action_count": 2,
+      "max_action_right": 544.72,
+      "viewport_width": 1280,
+      "variant": "fluid",
+      "requested_viewport": 1280
+    },
+    {
+      "shell_left": 42,
+      "shell_right": 1002,
+      "shell_width": 960,
+      "shell_overflows_viewport": true,
+      "document_horizontal_overflow": true,
+      "nav_overflow": false,
+      "hero_overflow": false,
+      "actions_in_viewport": true,
+      "action_count": 2,
+      "max_action_right": 494.89,
+      "viewport_width": 768,
+      "variant": "fixed",
+      "requested_viewport": 768
+    },
+    {
+      "shell_left": 42,
+      "shell_right": 726,
+      "shell_width": 684,
+      "shell_overflows_viewport": false,
+      "document_horizontal_overflow": false,
+      "nav_overflow": false,
+      "hero_overflow": false,
+      "actions_in_viewport": true,
+      "action_count": 2,
+      "max_action_right": 489.44,
+      "viewport_width": 768,
+      "variant": "fluid",
+      "requested_viewport": 768
+    },
+    {
+      "shell_left": 26,
+      "shell_right": 986,
+      "shell_width": 960,
+      "shell_overflows_viewport": true,
+      "document_horizontal_overflow": true,
+      "nav_overflow": false,
+      "hero_overflow": false,
+      "actions_in_viewport": false,
+      "action_count": 2,
+      "max_action_right": 478.89,
+      "viewport_width": 320,
+      "variant": "fixed",
+      "requested_viewport": 320
+    },
+    {
+      "shell_left": 26,
+      "shell_right": 294,
+      "shell_width": 268,
+      "shell_overflows_viewport": false,
+      "document_horizontal_overflow": false,
+      "nav_overflow": false,
+      "hero_overflow": false,
+      "actions_in_viewport": true,
+      "action_count": 2,
+      "max_action_right": 260.81,
+      "viewport_width": 320,
+      "variant": "fluid",
+      "requested_viewport": 320
+    }
+  ],
+  "styleless_320": {
+    "horizontal_overflow": false,
+    "link_count": 10,
+    "visible_link_count": 10,
+    "heading_count": 4,
+    "visible_heading_count": 4
+  },
+  "bounded_assertions": {
+    "fixed_overflows_at_768": true,
+    "fixed_overflows_at_320": true,
+    "fluid_fits_1280": true,
+    "fluid_fits_768": true,
+    "fluid_fits_320": true,
+    "fluid_actions_reachable_320": true,
+    "fixed_actions_not_all_reachable_320": true,
+    "unstyled_linearizes_without_horizontal_overflow": true,
+    "unstyled_keeps_all_links_and_headings_visible": true
+  }
+}
