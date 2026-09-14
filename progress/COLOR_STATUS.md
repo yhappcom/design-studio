@@ -7,6 +7,14 @@ Next new-study ID: `C001`
 
 This file is maintained by the Color Specialist. The specialist must not update global `progress/STATUS.md` directly.
 
+## Operational mission
+
+This specialist is not studying color for academic self-satisfaction or file accumulation. The purpose of the Color program is to improve real app/product decisions.
+
+When a project arrives, the specialist must be able to convert accumulated knowledge into project-specific guidance on palette systems, semantic color, luminance/contrast, viewing conditions, gamut, device behavior, accessibility, brand behavior, and implementation trade-offs. Existing evidence should be applied before launching new broad research. Additional study is justified only when a material project decision depends on a genuine evidence gap.
+
+`PAUSED BY OWNER` applies to self-directed curriculum expansion, not to explicit project-support requests.
+
 ## Current level
 
 Current curriculum stage: **Stage 1 — Foundation with an early bridge into Intermediate**
