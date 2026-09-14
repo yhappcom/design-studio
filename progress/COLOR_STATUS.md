@@ -3,7 +3,7 @@
 Operating state: **ACTIVE — RESEARCH MAY RESUME**  
 Governance sync: 2026-09-15  
 Primary path: `research/color/`  
-Next new-study ID: `C013`
+Next new-study ID: `C014`
 
 This file is maintained by the Color Specialist. The specialist must not update global `progress/STATUS.md` directly.
 
@@ -11,7 +11,7 @@ This file is maintained by the Color Specialist. The specialist must not update 
 
 Color research exists to improve real app, web, and product decisions. Research volume, palette count, token count, or curriculum speed are not success metrics.
 
-When a project arrives, accumulated evidence must become project-specific guidance on palette systems, semantic color, data-visualization color, colorimetry, luminance/contrast, rendered text-color robustness, visual salience, viewing conditions, gamut, device behavior, accessibility, brand behavior, browser/platform behavior, ICC/color-management pipelines, spectral/device evidence, implementation trade-offs, validation, failure conditions, and uncertainty.
+When a project arrives, accumulated evidence must become project-specific guidance on palette systems, semantic color, data-visualization color, colorimetry, luminance/contrast, rendered text-color robustness, visual salience, viewing conditions, gamut, device behavior, accessibility, brand behavior, browser/platform behavior, ICC/color-management pipelines, spectral/device evidence, numerical-source provenance, implementation trade-offs, validation, failure conditions, and uncertainty.
 
 Self-directed research remains ACTIVE. Adjacent Type, Layout/Interaction, Web Design, Accessibility, Human Factors, localization, statistics, display technology, frontend/browser behavior, measurement technology, and implementation knowledge may be studied when it materially improves Color judgment, replication, transfer validation, or project usefulness.
 
@@ -21,9 +21,9 @@ Current curriculum stage: **Stage 1 — Foundation with an early bridge into Int
 Overall state: **CRITIQUE**  
 Foundation: **NOT PASSED**
 
-The Color program now spans UI color, luminance/contrast, colorimetry and observer models, chromatic adaptation, ICC/CMM production paths, perceptual spaces/difference, gamut mapping, perceptual ramp authoring, browser/user overrides, semantic token architecture, multi-context semantic transfer, data-visualization color, observer-conditional metamerism, fixed-geometry salience/density transfer, Type→Color rendered-role transfer, high-precision Display-P3→sRGB production validation, forced-colors state/SVG transfer, and **checksum-aware full-spectrum/spectral-sampling practice**.
+The Color program now spans UI color, luminance/contrast, colorimetry and observer models, chromatic adaptation, ICC/CMM production paths, perceptual spaces/difference, gamut mapping, perceptual ramp authoring, browser/user overrides, semantic token architecture, multi-context semantic transfer, data-visualization color, observer-conditional metamerism, fixed-geometry salience/density transfer, Type→Color rendered-role transfer, high-precision Display-P3→sRGB production validation, forced-colors state/SVG transfer, checksum-aware full-spectrum/spectral-sampling practice, and **artifact-first provenance conflict handling when first-party dataset surfaces disagree**.
 
-Major unresolved gates remain: real human/CVD-observer evidence, current CIE 1964 raw-byte verification, resolved current CIE 2006 LMS identity, measured physical SPDs, real device/output profiles, second-CMM proof, browser/OS wide-gamut and real high-contrast transfer, soft-proof/print evidence, physical-display/environmental testing, production webfont/load behavior, and production-fidelity multi-project transfer.
+Major unresolved gates remain: real human/CVD-observer evidence; exact current CIE 1964/LMS raw-byte identity; verified raw CIE 170-2 cone-fundamental-based tristimulus files and complete observer-model comparison; measured physical SPDs; real device/output profiles; second-CMM proof; browser/OS wide-gamut and real high-contrast transfer; soft-proof/print evidence; physical-display/environmental testing; production webfont/load behavior; and production-fidelity multi-project transfer.
 
 ---
 
@@ -71,6 +71,10 @@ Major unresolved gates remain: real human/CVD-observer evidence, current CIE 196
 - `research/color/C012-spectral-provenance-sampling-resolution.md`
 - `research/color/C012-spectral-provenance-sampling-resolution.py`
 - `research/color/C012-spectral-provenance-sampling-results.json`
+- `research/color/C013-authoritative-dataset-identity-conflict.md`
+- `research/color/C013-provenance-conflict-gate.py`
+- `research/color/C013-provenance-conflict-ledger.json`
+- `research/color/C013-provenance-conflict-results.json`
 
 Retained earlier Color exercises remain under `product-design/exercises/`.
 
@@ -82,7 +86,7 @@ Retained earlier Color exercises remain under `product-design/exercises/`.
 | --- | --- | --- |
 | Luminance / contrast / hierarchy | CRITIQUE | physical-display/environmental validation; representative production contexts; human salience/reading evidence |
 | Encoded RGB → linear-light → XYZ | PRACTICE / CRITIQUE | wider production/browser/device transfer |
-| Spectral colorimetry / observer models | **PRACTICE / PROVENANCE VALIDATION / CRITIQUE** | C004 sparse metamer/1931↔1964 proof + C012 current-1931 checksum reconstruction, full 360–830 smooth-SPD integration and sampling stress complete; current-1964 raw MD5, resolved CIE 2006 LMS identity, measured SPDs, instruments, physical device/human validation pending |
+| Spectral colorimetry / observer models | **PRACTICE / PROVENANCE VALIDATION / CONTRADICTION REVIEW / CRITIQUE** | C004 sparse metamer/1931↔1964 proof + C012 current-1931 checksum reconstruction/full smooth-SPD integration/sampling stress + C013 authority-surface audit complete; current raw 1964/LMS identity, verified raw CFB 2°/10° files, complete same-spectrum observer comparison, measured SPDs/instruments/devices/humans pending |
 | Chromatic adaptation / ICC color management | PRACTICE / PRODUCTION-PATH VALIDATION | C005 D50 PCS/`chad` + C010 float/16/8-bit P3→sRGB proof complete; real output/device profiles, second CMM, soft proof/print and physical-output validation pending |
 | Perceptual spaces / color difference | CRITIQUE | rendered/device comparison and tighter scope validation |
 | Gamut / wide-gamut mapping | PRACTICE / CRITIQUE | C010 destination-gamut/precision separation complete; actual browser/OS/device P3 fallback and product acceptance behavior pending |
@@ -95,76 +99,85 @@ Retained earlier Color exercises remain under `product-design/exercises/`.
 
 ---
 
-## Latest completed block — C012 spectral provenance and sampling resolution
+## Latest completed block — C013 authoritative dataset identity conflict
 
-`C012-spectral-provenance-sampling-resolution.md` extends C004 from sparse-line practice into complete synthetic spectra and makes dataset provenance an explicit calculation gate.
+`C013-authoritative-dataset-identity-conflict.md` re-opened the provenance assumption behind C012 and found a first-party contradiction rather than a simple mirror problem.
 
-### Current CIE 1931 provenance upgraded
+### CIE 1931 control
 
-Pinned source:
+For `CIE_xyz_1931_2deg.csv`:
 
-- `wetadigital/physlight` commit `9d076d1074aad7257c04c39581a4d21f97fd2527`;
-- Git blob `9b4e3f73b4bb412a762a6d03cb8060bfea652a6e`;
-- 471 rows, 360–830 nm, 1 nm.
+- CIE HTML page MD5: `17cca777db64b17170f06f67ce9d3ab7`;
+- linked CIE metadata MD5: `17cca777db64b17170f06f67ce9d3ab7`.
 
-The connector-normalized LF serialization has MD5 `5a60da02f27032ef3c050dfd1e913f0f`. Reconstructing the CRLF serialization indicated by the pinned blob gives:
+The authority surfaces agree. C012 separately supplies stronger pinned-copy checksum reconstruction evidence.
 
-`17cca777db64b17170f06f67ce9d3ab7`
+### CIE 1964 contradiction
 
-which exactly equals the current CIE-published 1931 MD5.
+For `CIE_xyz_1964_10deg.csv`:
 
-This advances the 1931 evidence from metadata matching to **independently recomputed checksum reconstruction tied to an immutable mirror blob**. The CIE host remains the canonical authority.
+- CIE HTML page MD5: `cd6135a724480eb8c5e7668bae914445`;
+- linked CIE metadata MD5: `6140e032f9326d88c5a0959b29b4d8f3`.
 
-### CIE 1964 provenance remains intentionally asymmetric
+The nominally same first-party dataset is identified differently by the page and its own linked metadata JSON.
 
-A known older mirror reports MD5 `6140e032f9326d88c5a0959b29b4d8f3`, which differs from the current CIE-published `cd6135a724480eb8c5e7668bae914445` and is rejected as current authority.
+### CIE 2006 LMS contradiction
 
-A pinned current-metadata-matched mirror was found at `chran554/pathtracer` commit `ec602c93c253c7d88646e5a7551ac554c75f46d0`, blob `d3040193ae654fe5fc33ea0e1f1a7b24c45fca9c`; its metadata reports the current MD5 and SHA-256 `c800ae88d20868427e09482d7b5c026e7f5001dc00bec18cd9dcd3a0006da396`.
+For `CIE_lms_cf_2deg.csv`:
 
-However its raw MD5 was not independently recomputed in this execution, so C012 does **not** claim the same provenance tier as 1931.
+- CIE HTML page MD5: `27c74cc0f98edecadc02fc71f540b116`;
+- linked CIE metadata MD5: `dba2e9d1f5e6667575aa069832159510`.
 
-### CIE 2006 LMS remains blocked
+A separate public run also reported expecting `27c74...` and receiving a file with `dba2...`, independently reproducing the ambiguity.
 
-Accessible pinned LMS copy CRLF reconstruction:
+### C012 interpretation revised
 
-`dba2e9d1f5e6667575aa069832159510`
+The previous wording “accessible mirror mismatches the current CIE checksum” is now too simple.
 
-Current CIE-published MD5:
+The stronger conclusion is:
 
-`27c74cc0f98edecadc02fc71f540b116`
+**CIE currently exposes conflicting first-party checksum claims for the 1964 and 2006-LMS files.**
 
-A separate public run reports the same mismatch pair. C012 therefore refuses to publish a current-CIE LMS numerical comparison until authoritative identity is resolved.
+C013 therefore refuses to choose an authority surface by convenience. Exact raw file bytes remain the decisive missing evidence.
 
-### Full 360–830 nm practice
+### Cleaner cone-fundamental-based future comparison path
 
-Four synthetic emissive SPDs were integrated over the checksum-strengthened CIE 1931 1 nm table:
+CIE 170-2:2015 cone-fundamental-based spectral tristimulus tables currently show page↔metadata agreement:
 
-- broad warm;
-- broad cool;
-- narrow display-like diagnostic;
-- ultra-narrow laser-like diagnostic.
+- 2° `CIE_cfb_stv_2deg.csv`: `472cc50b14a6cf41ba9f08f8935aedc8`;
+- 10° `CIE_cfb_stv_10deg.csv`: `c8504e70d7f4760253a0a4d3a42b7d20`.
 
-The broad and narrow-display-like cases were stable under a simple 5 nm phase-offset subsampling diagnostic. The ultra-narrow test was not: worst `Δxy ≈ 0.001920`, with maximum absolute relative Y error about `0.004559` (`0.456%`).
+These are `390–830 nm`, `1 nm` spectral tristimulus tables and are a promising future observer-comparison path, but they are **not the same dataset as the 2006 raw LMS fundamentals**. The investigations must remain explicitly separate.
 
-Professional consequence: **neither `5 nm is always enough` nor `5 nm is always inadequate` is defensible.** Spectral bandwidth, peak location, measurement method, instrument response and acceptance tolerance determine whether sample resolution is material.
+### Artifact-first gate
 
-### Evidence boundary
+C013 defines reusable states:
 
-The 5 nm experiment is a mathematical sampling-grid diagnostic, not a model of spectroradiometer optical bandwidth, wavelength accuracy, stray light or noise. The SPDs are synthetic, not measured devices. `Δxy` is not a perceptual difference metric.
+- `SURFACE_CONSISTENT_RAW_UNVERIFIED`;
+- `RAW_VERIFIED`;
+- `AUTHORITY_CONFLICT_RAW_UNAVAILABLE`;
+- `RAW_MATCHES_ONE_AUTHORITY_SURFACE`;
+- `TRANSFORMED_DERIVATIVE`.
+
+Professional consequence: checksum validates **artifact identity**, not model appropriateness, numerical equivalence, perceptual validity, instrument quality, device reproduction or project relevance.
 
 ### Evidence level
 
-**PRACTICE + PROVENANCE VALIDATION / current-1931 checksum reconstruction + complete synthetic SPD integration + sampling-resolution stress test.**
+**PRACTICE + CONTRADICTION REVIEW / live first-party HTML↔metadata comparison + public mirror triangulation + reproducible provenance gate.**
 
-Not PASS: current-1964 independent raw hash, resolved CIE 2006 LMS identity, measured physical SPDs, instrument validation, physical displays and human observers remain open.
+Not PASS: exact raw CIE 1964/LMS bytes were not retrieved and hashed; no complete verified 1931↔1964↔cone-model same-spectrum calculation was added in this block.
 
 ---
 
 ## Previous key blocks
 
+### C012 — spectral provenance and sampling resolution
+
+Strengthened CIE 1931 provenance to a pinned-copy checksum reconstruction matching `17cca777...`, integrated four complete 360–830 nm synthetic SPDs, and showed that a simple 5 nm sampling grid was stable for broad/test-display-like spectra but not for an ultra-narrow diagnostic (`Δxy ≈ 0.001920`, max relative Y error ≈ `0.456%`). C013 now refines the unresolved 1964/LMS provenance interpretation.
+
 ### C011 — forced-colors semantic/data resilience
 
-Controlled Chromium HTML/SVG/focus testing produced 21/21 bounded assertions. Default inline SVG preserved authored paint under `preserve-parent-color`; explicit `forced-color-adjust:auto` changed actual raster used colors even while computed stroke still showed authored values. Structural labels/patterns/markers survived color removal; global `forced-color-adjust:none` was rejected.
+Controlled Chromium HTML/SVG/focus testing produced 21/21 bounded assertions. Default inline SVG preserved authored paint under `preserve-parent-color`; explicit `forced-color-adjust:auto` changed raster used colors while computed stroke still exposed authored values. Structural labels/patterns/markers survived color removal; global `forced-color-adjust:none` was rejected.
 
 ### C010 — high-precision Display-P3→sRGB
 
@@ -178,17 +191,9 @@ Same foreground/background pair can produce materially different raster mass und
 
 Categorical identity/selection, sequential ordering, diverging midpoint/missing-data, light/dark remapping and CVD diagnostics have controlled rendered failure→revision evidence. C011 adds forced-colors SVG transfer.
 
-### C007 — fixed-geometry salience/density
+### C007 / C006 / C005 / C004 / C001–C003
 
-Distributed chroma can change the rendered feature field without geometry changes; zero-chroma high-luminance segmentation can remain visually forceful. `desaturate = declutter` is rejected as a universal rule.
-
-### C006 — semantic token transfer
-
-Two materially different product archetypes confirm that semantic-role method transfers while literal palettes do not. Brand/action/selection/focus/status collisions are explicitly rejected.
-
-### C005/C004/C001–C003
-
-C005 covers ICC v4 D50 PCS/CMM diagnostics; C004 covers observer-conditional metamerism; C001 covers user/browser color override resilience; C002 semantic token architecture; C003 data-visualization source semantics.
+C007 covers fixed-geometry salience/density; C006 two-context semantic-token transfer; C005 ICC v4 D50 PCS/CMM diagnostics; C004 observer-conditional metamerism; C001 browser/user color override resilience; C002 semantic token architecture; C003 data-visualization source semantics.
 
 ---
 
@@ -202,8 +207,8 @@ Relevant consequences:
 
 - T005/C009 establish fallback/raster dependence beneath fixed Color roles;
 - T013/T014 add normalization-sensitive Latin/Hangul package closure;
-- C011 direct labels still require production Type/fallback/normalization proof;
-- C012 reinforces the same general discipline: provenance of the input artifact precedes downstream visual interpretation.
+- T014 deterministic rebuild/provenance discipline is methodologically compatible with C013's artifact-first dataset gate;
+- C011 direct labels still require production Type/fallback/normalization proof.
 
 Color does not own font construction, shaping, fallback, normalization policy or release QA.
 
@@ -216,13 +221,14 @@ Relevant consequences:
 - I003 is directly confirmed and extended by C011;
 - L005 independently confirms C007's separation of spatial density, feature variability and semantic collision;
 - L006 shows visual appearance and behavioral ownership can diverge, reinforcing layer-specific diagnosis;
-- I004 adds conflict/merge/recovery semantics that Color may encode but not redefine.
+- I004 adds conflict/merge/recovery semantics that Color may encode but not redefine;
+- C013 extends the same layer-specific discipline to numerical-source identity: upstream evidence conflicts are not repaired downstream by Color styling or interaction changes.
 
 ### Web Design
 
 Web still lists **W001** as next and has no substantive W### evidence at this checkpoint. **Do not invent Web PASS.**
 
-C010/C011/C012 now give Web three future transfer contracts: wide-gamut/color-management behavior, forced-colors/SVG policy, and actual-device spectral risk screening where narrow-primary brand fidelity matters.
+C009–C013 now provide future Web transfer contracts for font-dependent Color rendering, P3/sRGB color management, forced-colors/SVG behavior, device/spectral risk screening, and exact upstream artifact identity.
 
 ---
 
@@ -230,32 +236,33 @@ C010/C011/C012 now give Web three future transfer contracts: wide-gamut/color-ma
 
 Research remains ACTIVE. Priorities are expected-value guidance, not hard sequencing:
 
-1. **C013 candidate — resolve/extend spectral observer evidence:** independently hash the current CIE 1964 raw file; resolve the CIE 2006 LMS checksum/file identity if possible; only then compare the same complete spectra across verified observer/cone models.
-2. Acquire at least one measured display/LED/projector SPD and instrument metadata, then replace C012's mathematical 5 nm subsampling diagnostic with a real measurement-resolution/bandwidth case when available.
-3. Extend C011 into real Windows High Contrast/Edge and additional browser/OS conditions; include production SVG/canvas chart libraries and localized labels.
-4. Extend C010 with a measured/device or independently sourced Display-P3/output profile, second CMM, browser/OS wide-gamut path, and soft-proof/print evidence.
-5. Extend C007/C008/C009/C011 with human tasks when participants are available: search, comparison, series identification, text-role recognition, missing/reference interpretation; keep performance separate from preference/workload.
-6. Validate non-text/focus/ramp/chart/Type transfer on physical displays under controlled bright/low-light conditions.
-7. Compare Bradford/CAT02/CAT16 only on explicitly bounded datasets; do not declare a universal winner.
-8. Transfer C001–C012 and Studies 016/017 into real Web/browser validation when substantive W### evidence becomes available.
-9. Continue advanced data visualization into cyclic scales, uncertainty, bivariate systems, heatmaps and multi-color gamut optimization after current rendered/human gaps are addressed.
-10. Build automated Color QA only when tied to real project acceptance criteria; no screenshot/raster/salience/CVD/CMM/forced-colors/spectral proxy becomes a generic score without validation.
+1. **C014 candidate — verified cone-fundamental-based observer comparison:** obtain and hash exact CIE 170-2:2015 CFB 2°/10° raw tables; if verified, compare the same complete spectra against the verified CIE 1931 path while naming model differences explicitly. Keep the 2006 raw-LMS investigation separate.
+2. Retry exact raw CIE 1964/LMS retrieval and search for an authoritative revision/corrigendum explaining the HTML↔metadata checksum conflicts; do not choose a winner without evidence.
+3. Acquire at least one measured display/LED/projector SPD and instrument metadata, then replace C012's mathematical subsampling diagnostic with a real measurement-resolution/bandwidth case when available.
+4. Extend C011 into real Windows High Contrast/Edge and additional browser/OS conditions; include production SVG/canvas chart libraries and localized labels.
+5. Extend C010 with a measured/device or independently sourced Display-P3/output profile, second CMM, browser/OS wide-gamut path, and soft-proof/print evidence.
+6. Extend C007/C008/C009/C011 with human tasks when participants are available: search, comparison, series identification, text-role recognition, missing/reference interpretation; keep performance separate from preference/workload.
+7. Validate non-text/focus/ramp/chart/Type transfer on physical displays under controlled bright/low-light conditions.
+8. Compare Bradford/CAT02/CAT16 only on explicitly bounded datasets; do not declare a universal winner.
+9. Transfer C001–C013 and Studies 016/017 into real Web/browser validation when substantive W### evidence becomes available.
+10. Continue advanced data visualization only when it outranks the current physical/human/browser evidence gaps.
 
 ---
 
 ## Open research-quality gaps
 
-- current CIE 1964 raw-byte MD5 recomputation;
-- resolution of current CIE 2006 LMS published-checksum versus accessible-copy identity;
-- verified complete-spectra 1931↔1964↔cone-fundamental comparison;
+- exact raw-file identity for current CIE 1964 10° and CIE 2006 2° LMS despite first-party checksum conflict;
+- authoritative explanation/revision history for those checksum divergences;
+- independent raw-file verification of CIE 170-2:2015 CFB 2°/10° spectral tristimulus tables;
+- verified complete-spectra 1931↔1964↔explicit cone-fundamental-based comparison;
 - measured display/LED/projector SPDs and instrument bandwidth/calibration evidence;
 - real Windows High Contrast / Edge and broader browser forced/user-color evidence;
 - assistive-technology behavior;
 - production SVG/canvas chart-library transfer;
 - human readability/low-vision and real-CVD-observer evidence;
 - localized/direct-label stress with production fonts and normalization;
-- C007 human perceived-clutter/search/comparison evidence;
-- C006 production-fidelity real-project transfer;
+- human perceived-clutter/search/comparison evidence;
+- production-fidelity semantic-token real-project transfer;
 - real measured display/output ICC profiles;
 - second CMM/toolchain and soft-proof/print validation;
 - browser/OS CSS P3, tagged-image and screenshot/export color-management evidence;
@@ -269,21 +276,21 @@ Research remains ACTIVE. Priorities are expected-value guidance, not hard sequen
 
 ### Typography / Type
 
-- C012 adds a Color-side provenance lesson parallel to T013/T014: downstream visual claims should name the exact source artifact/data representation.
-- Future physical-display Type proof should record the display/device/viewing condition, not only the semantic foreground/background token.
-- Scope limit: C012 makes no font-quality or legibility claim.
+- C013 independently confirms the value of exact artifact identity and reproducibility before downstream visual claims, paralleling T014's deterministic package discipline.
+- Korean/text Color validation should still use the exact shipped font artifact after normalization/fallback state is known.
+- Scope limit: C013 makes no font-quality or legibility claim.
 
 ### Layout / Interaction
 
-- C012 strengthens layer-specific diagnosis: spectral fidelity does not replace semantic redundancy, focus, navigation or layer ownership.
-- C011 remains the direct Color→Interaction forced-colors handoff.
-- Scope limit: no user task or Interaction behavior was tested in C012.
+- C013 adds a source-layer rule: numerical Color evidence conflicts should be resolved at the data/provenance layer, not hidden by spatial/interaction compensation.
+- C011 remains the direct forced-colors state/focus transfer.
+- Scope limit: no user task or interaction behavior was tested in C013.
 
 ### Web Design
 
-- C012 provides a risk screen for when a wide-gamut web/brand problem may justify actual device/SPD evidence rather than only CSS coordinates.
-- C011 supplies SVG forced-color acceptance cases; C010 supplies P3/sRGB color-management cases; C009 supplies Type/fallback/DPR Color-role cases.
-- Return confirmations, limits, contradictions or transfer failures when substantive W### work begins.
+- C013 adds exact upstream profile/dataset/token identity to the acceptance contract for future browser/device Color validation.
+- C012 remains the spectral/device risk screen; C011 supplies forced-colors/SVG cases; C010 supplies P3/sRGB color-management cases; C009 supplies Type/fallback/DPR cases.
+- Return confirmations, limitations, contradictions or transfer failures when substantive W### work begins.
 
 ## Latest checkpoint
 
@@ -298,6 +305,7 @@ Research remains ACTIVE. Priorities are expected-value guidance, not hard sequen
 - C009: Type→Color raster/fallback/DPR transfer.
 - C010: float/16-bit/8-bit Display-P3→sRGB CMM validation and delivery-boundary semantics.
 - C011: forced-colors HTML state/focus + SVG preserve/auto/opt-out transfer, computed-vs-used-value raster proof, 21/21 bounded assertions.
-- **C012: current-CIE-1931 checksum reconstruction + complete 360–830 nm synthetic SPD integration + 5 nm phase/spectral-bandwidth stress; current 1964 byte verification and CIE 2006 LMS identity remain explicitly OPEN.**
-- Next Color study ID: **C013**.
+- C012: current-CIE-1931 checksum reconstruction + complete synthetic-SPD integration + spectral-sampling stress.
+- **C013: first-party CIE HTML↔metadata checksum contradictions confirmed for 1964 and 2006-LMS; 1931 and 2015 CFB 2°/10° surfaces consistent; artifact-first provenance gate established; raw conflicted files remain OPEN.**
+- Next Color study ID: **C014**.
 - Overall Color state remains **Stage 1 + early Intermediate bridge / CRITIQUE / Foundation NOT PASSED**.
