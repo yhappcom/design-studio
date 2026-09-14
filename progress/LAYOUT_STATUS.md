@@ -22,10 +22,10 @@ Spatial evidence stays under `research/layout/`; temporal/behavioral evidence st
 
 ## Four-specialist sync
 
-Latest relevant peer state at this checkpoint:
+Latest relevant peer state:
 
 - **Type:** through `T005`; numeral/runtime and Latin/Korean fallback evidence remain active transfer inputs.
-- **Color:** through `C006`; `C007` remains unstarted and Color itself identifies fixed-geometry L002 density/salience transfer as a high-value next question.
+- **Color:** through **`C007`**; Color independently completed a fixed-geometry density/salience study that directly overlaps L005 with complementary methods.
 - **Web:** no substantive `W###` yet; `W001` remains next. Do not invent Web evidence.
 
 Web remains the complete page/browser integration partner. Layout/Interaction may independently validate browser behavior in its own domain when useful, without replacing Web canonical ownership.
@@ -42,6 +42,10 @@ Web remains the complete page/browser integration partner. Layout/Interaction ma
 - `research/layout/L001-optical-centering-raster-validation.md`
 - `research/layout/L001-optical-centering-playwright.py`
 - `research/layout/L001-optical-centering-results-summary.json`
+- `research/layout/L001-border-ownership-cue-isolation-validation.md`
+- `research/layout/L001-border-ownership-specimen.html`
+- `research/layout/L001-border-ownership-playwright.py`
+- `research/layout/L001-border-ownership-results-summary.json`
 - `research/layout/L002-whitespace-density-spatial-rhythm.md`
 - `research/layout/L002-density-validation-specimen.html`
 - `research/layout/L002-density-validation-playwright.py`
@@ -86,133 +90,139 @@ Web remains the complete page/browser integration partner. Layout/Interaction ma
 
 ---
 
-## Latest completed block — L001 optical-centering raster validation
+## Latest completed block — L001 border-ownership cue isolation
 
-L001's optical-centering protocol was converted into a controlled Chromium raster-mass experiment without claiming that screenshot centroids equal human optical judgment.
+L001 figure-ground theory now has a reproducible rendered stimulus set designed for later blinded observer testing.
 
-### Controlled contract
+### Core experimental contract
 
-- fixed `48×48 CSS px` hit target;
-- only the visual child may move;
-- visual sizes `16/24/32/40px`;
-- DPR 1 and 2;
-- six asymmetric/directional shapes;
-- black-on-white rendering to isolate geometry/raster mass from Color;
-- darkness-weighted raster centroid measured against target center.
+Nine stimuli share the same central vertical edge and neutral local field:
 
-### Shape/size dependence
+- baseline `B0`;
+- enclosure mirror pair `E-L / E-R`;
+- contour-junction mirror pair `T-L / T-R`;
+- attachment/continuity mirror pair `C-L / C-R`;
+- cue-conflict mirror pair `X-L / X-R`.
 
-For the play triangle at DPR1, zero-placement horizontal mass-centroid error grew with visual size:
+The experiment deliberately changes **remote context** while holding the tested local edge constant.
 
-- 16px: about `−0.66px`;
-- 24px: `−0.99px`;
-- 32px: `−1.35px`;
-- 40px: `−1.66px`.
+### Failure → revision
 
-The rounded candidate therefore changed from `+1px` at 16–32px to `+2px` at 40px.
+The initial HTML accidentally applied T-junction classes at both card and stage scope. The harness caught local contamination:
 
-At 24px, `+1px` reduced the measured residual to about `0.01px`.
+- T pair local-crop difference ≈ `1.625%`;
+- conflict pair inherited the same problem.
 
-Chevron and send shapes had the same general rightward correction direction at these sizes but different measured magnitudes.
+After scoping cue classes to the stage only:
 
-The irregular stepped mark and badge object often had sub-pixel mass offsets for which a whole-pixel correction would overshoot.
+- all 9 stimuli share one identical local-crop SHA-256;
+- `all_local_crops_equal_baseline = true`;
+- every mirrored pair has `local_crop_diff_fraction = 0`;
+- remote context remains different.
 
-The bookmark produced mainly vertical bias and crossed from no integer correction at 16–24px to a `+1px` downward candidate at 32–40px.
+Remote-context difference after masking the local crop:
 
-### DPR transfer
+- enclosure pair ≈ `2.24%`;
+- T-junction pair ≈ `1.25%`;
+- attachment pair ≈ `3.89%`;
+- cue-conflict pair ≈ `3.44%`.
 
-DPR2 preserved the broad direction and magnitude of the measured biases. This is useful renderer replication but not physical-device perceptual evidence.
+These percentages are implementation checks, **not perceptual effect sizes**.
 
-### Professional conclusion
+### Human-test readiness
 
-**No universal optical-offset token is supported.**
+A blinded protocol is now defined:
 
-Even before human perception is measured:
+- present one stimulus at intended size with ID hidden;
+- ask which side appears to own the central boundary: Left / Right / Ambiguous;
+- collect confidence separately;
+- randomize order per observer;
+- analyze mirror consistency, baseline ambiguity, cue-agreement vs cue-conflict, and generic left/right response bias.
 
-- correction depends on shape;
-- correction can depend on visual size;
-- correction can be horizontal or vertical;
-- some shapes should remain unshifted rather than rounded to a whole pixel;
-- hit target and visual child must remain separate.
+No human response data have been fabricated.
 
-Raster mass is a diagnostic, not the verdict. Human blinded comparison is still required before claiming perceptual superiority.
+### Evidence level
 
-Evidence level: **PRACTICE + CRITIQUE / controlled raster validation**.
+**PRACTICE + CRITIQUE / controlled stimulus-isolation validation**.
 
----
-
-## Previous completed block — L005 Color-driven density/salience with geometry fixed
-
-L005 independently transfer-tests Color C001/C002/C003/C006 against the L002/L004 density framework.
-
-### Controlled setup
-
-A 12-row finance comparison surface was rendered in five color conditions while DOM/content/viewport/typography/geometry/targets/grid/gaps and numeric formatting were held constant.
-
-Automated rectangle comparison returned **geometry_equal = true** across all five conditions. Primary declared text/status/action pairs were held at or above `4.5:1` in this bounded specimen.
-
-### Rendered feature result
-
-`role_separated`:
-
-- mean OKLab chroma ≈ `0.0109`;
-- high-chroma (`C > 0.06`) pixel fraction ≈ `4.03%`;
-- chroma-gradient proxy ≈ `0.00163`.
-
-`chroma_overloaded` with identical geometry:
-
-- mean OKLab chroma ≈ `0.0182`;
-- high-chroma pixel fraction ≈ `7.01%`;
-- chroma-gradient proxy ≈ `0.00446`.
-
-`luminance_overloaded` produced the highest luminance variability (`L_std ≈ 0.1775`, luminance-gradient ≈ `0.02109`) despite effectively zero chroma.
-
-`semantic_collision` did not have the highest pixel variability despite intentionally reusing one accent family for incompatible jobs.
-
-### Diagnostic conclusion
-
-Do not collapse “too dense/busy” into one spacing problem. Separate:
-
-1. spatial density;
-2. feature variability;
-3. semantic emphasis distribution;
-4. semantic collision.
-
-The image metrics are deliberately simple proxies, **not** Rosenholtz Feature Congestion and not human perceived-complexity/search-performance evidence.
-
-Evidence level: **PRACTICE + CRITIQUE / Color→Layout transfer validation**.
+Figure-ground remains not PASS until actual observers establish whether and how these contextual manipulations change perceived ownership, followed by transfer into realistic UI layering.
 
 ---
 
-## Other key blocks
+## Cross-specialist comparison — Color C007 ↔ Layout L005
 
-### I004 — concurrent edits / conflict / merge / recovery
+Color `C007-fixed-geometry-color-density-salience.md` was completed independently after L005.
 
-Version-aware specimen distinguishes disjoint merge, same-field conflict and delete-vs-edit; naive whole-record save reproduced a lost update. Final harness: **17/17 assertions PASS**. State: **PRACTICE / CRITIQUE**.
+### Shared confirmation
 
-### L004 — tabular numerals → dense Layout transfer
+Both studies keep geometry fixed and independently show:
 
-Chromium controls showed zero DOM digit/decimal spread under `tabular-nums`, but Inter tabular figures widened an 88px numeric track enough to create `3/4` overflow; intrinsic numeric width removed overflow. State: **PRACTICE / CRITIQUE**.
+- distributed chroma can materially change the rendered feature field without changing spatial density;
+- zero/low chroma does **not** guarantee a calmer field because luminance segmentation can be strong;
+- semantic emphasis should be localized according to task value rather than applied to every difference;
+- screenshot/image proxies are not human perceived-clutter or performance measures.
 
-### I003 — forced-colors state-semantic resilience
+### Complementary methods
 
-Chromium forced-colors emulation reproduced fill/shadow-only state failures; structural/current/text/programmatic cues survived. **14/14 assertions PASS**. State: **PRACTICE / CRITIQUE**.
+**L005**
 
-### L003 — Type fallback → Layout transfer
+- 1280×900 finance surface;
+- five variants, including an explicit `semantic_collision` condition;
+- simple OKLab page statistics and gradient proxies;
+- separates spatial density, feature variability, emphasis distribution and semantic collision.
 
-Four T005-compatible Latin/Korean fallback stacks crossed different wrap thresholds; semantic-lane recomposition stabilized critical object identity. State: **PRACTICE / CRITIQUE**.
+**C007**
 
-### L002 — whitespace / density / spatial rhythm
+- 1024×900 L002-derived surface;
+- four variants including `high-contrast-mono` and `semantic-sparse`;
+- downsampled Oklab local-variability proxy plus action/selected-region comparisons;
+- shows sparse semantic color can preserve strong local action distinction while reducing page-wide chroma.
 
-**216-condition Chromium validation** rejected fake compactness from clipping/undersized controls and showed adaptive density can preserve content/targets/grouping while compressing discretionary whitespace. State: **PRACTICE / CRITIQUE**.
+### Classification
 
-### I001 — navigation as state
+**CONFIRMATION + COMPLEMENTARY METHOD**, no substantive contradiction found.
 
-Back/Up/Close/deep-link/workspace/focus/draft model; **14/14 controlled assertions PASS** after failure → revision → re-proof. State: **CRITIQUE**.
+Do not merge the files or treat either proxy as a universal clutter score. Human search/comparison/error/preference/workload evidence remains the common gate.
 
-### I002 — latency / pending / retry / cancellation
+---
 
-Separates confirmed/failed/**outcome unknown**, ties Retry/Cancel to operation/data contracts and preserves recovery focus; **19/19 controlled assertions PASS**. State: **PRACTICE / CRITIQUE**.
+## Other established blocks
+
+### L001 optical centering
+
+Fixed 48×48 hit target; six asymmetric shapes; visual sizes 16/24/32/40px; DPR1/2. Raster darkness-centroid evidence shows no universal optical-offset token: direction/magnitude vary by shape and size, and some whole-pixel corrections overshoot. Raster mass remains diagnostic rather than human perceived center.
+
+### L002 density / spatial rhythm
+
+**216-condition Chromium validation** rejected fake compactness from clipping/undersized targets and showed adaptive density can preserve content/targets/grouping while compressing discretionary whitespace.
+
+### L003 Type fallback → Layout
+
+Four T005-compatible Latin/Korean fallback stacks crossed different browser wrap thresholds. Semantic-lane recomposition stabilized critical object identity rather than using font-specific breakpoints.
+
+### L004 tabular numerals → dense Layout
+
+Chromium control fonts showed zero DOM digit/decimal spread under `tabular-nums`; enabling tnum widened Inter enough to break an 88px placeholder-derived track. Intrinsic numeric width removed overflow. Numeric comparison is a joint formatting + Type runtime + Layout track contract.
+
+### L005 Color → Layout
+
+Fixed-geometry rendered transfer separates spatial density from Color-driven feature variability and semantic collision. Independent C007 now confirms the main direction with a different method.
+
+### I001 navigation as state
+
+Back/Up/Close/deep-link/workspace/focus/draft model; **14/14 controlled assertions PASS** after failure → revision → re-proof.
+
+### I002 latency / pending / retry / cancellation
+
+Separates confirmed/failed/**outcome unknown**, ties Retry/Cancel to operation/data contracts; **19/19 controlled assertions PASS**.
+
+### I003 forced-colors state resilience
+
+Fill/shadow-only state failures reproduced; structural/text/programmatic cues survived; **14/14 controlled assertions PASS**.
+
+### I004 concurrent edits / conflict / merge / recovery
+
+Naive whole-record save reproduced a lost update; version-aware flow distinguishes disjoint merge, same-field conflict and delete-vs-edit; **17/17 controlled assertions PASS**.
 
 ---
 
@@ -223,20 +233,20 @@ Separates confirmed/failed/**outcome unknown**, ties Retry/Cancel to operation/d
 | Composition / visual grammar | CRITIQUE | rendered human observation; broader multilingual/device transfer |
 | Grid / alignment systems | CRITIQUE | broader real-rendering proof; text-growth/cross-surface transfer |
 | Perceptual grouping | CRITIQUE | broader context and human observation |
-| Figure-ground / border ownership | PRACTICE / CRITIQUE | cue-isolated rendered controls; realistic layering; blinded human comparison |
-| Visual mass / balance / tension | PRACTICE / CRITIQUE | stronger controlled centroid dataset plus observer ratings/broader transfer |
-| Optical centering | **PRACTICE / CRITIQUE** | L001 raster mass/size/DPR proof complete; human blinded comparison, physical device, icon+text/RTL/platform transfer pending |
+| Figure-ground / border ownership | **PRACTICE / CRITIQUE** | L001 local-edge-controlled cue set complete; blinded observers + realistic layering transfer pending |
+| Visual mass / balance / tension | PRACTICE / CRITIQUE | stronger centroid datasets; observer ratings; broader transfer |
+| Optical centering | PRACTICE / CRITIQUE | raster mass/size/DPR proof complete; blinded human comparison, physical device, icon+text/RTL/platform transfer pending |
 | Whitespace / density / spatial rhythm | PRACTICE / CRITIQUE | L002 rendered cycle complete; human task/broader project transfer pending |
-| Responsive/adaptive recomposition | PRACTICE / CRITIQUE | L002/L003 localized/enlarged/fallback evidence; actual zoom/cross-browser/device/production page transfer pending |
-| Type-dependent spatial robustness | PRACTICE / CRITIQUE | L003 fallback + L004 numeric runtime transfer established; production font loading/exact T004/cross-platform/human evidence pending |
+| Responsive/adaptive recomposition | PRACTICE / CRITIQUE | L002/L003 evidence; actual zoom/cross-browser/device/production page transfer pending |
+| Type-dependent spatial robustness | PRACTICE / CRITIQUE | L003 fallback + L004 numeric transfer established; production-font/cross-platform/human evidence pending |
 | Dense numeric comparison geometry | PRACTICE / CRITIQUE | L004 proof established; locale/accounting/dynamic-update/human comparison evidence pending |
-| Color-driven feature density / salience diagnosis | PRACTICE / CRITIQUE | L005 fixed-geometry rendered proof established; validated clutter metric, dark/theme/device/CVD and human task evidence pending |
+| Color-driven feature density / salience | PRACTICE / CRITIQUE | L005 + independent C007 confirmation; human task/CVD/device/environment transfer pending |
 | Interaction agency / feedback / errors | CRITIQUE | broader real-platform/AT/human validation |
 | State / modes / reversibility / directness | CRITIQUE | broader multi-user/input/AT validation |
 | Navigation / task-flow integration | CRITIQUE | real router/URL, AT, cross-browser/device/human resumption pending |
 | Latency / pending / optimistic / retry / cancellation | PRACTICE / CRITIQUE | real HTTP/API/idempotency/abort/offline/AT/cross-browser evidence pending |
-| Color-channel-independent state semantics | PRACTICE / CRITIQUE | I003 controlled proof complete; real OS/other browsers/AT/production token-component/human evidence pending |
-| Concurrent edits / conflict / merge / recovery | PRACTICE / CRITIQUE | I004 controlled proof complete; real service/offline/multi-device/CRDT-OT/AT/human validation pending |
+| Color-channel-independent state semantics | PRACTICE / CRITIQUE | real OS/other browsers/AT/production token-component/human evidence pending |
+| Concurrent edits / conflict / merge / recovery | PRACTICE / CRITIQUE | real service/offline/multi-device/CRDT-OT/AT/human validation pending |
 
 ---
 
@@ -244,28 +254,25 @@ Separates confirmed/failed/**outcome unknown**, ties Retry/Cancel to operation/d
 
 ### Type
 
-Type is through T005. L003/L004 provide Layout-owned browser transfer evidence for fallback and numeric-feature dependencies. The L001 raster block reinforces the shared method distinction between source geometry, raster evidence and optical/perceptual judgment. Production font/glyph decisions remain Type-owned.
+Type is through T005. L003/L004 provide browser transfer evidence for fallback and numeric-feature dependencies. L001 optical work reinforces the shared distinction between geometric/source position, raster evidence and human optical judgment.
 
 ### Color
 
-Color is through C006; C007 remains unstarted at this checkpoint.
+Color is through **C007**.
 
-Relevant current consequences:
+- C001/C002/I003: critical state meaning must survive authored color replacement;
+- C003: data color and interaction state are separate semantics;
+- C006: action/selection/focus/status should remain separate semantic jobs;
+- C007 independently confirms L005's fixed-geometry conclusion and rejects `desaturate = declutter`;
+- L005 contributes the complementary semantic-collision distinction that C007's image metrics alone cannot represent.
 
-- C001/C002/I003: current/focus/status/conflict meaning must survive color replacement;
-- C003: data color must not collide with interaction state;
-- C006: finance/operational contexts keep action, selection/current, focus and domain status as separate semantic jobs;
-- L005 supplies independent fixed-geometry Layout evidence that chroma/luminance feature distribution can change materially without spatial-density change;
-- L005 also shows semantic collision is not reducible to pixel variability;
-- L001 optical raster proof holds Color constant, leaving color-driven visual-mass transfer as a later distinct experiment.
-
-This does not replace Color ownership of palette/token/contrast/color-science conclusions.
+This does not replace Color ownership of palette/token/color-science conclusions.
 
 ### Web Design
 
-No substantive `W###` at latest synchronization.
+No substantive W### at latest synchronization.
 
-Web should reproduce L001/L002/L003/L004/L005/I001/I002/I003/I004 under production page/component/icon systems, fonts/tokens, localization, real router/service/API/offline behavior, target browser/device/OS accessibility modes and AT.
+Web should reproduce L001/L002/L003/L004/L005/I001/I002/I003/I004 and relevant C007 findings inside complete production-like page/component systems.
 
 ---
 
@@ -273,32 +280,32 @@ Web should reproduce L001/L002/L003/L004/L005/I001/I002/I003/I004 under producti
 
 Choose by expected project value, not file count.
 
-1. **L002/L005 human task validation when participants are available** — known-item search, comparison, alert detection and action selection; performance/error separate from preference/workload.
-2. **Consume/compare future Color C007** — preserve both studies; classify confirmation, method difference, contradiction or complementary scope rather than merging silently.
-3. **L001 figure-ground/border-ownership controls** — build cue-isolated rendered stimuli and a blinded human-test protocol; do not claim ownership judgments without observers.
-4. **L001 optical-centering human validation when observers are available** — randomized `0/+δ/−δ` comparisons at intended size; separate preference from perceived centering.
-5. **I004 higher-fidelity transfer** — real ETag/If-Match or transaction backend, offline/reconnect, multiple devices/tabs, delete/finalization semantics and AT when a suitable environment exists.
-6. **L004 extension only if useful** — exact T004 research font or production `@font-face`, locale/accounting formats, dynamic update and real zoom/DPR.
-7. **I003 higher-fidelity transfer** — real OS high-contrast/AT/production tokens when environment exists.
-8. Consume future `W###` evidence and independently reproduce high-risk findings where useful.
-9. Open `L006` or `I005` only for a genuinely new high-value question after current validation gaps are considered.
+1. **Human evidence when participants are available**:
+   - L001 border ownership Left/Right/Ambiguous judgments;
+   - L001 optical `0/+δ/−δ` perceived-centering comparisons;
+   - L002/L005/C007 known-item search/comparison/action/error tests;
+   - separate performance/error from preference/workload.
+2. **Realistic L001 layering transfer** — abstract ownership controls → popover/card/table/sheet/sticky-header examples while preserving cue isolation.
+3. **I004 higher-fidelity transfer** — real ETag/If-Match or transaction backend, offline/reconnect, multi-device/tab, delete/finalization semantics and AT when suitable environment exists.
+4. **L004 extension only if useful** — exact T004/production font, locale/accounting formats, dynamic update, real zoom/DPR.
+5. **I003 higher-fidelity transfer** — real OS high-contrast/AT/production tokens.
+6. Consume future W### evidence and independently reproduce high-risk findings where useful.
+7. Open `L006` or `I005` only for a genuinely new question with higher value than current validation gaps.
 
 ---
 
 ## Open research-quality gaps
 
-- human perceived-complexity/search/comparison/action evidence for L002/L005;
-- validated feature-congestion or equivalent clutter-metric transfer to these UI specimens;
+- actual observer judgments for border ownership, grouping, balance and optical centering;
+- human perceived-clutter/search/comparison/action evidence for L002/L005/C007;
+- validated feature-congestion/equivalent metric transfer to UI specimens;
+- realistic layer ownership under content, Color and interaction-state combinations;
 - human conflict-resolution comprehension/error evidence;
-- controlled human observation for grouping, figure-ground and visual balance;
-- blinded human optical-centering comparison at intended sizes;
-- dark-theme, CVD, grayscale, physical-display and environmental transfer for L005;
-- optical-centering transfer to production icons, adjacent text, RTL and physical devices;
 - actual browser zoom rather than synthetic scaling;
 - production font loading/fallback and exact T004 browser transfer;
 - real OS forced-color/high-contrast environments;
 - real multi-device/offline conflict and sync reconciliation;
-- CRDT/OT/list/text/order conflict behavior where relevant;
+- CRDT/OT/list/text/order conflicts where relevant;
 - real router/history and service/network evidence;
 - screen-reader/AT validation of navigation, state, status, conflict, busy/progress and dense table semantics;
 - interruption/resumption evidence on representative tasks;
@@ -311,16 +318,17 @@ Choose by expected project value, not file count.
 ### Typography / Type
 
 - L004 confirms browser-level tabular alignment while exposing numeric-column width cost.
-- L005 shows feature density can shift through Color while Type/geometry remain fixed; reciprocal Type tests should hold Color stable.
-- L001 raster validation confirms a method boundary useful to Type: geometric center, rendered mass and perceived optical center are different evidence layers; correction changes with shape/size.
-- I004 adds local/remote value comparison, version/user metadata and preserved drafts as localization/wrapping stress contexts.
-- Scope limit: Layout/Interaction does not define font/glyph production offsets.
+- L003 confirms fallback width can cross layout thresholds.
+- L001 optical/border work reinforces method isolation: geometric/raster/context/perception are separate evidence layers.
+- Conflict/version UI from I004 remains a useful localization/wrapping stress case.
+- Scope limit: Layout/Interaction does not define font/glyph production decisions.
 
 ### Color
 
-- L005 independently renders five color systems over identical finance geometry and supports C006 role separation without claiming a universal “less color is better” rule.
-- L001 optical proof fixes black-on-white to establish geometry/raster baseline; Color may later test whether luminance/chroma shifts measured or human-perceived mass.
-- Scope limit: no Color threshold, CVD/device result or human clutter/performance claim is made.
+- **C007 ↔ L005:** CONFIRMATION + COMPLEMENTARY METHOD. Both fixed-geometry experiments reject a pure spacing explanation for all “busy” feedback and reject `less chroma = automatically calmer`.
+- L005 adds explicit semantic-collision diagnosis; C007 adds stronger local feature/action-region comparisons.
+- L001 border-ownership validation fixes Color while varying context, the reciprocal experimental design to L005/C007.
+- Scope limit: no human clutter/salience threshold is claimed.
 
 ### Layout / Interaction
 
@@ -328,10 +336,12 @@ Current reusable rules:
 
 - compactness is invalid if meaning or required target geometry is sacrificed;
 - density modes are relational policies, not immutable spacing tokens;
-- diagnose “busy/dense” feedback across spatial density, feature variability, semantic emphasis distribution and semantic collision;
-- do not use whitespace to repair broad color-emphasis competition before testing the color system itself;
-- optical correction starts from geometry, keeps hit target fixed and is shape/size/context-specific;
-- a raster centroid is diagnostic evidence, not perceived optical center;
+- diagnose “busy/dense” across spatial density, feature variability, emphasis distribution and semantic collision;
+- do not use whitespace to repair broad color-emphasis competition before testing the color system;
+- border ownership is contextual: diagnose remote cues while controlling the local edge;
+- do not claim perceptual ownership from a rendered stimulus without observers;
+- optical correction starts geometric, keeps the hit target fixed, and is shape/size/context-specific;
+- raster centroid is diagnostic, not perceived optical center;
 - enable approved numeric features before finalizing numeric tracks;
 - viewport width alone is insufficient near Type/fallback thresholds;
 - timeout, failure and outcome-unknown are distinct;
@@ -342,32 +352,33 @@ Current reusable rules:
 
 ### Web Design
 
-Reusable transfer evidence:
+Reusable transfer evidence now includes:
 
-- L001: fixed-target optical-centering raster/size/DPR matrix;
-- L002: **216-condition density/reflow matrix**;
+- L001 border ownership: pixel-identical local-edge cue-isolation set + blinded observer protocol;
+- L001 optical centering: fixed-target raster/size/DPR matrix;
+- L002: 216-condition density/reflow matrix;
 - L003: mixed-script fallback / wrap-threshold / semantic-lane transfer;
 - L004: browser tabular-numeral / decimal / intrinsic-width transfer;
-- L005: fixed-geometry color-driven feature-density / semantic-collision transfer;
-- I001: **14-assertion navigation/state matrix**;
-- I002: **19-assertion latency/retry/cancellation matrix**;
-- I003: **14-assertion forced-colors matrix**;
-- I004: **17-assertion concurrent-edit/conflict matrix**.
+- L005 + Color C007: independent fixed-geometry Color/feature-density validation;
+- I001: 14-assertion navigation/state matrix;
+- I002: 19-assertion latency/retry/cancel matrix;
+- I003: 14-assertion forced-colors matrix;
+- I004: 17-assertion conflict matrix.
 
-Web should reproduce these with production icons/fonts/tokens/pages, actual zoom/localization, real router/API/offline/multi-device behavior, target browser/device matrix, OS accessibility modes and AT.
+Web should reproduce these with production icons/fonts/tokens/pages, actual zoom/localization, router/API/offline/multi-device behavior, target browser/device matrix, OS accessibility modes and AT.
 
 ---
 
 ## Latest checkpoint
 
-- `L001`: optical-centering raster mass/size/DPR validation added → **PRACTICE / CRITIQUE**, human optical judgment still OPEN.
-- `L002`: density validation → **PRACTICE / CRITIQUE**.
-- `L003`: T005 fallback→Layout transfer → **PRACTICE / CRITIQUE**.
-- `L004`: browser `tnum`/decimal/intrinsic-width transfer → **PRACTICE / CRITIQUE**.
-- `L005`: fixed-geometry Color→Layout feature-density/semantic-collision transfer → **PRACTICE / CRITIQUE**.
-- `I001`: navigation/state validation → **CRITIQUE**.
-- `I002`: async/retry/cancel validation → **PRACTICE / CRITIQUE**.
-- `I003`: forced-colors semantic resilience → **PRACTICE / CRITIQUE**.
-- `I004`: concurrent edit/conflict/merge/recovery → **PRACTICE / CRITIQUE**.
-- Next IDs: Layout `L006`; Interaction `I005`.
-- No PASS promotion claimed. Highest-value remaining work is human evidence plus production Color/Web/Type/service/AT transfer rather than research volume.
+- `L001`: optical raster validation + **border-ownership cue-isolation/re-proof** complete → PRACTICE / CRITIQUE; observer judgments still OPEN.
+- `L002`: density validation → PRACTICE / CRITIQUE.
+- `L003`: T005 fallback→Layout transfer → PRACTICE / CRITIQUE.
+- `L004`: browser `tnum`/decimal/intrinsic-width transfer → PRACTICE / CRITIQUE.
+- `L005`: fixed-geometry Color→Layout transfer → PRACTICE / CRITIQUE; now independently confirmed/complemented by Color C007.
+- `I001`: navigation/state validation → CRITIQUE.
+- `I002`: async/retry/cancel validation → PRACTICE / CRITIQUE.
+- `I003`: forced-colors semantic resilience → PRACTICE / CRITIQUE.
+- `I004`: concurrent edit/conflict/merge/recovery → PRACTICE / CRITIQUE.
+- Next IDs remain Layout `L006`; Interaction `I005`.
+- No PASS promotion claimed.
