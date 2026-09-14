@@ -1,0 +1,39 @@
+<!doctype html><meta charset="utf-8">
+<style>
+body{font:16px Arial;margin:0;padding:30px;background:#f4f6f8}
+.stage{position:relative;width:680px;height:420px;background:white;border:1px solid #9aa6b2;padding:20px}
+#bgDanger{position:absolute;left:190px;top:135px;height:40px}
+#pop{width:260px;height:150px;border:1px solid #5b6875;box-shadow:0 8px 22px rgb(0 0 0/.18);padding:16px}
+#pop::backdrop{background:transparent}
+#popAction{position:absolute;left:20px;top:86px;height:40px}
+#dlg{width:380px;height:210px;border:1px solid #5b6875;padding:20px}
+#dlg::backdrop{background:rgb(0 0 0/.22)}
+#dlg button{height:40px}
+#insidePop{width:220px;height:100px;padding:14px;border:1px solid #4b5563;box-shadow:0 6px 18px rgb(0 0 0/.18)}
+</style>
+<button id=openPop>Open popover</button>
+<button id=openDlg>Open dialog</button>
+<div class=stage>
+  <button id=bgDanger>Background destructive action</button>
+</div>
+<div id=pop popover>
+  <strong>Native popover</strong>
+  <button id=popAction>Popover action</button>
+</div>
+<dialog id=dlg>
+  <h2 tabindex=-1 id=dlgTitle>Native modal</h2>
+  <button id=dlgPrimary>Confirm</button>
+  <button id=dlgClose>Close</button>
+  <button id=openNested popovertarget=insidePop>More</button>
+  <div id=insidePop popover><button id=nestedAction>Nested action</button></div>
+</dialog>
+<script>
+window.counts={bg:0,pop:0,dlg:0,nested:0};
+bgDanger.onclick=()=>counts.bg++;
+popAction.onclick=()=>counts.pop++;
+dlgPrimary.onclick=()=>counts.dlg++;
+nestedAction.onclick=()=>counts.nested++;
+openPop.onclick=()=>pop.showPopover();
+openDlg.onclick=()=>{dlg.showModal();dlgTitle.focus()};
+dlgClose.onclick=()=>dlg.close();
+</script>
