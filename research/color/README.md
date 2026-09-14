@@ -51,6 +51,9 @@ New Color studies use `C###` IDs:
 - `C002-semantic-color-role-token-architecture.md` — base/semantic/component/context architecture, pair contracts, state/status separation, project-readiness method.
 - `C003-data-visualization-color-systems.md` — categorical/sequential/diverging scale semantics, numerical monotonicity practice, CVD/redundant coding, interaction/theme transfer and chart failure modes.
 - `C004-spectral-integration-observer-metamerism.md` — spectral tristimulus practice, spectrum scaling, constructed CIE 1931 metamer, CIE 1931↔1964 observer comparison, and dataset-provenance audit.
+- `C005-icc-cmm-roundtrip-validation.md` — real ICC/CMM D65→D50 profile validation, profile-tag reconstruction, 4,913-color CMM-vs-hand comparison, and low-precision round-trip failure analysis.
+- `C005-icc-cmm-roundtrip-validation.py` — reproducible Pillow/ImageCms + LittleCMS validation source.
+- `C005-icc-cmm-results.json` — measured profile/CMM results and interpretation boundaries.
 
 Next new Color study ID is tracked in `progress/COLOR_STATUS.md`.
 
@@ -67,7 +70,7 @@ Research should distinguish as appropriate:
 - `CONTRADICTION`
 - `TRANSFER VALIDATION`
 
-A color topic is not project-ready merely because a palette, formula, chart, token file, or colorimetric calculation exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
+A color topic is not project-ready merely because a palette, formula, chart, token file, profile transform, or colorimetric calculation exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
 
 ## Status authority
 
