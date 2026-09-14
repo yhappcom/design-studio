@@ -1,0 +1,54 @@
+{
+  "environment": {
+    "upm": 1000,
+    "fonttools_version": "4.63.0",
+    "cu2qu_max_err": 2.0,
+    "freetype_version": "2.13.2"
+  },
+  "independent_conversion": {
+    "master_point_counts": {
+      "300": {"H": [12], "O": [16, 16], "n": [20], "o": [16, 12]},
+      "700": {"H": [12], "O": [16, 12], "n": [20], "o": [16, 12]}
+    },
+    "varlib_warning_contains_incompatible_O": true,
+    "gvar_tuple_counts": {"H": 1, "O": 0, "n": 1, "o": 1},
+    "O_instances": [
+      {"wght": 300, "advance": 600, "black_area": 104025.66666666663, "coverage_20ppem": 41.168627450980395, "bitmap_width": 10, "bitmap_rows": 16},
+      {"wght": 500, "advance": 600, "black_area": 104025.66666666663, "coverage_20ppem": 41.168627450980395, "bitmap_width": 10, "bitmap_rows": 16},
+      {"wght": 700, "advance": 600, "black_area": 104025.66666666663, "coverage_20ppem": 41.168627450980395, "bitmap_width": 10, "bitmap_rows": 16}
+    ]
+  },
+  "shared_conversion": {
+    "master_point_counts": {
+      "300": {"H": [12], "O": [16, 16], "n": [20], "o": [16, 12]},
+      "700": {"H": [12], "O": [16, 16], "n": [20], "o": [16, 12]}
+    },
+    "gvar_tuple_counts": {"H": 1, "O": 1, "n": 1, "o": 1},
+    "O_instances": [
+      {"wght": 300, "advance": 600, "black_area": 104025.66666666663, "coverage_20ppem": 41.168627450980395, "bitmap_width": 10, "bitmap_rows": 16},
+      {"wght": 500, "advance": 610, "black_area": 176096.3727831308, "coverage_20ppem": 69.67450980392157, "bitmap_width": 10, "bitmap_rows": 16},
+      {"wght": 700, "advance": 620, "black_area": 230545.6499878867, "coverage_20ppem": 91.2392156862745, "bitmap_width": 10, "bitmap_rows": 16}
+    ]
+  },
+  "wrong_correspondence": {
+    "description": "Bold O counter start point rotated 180 degrees; point counts remain equal.",
+    "master_point_counts": {"300": [16, 16], "700": [16, 16]},
+    "gvar_tuple_count_O": 1,
+    "O_instances": [
+      {"wght": 300, "advance": 600, "black_area": 104025.66666666663, "coverage_20ppem": 41.168627450980395, "bitmap_width": 10, "bitmap_rows": 16},
+      {"wght": 500, "advance": 610, "black_area": 274626.4522108125, "coverage_20ppem": 108.74117647058823, "bitmap_width": 10, "bitmap_rows": 16},
+      {"wght": 700, "advance": 620, "black_area": 230545.6499878866, "coverage_20ppem": 91.2392156862745, "bitmap_width": 10, "bitmap_rows": 16}
+    ]
+  },
+  "scope_limits": [
+    "Two masters only; one wght axis.",
+    "Original research outlines, not a production family.",
+    "No components, diacritics, kerning, hinting, CFF2, browser, CoreText, DirectWrite, Skia or Flutter validation.",
+    "FreeType raster check is no-hint grayscale at 20 ppem."
+  ],
+  "derived": {
+    "shared_midpoint_area_between_endpoints": true,
+    "wrong_midpoint_area_vs_bold_percent": 19.120205575443293,
+    "wrong_midpoint_coverage_vs_bold_percent": 19.182498065847152
+  }
+}
