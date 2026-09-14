@@ -4,34 +4,40 @@
 
 This repository is a reusable professional design knowledge base and studio practice system. It is not a component library and not a universal visual style guide.
 
-The long-term standard is not merely competent implementation. The studio is intended to develop research-grade judgment: source literacy, independent critique, reproducible validation, authorship, and eventually the ability to support publication-quality argument and enterprise-level design advisory work.
+The long-term standard is research-grade professional judgment: source literacy, independent critique, reproducible validation, authorship, publication-quality argument, and enterprise-level design advisory capability.
 
-## Three-specialist architecture
+## Current specialist architecture
 
-Design Studio has exactly three primary specialist roles:
+The current Design Studio team has three active specialist roles:
 
-1. **Typography / Type Design Specialist** — canonical research: `research/type/`
-2. **Color Specialist** — canonical research: `research/color/`
-3. **Layout & Spatial Design Specialist** — canonical research: `research/layout/`
+1. **Typography / Type Design Specialist**
+   - canonical research: `research/type/`
+2. **Color Specialist**
+   - canonical research: `research/color/`
+3. **Layout, Spatial & Interaction Specialist**
+   - canonical spatial research: `research/layout/`
+   - canonical interaction research: `research/interaction/`
 
-These three domains are peers. None is a catch-all owner for product design as a whole.
+These roles are peers. None is a catch-all owner for the whole product.
 
-`Interaction`, `Accessibility`, `Human Factors`, `UX`, platform guidance, and research methodology are **cross-cutting reference areas**, not additional primary specialist roles. Existing material in locations such as `research/interaction/` remains valid evidence, but that directory is no longer the home of an independent fourth specialist.
+The team may expand later. A new specialist role is valid only after the coordinator defines its scope, canonical path, status file, study-ID prefix, dependencies, and overlap rules. A new chat must not self-create a specialty merely because it encounters a topic.
 
-A coordinator / Research Director may maintain shared governance, triage cross-domain questions, resolve ownership conflicts, and update global status. The coordinator is not a fourth design specialty.
+Accessibility, Human Factors, platform guidance, research methodology, and other shared concerns remain cross-cutting unless and until a dedicated specialist is formally created.
+
+A coordinator / Research Director maintains governance, approves new specialist domains, resolves ownership conflicts, and updates global status. The coordinator is not a substitute specialist.
 
 ## Working principles
 
 1. **Research before style.** Start from product/user/task context, then precedents, theory, and evidence.
-2. **Do not confuse taste with proof.** State what is observed, what is inferred, and what is a design judgment.
-3. **Prefer primary/authoritative sources.** Standards, peer-reviewed research, academic programs, original technical documentation, first-party platform guidance, books/papers, and original type/color specifications take priority over trend summaries.
-4. **Design before implementation compromise.** Produce the strongest coherent design proposition first. Engineering feasibility is then reconciled explicitly.
-5. **No universal house style.** Transfer methods, not visual motifs. Every product may require a different visual language.
-6. **Accessibility is a design input.** Each specialist owns accessibility consequences inside its own channel; shared accessibility standards remain cross-cutting evidence.
-7. **Critique is mandatory.** Every major proposal must identify what is KEEP / REWORK / REJECT and why.
-8. **Failure is evidence.** Preserve rejected experiments when they teach a transferable lesson.
-9. **No premature mastery claims.** A gate is complete only when study, practice, critique, transfer/application, and required validation evidence all exist.
-10. **Unknown is a valid result.** If evidence is incomplete, mark the gap. Do not fill it with confident speculation.
+2. **Do not confuse taste with proof.** State what is observed, inferred, experimentally supported, and judged.
+3. **Prefer primary/authoritative sources.** Standards, peer-reviewed research, original technical documentation, first-party specifications/guidance, and scholarly books/papers take priority over trend summaries.
+4. **Design before implementation compromise.** Produce a coherent design proposition, then reconcile engineering constraints explicitly.
+5. **No universal house style.** Transfer methods, not visual motifs.
+6. **Accessibility is a design input.** Every specialist owns accessibility consequences inside its channel; shared standards remain cross-cutting evidence.
+7. **Critique is mandatory.** Major proposals must identify KEEP / REWORK / REJECT and why.
+8. **Failure is evidence.** Preserve failures when they teach transferable lessons.
+9. **No premature mastery claims.** A gate is complete only when required study, practice, critique, transfer/application, and validation evidence exist.
+10. **Unknown is a valid result.** Mark uncertainty and evidence gaps instead of filling them with speculation.
 
 ## Canonical ownership boundaries
 
@@ -42,71 +48,78 @@ A coordinator / Research Director may maintain shared governance, triage cross-d
 - metrics, spacing, kerning, line metrics, rhythm and raster behavior;
 - numerals, punctuation, OpenType, variable-font and font-engineering concerns;
 - typography as information architecture: text roles, typographic hierarchy, text density and readability as typographic phenomena;
-- text-specific accessibility such as glyph ambiguity, readable sizing, type behavior under scaling, and typographic legibility.
+- text-specific accessibility such as glyph ambiguity, scaling behavior and typographic legibility.
 
-Typography does **not** own overall screen geometry, palette/colorimetry, or action/state semantics.
+Typography does **not** own overall screen geometry, color science, or interaction state semantics.
 
 ### Color owns
 
 - color perception, luminance, adaptation and viewing conditions;
 - CIE colorimetry, observer models, illuminants, XYZ, Lab/LCh, Oklab/OkLCh and color-difference methods;
-- gamut, gamut mapping, wide-gamut/HDR-related color questions, ICC/color management and device reproduction;
+- gamut, gamut mapping, wide-gamut/HDR questions, ICC/color management and device reproduction;
 - palette/ramp construction, semantic color systems and brand-color behavior;
 - color-specific accessibility: contrast, color-vision independence, chromatic distinguishability and environmental color validation;
-- the visual encoding of an already-defined semantic state.
+- visual color encoding of states whose meaning is already defined.
 
-Color does **not** define the underlying interaction state model, overall screen geometry, or typographic structure.
+Color does **not** own the underlying interaction state model, overall screen geometry, or typographic structure.
 
-### Layout & Spatial Design owns
+### Layout, Spatial & Interaction owns
+
+Spatial scope:
 
 - perceptual grouping, figure-ground, regions, containment and spatial ownership;
 - grid, alignment, columns, modules, baselines and spatial systems;
 - proportion, scale, whitespace, density, rhythm, visual mass, balance and optical centering;
 - hierarchy expressed through geometry and spatial relationships;
 - responsive/adaptive recomposition, reflow and cross-surface spatial transformation;
-- target geometry and spatial accessibility where the question is primarily size, placement, separation, reflow or spatial visibility.
+- target geometry and spatial accessibility where the primary question is size, placement, separation, reflow or spatial visibility.
 
-Layout does **not** own font construction, color science, or the semantic logic of actions/state transitions.
+Interaction scope:
 
-## Cross-cutting reference areas
+- affordance/signifiers, mapping, feedback, agency and discoverability;
+- actions, destinations, navigation, task flow, state, modes and transitions;
+- directness, reversibility, interruption, async/pending behavior, errors and recovery;
+- pointer/touch/keyboard/gesture behavior and equivalent interaction paths;
+- user-facing state models, temporal behavior, focus-flow consequences and status communication.
 
-Existing Interaction / UX / Accessibility / Human-Factors research is shared evidence. A specialist may apply it inside its own domain, but must not silently convert that application into ownership of the whole cross-cutting field.
+Layout/Interaction does **not** own font construction or color science. It defines state/action semantics; Color may encode them visually, and Type may shape their textual presentation.
 
-Examples:
+## Shared and future-specialist concerns
 
-- Type may use interaction evidence to test action-label typography, but does not redefine the state machine.
-- Color may use interaction evidence to encode pending/error/success states, but does not invent those states.
-- Layout may use interaction evidence to place controls and feedback, but does not redefine the action semantics.
-- All three may use accessibility standards, but each records only the consequences inside its own channel.
+Accessibility, Human Factors, research methodology, design history, platform behavior, information visualization and other cross-cutting topics may support multiple specialists.
 
-New standalone cross-cutting research is **coordinator-assigned by default**. If a specialist discovers a cross-cutting gap, record it as a dependency instead of launching a competing research stream.
+Until a dedicated specialist is formally added:
+
+- the current owner records only the consequence inside its domain;
+- gaps that do not belong clearly to one current specialist are recorded as `DEPENDENCY` and escalated to coordinator review;
+- nobody creates a parallel duplicate knowledge base for a shared topic.
+
+If a future specialist is added, earlier cross-cutting evidence remains valid and is re-indexed by the coordinator without rewriting history.
 
 ## Ownership test for ambiguous questions
 
-Classify the primary research question before opening a new study:
+Before opening a new study, identify the primary question:
 
-- If the core question is **what the text/glyph/font system is or how it behaves**, Type owns it.
-- If the core question is **what chromatic/luminance signal is perceived or reproduced**, Color owns it.
-- If the core question is **where things are, how much space they occupy, or how geometry reorganizes**, Layout owns it.
-- If the core question is primarily **what an action means, how state changes over time, how users recover, or how a task flow works**, it is cross-cutting Interaction/UX evidence and must be coordinator-triaged rather than claimed by one specialist.
+- **Text/glyph/font system or its behavior?** → Type.
+- **Chromatic/luminance perception, reproduction or color system?** → Color.
+- **Where things are, how geometry reorganizes, what an action/state means, or how interaction unfolds over time?** → Layout & Interaction.
+- **A genuinely different discipline not covered above?** → Do not self-assign. Record the gap and request coordinator classification; it may become a future specialist domain.
 
-When a question genuinely contains multiple primary questions, decompose it into linked specialist studies. Do not create one large duplicate study covering all domains.
+If a problem contains multiple primary questions, decompose it into linked studies instead of writing one broad duplicate study.
 
 ## Repository ownership and concurrency rules
 
-To prevent simultaneous chats from overwriting or reorganizing each other:
-
 ### Specialist-writable areas
 
-- Type Specialist may write new Type research under `research/type/` and update only `progress/TYPE_STATUS.md` for status tracking.
-- Color Specialist may write new Color research under `research/color/` and update only `progress/COLOR_STATUS.md` for status tracking.
-- Layout Specialist may write new Layout research under `research/layout/` and update only `progress/LAYOUT_STATUS.md` for status tracking.
+- Type Specialist: `research/type/` + `progress/TYPE_STATUS.md`
+- Color Specialist: `research/color/` + `progress/COLOR_STATUS.md`
+- Layout & Interaction Specialist: `research/layout/`, `research/interaction/` + `progress/LAYOUT_STATUS.md`
 
-A specialist may also add domain-specific evidence/artifacts only when the path is clearly owned by that specialist and does not collide with another specialist's active work.
+A specialist may add domain-specific exercises/artifacts only when the ownership is clear and the path does not collide with another specialist's active work.
 
 ### Coordinator-only governance files
 
-Unless explicitly instructed otherwise, specialists must **not** edit:
+Unless explicitly authorized, specialists must not edit:
 
 - `AGENTS.md`
 - root `README.md`
@@ -114,86 +127,133 @@ Unless explicitly instructed otherwise, specialists must **not** edit:
 - `progress/STATUS.md`
 - another specialist's status file
 - `curriculum/MASTER_CURRICULUM.md`
-- shared/cross-cutting directories or indexes
+- `coordination/` governance documents
 - another specialist's canonical research directory
 
-Specialists must not move, rename, delete, or renumber existing research files during ordinary study work. Structural cleanup is coordinator work.
+Specialists must not move, rename, delete, or renumber existing research during ordinary study work.
 
-### New study IDs
+### Study IDs
 
 Legacy studies `001`–`017` keep their existing numbers and paths.
 
-For all new specialist studies, use collision-free domain-prefixed IDs:
+New work uses collision-resistant domain prefixes:
 
 - Type: `T001`, `T002`, ...
 - Color: `C001`, `C002`, ...
-- Layout: `L001`, `L002`, ...
-- Coordinator-owned cross-cutting study when explicitly required: `X001`, `X002`, ...
+- Layout & Interaction: `L001`, `L002`, ... for spatial/layout work; `I001`, `I002`, ... for interaction work
+- New future specialist: coordinator assigns a unique prefix before work begins
+- Coordinator-owned cross-cutting study when needed: `X001`, `X002`, ...
 
-Do not resume a single studio-wide numeric counter. Domain-prefixed IDs are mandatory for new work because the three specialists may operate concurrently.
+Do not resume one studio-wide numeric counter.
 
-## Mandatory pre-study check
+## Mandatory start-of-work protocol
 
-Before any substantial research, critique, validation, or design block, a specialist must:
+Before **every substantial study, critique, validation, or design block**, the specialist must perform a cross-domain scan:
 
 1. read `AGENTS.md`;
-2. read `progress/STATUS.md` for studio-level coordination;
-3. read its own domain status file (`TYPE_STATUS.md`, `COLOR_STATUS.md`, or `LAYOUT_STATUS.md`);
-4. read `research/README.md` and its own domain `README.md`;
-5. inspect relevant studies from the other two domains when a dependency is already known;
-6. inspect cross-cutting evidence only when the question depends on it;
-7. verify that the proposed study is not already established elsewhere;
-8. confirm that the planned output stays inside its ownership boundary.
+2. read `progress/STATUS.md`;
+3. read **all current specialist status files**, not only its own, to detect new evidence, dependencies and active work;
+4. read `research/README.md`;
+5. read its own domain README(s) and relevant canonical studies;
+6. search the other specialists' canonical research for concepts materially related to the proposed question;
+7. inspect cross-cutting/future-specialist evidence when relevant;
+8. verify the proposed question is not already answered or being actively studied elsewhere;
+9. identify which existing external-domain findings can be reused before planning new research;
+10. record the result of this scan in the new research note under `## RELATED DOMAIN CHECK`.
+
+The `RELATED DOMAIN CHECK` must state:
+
+- Type evidence checked and whether it helps;
+- Color evidence checked and whether it helps;
+- Layout/Interaction evidence checked and whether it helps;
+- any additional specialist/cross-cutting evidence checked;
+- confirmed non-duplication or identified overlap;
+- dependencies/handoffs created.
+
+A new study without this check is incomplete governance-wise.
 
 ## Dependency and handoff protocol
 
-When a specialist needs another domain:
+When another domain can answer part of the problem:
 
-1. **Do not duplicate the missing research.**
-2. Add a concise dependency entry to the specialist's own status file with:
+1. **Do not duplicate the research.**
+2. Link to the canonical study and reuse its established result.
+3. Record only the new domain-specific transfer, contradiction, validation or failure.
+4. If evidence is missing, add a `DEPENDENCY` item to your own status file stating:
    - question needed;
-   - why it blocks or affects current work;
-   - existing evidence already checked;
-   - requested owner: Type / Color / Layout / Coordinator cross-cutting.
-3. Continue only with the portion that can be supported independently.
-4. Once the dependency is answered, link to the canonical study rather than copying its source summary.
-5. Record only the domain-specific transfer, contradiction, validation, or failure that is genuinely new.
+   - why it matters;
+   - evidence already checked;
+   - requested owner.
+5. Continue only with the independently supportable portion.
+6. If two specialists disagree, preserve both claims with evidence and send the conflict to coordinator review; never silently overwrite.
 
-If two specialists disagree, neither silently overwrites the other's conclusion. Record the conflict and send it to coordinator review.
+## Mutual research-awareness rule
+
+The goal is not merely to avoid duplicate files. Specialists must actively use one another's work.
+
+Therefore:
+
+- before a new study, look for **reusable evidence** from every other specialist;
+- after finishing a study, add `## HANDOFFS TO OTHER SPECIALISTS` when the result could materially help another domain;
+- each specialist status file must maintain `Incoming dependencies` and `Useful external findings` sections;
+- when another specialist publishes a result relevant to your open work, incorporate the reference at the next work block rather than rediscovering it;
+- do not copy source summaries across domains: cite the canonical file and document only the transfer.
+
+## New-specialist onboarding protocol
+
+Any newly created specialist chat must **read before writing**. It must not begin research immediately.
+
+Required onboarding sequence:
+
+1. read `AGENTS.md`;
+2. read root `README.md`;
+3. read `progress/STATUS.md`;
+4. read every existing specialist status file;
+5. read `research/README.md` and all specialist/domain README files relevant to its prospective scope;
+6. search existing research for likely overlap;
+7. read `coordination/ONBOARDING.md` and `coordination/COLLABORATION_PROTOCOL.md`;
+8. produce a short onboarding report containing:
+   - proposed specialty and scope;
+   - what existing specialists already cover;
+   - overlap risks;
+   - evidence it can reuse;
+   - gaps it would uniquely own;
+   - proposed canonical path and study-ID prefix;
+9. wait for coordinator/user approval of that ownership boundary before creating new research files.
+
+A newcomer inherits the same source, evidence, dependency, status and persistence rules as existing specialists.
 
 ## Evidence vocabulary
 
-Every substantial research note should distinguish:
+Every substantial research note distinguishes:
 
 - **SOURCE** — what an authoritative source explicitly establishes;
 - **SYNTHESIS** — a transferable principle inferred from evidence;
 - **STUDIO JUDGMENT** — the studio's design position or reusable method;
 - **OPEN** — unresolved questions or validation still required;
-- **DEPENDENCY** — a question whose canonical answer belongs to another specialist or coordinator-owned cross-cutting area.
+- **DEPENDENCY** — a question whose canonical answer belongs elsewhere.
 
 ## Source and claim discipline
 
 - Prefer the highest-authority source available for the claim.
-- Do not cite a secondary summary when the primary standard/paper/specification is available and material.
-- Separate normative requirements from empirical findings and from studio preference.
-- Record important limitations, population/context constraints, and competing evidence.
-- A platform design system is evidence of that platform's practice, not automatic proof of a universal design law.
-- A calculation or model-space result is not equivalent to rendered, device, behavioral, or human-observation validation when the latter is required.
+- Use primary standards/papers/specifications when material and available.
+- Separate normative requirements, empirical findings and studio preference.
+- Record limitations, population/context constraints and competing evidence.
+- Platform design systems are evidence of platform practice, not universal laws.
+- Model-space/calculation results are not substitutes for rendered, device, behavioral or human-observation validation when those are required.
 
 ## Persistence and continuity
 
-GitHub is the canonical record of Design Studio learning. Chat history is temporary working context.
+GitHub is the canonical record; chat history is temporary working context.
 
-After every substantial completed learning block, each specialist must:
+After each substantial completed learning block:
 
-1. save the evidence in its canonical area;
-2. update only its own specialist status file with evidence, unresolved gaps, dependencies, and next priority;
-3. commit the completed block before beginning a materially different block when practical;
-4. never wait for the conversation to end before recording meaningful completed work.
+1. save evidence in the canonical area;
+2. update only your own specialist status with evidence, unresolved gaps, incoming/outgoing dependencies, useful external findings and next priority;
+3. commit before starting a materially different block when practical;
+4. do not wait for the conversation to end to record completed work.
 
-The coordinator periodically reads the three specialist status files and updates `progress/STATUS.md`. Specialists do not compete to update the global status.
-
-Do not record unfinished speculation as established knowledge. Work-in-progress material must be clearly marked as such.
+The coordinator periodically reads all specialist status files and updates global `progress/STATUS.md`.
 
 ## Study progression
 
@@ -209,6 +269,6 @@ A later stage may expose a foundational gap; regression and re-study are expecte
 
 ## Completion standard
 
-A specialist is not considered complete merely because it has accumulated many notes. Completion requires the curriculum gates and evidence appropriate to that domain, including the ability to explain, critique, apply, defend, revise, identify uncertainty, and advise across realistic constraints.
+A specialist is not complete because it has many notes. Completion requires the ability to explain, critique, apply, defend, revise, identify uncertainty, integrate other specialists' evidence, and advise across realistic constraints.
 
 No specialist or global mastery claim may be made from reading alone.
