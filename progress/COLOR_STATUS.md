@@ -3,7 +3,7 @@
 Operating state: **ACTIVE — RESEARCH MAY RESUME**  
 Governance sync: 2026-09-14  
 Primary path: `research/color/`  
-Next new-study ID: `C006`
+Next new-study ID: `C007`
 
 This file is maintained by the Color Specialist. The specialist must not update global `progress/STATUS.md` directly.
 
@@ -33,9 +33,9 @@ Before substantial work, Color reads all four specialist statuses and materially
 Current curriculum stage: **Stage 1 — Foundation with an early bridge into Intermediate Professional Practice**  
 Overall state: **CRITIQUE**
 
-The Color program now spans UI color, colorimetry/observer models, chromatic adaptation, ICC/CMM production-path validation, perceptual spaces/difference, gamut mapping, ramp authoring, web override behavior, semantic token architecture, data-visualization color, and controlled observer-conditional metamerism practice.
+The Color program now spans UI color, colorimetry/observer models, chromatic adaptation, ICC/CMM production-path validation, perceptual spaces/difference, gamut mapping, ramp authoring, web override behavior, semantic token architecture, two-context semantic transfer practice, data-visualization color, and controlled observer-conditional metamerism practice.
 
-Foundation is **not passed**. Full checksum-verified spectral datasets, current cone-fundamental numerical validation, high-precision/real-profile/cross-CMM production proof, browser/device evidence, physical-display/environmental tests, CVD/human-task evidence, and multi-project transfer remain incomplete.
+Foundation is **not passed**. Full checksum-verified spectral datasets, current cone-fundamental numerical validation, higher-precision/real-profile/cross-CMM production proof, browser/device evidence, physical-display/environmental tests, CVD/human-task evidence, and production-fidelity project transfer remain incomplete.
 
 ## Canonical evidence already established
 
@@ -53,6 +53,9 @@ Foundation is **not passed**. Full checksum-verified spectral datasets, current 
 - `research/color/C005-icc-cmm-roundtrip-validation.md`
 - `research/color/C005-icc-cmm-roundtrip-validation.py`
 - `research/color/C005-icc-cmm-results.json`
+- `research/color/C006-semantic-token-transfer-two-contexts.md`
+- `research/color/C006-semantic-token-transfer-two-contexts.py`
+- `research/color/C006-semantic-token-transfer-results.json`
 - retained product-design Color exercises 005, 009, 010, 012, 013, and 016.
 
 ## Foundation / bridge module status
@@ -62,127 +65,129 @@ Foundation is **not passed**. Full checksum-verified spectral datasets, current 
 | Luminance / contrast / hierarchy | CRITIQUE | physical-display/environmental validation; representative production contexts |
 | Encoded RGB → linear-light → XYZ | PRACTICE / CRITIQUE | production-path and wider-space cross-checks; device/browser transfer |
 | Spectral colorimetry / observer models | PRACTICE / CRITIQUE | C004 1931 integration/scaling/metamer + 1931↔1964 proof complete; full smooth/measured spectra, independently hash-verified current files, current CIE 2006 LMS/cone comparison, physical-device validation pending |
-| Chromatic adaptation / ICC color management | **PRACTICE / CRITIQUE** | C005 v4 profile `chad`/colorant reconstruction and actual CMM comparison complete; float/16-bit transforms, real device/output profiles, cross-CMM, soft proof and physical-output validation pending |
+| Chromatic adaptation / ICC color management | PRACTICE / CRITIQUE | C005 v4 profile `chad`/colorant reconstruction and actual CMM comparison complete; float/16-bit transforms, real device/output profiles, cross-CMM, soft proof and physical-output validation pending |
 | Perceptual spaces / color difference | CRITIQUE | rendered/device comparison and tighter scope validation |
 | Gamut / wide-gamut mapping | CRITIQUE | browser/device validation and production fallback behavior |
 | Perceptual ramp authoring | CRITIQUE | rendered/browser/device validation; no PASS from model-space regularity alone |
 | Web color override resilience | IN STUDY / TRANSFER VALIDATION | real browser forced-colors/theme/system-color tests; browser/device differences |
-| Semantic color/token architecture | IN STUDY / PROJECT-READINESS SYNTHESIS | implement token graph + pair matrix in materially different products; multi-theme/platform/browser transfer; collision critique |
+| Semantic color/token architecture | **PRACTICE / TRANSFER VALIDATION** | C006 two-context graph/collision/pair-matrix practice complete; rendered components, CVD/grayscale, multi-theme/platform/browser and real-project transfer pending |
 | Data-visualization color systems | IN STUDY / NUMERICAL PRACTICE | rendered categorical/sequential/diverging examples; CVD/human-task evidence; light/dark, browser/device and multi-project validation |
 
-## Latest completed block — C005
+## Latest completed block — C006
 
-`C005-icc-cmm-roundtrip-validation.md` converts Study 012's chromatic-adaptation theory into an actual profile/CMM execution and a documented failure-analysis cycle.
+`C006-semantic-token-transfer-two-contexts.md` transfer-tests C002 rather than creating another abstract token taxonomy.
 
-### Controlled environment
+### Controlled contexts
 
-- Python `3.13.5`
-- Pillow `12.3.0`
-- Pillow `ImageCms`
-- LittleCMS reported by ImageCms: `2.19`
-- generated sRGB v4.4 monitor profile connected through XYZ PCS
-- generated Lab identity profile used as a controlled D50 observation path
+Two deliberately different product archetypes were used:
 
-### Profile architecture evidence
+- **Context F — finance analytics / portfolio tracking**, light appearance, dense numerical data, positive/negative values, chart/status semantics, and brand emphasis;
+- **Context O — operational record/logbook**, dark appearance, dense records, strong active/current/focus requirements, and caution/critical operational states.
 
-The generated sRGB profile reports media white `[0.9642, 1.0, 0.8249]` and exposes a D65→D50 `chad` matrix.
+These are transfer specimens, not final MintTap or LogMate palette decisions.
 
-Applying that `chad` to the standard sRGB D65 white returns D50 to floating-point precision. Applying the same `chad` to the standard sRGB D65 primary matrix reconstructs the profile's stored D50 red/green/blue colorants with maximum absolute residual:
+### Failure → revision evidence
 
-`4.44 × 10⁻16`.
+Both contexts first used an intentionally overloaded architecture where one strong accent family carried too many jobs.
 
-Professional consequence: the controlled profile is internally coherent with the ICC v4 architecture studied in Study 012.
+Rejected collisions included:
 
-### CMM vs independent colorimetry
+- brand = primary action = selected = success = positive data = focus;
+- negative data = destructive action = validation error = critical alert;
+- dark-product accent = current row = action = focus = information = success.
 
-A 17-step/channel RGB cube (`4,913` colors) compared:
+The revision keeps distinct semantic roles even when two roles currently alias the same primitive value. This preserves reversibility when brand, platform, locale, domain conventions, or product requirements change.
 
-`8-bit sRGB → inverse transfer → XYZ D65 → profile chad → XYZ D50 → hand CIELAB`
+### Pair-contract evidence
 
-against:
+C006 adds reproducible relative-luminance checks for explicit foreground/background/focus/boundary contracts.
 
-`8-bit sRGB → ICC profile → LittleCMS relative-colorimetric transform → 8-bit Lab`.
+Finance specimen examples:
 
-Maximum absolute CMM-vs-hand differences:
+- primary content / canvas: `15.67:1`;
+- secondary content / canvas: `6.06:1`;
+- primary action content / action surface: `5.41:1`;
+- focus / white surface: `6.70:1`;
+- strong boundary / canvas: `3.28:1`.
 
-- `L*`: `0.19773`
-- `a*`: `0.50508`
-- `b*`: `0.50513`
+Operational-dark examples:
 
-Those limits align with the tested 8-bit Lab quantization step, so the observed CMM output is consistent with the independent calculation within the precision of the observation buffer.
+- primary content / canvas: `16.95:1`;
+- secondary content / canvas: `8.88:1`;
+- on-active content / active surface: `8.40:1`;
+- focus / canvas: `14.18:1`;
+- strong boundary / raised surface: `3.19:1`;
+- critical status / raised surface: `4.68:1`.
 
-### Failure → diagnosis → revision
+All declared bounded numeric contracts pass in the controlled script.
 
-The same grid was round-tripped through `sRGB 8-bit → Lab 8-bit → sRGB 8-bit`.
+### Transfer conclusion
 
-Observed:
+C002's **method** transfers; its literal values and final mappings do not.
 
-- maximum single-channel error: `36` RGB codes;
-- mean absolute channel error: `1.5289`;
-- 95th percentile: `7`;
-- exact RGB recovery: `8.24%`;
-- all channels within ±1: `47.26%`;
-- all channels within ±2: `60.51%`.
+Confirmed transferable principles:
 
-The first shortcut diagnosis — “the CMM/adaptation is inaccurate” — was rejected because the direct CMM-vs-hand Lab comparison agreed to the expected 8-bit Lab quantization envelope.
+- semantic-job inventory before palette assignment;
+- primitive values separate from semantic roles;
+- pair contracts rather than isolated “accessible swatches”;
+- domain status separate from interaction state;
+- brand separate from status by default;
+- focus as its own role;
+- redundant non-color cues for important meaning;
+- component tokens only when justified;
+- theme/environment resolution as a separate axis;
+- semantic tokens may share a current primitive without becoming the same concept.
 
-Revised diagnosis: the round-trip mixes low-precision Lab quantization, nonlinear RGB re-encoding, gamut-boundary sensitivity and the transform path. Profile-managed does not mean lossless.
+Not established as universal:
 
-### Matrix-comparison discipline
+- one company-wide action hue;
+- one fixed success/positive hue;
+- one light/dark strategy;
+- one fixed token depth;
+- one rule that brand and action must always differ;
+- one rule that selection/action may always share a family.
 
-C005 also found a small difference between the Study 012 published ICC D65→D50 matrix and the generated profile's `chad`. Rather than calling it a contradiction, the matrices were traced to slightly different adopted-white constants/rounding. New studio rule: **compare white definitions and generation assumptions before comparing CAT matrix coefficients.**
+Evidence level: **PRACTICE + TRANSFER VALIDATION / semantic architecture and numeric pair evidence**. No rendered/browser/CVD/human/device PASS.
 
-Evidence level: **PRACTICE + PRODUCTION-PATH VALIDATION / real LittleCMS profile transform and failure analysis**. Not high-precision, real-device/profile, cross-CMM or production PASS.
+## Previous completed block — C005
+
+C005 validates Study 012 through a real LittleCMS-managed profile path. It reconstructs the generated sRGB profile's D50 colorants from its D65→D50 `chad`, compares 4,913 sRGB colors against independent D65→D50→Lab calculation, and documents why an 8-bit Lab round trip can produce substantial RGB code error even when the CMM itself agrees with the hand calculation within the observation buffer's quantization envelope.
+
+Professional rule retained: compare profile/white/precision/gamut assumptions before blaming a CMM or chromatic-adaptation transform.
 
 ## Previous completed block — C004
 
-`C004-spectral-integration-observer-metamerism.md` supplies controlled CIE 1931 spectral integration, scaling, a constructed CIE 1931 metamer pair, CIE 1931↔1964 observer comparison and dataset-provenance audit.
+C004 supplies controlled CIE 1931 spectral integration, scaling, a constructed CIE 1931 metamer pair, CIE 1931↔1964 observer comparison and dataset-provenance audit.
 
-Professional conclusion: a colorimetric match is conditional on the observer/system defining the match; this does not predict individual observers and does not replace the observer model embedded in production standards.
-
-## Project-facing blocks
-
-### C003 — data visualization
-
-Established data-type-driven choice among qualitative/categorical, sequential and diverging systems; meaningful diverging midpoint requirements; rainbow failure analysis; numerical monotonicity practice; redundant coding; missing/reference/state separation; and production validation criteria.
-
-### C002 — semantic color/token architecture
-
-Established `primitive → semantic role → optional component role → context resolution`, pair contracts, domain-status vs interaction-state separation, and semantic-collision review.
-
-### C001 — Web override resilience
-
-Established forced-colors/system-color/theme resilience requirements and a Color→Web implementation-validation matrix.
+Professional conclusion retained: a colorimetric match is conditional on the observer/system defining it; this does not predict individual observers and does not replace the observer model embedded in production standards.
 
 ## Peer evidence currently affecting Color
 
 ### Typography / Type
 
-Type is through **T004**. T004 provides a complete research numeral/punctuation system, proportional/tabular metrics, zero alternatives, actual FreeType evidence, and a compact colon failure→redraw cycle.
+Type is through **T004**. T003/T004 provide compiled-font and raster/alpha evidence, including compact numeral/punctuation failure cases.
 
 Color consequences:
 
-- chart labels, numeric readouts and dense status text should not be validated with placeholder typography only;
-- T003/T004 alpha/raster evidence is a strong future transfer case for light/dark/reduced-contrast/environmental Color testing;
-- C005 adds a downstream layer: even correctly rasterized type can still be altered by export/profile/precision decisions in screenshots and marketing assets.
+- C006 foreground roles should later be tested with real Type rasterization rather than placeholder text;
+- chart labels/numeric readouts remain high-value transfer cases;
+- Color should distinguish nominal contrast from actual compact-rendering behavior.
 
 ### Layout / Interaction
 
-Layout has advanced L002 through a **216-condition Chromium density/reflow validation**. Naive compactness produced clipped/hidden content and below-contract controls; preserve/adaptive policies retained critical content and interaction geometry while exposing or reducing the true spatial cost. L002 now explicitly hands Color a fixed-geometry transfer target.
-
-I001 remains a running state/navigation specimen with a documented failure→revision→re-proof cycle and 14/14 controlled assertions.
+Layout's L002 now provides a **216-condition Chromium density/reflow matrix**. I001 provides running navigation/state/focus evidence with a failure→revision cycle.
 
 Color consequences:
 
-- use L002 fixed/adaptive geometry to test color-driven visual density without changing layout;
-- use I001 current-location/focus/pending/error/success as C001/C002 semantic-color targets;
-- do not use color to repair unclear geometry or state models.
+- use L002 fixed geometry to isolate color-driven visual density/salience;
+- use I001 current/focus/pending/error/success semantics as controlled Color targets;
+- do not use color to repair unclear layout or state architecture.
 
 ### Web Design
 
 At the latest synchronization, Web remains Stage 1 / not yet baselined and no substantive `W###` study is available. **Do not invent Web evidence.**
 
-C001–C003 and Studies 016/017 provide browser/theme/gamut contracts. C005 adds a concrete asset/export color-management handoff: profile-tagged images, screenshots, P3/sRGB assets, canvas/export paths and profile retention/stripping should be tested in real browsers once Web research begins.
+C001–C006 now provide concrete future browser validation contracts for user overrides, semantic tokens, data color, wide gamut, ICC-tagged assets and role-resolution behavior.
 
 ## Incoming dependencies
 
@@ -190,43 +195,25 @@ C001–C003 and Studies 016/017 provide browser/theme/gamut contracts. C005 adds
 - Layout & Interaction may require state/focus color contracts, luminance hierarchy, color-vision independence, chart-density evidence and environmental constraints.
 - Web Design may require semantic token, chart palette, forced/system-color, gamut/fallback, ICC asset/export and device/viewing-condition guidance.
 
-## Cross-domain opportunities
-
-### Type
-
-Composite T003/T004 renderer alpha evidence under Color-defined light/dark/background/environment conditions, then carry representative raster assets through controlled profile/export pipelines to separate renderer failure from color-management failure.
-
-### Layout / Interaction
-
-Use L002's fixed adaptive geometry for a controlled Color→Layout transfer: vary luminance/chroma/state roles while holding geometry/content constant. Use I001 semantic states for forced-color and semantic-collision tests.
-
-### Web Design
-
-When W### work exists:
-
-- transfer-test C001–C003 and Studies 016/017 in real browsers;
-- test profile-tagged sRGB/P3 image assets, screenshots, canvas/export behavior and profile retention/stripping informed by C005;
-- return confirmation, limitation, contradiction or transfer failure rather than silently changing Color assumptions.
-
 ## Active next queue
 
 Research remains ACTIVE. Priorities are expected-value guidance, not hard sequencing:
 
-1. Convert C002 into practice with semantic token graphs and pair/contrast matrices for at least two materially different products, recording collisions and rejected architectures.
-2. Use L002's fixed geometry for a Color-driven density/salience transfer study: vary luminance/chroma/semantic-state treatment while keeping geometry/data constant.
-3. Convert C003 into rendered practice: categorical + sequential + diverging visualizations in light/dark conditions with grayscale/CVD/small-mark/state critique and at least one failure→revision cycle.
+1. **C007 candidate:** use L002-style fixed geometry for a Color-driven density/salience transfer study; vary luminance/chroma/semantic emphasis while keeping content/geometry constant.
+2. Convert C003 into rendered practice: categorical + sequential + diverging visualizations in light/dark conditions with grayscale/CVD/small-mark/state critique and at least one failure→revision cycle.
+3. Render the C006 finance/operational token systems with realistic Type roles; test selected + focused + status combinations and hue-removal/CVD resilience.
 4. Extend C005 with float/16-bit transforms, independently sourced/real output profiles, P3→sRGB and display→print paths, soft proof and a second CMM/toolchain where practical.
 5. Extend C004 from sparse lines to complete smooth/measured spectra with independently hash-verified current CIE datasets; complete current CIE 2006 LMS/cone comparison only after provenance is verified.
 6. Compare Bradford/CAT02/CAT16 only on explicitly bounded datasets; do not declare a universal winner.
 7. Validate non-text/focus/ramp and T003/T004 transfer evidence on physical displays under controlled bright/low-light conditions.
-8. Transfer C001/C002/C003/C005 and Studies 016/017 into real browser validation when substantive Web evidence becomes available.
+8. Transfer C001–C006 and Studies 016/017 into real browser validation when substantive Web evidence becomes available.
 9. Continue advanced data visualization later into cyclic scales, uncertainty, bivariate systems, heatmaps and multi-color gamut optimization.
-10. Open `C006` for the next substantial new Color question when justified.
+10. Build automated Color QA only when tied to real product acceptance criteria.
 
 ## Open research-quality gaps
 
-- C002 multi-product semantic-system practice and collision evidence;
 - fixed-geometry Color→Layout density/salience transfer using L002;
+- C006 rendered/CVD/human-task and real-project validation;
 - C003 rendered/CVD/human-task evidence;
 - float/high-bit-depth ICC/CMM validation and actual source/destination profiles;
 - P3→sRGB, display→print, soft-proof and cross-CMM evidence;
@@ -237,29 +224,27 @@ Research remains ACTIVE. Priorities are expected-value guidance, not hard sequen
 - cyclic/uncertainty/bivariate/advanced data visualization;
 - automated Color QA tied to product acceptance criteria;
 - cultural/localization evidence beyond generic color folklore;
-- multi-project transfer evidence at production fidelity.
+- production-fidelity multi-project transfer evidence.
 
 ## Current handoffs to other specialists
 
 ### Typography / Type
 
-- C005 adds downstream color-management/precision risk after glyph rasterization; this complements T003/T004 renderer-layer evidence.
-- Validate C002 foreground roles and C003 axes/labels/numerals with actual font metrics/rasterization.
+- C006 supplies two explicit foreground/surface systems ready for real T003/T004/T005 rendering transfer.
+- Validate numeric/status/secondary roles with actual compact glyph coverage, fallback and enlargement.
 - Scope limit: Color does not define font construction, metrics or hinting.
 
 ### Layout / Interaction
 
-- L002 is now a high-value fixed-geometry Color transfer matrix. Color should vary luminance/chroma/state treatment without changing layout before drawing conclusions about visual density.
-- I001 state semantics remain the correct target for C001/C002; color should encode, not redefine, pending/error/success/focus/current state.
-- C005 adds a diagnostic caution for screenshots/exports: downstream color-management failure must not be mistaken for a geometry/state failure.
+- C006 keeps action, selection/current, focus and domain status semantically separate; this is consistent with I001's state-first model.
+- L002 remains the next high-value fixed-geometry Color transfer matrix.
 - Scope limit: Color does not redefine navigation/state/task semantics.
 
 ### Web Design
 
-- Implement and challenge C001/C002/C003 in actual page/component/chart systems when Web research begins.
-- Test P3/OkLCh/CSS gamut and fallback behavior from Studies 016/017.
-- C005: test embedded-profile sRGB/P3 images, screenshots/exports, canvas paths and profile retention/stripping in actual browsers/OS/device conditions.
-- C004: do not substitute alternate observer research into CSS/sRGB/P3 definitions; use it only to identify device/spectral risk.
+- C006 supplies explicit semantic graphs and pair contracts for future CSS/design-token implementation.
+- C001/C002/C006 should be tested under forced colors, system colors, native/custom controls, light/dark resolution and real focus behavior.
+- C003 and Studies 016/017 remain chart/gamut browser-transfer targets; C005 adds profile-tagged asset/export validation.
 - Return browser/device/framework confirmations, limitations, contradictions or transfer failures explicitly.
 
 ## Handoff rule
@@ -272,7 +257,8 @@ If another specialist requests Color evidence, answer with canonical Color evide
 - `C002`: semantic color/token architecture and project-readiness method.
 - `C003`: data-type-driven visualization color systems and numerical scale practice.
 - `C004`: CIE 1931 spectral integration/scaling/metamer practice, 1931↔1964 observer comparison, and dataset-provenance audit.
-- `C005`: actual v4 ICC profile/CMM D65→D50 validation, 4,913-color CMM-vs-hand comparison, and 8-bit Lab round-trip failure diagnosis.
-- `Chromatic adaptation / ICC color management` advances to **PRACTICE / CRITIQUE**, not PASS.
-- Next Color study ID: `C006`.
+- `C005`: actual v4 ICC profile/CMM D65→D50 validation and precision failure diagnosis.
+- `C006`: two-context semantic-token transfer, collision rejection, pair matrices, and method-vs-palette separation.
+- `Semantic color/token architecture` advances to **PRACTICE / TRANSFER VALIDATION**, not PASS.
+- Next Color study ID: `C007`.
 - Overall Color state remains **CRITIQUE / Foundation NOT PASSED**.
