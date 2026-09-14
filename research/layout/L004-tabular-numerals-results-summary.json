@@ -1,0 +1,57 @@
+{
+  "environment": {
+    "chromium": "144.0.7559.96",
+    "css_supports_tabular_nums": true,
+    "font_availability": {
+      "Inter": true,
+      "Roboto": true,
+      "Noto Sans": true
+    }
+  },
+  "fonts": {
+    "Inter": {
+      "14": {"proportional_digit_spread": 3.34375, "tabular_digit_spread": 0.0, "proportional_decimal_spread": 6.98438, "tabular_decimal_spread": 0.0},
+      "16": {"proportional_digit_spread": 3.82812, "tabular_digit_spread": 0.0, "proportional_decimal_spread": 7.96875, "tabular_decimal_spread": 0.0},
+      "20": {"proportional_digit_spread": 4.78125, "tabular_digit_spread": 0.0, "proportional_decimal_spread": 9.96875, "tabular_decimal_spread": 0.0},
+      "32": {"proportional_digit_spread": 7.65625, "tabular_digit_spread": 0.0, "proportional_decimal_spread": 15.95312, "tabular_decimal_spread": 0.0},
+      "16_detail": {
+        "proportional_digit_widths": [10.09375, 6.51562, 9.76562, 9.89062, 10.34375, 9.5, 9.92188, 9.0625, 9.90625, 9.92188],
+        "tabular_digit_widths": [10.375, 10.375, 10.375, 10.375, 10.375, 10.375, 10.375, 10.375, 10.375, 10.375],
+        "proportional_decimal_x": [143.73438, 135.9375, 135.78125, 136.1875, 135.76562],
+        "tabular_decimal_x": [134.95312, 134.95312, 134.95312, 134.95312, 134.95312]
+      }
+    },
+    "Roboto": {
+      "14": {"proportional_digit_spread": 2.07812, "tabular_digit_spread": 0.0, "proportional_decimal_spread": 4.15625, "tabular_decimal_spread": 0.0},
+      "16": {"proportional_digit_spread": 2.35938, "tabular_digit_spread": 0.0, "proportional_decimal_spread": 4.71875, "tabular_decimal_spread": 0.0},
+      "20": {"proportional_digit_spread": 2.95312, "tabular_digit_spread": 0.0, "proportional_decimal_spread": 5.90625, "tabular_decimal_spread": 0.0},
+      "32": {"proportional_digit_spread": 4.71875, "tabular_digit_spread": 0.0, "proportional_decimal_spread": 9.4375, "tabular_decimal_spread": 0.0}
+    },
+    "Noto Sans": {
+      "14": {"proportional_digit_spread": 2.0625, "tabular_digit_spread": 0.0, "proportional_decimal_spread": 4.125, "tabular_decimal_spread": 0.0},
+      "16": {"proportional_digit_spread": 2.375, "tabular_digit_spread": 0.0, "proportional_decimal_spread": 4.75, "tabular_decimal_spread": 0.0},
+      "20": {"proportional_digit_spread": 2.95312, "tabular_digit_spread": 0.0, "proportional_decimal_spread": 5.90625, "tabular_decimal_spread": 0.0},
+      "32": {"proportional_digit_spread": 4.73438, "tabular_digit_spread": 0.0, "proportional_decimal_spread": 9.46875, "tabular_decimal_spread": 0.0}
+    }
+  },
+  "dense_cell_16px": {
+    "Inter": {
+      "proportional_naive": {"overflow_count": 0, "max_scroll_width": 88},
+      "proportional_robust": {"overflow_count": 0, "max_scroll_width": 84},
+      "tabular_naive": {"overflow_count": 3, "max_scroll_width": 91},
+      "tabular_robust": {"overflow_count": 0, "max_scroll_width": 91}
+    },
+    "Roboto": {
+      "proportional_naive": {"overflow_count": 0, "max_scroll_width": 88},
+      "proportional_robust": {"overflow_count": 0, "max_scroll_width": 79},
+      "tabular_naive": {"overflow_count": 0, "max_scroll_width": 88},
+      "tabular_robust": {"overflow_count": 0, "max_scroll_width": 79}
+    },
+    "Noto Sans": {
+      "proportional_naive": {"overflow_count": 0, "max_scroll_width": 88},
+      "proportional_robust": {"overflow_count": 0, "max_scroll_width": 81},
+      "tabular_naive": {"overflow_count": 0, "max_scroll_width": 88},
+      "tabular_robust": {"overflow_count": 0, "max_scroll_width": 82}
+    }
+  }
+}
