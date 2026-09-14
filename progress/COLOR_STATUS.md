@@ -3,7 +3,7 @@
 Operating state: **ACTIVE — RESEARCH MAY RESUME**  
 Governance sync: 2026-09-14  
 Primary path: `research/color/`  
-Next new-study ID: `C005`
+Next new-study ID: `C006`
 
 This file is maintained by the Color Specialist. The specialist must not update global `progress/STATUS.md` directly.
 
@@ -33,9 +33,9 @@ Before substantial work, Color reads all four specialist statuses and materially
 Current curriculum stage: **Stage 1 — Foundation with an early bridge into Intermediate Professional Practice**  
 Overall state: **CRITIQUE**
 
-The Color program now spans UI color, colorimetry and observer models, chromatic adaptation, perceptual spaces/difference, gamut mapping, ramp authoring, web override behavior, semantic token architecture, data-visualization color, and controlled observer-conditional metamerism practice.
+The Color program now spans UI color, colorimetry/observer models, chromatic adaptation, ICC/CMM production-path validation, perceptual spaces/difference, gamut mapping, ramp authoring, web override behavior, semantic token architecture, data-visualization color, and controlled observer-conditional metamerism practice.
 
-Foundation is **not passed**. Full checksum-verified spectral datasets, current cone-fundamental numerical validation, ICC/CMM production proof, browser/device evidence, physical-display/environmental tests, CVD/human-task evidence, and multi-project transfer remain incomplete.
+Foundation is **not passed**. Full checksum-verified spectral datasets, current cone-fundamental numerical validation, high-precision/real-profile/cross-CMM production proof, browser/device evidence, physical-display/environmental tests, CVD/human-task evidence, and multi-project transfer remain incomplete.
 
 ## Canonical evidence already established
 
@@ -50,6 +50,9 @@ Foundation is **not passed**. Full checksum-verified spectral datasets, current 
 - `research/color/C002-semantic-color-role-token-architecture.md`
 - `research/color/C003-data-visualization-color-systems.md`
 - `research/color/C004-spectral-integration-observer-metamerism.md`
+- `research/color/C005-icc-cmm-roundtrip-validation.md`
+- `research/color/C005-icc-cmm-roundtrip-validation.py`
+- `research/color/C005-icc-cmm-results.json`
 - retained product-design Color exercises 005, 009, 010, 012, 013, and 016.
 
 ## Foundation / bridge module status
@@ -57,9 +60,9 @@ Foundation is **not passed**. Full checksum-verified spectral datasets, current 
 | Module | Status | Remaining gate |
 | --- | --- | --- |
 | Luminance / contrast / hierarchy | CRITIQUE | physical-display/environmental validation; representative production contexts |
-| Encoded RGB → linear-light → XYZ | PRACTICE | authoritative/toolchain cross-check and production-path validation |
-| Spectral colorimetry / observer models | **PRACTICE / CRITIQUE** | C004 1931 integration/scaling/metamer + 1931↔1964 proof complete; full smooth/measured spectra, independently hash-verified current files, current CIE 2006 LMS/cone comparison, and physical-device validation pending |
-| Chromatic adaptation / white points | PRACTICE | ICC/CMM round-trip and bounded Bradford/CAT02/CAT16 comparison |
+| Encoded RGB → linear-light → XYZ | PRACTICE / CRITIQUE | production-path and wider-space cross-checks; device/browser transfer |
+| Spectral colorimetry / observer models | PRACTICE / CRITIQUE | C004 1931 integration/scaling/metamer + 1931↔1964 proof complete; full smooth/measured spectra, independently hash-verified current files, current CIE 2006 LMS/cone comparison, physical-device validation pending |
+| Chromatic adaptation / ICC color management | **PRACTICE / CRITIQUE** | C005 v4 profile `chad`/colorant reconstruction and actual CMM comparison complete; float/16-bit transforms, real device/output profiles, cross-CMM, soft proof and physical-output validation pending |
 | Perceptual spaces / color difference | CRITIQUE | rendered/device comparison and tighter scope validation |
 | Gamut / wide-gamut mapping | CRITIQUE | browser/device validation and production fallback behavior |
 | Perceptual ramp authoring | CRITIQUE | rendered/browser/device validation; no PASS from model-space regularity alone |
@@ -67,43 +70,77 @@ Foundation is **not passed**. Full checksum-verified spectral datasets, current 
 | Semantic color/token architecture | IN STUDY / PROJECT-READINESS SYNTHESIS | implement token graph + pair matrix in materially different products; multi-theme/platform/browser transfer; collision critique |
 | Data-visualization color systems | IN STUDY / NUMERICAL PRACTICE | rendered categorical/sequential/diverging examples; CVD/human-task evidence; light/dark, browser/device and multi-project validation |
 
-## Latest completed block — C004
+## Latest completed block — C005
 
-`C004-spectral-integration-observer-metamerism.md` converts the largest remaining conceptual colorimetry gap into controlled numerical practice.
+`C005-icc-cmm-roundtrip-validation.md` converts Study 012's chromatic-adaptation theory into an actual profile/CMM execution and a documented failure-analysis cycle.
 
-### Evidence added
+### Controlled environment
 
-- sampled CIE 1931 2° CMFs from a public mirror whose included CIE metadata matches the current CIE-published 1931 dataset checksum;
-- explicit rejection of an older 1964 mirror whose metadata checksum did not match the current CIE-published checksum;
-- use of a separate 1964 mirror carrying metadata matching the current CIE-published checksum, with row-level values used for the observer comparison;
-- CIE 1931 sparse-spectrum integration;
-- `2.5×` spectrum-scaling proof showing XYZ magnitude scaling while `x,y` chromaticity remains unchanged;
-- a constructed metamer pair using different wavelength sets that matches CIE 1931 XYZ to machine precision;
-- re-evaluation of those same spectra under CIE 1964 10°, where the match separates materially;
-- explicit rejection of a current CIE 2006 LMS numerical claim because checksum-verified current LMS data were not established in this environment.
+- Python `3.13.5`
+- Pillow `12.3.0`
+- Pillow `ImageCms`
+- LittleCMS reported by ImageCms: `2.19`
+- generated sRGB v4.4 monitor profile connected through XYZ PCS
+- generated Lab identity profile used as a controlled D50 observation path
 
-### Controlled metamer result
+### Profile architecture evidence
 
-Spectrum A used 450/530/610 nm unit-weight line bins. Spectrum B used 470/550/650 nm with solved weights.
+The generated sRGB profile reports media white `[0.9642, 1.0, 0.8249]` and exposes a D65→D50 `chad` matrix.
 
-Under CIE 1931 2°:
+Applying that `chad` to the standard sRGB D65 white returns D50 to floating-point precision. Applying the same `chad` to the standard sRGB D65 primary matrix reconstructs the profile's stored D50 red/green/blue colorants with maximum absolute residual:
 
-`XYZ_A = XYZ_B = [1.504300, 1.403000, 1.814610]`
+`4.44 × 10⁻16`.
 
-within machine-precision residual.
+Professional consequence: the controlled profile is internally coherent with the ICC v4 architecture studied in Study 012.
 
-Under CIE 1964 10°:
+### CMM vs independent colorimetry
 
-- A: `[1.637673, 1.492627, 2.025251]`
-- B: `[1.555476323665, 1.533832735677, 1.851930797816]`
-- `xy` separation ≈ `0.0210906`
-- B `Y` is ≈ `2.7606%` higher than A.
+A 17-step/channel RGB cube (`4,913` colors) compared:
 
-Professional conclusion: **a colorimetric match is conditional on the observer/system that defines it.** This does not predict two particular individuals and does not authorize replacement of the observer/model embedded in production standards.
+`8-bit sRGB → inverse transfer → XYZ D65 → profile chad → XYZ D50 → hand CIELAB`
 
-Evidence level: **PRACTICE + REPLICATION / controlled standardized-observer numerical evidence**. Not physical-device, individual-observer, or production PASS.
+against:
 
-## Previous project-facing blocks
+`8-bit sRGB → ICC profile → LittleCMS relative-colorimetric transform → 8-bit Lab`.
+
+Maximum absolute CMM-vs-hand differences:
+
+- `L*`: `0.19773`
+- `a*`: `0.50508`
+- `b*`: `0.50513`
+
+Those limits align with the tested 8-bit Lab quantization step, so the observed CMM output is consistent with the independent calculation within the precision of the observation buffer.
+
+### Failure → diagnosis → revision
+
+The same grid was round-tripped through `sRGB 8-bit → Lab 8-bit → sRGB 8-bit`.
+
+Observed:
+
+- maximum single-channel error: `36` RGB codes;
+- mean absolute channel error: `1.5289`;
+- 95th percentile: `7`;
+- exact RGB recovery: `8.24%`;
+- all channels within ±1: `47.26%`;
+- all channels within ±2: `60.51%`.
+
+The first shortcut diagnosis — “the CMM/adaptation is inaccurate” — was rejected because the direct CMM-vs-hand Lab comparison agreed to the expected 8-bit Lab quantization envelope.
+
+Revised diagnosis: the round-trip mixes low-precision Lab quantization, nonlinear RGB re-encoding, gamut-boundary sensitivity and the transform path. Profile-managed does not mean lossless.
+
+### Matrix-comparison discipline
+
+C005 also found a small difference between the Study 012 published ICC D65→D50 matrix and the generated profile's `chad`. Rather than calling it a contradiction, the matrices were traced to slightly different adopted-white constants/rounding. New studio rule: **compare white definitions and generation assumptions before comparing CAT matrix coefficients.**
+
+Evidence level: **PRACTICE + PRODUCTION-PATH VALIDATION / real LittleCMS profile transform and failure analysis**. Not high-precision, real-device/profile, cross-CMM or production PASS.
+
+## Previous completed block — C004
+
+`C004-spectral-integration-observer-metamerism.md` supplies controlled CIE 1931 spectral integration, scaling, a constructed CIE 1931 metamer pair, CIE 1931↔1964 observer comparison and dataset-provenance audit.
+
+Professional conclusion: a colorimetric match is conditional on the observer/system defining the match; this does not predict individual observers and does not replace the observer model embedded in production standards.
+
+## Project-facing blocks
 
 ### C003 — data visualization
 
@@ -121,75 +158,81 @@ Established forced-colors/system-color/theme resilience requirements and a Color
 
 ### Typography / Type
 
-Type is now through **T004**. T004 provides a complete research numeral/punctuation system, proportional/tabular metrics, zero alternatives, actual FreeType evidence, and a compact colon failure→redraw cycle.
+Type is through **T004**. T004 provides a complete research numeral/punctuation system, proportional/tabular metrics, zero alternatives, actual FreeType evidence, and a compact colon failure→redraw cycle.
 
 Color consequences:
 
 - chart labels, numeric readouts and dense status text should not be validated with placeholder typography only;
 - T003/T004 alpha/raster evidence is a strong future transfer case for light/dark/reduced-contrast/environmental Color testing;
-- compact punctuation and marked-zero cases can expose viewing-condition failures that swatch-level contrast misses.
+- C005 adds a downstream layer: even correctly rasterized type can still be altered by export/profile/precision decisions in screenshots and marketing assets.
 
 ### Layout / Interaction
 
-I001 now has a running Chromium validation specimen with a documented failure→revision→re-proof cycle and 14/14 controlled assertions. State meaning, route focus, pending/error/success, status and recovery are structurally defined before visual encoding.
+Layout has advanced L002 through a **216-condition Chromium density/reflow validation**. Naive compactness produced clipped/hidden content and below-contract controls; preserve/adaptive policies retained critical content and interaction geometry while exposing or reducing the true spatial cost. L002 now explicitly hands Color a fixed-geometry transfer target.
+
+I001 remains a running state/navigation specimen with a documented failure→revision→re-proof cycle and 14/14 controlled assertions.
 
 Color consequences:
 
-- current location/focus/pending/error/success remain strong C001/C002 forced-color transfer targets;
-- do not use color to repair an unclear state model;
-- L002 remains a useful controlled test for color-driven perceived density by holding geometry fixed while varying luminance/chroma.
+- use L002 fixed/adaptive geometry to test color-driven visual density without changing layout;
+- use I001 current-location/focus/pending/error/success as C001/C002 semantic-color targets;
+- do not use color to repair unclear geometry or state models.
 
 ### Web Design
 
 At the latest synchronization, Web remains Stage 1 / not yet baselined and no substantive `W###` study is available. **Do not invent Web evidence.**
 
-C001–C003 and Studies 016/017 already provide concrete Color→Web validation contracts for user overrides, semantic token/theme resolution, chart color, wide-gamut/OkLCh/P3 behavior and device/browser fallback.
-
-C004 adds a boundary condition: Web implementation must follow the observer/color-space definitions of governing CSS/sRGB/P3 standards; research observer comparisons are not substitutes for platform definitions.
+C001–C003 and Studies 016/017 provide browser/theme/gamut contracts. C005 adds a concrete asset/export color-management handoff: profile-tagged images, screenshots, P3/sRGB assets, canvas/export paths and profile retention/stripping should be tested in real browsers once Web research begins.
 
 ## Incoming dependencies
 
-- Type may require measured contrast/luminance/viewing-condition evidence for real text, numerals and chart labels.
+- Type may require measured contrast/luminance/viewing-condition and downstream asset-pipeline evidence for real text, numerals and chart labels.
 - Layout & Interaction may require state/focus color contracts, luminance hierarchy, color-vision independence, chart-density evidence and environmental constraints.
-- Web Design may require semantic token, chart palette, forced/system-color, gamut/fallback and device/viewing-condition guidance.
+- Web Design may require semantic token, chart palette, forced/system-color, gamut/fallback, ICC asset/export and device/viewing-condition guidance.
 
 ## Cross-domain opportunities
 
 ### Type
 
-Composite T003/T004 renderer alpha evidence under Color-defined light/dark/background/environment conditions; test compact numerals/punctuation and chart-label roles rather than abstract text samples.
+Composite T003/T004 renderer alpha evidence under Color-defined light/dark/background/environment conditions, then carry representative raster assets through controlled profile/export pipelines to separate renderer failure from color-management failure.
 
 ### Layout / Interaction
 
-Use I001 semantic states and L002 matched geometry to test color without redefining state or layout. Useful cases include current-location/focus/error/pending/success under hue removal/forced colors and density comparisons with geometry fixed.
+Use L002's fixed adaptive geometry for a controlled Color→Layout transfer: vary luminance/chroma/state roles while holding geometry/content constant. Use I001 semantic states for forced-color and semantic-collision tests.
 
 ### Web Design
 
-When W### work exists, transfer-test C001–C003 and Studies 016/017 in real browsers. C004 should inform risk framing for wide-gamut/narrow-primary devices but should not be used to redefine CSS colorimetry.
+When W### work exists:
+
+- transfer-test C001–C003 and Studies 016/017 in real browsers;
+- test profile-tagged sRGB/P3 image assets, screenshots, canvas/export behavior and profile retention/stripping informed by C005;
+- return confirmation, limitation, contradiction or transfer failure rather than silently changing Color assumptions.
 
 ## Active next queue
 
 Research remains ACTIVE. Priorities are expected-value guidance, not hard sequencing:
 
-1. Extend C004 from sparse lines to complete smooth/measured spectra with independently hash-verified current CIE datasets; complete a current CIE 2006 LMS/cone-fundamental comparison only after provenance is verified.
-2. Convert C002 into practice with semantic token graphs and pair/contrast matrices for at least two materially different products, recording collisions and rejected architectures.
+1. Convert C002 into practice with semantic token graphs and pair/contrast matrices for at least two materially different products, recording collisions and rejected architectures.
+2. Use L002's fixed geometry for a Color-driven density/salience transfer study: vary luminance/chroma/semantic-state treatment while keeping geometry/data constant.
 3. Convert C003 into rendered practice: categorical + sequential + diverging visualizations in light/dark conditions with grayscale/CVD/small-mark/state critique and at least one failure→revision cycle.
-4. Validate D65↔D50 adaptation through a real ICC CMM/profile round trip and compare managed conversion with hand calculation.
-5. Compare Bradford/CAT02/CAT16 only on explicitly bounded datasets; do not declare a universal winner.
-6. Validate non-text/focus/ramp and T003/T004 transfer evidence on physical displays under controlled bright/low-light conditions.
-7. Transfer C001/C002/C003 and Studies 016/017 into real browser validation when substantive Web evidence becomes available.
-8. Continue advanced data-visualization work later into cyclic scales, uncertainty, bivariate systems, heatmaps and multi-color gamut optimization.
-9. Build automated token/palette QA only when it validates real design decisions rather than becoming tooling for its own sake.
-10. Open `C005` for the next substantial new Color question when justified.
+4. Extend C005 with float/16-bit transforms, independently sourced/real output profiles, P3→sRGB and display→print paths, soft proof and a second CMM/toolchain where practical.
+5. Extend C004 from sparse lines to complete smooth/measured spectra with independently hash-verified current CIE datasets; complete current CIE 2006 LMS/cone comparison only after provenance is verified.
+6. Compare Bradford/CAT02/CAT16 only on explicitly bounded datasets; do not declare a universal winner.
+7. Validate non-text/focus/ramp and T003/T004 transfer evidence on physical displays under controlled bright/low-light conditions.
+8. Transfer C001/C002/C003/C005 and Studies 016/017 into real browser validation when substantive Web evidence becomes available.
+9. Continue advanced data visualization later into cyclic scales, uncertainty, bivariate systems, heatmaps and multi-color gamut optimization.
+10. Open `C006` for the next substantial new Color question when justified.
 
 ## Open research-quality gaps
 
+- C002 multi-product semantic-system practice and collision evidence;
+- fixed-geometry Color→Layout density/salience transfer using L002;
+- C003 rendered/CVD/human-task evidence;
+- float/high-bit-depth ICC/CMM validation and actual source/destination profiles;
+- P3→sRGB, display→print, soft-proof and cross-CMM evidence;
 - full checksum-verified spectral integration on complete smooth/measured spectra;
 - current CIE 2006 LMS/cone-fundamental numerical comparison and broader observer-diversity evidence;
-- ICC/CMM and profile-based production validation;
-- real browser implementation evidence for modern CSS color, gamut mapping, forced/system colors and token resolution;
-- C002 multi-product semantic-system practice;
-- C003 rendered/CVD/human-task evidence;
+- real browser implementation evidence for modern CSS color, gamut mapping, forced/system colors, token resolution and ICC-tagged assets;
 - physical-display/environmental testing;
 - cyclic/uncertainty/bivariate/advanced data visualization;
 - automated Color QA tied to product acceptance criteria;
@@ -200,21 +243,23 @@ Research remains ACTIVE. Priorities are expected-value guidance, not hard sequen
 
 ### Typography / Type
 
-- C004 adds display/viewing-system dependence to the later transfer of T003/T004 renderer evidence.
+- C005 adds downstream color-management/precision risk after glyph rasterization; this complements T003/T004 renderer-layer evidence.
 - Validate C002 foreground roles and C003 axes/labels/numerals with actual font metrics/rasterization.
 - Scope limit: Color does not define font construction, metrics or hinting.
 
 ### Layout / Interaction
 
-- C004 does not alter the rule that state semantics must survive without hue alone.
-- Use I001 states as controlled semantic targets for C001/C002; use L002 to separate color-driven clutter from geometry-driven density.
+- L002 is now a high-value fixed-geometry Color transfer matrix. Color should vary luminance/chroma/state treatment without changing layout before drawing conclusions about visual density.
+- I001 state semantics remain the correct target for C001/C002; color should encode, not redefine, pending/error/success/focus/current state.
+- C005 adds a diagnostic caution for screenshots/exports: downstream color-management failure must not be mistaken for a geometry/state failure.
 - Scope limit: Color does not redefine navigation/state/task semantics.
 
 ### Web Design
 
 - Implement and challenge C001/C002/C003 in actual page/component/chart systems when Web research begins.
 - Test P3/OkLCh/CSS gamut and fallback behavior from Studies 016/017.
-- C004 warning: do not substitute alternate observer research into CSS/sRGB/P3 definitions; use it only to identify device/spectral risk that may need additional validation.
+- C005: test embedded-profile sRGB/P3 images, screenshots/exports, canvas paths and profile retention/stripping in actual browsers/OS/device conditions.
+- C004: do not substitute alternate observer research into CSS/sRGB/P3 definitions; use it only to identify device/spectral risk.
 - Return browser/device/framework confirmations, limitations, contradictions or transfer failures explicitly.
 
 ## Handoff rule
@@ -227,6 +272,7 @@ If another specialist requests Color evidence, answer with canonical Color evide
 - `C002`: semantic color/token architecture and project-readiness method.
 - `C003`: data-type-driven visualization color systems and numerical scale practice.
 - `C004`: CIE 1931 spectral integration/scaling/metamer practice, 1931↔1964 observer comparison, and dataset-provenance audit.
-- `Spectral colorimetry / observer models` advances to **PRACTICE / CRITIQUE**, not PASS.
-- Next Color study ID: `C005`.
+- `C005`: actual v4 ICC profile/CMM D65→D50 validation, 4,913-color CMM-vs-hand comparison, and 8-bit Lab round-trip failure diagnosis.
+- `Chromatic adaptation / ICC color management` advances to **PRACTICE / CRITIQUE**, not PASS.
+- Next Color study ID: `C006`.
 - Overall Color state remains **CRITIQUE / Foundation NOT PASSED**.
