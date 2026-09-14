@@ -13,18 +13,18 @@ Status vocabulary:
 
 | Domain | Status | Evidence |
 | --- | --- | --- |
-| Composition / visual grammar | IN STUDY | pending transfer + new exercises |
-| Grid / alignment systems | IN STUDY | pending |
-| Color / luminance / contrast | IN STUDY | pending |
-| Typography as information architecture | IN STUDY | pending |
+| Composition / visual grammar | IN STUDY | accessibility composition transfer in `product-design/exercises/001-accessibility-geometry.svg`; dedicated visual-foundation exercise still pending |
+| Grid / alignment systems | IN STUDY | pending dedicated study/exercise |
+| Color / luminance / contrast | IN STUDY | focus/contrast research begun in `research/004-accessibility-reflow-targets-focus.md`; dedicated color-perception work pending |
+| Typography as information architecture | IN STUDY | pending dedicated multi-role composition exercise |
 | Type anatomy / metrics | PRACTICE | `research/001-type-as-system.md`; `research/002-metrics-spacing-optical-rhythm.md`; `type-design/exercises/001-ho-metrics-critique.md` |
-| Stroke / contrast / construction | IN STUDY | pending |
-| Bézier drawing discipline | IN STUDY | first SVG exercise explicitly insufficient; see `type-design/exercises/001-ho-metrics-critique.md` |
-| Optical correction | PRACTICE | overshoot study in `research/002-metrics-spacing-optical-rhythm.md`; first control exercise critique pending measured redraw |
+| Stroke / contrast / construction | PRACTICE | `research/003-stroke-contrast-bezier-optics.md`; `type-design/exercises/002-construction-curve-optics.svg`; critique documents limits and required family extension |
+| Bézier drawing discipline | PRACTICE | `research/003-stroke-contrast-bezier-optics.md`; `type-design/exercises/002-construction-curve-optics.svg`; `type-design/exercises/002-construction-curve-optics-critique.md`; real font-source/raster audit still required |
+| Optical correction | PRACTICE | overshoot study in `research/002-metrics-spacing-optical-rhythm.md`; construction/optics practice in `research/003-stroke-contrast-bezier-optics.md` and Exercise 002; raster comparison pending |
 | Spacing before kerning | PRACTICE | `research/002-metrics-spacing-optical-rhythm.md`; `type-design/exercises/001-ho-metrics-three-hypotheses.svg`; `type-design/exercises/001-ho-metrics-critique.md` |
 | Numerals / punctuation | NOT STARTED | — |
-| Interaction foundations | NOT STARTED | — |
-| Accessibility foundations | IN STUDY | pending |
+| Interaction foundations | IN STUDY | target/action separation, focus state, reflow, and alternate drag operation introduced in `research/004-accessibility-reflow-targets-focus.md` and Product Exercise 001; broader affordance/mapping/status/error-prevention study pending |
+| Accessibility foundations | PRACTICE | `research/004-accessibility-reflow-targets-focus.md`; `product-design/exercises/001-accessibility-geometry.svg`; `product-design/exercises/001-accessibility-geometry-critique.md`; interactive/assistive-tech proof pending |
 | Design history / precedent literacy | NOT STARTED | — |
 
 ## Stage 2 — Intermediate
@@ -44,3 +44,10 @@ All modules: NOT STARTED.
 No global completion announcement until every stage gate in `curriculum/MASTER_CURRICULUM.md` is `PASS` with evidence links.
 
 The first immediate objective is not to design a font or app. It is to complete Stage 1 with enough rigor that later design decisions are materially better than pre-study work.
+
+## Immediate next study block
+
+1. raster proof Exercise 002 at multiple sizes and record a failure→redraw cycle;
+2. begin numerals/punctuation as a distinct metric and ambiguity system;
+3. run a dedicated visual-composition/grid foundation study rather than relying on accessibility transfer alone;
+4. extend interaction foundations into affordance, mapping, system status, recognition/recall, and error prevention.
