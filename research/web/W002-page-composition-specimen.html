@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>W002 Page Composition Specimen</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,sans-serif;background:#f5f5f5;color:#181818}main{max-width:1200px;margin:auto;padding:clamp(16px,3vw,40px)}section{background:white;margin-block:24px;padding:clamp(16px,3vw,32px);border:1px solid #bbb}h1,h2,p{max-width:70ch}.actions,.kpis{display:flex;gap:12px;flex-wrap:wrap}.kpis>div{flex:1 1 150px;border:1px solid #bbb;padding:12px}.chart{min-height:220px;border:1px dashed #777;display:grid;place-items:center}.workspace{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(18rem,.65fr);gap:24px}.table-wrap{overflow:auto;max-width:100%}table{border-collapse:collapse;min-width:720px;width:100%}th,td{border-bottom:1px solid #ccc;padding:8px;text-align:start;white-space:nowrap}@media(max-width:760px){.workspace{grid-template-columns:1fr}}button{font:inherit;padding:8px 12px}
+</style>
+<main>
+<h1>W002 — same information, three relationship models</h1>
+<p>This specimen is a reproducible design artifact, not browser-validation evidence by itself. It preserves one semantic content set while changing the relationship model.</p>
+<section id="direction-a">
+<h2>A — Sequential editorial</h2><p>Portfolio summary with a deliberately long English/Korean label: After-tax cumulative distribution / 세후 누적 분배금 및 원금회수 진행상태</p><div class="actions"><button>Add transaction</button><button>Export history</button></div><div class="kpis"><div>Value<br><strong>$42,810</strong></div><div>Recovery<br><strong>37.8%</strong></div><div>Income<br><strong>$8,240</strong></div><div>Return<br><strong>+12.4%</strong></div></div><div class="chart">Distribution history chart</div><p>Explanation follows the chart in ordinary flow. This direction prioritizes sequential comprehension.</p>
+</section>
+<section id="direction-b">
+<h2>B — Comparison workspace</h2><p>At sufficient measure, chart and records are simultaneously visible. Below the content stress threshold they return to sequential source order.</p><div class="workspace"><div class="chart">Distribution history chart</div><div><strong>Recent records</strong><p>2026-09-10 — Distribution<br>2026-08-10 — Distribution<br>2026-07-10 — Tax adjustment</p></div></div>
+</section>
+<section id="direction-c">
+<h2>C — Dense data with local 2-D preservation</h2><p>The document itself remains bounded; genuinely tabular comparison is allowed local horizontal overflow.</p><div class="table-wrap" tabindex="0" aria-label="Scrollable transaction table"><table><thead><tr><th>Date</th><th>Type</th><th>Ticker</th><th>Quantity</th><th>Price</th><th>Amount</th><th>Tax</th><th>Memo</th></tr></thead><tbody><tr><td>2026-09-10</td><td>Distribution</td><td>CONY</td><td>127.44</td><td>—</td><td>$221.80</td><td>$33.27</td><td>Monthly distribution</td></tr><tr><td>2026-08-10</td><td>Distribution</td><td>CONY</td><td>127.44</td><td>—</td><td>$205.11</td><td>$30.77</td><td>Monthly distribution</td></tr></tbody></table></div>
+</section>
+</main>
+</html>
