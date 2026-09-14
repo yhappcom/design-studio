@@ -1,0 +1,27 @@
+{
+  "study": "I003",
+  "browser": "Chromium 144.0.7559.96 on Debian",
+  "mode": "Playwright forced_colors=active emulation",
+  "naive_failures": {
+    "current_location_fill": "normal: selected tab blue; forced colors: all tab backgrounds resolved to rgb(255,255,255)",
+    "async_state_fills": "normal: 4 distinct fills; forced colors: all 4 state backgrounds resolved to rgb(255,255,255)",
+    "focus_glow": "normal: box-shadow present; forced colors: box-shadow none, outline none"
+  },
+  "robust_survival": {
+    "current_location": ["aria-current=page", "4px structural border", "underline", "stronger weight"],
+    "focus": "3px outline survives with browser-resolved forced color",
+    "async_states": ["Pending", "Failed", "Outcome unknown", "Confirmed"]
+  },
+  "assertions": {
+    "passed": 14,
+    "total": 14
+  },
+  "scope_limits": [
+    "Chromium emulation only",
+    "not Windows High Contrast proof",
+    "not Firefox/Safari proof",
+    "no screen-reader or other AT evidence",
+    "no production token/component implementation",
+    "no human state-recognition evidence"
+  ]
+}
