@@ -11,7 +11,7 @@ Research belongs here when its primary question concerns:
 - numeral and punctuation systems;
 - family planning, variable fonts, OpenType, multiscript/fallback behavior;
 - typography as information architecture and semantic text-role systems;
-- type production, rendering, licensing and font engineering.
+- type production, rendering, packaging, licensing and font engineering.
 
 ## Relationship with other disciplines
 
@@ -21,7 +21,7 @@ Research belongs here when its primary question concerns:
 
 These boundaries define canonical ownership, not limits on learning. Type may investigate adjacent domains for realistic typography validation, replication, method comparison, contradiction review, transfer testing, prerequisite learning or project-specific work. Ordinary cross-domain verification remains in the Type writable area and links back to peer canonical evidence.
 
-For web typography, Type owns font/type intent, metrics, numeral/punctuation behavior, fallback criteria, rendering questions and typographic failure conditions. Web Design applies and stress-tests those findings under actual loading, fallback, wrapping, zoom, localization, responsive layout, browser and device conditions.
+For web typography, Type owns font/type intent, metrics, numeral/punctuation behavior, fallback criteria, rendering questions, packaged-font behavior and typographic failure conditions. Web Design applies and stress-tests those findings under actual loading, fallback, wrapping, zoom, localization, responsive layout, browser and device conditions.
 
 ## Mandatory cross-domain scan
 
@@ -55,34 +55,37 @@ New Type studies:
 - `T005-latin-korean-mixed-script-fallback.md` + Python/JSON/SVG — Latin/Korean fallback, vertical metrics, apparent size and long-label transfer; rejects blind Latin x-height matching as a generic Hangul normalization method.
 - `T006-production-outline-audit.md` + Python/JSON/SVG — production-style `H O n o` source-topology audit, overlap/extrema/winding failure→revision, cubic CFF vs quadratic TrueType export and raster-transfer evidence.
 - `T007-variable-interpolation-source-compatibility.md` + Python/JSON/SVG — two-master `wght` interpolation compatibility, independent-conversion failure, shared conversion revision, and adversarial same-point-count/wrong-correspondence failure.
-- `T008-production-build-release-qa.md` + `T008-production-build-qa.py` / JSON / SVG — generated variable-font release QA: real LSB/xMin/head-flags failure discovered in the previous research builder, corrected metrics/head state, required-table/axis/name/gvar/checksum audit, deliberate `STAT` removal rejection, and corrected bounded reproducible-build proof.
+- `T008-production-build-release-qa.md` + Python/JSON/SVG — generated variable-font release QA: real LSB/xMin/head-flags failure→revision, required-table/axis/name/gvar/checksum audit, deliberate `STAT` removal rejection, and bounded reproducible-build proof.
+- `T009-webfont-subset-feature-contract.md` + Python/JSON — TTF→WOFF2 and feature-aware subsetting release proof using `tnum`; includes a deliberate feature-dropping artifact that remains parseable but violates the numeric contract, plus a QA-checker failure→revision when subset glyph names change.
 
 Generated experimental font binaries remain local outputs; they are not product assets and are not canonical source authority.
 
 ## Current research direction
 
-T006 moved the studio from procedural outline geometry into explicit source/build QA. T007 extended that discipline into variable-family correspondence and proved that build success/equal point counts are weak acceptance criteria. T008 now extends the chain into **generated-binary release QA** and provides a concrete example where a valid interpolation experiment still emitted a non-release-compliant TrueType VF metric/head configuration.
+T006 moved the studio from procedural outline geometry into explicit source/build QA. T007 extended that discipline into variable-family correspondence. T008 extended the chain into generated-binary release QA. T009 now adds a distinct **distribution transformation contract**: packaging and subsetting must preserve the product-required OpenType features, glyph closure and metrics rather than merely produce a smaller readable file.
 
 Current production model:
 
 1. **source/design validity** — contours, master correspondence, spacing/metric intent;
 2. **build/interpolation compatibility** — generated topology, variation coverage, intermediate behavior, warnings;
-3. **binary/spec sanity** — required tables, TrueType VF metric/head requirements, axis/name/STAT consistency, checksum/integrity;
-4. **design regression** — endpoint/intermediate visual and metric behavior, compact raster, fallback/script transfer;
-5. **target integration** — broad QA/sanitizer, WOFF2/app packaging, browser/OS/device, accessibility/localization and human/product evidence.
+3. **binary/spec sanity** — required tables, variable-font metric/head requirements, axis/name/STAT consistency, checksum/integrity;
+4. **distribution transformation contract** — WOFF2/app packaging, subsetting, required feature/glyph/metric retention;
+5. **target shaping/rendering/layout integration** — exact shipped artifact in browser/OS/app, fallback/script, zoom/DPR and layout regression;
+6. **human/product validation**.
 
 No layer substitutes for the next one.
 
 Highest-value next directions are now:
 
-1. **T009 external broad QA + sanitizer integration** — execute FontBakery/Fontspector/OTS or equivalent when tooling is available, classify OpenType/universal/vendor-policy findings, and integrate them with studio-specific assertions rather than treating a single profile as universal truth;
-2. broader variable-family compatibility: three masters, `avar`, multiple axes, components/diacritics, overlap strategy and CFF2;
-3. feature/metric release QA: GSUB/GPOS/kerning, vertical metrics, named instances/STAT AxisValues, numerals, WOFF2 and subsetting;
-4. browser/platform transfer of T001–T008 when substantive Web or a live target stack exists;
-5. Type→Layout regression using release-identified artifacts near known wrap/column/density thresholds;
-6. Type→Color transfer with exact build/axis/render condition pinned;
-7. broader production-outline/family audit of diagonals, `S`, bowl+stem forms, figures, punctuation, components, marks and anchors;
-8. target-platform Korean/Latin proof for Flutter/CoreText/Skia/DirectWrite when project value justifies it.
+1. **T010 external broad QA + sanitizer integration** — execute FontBakery/Fontspector/OTS or equivalent when tooling is available, classify OpenType/universal/vendor-policy findings, and integrate them with studio-specific assertions rather than treating one profile as universal truth;
+2. **variable-font packaging/subsetting** — verify `fvar`/`gvar`/`STAT`/`avar`, named instances and required feature retention in WOFF2/subsets;
+3. broader feature/metric release QA — GPOS/kerning, marks/anchors, `locl`, vertical metrics and multi-script closure;
+4. broader variable-family compatibility — three masters, `avar`, multiple axes, components/diacritics, overlap strategy and CFF2;
+5. browser/platform transfer of T001–T009 when substantive Web or a live target stack exists;
+6. Type→Layout regression using exact shipped artifacts near known wrap/column/density thresholds;
+7. Type→Color transfer with exact build/axis/render condition pinned;
+8. broader production-outline/family audit of diagonals, `S`, bowl+stem forms, figures, punctuation, components, marks and anchors;
+9. target-platform Korean/Latin proof for Flutter/CoreText/Skia/DirectWrite when project value justifies it.
 
 Foundation remains **NOT PASSED**.
 
