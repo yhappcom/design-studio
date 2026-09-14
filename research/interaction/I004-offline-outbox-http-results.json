@@ -1,0 +1,53 @@
+{
+  "environment": {
+    "client_store": "SQLite durable local outbox",
+    "transport": "real HTTP/1.1 localhost via urllib"
+  },
+  "scenarios": {
+    "disjoint": {
+      "kind": "auto_merged",
+      "saved": {"id": "r1", "title": "Flight 101A", "notes": "Weather diversion", "version": 3},
+      "etag": "\"r1-v3\"",
+      "remote_fields": ["title"],
+      "local_fields": ["notes"]
+    },
+    "same_field": {
+      "kind": "same_field_conflict",
+      "overlap": ["title"],
+      "local": {"id": "r1", "title": "Flight 101B", "notes": "Routine", "version": 1},
+      "current": {"id": "r1", "title": "Flight 101A", "notes": "Routine", "version": 2},
+      "base": {"id": "r1", "title": "Flight 101", "notes": "Routine", "version": 1}
+    },
+    "delete_conflict": {
+      "kind": "deleted_conflict",
+      "local": {"id": "r1", "title": "Flight 101", "notes": "Keep this local note", "version": 1},
+      "base": {"id": "r1", "title": "Flight 101", "notes": "Routine", "version": 1}
+    },
+    "keep_as_new": {
+      "kind": "created_new",
+      "record": {"id": "r2", "title": "Flight 101", "notes": "Keep this local note", "version": 1},
+      "etag": "\"r2-v1\""
+    }
+  },
+  "assertions": [
+    {"name":"S0 offline flush stays pending","pass":true},
+    {"name":"S0 outbox not cleared on unavailable network","pass":true},
+    {"name":"S0 durable queue survives client restart","pass":true},
+    {"name":"S1 clients share initial validator","pass":true},
+    {"name":"S1 remote client commits title v2","pass":true},
+    {"name":"S1 queued offline edit survives restart before reconnect","pass":true},
+    {"name":"S1 stale reconnect rebases only after 412/current fetch","pass":true},
+    {"name":"S1 queue clears only after authoritative merged commit","pass":true},
+    {"name":"S2 same-field reconnect remains unresolved","pass":true},
+    {"name":"S2 authoritative server stays remote v2","pass":true},
+    {"name":"S2 local draft and conflict outbox preserved","pass":true},
+    {"name":"S3 remote delete succeeds","pass":true},
+    {"name":"S3 reconnect classifies delete-vs-edit","pass":true},
+    {"name":"S3 original identity remains deleted","pass":true},
+    {"name":"S3 deleted conflict stays durable pending user/domain decision","pass":true},
+    {"name":"S3 explicit keep-as-new creates r2","pass":true},
+    {"name":"S3 new identity recovery does not resurrect r1","pass":true},
+    {"name":"S3 queue clears only after new-identity commit","pass":true}
+  ],
+  "summary": {"passed": 18, "total": 18, "all_pass": true}
+}
