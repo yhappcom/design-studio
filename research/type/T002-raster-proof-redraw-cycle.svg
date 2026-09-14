@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1160" viewBox="0 0 1280 1160">
+<rect width="1280" height="1160" fill="#f4f2ec"/>
+<style>.title{font:700 30px Arial,sans-serif;fill:#151515}.sub{font:400 16px Arial,sans-serif;fill:#454545}.size{font:700 20px Arial,sans-serif;fill:#222}.label{font:700 15px Arial,sans-serif;fill:#222}.metric{font:400 13px Arial,sans-serif;fill:#555}.note{font:400 14px Arial,sans-serif;fill:#444}.rule{stroke:#cbc7bd;stroke-width:1}</style>
+<text x="55" y="52" class="title">T002 — Raster Surrogate Redraw Cycle</text>
+<text x="55" y="82" class="sub">Exercise 002 lowercase n · R0 original dark-join hypothesis vs R1 join-relief redraw</text>
+<text x="55" y="108" class="sub">Embedded PNGs are exact CairoSVG grayscale coverage samples. No font hinting, shaping, metrics, or OS text renderer.</text>
+<line x1="55" y1="132" x2="1225" y2="132" class="rule"/>
+
+    <text x="55" y="165" class="size">14px x-height-equivalent</text>
+    <text x="55" y="194" class="metric">embedded raster: 14×16 px · grayscale coverage · no hinting</text>
+    <text x="55" y="222" class="metric">shoulder run mean: 2.00px → 1.44px</text>
+    <text x="55" y="248" class="metric">median: 2px → 1px · 9 sampled columns · threshold L&lt;128</text>
+    <text x="360" y="165" class="label">R0 original</text>
+    <image x="360" y="190" width="238" height="272" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAAAAAAD/xHmAAAAi0lEQVR42oXPMQ4BYRCG4XeGeguRZRORaJxAJEoNEpVK4QgOwD3cYWu1M6j+kkhcQCS0+BS/ZHcrb/dkipkxUc6vk2XZgVRFdQDt81MyXrfi9D6rjeYd2keJQDodnKXXlt5TBJrZTZI+Q3ZyYNMAsBUHHFjEHX0uOFg3MuOBg/0uSCKL3lXyh1Z98AtHJC+hYv3a5wAAAABJRU5ErkJggg=="/>
+    <text x="780" y="165" class="label">R1 join-relief redraw</text>
+    <image x="780" y="190" width="238" height="272" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAAAAAAD/xHmAAAAhUlEQVR42mP8z4AMmB64hSPzLzGI/UcAJojgr2sP/sFlH8SIybNI9/75/5/hEoPYCeWlf/8/92aI+/+f4RKDqOKJ//////+uwLDmPxMDw39/cwYGBgaOFIZVDEwMDAzJEOP0Ga4zMDEwMOlAuDIMHxiYEC7gZ/iIzGVg+IvKZSDAZUT1IACUWDHmiQojgQAAAABJRU5ErkJggg=="/>
+    
+    <text x="55" y="455" class="size">24px x-height-equivalent</text>
+    <text x="55" y="484" class="metric">embedded raster: 24×27 px · grayscale coverage · no hinting</text>
+    <text x="55" y="512" class="metric">shoulder run mean: 3.22px → 2.22px</text>
+    <text x="55" y="538" class="metric">median: 3px → 2px · 9 sampled columns · threshold L&lt;128</text>
+    <text x="360" y="455" class="label">R0 original</text>
+    <image x="360" y="480" width="240" height="270" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAbCAAAAABDiBCKAAAA5ElEQVR42mP8z4AdsDD8+cPAyI5F5n8GAwPTf0zAhMMkBpwSLHDW5417b/8QMgoyQ7Xjd6cQVMDl3v//////h0q8tGZgYJTUEWdgYGAQPImQeK/LwFF9/////9cTGBgYxJ7AJYIYpK9CndnHwMAQApdg4L4B94AnAwPjTbg/2tThrqthYPi/DOYqke8IL/+TYmBwgumI4kD4jNGCgeE8zOd2yH7WYGB4/xUqYYgsIcbAwPASKiGKLMHNwMDwHSrBgyzBzsDA8AMqwYgetn8ZSI8PekiwMPiIo8nqlDMwSDIw4kqJAPQUdQgWVf66AAAAAElFTkSuQmCC"/>
+    <text x="780" y="455" class="label">R1 join-relief redraw</text>
+    <image x="780" y="480" width="240" height="270" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAbCAAAAABDiBCKAAAA0ElEQVR42mP8z4AdsDD8+cPAyI5F5n8GAwPTf0zAhMMkBtIlWBDM80cvfRVQ9NBBs3yLDVTA6dL//////4dK/Ihj0J50/sG5blkGBs6VCIlfnoyNf/7//////wdnBgaWnXCJUoYemPs/yDEwSHyDSTD7Inw2h4GBYR5MguUOQuIzJwNDEMzn/soIV/PYMDCchHkwBtlrOgwMz35AJZyRJWQZGP6/hErwIkvwMjAwfMEWVuwMDAw/cQXiHwYqxgdVo9ZHHE1Wp5yBQZKBEVdKBABIEHmQmTxkIgAAAABJRU5ErkJggg=="/>
+    
+    <text x="55" y="745" class="size">48px x-height-equivalent</text>
+    <text x="55" y="774" class="metric">embedded raster: 49×55 px · grayscale coverage · no hinting</text>
+    <text x="55" y="802" class="metric">shoulder run mean: 6.67px → 4.89px</text>
+    <text x="55" y="828" class="metric">median: 6px → 4px · 9 sampled columns · threshold L&lt;128</text>
+    <text x="360" y="745" class="label">R0 original</text>
+    <image x="360" y="770" width="294" height="330" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAA3CAAAAACArv3dAAABh0lEQVR42mP8z0AiYGKgvQ4WBob/3yFMTkbitPz//xDKuvCfKEAPfwxOHSw4xN+ee/b+p6CwjioTMaH770iBEkyaN2ztD9TQxdTxd4U+qplys37h1XHRDNOJOpdw6/jXgNVj3Gtw6fgaAg8RYUVBpHTGshi7jm8OEJZ577mf/////3qiSRkeC9ux6fjtx8DAwMBgewzhhL9zhaCywg+w6ChjYGBgYJ/8DyUwH2hCpZ0xdcxiYmBgEDiAnrpfKEDlN2Po0GVgYOA8jJkhTjFD5LX+oetQY2BgWIQtD+VCFezEoiMKa657xg5REIWpg+859owaBlHA/wsj1+ZKYE/I/hDq42X0/MGehyPpe7NB6DPoOrzEcOjgt8ChIxxnvtOCUOfRdDC74tShAaGeoOlQEcKpA5pSXv9F1aGOuzSQh1B/X6HqUMStgxdKv0TVIYlbBzeU/oyqA7c3GHig2fEnqg4O3DqYObDqYMNTEEIT/C9UHUQUqL9ILnf/DaP6Y1THyNPBOCjbiQAEIJaGSVGGWAAAAABJRU5ErkJggg=="/>
+    <text x="780" y="745" class="label">R1 join-relief redraw</text>
+    <image x="780" y="770" width="294" height="330" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAA3CAAAAACArv3dAAABdUlEQVR42mP8z0AiYGKgvQ4WBob/3yFMTkbitPz//xDKuvCfKEAPf4xcHSw4ZT69YWAQ5idSx/+juw9c+sDAwMAgoO/obUIwzj+2KqOoMJz7BznOMXT87hbGsFPvAJIOdFddTz/LwMDAoK8jJvbryYWz/xgYGBgYLjnV1zDhcNU6TgYGBune+1DznjfCvB7yG7urpjIzMHA2fEFyw3M3qGz4H2w6ljIyMIgdR03cf+Kg0tVYdBxkY2BQuoeeH/64QON6L4aOo3IMDHxXMLPQcx6IvPJvdB1BDAyMm7HlujqogiXoOtQYGOKx5tOPIhAFzpg6+F9gz9o5UJ98wMjnFeLYE2UwhPp3Ej21c6XhSMa2YhD6BLqOWCEcOpitIPRxdB0ZOPOKNoS6g6ZD0gCnDi0I9RRNhz3unKoJob5/QNVhi1sHLMs8Q9UhilsHL5T+QHRZAtPxg2gdLJwQ+ifx5RUzyToYyNXxb7T+GNUxhHUwDsp2IgA3/2uuj6hMYgAAAABJRU5ErkJggg=="/>
+    
+<line x1="55" y1="1050" x2="1225" y2="1050" class="rule"/>
+<text x="55" y="1085" class="note">Finding: R1 reduces thresholded shoulder thickness by about 27–31%, but compact samples become markedly thinner; 14px median shoulder run falls from 2px to 1px.</text>
+<text x="55" y="1112" class="note">Interpretation: an enlarged-outline correction can create a small-size failure. Compiled-font, hinting and target-renderer validation is still required before any optical-size decision.</text>
+</svg>
