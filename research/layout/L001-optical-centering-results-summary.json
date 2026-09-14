@@ -1,0 +1,57 @@
+{
+  "study": "L001 optical-centering validation",
+  "chromium": "144.0.7559.96",
+  "target_css_px": 48,
+  "visual_sizes_css_px": [16, 24, 32, 40],
+  "device_pixel_ratios": [1, 2],
+  "method": "darkness-weighted Chromium screenshot centroid; keep target fixed; measure visual child at zero translation; apply rounded negative centroid error as a candidate correction; re-render",
+  "scope": "measured raster mass centroid only; not human perceived optical center",
+  "dpr1_summary": {
+    "play": {
+      "16": {"zero_error_xy": [-0.66, 0.0], "candidate_offset_xy": [1, 0], "residual_radius": 0.34},
+      "24": {"zero_error_xy": [-0.99, 0.0], "candidate_offset_xy": [1, 0], "residual_radius": 0.01},
+      "32": {"zero_error_xy": [-1.35, 0.0], "candidate_offset_xy": [1, 0], "residual_radius": 0.35},
+      "40": {"zero_error_xy": [-1.66, 0.0], "candidate_offset_xy": [2, 0], "residual_radius": 0.34}
+    },
+    "chevron": {
+      "16": {"zero_error_xy": [-0.57, 0.0], "candidate_offset_xy": [1, 0], "residual_radius": 0.43},
+      "24": {"zero_error_xy": [-0.88, 0.03], "candidate_offset_xy": [1, 0], "residual_radius": 0.12},
+      "32": {"zero_error_xy": [-1.15, 0.0], "candidate_offset_xy": [1, 0], "residual_radius": 0.15},
+      "40": {"zero_error_xy": [-1.48, 0.03], "candidate_offset_xy": [1, 0], "residual_radius": 0.48}
+    },
+    "send": {
+      "16": {"zero_error_xy": [-0.56, 0.0], "candidate_offset_xy": [1, 0], "residual_radius": 0.44},
+      "24": {"zero_error_xy": [-0.84, 0.0], "candidate_offset_xy": [1, 0], "residual_radius": 0.16},
+      "32": {"zero_error_xy": [-1.11, 0.0], "candidate_offset_xy": [1, 0], "residual_radius": 0.11},
+      "40": {"zero_error_xy": [-1.39, 0.0], "candidate_offset_xy": [1, 0], "residual_radius": 0.39}
+    },
+    "asym_mark": {
+      "16": {"zero_error_xy": [-0.07, 0.18], "candidate_offset_xy": [0, 0], "residual_radius": 0.19},
+      "24": {"zero_error_xy": [-0.10, 0.26], "candidate_offset_xy": [0, 0], "residual_radius": 0.28},
+      "32": {"zero_error_xy": [-0.14, 0.34], "candidate_offset_xy": [0, 0], "residual_radius": 0.36},
+      "40": {"zero_error_xy": [-0.17, 0.43], "candidate_offset_xy": [0, 0], "residual_radius": 0.46}
+    },
+    "badge_object": {
+      "16": {"zero_error_xy": [0.16, -0.23], "candidate_offset_xy": [0, 0], "residual_radius": 0.28},
+      "24": {"zero_error_xy": [0.37, -0.36], "candidate_offset_xy": [0, 0], "residual_radius": 0.52},
+      "32": {"zero_error_xy": [0.41, -0.40], "candidate_offset_xy": [0, 0], "residual_radius": 0.57},
+      "40": {"zero_error_xy": [0.51, -0.50], "candidate_offset_xy": [-1, 1], "residual_radius": 0.70}
+    },
+    "bookmark": {
+      "16": {"zero_error_xy": [0.0, -0.28], "candidate_offset_xy": [0, 0], "residual_radius": 0.28},
+      "24": {"zero_error_xy": [0.0, -0.45], "candidate_offset_xy": [0, 0], "residual_radius": 0.45},
+      "32": {"zero_error_xy": [0.0, -0.63], "candidate_offset_xy": [0, 1], "residual_radius": 0.37},
+      "40": {"zero_error_xy": [0.0, -0.74], "candidate_offset_xy": [0, 1], "residual_radius": 0.26}
+    }
+  },
+  "dpr_transfer": "DPR 2 preserved the direction and broad magnitude of measured mass-centroid bias for the tested shapes; it did not establish perceptual equivalence across devices.",
+  "key_finding": "No universal integer optical offset survives across shape and visual size. Even within one shape family, the rounded correction can change with size (e.g. play +1px at 16-32px but +2px at 40px in this controlled target).",
+  "open": [
+    "Human forced-choice/blinded optical-center judgment",
+    "Physical device intended-size proof",
+    "RTL/mirroring and icon+label contexts",
+    "Different stroke weights and icon families",
+    "Subpixel transforms and platform rasterizers",
+    "Border-ownership and visual-balance human validation remain separate L001 gates"
+  ]
+}
