@@ -4,6 +4,10 @@ This harness intentionally does not redistribute CIE datasets. Download the curr
 CIE 1931 2° CSV from the authoritative CIE source, then pass its local path.
 The raw byte MD5 is checked before any numerical result is produced.
 
+Optional CIE 1964 and CIE 2006 LMS paths are checksum-audited only. They are not
+used for observer/cone calculations unless their current identities are verified and
+a later study explicitly adds that calculation.
+
 The 5 nm exercise is a sampling-grid sensitivity diagnostic. It is not a model of
 spectroradiometer optical bandwidth, stray light, wavelength accuracy, or noise.
 """
@@ -14,7 +18,6 @@ import argparse
 import csv
 import hashlib
 import json
-import math
 from pathlib import Path
 
 import numpy as np
@@ -26,6 +29,20 @@ EXPECTED_2006_LMS_2DEG_MD5 = "27c74cc0f98edecadc02fc71f540b116"
 
 def md5_bytes(data: bytes) -> str:
     return hashlib.md5(data).hexdigest()
+
+
+def checksum_audit(path: Path | None, expected_md5: str) -> dict | None:
+    if path is None:
+        return None
+    raw = path.read_bytes()
+    observed = md5_bytes(raw)
+    return {
+        "path": str(path),
+        "observed_md5": observed,
+        "expected_md5": expected_md5,
+        "match": observed == expected_md5,
+        "size_bytes": len(raw),
+    }
 
 
 def load_cie1931(path: Path) -> tuple[np.ndarray, np.ndarray, dict]:
@@ -103,6 +120,8 @@ def evaluate_spectrum(spd: np.ndarray, cmf: np.ndarray) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("cie1931", type=Path, help="current CIE_xyz_1931_2deg.csv")
+    parser.add_argument("--cie1964", type=Path, default=None, help="optional checksum audit")
+    parser.add_argument("--cie2006-lms", type=Path, default=None, help="optional checksum audit")
     parser.add_argument("--out", type=Path, default=None)
     args = parser.parse_args()
 
@@ -130,9 +149,11 @@ def main() -> None:
             "expected_md5": EXPECTED_1931_MD5,
             **provenance,
         },
-        "reference_checksums_not_used_for_unverified_calculation": {
-            "cie_1964_10deg_md5": EXPECTED_1964_MD5,
-            "cie_2006_lms_2deg_md5": EXPECTED_2006_LMS_2DEG_MD5,
+        "optional_provenance_audits": {
+            "cie_1964_10deg": checksum_audit(args.cie1964, EXPECTED_1964_MD5),
+            "cie_2006_lms_2deg": checksum_audit(
+                args.cie2006_lms, EXPECTED_2006_LMS_2DEG_MD5
+            ),
         },
         "integration": {
             "observer": "CIE 1931 2 degree",
