@@ -1,0 +1,36 @@
+{
+  "finance_light": [
+    {"foreground_role":"content.primary","background_role":"surface.canvas","foreground":"#152028","background":"#F7F9FA","purpose":"text","threshold":4.5,"contrast_ratio":15.6686,"passes_numeric_contract":true},
+    {"foreground_role":"content.secondary","background_role":"surface.canvas","foreground":"#52616B","background":"#F7F9FA","purpose":"text","threshold":4.5,"contrast_ratio":6.0609,"passes_numeric_contract":true},
+    {"foreground_role":"action.primary.content","background_role":"action.primary.surface","foreground":"#FFFFFF","background":"#155EEF","purpose":"text","threshold":4.5,"contrast_ratio":5.4133,"passes_numeric_contract":true},
+    {"foreground_role":"content.primary","background_role":"brand.accent","foreground":"#152028","background":"#7CDDD3","purpose":"text-on-brand","threshold":4.5,"contrast_ratio":10.3537,"passes_numeric_contract":true},
+    {"foreground_role":"content.primary","background_role":"surface.selected","foreground":"#152028","background":"#E7F8F6","purpose":"text-selected","threshold":4.5,"contrast_ratio":15.0934,"passes_numeric_contract":true},
+    {"foreground_role":"focus.indicator","background_role":"surface.raised","foreground":"#1D4ED8","background":"#FFFFFF","purpose":"focus-boundary","threshold":3.0,"contrast_ratio":6.7016,"passes_numeric_contract":true},
+    {"foreground_role":"focus.indicator","background_role":"surface.canvas","foreground":"#1D4ED8","background":"#F7F9FA","purpose":"focus-boundary","threshold":3.0,"contrast_ratio":6.3460,"passes_numeric_contract":true},
+    {"foreground_role":"boundary.strong","background_role":"surface.raised","foreground":"#7D8C97","background":"#FFFFFF","purpose":"essential-boundary","threshold":3.0,"contrast_ratio":3.4596,"passes_numeric_contract":true},
+    {"foreground_role":"boundary.strong","background_role":"surface.canvas","foreground":"#7D8C97","background":"#F7F9FA","purpose":"essential-boundary","threshold":3.0,"contrast_ratio":3.2760,"passes_numeric_contract":true},
+    {"foreground_role":"status.success","background_role":"surface.raised","foreground":"#167A4B","background":"#FFFFFF","purpose":"status-text","threshold":4.5,"contrast_ratio":5.3578,"passes_numeric_contract":true},
+    {"foreground_role":"status.caution","background_role":"surface.raised","foreground":"#9A6700","background":"#FFFFFF","purpose":"status-text","threshold":4.5,"contrast_ratio":4.8678,"passes_numeric_contract":true},
+    {"foreground_role":"status.critical","background_role":"surface.raised","foreground":"#B42318","background":"#FFFFFF","purpose":"status-text","threshold":4.5,"contrast_ratio":6.5743,"passes_numeric_contract":true},
+    {"foreground_role":"status.info","background_role":"surface.raised","foreground":"#175CD3","background":"#FFFFFF","purpose":"status-text","threshold":4.5,"contrast_ratio":5.9865,"passes_numeric_contract":true}
+  ],
+  "operational_dark": [
+    {"foreground_role":"content.primary","background_role":"surface.canvas","foreground":"#F2F4F5","background":"#0D1317","purpose":"text","threshold":4.5,"contrast_ratio":16.9550,"passes_numeric_contract":true},
+    {"foreground_role":"content.primary","background_role":"surface.raised","foreground":"#F2F4F5","background":"#161D23","purpose":"text","threshold":4.5,"contrast_ratio":15.4232,"passes_numeric_contract":true},
+    {"foreground_role":"content.secondary","background_role":"surface.canvas","foreground":"#AAB4BC","background":"#0D1317","purpose":"text","threshold":4.5,"contrast_ratio":8.8754,"passes_numeric_contract":true},
+    {"foreground_role":"content.secondary","background_role":"surface.raised","foreground":"#AAB4BC","background":"#161D23","purpose":"text","threshold":4.5,"contrast_ratio":8.0736,"passes_numeric_contract":true},
+    {"foreground_role":"action.onActive","background_role":"action.active","foreground":"#0D1317","background":"#89B4C8","purpose":"text-on-action","threshold":4.5,"contrast_ratio":8.3965,"passes_numeric_contract":true},
+    {"foreground_role":"focus.indicator","background_role":"surface.canvas","foreground":"#C4E6F0","background":"#0D1317","purpose":"focus-boundary","threshold":3.0,"contrast_ratio":14.1846,"passes_numeric_contract":true},
+    {"foreground_role":"focus.indicator","background_role":"surface.raised","foreground":"#C4E6F0","background":"#161D23","purpose":"focus-boundary","threshold":3.0,"contrast_ratio":12.9031,"passes_numeric_contract":true},
+    {"foreground_role":"boundary.strong","background_role":"surface.canvas","foreground":"#5E6D78","background":"#0D1317","purpose":"essential-boundary","threshold":3.0,"contrast_ratio":3.5048,"passes_numeric_contract":true},
+    {"foreground_role":"boundary.strong","background_role":"surface.raised","foreground":"#5E6D78","background":"#161D23","purpose":"essential-boundary","threshold":3.0,"contrast_ratio":3.1882,"passes_numeric_contract":true},
+    {"foreground_role":"status.success","background_role":"surface.raised","foreground":"#6FAF88","background":"#161D23","purpose":"status-text","threshold":4.5,"contrast_ratio":6.6147,"passes_numeric_contract":true},
+    {"foreground_role":"status.caution","background_role":"surface.raised","foreground":"#D7A44A","background":"#161D23","purpose":"status-text","threshold":4.5,"contrast_ratio":7.5344,"passes_numeric_contract":true},
+    {"foreground_role":"status.critical","background_role":"surface.raised","foreground":"#D9605D","background":"#161D23","purpose":"status-text","threshold":4.5,"contrast_ratio":4.6847,"passes_numeric_contract":true}
+  ],
+  "limits": [
+    "These results validate only the declared numeric contrast contracts.",
+    "They do not establish CVD robustness, semantic comprehension, salience hierarchy, forced-colors behavior, browser/device rendering, environmental visibility, or product suitability.",
+    "The two contexts are transfer specimens, not final MintTap or LogMate product color decisions."
+  ]
+}
