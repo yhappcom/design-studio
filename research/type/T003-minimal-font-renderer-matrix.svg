@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1880" viewBox="0 0 1600 1880">
+<rect width="1600" height="1880" fill="#f4f2ec"/>
+<style>.t{font:700 30px Arial,sans-serif;fill:#171717}.s{font:400 16px Arial,sans-serif;fill:#444}.h{font:700 22px Arial,sans-serif;fill:#222}.m{font:700 16px Arial,sans-serif;fill:#222}.n{font:400 13px Arial,sans-serif;fill:#555}.r{stroke:#ccc7bd;stroke-width:1}.box{fill:#fff;stroke:#d5d0c7;stroke-width:1}</style>
+<text x="55" y="55" class="t">T003 — Minimal Research Font / FreeType Renderer Matrix</text>
+<text x="55" y="88" class="s">Quadratic TTF built from T002 R0/R1 contours · same source advance (560/1000 em) · R1 mapped only to private-use U+E000 for research.</text>
+<text x="55" y="116" class="s">Modes: no-hint / forced autohint normal / forced autohint light. Values below are real FreeType bitmap output, not SVG rasterization.</text>
+<line x1="55" y1="140" x2="1545" y2="140" class="r"/>
+<text x="280" y="180" text-anchor="middle" class="m">no-hint</text>
+<text x="720" y="180" text-anchor="middle" class="m">autohint-normal</text>
+<text x="1160" y="180" text-anchor="middle" class="m">autohint-light</text>
+<text x="55" y="250" class="h">14 ppem</text>
+<text x="55" y="277" class="n">em-size request; nominal x-height = 0.5 em in this research font</text>
+<rect x="90" y="225" width="380" height="330" class="box"/>
+<text x="115" y="253" class="m">R0</text><text x="305" y="253" class="m">R1</text>
+<image x="133" y="301" width="98" height="98" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAAAAADhOQgPAAAAPUlEQVR4nGOYkPD//////5kYGLo9NMoYWBj8/u746biQieFOCAN7zA4mhlsMDAwSb5gY/jAwMDD9ZmKAAAB1nRFrBNtT9QAAAABJRU5ErkJggg=="/>
+<image x="323" y="301" width="98" height="98" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAAAAADhOQgPAAAAPUlEQVR4nGOYkPD//////1kYGG5seurjysKgfaDss20bEwNHBgNv4jImhrMMDAwyL5kYGBgYGJh/Q2gGBgB3jRBnhkGE6AAAAABJRU5ErkJggg=="/>
+<text x="115" y="455" class="n">coverage: 15.3 → 14.3 px-eq (-6.0%)</text>
+<text x="115" y="478" class="n">strong pixels: 13 → 11</text>
+<text x="115" y="501" class="n">advance: 7.84 → 7.84 px</text>
+<text x="115" y="524" class="n">bitmap: 7×7 → 7×7</text>
+<rect x="530" y="225" width="380" height="330" class="box"/>
+<text x="555" y="253" class="m">R0</text><text x="745" y="253" class="m">R1</text>
+<image x="573" y="301" width="98" height="98" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAAAAADhOQgPAAAAPklEQVR4nGN4IvL//////5kYGB7nuE/4z8LAUdPAFf2f4Yn67f//9xswMXxWYWBQeMbE8IuBgYHlJxMDBAAA1wIUdJZBj4QAAAAASUVORK5CYII="/>
+<image x="763" y="301" width="98" height="98" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAAAAADhOQgPAAAAPklEQVR4nGO4oPD//////1kYGN4sfKKSyXBBq/rHv4RShgs2z///vyDFxPBEgoFB5hUTAwMDAwPzHwjNwAAABycVEGIv45wAAAAASUVORK5CYII="/>
+<text x="555" y="455" class="n">coverage: 15.3 → 14.9 px-eq (-2.9%)</text>
+<text x="555" y="478" class="n">strong pixels: 15 → 15</text>
+<text x="555" y="501" class="n">advance: 8.00 → 8.00 px</text>
+<text x="555" y="524" class="n">bitmap: 7×7 → 7×7</text>
+<rect x="970" y="225" width="380" height="330" class="box"/>
+<text x="995" y="253" class="m">R0</text><text x="1185" y="253" class="m">R1</text>
+<image x="1013" y="301" width="98" height="98" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAAAAADhOQgPAAAAPUlEQVR4nGOYkPD//////5kYGI5E+G5iYGGw2DrjaQAPCwNjG6NA+mImhnOMDAwKz5gYfjIwMLD8ZGKAAABXwRBKpHd3hQAAAABJRU5ErkJggg=="/>
+<image x="1203" y="301" width="98" height="98" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAAAAADhOQgPAAAAPklEQVR4nGPYY/L//////1kYGJ4ufWKYyMIgPKeaMeg1w56Yz///79FjYrjBw8Ag84qJgYGBgYH5N4RmYAAAw1wTPTsiXLEAAAAASUVORK5CYII="/>
+<text x="995" y="455" class="n">coverage: 15.0 → 14.7 px-eq (-1.9%)</text>
+<text x="995" y="478" class="n">strong pixels: 13 → 13</text>
+<text x="995" y="501" class="n">advance: 8.00 → 8.00 px</text>
+<text x="995" y="524" class="n">bitmap: 7×7 → 7×7</text>
+<text x="55" y="620" class="h">16 ppem</text>
+<text x="55" y="647" class="n">em-size request; nominal x-height = 0.5 em in this research font</text>
+<rect x="90" y="595" width="380" height="330" class="box"/>
+<text x="115" y="623" class="m">R0</text><text x="305" y="623" class="m">R1</text>
+<image x="126" y="664" width="112" height="112" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAAAAADhZOFXAAAASElEQVR4nGNYovL///////8zMTA8jVWyOcDAsMTA89S3uRw3GJZ4HPr//79jHRPDe1sGBga9G0wMbxkYGBgEPjMxQMA/GIMBAHtyGBFUcBL7AAAAAElFTkSuQmCC"/>
+<image x="316" y="664" width="112" height="112" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAAAAADhZOFXAAAASElEQVR4nGNYovL///////+zMDAwnD7MGcXPxMDQ/ijglcErhiWu6/7//2/axsTwzp+BgcHyIhPDRyYGBgbBT0wMEPAPxmAAAEN9Fxhm58VHAAAAAElFTkSuQmCC"/>
+<text x="115" y="825" class="n">coverage: 20.9 → 19.5 px-eq (-6.7%)</text>
+<text x="115" y="848" class="n">strong pixels: 23 → 18</text>
+<text x="115" y="871" class="n">advance: 8.95 → 8.95 px</text>
+<text x="115" y="894" class="n">bitmap: 8×8 → 8×8</text>
+<rect x="530" y="595" width="380" height="330" class="box"/>
+<text x="555" y="623" class="m">R0</text><text x="745" y="623" class="m">R1</text>
+<image x="564" y="668" width="117" height="104" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAICAAAAAAOpoppAAAAS0lEQVR4nEXGsQ1AUBRA0ZufqFQ6e9CYyg4G0EvUur+CygBvFMXXiauRONUhOFU1QTX1wwoE41aOdpEgq3Mnwa3utQkK0FxP4vOPFxQyH2FaDWgJAAAAAElFTkSuQmCC"/>
+<image x="756" y="664" width="112" height="112" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAAAAADhZOFXAAAASUlEQVR4nGP4w3Dm//////+zMDAwvFr71Ved4Q/D5+bbW6V2MPxhOPD///9eO4Y/DPf+//9/jJ+JgeEdAwOD4CcmBgj4D2MwAAAr5hzCH7oYzAAAAABJRU5ErkJggg=="/>
+<text x="555" y="825" class="n">coverage: 21.1 → 18.6 px-eq (-12.1%)</text>
+<text x="555" y="848" class="n">strong pixels: 17 → 14</text>
+<text x="555" y="871" class="n">advance: 9.00 → 9.00 px</text>
+<text x="555" y="894" class="n">bitmap: 9×8 → 8×8</text>
+<rect x="970" y="595" width="380" height="330" class="box"/>
+<text x="995" y="623" class="m">R0</text><text x="1185" y="623" class="m">R1</text>
+<image x="1006" y="664" width="112" height="112" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAAAAADhZOFXAAAASElEQVR4nGNYovL///////8zMTC8ytRzP8bAsMTA59inmZy3GJZ4HPr//79DPRPDO1sGBgb9G0wM7xgYGBgEPjExQMA/GIMBAIS1GDkiBxL5AAAAAElFTkSuQmCC"/>
+<image x="1196" y="664" width="112" height="112" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAAAAADhZOFXAAAASElEQVR4nGO4wfDh//////+zMDAw3N/8J0SOiYHh2HYfUeOTDDcY5vz//z8ziOEGw9////8vUmZiYPjMwMAg+ImJAQL+wRgMALZSGmEbnEHzAAAAAElFTkSuQmCC"/>
+<text x="995" y="825" class="n">coverage: 20.8 → 19.5 px-eq (-6.0%)</text>
+<text x="995" y="848" class="n">strong pixels: 23 → 15</text>
+<text x="995" y="871" class="n">advance: 9.00 → 9.00 px</text>
+<text x="995" y="894" class="n">bitmap: 8×8 → 8×8</text>
+<text x="55" y="990" class="h">24 ppem</text>
+<text x="55" y="1017" class="n">em-size request; nominal x-height = 0.5 em in this research font</text>
+<rect x="90" y="965" width="380" height="330" class="box"/>
+<text x="115" y="993" class="m">R0</text><text x="305" y="993" class="m">R1</text>
+<image x="122" y="1030" width="120" height="120" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAbUlEQVR4nFXHIRIBYRgA0Lff/F12A0FnzBbBERQHULc4hFupmhMIZgSCYGaHsGs+yeC1pzXNjwKu+5wM0Zo+1hGi6VOrni8Or9PSJrWausvMblQuQbUtKKt+F9xmYOwYnCswcA+eQOjCV/7GX97FfSmtDY+GkgAAAABJRU5ErkJggg=="/>
+<image x="312" y="1030" width="120" height="120" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAb0lEQVR4nGP4wmDxHwaYGJAACwMDA8PrmUd/G2YrMDB8YbA4aLnqxk4jnp3/Gb4wBGi/+f///1s+oU9MDAwKDcIMDAxC8e92MTEwvPFnYGBgYDBiuM/EwCDDwMDAwCDF8B5uJhvDNyTzUexCZgMAGmIedSKs7J4AAAAASUVORK5CYII="/>
+<text x="115" y="1195" class="n">coverage: 46.9 → 44.0 px-eq (-6.2%)</text>
+<text x="115" y="1218" class="n">strong pixels: 50 → 46</text>
+<text x="115" y="1241" class="n">advance: 13.44 → 13.44 px</text>
+<text x="115" y="1264" class="n">bitmap: 12×12 → 12×12</text>
+<rect x="530" y="965" width="380" height="330" class="box"/>
+<text x="555" y="993" class="m">R0</text><text x="745" y="993" class="m">R1</text>
+<image x="567" y="1030" width="110" height="120" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAMCAAAAACRwhhCAAAAaklEQVR4nE3GKxJBARQA0OMKisAOXpSMHQiKPTwjWIUo0ixGMCPplqAqJJ/iM65gmHfSMVvmD0XmY7c9fv9etInykhTj3uZ2mBok/c41M3NkFWrzJkysw2sIuvbh1AAt53AH6p7hLytX/Qd4uSrw8kPX6wAAAABJRU5ErkJggg=="/>
+<image x="757" y="1030" width="110" height="120" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAMCAAAAACRwhhCAAAAaElEQVR4nGMwYfjxHwqYGBCAhYGB4ffCbe8Uk2wZmBgYvjp9bun8aVfPwGDC4Hjw/////+wY9jAxMFjYMTAwMOYzrGBiYEhmYGBgYDBiuM/EwCDDwMDAwCDF8B5uJhvDNyTzUexCZgMAGmIedSKs7J4AAAAASUVORK5CYII="/>
+<text x="555" y="1195" class="n">coverage: 46.7 → 45.0 px-eq (-3.7%)</text>
+<text x="555" y="1218" class="n">strong pixels: 49 → 49</text>
+<text x="555" y="1241" class="n">advance: 14.00 → 13.00 px</text>
+<text x="555" y="1264" class="n">bitmap: 11×12 → 11×12</text>
+<rect x="970" y="965" width="380" height="330" class="box"/>
+<text x="995" y="993" class="m">R0</text><text x="1185" y="993" class="m">R1</text>
+<image x="1002" y="1030" width="120" height="120" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAeElEQVR4nFXHIQrCYBzG4d/+8oGYvITNrjAsK4s7gIcwirBg3xU8i2kgHmHBtiIm8WOyb+Br0OF82kPYH9TDs5SaU/n4pt1OYJy/hCdOk/OzytgJz2YVJIWZuxpEhQPcujsa3BYAzLkY1AAw5W7QfjKiM340DH95A98MMUqj8NCXAAAAAElFTkSuQmCC"/>
+<image x="1197" y="1030" width="110" height="120" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAMCAAAAACRwhhCAAAAZ0lEQVR4nGNQ4PkPA0wMCMDCwMDwfe7uT+ppRgwMCjy3LaZfP+LDPO0/gwK/3sX/////1mW+ysTA6a/HwMDAkvN3NRPDvyQGBgYGBiOG+0wM3xQYGBgYGKQY3sPNZGP4hmQ+il3IbAALViHhd/GmPgAAAABJRU5ErkJggg=="/>
+<text x="995" y="1195" class="n">coverage: 45.6 → 44.8 px-eq (-1.9%)</text>
+<text x="995" y="1218" class="n">strong pixels: 48 → 47</text>
+<text x="995" y="1241" class="n">advance: 13.00 → 13.00 px</text>
+<text x="995" y="1264" class="n">bitmap: 12×12 → 11×12</text>
+<text x="55" y="1360" class="h">48 ppem</text>
+<text x="55" y="1387" class="n">em-size request; nominal x-height = 0.5 em in this research font</text>
+<rect x="90" y="1335" width="380" height="330" class="box"/>
+<text x="115" y="1363" class="m">R0</text><text x="305" y="1363" class="m">R1</text>
+<image x="125" y="1400" width="115" height="120" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAYCAAAAAA0FzmpAAAAyklEQVR4nLWRvQ4BQRRGj4lqRbKJTiJCpaHU+HkBT+EN9BoKiVqp9xJKlUqCQiVW0CGxhBBrFDPWCAqFW809ydzc71zWQEW+leBzfeNB/3Xq9pbXaK4UVq2ef6jr3mqcpZRS80kSEOpz3vX5wCZcHXm3VTsOFDzNawmyC7Xfvgi0NJ+S3j0W30bAPiruBMfPRE2go3nZSDoDypr3TQUJyCgPm6wZNQWO8jAMmDwG7kkAzF/UhIC9ADi8cAs4CwDvTefli+ef7/JvfgeHaYjGiLsXvwAAAABJRU5ErkJggg=="/>
+<image x="315" y="1400" width="115" height="120" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAYCAAAAAA0FzmpAAAAvUlEQVR4nGN4w8DAUPAfAzAxYAekirMgmDdP3mLgNzPngPBg9q41hfCFm7/+////P1T8vSeDbsuG3XP9GRkYdO/AxZ/rsE3/9///////9wowMMi8gooX2zNvhzl8FwMDgxtU/AJDO8JHIQwMDMch4g80fiHE9zMwMORBxecihcAfQQYGc4j4lW/IQWPHwCAICZ89nMheVWFgeP+LiYGBgeEBShDwMTAwfMASPtwMDAw/cYTbLxziVIsXaokDAHVuipzrExFtAAAAAElFTkSuQmCC"/>
+<text x="115" y="1565" class="n">coverage: 187.7 → 175.6 px-eq (-6.4%)</text>
+<text x="115" y="1588" class="n">strong pixels: 196 → 183</text>
+<text x="115" y="1611" class="n">advance: 26.88 → 26.88 px</text>
+<text x="115" y="1634" class="n">bitmap: 23×24 → 23×24</text>
+<rect x="530" y="1335" width="380" height="330" class="box"/>
+<text x="555" y="1363" class="m">R0</text><text x="745" y="1363" class="m">R1</text>
+<image x="567" y="1397" width="110" height="125" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAZCAAAAAAQiYEyAAAA6klEQVR4nMWRMWvCUBSFvzwkRRQ00IAiRaSgpEs7dJfSSRB/QWbBza26+R9Kl85dBMf+gGzpUiiZ2kHIZktFM1kiLbdDUnmk7eyZLud9HM671/A8GJbIagKEkpX6xQGQ0+bo1bJTbEc/DqqWUym7vp69co302ejHIpKEhJ1nji5q0dODyO1iZib0+hj77ktEJDgFxiJMgBGNn46rFpgvSUE/f19Po60b2F6nTa5Odi0vz2Ca0IWh1r4H73MF0NV3cg4ECqCt/7sJLBSAo9uHwJsCWOp2EdgogA/dPgBiBSBk9Pn3vv87wx7sb5BHVQDCgKXzAAAAAElFTkSuQmCC"/>
+<image x="757" y="1400" width="110" height="120" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAAAAADb1VKXAAAAvElEQVR4nGM4wcDAMOU/OmBiwApIE2ZBMM+fvccsbGUEEYFa+XemBkRSbsqf////Q4UfmjBY923ZMc2BgYHB6RVM+KoU/waIy5awMjAYf4cIL1TlvQhz8XQGBoYsiPBzhtVwj/wzZGBgfcrEwMDA8ME9BO4exiwGht9rIe6uQnKyHwMDw0mGEwwMDP9QwkOKgcGUiYGBgWEbig9VGBheMDEwMDA8QBHmY2D4gCVMuBkYfmIPql9UCW9aCgMAmIhoUUYlX5wAAAAASUVORK5CYII="/>
+<text x="555" y="1565" class="n">coverage: 192.6 → 175.4 px-eq (-8.9%)</text>
+<text x="555" y="1588" class="n">strong pixels: 184 → 163</text>
+<text x="555" y="1611" class="n">advance: 26.00 → 27.00 px</text>
+<text x="555" y="1634" class="n">bitmap: 22×25 → 22×24</text>
+<rect x="970" y="1335" width="380" height="330" class="box"/>
+<text x="995" y="1363" class="m">R0</text><text x="1185" y="1363" class="m">R1</text>
+<image x="1005" y="1397" width="115" height="125" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAZCAAAAAD/S+oMAAAA5klEQVR4nMWRsWrCYBSFP//aSjSjUwbRwW4VurkI3QLOXX0F0d2hQ1HsUupDOEiHri7OvoFDh5SUtBQCgmCsRLgOSZqEkLlnunwc7n/P+QveE7RNMnKBgWSksk4AionZ//KNcjj/+fezjlZvVm6n+9T+uREZaisRkWCPjMZc3t0U7eUWu/tmRv5H6DkiIscHBfqnCC6wuOA5OvAFuA/5B/348jYUrJAbXsxfgUmYa6jFKcwrWAfvWk6yghY0Av+7QULX8B3k3aSqqcLvTgH8pLgOeArgkOIl4KgAJFPzKaf/3H/5L34G7AV/W5YpYtoAAAAASUVORK5CYII="/>
+<image x="1195" y="1400" width="115" height="120" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAYCAAAAAA0FzmpAAAAuElEQVR4nGO4w8DA0PAfAzAxYAekirMgmFdP32YUtDBlg/Bg9i7Rh/Alun78////P1T8pT2DceemXbM8GRgYzB7DxR+ocC6GuG8zFwOD2keoeJsx+2GYw1czMDCEQcU/MExH+MiFgYHxGkT8v+k/hPh6BgaGOqj4WqQQ+MbOwOAOEX/1Bzlo9BgYFCHhs40Z2asqDAwvIOHwACUI+BgYvv/CEj7cDAwMP3GEGzb1DAwMDFSLF2qJAwDnP4sHnyJwsAAAAABJRU5ErkJggg=="/>
+<text x="995" y="1565" class="n">coverage: 191.3 → 175.1 px-eq (-8.5%)</text>
+<text x="995" y="1588" class="n">strong pixels: 197 → 164</text>
+<text x="995" y="1611" class="n">advance: 27.00 → 27.00 px</text>
+<text x="995" y="1634" class="n">bitmap: 23×25 → 23×24</text>
+<line x1="55" y1="1715" x2="1545" y2="1715" class="r"/>
+<text x="55" y="1755" class="h">Observed renderer interaction</text>
+<text x="55" y="1787" class="s">At 14 ppem, autohint-normal suppresses the R0/R1 strong-pixel difference (15 → 15) even though no-hint shows 13 → 11.</text>
+<text x="55" y="1815" class="s">At 24 ppem, autohint-normal produces 14px vs 13px hinted advances from identical 560-unit source advances; the standard integer delta correction still leaves repeated origins 14px vs 13px apart.</text>
+<text x="55" y="1843" class="s">At 48 ppem, delta-aware integer positioning instead normalizes repeated origins to 27px for both. T002 compact fragility and spacing effects are therefore renderer- and size-dependent, not outline-only facts.</text>
+</svg>
