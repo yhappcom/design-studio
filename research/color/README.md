@@ -6,26 +6,31 @@ This directory is the canonical research home for the **Color Specialist**.
 
 Research belongs here when its primary question concerns:
 
-- color perception, luminance, contrast, adaptation, and viewing conditions;
+- color perception, luminance, contrast, adaptation and viewing conditions;
 - CIE colorimetry, observer models, illuminants, XYZ, Lab/LCh, Oklab/OkLCh;
 - color difference, gamut, gamut mapping, wide-gamut and HDR-related color questions;
-- ICC/color management, white points, chromatic adaptation, device reproduction;
-- semantic color systems, brand color behavior, environmental validation, and color accessibility evidence.
+- ICC/color management, white points, chromatic adaptation and device reproduction;
+- semantic color systems, brand-color behavior, environmental validation and color accessibility evidence.
 
 ## Boundary with other disciplines
 
-- **Layout & Spatial Design** owns spatial grouping, grid, alignment, hierarchy, density, and responsive geometry. Color can reinforce hierarchy but must not silently substitute for weak spatial structure.
-- **Typography / Type Design** owns glyph/font systems and semantic typography. Color can affect legibility and hierarchy but does not define type structure.
-- **Interaction** owns actions, state transitions, feedback, modes, and recovery. Color may signal state only when the state remains robust through non-color and programmatic cues where required.
+- **Layout, Spatial & Interaction** owns spatial grouping, grid, responsive geometry, navigation, state semantics, feedback and interaction behavior. Color may encode a defined state but does not invent the state model.
+- **Typography / Type Design** owns glyph/font systems, text metrics and typographic structure. Color may affect legibility and hierarchy but does not define the type system.
 
-When a study crosses these boundaries, keep one canonical owner and link to related research rather than copying conclusions into multiple domain files.
+When a study crosses boundaries, keep one canonical owner and link to related research rather than duplicating conclusions.
 
-## Before using color knowledge in another domain
+## Mandatory cross-domain scan
 
-1. Check `progress/STATUS.md` for current evidence level and unresolved validation gaps.
-2. Read this README and the relevant studies below.
-3. Separate normative standards, empirical findings, studio synthesis, and product-specific judgment.
-4. Do not turn a Color finding into a universal Layout, Type, or Interaction rule without explicit transfer evidence.
+Before new Color work:
+
+1. read `progress/STATUS.md` and all specialist status files;
+2. read this README and relevant Color studies;
+3. search Type and Layout/Interaction research for related evidence;
+4. identify what can be reused and what dependency remains;
+5. verify the question is not already being studied elsewhere;
+6. record the result under `RELATED DOMAIN CHECK` in the new study.
+
+After completion, add `HANDOFFS TO OTHER SPECIALISTS` when the Color result can materially help Type or Layout/Interaction.
 
 ## Current studies
 
@@ -35,5 +40,10 @@ When a study crosses these boundaries, keep one canonical owner and link to rela
 - `012-chromatic-adaptation-white-points.md`
 - `013-perceptual-color-spaces-difference.md`
 - `016-color-gamut-wide-gamut-mapping.md`
+- `017-perceptual-ramp-authoring.md`
 
-Study numbers remain studio-wide chronology and are not renumbered when files move between domain directories.
+Existing study numbers remain stable. New Color studies use `C###` IDs.
+
+## Status authority
+
+Color progress is tracked in `progress/COLOR_STATUS.md`. The specialist does not edit global `progress/STATUS.md` during ordinary work.
