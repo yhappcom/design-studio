@@ -76,6 +76,11 @@ https://www.cie.co.at/publications/roadmap-toward-basing-cie-colorimetry-cone-fu
 
 Why it matters: current CIE roadmap for a future self-consistent cone-fundamental-based colorimetry, explicitly addressing normal variation from age, field of view, and individual diversity.
 
+### CIE 160:2004 — A review of chromatic adaptation transforms
+https://www.cie.co.at/publications/review-chromatic-adaptation-transforms
+
+Why it matters: authoritative review of chromatic-adaptation experiments, datasets, and multiple CAT formulations; prevents treating any one CAT as a universal perceptual law.
+
 ### CIE official colorimetric datasets
 https://cie.co.at/data-tables
 
@@ -101,6 +106,16 @@ Study use: authoritative neuroscience background for the principle of univarianc
 https://www.color.org/icc-1_specification/
 
 Why it matters: current ICC v4 profile architecture and profile-connection-space model for device-independent colour management; a later production module will study PCSXYZ/PCSLAB, profiles, rendering, and HDR-related metadata in detail.
+
+### ICC Technical Note 02-2003 — D65 to D50 chromatic-adaptation tag
+https://www.color.org/chadtag/
+
+Why it matters: publishes the linearized Bradford D65→D50 matrix used for ICC v4 profile-building practice and shows explicitly how non-D50 source colorimetry is adapted to the D50 PCS.
+
+### ICC — Why is the media white point of a display profile always D50?
+https://www.color.org/whyd50/
+
+Study use: authoritative explanation of the D50 profile connection space, adopted-white normalization, and the role of the `chad` tag in display profiles.
 
 ## Product / interaction / visual design
 
