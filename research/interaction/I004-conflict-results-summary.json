@@ -1,0 +1,32 @@
+{
+  "study": "I004",
+  "chromium": "144.0.7559.96",
+  "pass_count": 17,
+  "total": 17,
+  "assertions": [
+    {"name":"naive whole-record save loses concurrent title","pass":true},
+    {"name":"stale save detects conflict","pass":true},
+    {"name":"local draft preserved on conflict","pass":true},
+    {"name":"disjoint conflict exposes merge not overwrite choices","pass":true},
+    {"name":"disjoint auto-merge preserves both changes","pass":true},
+    {"name":"post-merge focus returns to Save","pass":true},
+    {"name":"same-field conflict does not auto-write","pass":true},
+    {"name":"same-field conflict preserves local value","pass":true},
+    {"name":"same-field resolution exposes both versions","pass":true},
+    {"name":"blocking conflict focuses conflict region","pass":true},
+    {"name":"explicit local resolution commits against current version","pass":true},
+    {"name":"resolution focus returns to edited field","pass":true},
+    {"name":"delete-vs-edit is distinguished from field conflict","pass":true},
+    {"name":"delete conflict preserves unsaved draft","pass":true},
+    {"name":"delete conflict offers keep-copy","pass":true},
+    {"name":"keep-copy creates separate identity and leaves original deleted","pass":true},
+    {"name":"keep-copy restores focus to retained draft field","pass":true}
+  ],
+  "controlled_final_states": {
+    "naive_lost_update": {"version":3,"title":"Flight 101","notes":"Weather diversion"},
+    "disjoint_merge": {"version":3,"title":"Flight 101A","notes":"Weather diversion"},
+    "same_field_before_resolution": {"version":2,"title":"Flight 101A","local_draft_title":"Flight 101B"},
+    "same_field_after_use_mine": {"version":3,"title":"Flight 101B"},
+    "delete_keep_copy": {"original":{"id":"r1","deleted":true,"version":2},"copy":{"id":"r2","deleted":false,"version":1,"notes":"Important offline note"}}
+  }
+}
