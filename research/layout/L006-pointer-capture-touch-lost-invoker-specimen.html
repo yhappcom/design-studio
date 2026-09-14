@@ -1,0 +1,60 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>L006 higher-fidelity ownership specimen</title>
+<style>
+*{box-sizing:border-box} body{font-family:Arial,sans-serif;margin:0;min-height:100vh;background:#f5f6f7;color:#182026}
+button,.drag{font:inherit}.workspace{position:relative;width:900px;height:620px;margin:24px auto;background:white;border:1px solid #9aa5ad;overflow:hidden}
+.panel{position:absolute;left:40px;top:40px;width:820px;height:540px;padding:20px;border:1px solid #c2cbd0}
+#dragTarget{position:absolute;left:250px;top:220px;width:180px;height:64px;border:2px solid #44515a;background:#e8ecef;display:grid;place-items:center;user-select:none;touch-action:none}
+#touchUnder,#touchPopAction{position:absolute;left:520px;top:220px;width:180px;height:64px}
+#touchUnder{z-index:1}.popoverBox{position:absolute;width:180px;height:64px;padding:0;border:0;background:transparent;z-index:10;margin:0}.popoverBox button{position:static!important;left:auto!important;top:auto!important;width:180px;height:64px}
+#openLost{position:absolute;left:60px;top:410px;width:160px;height:46px}#fallback{position:absolute;left:240px;top:410px;width:190px;height:46px}
+#openStack{position:absolute;left:450px;top:410px;width:180px;height:46px}
+dialog{width:420px;min-height:240px;border:2px solid #44515a;padding:24px}dialog::backdrop{background:rgba(0,0,0,.28)}
+#dragDialog{position:fixed;inset:0;margin:auto;width:420px;height:220px}#dragDialog button{width:180px;height:52px}
+#stackPop{padding:16px;border:2px solid #44515a}#stackPop button{min-width:160px;height:44px}
+.log{position:absolute;left:40px;bottom:12px;font-family:ui-monospace,monospace;font-size:12px;color:#52616b}
+</style>
+<div class=workspace>
+  <div class=panel>
+    <div id=dragTarget class=drag tabindex=0>Background drag target</div>
+    <button id=touchUnder>Underlying touch action</button>
+    <button id=openLost>Open removable dialog</button>
+    <button id=fallback>Logical fallback focus</button>
+    <button id=openStack>Open stack dialog</button>
+    <div id=log class=log aria-live=polite></div>
+  </div>
+</div>
+<div id=touchPop popover="manual" class=popoverBox><button id=touchPopAction>Popover touch action</button></div>
+<dialog id=dragDialog><h2>Modal opened mid-drag</h2><button id=dragDialogAction>Modal action</button><button id=closeDragDialog>Close</button></dialog>
+<dialog id=lostDialog><h2>Removable invoker dialog</h2><button id=closeLost>Close dialog</button></dialog>
+<dialog id=stackDialog><h2>Nested overlay stack</h2><button id=openStackPop popovertarget=stackPop>Open nested popover</button><button id=stackDialogClose>Close dialog</button><div id=stackPop popover="auto"><button id=stackPopAction>Nested action</button></div></dialog>
+<script>
+const state={events:[],counts:{dragUp:0,dragMove:0,dragCommit:0,dialogAction:0,touchUnder:0,touchPop:0},lastFocusAfterLost:null,dragCanceled:false,activePointerId:null};
+function push(x){state.events.push(x); log.textContent=x}
+const drag=dragTarget;
+drag.addEventListener('pointerdown',e=>{state.dragCanceled=false;state.activePointerId=e.pointerId;push(`down:${e.pointerType}:${e.pointerId}`);drag.setPointerCapture(e.pointerId);push(`capture-request:${drag.hasPointerCapture(e.pointerId)}`)});
+drag.addEventListener('gotpointercapture',e=>push(`gotcapture:${e.pointerId}`));
+drag.addEventListener('pointermove',e=>{if(e.buttons){state.counts.dragMove++; push(`move:${e.pointerType}:${e.pointerId}`)}});
+drag.addEventListener('pointerup',e=>{state.counts.dragUp++;if(!state.dragCanceled)state.counts.dragCommit++;push(`up:${e.pointerType}:${e.pointerId}:capture=${drag.hasPointerCapture(e.pointerId)}:commit=${!state.dragCanceled}`);state.activePointerId=null});
+drag.addEventListener('lostpointercapture',e=>push(`lostcapture:${e.pointerId}`));
+dragDialogAction.addEventListener('click',()=>state.counts.dialogAction++);
+closeDragDialog.onclick=()=>dragDialog.close();
+touchUnder.addEventListener('click',()=>state.counts.touchUnder++);touchPopAction.addEventListener('click',()=>state.counts.touchPop++);
+openLost.onclick=()=>{lostDialog.dataset.invoker='openLost';lostDialog.showModal()};
+closeLost.onclick=()=>lostDialog.close();
+openStack.onclick=()=>stackDialog.showModal(); stackDialogClose.onclick=()=>stackDialog.close();
+lostDialog.addEventListener('close',()=>{queueMicrotask(()=>{state.lastFocusAfterLost=document.activeElement?.id||document.activeElement?.tagName||null})});
+window.api={
+ state,
+ openDragDialog(){dragDialog.showModal()},
+ cancelDragAndOpenDialog(){const id=state.activePointerId;if(id!=null&&drag.hasPointerCapture(id)){drag.releasePointerCapture(id)}state.dragCanceled=true;push('gesture-canceled-before-modal');dragDialog.showModal()},
+ closeDragDialog(){if(dragDialog.open)dragDialog.close()},
+ showTouchPopover(){const r=touchUnder.getBoundingClientRect();touchPop.style.left=r.left+'px';touchPop.style.top=r.top+'px';touchPop.showPopover()},hideTouchPopover(){if(touchPop.matches(':popover-open'))touchPop.hidePopover()},
+ removeLostInvoker(){openLost.remove()},
+ applyLostFallback(){lostDialog.addEventListener('close',()=>setTimeout(()=>{if(!document.getElementById('openLost'))fallback.focus()},0),{once:true})},
+ openLost(){ if(document.getElementById('openLost'))document.getElementById('openLost').click(); else {lostDialog.showModal()} },
+ openStack(){openStack.click()},
+ snapshot(){return {events:[...state.events],counts:{...state.counts},activeId:document.activeElement?.id||'',activeTag:document.activeElement?.tagName||'',dragOpen:dragDialog.open,lostOpen:lostDialog.open,stackOpen:stackDialog.open,popOpen:stackPop.matches(':popover-open'),touchPopOpen:touchPop.matches(':popover-open')}}
+}
+</script>
