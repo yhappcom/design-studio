@@ -1,0 +1,114 @@
+{
+  "study": "C012",
+  "provenance": {
+    "cie_1931_2deg": {
+      "doi": "10.25039/CIE.DS.xvudnb9b",
+      "published_md5": "17cca777db64b17170f06f67ce9d3ab7",
+      "mirror_repository": "wetadigital/physlight",
+      "mirror_commit": "9d076d1074aad7257c04c39581a4d21f97fd2527",
+      "mirror_blob_sha": "9b4e3f73b4bb412a762a6d03cb8060bfea652a6e",
+      "rows": 471,
+      "range_nm": [360, 830],
+      "step_nm": 1,
+      "reconstructed_lf_md5": "5a60da02f27032ef3c050dfd1e913f0f",
+      "reconstructed_crlf_md5": "17cca777db64b17170f06f67ce9d3ab7",
+      "published_md5_match_after_crlf_reconstruction": true
+    },
+    "cie_1964_10deg": {
+      "doi": "10.25039/CIE.DS.sqksu2n5",
+      "published_current_md5": "cd6135a724480eb8c5e7668bae914445",
+      "current_metadata_matched_mirror": {
+        "repository": "chran554/pathtracer",
+        "commit": "ec602c93c253c7d88646e5a7551ac554c75f46d0",
+        "blob_sha": "d3040193ae654fe5fc33ea0e1f1a7b24c45fca9c",
+        "metadata_reports_md5": "cd6135a724480eb8c5e7668bae914445",
+        "metadata_reports_sha256": "c800ae88d20868427e09482d7b5c026e7f5001dc00bec18cd9dcd3a0006da396",
+        "independent_md5_recomputed_in_this_execution": false
+      },
+      "rejected_older_mirror": {
+        "repository": "wetadigital/physlight",
+        "commit": "9d076d1074aad7257c04c39581a4d21f97fd2527",
+        "metadata_md5": "6140e032f9326d88c5a0959b29b4d8f3",
+        "reason": "metadata checksum differs from current CIE-published checksum"
+      }
+    },
+    "cie_2006_lms_2deg": {
+      "doi": "10.25039/CIE.DS.tijidesg",
+      "published_current_md5": "27c74cc0f98edecadc02fc71f540b116",
+      "accessible_mirror_repository": "wetadigital/physlight",
+      "accessible_mirror_commit": "9d076d1074aad7257c04c39581a4d21f97fd2527",
+      "accessible_mirror_blob_sha": "5e9069337cf5aef005e8dab64870bfff38911359",
+      "accessible_copy_crlf_md5": "dba2e9d1f5e6667575aa069832159510",
+      "published_md5_match": false,
+      "decision": "Do not promote numerical LMS comparison as current-CIE evidence until authoritative identity is resolved."
+    }
+  },
+  "interpretation_boundaries": [
+    "The 1931 numerical practice is tied to an independently reconstructed checksum match; current 1964 and 2006 LMS are not treated as equally verified in this execution.",
+    "The broad/narrow spectra are synthetic and cannot establish a universal required measurement interval.",
+    "xy distance is a coordinate diagnostic, not a perceptual-difference metric.",
+    "A 5 nm sampling failure on ultra-narrow spectra is not evidence that every 5 nm dataset is inadequate; spectral bandwidth and sampling phase matter.",
+    "No physical display, instrument, observer, or measured SPD is validated here."
+  ],
+  "integration": {
+    "observer": "CIE 1931 2 degree",
+    "range_nm": [360, 830],
+    "integration_step_nm": 1,
+    "synthetic_spd_note": "All spectra are synthetic emissive relative SPDs defined on every 1 nm bin; not measured devices.",
+    "five_nm_test_note": "5 nm diagnostic subsamples the 1 nm SPD/CMF at offsets 0..4 and multiplies by 5. It is a sampling-grid sensitivity diagnostic, not a spectroradiometer bandwidth model.",
+    "spectra": {
+      "broad_warm": {
+        "xyz_1nm": [72.91323326666327, 59.16786315850045, 19.900423303172666],
+        "xy_1nm": [0.4797506525595617, 0.3893095901676843],
+        "max_delta_xy_across_5nm_phase_offsets": 1.6031650564705842e-07,
+        "max_abs_relative_Y_error_across_5nm_phase_offsets": 7.912548518640706e-07,
+        "offset_diagnostics": [
+          {"offset_nm": 0, "delta_xy": 1.6031650564705842e-07, "relative_Y_error": 7.912548518640706e-07},
+          {"offset_nm": 1, "delta_xy": 1.1363840139081249e-07, "relative_Y_error": 4.853980382288235e-07},
+          {"offset_nm": 2, "delta_xy": 1.5156713138221082e-08, "relative_Y_error": -1.7444778626179667e-07},
+          {"offset_nm": 3, "delta_xy": 1.2966010790973417e-07, "relative_Y_error": -6.52917781299469e-07},
+          {"offset_nm": 4, "delta_xy": 1.3161013030769279e-07, "relative_Y_error": -4.492873220512713e-07}
+        ]
+      },
+      "broad_cool": {
+        "xyz_1nm": [45.12199495206506, 52.76740392750134, 99.07822912363774],
+        "xy_1nm": [0.22908330373624158, 0.26789886471416996],
+        "max_delta_xy_across_5nm_phase_offsets": 1.1740577964114819e-07,
+        "max_abs_relative_Y_error_across_5nm_phase_offsets": 1.1952569207008476e-06,
+        "offset_diagnostics": [
+          {"offset_nm": 0, "delta_xy": 1.1740577964114819e-07, "relative_Y_error": 1.1952569207008476e-06},
+          {"offset_nm": 1, "delta_xy": 7.364067539485657e-08, "relative_Y_error": 7.176499233793408e-07},
+          {"offset_nm": 2, "delta_xy": 2.987496686601673e-08, "relative_Y_error": -3.352982667590001e-07},
+          {"offset_nm": 3, "delta_xy": 9.868604790338909e-08, "relative_Y_error": -9.93711970097445e-07},
+          {"offset_nm": 4, "delta_xy": 7.040456726015616e-08, "relative_Y_error": -5.83896607358399e-07}
+        ]
+      },
+      "narrow_display_like": {
+        "xyz_1nm": [25.45143485936341, 26.964134236530857, 35.295011951420854],
+        "xy_1nm": [0.29017519386439516, 0.30742168065202036],
+        "max_delta_xy_across_5nm_phase_offsets": 3.816923003724912e-06,
+        "max_abs_relative_Y_error_across_5nm_phase_offsets": 1.8911494208320022e-06,
+        "offset_diagnostics": [
+          {"offset_nm": 0, "delta_xy": 3.1691790684684003e-06, "relative_Y_error": 1.6588690847443622e-06},
+          {"offset_nm": 1, "delta_xy": 3.537120766078439e-06, "relative_Y_error": 1.7650539208599925e-06},
+          {"offset_nm": 2, "delta_xy": 9.546979200058204e-07, "relative_Y_error": -3.6558027756141457e-07},
+          {"offset_nm": 3, "delta_xy": 3.816923003724912e-06, "relative_Y_error": -1.8911494208320022e-06},
+          {"offset_nm": 4, "delta_xy": 2.082703247018597e-06, "relative_Y_error": -1.1671933073426947e-06}
+        ]
+      },
+      "ultra_narrow_laser_like": {
+        "xyz_1nm": [8.022514357733183, 8.345033356852245, 11.27037874382042],
+        "xy_1nm": [0.29027193374317706, 0.3019413692055097],
+        "max_delta_xy_across_5nm_phase_offsets": 0.001920024820014315,
+        "max_abs_relative_Y_error_across_5nm_phase_offsets": 0.004558717902852047,
+        "offset_diagnostics": [
+          {"offset_nm": 0, "delta_xy": 0.001674388426827832, "relative_Y_error": -0.00373590626421684},
+          {"offset_nm": 1, "delta_xy": 0.001364593691947371, "relative_Y_error": -0.0036396307013745483},
+          {"offset_nm": 2, "delta_xy": 0.001920024820014315, "relative_Y_error": 0.0014866417767067854},
+          {"offset_nm": 3, "delta_xy": 0.0012486824285929017, "relative_Y_error": 0.004558717902852047},
+          {"offset_nm": 4, "delta_xy": 0.0017842347980993832, "relative_Y_error": 0.0013301772860329815}
+        ]
+      }
+    }
+  }
+}
