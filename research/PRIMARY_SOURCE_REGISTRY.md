@@ -132,10 +132,25 @@ https://www.color.org/whyd50/
 
 Study use: authoritative explanation of the D50 profile connection space, adopted-white normalization, and the role of the `chad` tag in display profiles.
 
+### ICC — Getting started with colour management and rendering intents
+https://www.color.org/getting-started/
+
+Why it matters: authoritative overview of device gamuts, profile connection spaces, and the differing goals of colorimetric, perceptual, and saturation rendering intents. Use to keep individual UI-color mapping separate from image-reproduction compromises.
+
 ### W3C — CSS Color Module Level 4
 https://www.w3.org/TR/css-color-4/
 
-Why it matters: current web-platform definition of sRGB, linear-light RGB, Display P3, CIE Lab/LCH, Oklab/OkLCh, XYZ conversion paths, and modern CSS colour syntax. Use as platform specification, not as a replacement for CIE measurement standards.
+Why it matters: current web-platform definition of sRGB, linear-light RGB, Display P3, CIE Lab/LCH, Oklab/OkLCh, XYZ conversion paths, modern CSS colour syntax, out-of-gamut detection, and current individual-colour gamut-mapping algorithms. Use as platform specification, not as a replacement for CIE measurement standards; draft-specific algorithms must be tracked as the specification evolves.
+
+### Apple — Display P3 RGB color space
+https://developer.apple.com/documentation/swiftui/color/rgbcolorspace/displayp3
+
+Why it matters: first-party platform definition of Display P3 use in Apple UI APIs, including its role as a wide-gamut RGB space for product rendering.
+
+### Apple — Determining color values with color spaces
+https://developer.apple.com/documentation/uikit/determining-color-values-with-color-spaces
+
+Study use: first-party evidence for tagged color spaces and extended-range component values; useful for separating an encoding that permits values outside the nominal range from the physical gamut of a destination display.
 
 ### Björn Ottosson — Oklab primary author documentation
 https://bottosson.github.io/posts/oklab/
