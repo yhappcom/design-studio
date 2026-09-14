@@ -1,42 +1,62 @@
 # Design Studio Research Index
 
-`research/` is the source-grounded evidence layer of Design Studio. Research is organized by **primary specialist ownership** so that knowledge accumulates coherently and other specialists can find it before starting overlapping work.
+`research/` is the source-grounded evidence layer of Design Studio. Knowledge is organized by **canonical ownership** so specialists can reuse one another's findings without duplicating research.
 
-## Canonical specialist research areas
+## Current specialist research areas
 
-| Domain | Canonical path | Primary owner |
+| Specialist | Canonical path(s) | Primary responsibility |
 | --- | --- | --- |
-| Typography / Type Design | `research/type/` | Typography / Type Design Specialist |
-| Color | `research/color/` | Color Specialist |
-| Layout & Spatial Design | `research/layout/` | Layout & Spatial Design Specialist |
-| Interaction Design | `research/interaction/` | Interaction Specialist |
+| Typography / Type Design | `research/type/` | font, glyph, metrics, spacing, typography systems, rendering, font engineering |
+| Color | `research/color/` | color science, perception, contrast, gamut, color management, palette/system behavior |
+| Layout, Spatial & Interaction | `research/layout/`, `research/interaction/` | spatial composition, responsive systems, navigation, state, feedback, task/action behavior |
 
-Shared research that does not yet have a dedicated specialist directory may remain at `research/` root. Accessibility is currently cross-cutting and is tracked through its research/evidence plus `progress/STATUS.md`.
+`research/interaction/` remains a separate evidence directory because temporal/behavioral claims should not be mixed into spatial research files, but it is owned by the same Layout, Spatial & Interaction Specialist.
 
-Legacy numbered files remaining directly under `research/` for moved domains are **compatibility pointers only**. They preserve older references and direct readers to the canonical specialist file. They are not canonical research records and must not receive new study content.
+Shared/cross-cutting evidence such as accessibility or human factors may remain outside these directories until a dedicated specialist is formally created.
 
-## Mandatory pre-study check
+The team can expand. A new specialist receives a canonical research path only after coordinator/user approval under `coordination/ONBOARDING.md`.
 
-Before beginning a new research block, every specialist must:
+## Legacy numbered files
 
-1. read `progress/STATUS.md` to identify current stage, existing evidence, unresolved gaps, and immediate priorities;
-2. identify which specialist owns the primary question;
-3. read that domain's `README.md` and relevant existing studies;
-4. inspect adjacent domains when the question depends on their knowledge;
-5. avoid duplicating established research — link to the canonical study and add only genuinely new evidence, synthesis, contradiction, transfer validation, or failure analysis.
+Legacy numbered files remaining directly under `research/` for moved domains are **compatibility pointers only** unless they contain genuinely shared evidence. They preserve older references and are not locations for new specialist content.
 
-## Cross-domain awareness
+Existing study numbers `001`–`017` remain stable. New work uses domain prefixes defined in `AGENTS.md`.
 
-Design problems routinely cross specialist boundaries. A specialist must therefore distinguish **ownership** from **dependency**.
+## Mandatory pre-study cross-domain scan
+
+Before opening a new research file, every specialist must:
+
+1. read `progress/STATUS.md`;
+2. read **all current specialist status files**;
+3. read its own domain README(s) and relevant canonical studies;
+4. search the other specialists' canonical research for related concepts;
+5. identify reusable external-domain evidence;
+6. verify the question is not already answered or actively being studied elsewhere;
+7. identify dependencies or overlap before writing;
+8. record the scan in the study under `## RELATED DOMAIN CHECK`.
+
+A compliant `RELATED DOMAIN CHECK` records whether Type, Color, Layout/Interaction, and any additional relevant specialist/cross-cutting evidence were checked, what can be reused, and what dependency/handoff was created.
+
+## Mutual research awareness
+
+Ownership is not isolation.
 
 Examples:
 
-- Layout may depend on Type for font metrics and text expansion, and on Color for luminance hierarchy.
-- Interaction may depend on Layout for spatial grouping, Type for action-label clarity, and Color for state cues.
-- Color may depend on Interaction for the semantic meaning of states it visually encodes.
-- Type may depend on Layout for realistic context and responsive stress testing.
+- Type should use Layout/Interaction evidence for realistic width, density, action-label and state-message contexts.
+- Type should use Color evidence when a legibility claim depends on luminance/contrast.
+- Color should use Type evidence for realistic text roles, sizes, weights and numeral contexts.
+- Color should use Layout/Interaction evidence for real surfaces, state semantics, focus and feedback contexts.
+- Layout/Interaction should use Type evidence for text growth, metrics, labels and data alignment.
+- Layout/Interaction should use Color evidence for contrast, state/focus color, environmental viewing and gamut/device behavior.
 
-A dependency does not transfer canonical ownership. Do not copy a conclusion into a second domain as if independently established. Reference the canonical source and document only the domain-specific transfer or contradiction.
+A dependency does not transfer canonical ownership. Reference the canonical source and document only the domain-specific transfer, contradiction, validation or failure that is genuinely new.
+
+## Handoff rule
+
+Every substantial research note should add `## HANDOFFS TO OTHER SPECIALISTS` when its findings can materially help another domain.
+
+Do not copy entire source summaries into the receiving domain. Point to the canonical study and explain what consequence transfers.
 
 ## Evidence vocabulary
 
@@ -45,14 +65,30 @@ Every substantial research note should distinguish:
 - **SOURCE** — what an authoritative source explicitly establishes;
 - **SYNTHESIS** — a transferable principle inferred from evidence;
 - **STUDIO JUDGMENT** — the studio's design position or reusable method;
-- **OPEN** — unresolved questions or validation still required.
+- **OPEN** — unresolved questions or validation still required;
+- **DEPENDENCY** — a question whose canonical answer belongs elsewhere.
 
-`PASS` is never inferred from folder placement or reading alone. Gate status is controlled by `progress/STATUS.md` and requires the evidence defined in the curriculum.
+`PASS` is never inferred from folder placement or reading alone. Gate status is controlled by the relevant specialist status and coordinator-maintained global status.
 
-## Numbering
+## New specialist entry
 
-Study numbers are a **studio-wide chronology**, not per-folder counters. Moving a study into a specialist directory never renumbers it. This preserves links among research, exercises, critiques, status history, and future citations.
+A new specialist chat must not create research immediately. It first follows `coordination/ONBOARDING.md`, reads all current specialist status files, searches for overlap, and submits a proposed scope. The coordinator/user then assigns:
+
+- canonical path;
+- status file;
+- unique study-ID prefix;
+- ownership boundary;
+- dependencies and handoff rules.
+
+This prevents a new specialist from recreating knowledge that already exists in Type, Color, Layout/Interaction, or another future domain.
 
 ## Persistence
 
-After each substantial completed learning block, save the evidence in the canonical domain path and update `progress/STATUS.md` when the learning state, evidence links, open gaps, or next priorities materially change. Do not wait until the end of a chat session.
+After each substantial completed learning block:
+
+1. save evidence in the canonical path;
+2. update the owning specialist status file;
+3. record incoming/outgoing dependencies and useful external findings;
+4. commit before beginning a materially different block when practical.
+
+The coordinator, not individual specialists, updates `progress/STATUS.md`.
