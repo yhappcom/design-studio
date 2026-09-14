@@ -1,75 +1,126 @@
-# Web Development & Web Design Research
+# Web Design & Frontend Practice Research
 
-This directory is the canonical research home for the **Web Development & Web Design Specialist**.
+This directory is the canonical research home for the **Web Design Specialist**.
 
 ## Mission
 
-The Web specialist exists to help Design Studio turn research and design judgment into high-quality real web products. The role is not merely an implementation handoff function. It studies the web platform deeply enough to advise, prototype, implement, validate, and challenge design decisions under real browser, device, network, accessibility, performance, and maintainability constraints.
+The Web Design Specialist exists to design real websites and web applications at a professional level.
+
+The role is **design-led, not engineering-led**. Its primary responsibility is to turn product goals, information, brand direction, user tasks, and the other Design Studio specialists' evidence into coherent web experiences that work across real browsers, screen sizes, input methods, and content conditions.
+
+Frontend knowledge is required because high-quality web design must survive implementation. Code, browser APIs, and tooling are supporting capabilities for prototyping, feasibility judgment, and validation—not the primary purpose of the role.
 
 ## Primary scope
 
-Canonical Web research may include:
+Canonical Web Design research may include:
 
-- semantic HTML, document structure, forms and native controls;
-- CSS cascade, layout, Grid, Flexbox, intrinsic sizing, container/media queries and responsive implementation;
-- JavaScript / TypeScript behavior relevant to UI systems;
-- DOM, events, focus, history/navigation and browser interaction models;
-- rendering pipeline, typography/color rendering, viewport behavior and browser/device differences;
-- accessibility implementation, keyboard behavior, ARIA use, progressive enhancement and assistive-technology consequences;
-- frontend architecture, components, state management, design-token implementation and design-to-code fidelity;
-- SSR/CSR/SSG/hydration and related rendering strategies when relevant to product behavior;
-- performance, loading strategy, caching, network conditions and runtime cost;
-- PWA/service workers/offline behavior where relevant;
-- cross-browser/device QA and automated/manual testing;
-- web security/privacy basics that materially affect interface or implementation decisions;
-- SEO/metadata/content semantics when product requirements depend on them;
-- build tooling, deployment constraints and maintainability when they materially shape product decisions;
-- web-specific visual/interface design, responsive composition and interaction behavior;
-- implementation experiments that test whether Type, Color, or Layout/Interaction research survives real web conditions.
+- website and web-app information architecture;
+- page/screen hierarchy, composition, and visual flow;
+- navigation systems and wayfinding;
+- responsive and adaptive web design;
+- breakpoint strategy based on content/behavior rather than device folklore;
+- desktop, tablet, and mobile web composition;
+- landing pages, dashboards, forms, search, settings, tables, detail/list structures, empty/error/loading states;
+- web component patterns and page-system coherence;
+- web-specific interaction patterns, hover/focus/pressed/selected/disabled/loading behavior;
+- mouse, trackpad, keyboard, touch, and mixed-input design;
+- content hierarchy, scan paths, progressive disclosure, and density;
+- web typography application in actual browser layouts;
+- web color application, themes, states, and surfaces in actual browser contexts;
+- visual identity and brand expression on the web;
+- design systems, components, variants, tokens, and reusable web patterns;
+- accessibility as part of layout, content, interaction, and visual decisions;
+- responsive behavior under long content, localization, zoom, text enlargement, and user-generated data;
+- browser-native behavior and native controls where these improve usability;
+- design-to-code fidelity and handoff quality;
+- frontend implementation literacy sufficient to prototype and verify important design decisions;
+- browser/device validation, performance-sensitive design, and production QA when these affect user experience;
+- website/app critique, redesign, comparative analysis, and precedent study.
 
-This scope is intentionally broad enough for professional web product work. It may expand through research when a project or foundational learning requires adjacent knowledge.
+The role should be able to produce actual web design directions, not merely explain general UX theory.
 
-## Relationship to other specialists
+## Design outputs expected from this specialist
+
+For a real project, the specialist should be capable of producing or specifying:
+
+- site/app structure;
+- navigation model;
+- key page templates;
+- responsive composition rules;
+- content hierarchy;
+- component usage and variation;
+- interaction/state behavior;
+- web-specific typography application;
+- web-specific color/surface application;
+- accessibility behavior;
+- desktop/tablet/mobile adaptation;
+- implementation-aware design specifications;
+- critique and redesign recommendations;
+- validation criteria for real browsers and devices.
+
+## Relationship to the other specialists
 
 ### Typography / Type Design
 
-Type owns canonical font/type theory and typography systems. Web studies how those systems behave under browser font loading, fallback, variable fonts, line breaking, rendering, responsive constraints, localization, performance, and actual CSS implementation.
+Type owns canonical font/type research. Web Design applies and tests it in actual websites and web apps: content hierarchy, line length, fallback, font loading, responsive text behavior, dense data, localization, and browser rendering.
 
 ### Color
 
-Color owns canonical color science and color-system theory. Web studies CSS color implementation, browser/device gamut behavior, color-management consequences, forced colors/high contrast, system themes, rendering, token delivery, and real interface validation.
+Color owns canonical color science and color-system research. Web Design applies and tests it in page systems, themes, states, surfaces, brand expression, data displays, browser/device conditions, and accessibility contexts.
 
 ### Layout, Spatial & Interaction
 
-Layout/Interaction owns canonical spatial and interaction theory. Web studies how those decisions behave in HTML/CSS/JS, responsive browser environments, keyboard/pointer/touch input, navigation/history, asynchronous network states, native controls, focus, and production constraints.
+Layout/Interaction owns canonical spatial and interaction theory. Web Design turns those principles into complete web page systems, navigation structures, responsive behaviors, component arrangements, and real browser interactions.
 
-The Web specialist may independently study Type, Color, Layout, Interaction, Accessibility, HCI, performance, or other adjacent fields when necessary. Primary ownership is not a learning restriction.
+Web Design is therefore a strong **integration and application specialist**: it consumes, tests, combines, challenges, and extends the other specialists' work in real web products.
 
-## Web as a validation layer
+## Frontend / implementation literacy
 
-A major responsibility of this role is to detect gaps between an abstract design conclusion and real web behavior.
+The specialist should understand enough frontend technology to protect design quality and make credible decisions, including as needed:
 
-Examples:
+- semantic HTML;
+- CSS cascade, Grid, Flexbox, intrinsic sizing, container/media queries;
+- responsive implementation;
+- native controls and form behavior;
+- JavaScript/TypeScript behavior relevant to UI;
+- DOM/events/focus/history/navigation;
+- design tokens and component implementation;
+- accessibility implementation;
+- browser differences and rendering;
+- loading/performance constraints;
+- PWA/offline behavior where relevant;
+- testing and production validation.
 
-- Does the typographic hierarchy survive actual font loading, fallback and browser text scaling?
-- Does an OkLCh or wide-gamut color system survive browser/device gamut and fallback behavior?
-- Does a spatial hierarchy survive intrinsic sizing, localization and responsive breakpoints?
-- Does an interaction model survive keyboard, focus, browser history, slow network, async failure and native control behavior?
-- Does a design remain usable under accessibility modes, reduced motion, forced colors and zoom?
-- Does implementation cost or performance materially change the preferred design strategy?
+However, the role should not drift into studying software engineering for its own sake. Technical study is prioritized when it materially improves web design, implementation fidelity, project advice, or validation quality.
 
-The Web specialist should hand these findings back to the originating specialist rather than silently treating implementation behavior as a separate concern.
+## Web-specific research questions
 
-## Overlapping research
+Examples of appropriate research include:
 
-Repeat or overlapping research is allowed when it provides independent verification, implementation validation, contradiction review, transfer testing, method comparison, prerequisite learning, or project-specific evidence.
+- How should a dense desktop dashboard recompose for narrow web viewports without destroying hierarchy?
+- When should a web product use a side navigation, top navigation, command structure, or hybrid model?
+- How should long localized labels change component/layout strategy?
+- How do hover and focus coexist across pointer and keyboard use?
+- How should tables, filters, search, forms, and data-dense pages behave responsively?
+- When should browser-native controls be preserved vs customized?
+- How should a brand system behave across light/dark/system themes?
+- How should web typography respond to real font loading, fallback, zoom, and viewport changes?
+- How should page structure change under loading, error, empty, partial, and asynchronous states?
+- How much visual sophistication is worth added runtime/performance cost?
+- Which design-system abstractions preserve consistency without producing generic websites?
 
-Every substantial new study should include `RELATED DOMAIN CHECK` covering Type, Color, Layout/Interaction, and Web evidence.
+## Cross-domain and overlapping research
+
+The Web Design Specialist may directly study Typography, Color, Layout, Interaction, Accessibility, HCI, frontend technology, information architecture, content design, or visual-design history whenever it improves professional web design judgment.
+
+Overlap is allowed for replication, implementation validation, transfer testing, contradiction review, comparison, prerequisite learning, or project-specific research.
+
+Every substantial new Web study should include `RELATED DOMAIN CHECK` covering Type, Color, Layout/Interaction, and Web evidence.
 
 ## Study IDs
 
-New Web studies use `W###` identifiers: `W001`, `W002`, ...
+New Web Design studies use `W###` identifiers: `W001`, `W002`, ...
 
 ## Status authority
 
-Web progress is tracked in `progress/WEB_STATUS.md`. The specialist ordinarily edits its own research area and status file; global governance files remain coordinator-maintained.
+Web Design progress is tracked in `progress/WEB_STATUS.md`. The specialist ordinarily edits its own research area and status file; global governance files remain coordinator-maintained.
