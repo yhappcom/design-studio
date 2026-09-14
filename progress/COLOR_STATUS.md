@@ -50,24 +50,44 @@ This specialist owns color perception, colorimetry, luminance/contrast, adaptati
 Do not launch research whose primary question is:
 
 - font/glyph/type metrics or type hierarchy mechanics → Type;
-- screen geometry, grouping, grid, responsive recomposition → Layout;
-- action/state/task-flow semantics → Coordinator-managed cross-cutting Interaction/UX.
+- screen geometry, grouping, grid, responsive recomposition, state semantics or interaction flow → Layout & Interaction.
 
-Color may visually encode a state only after the state semantics are established elsewhere.
+Color may visually encode a state only after Layout & Interaction has established what the state means and how it behaves.
+
+## Incoming dependencies
+
+Record active requests from other specialists here. Current recurring collaboration needs:
+
+- Type may require Color's measured contrast/luminance evidence for specific text roles and viewing contexts.
+- Layout & Interaction may require Color's state/focus contrast, luminance hierarchy, color-vision independence, gamut and environmental evidence.
+
+Respond with canonical Color evidence or a Color-owned study; do not edit the requesting specialist's files.
+
+## Useful external findings
+
+### From Type
+
+Use Type's canonical text-role, font-size/weight, numeral and scaling evidence when constructing realistic text/background contrast tests. Do not treat arbitrary font settings as universal test conditions.
+
+### From Layout & Interaction
+
+Use Layout/Interaction's canonical surface hierarchy, grouping, control/state semantics, focus contexts and real interaction flows when validating semantic color. Do not create state semantics inside Color research.
+
+This section must be revisited at the start of each work block after reading the other specialist status files.
 
 ## Dependencies to other domains
 
 ### DEPENDENCY — Type
 
-Text-contrast and legibility tests require realistic font size, weight, glyph density, numeral use, and text-role contexts. Color may measure color/luminance behavior but must not invent typographic thresholds beyond supported evidence.
+Text-contrast and legibility tests require realistic font size, weight, glyph density, numeral use and text-role contexts. Color owns color/luminance behavior; Type owns the typographic system.
 
-### DEPENDENCY — Layout
+### DEPENDENCY — Layout & Interaction
 
-Color hierarchy must be validated on real surfaces and spatial structures. A luminance hierarchy should not be used to compensate for weak grouping or geometry. Use Layout-owned compositions for cross-context tests.
+Color hierarchy must be validated on real surfaces, spatial structures and real state models. A luminance hierarchy must not compensate for weak grouping, and a semantic state color must not invent the state it is encoding.
 
-### DEPENDENCY — Cross-cutting Accessibility / Interaction
+### DEPENDENCY — Shared Accessibility / Human Factors
 
-State meaning, focus semantics, status communication, and non-color redundancy are shared constraints. Color owns only the visual color channel. Record semantic gaps as dependencies rather than redefining the interaction model.
+Color-vision independence, environmental conditions and non-color redundancy may require shared evidence. Record unowned gaps and request coordinator triage rather than creating a competing specialty.
 
 ## Next queue after explicit restart
 
@@ -75,7 +95,7 @@ State meaning, focus semantics, status communication, and non-color redundancy a
 2. Render HSL vs CIELCh vs OkLCh equal-step ramps and test actual browser/device gamut behavior, including P3→sRGB fallback where applicable.
 3. Validate the D65↔D50 adaptation exercise through an actual ICC CMM/profile round trip and compare managed conversion with hand calculation.
 4. Compare Bradford/CAT02/CAT16 only on an explicitly bounded research dataset; do not convert that exercise into an unconditional production rule.
-5. Validate existing non-text/focus and ramp work on physical displays under controlled bright and low-light conditions.
+5. Validate existing non-text/focus and ramp work on physical displays under controlled bright and low-light conditions, using Layout/Interaction-owned state/focus contexts where relevant.
 6. Only after those evidence gaps are addressed, open `C001` for a genuinely new missing topic.
 
 Prefer validation of existing conceptual work over additional breadth until the current Foundation gate becomes defensible.
@@ -89,6 +109,15 @@ Prefer validation of existing conceptual work over additional breadth until the 
 - categorical/sequential/diverging data-visualization color systems as a separate later study;
 - stronger empirical evidence for visual salience/hierarchy claims where model-space regularity is insufficient.
 
+## Handoffs to other specialists
+
+After substantial Color work, state explicitly whether the result can help:
+
+- Type: text contrast, role-dependent foreground/background constraints, viewing-condition implications;
+- Layout & Interaction: surface hierarchy, state/focus feedback, environment/device constraints, color-independent interaction design.
+
+Reference the canonical Color file rather than copying source summaries elsewhere.
+
 ## Handoff rule
 
-If another specialist requests Color evidence, answer with a canonical Color study or a new Color-only study. Do not edit their files. If the request contains Type, Layout, or interaction-semantic questions, split them and return those portions as dependencies.
+If another specialist requests Color evidence, answer with a canonical Color study or a new Color-only study. Do not edit their files. Split Type- or Layout/Interaction-owned portions into dependencies.
