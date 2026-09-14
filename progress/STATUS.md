@@ -15,7 +15,7 @@ Status vocabulary:
 | --- | --- | --- |
 | Composition / visual grammar | CRITIQUE | `research/006-grid-composition-hierarchy.md`; `product-design/exercises/003-grid-composition-comparison.svg`; `product-design/exercises/003-grid-composition-comparison-critique.md`; `product-design/exercises/007-grid-responsive-transfer.svg`; `product-design/exercises/007-grid-responsive-transfer-critique.md`; narrow recomposition, forced-compression failure, and unrelated editorial transfer complete; multilingual/enlarged-text/browser proof pending |
 | Grid / alignment systems | CRITIQUE | `research/006-grid-composition-hierarchy.md`; three structural hypotheses in Exercise 003; `product-design/exercises/007-grid-responsive-transfer.svg`; `product-design/exercises/007-grid-responsive-transfer-critique.md`; semantic vs disposable alignments documented across breakpoint and second context; real-browser/multilingual proof pending |
-| Color / luminance / contrast | CRITIQUE | `research/008-color-luminance-contrast-hierarchy.md`; `research/010-color-science-colorimetry-foundations.md`; `product-design/exercises/005-color-luminance-cross-context-practice.md`; `product-design/exercises/009-color-nontext-focus-proof.svg`; `product-design/exercises/009-color-nontext-focus-proof-critique.md`; `product-design/exercises/010-srgb-linear-xyz-practice.md`; cross-context grayscale/state critique, representative text probes, measured non-text boundary, focus geometry, primary-source colorimetry foundation, and encoded-sRGB → linear-light → XYZ bridge complete; official spectral integration/metamerism practice plus physical-display bright/low-light and interactive focus validation pending |
+| Color / luminance / contrast | CRITIQUE | `research/008-color-luminance-contrast-hierarchy.md`; `research/010-color-science-colorimetry-foundations.md`; `research/011-lms-cone-fundamentals-observer-models.md`; `product-design/exercises/005-color-luminance-cross-context-practice.md`; `product-design/exercises/009-color-nontext-focus-proof.svg`; `product-design/exercises/009-color-nontext-focus-proof-critique.md`; `product-design/exercises/010-srgb-linear-xyz-practice.md`; cross-context grayscale/state critique, representative text probes, measured non-text boundary, focus geometry, primary-source colorimetry foundation, encoded-sRGB → linear-light → XYZ bridge, and LMS/observer-model foundation complete; official spectral integration/observer comparison plus physical-display bright/low-light and interactive focus validation pending |
 | Typography as information architecture | CRITIQUE | `research/009-typography-as-information-architecture.md`; `product-design/exercises/006-typography-information-architecture-practice.md`; `product-design/exercises/008-typography-enlarged-proof.svg`; `product-design/exercises/008-typography-enlarged-proof-critique.md`; three hypotheses, dense-table adaptation, distinction-removal critique, second-context transfer, and enlarged-text failure → revision cycle complete; real platform scaling/reflow validation pending |
 | Type anatomy / metrics | PRACTICE | `research/001-type-as-system.md`; `research/002-metrics-spacing-optical-rhythm.md`; `type-design/exercises/001-ho-metrics-critique.md` |
 | Stroke / contrast / construction | PRACTICE | `research/003-stroke-contrast-bezier-optics.md`; `type-design/exercises/002-construction-curve-optics.svg`; critique documents limits and required family extension |
@@ -47,10 +47,11 @@ The first immediate objective is not to design a font or app. It is to complete 
 
 ## Immediate next study block
 
-1. execute Study 010 spectral colorimetry practice with official CIE datasets: spectral integration → CIE 1931 XYZ/xy, scale/chromaticity check, then metamerism evidence;
-2. raster proof Exercise 002 at multiple sizes and record a failure → redraw cycle;
-3. execute Exercise 003 numeral/punctuation brief with native outlines and ambiguity alternatives;
-4. test Grid Exercise 007 with long/multilingual labels and enlarged text in an actual rendering environment;
-5. validate Color Exercise 009 on physical displays under controlled bright/low-light conditions and with interactive keyboard focus;
-6. validate Typography Exercise 008 with real platform text scaling/reflow and localized long labels;
-7. extend interaction work into a navigation-model prototype and keyboard/status-message validation.
+1. execute Study 010/011 spectral colorimetry practice with official CIE datasets: spectral integration → CIE 1931 XYZ/xy → spectrum scaling → same-spectrum observer comparison → metamerism evidence;
+2. study chromatic adaptation and white-point transformations before recommending any D50↔D65 production workflow;
+3. raster proof Exercise 002 at multiple sizes and record a failure → redraw cycle;
+4. execute Exercise 003 numeral/punctuation brief with native outlines and ambiguity alternatives;
+5. test Grid Exercise 007 with long/multilingual labels and enlarged text in an actual rendering environment;
+6. validate Color Exercise 009 on physical displays under controlled bright/low-light conditions and with interactive keyboard focus;
+7. validate Typography Exercise 008 with real platform text scaling/reflow and localized long labels;
+8. extend interaction work into a navigation-model prototype and keyboard/status-message validation.
