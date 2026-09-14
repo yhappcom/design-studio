@@ -47,22 +47,38 @@ After completion, add `HANDOFFS TO OTHER SPECIALISTS` when the Type result can m
 - `003-stroke-contrast-bezier-optics.md`
 - `005-numerals-punctuation-systems.md`
 - `009-typography-as-information-architecture.md`
-- `T001-web-typography-fallback-metrics-reflow-transfer.md` — Type→Web transfer baseline for font loading, fallback metrics, zoom/reflow, and data stability; real browser proof remains open.
+- `T001-web-typography-fallback-metrics-reflow-transfer.md` — Type→Web transfer baseline for loading/failure/script fallback, font metrics, zoom/reflow and data stability.
 - `T002-raster-proof-redraw-cycle.md` — controlled surrogate-raster failure → redraw → re-proof study for join darkness and compact survival.
-- `T002-raster-proof-redraw-cycle.svg` — embedded surrogate-raster evidence for the T002 R0/R1 comparison.
-- `T003-minimal-font-renderer-matrix.md` — compiled minimal TrueType + FreeType no-hint/autohint method comparison; demonstrates that compact form and hinted metrics are renderer/size dependent.
+- `T002-raster-proof-redraw-cycle.svg` — T002 evidence summary.
+- `T003-minimal-font-renderer-matrix.md` — compiled minimal TrueType + FreeType no-hint/autohint comparison; establishes renderer/size/positioning dependence.
 - `T003-minimal-research-font-renderer-matrix.py` — reproducible T003 research-font build and renderer-measurement source.
-- `T003-minimal-font-renderer-matrix.svg` — embedded FreeType bitmap evidence at 14/16/24/48 ppem.
+- `T003-minimal-font-renderer-matrix.svg` — T003 evidence summary.
 - `T004-native-numeral-punctuation-renderer-proof.md` — complete original research `0–9`/punctuation system, proportional/tabular metrics, ambiguity alternatives, colon failure→redraw and renderer-aware tabular proof.
 - `T004-numeral-punctuation-research-font.py` — reproducible T004 TrueType build and FreeType measurement source.
 - `T004-numeral-punctuation-results.json` — measured source metrics, raw hinted advances, colon redraw and zero-mark raster data.
-- `T004-numeral-punctuation-evidence.svg` — compact measurement summary for T004.
+- `T004-numeral-punctuation-evidence.svg` — T004 evidence summary.
+- `T005-latin-korean-mixed-script-fallback.md` — Latin/Korean script-fallback, vertical-metric and apparent-size study; rejects blind Latin x-height matching as a generic Hangul optical-normalization method.
+- `T005-mixed-script-fallback-proof.py` — reproducible Fontconfig/fontTools/FreeType measurement source; no font binaries are committed.
+- `T005-mixed-script-results.json` — exact font versions/hashes, OpenType metrics, Hangul/Latin raster measurements, fallback-pair data and long-label widths.
+- `T005-mixed-script-evidence.svg` — compact metric/raster evidence summary for T005.
 
 Existing study numbers remain stable. New Type studies use `T###` IDs. The next available Type study ID is tracked in `progress/TYPE_STATUS.md`.
 
 ## Current research direction
 
-T004 closes the largest missing numeral/punctuation **practice** gap, but not the Foundation gate. The highest-value next Type direction is mixed-script/fallback work, especially Latin/Korean apparent-size, vertical metrics, line-box behavior, long localized labels and dense rows, while browser transfer of T001/T003/T004 remains a major dependency once substantive Web evidence is available.
+T004 closed the largest numeral/punctuation **practice** gap and T005 advances mixed-script/fallback from an abstract/open problem into **PRACTICE / CRITIQUE** evidence.
+
+T005 materially changes the Type method: Latin x-height matching may be useful for some same-script fallback problems, but it is not a generic Latin→Korean optical solution. Korean fallback must be evaluated with Hangul body size, baseline relation, stroke/color, punctuation, numerals, vertical metrics, long localized labels, line boxes and the actual target renderer/layout.
+
+Highest-value next directions are now:
+
+1. a small production-outline audit with manually inspectable curves/extrema/overlaps/export QA;
+2. browser/platform transfer of T001/T003/T004/T005 when substantive Web or target-platform evidence is available;
+3. Type→Layout transfer using the L002 compact/intermediate/spacious density matrix with real mixed-script/numeric conditions;
+4. Type→Color transfer using actual renderer alpha/ink behavior under representative viewing conditions;
+5. target-platform Korean/Latin proof for Flutter/CoreText/Skia/DirectWrite when a real project requires it.
+
+Foundation remains **NOT PASSED**.
 
 ## Status authority
 
