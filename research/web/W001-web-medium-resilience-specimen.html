@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>W001 Web Medium Resilience Specimen</title>
+<style>
+  * { box-sizing: border-box; }
+  html { font-family: system-ui, sans-serif; }
+  body { margin: 0; padding: 24px; line-height: 1.5; }
+  main { display: grid; gap: 48px; }
+  .specimen { border: 2px solid currentColor; padding: 16px; }
+  .specimen h2 { margin-block-start: 0; }
+  .shell { border: 1px solid currentColor; position: relative; }
+  .topbar { border-block-end: 1px solid currentColor; }
+  .brand { font-weight: 700; }
+  .hero { border-block-end: 1px solid currentColor; }
+  .hero-copy h3 { margin-block-start: 0; }
+  .actions a { display: inline-block; border: 1px solid currentColor; padding: .65rem .9rem; text-decoration: none; }
+  .visual { min-block-size: 180px; border: 1px dashed currentColor; display: grid; place-items: center; text-align: center; padding: 12px; }
+  .facts { margin: 0; padding: 0; list-style: none; }
+  .facts li { border-block-start: 1px solid currentColor; padding-block: .6rem; }
+
+  /* Failure transfer: paper-like fixed canvas assumptions. */
+  #fixed .shell { width: 960px; min-height: 540px; }
+  #fixed .topbar { height: 70px; padding: 18px 28px; display: flex; align-items: center; justify-content: space-between; }
+  #fixed nav { white-space: nowrap; }
+  #fixed nav a { margin-left: 24px; }
+  #fixed .hero { height: 390px; padding: 44px; display: grid; grid-template-columns: 470px 360px; gap: 42px; }
+  #fixed .hero-copy { position: relative; }
+  #fixed .actions { position: absolute; top: 250px; left: 0; white-space: nowrap; }
+  #fixed .visual { width: 360px; height: 286px; }
+  #fixed .facts { width: 820px; margin: 0 44px; }
+
+  /* Revision: normal-flow + intrinsic/fluid constraints. */
+  #fluid .shell { inline-size: min(100%, 70rem); margin-inline: auto; }
+  #fluid .topbar { padding: clamp(.8rem, 2vw, 1.25rem); display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  #fluid nav { display: flex; gap: clamp(.65rem, 2vw, 1.4rem); flex-wrap: wrap; }
+  #fluid nav a { overflow-wrap: anywhere; }
+  #fluid .hero { padding: clamp(1rem, 4vw, 3rem); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: clamp(1.25rem, 4vw, 3rem); align-items: center; }
+  #fluid .hero-copy { min-inline-size: 0; }
+  #fluid .hero-copy p, #fluid h3 { overflow-wrap: anywhere; }
+  #fluid .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-block-start: 1.5rem; }
+  #fluid .visual { inline-size: 100%; min-inline-size: 0; aspect-ratio: 4/3; block-size: auto; }
+  #fluid .facts { padding-inline: clamp(1rem, 4vw, 3rem); }
+
+  body[data-test="fixed"] #fluid, body[data-test="fluid"] #fixed { display: none; }
+
+  @media (max-width: 420px) {
+    body { padding: 8px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <section id="fixed" class="specimen" aria-labelledby="fixed-title">
+    <h2 id="fixed-title">A — fixed-canvas transfer</h2>
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand">FlightLog Studio</div>
+        <nav aria-label="Fixed specimen navigation">
+          <a href="#overview-fixed">Overview</a>
+          <a href="#records-fixed">Flight Records</a>
+          <a href="#support-fixed">Support &amp; Privacy</a>
+        </nav>
+      </header>
+      <section class="hero" id="overview-fixed">
+        <div class="hero-copy">
+          <h3>One logbook, readable wherever the web reaches you</h3>
+          <p>Review flights, totals, certificates, and synchronized records. 긴 한국어 설명이나 확대된 텍스트가 들어와도 핵심 정보와 행동이 사라지면 안 됩니다.</p>
+          <div class="actions">
+            <a href="#records-fixed">Review recent flights</a>
+            <a href="#support-fixed">Learn how backup works</a>
+          </div>
+        </div>
+        <div class="visual" aria-label="Product preview placeholder">Product preview / 제품 화면 예시</div>
+      </section>
+      <ul class="facts" id="records-fixed">
+        <li><strong>Task:</strong> find the latest flight and confirm totals.</li>
+        <li><strong>Constraint:</strong> content can grow, fonts can change, and viewport width is not fixed.</li>
+        <li id="support-fixed"><strong>Support:</strong> controls must remain reachable rather than merely preserve a screenshot.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="fluid" class="specimen" aria-labelledby="fluid-title">
+    <h2 id="fluid-title">B — web-native revision</h2>
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand">FlightLog Studio</div>
+        <nav aria-label="Fluid specimen navigation">
+          <a href="#overview-fluid">Overview</a>
+          <a href="#records-fluid">Flight Records</a>
+          <a href="#support-fluid">Support &amp; Privacy</a>
+        </nav>
+      </header>
+      <section class="hero" id="overview-fluid">
+        <div class="hero-copy">
+          <h3>One logbook, readable wherever the web reaches you</h3>
+          <p>Review flights, totals, certificates, and synchronized records. 긴 한국어 설명이나 확대된 텍스트가 들어와도 핵심 정보와 행동이 사라지면 안 됩니다.</p>
+          <div class="actions">
+            <a href="#records-fluid">Review recent flights</a>
+            <a href="#support-fluid">Learn how backup works</a>
+          </div>
+        </div>
+        <div class="visual" aria-label="Product preview placeholder">Product preview / 제품 화면 예시</div>
+      </section>
+      <ul class="facts" id="records-fluid">
+        <li><strong>Task:</strong> find the latest flight and confirm totals.</li>
+        <li><strong>Constraint:</strong> content can grow, fonts can change, and viewport width is not fixed.</li>
+        <li id="support-fluid"><strong>Support:</strong> controls must remain reachable rather than merely preserve a screenshot.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+</body>
+</html>
