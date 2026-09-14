@@ -1,0 +1,166 @@
+{
+  "engine": "144.0.7559.96",
+  "cases": [
+    {
+      "name": "wide-1280",
+      "measurements": {
+        "viewport": 1280,
+        "docScrollWidth": 1280,
+        "docClientWidth": 1280,
+        "documentHorizontalOverflow": false,
+        "workspaceColumns": "697.422px 335.797px",
+        "workspaceChildrenSameRow": true,
+        "tableWrapClientWidth": 1057,
+        "tableScrollWidth": 1057,
+        "tableLocalOverflow": false,
+        "tableWidth": 1057.21875,
+        "tableSemanticTag": "TABLE",
+        "headerCount": 8,
+        "focusables": [
+          {"tag": "BUTTON", "text": "Add transaction", "top": 374.078125},
+          {"tag": "BUTTON", "text": "Export history", "top": 374.078125},
+          {"tag": "DIV", "text": "DateTypeTickerQuantityPriceAmountTaxMemo", "top": 1471.703125}
+        ],
+        "bodyFontPx": 16
+      },
+      "assertions": {
+        "document_has_no_horizontal_overflow": true,
+        "workspace_row_relation_expected": true,
+        "local_table_overflow_expected": true,
+        "table_semantics_preserved": true,
+        "focus_order_source_consistent": true
+      },
+      "pass": true
+    },
+    {
+      "name": "threshold-768",
+      "measurements": {
+        "viewport": 768,
+        "docScrollWidth": 768,
+        "docClientWidth": 768,
+        "documentHorizontalOverflow": false,
+        "workspaceColumns": "361.875px 288px",
+        "workspaceChildrenSameRow": true,
+        "tableWrapClientWidth": 674,
+        "tableScrollWidth": 729,
+        "tableLocalOverflow": true,
+        "tableWidth": 729.140625,
+        "tableSemanticTag": "TABLE",
+        "headerCount": 8,
+        "focusables": [
+          {"tag": "BUTTON", "text": "Add transaction", "top": 397.75},
+          {"tag": "BUTTON", "text": "Export history", "top": 397.75},
+          {"tag": "DIV", "text": "DateTypeTickerQuantityPriceAmountTaxMemo", "top": 1459.5}
+        ],
+        "bodyFontPx": 16
+      },
+      "assertions": {
+        "document_has_no_horizontal_overflow": true,
+        "workspace_row_relation_expected": true,
+        "local_table_overflow_expected": true,
+        "table_semantics_preserved": true,
+        "focus_order_source_consistent": true
+      },
+      "pass": true
+    },
+    {
+      "name": "narrow-320",
+      "measurements": {
+        "viewport": 320,
+        "docScrollWidth": 320,
+        "docClientWidth": 320,
+        "documentHorizontalOverflow": false,
+        "workspaceColumns": "254px",
+        "workspaceChildrenSameRow": false,
+        "tableWrapClientWidth": 254,
+        "tableScrollWidth": 729,
+        "tableLocalOverflow": true,
+        "tableWidth": 729.140625,
+        "tableSemanticTag": "TABLE",
+        "headerCount": 8,
+        "focusables": [
+          {"tag": "BUTTON", "text": "Add transaction", "top": 707.6875},
+          {"tag": "BUTTON", "text": "Export history", "top": 763.6875},
+          {"tag": "DIV", "text": "DateTypeTickerQuantityPriceAmountTaxMemo", "top": 2483.3125}
+        ],
+        "bodyFontPx": 16
+      },
+      "assertions": {
+        "document_has_no_horizontal_overflow": true,
+        "workspace_row_relation_expected": true,
+        "local_table_overflow_expected": true,
+        "table_semantics_preserved": true,
+        "focus_order_source_consistent": true
+      },
+      "pass": true
+    },
+    {
+      "name": "narrow-320-long-bilingual",
+      "measurements": {
+        "viewport": 320,
+        "docScrollWidth": 320,
+        "docClientWidth": 320,
+        "documentHorizontalOverflow": false,
+        "workspaceColumns": "254px",
+        "workspaceChildrenSameRow": false,
+        "tableWrapClientWidth": 254,
+        "tableScrollWidth": 729,
+        "tableLocalOverflow": true,
+        "tableWidth": 729.140625,
+        "tableSemanticTag": "TABLE",
+        "headerCount": 8,
+        "focusables": [
+          {"tag": "BUTTON", "text": "Add transaction", "top": 755.6875},
+          {"tag": "BUTTON", "text": "Export history", "top": 811.6875},
+          {"tag": "DIV", "text": "DateTypeTickerQuantityPriceAmountTaxMemo", "top": 2579.3125}
+        ],
+        "bodyFontPx": 16
+      },
+      "assertions": {
+        "document_has_no_horizontal_overflow": true,
+        "workspace_row_relation_expected": true,
+        "local_table_overflow_expected": true,
+        "table_semantics_preserved": true,
+        "focus_order_source_consistent": true
+      },
+      "pass": true
+    },
+    {
+      "name": "narrow-320-text-200pct",
+      "measurements": {
+        "viewport": 320,
+        "docScrollWidth": 320,
+        "docClientWidth": 320,
+        "documentHorizontalOverflow": false,
+        "workspaceColumns": "254px",
+        "workspaceChildrenSameRow": false,
+        "tableWrapClientWidth": 254,
+        "tableScrollWidth": 1330,
+        "tableLocalOverflow": true,
+        "tableWidth": 1330.234375,
+        "tableSemanticTag": "TABLE",
+        "headerCount": 8,
+        "focusables": [
+          {"tag": "BUTTON", "text": "Add transaction", "top": 2494.40625},
+          {"tag": "BUTTON", "text": "Export history", "top": 2622.40625},
+          {"tag": "DIV", "text": "DateTypeTickerQuantityPriceAmountTaxMemo", "top": 6737.71875}
+        ],
+        "bodyFontPx": 32
+      },
+      "assertions": {
+        "document_has_no_horizontal_overflow": true,
+        "workspace_row_relation_expected": true,
+        "local_table_overflow_expected": true,
+        "table_semantics_preserved": true,
+        "focus_order_source_consistent": true
+      },
+      "pass": true
+    }
+  ],
+  "summary": {
+    "assertions_total": 25,
+    "assertions_passed": 25,
+    "cases_passed": 5,
+    "cases_total": 5
+  }
+}
