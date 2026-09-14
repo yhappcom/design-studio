@@ -1,0 +1,65 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>L006 custom aria-modal transfer</title>
+<style>
+html,body{margin:0;font:16px/1.4 system-ui,sans-serif;background:white;color:#111}
+body{min-height:700px}
+button,input{font:inherit;min-height:44px}
+#app{padding:32px}
+#danger{position:absolute;left:80px;top:250px;width:190px;height:48px}
+#open{margin-top:16px}
+#portal-root{position:fixed;inset:0;pointer-events:none}
+.backdrop{position:absolute;inset:0;background:rgba(0,0,0,.35);pointer-events:auto}
+.dialog{position:absolute;left:380px;top:180px;width:270px;min-height:190px;background:white;border:2px solid #222;box-shadow:0 16px 44px rgba(0,0,0,.4);padding:24px;box-sizing:border-box;pointer-events:auto}
+.dialog button{margin-right:8px}
+.hidden{display:none}
+</style>
+<div id="app">
+  <h1>Workspace</h1>
+  <label>Record name <input id="bg-input" value="Flight 101"></label>
+  <button id="open">Open custom dialog</button>
+  <button id="danger">Background destructive action</button>
+</div>
+<div id="portal-root"></div>
+<script>
+const app=document.querySelector('#app'), root=document.querySelector('#portal-root'), opener=document.querySelector('#open');
+window.counts={bg:0,confirm:0};
+document.querySelector('#danger').addEventListener('click',()=>counts.bg++);
+window.dialogMode=null;
+function makeDialog(mode){
+  dialogMode=mode;
+  root.innerHTML='';
+  const back=document.createElement('div'); back.className='backdrop';
+  const dlg=document.createElement('div'); dlg.className='dialog'; dlg.id='custom-dialog'; dlg.setAttribute('role','dialog'); dlg.setAttribute('aria-modal','true'); dlg.setAttribute('aria-labelledby','dlg-title');
+  dlg.innerHTML='<h2 id="dlg-title">Confirm deletion</h2><p>This custom portal visually covers the page.</p><button id="confirm">Confirm</button><button id="cancel">Cancel</button>';
+  root.append(back,dlg);
+  document.querySelector('#confirm').addEventListener('click',()=>counts.confirm++);
+  document.querySelector('#cancel').addEventListener('click',()=>closeDialog());
+  if(mode==='broken'){
+    // visually modal + ARIA modal only. Background remains interactive.
+    back.style.pointerEvents='none';
+  } else {
+    app.inert=true;
+    // keep a real backdrop consuming pointer events
+    back.addEventListener('click',e=>e.stopPropagation());
+    const focusables=[...dlg.querySelectorAll('button')];
+    dlg.addEventListener('keydown',e=>{
+      if(e.key!=='Tab')return;
+      const i=focusables.indexOf(document.activeElement);
+      if(e.shiftKey && (i<=0)){e.preventDefault();focusables[focusables.length-1].focus();}
+      else if(!e.shiftKey && (i===focusables.length-1)){e.preventDefault();focusables[0].focus();}
+    });
+  }
+  document.querySelector('#confirm').focus();
+}
+window.openBroken=()=>makeDialog('broken');
+window.openRevised=()=>makeDialog('revised');
+window.closeDialog=()=>{
+  root.innerHTML='';
+  app.inert=false;
+  opener.focus();
+  dialogMode=null;
+};
+window.reset=()=>{closeDialog();counts={bg:0,confirm:0};document.querySelector('#bg-input').focus();};
+window.state=()=>({mode:dialogMode,active:document.activeElement.id||document.activeElement.tagName,appInert:app.inert,counts:{...counts},dialogExists:!!document.querySelector('#custom-dialog')});
+</script>
