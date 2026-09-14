@@ -84,6 +84,11 @@ New Color studies use `C###` IDs:
 - `C013-provenance-conflict-gate.py` — reproducible authority-surface/raw-artifact classification harness.
 - `C013-provenance-conflict-ledger.json` — observed first-party page/metadata identities for 1931, 1964, 2006 LMS and 2015 cone-fundamental-based 2°/10° tables.
 - `C013-provenance-conflict-results.json` — three surface-consistent and two authority-conflict classifications with evidence boundaries.
+- `C014-stage1-foundation-closure-audit.md` — maps the actual Master Curriculum and Study 008 against existing Color evidence, separates Stage 1 blockers from Stage 2–4 backlog, and defines the minimal closure capstone.
+- `C015-stage1-perceptual-context-capstone.md` — Stage 1 capstone covering simultaneous contrast, grayscale-first hierarchy, low/high viewing stress, swatch-to-context failure critique, history/precedent literacy, and final Foundation gate review.
+- `C015-stage1-perceptual-context-specimen.html` — original visual specimen for the C015 closure exercises.
+- `C015-stage1-perceptual-context-validation.py` — reproducible encoded-color, relative-luminance, contrast and bounded veiling-sensitivity calculations.
+- `C015-stage1-perceptual-context-results.json` — measured C015 values and evidence boundaries.
 
 Next new Color study ID is tracked in `progress/COLOR_STATUS.md`.
 
@@ -102,10 +107,14 @@ Research should distinguish as appropriate:
 
 A color topic is not project-ready merely because a palette, formula, chart, token file, profile transform, screenshot statistic, simulation, raster metric, spectral checksum, sampling diagnostic, provenance ledger or colorimetric calculation exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
 
-Computational salience/clutter proxies, CVD simulations, screenshot-pixel/raster diagnostics, unbounded float round trips, profile-to-profile comparisons, forced-colors emulation, mathematical spectral-subsampling tests and checksum/source-surface agreement are not human-task, perceived-clutter, real-observer accessibility, WCAG-conformance, OS-wide high-contrast, instrument-performance, device-match, model-appropriateness or physical-appearance evidence unless the relevant method explicitly establishes that role.
+Computational salience/clutter proxies, CVD simulations, screenshot-pixel/raster diagnostics, unbounded float round trips, profile-to-profile comparisons, forced-colors emulation, mathematical spectral-subsampling tests, checksum/source-surface agreement and C015's bounded veiling sensitivity model are not human-task, perceived-clutter, real-observer accessibility, WCAG-conformance, OS-wide high-contrast, instrument-performance, device-match, model-appropriateness, physical-glare or physical-appearance evidence unless the relevant method explicitly establishes that role.
+
+## Stage 1 status
+
+Color Stage 1 — Foundations is **PASS** as of C015. The pass is scoped to the Master Curriculum Foundation gate and Study 008 local requirements. Higher-stage Color modules remain active and incomplete as recorded in `progress/COLOR_STATUS.md`.
 
 ## Status authority
 
 Color progress is tracked in `progress/COLOR_STATUS.md`. The Color Specialist does not edit global `progress/STATUS.md` during ordinary work.
 
-Current operating state: **ACTIVE — research may resume immediately**.
+Current operating state: **ACTIVE — Stage 1 passed; Stage 2 entry audit next**.
