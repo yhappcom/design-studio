@@ -10,33 +10,32 @@ Research belongs here when its primary question concerns:
 - CIE colorimetry, observer models, illuminants, XYZ, Lab/LCh, Oklab/OkLCh;
 - color difference, gamut, gamut mapping, wide-gamut and HDR-related color questions;
 - ICC/color management, white points, chromatic adaptation and device reproduction;
-- semantic color systems, brand-color behavior, environmental validation and color accessibility evidence.
+- palette/ramp systems, semantic color architecture, brand-color behavior, environmental validation and color accessibility evidence.
 
 ## Relationship with other disciplines
 
-- **Layout, Spatial & Interaction** is the canonical owner for spatial grouping, grid, responsive geometry, navigation, state semantics, feedback and interaction behavior.
-- **Typography / Type Design** is the canonical owner for glyph/font systems, text metrics and typographic structure.
+- **Layout, Spatial & Interaction** owns spatial grouping, responsive geometry, navigation, state/action semantics, feedback and interaction behavior. Color may encode those states but does not redefine their meaning silently.
+- **Typography / Type Design** owns glyph/font systems, text metrics, hierarchy and rendering. Color foreground roles must be validated with realistic Type conditions.
+- **Web Design** owns complete website/web-app integration and real browser/device validation. Color supplies canonical palette, token, contrast, gamut and viewing-condition evidence and consumes Web implementation findings that confirm, limit or contradict it.
 
-These boundaries define canonical ownership, not limits on what Color may study. Color may directly investigate Type or Layout/Interaction material for realistic color validation, replication, method comparison, contradiction review, transfer testing, prerequisite learning or project-specific work.
-
-When doing overlapping research, cite the peer canonical study and state why the overlap is useful. Store ordinary cross-domain verification in the Color specialist's writable area rather than editing peer files.
+These boundaries define canonical ownership, not limits on what Color may study. Cross-domain replication, method comparison, contradiction review, transfer testing, prerequisite learning and project-specific research are allowed when analytically useful.
 
 ## Mandatory cross-domain scan
 
 Before new Color work:
 
-1. read `progress/STATUS.md` and all specialist status files;
-2. read this README and relevant Color studies;
-3. search Type and Layout/Interaction research for related evidence;
-4. identify what can be reused, independently verified, challenged or extended;
-5. identify dependencies and collaboration opportunities;
-6. record the result under `RELATED DOMAIN CHECK` in the new study.
+1. read `AGENTS.md`, `progress/STATUS.md`, and all four specialist status files;
+2. read `research/README.md`, this README, and relevant Color studies;
+3. inspect related Type, Layout/Interaction and Web evidence;
+4. identify reusable, uncertain, disputed or test-worthy findings;
+5. decide whether the new work is reuse, extension, replication, contradiction review, transfer validation, implementation validation or project-specific study;
+6. record the result under `RELATED DOMAIN CHECK`;
+7. after completion, add `HANDOFFS TO OTHER SPECIALISTS` when useful;
+8. update `progress/COLOR_STATUS.md` before moving to a materially different block.
 
-Existing work elsewhere is not an automatic reason to stop. Decide whether to reuse it or intentionally repeat/extend it, and document why.
+## Current canonical studies
 
-After completion, add `HANDOFFS TO OTHER SPECIALISTS` when the Color result can materially help Type or Layout/Interaction.
-
-## Current studies
+Legacy IDs remain stable:
 
 - `008-color-luminance-contrast-hierarchy.md`
 - `010-color-science-colorimetry-foundations.md`
@@ -46,10 +45,30 @@ After completion, add `HANDOFFS TO OTHER SPECIALISTS` when the Color result can 
 - `016-color-gamut-wide-gamut-mapping.md`
 - `017-perceptual-ramp-authoring.md`
 
-Existing study numbers remain stable. New Color studies use `C###` IDs.
+New Color studies use `C###` IDs:
+
+- `C001-web-color-user-override-resilience.md` — forced/user colors, semantic resilience, browser-transfer contract.
+- `C002-semantic-color-role-token-architecture.md` — base/semantic/component/context architecture, pair contracts, state/status separation, project-readiness method.
+
+Next new Color study ID is tracked in `progress/COLOR_STATUS.md`.
+
+## Evidence and project-use rule
+
+Research should distinguish as appropriate:
+
+- `SOURCE`
+- `SYNTHESIS`
+- `STUDIO JUDGMENT`
+- `OPEN`
+- `DEPENDENCY`
+- `REPLICATION`
+- `CONTRADICTION`
+- `TRANSFER VALIDATION`
+
+A color topic is not considered project-ready merely because a palette, formula, or token file exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
 
 ## Status authority
 
-Color progress is tracked in `progress/COLOR_STATUS.md`. The specialist does not edit global `progress/STATUS.md` during ordinary work.
+Color progress is tracked in `progress/COLOR_STATUS.md`. The Color Specialist does not edit global `progress/STATUS.md` during ordinary work.
 
 Current operating state: **ACTIVE — research may resume immediately**.
