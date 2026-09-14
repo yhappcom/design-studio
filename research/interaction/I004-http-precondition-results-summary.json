@@ -1,0 +1,57 @@
+{
+  "environment": {
+    "transport": "real local HTTP/1.1 origin server via Python http.server",
+    "port_ephemeral": true
+  },
+  "scenarios": {
+    "naive_lost_update": {
+      "A_get": {"status": 200, "etag": "\"r1-v1\"", "body": {"id": "r1", "title": "Flight 101", "notes": "Routine", "version": 1}},
+      "B_get": {"status": 200, "etag": "\"r1-v1\"", "body": {"id": "r1", "title": "Flight 101", "notes": "Routine", "version": 1}},
+      "A_save": {"status": 200, "etag": "\"r1-v2\"", "body": {"id": "r1", "title": "Flight 101A", "notes": "Routine", "version": 2}},
+      "B_naive": {"status": 200, "etag": "\"r1-v3\"", "body": {"id": "r1", "title": "Flight 101", "notes": "Weather diversion", "version": 3}},
+      "final": {"status": 200, "etag": "\"r1-v3\"", "body": {"id": "r1", "title": "Flight 101", "notes": "Weather diversion", "version": 3}}
+    },
+    "conditional_merge": {
+      "baseB": {"status": 200, "etag": "\"r1-v1\"", "body": {"id": "r1", "title": "Flight 101", "notes": "Routine", "version": 1}},
+      "remote": {"status": 200, "etag": "\"r1-v2\"", "body": {"id": "r1", "title": "Flight 101A", "notes": "Routine", "version": 2}},
+      "stale": {"status": 412, "etag": "\"r1-v2\"", "body": {"error": "precondition_failed", "current": {"id": "r1", "title": "Flight 101A", "notes": "Routine", "version": 2}}},
+      "current_after_412": {"status": 200, "etag": "\"r1-v2\"", "body": {"id": "r1", "title": "Flight 101A", "notes": "Routine", "version": 2}},
+      "merged": {"status": 200, "etag": "\"r1-v3\"", "body": {"id": "r1", "title": "Flight 101A", "notes": "Weather diversion", "version": 3}},
+      "after_merge": {"status": 200, "etag": "\"r1-v3\"", "body": {"id": "r1", "title": "Flight 101A", "notes": "Weather diversion", "version": 3}}
+    },
+    "same_field_conflict": {
+      "remote": {"status": 200, "etag": "\"r1-v2\"", "body": {"id": "r1", "title": "Flight 101A", "notes": "Routine", "version": 2}},
+      "stale": {"status": 412, "etag": "\"r1-v2\"", "body": {"error": "precondition_failed", "current": {"id": "r1", "title": "Flight 101A", "notes": "Routine", "version": 2}}},
+      "authoritative": {"status": 200, "etag": "\"r1-v2\"", "body": {"id": "r1", "title": "Flight 101A", "notes": "Routine", "version": 2}},
+      "preserved_local_draft": {"title": "Flight 101B", "notes": "Routine", "base_etag": "\"r1-v1\""}
+    },
+    "delete_vs_edit": {
+      "stale_client": {"status": 200, "etag": "\"r1-v1\"", "body": {"id": "r1", "title": "Flight 101", "notes": "Routine", "version": 1}},
+      "deleted": {"status": 204, "etag": null, "body": null},
+      "stale_edit": {"status": 412, "etag": null, "body": {"error": "precondition_failed", "reason": "missing_current"}},
+      "new_copy": {"status": 201, "etag": "\"r2-v1\"", "body": {"id": "r2", "title": "Flight 101", "notes": "Local preserved note", "version": 1}},
+      "duplicate_create": {"status": 412, "etag": "\"r2-v1\"", "body": {"error": "precondition_failed", "reason": "already_exists"}},
+      "r1": {"status": 404, "etag": null, "body": {"error": "not_found"}},
+      "r2": {"status": 200, "etag": "\"r2-v1\"", "body": {"id": "r2", "title": "Flight 101", "notes": "Local preserved note", "version": 1}}
+    }
+  },
+  "assertions": [
+    {"name": "N1 initial clients observe same strong ETag", "pass": true},
+    {"name": "N2 writer A conditional update succeeds and advances ETag", "pass": true},
+    {"name": "N3 naive stale whole-record PUT succeeds without a precondition", "pass": true},
+    {"name": "N4 naive stale PUT reproduces lost update", "pass": true},
+    {"name": "C1 stale If-Match write is rejected with 412", "pass": true},
+    {"name": "C2 412 path does not mutate authoritative remote change", "pass": true},
+    {"name": "C3 412 response returns current validator in this API contract", "pass": true},
+    {"name": "C4 safe disjoint merge is rebased against current validator", "pass": true},
+    {"name": "C5 disjoint merge preserves both remote and local intentions", "pass": true},
+    {"name": "S1 same-field stale write is rejected before overwrite", "pass": true},
+    {"name": "S2 local same-field draft can remain preserved client-side", "pass": true},
+    {"name": "S3 precondition detection alone does not choose conflict winner", "pass": true},
+    {"name": "D1 conditional delete succeeds for current validator", "pass": true},
+    {"name": "D2 stale edit after deletion fails precondition instead of resurrecting r1", "pass": true},
+    {"name": "D3 preserved work can be created under new identity with If-None-Match:*", "pass": true},
+    {"name": "D4 If-None-Match:* blocks accidental overwrite of the new identity", "pass": true}
+  ],
+  "summary": {"passed": 16, "total": 16}
+}
