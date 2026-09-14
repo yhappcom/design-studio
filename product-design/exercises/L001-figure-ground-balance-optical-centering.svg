@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1320" viewBox="0 0 1600 1320">
+  <rect width="1600" height="1320" fill="#f4f4f4"/>
+  <style>
+    .title{font:700 34px Arial,sans-serif;fill:#111}.h{font:700 22px Arial,sans-serif;fill:#111}.b{font:400 17px Arial,sans-serif;fill:#222}.s{font:400 14px Arial,sans-serif;fill:#333}.note{font:italic 14px Arial,sans-serif;fill:#444}.panel{fill:#fff;stroke:#bdbdbd;stroke-width:2}.line{stroke:#222;stroke-width:3}.thin{stroke:#777;stroke-width:1.5}.dash{stroke:#777;stroke-width:1.5;stroke-dasharray:7 7}.mass{fill:#555}.light{fill:#d9d9d9}.dark{fill:#333}.white{fill:#fff}.center{fill:#111}.candidate{fill:none;stroke:#111;stroke-width:2}.labelbox{fill:#ededed;stroke:#bdbdbd;stroke-width:1}
+  </style>
+
+  <text x="60" y="62" class="title">L001 Practice — Figure/Ground, Balance, Tension, Optical Centering</text>
+  <text x="60" y="92" class="b">Grayscale comparative proof. Geometry is measured; perceptual claims remain hypotheses until observed.</text>
+
+  <!-- Panel A -->
+  <rect x="60" y="130" width="720" height="330" rx="18" class="panel"/>
+  <text x="88" y="170" class="h">A. Border ownership: same divider, different context</text>
+  <text x="88" y="198" class="s">A1 ambiguous shared edge → A2 closed figure → A3 occlusion/T-junction cue</text>
+
+  <!-- A1 -->
+  <rect x="105" y="230" width="170" height="170" fill="#ededed"/>
+  <rect x="275" y="230" width="170" height="170" fill="#ededed"/>
+  <line x1="275" y1="230" x2="275" y2="400" class="line"/>
+  <text x="155" y="427" class="s">A1 shared edge</text>
+
+  <!-- A2 -->
+  <rect x="335" y="230" width="170" height="170" fill="#ededed"/>
+  <rect x="375" y="265" width="90" height="100" rx="8" fill="#fff" stroke="#222" stroke-width="3"/>
+  <text x="365" y="427" class="s">A2 closed object</text>
+
+  <!-- A3 -->
+  <rect x="565" y="230" width="170" height="170" fill="#ededed"/>
+  <rect x="600" y="270" width="110" height="95" class="white" stroke="#777" stroke-width="1.5"/>
+  <rect x="635" y="245" width="75" height="120" class="white" stroke="#222" stroke-width="3"/>
+  <line x1="635" y1="270" x2="635" y2="365" stroke="#222" stroke-width="3"/>
+  <text x="590" y="427" class="s">A3 overlap cue</text>
+
+  <text x="88" y="449" class="note">Question: which side/object appears to own the critical boundary? Do not answer from stroke style alone.</text>
+
+  <!-- Panel B -->
+  <rect x="820" y="130" width="720" height="330" rx="18" class="panel"/>
+  <text x="848" y="170" class="h">B. Geometric mass baseline vs perceived balance</text>
+  <text x="848" y="198" class="s">Area-weighted centroid is a diagnostic, not a perceptual truth.</text>
+
+  <!-- B1 balanced geometry -->
+  <line x1="895" y1="315" x2="1175" y2="315" class="thin"/>
+  <line x1="1035" y1="225" x2="1035" y2="405" class="dash"/>
+  <rect x="925" y="270" width="80" height="90" class="mass"/>
+  <rect x="1065" y="270" width="80" height="90" class="mass"/>
+  <circle cx="1035" cy="315" r="5" class="center"/>
+  <text x="925" y="390" class="s">B1 equal area, symmetric x</text>
+  <text x="925" y="410" class="s">proxy centroid Cx = frame center</text>
+
+  <!-- B2 same approximate centroid, changed structure -->
+  <line x1="1210" y1="315" x2="1490" y2="315" class="thin"/>
+  <line x1="1350" y1="225" x2="1350" y2="405" class="dash"/>
+  <rect x="1240" y="278" width="100" height="74" class="mass"/>
+  <circle cx="1410" cy="315" r="48" class="mass"/>
+  <circle cx="1350" cy="315" r="5" class="center"/>
+  <text x="1225" y="390" class="s">B2 similar geometric centering</text>
+  <text x="1225" y="410" class="s">different shape/edge structure</text>
+
+  <text x="848" y="449" class="note">Critique task: record geometry first; only then ask whether B1/B2 feel equally balanced.</text>
+
+  <!-- Panel C -->
+  <rect x="60" y="500" width="720" height="330" rx="18" class="panel"/>
+  <text x="88" y="540" class="h">C. Tension as isolated causal change</text>
+  <text x="88" y="568" class="s">Same object; only frame-edge clearance changes.</text>
+
+  <rect x="105" y="605" width="250" height="150" fill="#ededed" stroke="#bdbdbd"/>
+  <polygon points="180,680 245,640 245,720" class="dark"/>
+  <line x1="230" y1="680" x2="315" y2="680" class="thin"/>
+  <polygon points="315,680 300,671 300,689" class="dark"/>
+  <text x="140" y="785" class="s">C1 directional object with clearance</text>
+
+  <rect x="430" y="605" width="250" height="150" fill="#ededed" stroke="#bdbdbd"/>
+  <polygon points="505,680 570,640 570,720" class="dark"/>
+  <line x1="555" y1="680" x2="663" y2="680" class="thin"/>
+  <polygon points="663,680 648,671 648,689" class="dark"/>
+  <text x="458" y="785" class="s">C2 same direction, reduced clearance</text>
+  <text x="88" y="812" class="note">Hypothesis: edge pressure / blocked affordance space raises directional pull. Requires observer comparison.</text>
+
+  <!-- Panel D -->
+  <rect x="820" y="500" width="720" height="330" rx="18" class="panel"/>
+  <text x="848" y="540" class="h">D. Optical centering: declare the reference center</text>
+  <text x="848" y="568" class="s">Right-pointing triangle in identical 120×120 visual boxes.</text>
+
+  <!-- D1 bounding box -->
+  <rect x="880" y="610" width="120" height="120" fill="#ededed" stroke="#bdbdbd"/>
+  <line x1="940" y1="600" x2="940" y2="740" class="dash"/>
+  <line x1="870" y1="670" x2="1010" y2="670" class="dash"/>
+  <polygon points="905,625 905,715 980,670" class="dark"/>
+  <text x="874" y="762" class="s">D1 bbox center</text>
+
+  <!-- D2 area centroid -->
+  <rect x="1090" y="610" width="120" height="120" fill="#ededed" stroke="#bdbdbd"/>
+  <line x1="1150" y1="600" x2="1150" y2="740" class="dash"/>
+  <line x1="1080" y1="670" x2="1220" y2="670" class="dash"/>
+  <!-- triangle translated so centroid x=(x1+x2+x3)/3 = 1150 -->
+  <polygon points="1125,625 1125,715 1200,670" class="dark"/>
+  <circle cx="1150" cy="670" r="5" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="1088" y="762" class="s">D2 area centroid</text>
+
+  <!-- D3 candidate offset -->
+  <rect x="1300" y="610" width="120" height="120" fill="#ededed" stroke="#bdbdbd"/>
+  <line x1="1360" y1="600" x2="1360" y2="740" class="dash"/>
+  <line x1="1290" y1="670" x2="1430" y2="670" class="dash"/>
+  <polygon points="1339,625 1339,715 1414,670" class="dark"/>
+  <path d="M1350 590 L1370 590" class="line"/>
+  <path d="M1370 590 l-8 -6 m8 6 l-8 6" class="line"/>
+  <text x="1293" y="762" class="s">D3 +δ candidate</text>
+  <text x="848" y="812" class="note">D3 is not declared “correct.” Blind/rand order at intended size before accepting an optical delta.</text>
+
+  <!-- Panel E realistic transfer -->
+  <rect x="60" y="870" width="1480" height="380" rx="18" class="panel"/>
+  <text x="88" y="910" class="h">E. Realistic transfer — command surface + independent popover</text>
+  <text x="88" y="938" class="s">Goal: match visual ownership to interaction ownership while preserving hit geometry.</text>
+
+  <!-- app frame -->
+  <rect x="105" y="975" width="610" height="220" rx="18" fill="#ededed" stroke="#aaa" stroke-width="2"/>
+  <rect x="105" y="975" width="610" height="58" rx="18" fill="#dedede"/>
+  <text x="135" y="1011" class="b">Flight summary</text>
+  <rect x="575" y="987" width="44" height="34" rx="8" fill="#fff" stroke="#777"/>
+  <polygon points="589,997 589,1011 601,1004" class="dark"/>
+  <text x="630" y="1010" class="s">visual child offset; hit box unchanged</text>
+  <text x="135" y="1070" class="s">BLOCK TIME</text><text x="135" y="1102" class="h">08:42</text>
+  <text x="365" y="1070" class="s">LANDINGS</text><text x="365" y="1102" class="h">3</text>
+  <line x1="135" y1="1135" x2="675" y2="1135" class="thin"/>
+  <text x="135" y="1165" class="s">Divider belongs to summary section, not to either metric.</text>
+
+  <!-- popover -->
+  <rect x="760" y="980" width="360" height="190" rx="16" fill="#fff" stroke="#222" stroke-width="3"/>
+  <text x="790" y="1022" class="b">Export options</text>
+  <line x1="790" y1="1040" x2="1090" y2="1040" class="thin"/>
+  <text x="790" y="1075" class="s">PDF report</text>
+  <text x="790" y="1110" class="s">Spreadsheet</text>
+  <text x="790" y="1145" class="s">Share snapshot</text>
+  <text x="1150" y="1020" class="s">Popover is a new figure:</text>
+  <text x="1150" y="1045" class="s">closed contour + overlap + local scope.</text>
+  <text x="1150" y="1085" class="s">Do not rely on shadow alone.</text>
+  <text x="1150" y="1125" class="s">Keyboard/focus/state proof remains separate.</text>
+
+  <text x="88" y="1228" class="note">Exercise limit: static self-critique only. No human perceptual result is claimed.</text>
+
+  <text x="60" y="1290" class="s">Measured → geometry and declared deltas. Inferred → ownership/balance/tension hypotheses. Open → blinded human comparison + real rendering.</text>
+</svg>
