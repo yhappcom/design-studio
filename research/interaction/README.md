@@ -17,11 +17,15 @@ Research belongs here when its primary question concerns:
 
 Spatial composition, grouping, grid, density and responsive geometry remain in `research/layout/`.
 
-## Boundary with other disciplines
+## Relationship with other disciplines
 
-- **Typography / Type Design** owns glyph/font systems, type metrics and typographic structure. Interaction owns the meaning and behavior of action labels/states, while Type owns their textual/type presentation.
-- **Color** owns color systems, perception, contrast and reproduction. Interaction defines state semantics; Color may encode those semantics visually.
-- **Layout / Spatial** is the same specialist role but a separate evidence stream. Interaction research should reference spatial evidence instead of duplicating it.
+- **Typography / Type Design** is the canonical owner for glyph/font systems, type metrics and typographic structure.
+- **Color** is the canonical owner for color systems, perception, contrast and reproduction.
+- **Layout / Spatial** is the same specialist role but a separate evidence stream.
+
+These boundaries define canonical ownership, not limits on what Interaction may study. Interaction may directly investigate Type, Color, Accessibility, Human Factors or other adjacent material for realistic behavior validation, independent replication, method comparison, contradiction review, transfer testing, prerequisite learning or project-specific work.
+
+Interaction defines state/action semantics, while Color may encode them and Type may shape their textual presentation. The Interaction specialist may still study those adjacent channels deeply enough to validate the complete behavior.
 
 ## Mandatory cross-domain scan
 
@@ -29,9 +33,12 @@ Before new Interaction work:
 
 1. read `progress/STATUS.md` and all specialist status files;
 2. read `research/layout/README.md`, this README and relevant interaction/layout studies;
-3. search Type and Color research for dependencies;
-4. check whether the question is already covered elsewhere;
-5. record a `RELATED DOMAIN CHECK` in the new study.
+3. search Type and Color research for related evidence;
+4. identify what can be reused, independently verified, challenged or extended;
+5. identify dependencies and collaboration opportunities;
+6. record a `RELATED DOMAIN CHECK` in the new study.
+
+Existing work elsewhere is not an automatic reason to stop. Decide whether to reuse it or intentionally repeat/extend it, and document why.
 
 After completion, add `HANDOFFS TO OTHER SPECIALISTS` when the interaction result creates useful contexts or constraints for Type or Color.
 
@@ -45,3 +52,5 @@ Existing study numbers remain stable. New Interaction studies use `I###` IDs und
 ## Status authority
 
 Interaction progress is tracked in `progress/LAYOUT_STATUS.md`, not in a separate fourth specialist status file.
+
+Current operating state: **ACTIVE — research may resume immediately**.
