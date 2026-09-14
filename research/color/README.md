@@ -80,6 +80,10 @@ New Color studies use `C###` IDs:
 - `C012-spectral-provenance-sampling-resolution.md` — current CIE 1931 checksum reconstruction, full 360–830 nm synthetic SPD integration, 5 nm phase/spectral-bandwidth stress, 1964 current-vs-stale provenance separation, and unresolved CIE 2006 LMS identity boundary.
 - `C012-spectral-provenance-sampling-resolution.py` — reproducible checksum-gated CIE 1931 full-spectrum/sampling harness; CIE datasets are not redistributed in the repository.
 - `C012-spectral-provenance-sampling-results.json` — measured provenance ledger and broad/narrow synthetic SPD sampling diagnostics.
+- `C013-authoritative-dataset-identity-conflict.md` — first-party CIE HTML↔metadata checksum contradiction review, artifact-first provenance states, and a cleaner future path via explicitly named cone-fundamental-based spectral tristimulus tables.
+- `C013-provenance-conflict-gate.py` — reproducible authority-surface/raw-artifact classification harness.
+- `C013-provenance-conflict-ledger.json` — observed first-party page/metadata identities for 1931, 1964, 2006 LMS and 2015 cone-fundamental-based 2°/10° tables.
+- `C013-provenance-conflict-results.json` — three surface-consistent and two authority-conflict classifications with evidence boundaries.
 
 Next new Color study ID is tracked in `progress/COLOR_STATUS.md`.
 
@@ -96,9 +100,9 @@ Research should distinguish as appropriate:
 - `CONTRADICTION`
 - `TRANSFER VALIDATION`
 
-A color topic is not project-ready merely because a palette, formula, chart, token file, profile transform, screenshot statistic, simulation, raster metric, spectral checksum, sampling diagnostic, or colorimetric calculation exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
+A color topic is not project-ready merely because a palette, formula, chart, token file, profile transform, screenshot statistic, simulation, raster metric, spectral checksum, sampling diagnostic, provenance ledger or colorimetric calculation exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
 
-Computational salience/clutter proxies, CVD simulations, screenshot-pixel/raster diagnostics, unbounded float round trips, profile-to-profile comparisons, forced-colors emulation and mathematical spectral-subsampling tests are not human-task, perceived-clutter, real-observer accessibility, WCAG-conformance, OS-wide high-contrast, instrument-performance, device-match or physical-appearance evidence unless the relevant method explicitly establishes that role.
+Computational salience/clutter proxies, CVD simulations, screenshot-pixel/raster diagnostics, unbounded float round trips, profile-to-profile comparisons, forced-colors emulation, mathematical spectral-subsampling tests and checksum/source-surface agreement are not human-task, perceived-clutter, real-observer accessibility, WCAG-conformance, OS-wide high-contrast, instrument-performance, device-match, model-appropriateness or physical-appearance evidence unless the relevant method explicitly establishes that role.
 
 ## Status authority
 
