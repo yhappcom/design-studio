@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C015 Stage 1 Perceptual Context Capstone</title>
+<style>
+:root{font-family:Inter,system-ui,sans-serif;color:#1e1e1e;background:#efefec}
+*{box-sizing:border-box}
+body{margin:0;padding:28px}
+main{max-width:1180px;margin:auto;display:grid;gap:28px}
+section{background:#fff;border:1px solid #d8d8d4;border-radius:18px;padding:22px}
+h1,h2,p{margin-top:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.swatch-stage{height:220px;border-radius:14px;display:grid;place-items:center}
+.target{width:112px;height:112px;background:#808080;border:1px solid rgba(0,0,0,.15)}
+.dark-surround{background:#202020}.light-surround{background:#e8e8e8}
+.label{font-size:13px;margin-top:8px}
+.ui{border-radius:14px;padding:18px;display:grid;gap:12px}
+.row{display:flex;align-items:center;gap:12px}
+.grow{flex:1}.small{font-size:13px}
+.pill{padding:4px 8px;border-radius:999px;border:1px solid currentColor}
+button{min-height:44px;border:0;border-radius:10px;padding:0 16px;font:inherit;font-weight:650}
+.gray{background:#f5f5f3;color:#1e1e1e}
+.gray .surface{background:#fff;border:1px solid #b8b8b8;border-radius:12px;padding:14px}
+.gray .secondary{color:#666}.gray .tertiary{color:#8a8a8a}
+.gray button{background:#2a2a2a;color:#fff}
+.revised{background:#f5f5f3;color:#1e1e1e}
+.revised .surface{background:#fff;border:1px solid #8c969d;border-radius:12px;padding:14px}
+.revised .secondary{color:#666}.revised .tertiary{color:#8a8a8a}
+.revised button{background:#155eef;color:#fff}
+.revised .selected{border-left:5px solid #a8f0e9;padding-left:10px}
+.lowlight{background:#0d1317;color:#e8eef2}
+.lowlight .surface{background:#151c21;border:1px solid #667680;border-radius:12px;padding:14px}
+.lowlight .secondary{color:#aab6be}.lowlight button{background:#5fb5ff;color:#0d1317}
+.palette{display:flex;gap:10px;flex-wrap:wrap}
+.sw{width:150px;border-radius:14px;overflow:hidden;border:1px solid #ddd;background:#fff}
+.sw .chip{height:86px}.sw .meta{padding:10px;font-size:12px}
+.naive-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.naive-actions button{color:#fff}
+.naive-actions button:nth-child(1){background:#a8f0e9}
+.naive-actions button:nth-child(2){background:#b8d8ff}
+.naive-actions button:nth-child(3){background:#ffd6a5}
+.naive-actions button:nth-child(4){background:#ffadad}
+.revised-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.revised-actions button{color:#152028}
+.revised-actions button:nth-child(1){background:#a8f0e9}
+.revised-actions button:nth-child(2){background:#b8d8ff}
+.revised-actions button:nth-child(3){background:#ffd6a5}
+.revised-actions button:nth-child(4){background:#ffadad}
+.note{font-size:13px;color:#5a6268}
+@media(max-width:760px){.grid2,.naive-actions,.revised-actions{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+<section>
+<h1>C015 Stage 1 Perceptual-Context Capstone</h1>
+<p>Original bounded specimen for simultaneous contrast, grayscale-first hierarchy, low-light design stress, and swatch-to-context failure. It is not a human-perception or physical-display experiment.</p>
+</section>
+<section>
+<h2>1. Simultaneous-contrast stimulus</h2>
+<p>The center targets below are both encoded as exactly <code>#808080</code>. Only the surround changes.</p>
+<div class="grid2">
+  <div><div class="swatch-stage dark-surround"><div class="target"></div></div><div class="label">Target #808080 on #202020</div></div>
+  <div><div class="swatch-stage light-surround"><div class="target"></div></div><div class="label">Target #808080 on #E8E8E8</div></div>
+</div>
+</section>
+<section>
+<h2>2. Grayscale-first hierarchy → chroma after structure</h2>
+<div class="grid2">
+<div class="ui gray">
+  <strong>Grayscale-first</strong>
+  <div class="surface">
+    <div class="row"><strong class="grow">$12,480 total</strong><span class="pill">Current</span></div>
+    <div class="secondary">Secondary explanation remains readable without hue.</div>
+    <div class="tertiary small">Tertiary metadata is intentionally quieter.</div>
+  </div>
+  <button>Primary action</button>
+</div>
+<div class="ui revised">
+  <strong>Revised with sparse chroma</strong>
+  <div class="surface selected">
+    <div class="row"><strong class="grow">$12,480 total</strong><span class="pill">Current</span></div>
+    <div class="secondary">The information hierarchy is inherited from grayscale.</div>
+    <div class="tertiary small">Chroma is reserved for selection and action.</div>
+  </div>
+  <button>Primary action</button>
+</div>
+</div>
+</section>
+<section>
+<h2>3. Low-light design-stress variant</h2>
+<div class="ui lowlight">
+  <strong>Reduced-luminance surface system</strong>
+  <div class="surface">
+    <div class="row"><strong class="grow">Operational record</strong><span class="pill">Synced</span></div>
+    <div class="secondary">Primary and secondary roles remain distinct after the appearance strategy changes.</div>
+  </div>
+  <button>Continue</button>
+</div>
+<p class="note">This demonstrates a design variant for low-light use. It does not prove comfort, glare, adaptation, or physical display performance.</p>
+</section>
+<section>
+<h2>4. Attractive swatches → context failure → revision</h2>
+<div class="palette">
+ <div class="sw"><div class="chip" style="background:#a8f0e9"></div><div class="meta">#A8F0E9</div></div>
+ <div class="sw"><div class="chip" style="background:#b8d8ff"></div><div class="meta">#B8D8FF</div></div>
+ <div class="sw"><div class="chip" style="background:#ffd6a5"></div><div class="meta">#FFD6A5</div></div>
+ <div class="sw"><div class="chip" style="background:#ffadad"></div><div class="meta">#FFADAD</div></div>
+</div>
+<h3>Naive role assignment: every light swatch becomes a filled action with white text</h3>
+<div class="naive-actions"><button>Primary</button><button>Info</button><button>Warning</button><button>Critical</button></div>
+<h3>Role-aware revision: light colors become containers/surfaces with dark content</h3>
+<div class="revised-actions"><button>Primary surface</button><button>Info surface</button><button>Warning surface</button><button>Critical surface</button></div>
+<p class="note">The revision is not a claim that pastel status colors are universally appropriate; it demonstrates that palette attractiveness does not determine semantic role or contrast fitness.</p>
+</section>
+</main>
+</body>
+</html>
