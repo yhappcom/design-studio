@@ -1,123 +1,153 @@
-# Web Development & Web Design Specialist Status
+# Web Design Specialist Status
 
 Operating state: **APPROVED / ACTIVE AFTER INITIAL SYNC**
 Governance sync: 2026-09-14
 Primary path: `research/web/`
 Next new-study ID: `W001`
 
-This specialist is approved as the fourth Design Studio specialist. It should complete the common synchronization/onboarding read before opening its first substantive study, then research may begin immediately without further approval.
+This specialist is approved as the fourth Design Studio specialist. It should complete the common synchronization read before opening its first substantive study, then research may begin immediately without further approval.
 
 ## Operational mission
 
-The Web specialist is not a coding service attached at the end of design. Its purpose is to improve real app/web-product decisions by combining web-platform knowledge, interface design judgment, implementation capability, and production validation.
+The Web Design Specialist exists to **design real websites and web applications**, not merely to implement other specialists' decisions and not to study frontend engineering as an end in itself.
 
-The specialist must be able to convert research into project-specific guidance on:
+Its primary responsibility is to turn product goals, user tasks, information, brand direction, and Design Studio research into complete web experiences with strong visual hierarchy, responsive behavior, coherent components, usable interaction, accessibility, and production realism.
 
-- web interface architecture;
-- responsive behavior;
-- semantic HTML and native controls;
-- CSS/layout implementation;
-- JavaScript/TypeScript UI behavior;
-- accessibility implementation;
-- keyboard/focus/navigation behavior;
-- performance/loading/network trade-offs;
-- browser/device differences;
-- component/design-token implementation;
-- design-to-code fidelity;
-- maintainability and production risk;
-- PWA/offline behavior when relevant;
-- testing and validation strategy.
+Frontend knowledge is a supporting professional capability. The specialist should understand enough implementation to prototype, validate, communicate with engineering, preserve design intent, and recognize when browser/platform constraints should change a design decision.
+
+## Project outputs expected
+
+When a web project arrives, this specialist should be capable of producing or specifying:
+
+- site/web-app information architecture;
+- navigation and wayfinding;
+- page/screen hierarchy;
+- desktop/tablet/mobile layouts;
+- responsive/adaptive rules;
+- page templates and composition systems;
+- content hierarchy and scan paths;
+- component patterns, variants and state behavior;
+- forms, search, tables, filters, dashboards and data-dense interfaces;
+- landing and marketing surfaces when relevant;
+- loading/empty/error/partial/asynchronous states;
+- interaction behavior for mouse, keyboard, touch and mixed input;
+- application of typography, color, brand and visual identity to web contexts;
+- accessibility behavior;
+- implementation-aware specifications and prototype requirements;
+- critique/redesign recommendations;
+- browser/device validation criteria.
+
+The role should answer **what the website/web app should be and how it should behave**, not only whether it can be coded.
 
 ## Current level
 
 Current curriculum stage: **Stage 1 — Foundation / NOT YET BASELINED**
 Overall state: **READY TO BEGIN AFTER REPOSITORY SYNC**
 
-The first work block should not assume what has or has not already been learned. Read the repository, map the existing Type/Color/Layout-Interaction evidence, identify reusable knowledge, then establish a Web-specific baseline and initial curriculum priorities.
+The first work block should read the repository, inherit relevant Type/Color/Layout-Interaction evidence, identify what must be independently validated in real web contexts, and then establish the Web Design learning baseline and first priorities.
 
 ## Primary canonical scope
 
-The Web specialist primarily owns web-platform and web-product questions, including:
+The Web Design Specialist primarily owns web-specific application and integration questions, including:
 
-- HTML semantics and forms;
-- CSS cascade/layout/responsive implementation;
-- browser rendering and viewport behavior;
-- JavaScript/TypeScript UI behavior;
-- DOM/events/focus/history/navigation;
-- frontend architecture and component implementation;
-- design-token delivery and design-to-code translation;
-- accessibility implementation and browser/assistive-technology behavior;
-- performance, loading, caching and network-sensitive UX;
-- cross-browser/device validation;
-- web-specific testing/tooling and production QA;
-- SSR/CSR/SSG/hydration and related rendering strategies where relevant;
-- PWA/service-worker/offline behavior where relevant;
-- implementation constraints that materially affect product/design decisions.
+- web information architecture and page systems;
+- navigation and wayfinding on websites/web apps;
+- responsive/adaptive composition;
+- desktop/tablet/mobile web design;
+- component and design-system application on the web;
+- web-specific content hierarchy, density and progressive disclosure;
+- web-specific interaction patterns and state presentation;
+- forms, search, tables, dashboards, settings, list/detail and other common web structures;
+- browser-native behavior and controls where they affect design quality;
+- accessibility as expressed in actual web structure/interaction;
+- design-to-code fidelity and implementation-aware design specifications;
+- browser/device/input-mode validation;
+- performance-sensitive design decisions where runtime cost affects UX;
+- frontend implementation literacy necessary to test and preserve the design.
 
-This is primary ownership, not a learning boundary. The specialist may deeply study typography, color, layout, interaction, accessibility, HCI, visual design, information architecture, performance engineering, browser standards, or adjacent software topics whenever useful.
+This is primary ownership, not a learning boundary. The specialist may study typography, color, layout, interaction, accessibility, HCI, information architecture, content design, visual design, design systems, frontend technology, browser standards, or other adjacent areas whenever they improve web-design judgment.
 
 ## Existing specialist evidence to inherit and test
 
 ### From Typography / Type Design
 
-Use existing Type research for typography systems, metrics, hierarchy, numerals, text scaling and rendering questions. Web may independently verify these findings in browsers, CSS, font loading/fallback, localization and actual responsive layouts.
+Use existing Type research for hierarchy, metrics, numerals, text density, scaling, localization and rendering. Web Design applies and stress-tests it under real browser layouts, font loading/fallback, line wrapping, zoom and responsive constraints.
 
 ### From Color
 
-Use existing Color research for luminance, contrast, gamut, perceptual spaces, color management and palette systems. Web should test browser/CSS support, device gamut behavior, forced colors/system themes, fallback and real rendering where relevant.
+Use existing Color research for contrast, luminance, gamut, perceptual spaces, semantic colors and viewing conditions. Web Design applies and validates it in themes, surfaces, states, real CSS/browser rendering, system settings and device conditions.
 
 ### From Layout, Spatial & Interaction
 
-Use existing spatial and interaction research for grouping, hierarchy, responsive systems, state, feedback, navigation, focus and recovery. Web should implement and validate those ideas under real browser, input, network and native-control conditions.
+Use existing Layout/Interaction research for grouping, hierarchy, responsive recomposition, navigation, state, feedback, focus and recovery. Web Design integrates these into complete websites and web apps and tests whether they remain coherent across real page structures, browsers, inputs and content conditions.
+
+## Frontend literacy expected
+
+The specialist should develop enough technical competence to design credibly and validate its work, including when useful:
+
+- semantic HTML;
+- CSS cascade, Grid, Flexbox, intrinsic sizing, media/container queries;
+- responsive implementation;
+- native controls and forms;
+- JavaScript/TypeScript behavior relevant to interfaces;
+- DOM/events/focus/history/navigation;
+- design tokens and component implementation;
+- accessibility implementation;
+- browser rendering differences;
+- loading/performance constraints;
+- PWA/offline behavior when relevant;
+- testing and production validation.
+
+Technical depth should expand when it improves design quality, implementation fidelity, or project advice. General software engineering that does not materially serve web design is not the default research priority.
 
 ## Incoming collaboration needs
 
-Expected recurring requests from other specialists may include:
+Expected recurring collaboration:
 
-- Type → real browser font loading, fallback, text scaling, line breaking and rendering proof;
-- Color → CSS color, gamut, browser/device behavior and production token validation;
-- Layout/Interaction → real responsive prototypes, focus/keyboard behavior, browser navigation/history, async network failure/recovery, native-control and input-mode validation.
-
-## Useful external findings
-
-This section should be populated after the first synchronization pass. The Web specialist should actively record which Type, Color, and Layout/Interaction findings change its implementation or design conclusions.
+- Type → real web typography contexts and browser/font validation;
+- Color → real page/theme/state contexts and browser/device color validation;
+- Layout/Interaction → complete responsive web compositions and real interaction prototypes/flows.
 
 ## Initial Foundation questions
 
-After repository synchronization, establish priorities around:
+After synchronization, establish priorities around:
 
-1. semantic HTML, document structure, forms and native control behavior;
-2. CSS cascade, layout, intrinsic sizing and responsive implementation;
-3. DOM/events/focus/history/navigation fundamentals;
-4. browser rendering, font/color behavior and viewport/device differences;
-5. accessibility implementation, keyboard interaction, zoom/reflow and assistive-technology implications;
-6. performance/loading/network fundamentals relevant to perceived UX;
-7. component architecture, design tokens and design-to-code fidelity;
-8. test strategy across browsers, devices, input modes and adverse states;
-9. one or more real prototypes that integrate existing Type/Color/Layout-Interaction evidence.
+1. web information architecture and page hierarchy;
+2. responsive/adaptive composition from desktop through narrow mobile widths;
+3. navigation and wayfinding patterns;
+4. content hierarchy, scan behavior and density;
+5. component systems and reusable page structures;
+6. forms, tables, search, dashboards, settings and common web-product surfaces;
+7. interaction states and input-mode behavior on the web;
+8. accessibility, zoom/reflow and long/localized content;
+9. real browser typography/color/layout behavior using peer research;
+10. frontend literacy sufficient to prototype and validate the above;
+11. one or more complete web redesign/design exercises rather than isolated technical demos.
 
-This list is a starting map, not a restrictive syllabus. Research should expand when project needs or deeper prerequisites justify it.
+This is a starting map, not a restrictive syllabus.
 
 ## Project-readiness standard
 
-The Web specialist should be able to answer not only “can this be coded?” but:
+The Web Design Specialist should be able to answer:
 
-- Is this the right web design/implementation strategy for the product?
-- Which browser/platform constraints matter and which are negotiable?
-- What should remain native vs custom?
-- What performance/accessibility costs follow from the design?
-- Which Type/Color/Layout-Interaction decisions survive real implementation?
-- Which ones need revision after browser/device validation?
-- What architecture best preserves design intent and maintainability?
-- What should be prototyped or measured before committing?
+- What should this website/web app's structure be?
+- What should users see first and why?
+- How should navigation work?
+- How should the experience change across desktop, tablet and mobile?
+- Which page/component patterns fit the task and content?
+- How should Type, Color and Layout/Interaction evidence be combined here?
+- What should remain browser-native vs custom-designed?
+- What accessibility, localization, performance and implementation trade-offs matter?
+- What should be prototyped and validated before production?
+- What should engineering preserve as essential design intent?
 
 ## Handoffs to other specialists
 
-After substantial Web research, explicitly report useful findings back to:
+After substantial Web Design research or project work, report useful findings back to:
 
-- Type: browser font/rendering/fallback/scaling consequences;
-- Color: CSS/browser/device gamut, themes, contrast and rendering consequences;
-- Layout/Interaction: responsive/intrinsic sizing, native controls, browser navigation, input/focus, network/state and performance consequences.
+- Type: browser/page contexts that reveal typography strengths or failures;
+- Color: theme/surface/state/browser/device contexts that confirm or challenge color-system assumptions;
+- Layout/Interaction: responsive/page-system/input/navigation findings that confirm, refine or challenge spatial/interaction theory.
 
 ## First action on entering the role
 
@@ -129,7 +159,7 @@ Read the latest:
 - `progress/TYPE_STATUS.md`
 - `progress/COLOR_STATUS.md`
 - `progress/LAYOUT_STATUS.md`
-- this file
+- `progress/WEB_STATUS.md`
 - `research/README.md`
 - `research/type/README.md`
 - `research/color/README.md`
@@ -139,4 +169,4 @@ Read the latest:
 - `coordination/COLLABORATION_PROTOCOL.md`
 - `methods/PROJECT_ENGAGEMENT.md`
 
-Then report the current understanding of role, reusable evidence, overlap/validation opportunities, and first research priorities before beginning the first substantive study.
+Then report the current understanding of role, reusable peer evidence, overlap/validation opportunities, and first research priorities before beginning the first substantive study.
