@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Exercise 013 — Perceptual grouping and spatial grammar</title>
+  <desc id="desc">Five grayscale panels test proximity, common region, connectedness, interface spacing hierarchy, and over-containerization.</desc>
+  <defs>
+    <style>
+      .bg { fill:#f7f7f7; }
+      .panel { fill:#ffffff; stroke:#b8b8b8; stroke-width:1.5; }
+      .ink { fill:#171717; }
+      .muted { fill:#686868; }
+      .rule { stroke:#6b6b6b; stroke-width:1.5; }
+      .soft { stroke:#b5b5b5; stroke-width:1.5; fill:none; }
+      .strong { stroke:#303030; stroke-width:2; fill:none; }
+      .surface { fill:#eeeeee; stroke:#8a8a8a; stroke-width:1.5; }
+      .title { font:700 24px system-ui, sans-serif; fill:#171717; }
+      .subtitle { font:600 16px system-ui, sans-serif; fill:#222222; }
+      .body { font:14px system-ui, sans-serif; fill:#343434; }
+      .small { font:12px system-ui, sans-serif; fill:#5a5a5a; }
+      .value { font:700 24px system-ui, sans-serif; fill:#171717; }
+      .label { font:13px system-ui, sans-serif; fill:#5f5f5f; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1200" height="900"/>
+  <text class="title" x="40" y="48">Exercise 013 — Perceptual Grouping as Spatial Grammar</text>
+  <text class="body" x="40" y="76">Grayscale proof: relationship must be carried by geometry, region, connection, and spacing rather than color.</text>
+
+  <!-- A: proximity -->
+  <g transform="translate(40,110)">
+    <rect class="panel" x="0" y="0" width="350" height="290" rx="10"/>
+    <text class="subtitle" x="20" y="32">A · Proximity only</text>
+    <text class="small" x="20" y="54">Small within-pair gaps compete against larger between-pair gaps.</text>
+    <g class="ink">
+      <circle cx="45" cy="125" r="11"/><circle cx="75" cy="125" r="11"/>
+      <circle cx="145" cy="125" r="11"/><circle cx="175" cy="125" r="11"/>
+      <circle cx="245" cy="125" r="11"/><circle cx="275" cy="125" r="11"/>
+      <circle cx="45" cy="205" r="11"/><circle cx="75" cy="205" r="11"/>
+      <circle cx="145" cy="205" r="11"/><circle cx="175" cy="205" r="11"/>
+      <circle cx="245" cy="205" r="11"/><circle cx="275" cy="205" r="11"/>
+    </g>
+    <line class="rule" x1="45" y1="88" x2="75" y2="88"/>
+    <text class="small" x="49" y="82">30</text>
+    <line class="rule" x1="75" y1="88" x2="145" y2="88"/>
+    <text class="small" x="94" y="82">70</text>
+    <text class="small" x="20" y="265">Hypothesis: pair structure should dominate because local distances differ.</text>
+  </g>
+
+  <!-- B: common region conflict -->
+  <g transform="translate(425,110)">
+    <rect class="panel" x="0" y="0" width="350" height="290" rx="10"/>
+    <text class="subtitle" x="20" y="32">B · Common region vs proximity</text>
+    <text class="small" x="20" y="54">Nearest neighbors cross a boundary; region membership argues otherwise.</text>
+    <rect class="surface" x="28" y="92" width="135" height="110" rx="12"/>
+    <rect class="surface" x="187" y="92" width="135" height="110" rx="12"/>
+    <g class="ink">
+      <circle cx="65" cy="147" r="11"/><circle cx="146" cy="147" r="11"/>
+      <circle cx="176" cy="147" r="11"/><circle cx="257" cy="147" r="11"/>
+    </g>
+    <line class="rule" x1="146" y1="218" x2="176" y2="218"/>
+    <text class="small" x="151" y="238">30</text>
+    <line class="rule" x1="65" y1="218" x2="146" y2="218"/>
+    <text class="small" x="94" y="238">81</text>
+    <text class="small" x="20" y="265">Conflict probe: containment is intentionally opposed to shortest distance.</text>
+  </g>
+
+  <!-- C: connectedness -->
+  <g transform="translate(810,110)">
+    <rect class="panel" x="0" y="0" width="350" height="290" rx="10"/>
+    <text class="subtitle" x="20" y="32">C · Connectedness changes units</text>
+    <text class="small" x="20" y="54">Connection is tested as object formation, not just decoration.</text>
+    <g transform="translate(28,90)">
+      <circle class="surface" cx="32" cy="48" r="23"/>
+      <circle class="surface" cx="100" cy="48" r="23"/>
+      <circle class="surface" cx="168" cy="48" r="23"/>
+      <text class="small" x="5" y="91">separate controls</text>
+    </g>
+    <g transform="translate(28,190)">
+      <rect class="surface" x="0" y="0" width="210" height="46" rx="23"/>
+      <line class="rule" x1="70" y1="0" x2="70" y2="46"/>
+      <line class="rule" x1="140" y1="0" x2="140" y2="46"/>
+      <circle class="ink" cx="35" cy="23" r="6"/>
+      <circle class="ink" cx="105" cy="23" r="6"/>
+      <circle class="ink" cx="175" cy="23" r="6"/>
+      <text class="small" x="220" y="28">one segmented mechanism</text>
+    </g>
+  </g>
+
+  <!-- D: realistic interface hierarchy -->
+  <g transform="translate(40,440)">
+    <rect class="panel" x="0" y="0" width="540" height="390" rx="10"/>
+    <text class="subtitle" x="20" y="32">D · UI spacing hierarchy</text>
+    <text class="small" x="20" y="54">Small label/value spacing, medium row spacing, large section spacing.</text>
+    <g transform="translate(28,86)">
+      <text class="subtitle" x="0" y="0">Flight summary</text>
+      <g transform="translate(0,34)">
+        <text class="label" x="0" y="0">BLOCK TIME</text>
+        <text class="value" x="0" y="30">82:40</text>
+        <text class="label" x="220" y="0">SECTORS</text>
+        <text class="value" x="220" y="30">34</text>
+      </g>
+      <line class="soft" x1="0" y1="94" x2="480" y2="94"/>
+      <g transform="translate(0,128)">
+        <text class="label" x="0" y="0">NIGHT</text>
+        <text class="value" x="0" y="30">21:15</text>
+        <text class="label" x="220" y="0">LANDINGS</text>
+        <text class="value" x="220" y="30">18</text>
+      </g>
+      <g transform="translate(0,224)">
+        <text class="subtitle" x="0" y="0">Recency</text>
+        <text class="body" x="0" y="28">Last flight</text>
+        <text class="body" x="220" y="28">12 Sep 2026</text>
+        <text class="body" x="0" y="58">Last night landing</text>
+        <text class="body" x="220" y="58">08 Sep 2026</text>
+      </g>
+      <line class="strong" x1="204" y1="114" x2="204" y2="166"/>
+      <text class="small" x="302" y="114">alignment supports scan</text>
+      <text class="small" x="302" y="130">without enclosing each metric</text>
+    </g>
+  </g>
+
+  <!-- E: failure -->
+  <g transform="translate(620,440)">
+    <rect class="panel" x="0" y="0" width="540" height="390" rx="10"/>
+    <text class="subtitle" x="20" y="32">E · Failure: container inflation</text>
+    <text class="small" x="20" y="54">Every hierarchy level gets a border, making weak relationships look equally strong.</text>
+    <rect class="surface" x="28" y="82" width="484" height="270" rx="14"/>
+    <text class="subtitle" x="48" y="112">Flight summary</text>
+    <rect class="panel" x="48" y="132" width="444" height="94" rx="10"/>
+    <rect class="panel" x="64" y="148" width="198" height="62" rx="8"/>
+    <rect class="panel" x="278" y="148" width="198" height="62" rx="8"/>
+    <text class="label" x="80" y="170">BLOCK TIME</text>
+    <text class="value" x="80" y="198">82:40</text>
+    <text class="label" x="294" y="170">SECTORS</text>
+    <text class="value" x="294" y="198">34</text>
+    <rect class="panel" x="48" y="242" width="444" height="88" rx="10"/>
+    <rect class="panel" x="64" y="258" width="412" height="56" rx="8"/>
+    <text class="body" x="82" y="292">Nested borders create repeated object boundaries.</text>
+    <text class="small" x="28" y="374">Rejected direction: containment is stronger than the semantic hierarchy requires.</text>
+  </g>
+</svg>
