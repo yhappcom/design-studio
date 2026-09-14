@@ -1,36 +1,47 @@
-# Interaction Design Research
+# Interaction Research
 
-This directory is the canonical research home for the **Interaction Specialist**.
+This directory is the canonical home for **Interaction research owned by the Layout, Spatial & Interaction Specialist**.
+
+It remains separate from `research/layout/` because temporal/behavioral claims should not be conflated with spatial composition claims, even though one specialist owns both streams.
 
 ## Primary scope
 
 Research belongs here when its primary question concerns:
 
-- affordance/signifiers, mapping, feedback, agency, familiarity, and discoverability;
-- actions, destinations, system state, modes, directness, and reversibility;
-- navigation, task flows, async/pending behavior, latency, errors, recovery, and interruption;
+- affordance/signifiers, mapping, feedback, agency, familiarity and discoverability;
+- actions, destinations, system state, modes, directness and reversibility;
+- navigation, task flows, async/pending behavior, latency, errors, recovery and interruption;
 - keyboard/pointer/touch/gesture behavior and equivalent interaction paths;
 - user-facing state models and temporal behavior;
-- interaction accessibility, focus behavior, status communication, and assistive-technology consequences.
+- interaction accessibility, focus-flow consequences, status communication and assistive-technology consequences where the primary issue is behavioral.
+
+Spatial composition, grouping, grid, density and responsive geometry remain in `research/layout/`.
 
 ## Boundary with other disciplines
 
-- **Layout & Spatial Design** owns spatial composition and geometry. Interaction may require spatial changes, but the interaction model and state transitions remain Interaction concerns.
-- **Typography / Type Design** owns textual/type systems; Interaction owns what an action label means and how state/actions behave.
-- **Color** owns color systems and perception; Interaction owns the state semantics that color may help communicate.
+- **Typography / Type Design** owns glyph/font systems, type metrics and typographic structure. Interaction owns the meaning and behavior of action labels/states, while Type owns their textual/type presentation.
+- **Color** owns color systems, perception, contrast and reproduction. Interaction defines state semantics; Color may encode those semantics visually.
+- **Layout / Spatial** is the same specialist role but a separate evidence stream. Interaction research should reference spatial evidence instead of duplicating it.
 
-Keep one canonical owner for cross-domain studies and link to dependencies instead of duplicating conclusions.
+## Mandatory cross-domain scan
 
-## Before using interaction knowledge in another domain
+Before new Interaction work:
 
-1. Check `progress/STATUS.md` for evidence level and open validation gaps.
-2. Read this README and relevant Interaction studies.
-3. Check related Layout, Type, Color, and Accessibility evidence when the interaction depends on those channels.
-4. Never infer a complete interaction model from static visuals alone.
+1. read `progress/STATUS.md` and all specialist status files;
+2. read `research/layout/README.md`, this README and relevant interaction/layout studies;
+3. search Type and Color research for dependencies;
+4. check whether the question is already covered elsewhere;
+5. record a `RELATED DOMAIN CHECK` in the new study.
+
+After completion, add `HANDOFFS TO OTHER SPECIALISTS` when the interaction result creates useful contexts or constraints for Type or Color.
 
 ## Current studies
 
 - `007-interaction-agency-feedback-errors.md`
 - `015-directness-state-modes-reversibility.md`
 
-Study numbers remain studio-wide chronology and are not renumbered when files move between domain directories.
+Existing study numbers remain stable. New Interaction studies use `I###` IDs under the Layout, Spatial & Interaction Specialist.
+
+## Status authority
+
+Interaction progress is tracked in `progress/LAYOUT_STATUS.md`, not in a separate fourth specialist status file.
