@@ -23,7 +23,7 @@ Status vocabulary:
 | Optical correction | PRACTICE | overshoot study in `research/002-metrics-spacing-optical-rhythm.md`; construction/optics practice in `research/003-stroke-contrast-bezier-optics.md` and Exercise 002; raster comparison pending |
 | Spacing before kerning | PRACTICE | `research/002-metrics-spacing-optical-rhythm.md`; `type-design/exercises/001-ho-metrics-three-hypotheses.svg`; `type-design/exercises/001-ho-metrics-critique.md` |
 | Numerals / punctuation | IN STUDY | `research/005-numerals-punctuation-systems.md`; `type-design/exercises/003-numeral-punctuation-system-brief.md`; native 0–9/punctuation drawing not yet complete |
-| Interaction foundations | PRACTICE | `research/004-accessibility-reflow-targets-focus.md`; `research/007-interaction-agency-feedback-errors.md`; `product-design/exercises/004-interaction-state-matrix.md`; interactive/navigation proof pending |
+| Interaction foundations | CRITIQUE | `research/004-accessibility-reflow-targets-focus.md`; `research/007-interaction-agency-feedback-errors.md`; `research/015-directness-state-modes-reversibility.md`; `product-design/exercises/004-interaction-state-matrix.md`; `product-design/exercises/015-directness-state-coupling-practice.md`; `product-design/exercises/015-directness-state-coupling-critique.md`; agency/feedback/error recovery plus semantic/articulatory directness, explicit state modeling, mode salience, local-vs-remote commitment, reversibility, failure paths, and keyboard alternatives critiqued; running navigation/state prototype, keyboard/focus execution, assistive-technology status validation, and asynchronous failure recovery proof pending |
 | Accessibility foundations | PRACTICE | `research/004-accessibility-reflow-targets-focus.md`; `product-design/exercises/001-accessibility-geometry.svg`; `product-design/exercises/001-accessibility-geometry-critique.md`; static measured focus/non-text evidence added in Exercise 009; interactive/assistive-tech proof pending |
 | Design history / precedent literacy | IN STUDY | modernist grid/New Typography and reaction precedent study in `research/006-grid-composition-hierarchy.md`; broader historical comparison still pending |
 
@@ -56,5 +56,5 @@ The first immediate objective is not to design a font or app. It is to complete 
 7. test Grid Exercise 007 with long/multilingual labels and enlarged text in an actual rendering environment;
 8. validate Color Exercise 009 on physical displays under controlled bright/low-light conditions and with interactive keyboard focus;
 9. validate Typography Exercise 008 with real platform text scaling/reflow and localized long labels;
-10. extend interaction work into a navigation-model prototype and keyboard/status-message validation;
+10. implement Exercise 015 as a running navigation/state prototype and validate keyboard/focus/status-message behavior plus at least one asynchronous failure-and-recovery path;
 11. continue Layout & Spatial foundations with figure-ground/border ownership, visual mass/balance, and optical-centering study; keep those claims separate from the perceptual-grouping evidence in Study 014.
