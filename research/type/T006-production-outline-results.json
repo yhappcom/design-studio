@@ -1,0 +1,51 @@
+{
+  "environment": {
+    "python": "3.13.5",
+    "fontTools": "4.63.0",
+    "freetype": "2.13.2",
+    "numpy": "2.3.5",
+    "shapely": "2.1.2",
+    "upm": 1000,
+    "ttf_cu2qu_max_err_units": 0.5
+  },
+  "v0_audit": {
+    "H.v0": {
+      "name": "H.v0",
+      "width": 600,
+      "contours": [
+        {"role":"outer","signed_area":63000.0,"direction_ok":true,"segments":3,"oncurve_points":4,"offcurve_points":0,"internal_extrema":[],"zero_handles":0,"fractional_coordinate_values":0,"short_segments":0,"near_axis_misalignment":0,"self_intersection_or_invalid":false},
+        {"role":"outer","signed_area":63000.0,"direction_ok":true,"segments":3,"oncurve_points":4,"offcurve_points":0,"internal_extrema":[],"zero_handles":0,"fractional_coordinate_values":0,"short_segments":0,"near_axis_misalignment":0,"self_intersection_or_invalid":false},
+        {"role":"outer","signed_area":30600.0,"direction_ok":true,"segments":3,"oncurve_points":4,"offcurve_points":0,"internal_extrema":[],"zero_handles":0,"fractional_coordinate_values":0,"short_segments":0,"near_axis_misalignment":0,"self_intersection_or_invalid":false}
+      ],
+      "same_role_overlap_area": 3600.0,
+      "bounds": [60,0,540,700],
+      "passes_core_audit": false
+    },
+    "O.v0": {
+      "name":"O.v0","width":600,
+      "contours":[
+        {"role":"outer","signed_area":-288000.0,"direction_ok":false,"segments":2,"oncurve_points":3,"offcurve_points":4,"internal_extrema":[{"axis":"y","t":0.5},{"axis":"y","t":0.5}],"zero_handles":0,"fractional_coordinate_values":0,"short_segments":0,"near_axis_misalignment":0,"self_intersection_or_invalid":false},
+        {"role":"counter","signed_area":124920.0,"direction_ok":false,"segments":2,"oncurve_points":3,"offcurve_points":4,"internal_extrema":[{"axis":"y","t":0.5},{"axis":"y","t":0.5}],"zero_handles":0,"fractional_coordinate_values":0,"short_segments":0,"near_axis_misalignment":0,"self_intersection_or_invalid":false}
+      ],
+      "same_role_overlap_area":0.0,"bounds":[50,-10.0,550,710.0],"passes_core_audit":false
+    }
+  },
+  "clean_audit": {
+    "H":{"name":"H","width":600,"contours":[{"role":"outer","signed_area":153000.0,"direction_ok":true,"segments":11,"oncurve_points":12,"offcurve_points":0,"internal_extrema":[],"zero_handles":0,"fractional_coordinate_values":0,"short_segments":0,"near_axis_misalignment":0,"self_intersection_or_invalid":false}],"same_role_overlap_area":0.0,"bounds":[60,0,540,700],"passes_core_audit":true},
+    "O":{"name":"O","width":600,"contours":[{"role":"outer","signed_area":282838.8,"direction_ok":true,"segments":4,"oncurve_points":5,"offcurve_points":8,"internal_extrema":[],"zero_handles":0,"fractional_coordinate_values":0,"short_segments":0,"near_axis_misalignment":0,"self_intersection_or_invalid":false},{"role":"counter","signed_area":-122644.8,"direction_ok":true,"segments":4,"oncurve_points":5,"offcurve_points":8,"internal_extrema":[],"zero_handles":0,"fractional_coordinate_values":0,"short_segments":0,"near_axis_misalignment":0,"self_intersection_or_invalid":false}],"same_role_overlap_area":0.0,"bounds":[50,-10,550,710],"passes_core_audit":true},
+    "n":{"name":"n","width":540,"contours":[{"role":"outer","signed_area":109762.0,"direction_ok":true,"segments":11,"oncurve_points":12,"offcurve_points":8,"internal_extrema":[],"zero_handles":0,"fractional_coordinate_values":0,"short_segments":0,"near_axis_misalignment":0,"self_intersection_or_invalid":false}],"same_role_overlap_area":0.0,"bounds":[60,0,480,515],"passes_core_audit":true},
+    "o":{"name":"o","width":520,"contours":[{"role":"outer","signed_area":163376.0,"direction_ok":true,"segments":4,"oncurve_points":5,"offcurve_points":8,"internal_extrema":[],"zero_handles":0,"fractional_coordinate_values":0,"short_segments":0,"near_axis_misalignment":0,"self_intersection_or_invalid":false},{"role":"counter","signed_area":-61518.4,"direction_ok":true,"segments":4,"oncurve_points":5,"offcurve_points":8,"internal_extrema":[],"zero_handles":0,"fractional_coordinate_values":0,"short_segments":0,"near_axis_misalignment":0,"self_intersection_or_invalid":false}],"same_role_overlap_area":0.0,"bounds":[60,-10,460,510],"passes_core_audit":true}
+  },
+  "export_fidelity": {
+    "H":{"source_bounds":[60,0,540,700],"cff_bounds":[60,0,540,700],"ttf_bounds":[60,0,540,700],"source_vs_cff_sample_nn_max_units":0.0,"source_vs_ttf_sample_nn_max_units":0.0,"source_signed_area":153000.0,"cff_signed_area":153000.0,"ttf_signed_area":-153000.0,"ttf_abs_area_delta_pct":0.0,"cff_structure":{"commands":13,"curves":0,"lines":11},"ttf_structure":{"points":12,"contours":1}},
+    "O":{"source_bounds":[50,-10,550,710],"cff_bounds":[50,-10,550,710],"ttf_bounds":[50,-10,550,710],"source_vs_cff_sample_nn_max_units":0.0,"source_vs_ttf_sample_nn_max_units":0.43621,"source_signed_area":160194.0,"cff_signed_area":160194.0,"ttf_signed_area":-160305.333,"ttf_abs_area_delta_pct":0.069499,"cff_structure":{"commands":12,"curves":8,"lines":0},"ttf_structure":{"points":44,"contours":2}},
+    "n":{"source_bounds":[60,0,480,515],"cff_bounds":[60,0,480,515],"ttf_bounds":[60,0,480,515],"source_vs_cff_sample_nn_max_units":0.0,"source_vs_ttf_sample_nn_max_units":0.362861,"source_signed_area":109762.0,"cff_signed_area":109762.0,"ttf_signed_area":-109714.292,"ttf_abs_area_delta_pct":-0.043465,"cff_structure":{"commands":13,"curves":4,"lines":7},"ttf_structure":{"points":21,"contours":1}},
+    "o":{"source_bounds":[60,-10,460,510],"cff_bounds":[60,-10,460,510],"ttf_bounds":[60,-10,460,510],"source_vs_cff_sample_nn_max_units":0.0,"source_vs_ttf_sample_nn_max_units":0.355044,"source_signed_area":101857.6,"cff_signed_area":101857.6,"ttf_signed_area":-102022.333,"ttf_abs_area_delta_pct":0.161729,"cff_structure":{"commands":12,"curves":8,"lines":0},"ttf_structure":{"points":40,"contours":2}}
+  },
+  "raster": {
+    "H":{"14":{"cff":{"width":8,"rows":10,"coverage_px_eq":29.8118,"strong_pixels":34,"advance_26_6":538},"ttf":{"width":8,"rows":10,"coverage_px_eq":29.9647,"strong_pixels":34,"advance_26_6":538}},"20":{"cff":{"width":10,"rows":14,"coverage_px_eq":61.0667,"strong_pixels":68,"advance_26_6":768},"ttf":{"width":10,"rows":14,"coverage_px_eq":61.2,"strong_pixels":68,"advance_26_6":768}},"48":{"cff":{"width":24,"rows":34,"coverage_px_eq":352.5333,"strong_pixels":347,"advance_26_6":1843},"ttf":{"width":24,"rows":34,"coverage_px_eq":353.1451,"strong_pixels":347,"advance_26_6":1843}}},
+    "O":{"14":{"cff":{"width":8,"rows":11,"coverage_px_eq":30.5529,"strong_pixels":31,"advance_26_6":538},"ttf":{"width":8,"rows":11,"coverage_px_eq":30.9569,"strong_pixels":32,"advance_26_6":538}},"20":{"cff":{"width":10,"rows":16,"coverage_px_eq":63.0706,"strong_pixels":64,"advance_26_6":768},"ttf":{"width":10,"rows":16,"coverage_px_eq":63.502,"strong_pixels":64,"advance_26_6":768}},"48":{"cff":{"width":25,"rows":36,"coverage_px_eq":366.8353,"strong_pixels":363,"advance_26_6":1843},"ttf":{"width":25,"rows":36,"coverage_px_eq":368.451,"strong_pixels":365,"advance_26_6":1843}}},
+    "n":{"14":{"cff":{"width":7,"rows":8,"coverage_px_eq":21.4235,"strong_pixels":23,"advance_26_6":484},"ttf":{"width":7,"rows":8,"coverage_px_eq":21.4745,"strong_pixels":23,"advance_26_6":484}},"20":{"cff":{"width":9,"rows":11,"coverage_px_eq":43.5255,"strong_pixels":47,"advance_26_6":691},"ttf":{"width":9,"rows":11,"coverage_px_eq":43.7961,"strong_pixels":48,"advance_26_6":691}},"48":{"cff":{"width":22,"rows":25,"coverage_px_eq":253.6118,"strong_pixels":245,"advance_26_6":1659},"ttf":{"width":22,"rows":25,"coverage_px_eq":253.0157,"strong_pixels":244,"advance_26_6":1659}}},
+    "o":{"14":{"cff":{"width":7,"rows":9,"coverage_px_eq":19.9137,"strong_pixels":20,"advance_26_6":466},"ttf":{"width":7,"rows":9,"coverage_px_eq":19.6039,"strong_pixels":20,"advance_26_6":466}},"20":{"cff":{"width":9,"rows":12,"coverage_px_eq":39.7294,"strong_pixels":44,"advance_26_6":666},"ttf":{"width":9,"rows":12,"coverage_px_eq":40.7176,"strong_pixels":44,"advance_26_6":666}},"48":{"cff":{"width":21,"rows":26,"coverage_px_eq":234.5765,"strong_pixels":230,"advance_26_6":1597},"ttf":{"width":21,"rows":26,"coverage_px_eq":233.6431,"strong_pixels":230,"advance_26_6":1597}}}
+  }
+}
