@@ -1,0 +1,28 @@
+<!doctype html><meta charset="utf-8"><title>L001 border ownership controls</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#fff;color:#111}.wrap{width:1180px;margin:24px auto}.grid{display:grid;grid-template-columns:repeat(3,360px);gap:24px 28px}.stim{width:360px;height:220px;border:1px solid #d0d0d0;position:relative;background:#fff}body.blind .label{display:none}.label{position:absolute;left:12px;top:8px;font-size:12px;color:#333}.stage{position:absolute;left:20px;top:34px;width:320px;height:160px;background:#f2f2f2;overflow:visible}.half{position:absolute;top:20px;width:160px;height:120px;background:#f4f4f4}.left{left:0}.right{left:160px}.edge{position:absolute;left:159px;top:20px;width:2px;height:120px;background:#444;z-index:5}
+/* enclosure: remote top/bottom/outer side close one region; shared edge unchanged */
+.enclose-left .half.left{border-top:2px solid #444;border-bottom:2px solid #444;border-left:2px solid #444}
+.enclose-right .half.right{border-top:2px solid #444;border-bottom:2px solid #444;border-right:2px solid #444}
+/* T-junction: two horizontal contours terminate at central edge on one side. Junctions sit outside measured local crop */
+.t-left:before,.t-left:after,.t-right:before,.t-right:after{content:"";position:absolute;height:2px;background:#444;z-index:4}
+.t-left:before{left:40px;top:38px;width:120px}.t-left:after{left:40px;top:140px;width:120px}
+.t-right:before{left:160px;top:38px;width:120px}.t-right:after{left:160px;top:140px;width:120px}
+/* continuity/attachment: remote tabs connect one side into a larger object without changing central crop */
+.cont-left .half.left:before,.cont-left .half.left:after,.cont-right .half.right:before,.cont-right .half.right:after{content:"";position:absolute;width:34px;height:18px;background:#f4f4f4;border:2px solid #444}
+.cont-left .half.left:before{left:24px;top:-20px;border-bottom:0}.cont-left .half.left:after{left:80px;bottom:-20px;border-top:0}
+.cont-right .half.right:before{right:24px;top:-20px;border-bottom:0}.cont-right .half.right:after{right:80px;bottom:-20px;border-top:0}
+/* conflicts: closure favors one side while T-junction contour termination is placed on the other */
+.conflict-l .half.left{border-top:2px solid #444;border-bottom:2px solid #444;border-left:2px solid #444}.conflict-l:before,.conflict-l:after{content:"";position:absolute;height:2px;background:#444;left:160px;width:120px;z-index:4}.conflict-l:before{top:38px}.conflict-l:after{top:140px}
+.conflict-r .half.right{border-top:2px solid #444;border-bottom:2px solid #444;border-right:2px solid #444}.conflict-r:before,.conflict-r:after{content:"";position:absolute;height:2px;background:#444;left:40px;width:120px;z-index:4}.conflict-r:before{top:38px}.conflict-r:after{top:140px}
+</style>
+<div class=wrap><div class=grid id=grid></div></div>
+<script>
+const stimuli=[
+ ['B0','baseline'],['E-L','enclose-left'],['E-R','enclose-right'],
+ ['T-L','t-left'],['T-R','t-right'],['C-L','cont-left'],['C-R','cont-right'],
+ ['X-L','conflict-l'],['X-R','conflict-r']
+];
+if(new URLSearchParams(location.search).get('blind')==='1')document.body.classList.add('blind');
+grid.innerHTML=stimuli.map(([id,cls])=>`<section class="stim" data-id="${id}"><span class=label>${id}</span><div class="stage ${cls}"><div class="half left"></div><div class="half right"></div><div class=edge></div></div></section>`).join('');
+</script>
