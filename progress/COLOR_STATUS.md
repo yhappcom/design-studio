@@ -3,7 +3,7 @@
 Operating state: **ACTIVE — RESEARCH MAY RESUME**  
 Governance sync: 2026-09-14  
 Primary path: `research/color/`  
-Next new-study ID: `C008`
+Next new-study ID: `C009`
 
 This file is maintained by the Color Specialist. The specialist must not update global `progress/STATUS.md` directly.
 
@@ -33,12 +33,13 @@ Before substantial work, Color reads all four specialist statuses and materially
 Current curriculum stage: **Stage 1 — Foundation with an early bridge into Intermediate Professional Practice**  
 Overall state: **CRITIQUE**
 
-The Color program now spans UI color, colorimetry/observer models, chromatic adaptation, ICC/CMM production-path validation, perceptual spaces/difference, gamut mapping, ramp authoring, web override behavior, semantic token architecture, two-context semantic transfer, data-visualization color, controlled observer-conditional metamerism, and fixed-geometry rendered salience/density transfer.
+The Color program now spans UI color, colorimetry/observer models, chromatic adaptation, ICC/CMM production-path validation, perceptual spaces/difference, gamut mapping, ramp authoring, web override behavior, semantic token architecture, two-context semantic transfer, rendered data-visualization color, controlled observer-conditional metamerism, and fixed-geometry rendered salience/density transfer.
 
-Foundation is **not passed**. Human/CVD evidence, full checksum-verified spectral datasets, current cone-fundamental numerical validation, higher-precision/real-profile/cross-CMM production proof, broader browser/device evidence, physical-display/environmental tests, and production-fidelity project transfer remain incomplete.
+Foundation is **not passed**. Human/CVD-observer evidence, full checksum-verified spectral datasets, current cone-fundamental numerical validation, higher-precision/real-profile/cross-CMM production proof, broader browser/device evidence, physical-display/environmental tests, localization/Type chart transfer, and production-fidelity project transfer remain incomplete.
 
 ## Canonical evidence already established
 
+### Legacy Color studies
 - `research/color/008-color-luminance-contrast-hierarchy.md`
 - `research/color/010-color-science-colorimetry-foundations.md`
 - `research/color/011-lms-cone-fundamentals-observer-models.md`
@@ -46,6 +47,8 @@ Foundation is **not passed**. Human/CVD evidence, full checksum-verified spectra
 - `research/color/013-perceptual-color-spaces-difference.md`
 - `research/color/016-color-gamut-wide-gamut-mapping.md`
 - `research/color/017-perceptual-ramp-authoring.md`
+
+### C-series
 - `research/color/C001-web-color-user-override-resilience.md`
 - `research/color/C002-semantic-color-role-token-architecture.md`
 - `research/color/C003-data-visualization-color-systems.md`
@@ -60,7 +63,12 @@ Foundation is **not passed**. Human/CVD evidence, full checksum-verified spectra
 - `research/color/C007-fixed-geometry-color-density-specimen.html`
 - `research/color/C007-fixed-geometry-color-density-playwright.py`
 - `research/color/C007-fixed-geometry-color-density-results.json`
-- retained product-design Color exercises 005, 009, 010, 012, 013, and 016.
+- `research/color/C008-rendered-data-visualization-color-validation.md`
+- `research/color/C008-rendered-data-visualization-specimen.html`
+- `research/color/C008-rendered-data-visualization-playwright.py`
+- `research/color/C008-rendered-data-visualization-results.json`
+
+Retained earlier Color exercises remain under `product-design/exercises/`.
 
 ## Foundation / bridge module status
 
@@ -75,90 +83,155 @@ Foundation is **not passed**. Human/CVD evidence, full checksum-verified spectra
 | Perceptual ramp authoring | CRITIQUE | rendered/browser/device validation; no PASS from model-space regularity alone |
 | Web color override resilience | IN STUDY / TRANSFER VALIDATION | Interaction I003 independently confirms key failure mechanism in Chromium; real OS/multi-browser/AT/production token validation still open |
 | Semantic color/token architecture | PRACTICE / TRANSFER VALIDATION | C006 two-context graph/collision/pair-matrix practice complete; rendered component combinations, CVD/grayscale, multi-theme/platform/browser and real-project transfer pending |
-| Color-driven visual density / salience | **PRACTICE / CROSS-DOMAIN TRANSFER VALIDATION** | C007 fixed-geometry rendered proof complete; human perceived-clutter/search/comparison, CVD, localization/Type, cross-browser/device and physical-environment validation pending |
-| Data-visualization color systems | IN STUDY / NUMERICAL PRACTICE | rendered categorical/sequential/diverging examples; CVD/human-task evidence; light/dark, browser/device and multi-project validation |
+| Color-driven visual density / salience | PRACTICE / CROSS-DOMAIN TRANSFER VALIDATION | C007 fixed-geometry rendered proof complete; human perceived-clutter/search/comparison, CVD, localization/Type, cross-browser/device and physical-environment validation pending |
+| Data-visualization color systems | **PRACTICE / CRITIQUE** | C008 rendered categorical/sequential/diverging light-dark failure→revision proof complete; human interpretation, real CVD observers, forced-colors, production chart library, Type/localization, cross-browser/device and multi-project validation pending |
 
-## Latest completed block — C007
+## Latest completed block — C008
 
-`C007-fixed-geometry-color-density-salience.md` answers the Layout L002 handoff by holding information and geometry constant while varying only color treatment.
+`C008-rendered-data-visualization-color-validation.md` converts C003 from numerical/project-readiness theory into matched browser-rendered chart evidence.
 
-### Peer evidence consumed
+### Controlled setup
 
-- Type is now through **T005**; mixed Latin/Korean fallback can materially alter geometry, so C007 deliberately fixes typography/language and does not attribute Type variation to Color.
-- Layout/Interaction is through **L004/I004**. L002 supplies the density-isolation method; I003 independently validates Color C001's warning that fill/shadow-only state cues can collapse in Chromium forced colors.
-- Web remains pre-W001 at the latest sync; no Web production evidence is invented.
+One specimen contains:
 
-### Controlled rendered specimen
+- a five-series categorical line chart with Series C selected;
+- a 9-step sequential heat strip plus `6×6px` small-mark row;
+- a diverging variance chart with values `[-3, 0, +2, +5, +8, +12, N/A]`.
 
-Four variants share the same DOM/content/typography/spacing/border geometry and viewport:
+Four matched conditions are rendered:
 
-1. `neutral` — low-chroma control;
-2. `overloaded` — distributed chromatic surfaces, status fills, row tinting and data colors;
-3. `high-contrast-mono` — zero-chroma but strong luminance striping/boundaries;
-4. `semantic-sparse` — neutral structure with localized action/selection/status/data color.
+- light / failure;
+- light / revised;
+- dark / failure;
+- dark / revised.
 
-Chromium `144.0.7559.96`, viewport `1024×900`, DPR 1.
+Environment:
 
-All tracked geometry comparisons report **identical to neutral = true**.
+- Chromium `144.0.7559.96`;
+- viewport `1280×820`;
+- DPR 1;
+- SVG rendering.
 
-### Overloaded vs semantic-sparse
+All panel/chart rectangles remain identical across conditions.
 
-- mean Oklab chroma: `0.01763` vs `0.00403` → `4.37×`;
-- share of pixels with `C > 0.04`: `13.31%` vs `1.36%` → `9.82×`;
-- mean adjacent chroma difference: `0.003573` vs `0.001674` → `2.13×`;
-- mean adjacent lightness difference differs only about `+5.0%`;
-- study-specific local feature-variability proxy: `0.03249` vs `0.02937` → `+10.6%`.
+### Categorical failure → revision
 
-Interpretation: under fixed geometry, the overloaded condition produces much more distributed chroma variation. **Do not translate the proxy percentage into a human-clutter or performance percentage.**
+Failure:
 
-### Method challenge — desaturation is not a decluttering law
+- `1.5px` hue-only lines;
+- no markers;
+- no direct labels;
+- selected Series C has identity `#2C7BB6` but is recolored to interaction accent `#E69F00`.
 
-`high-contrast-mono` has effectively zero chroma but, versus `semantic-sparse`:
+Revision:
 
-- mean adjacent lightness difference is about `+59.5%`;
-- Oklab L standard deviation about `+51.3%`;
-- local feature-variability proxy about `+63.5%`.
+- `2.5px` identity lines;
+- distinct dash/marker strategies;
+- direct end labels;
+- selected Series C retains identity `#009E73` and receives a separate selection halo.
 
-Professional consequence: **less chroma does not necessarily mean a calmer or less segmented interface.** Luminance contrast, boundaries, striping and repeated high-contrast surfaces can create a strong competing feature field without hue.
+Professional conclusion: **data identity and interaction emphasis are separate semantic axes.** Selection should not silently rewrite category identity unless that loss is explicitly acceptable.
 
-### Sparse color can retain focal strength
+### CVD diagnostic
 
-Primary-vs-normal button region Oklab distance:
+Minimum pairwise Oklab distances among five series colors:
 
-- overloaded `0.4189`;
-- semantic-sparse `0.4285`.
+| Model | Failure | Revised |
+| --- | ---: | ---: |
+| Normal | `0.16961` | `0.15582` |
+| Protanopia simulation | `0.04507` | `0.09554` |
+| Deuteranopia simulation | `0.03302` | `0.07609` |
+| Tritanopia simulation | `0.04056` | `0.08542` |
 
-The sparse condition therefore retained a strong localized focal-action difference in this within-study metric while using much less page-wide chroma.
+The revised palette slightly reduces the normal-model minimum while materially increasing the minimum under all three severity-1 Machado simulations. This is a useful **trade-off**, not a universal threshold.
 
-This is not a validated human salience threshold; action-finding time remains OPEN.
+CVD simulation and Oklab distance are diagnostics only; they are not real-observer identification evidence.
+
+### Sequential failure → light/dark revision
+
+Failure rainbow Oklab-L path:
+
+`0.4520 → 0.6152 → 0.9054 → 0.8751 → 0.8664 → 0.8907 → 0.9680 → 0.7319 → 0.6280`
+
+Direction reversals: `3`.
+
+Revised light YlGnBu path:
+
+`0.9904 → 0.9542 → 0.8960 → 0.7926 → 0.7171 → 0.6179 → 0.4837 → 0.3795 → 0.2604`
+
+Direction reversals: `0`.
+
+Revised dark context-specific low-yellow/olive → high-blue/cyan path:
+
+`0.2789 → 0.3770 → 0.4589 → 0.5367 → 0.6117 → 0.6981 → 0.7742 → 0.8483 → 0.9300`
+
+Direction reversals: `0`.
+
+Professional conclusion: dark-theme data color should preserve **analytical ordering and semantic endpoints**, not literal pixels. A separate dark mapping can change luminance strategy without inverting the meaning of low/high.
+
+The `6×6px` row is a render stress case only; human small-mark discriminability remains OPEN.
+
+### Diverging midpoint + missing-data failure → revision
+
+Failure centers the color scale at observed range midpoint `+4.5` instead of the domain reference `0`.
+
+For `[-3, 0, +2, +5, +8, +12, N/A]`, failure visual classes are:
+
+`negative, negative, negative, positive, positive, positive, missing`
+
+instead of:
+
+`negative, center, positive, positive, positive, positive, missing`.
+
+Mismatch count: `2` (`0` and `+2`).
+
+Failure also maps `N/A` to the midpoint color, making missing data resemble a valid neutral value.
+
+Revision:
+
+- explicit zero midpoint;
+- independent scaling on unequal negative/positive ranges;
+- signed value labels;
+- zero/reference line;
+- `N/A` cross/outline outside the quantitative scale.
+
+Revised mismatch count: `0` in light and dark.
+
+Professional conclusion: **a diverging midpoint is part of the data model, not a palette convenience.** Missing data must not silently enter the numeric scale.
 
 ### Evidence level
 
-**PRACTICE + CROSS-DOMAIN TRANSFER VALIDATION / controlled Chromium rendering + Oklab image statistics + explicit method limits.**
+**PRACTICE + CRITIQUE / controlled Chromium SVG rendering + failure→revision + bounded CVD/ordering/semantic diagnostics.**
 
-Not PASS: perceived clutter, search/comparison accuracy, eye movement, CVD, localization, cross-browser/device, physical glare/low-light and production-page evidence remain open.
+Not PASS: human interpretation, real CVD observers, forced-colors, production chart libraries, actual Type/localization, cross-browser/device/export, physical viewing, and multi-project transfer remain incomplete.
 
-## Previous key blocks
+## Previous completed block — C007
+
+C007 holds dense interface content/geometry constant while changing only Color. Its key controlled result is that chroma-overloaded treatment greatly increases distributed chroma variation, while a zero-chroma high-contrast monochrome control can create even stronger luminance segmentation. Therefore `desaturate = declutter` is rejected as a universal rule.
+
+C007's semantic-sparse condition retained strong local primary-action separation while using much less page-wide chroma. Human clutter/task claims remain OPEN.
+
+## Previous project/science blocks
 
 ### C006 — semantic token transfer
 
-Two materially different product archetypes reject overloaded brand/action/selection/status mappings and confirm that the semantic-role **method** transfers while literal palettes do not. Pair-contract checks are reproducible; rendered/human/device validation remains incomplete.
+Two materially different product archetypes reject overloaded brand/action/selection/status mappings and confirm that the semantic-role **method** transfers while literal palettes do not.
 
 ### C005 — ICC/CMM production path
 
-A real LittleCMS profile path reconstructs D50 colorants from the sRGB profile `chad` and agrees with independent D65→D50→Lab calculations within the tested 8-bit Lab quantization envelope. Low-bit-depth intermediate round-trip loss is explicitly separated from CMM/adaptation error.
+A real LittleCMS profile path validates the D65→D50 ICC architecture within the tested observation precision and separates low-bit-depth round-trip loss from CMM/adaptation error.
 
 ### C004 — observer/metamer practice
 
-Controlled CIE 1931 spectral integration constructs a metamer pair that separates under CIE 1964 10°, demonstrating that a colorimetric match is conditional on the specified observer/system.
+A constructed CIE 1931 metamer pair separates under CIE 1964 10°, demonstrating that colorimetric match is conditional on the specified observer/system.
 
-### C003 — data visualization
+### C003 — data visualization source framework
 
-Establishes categorical/sequential/diverging semantics, meaningful diverging midpoint, rainbow failure analysis, monotonicity practice, redundant coding and missing/reference/state separation. Rendered/CVD/human evidence remains open.
+C003 defines categorical/sequential/diverging semantics, meaningful midpoint, rainbow failure analysis, redundant coding, missing/reference/state separation and production validation criteria. C008 now supplies the first controlled rendered proof.
 
-### C002/C001 — semantic architecture and override resilience
+### C002/C001 — semantic architecture / override resilience
 
-C002 establishes primitive→semantic→optional component→context resolution and pair contracts. C001 establishes user/browser color-override failure hypotheses, now partially independently validated by Interaction I003.
+C002 establishes primitive→semantic→optional component→context resolution and pair contracts. C001's forced-color failure hypothesis has been independently supported by Interaction I003 in Chromium.
 
 ## Peer evidence currently affecting Color
 
@@ -168,59 +241,60 @@ Type is through **T005**.
 
 Color consequences:
 
-- mixed Latin/Korean fallback can change body size, width, line-box behavior and apparent mass while a color token stays identical;
-- T004 numerals/punctuation and T005 fallback strings are the next realistic text transfer targets for C006/C007/C003;
-- nominal contrast should not be treated as complete compact-type validation.
+- mixed Latin/Korean fallback can alter chart label size, width, line box and apparent mass while colors remain unchanged;
+- T004 numerals/punctuation and T005 fallback strings are now direct C008 transfer targets;
+- a direct-label chart only remains color-robust if the labels themselves survive actual Type/localization conditions.
 
 ### Layout / Interaction
 
-Layout/Interaction is through **L004/I004**.
+Layout/Interaction is through **L005/I004** at the latest synchronization.
 
-Relevant consequences:
+Important new overlap:
 
-- L002 supplies the fixed-geometry density baseline used by C007;
-- L003/L004 show typography and numeric feature settings can change wrapping/column fit, reinforcing the need to hold them fixed in Color experiments;
-- I003 confirms C001's forced-color failure mechanism in controlled Chromium;
-- I004 adds local/remote/conflict/deleted/merged semantics that Color may encode later but must not define.
+- `L005-color-driven-density-salience-transfer.md` independently studied a fixed-geometry finance surface and reached a compatible diagnosis: spatial density, feature variability, semantic emphasis distribution, and semantic collision must be separated. This is independent confirmation of the C007 problem framing, not evidence that either study has human-clutter PASS.
+- I003 confirms that fill/shadow-only state semantics can collapse under Chromium forced colors.
+- L004 shows that numeric font features can alter dense comparison geometry even when data values are unchanged.
+- I004 adds conflict/deleted/merged state semantics that future Color work may encode but must not define.
+
+For C008 specifically, I003 reinforces the rule that chart selection/focus/current states need structural redundancy beyond authored color.
 
 ### Web Design
 
 At the latest synchronization, Web still lists `W001` as the next study and no substantive `W###` evidence exists. **Do not invent Web evidence.**
 
-Color now provides Web with explicit future transfer contracts for semantic tokens, forced colors, data color, wide gamut, ICC-tagged assets, and C007 fixed-geometry color-density behavior.
+C008 now adds an SVG/light-dark/CVD/state chart-transfer contract to the existing Color→Web handoffs.
 
 ## Incoming dependencies
 
-- Type may require measured contrast/luminance/viewing-condition and downstream asset-pipeline evidence for real text, numerals and localized labels.
-- Layout & Interaction may require state/focus color contracts, color-vision independence, chart-density and salience evidence, and environmental constraints.
-- Web Design may require semantic tokens, chart palettes, forced/system-color behavior, gamut/fallback, ICC asset/export and real page color-density guidance.
+- Type may require measured color/viewing-condition evidence for real text, numerals, direct chart labels and localized labels.
+- Layout & Interaction may require state/focus color contracts, color-vision independence, chart-density/salience evidence, and environmental constraints.
+- Web Design may require semantic tokens, chart palettes, forced/system-color behavior, SVG/canvas/browser transfer, gamut/fallback, ICC asset/export and real page color-density guidance.
 
 ## Active next queue
 
 Research remains ACTIVE. Priorities are expected-value guidance, not hard sequencing:
 
-1. **C008 candidate — render C003 data visualization practice:** categorical + sequential + diverging examples in matched light/dark contexts; add grayscale/CVD/small-mark/state critique and at least one failure→revision cycle.
-2. Extend C007 with human task evidence when participants are available: known-item search, comparison, action finding, error detection; performance separate from preference/workload.
-3. Transfer T004/T005 into C006/C007: real numeric/status/secondary roles, Korean fallback, selected+focused+status combinations, without changing semantic Color jobs.
+1. **C009 candidate — Type/localization transfer into Color:** apply T004/T005 numeric/Korean evidence to C006/C008 roles; test direct labels, legends, signed numbers, status text, wrapping, and selected/focused combinations without changing semantic Color jobs.
+2. Extend C008 with forced-colors/high-contrast and alternate representation, using I003 as the state-resilience baseline; do not wait for Web if an independent Color check is useful, but label it Color-owned validation.
+3. Extend C007/C008 with human tasks when participants are available: known-item search, series identification, value comparison, action finding, missing/reference interpretation; keep performance separate from preference/workload.
 4. Extend C005 with float/high-bit-depth transforms, real/independent profiles, P3→sRGB and display→print paths, soft proof and a second CMM/toolchain where practical.
 5. Extend C004 to complete smooth/measured spectra with independently hash-verified current CIE datasets; perform current CIE 2006 LMS comparison only after provenance is verified.
 6. Compare Bradford/CAT02/CAT16 on explicitly bounded datasets; do not declare a universal winner.
-7. Validate non-text/focus/ramp and Type transfer evidence on physical displays under controlled bright/low-light conditions.
-8. Transfer C001–C007 and Studies 016/017 into real Web/browser validation when substantive W### evidence becomes available.
-9. Continue advanced data visualization later into cyclic scales, uncertainty, bivariate systems, heatmaps and multi-color gamut optimization.
-10. Build automated Color QA only when tied to a real project acceptance criterion; do not turn C007's proxy into a generic score without validation.
+7. Validate non-text/focus/ramp, chart, and Type transfer evidence on physical displays under controlled bright/low-light conditions.
+8. Transfer C001–C008 and Studies 016/017 into real Web/browser validation when substantive W### evidence becomes available.
+9. Continue data-visualization research into cyclic scales, uncertainty, bivariate systems, heatmaps and multi-color gamut optimization after the current rendered/human gaps are addressed.
+10. Build automated Color QA only when tied to real product acceptance criteria; no simulation/proxy becomes a generic score without human validation.
 
 ## Open research-quality gaps
 
+- C008 human interpretation/search/comparison and real-CVD-observer evidence;
+- C008 forced-colors/chart-library/Type/localization/cross-browser/device/export transfer;
 - C007 human perceived-clutter/search/comparison evidence;
-- C007 CVD/localization/cross-browser/device/environment transfer;
-- C006 rendered/CVD/human-task and real-project validation;
-- C003 rendered/CVD/human-task evidence;
+- C006 real-project/rendered human validation;
 - float/high-bit-depth ICC/CMM validation and actual source/destination profiles;
 - P3→sRGB, display→print, soft-proof and cross-CMM evidence;
 - full checksum-verified spectral integration on complete smooth/measured spectra;
 - current CIE 2006 LMS/cone-fundamental numerical comparison and broader observer-diversity evidence;
-- real browser implementation evidence for CSS gamut mapping, forced/system colors, token resolution and ICC-tagged assets;
 - physical-display/environmental testing;
 - cultural/localization evidence beyond generic color folklore;
 - production-fidelity multi-project transfer evidence.
@@ -229,22 +303,23 @@ Research remains ACTIVE. Priorities are expected-value guidance, not hard sequen
 
 ### Typography / Type
 
-- C007 fixes typography to isolate Color; rerun with T004/T005 to test whether color-density conclusions survive real numerals/Korean fallback.
-- C006/C003 remain useful numeric/status/chart-label contexts.
-- Scope limit: Color does not define font metrics, fallback or hinting.
+- C008 now relies on direct labels, signed numeric text and `N/A` to avoid color-only semantics. These are high-value T004/T005 transfer cases.
+- Test small chart labels, Korean long labels, fallback changes, tabular/proportional numerals, signs and punctuation while Color semantics remain fixed.
+- Scope limit: Color does not define font metrics, fallback, feature settings or hinting.
 
 ### Layout / Interaction
 
-- C007 confirms the value of L002's separation between spatial density and color-driven feature load: geometry stayed identical while rendered feature statistics changed.
-- C007 also rejects `desaturate = declutter`; luminance segmentation can be stronger than chroma.
-- I003 remains the structural redundancy constraint for any sparse semantic color system.
-- Scope limit: no human density/task-performance claim; Layout owns density policy and Interaction owns state meaning.
+- C008 categorical result: selection should preserve data identity and add a separate emphasis channel rather than replacing the series color.
+- C008 diverging result: zero/reference/missing are data semantics that chart layout/interaction must preserve.
+- L005 independently confirms the value of separating geometry, feature variability and semantic collision in dense surfaces.
+- I003 remains the forced-color/state-resilience baseline for future chart work.
+- Scope limit: Color does not define chart navigation, brushing, tooltip, focus order or interaction-state semantics.
 
 ### Web Design
 
-- C007 supplies a four-condition fixed-geometry specimen and reproducible Chromium harness for future real-page reproduction.
-- Test with production tokens/components, actual zoom, project Type, forced/system colors, multiple browsers/OS/devices and real page constraints.
-- Continue C001/C002/C006 semantic/override transfer, C003 chart transfer, Studies 016/017 wide-gamut transfer, and C005 embedded-profile/export transfer.
+- C008 supplies a reproducible SVG light/dark failure→revision specimen and chart-color acceptance matrix.
+- Future Web validation should test real SVG/canvas libraries, responsive containers, browser zoom, forced/system colors, keyboard/focus/hover, production Type, multiple browsers/OS/devices, P3/sRGB and export.
+- Continue C001/C002/C006 semantic/override transfer, C007 dense-page color transfer, Studies 016/017 wide-gamut transfer, and C005 embedded-profile/export transfer.
 - Return confirmation, limitation, contradiction or transfer failure explicitly.
 
 ## Handoff rule
@@ -255,11 +330,12 @@ If another specialist requests Color evidence, answer with canonical Color evide
 
 - `C001`: Web color override resilience and validation matrix.
 - `C002`: semantic color/token architecture and project-readiness method.
-- `C003`: data-type-driven visualization color systems and numerical scale practice.
+- `C003`: data-type-driven visualization color framework.
 - `C004`: CIE 1931 spectral integration/scaling/metamer practice and 1931↔1964 observer comparison.
 - `C005`: v4 ICC profile/CMM D65→D50 validation and precision failure diagnosis.
 - `C006`: two-context semantic-token transfer, collision rejection and pair matrices.
-- `C007`: fixed-geometry rendered Color→Layout transfer; overloaded chroma vs semantic sparsity; zero-chroma high-luminance-contrast contradiction control.
-- `Color-driven visual density / salience` enters **PRACTICE / CROSS-DOMAIN TRANSFER VALIDATION**, not PASS.
-- Next Color study ID: `C008`.
+- `C007`: fixed-geometry rendered Color→Layout transfer; overloaded chroma vs semantic sparsity; zero-chroma luminance-overload contradiction control.
+- `C008`: rendered categorical/sequential/diverging chart validation across light/dark, CVD diagnostic, selection-identity failure, semantic midpoint and missing-data revision.
+- `Data-visualization color systems` advances to **PRACTICE / CRITIQUE**, not PASS.
+- Next Color study ID: `C009`.
 - Overall Color state remains **CRITIQUE / Foundation NOT PASSED**.
