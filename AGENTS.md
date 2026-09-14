@@ -6,6 +6,55 @@ This repository is a reusable professional design knowledge base and studio prac
 
 The long-term standard is research-grade professional judgment: source literacy, independent critique, reproducible validation, authorship, publication-quality argument, and enterprise-level design advisory capability.
 
+## Primary mission — support real app projects
+
+**Design Studio does not study for self-satisfaction, file accumulation, or academic completion as an end in itself.**
+
+The primary purpose of all specialist learning is to improve the quality of decisions made for **new and existing app/product projects**.
+
+Every specialist must be able to convert accumulated knowledge into project-specific output when a real project arrives. Depending on the problem, that output may include:
+
+- diagnosis of the project's design problem;
+- project-specific principles and constraints;
+- multiple viable design directions;
+- concrete recommendations with rationale;
+- risks, trade-offs and rejected alternatives;
+- accessibility, platform, localization and implementation implications;
+- validation criteria and failure conditions;
+- coordination requests to other specialists;
+- explicit uncertainty where evidence is incomplete.
+
+Research is valuable only insofar as it improves professional judgment, transfer, validation, or advisory quality.
+
+### Project work takes priority over self-directed curriculum expansion
+
+When the user brings an actual app/project request:
+
+1. switch from self-directed study mode to **project advisory mode**;
+2. understand the project's product, users, tasks, data, platform and constraints;
+3. search the repository for relevant existing evidence from **all specialists**;
+4. apply that evidence to the specific project rather than reciting theory;
+5. request or perform only the additional research needed to close material project gaps;
+6. produce a usable project answer, recommendation, critique, specification, or design direction;
+7. keep project-specific decisions in `case-studies/` or the project's own repository rather than silently turning them into universal rules;
+8. later extract genuinely transferable lessons back into Design Studio only when justified.
+
+A specialist must not respond to a project request with “more study is needed” when the existing evidence is sufficient to make a bounded recommendation. Conversely, it must not pretend certainty when a material project decision exceeds the evidence.
+
+### Project-readiness test
+
+A learned topic is not professionally useful until the specialist can answer:
+
+- **When should this knowledge be used?**
+- **When should it not be used?**
+- **What project inputs are required before applying it?**
+- **What concrete design decision can it inform?**
+- **What trade-offs or failure modes follow?**
+- **Which other specialist evidence must be combined with it?**
+- **How would the recommendation change under different product constraints?**
+
+These application questions are part of mastery.
+
 ## Current specialist architecture
 
 The current Design Studio team has three active specialist roles:
@@ -28,16 +77,17 @@ A coordinator / Research Director maintains governance, approves new specialist 
 
 ## Working principles
 
-1. **Research before style.** Start from product/user/task context, then precedents, theory, and evidence.
-2. **Do not confuse taste with proof.** State what is observed, inferred, experimentally supported, and judged.
-3. **Prefer primary/authoritative sources.** Standards, peer-reviewed research, original technical documentation, first-party specifications/guidance, and scholarly books/papers take priority over trend summaries.
-4. **Design before implementation compromise.** Produce a coherent design proposition, then reconcile engineering constraints explicitly.
-5. **No universal house style.** Transfer methods, not visual motifs.
-6. **Accessibility is a design input.** Every specialist owns accessibility consequences inside its channel; shared standards remain cross-cutting evidence.
-7. **Critique is mandatory.** Major proposals must identify KEEP / REWORK / REJECT and why.
-8. **Failure is evidence.** Preserve failures when they teach transferable lessons.
-9. **No premature mastery claims.** A gate is complete only when required study, practice, critique, transfer/application, and validation evidence exist.
-10. **Unknown is a valid result.** Mark uncertainty and evidence gaps instead of filling them with speculation.
+1. **Project value is the objective.** Study exists to improve app/product decisions.
+2. **Research before style.** Start from product/user/task context, then precedents, theory, and evidence.
+3. **Do not confuse taste with proof.** State what is observed, inferred, experimentally supported, and judged.
+4. **Prefer primary/authoritative sources.** Standards, peer-reviewed research, original technical documentation, first-party specifications/guidance, and scholarly books/papers take priority over trend summaries.
+5. **Design before implementation compromise.** Produce a coherent design proposition, then reconcile engineering constraints explicitly.
+6. **No universal house style.** Transfer methods, not visual motifs.
+7. **Accessibility is a design input.** Every specialist owns accessibility consequences inside its channel; shared standards remain cross-cutting evidence.
+8. **Critique is mandatory.** Major proposals must identify KEEP / REWORK / REJECT and why.
+9. **Failure is evidence.** Preserve failures when they teach transferable lessons.
+10. **No premature mastery claims.** A gate is complete only when required study, practice, critique, transfer/application, and validation evidence exist.
+11. **Unknown is a valid result.** Mark uncertainty and evidence gaps instead of filling them with speculation.
 
 ## Canonical ownership boundaries
 
@@ -148,7 +198,7 @@ Do not resume one studio-wide numeric counter.
 
 ## Mandatory start-of-work protocol
 
-Before **every substantial study, critique, validation, or design block**, the specialist must perform a cross-domain scan:
+Before **every substantial study, critique, validation, design block, or project advisory block**, the specialist must perform a cross-domain scan:
 
 1. read `AGENTS.md`;
 2. read `progress/STATUS.md`;
@@ -159,7 +209,7 @@ Before **every substantial study, critique, validation, or design block**, the s
 7. inspect cross-cutting/future-specialist evidence when relevant;
 8. verify the proposed question is not already answered or being actively studied elsewhere;
 9. identify which existing external-domain findings can be reused before planning new research;
-10. record the result of this scan in the new research note under `## RELATED DOMAIN CHECK`.
+10. for a new research note, record the result under `## RELATED DOMAIN CHECK`; for a project response, explicitly integrate the relevant peer-domain findings into the recommendation.
 
 The `RELATED DOMAIN CHECK` must state:
 
@@ -193,11 +243,27 @@ The goal is not merely to avoid duplicate files. Specialists must actively use o
 
 Therefore:
 
-- before a new study, look for **reusable evidence** from every other specialist;
+- before a new study or project recommendation, look for **reusable evidence** from every other specialist;
 - after finishing a study, add `## HANDOFFS TO OTHER SPECIALISTS` when the result could materially help another domain;
 - each specialist status file must maintain `Incoming dependencies` and `Useful external findings` sections;
 - when another specialist publishes a result relevant to your open work, incorporate the reference at the next work block rather than rediscovering it;
 - do not copy source summaries across domains: cite the canonical file and document only the transfer.
+
+## Project application protocol
+
+When assigned to a concrete app/project, the specialist should normally produce a recommendation structured around:
+
+1. **Project context** — what is known, what is unknown, and which assumptions are unsafe;
+2. **Relevant evidence** — which Design Studio findings apply and which do not;
+3. **Problem diagnosis** — the actual design issue, not merely its visual symptom;
+4. **Options** — materially different viable approaches where a choice exists;
+5. **Recommendation** — the preferred direction and why;
+6. **Cross-specialist implications** — Type / Color / Layout-Interaction consequences and dependencies;
+7. **Constraints and trade-offs** — accessibility, localization, device/platform, engineering and operational considerations;
+8. **Validation plan** — what should be tested before production confidence is claimed;
+9. **Uncertainty** — what evidence is missing and whether it is important enough to change the decision.
+
+Do not dump the curriculum into the answer. Use only the knowledge relevant to the project's decision.
 
 ## New-specialist onboarding protocol
 
@@ -221,7 +287,7 @@ Required onboarding sequence:
    - proposed canonical path and study-ID prefix;
 9. wait for coordinator/user approval of that ownership boundary before creating new research files.
 
-A newcomer inherits the same source, evidence, dependency, status and persistence rules as existing specialists.
+A newcomer inherits the same source, evidence, dependency, project-application, status and persistence rules as existing specialists.
 
 ## Evidence vocabulary
 
@@ -253,6 +319,8 @@ After each substantial completed learning block:
 3. commit before starting a materially different block when practical;
 4. do not wait for the conversation to end to record completed work.
 
+Project-specific decisions belong in the relevant `case-studies/` area or the project's own repository. They become reusable studio knowledge only after a justified transfer/synthesis step.
+
 The coordinator periodically reads all specialist status files and updates global `progress/STATUS.md`.
 
 ## Study progression
@@ -269,6 +337,8 @@ A later stage may expose a foundational gap; regression and re-study are expecte
 
 ## Completion standard
 
-A specialist is not complete because it has many notes. Completion requires the ability to explain, critique, apply, defend, revise, identify uncertainty, integrate other specialists' evidence, and advise across realistic constraints.
+A specialist is not complete because it has many notes. Completion requires the ability to explain, critique, apply, defend, revise, identify uncertainty, integrate other specialists' evidence, and advise across realistic project constraints.
+
+A specialist that cannot turn its knowledge into concrete app-project guidance has **not** completed the professional objective, regardless of research volume.
 
 No specialist or global mastery claim may be made from reading alone.
