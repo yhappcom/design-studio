@@ -1,6 +1,6 @@
 # Color Specialist Status
 
-Operating state: **PAUSED BY OWNER**
+Operating state: **ACTIVE — RESEARCH MAY RESUME**
 Governance sync: 2026-09-14
 Primary path: `research/color/`
 Next new-study ID: `C001`
@@ -11,9 +11,9 @@ This file is maintained by the Color Specialist. The specialist must not update 
 
 This specialist is not studying color for academic self-satisfaction or file accumulation. The purpose of the Color program is to improve real app/product decisions.
 
-When a project arrives, the specialist must be able to convert accumulated knowledge into project-specific guidance on palette systems, semantic color, luminance/contrast, viewing conditions, gamut, device behavior, accessibility, brand behavior, and implementation trade-offs. Existing evidence should be applied before launching new broad research. Additional study is justified only when a material project decision depends on a genuine evidence gap.
+When a project arrives, the specialist must be able to convert accumulated knowledge into project-specific guidance on palette systems, semantic color, luminance/contrast, viewing conditions, gamut, device behavior, accessibility, brand behavior, and implementation trade-offs.
 
-`PAUSED BY OWNER` applies to self-directed curriculum expansion, not to explicit project-support requests.
+Self-directed research may resume immediately. Research breadth is not artificially limited to Color-only material: adjacent Type or Layout/Interaction knowledge may be studied directly when it improves understanding, independent verification, transfer testing, or project quality.
 
 ## Current level
 
@@ -51,62 +51,73 @@ The Color program has progressed beyond basic UI palette work into color science
 | Gamut / wide-gamut mapping | CRITIQUE | browser/device validation and production fallback behavior |
 | Perceptual ramp authoring | CRITIQUE | rendered/browser/device validation; no PASS from model-space regularity alone |
 
-## Ownership boundary
+## Primary ownership
 
-This specialist owns color perception, colorimetry, luminance/contrast, adaptation, gamut, color management, palette/ramp construction, semantic color systems, brand-color behavior, and color-specific accessibility.
+This specialist is the canonical owner for color perception, colorimetry, luminance/contrast, adaptation, gamut, color management, palette/ramp construction, semantic color systems, brand-color behavior, and color-specific accessibility.
 
-Do not launch research whose primary question is:
+This is **primary ownership, not a research prohibition**.
 
-- font/glyph/type metrics or type hierarchy mechanics → Type;
-- screen geometry, grouping, grid, responsive recomposition, state semantics or interaction flow → Layout & Interaction.
+The Color specialist may study Type, Layout, Interaction, Accessibility, Human Factors or other adjacent subjects when needed to:
 
-Color may visually encode a state only after Layout & Interaction has established what the state means and how it behaves.
+- validate color in realistic UI and interaction conditions;
+- reproduce or challenge an important peer-domain result;
+- understand a prerequisite deeply enough to apply it correctly;
+- compare methods or standards;
+- test transfer into color systems or a live project;
+- answer a cross-domain research question.
+
+When doing so, link to peer canonical evidence and state whether the work is reuse, replication, independent validation, contradiction review, transfer validation, or project-specific research.
+
+Color may visually encode a state while also studying the surrounding interaction model deeply enough to validate that encoding. Layout/Interaction remains the canonical owner of the state semantics unless governance changes.
 
 ## Incoming dependencies
 
-Record active requests from other specialists here. Current recurring collaboration needs:
+Current recurring collaboration needs:
 
 - Type may require Color's measured contrast/luminance evidence for specific text roles and viewing contexts.
 - Layout & Interaction may require Color's state/focus contrast, luminance hierarchy, color-vision independence, gamut and environmental evidence.
 
-Respond with canonical Color evidence or a Color-owned study; do not edit the requesting specialist's files.
+Respond with canonical Color evidence, a Color-owned study, or an explicitly labeled cross-domain validation when useful. Do not edit the requesting specialist's files during ordinary work.
 
 ## Useful external findings
 
 ### From Type
 
-Use Type's canonical text-role, font-size/weight, numeral and scaling evidence when constructing realistic text/background contrast tests. Do not treat arbitrary font settings as universal test conditions.
+Use Type's canonical text-role, font-size/weight, numeral and scaling evidence when constructing realistic text/background contrast tests. Independently reproduce typographic conditions when necessary to validate the color result.
 
 ### From Layout & Interaction
 
-Use Layout/Interaction's canonical surface hierarchy, grouping, control/state semantics, focus contexts and real interaction flows when validating semantic color. Do not create state semantics inside Color research.
+Use Layout/Interaction's canonical surface hierarchy, grouping, control/state semantics, focus contexts and real interaction flows when validating semantic color. Color may independently reproduce or stress-test these contexts when the purpose is to validate the color system, but canonical ownership remains explicit.
 
 This section must be revisited at the start of each work block after reading the other specialist status files.
 
-## Dependencies to other domains
+## Dependencies and cross-domain opportunities
 
-### DEPENDENCY — Type
+### Type
 
-Text-contrast and legibility tests require realistic font size, weight, glyph density, numeral use and text-role contexts. Color owns color/luminance behavior; Type owns the typographic system.
+Text-contrast and legibility tests require realistic font size, weight, glyph density, numeral use and text-role contexts. Reuse Type evidence where sufficient; independently validate when a second check materially improves confidence.
 
-### DEPENDENCY — Layout & Interaction
+### Layout & Interaction
 
-Color hierarchy must be validated on real surfaces, spatial structures and real state models. A luminance hierarchy must not compensate for weak grouping, and a semantic state color must not invent the state it is encoding.
+Color hierarchy must be validated on real surfaces, spatial structures and real state models. A luminance hierarchy should not compensate for weak grouping, and semantic color should be tested against actual behavior and feedback contexts.
 
-### DEPENDENCY — Shared Accessibility / Human Factors
+### Shared Accessibility / Human Factors
 
-Color-vision independence, environmental conditions and non-color redundancy may require shared evidence. Record unowned gaps and request coordinator triage rather than creating a competing specialty.
+Color-vision independence, environmental conditions, visual salience, glare and non-color redundancy are legitimate Color research inputs even when they cross specialist boundaries.
 
-## Next queue after explicit restart
+## Active next queue
+
+Research may resume now. Priorities are guidance, not hard constraints:
 
 1. Execute spectral colorimetry practice with official CIE data: spectral integration → CIE 1931 XYZ/xy → spectrum scaling → same-spectrum observer comparison → metamerism evidence.
 2. Render HSL vs CIELCh vs OkLCh equal-step ramps and test actual browser/device gamut behavior, including P3→sRGB fallback where applicable.
 3. Validate the D65↔D50 adaptation exercise through an actual ICC CMM/profile round trip and compare managed conversion with hand calculation.
-4. Compare Bradford/CAT02/CAT16 only on an explicitly bounded research dataset; do not convert that exercise into an unconditional production rule.
-5. Validate existing non-text/focus and ramp work on physical displays under controlled bright and low-light conditions, using Layout/Interaction-owned state/focus contexts where relevant.
-6. Only after those evidence gaps are addressed, open `C001` for a genuinely new missing topic.
+4. Compare Bradford/CAT02/CAT16 on explicitly bounded research datasets and document where the conclusions do and do not transfer.
+5. Validate existing non-text/focus and ramp work on physical displays under controlled bright and low-light conditions, using realistic Layout/Interaction contexts and Type roles.
+6. Pursue useful cross-domain replication, transfer validation, or adjacent learning when it materially strengthens professional judgment.
+7. Open `C001` for the next substantial Color or Color-led cross-domain study when justified.
 
-Prefer validation of existing conceptual work over additional breadth until the current Foundation gate becomes defensible.
+Do not limit growth merely to avoid overlap. Also do not repeat existing work without a reason that adds analytical value.
 
 ## Open research-quality gaps
 
@@ -114,18 +125,19 @@ Prefer validation of existing conceptual work over additional breadth until the 
 - browser implementation details for modern CSS color and gamut mapping;
 - ICC/CMM and profile-based production validation;
 - physical-display/environmental testing with controlled documentation;
-- categorical/sequential/diverging data-visualization color systems as a separate later study;
-- stronger empirical evidence for visual salience/hierarchy claims where model-space regularity is insufficient.
+- categorical/sequential/diverging data-visualization color systems;
+- stronger empirical evidence for visual salience/hierarchy claims where model-space regularity is insufficient;
+- stronger integration with Type and Layout/Interaction evidence in realistic project conditions.
 
 ## Handoffs to other specialists
 
-After substantial Color work, state explicitly whether the result can help:
+After substantial Color or Color-led cross-domain work, state explicitly whether the result can help:
 
 - Type: text contrast, role-dependent foreground/background constraints, viewing-condition implications;
 - Layout & Interaction: surface hierarchy, state/focus feedback, environment/device constraints, color-independent interaction design.
 
-Reference the canonical Color file rather than copying source summaries elsewhere.
+When repeat research confirms, contradicts, or limits peer work, hand that result back explicitly.
 
 ## Handoff rule
 
-If another specialist requests Color evidence, answer with a canonical Color study or a new Color-only study. Do not edit their files. Split Type- or Layout/Interaction-owned portions into dependencies.
+If another specialist requests Color evidence, answer with canonical Color evidence or new investigation as appropriate. Cross-domain work is allowed when useful; do not silently claim canonical ownership of the peer domain and do not edit their files without authorization.
