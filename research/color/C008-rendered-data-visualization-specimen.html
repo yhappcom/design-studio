@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>C008 Rendered Data Visualization Color Validation</title>
+<style>
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color-scheme:light dark}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;background:var(--canvas);color:var(--text)}
+body[data-theme="light"]{--canvas:#f7f9fa;--surface:#fff;--text:#172126;--muted:#56646d;--grid:#d9e0e4;--axis:#667681;--select:#111827;--missing:#8b98a1}
+body[data-theme="dark"]{--canvas:#0d1317;--surface:#151d23;--text:#f2f4f5;--muted:#aab4bc;--grid:#33414c;--axis:#8e9aa3;--select:#f2f4f5;--missing:#8b98a1}
+h1{font-size:20px;margin:0 0 16px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:1260px;margin:auto}.panel{background:var(--surface);border:1px solid var(--grid);border-radius:10px;padding:14px;min-width:0}.panel h2{font-size:15px;margin:0 0 2px}.panel p{font-size:12px;color:var(--muted);margin:0 0 10px;min-height:30px}.chart{display:block;width:100%;height:260px}.axis{stroke:var(--axis);stroke-width:1}.gridline{stroke:var(--grid);stroke-width:1}.label{fill:var(--muted);font-size:11px}.direct{fill:var(--text);font-size:10.5px;font-weight:700}.legend{fill:var(--muted);font-size:10px}.zero-line{stroke:var(--axis);stroke-width:1.5;stroke-dasharray:4 3}.na-mark{stroke:var(--missing);stroke-width:2;fill:none}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.panel p{min-height:0}}
+</style>
+<body data-theme="light" data-mode="failure">
+<h1>Data visualization color validation specimen</h1>
+<main class="grid">
+<section class="panel"><h2>Categorical identity</h2><p>Five strategy series; Series C selected.</p><svg id="cat" class="chart" viewBox="0 0 390 260" aria-label="Categorical line chart"></svg></section>
+<section class="panel"><h2>Sequential magnitude</h2><p>Ordered 0→100 heat strip at small cell size.</p><svg id="seq" class="chart" viewBox="0 0 390 260" aria-label="Sequential heat strip"></svg></section>
+<section class="panel"><h2>Diverging variance</h2><p>Variance around meaningful zero; one value missing.</p><svg id="div" class="chart" viewBox="0 0 390 260" aria-label="Diverging bar chart"></svg></section>
+</main>
+<script>
+const NS='http://www.w3.org/2000/svg';
+const catData=[
+ {name:'A',v:[48,55,51,63,61,72]},
+ {name:'B',v:[44,49,58,55,66,64]},
+ {name:'C',v:[52,50,62,68,65,76]},
+ {name:'D',v:[40,46,43,52,57,61]},
+ {name:'E',v:[56,61,59,57,70,69]}
+];
+const catFailure=['#D7191C','#1A9641','#2C7BB6','#984EA3','#FF7F00'];
+const catRevised=['#0072B2','#E69F00','#009E73','#D55E00','#CC79A7'];
+const dashes=['','7 4','2 3','10 3 2 3','4 3'];
+const markerTypes=['circle','square','triangle','diamond','cross'];
+const rainbow=['#0000FF','#0080FF','#00FFFF','#00FF80','#00FF00','#80FF00','#FFFF00','#FF8000','#FF0000'];
+const ylgnbu=['#ffffd9','#edf8b1','#c7e9b4','#7fcdbb','#41b6c4','#1d91c0','#225ea8','#253494','#081d58'];
+const darkSeq=['#2B2A0F','#3B4720','#3E6240','#3A7C67','#3B948E','#4EADC0','#72C2E1','#A0D6F2','#D2ECFF'];
+const divLight=['#2166AC','#67A9CF','#D1E5F0','#F7F7F7','#FDDBC7','#EF8A62','#B2182B'];
+const divDark=['#8CC8E8','#5BA7D1','#2F6F9F','#1A2229','#A85D38','#D9824E','#F2A06F'];
+const variance=[-3,0,2,5,8,12,null];
+function el(tag,attrs={},text=''){let e=document.createElementNS(NS,tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);if(text)e.textContent=text;return e}
+function clear(s){while(s.firstChild)s.removeChild(s.firstChild)}
+function theme(){return document.body.dataset.theme}
+function mode(){return document.body.dataset.mode}
+function css(name){return getComputedStyle(document.body).getPropertyValue(name).trim()}
+function renderCat(){
+ const s=document.getElementById('cat');clear(s);const pal=mode()==='failure'?catFailure:catRevised;
+ [50,100,150,200].forEach(y=>s.append(el('line',{x1:36,y1:y,x2:320,y2:y,class:'gridline'})));
+ s.append(el('line',{x1:36,y1:216,x2:320,y2:216,class:'axis'}));s.append(el('line',{x1:36,y1:30,x2:36,y2:216,class:'axis'}));
+ catData.forEach((ser,i)=>{
+   const pts=ser.v.map((v,j)=>[40+j*52,210-(v-35)*4]).map(p=>p.join(',')).join(' ');
+   if(i===2 && mode()==='revised') s.append(el('polyline',{points:pts,fill:'none',stroke:css('--select'),'stroke-width':6,'stroke-linecap':'round','stroke-linejoin':'round',opacity:.35,'data-role':'selection-halo'}));
+   const stroke=(i===2 && mode()==='failure')?'#E69F00':pal[i];
+   s.append(el('polyline',{points:pts,fill:'none',stroke,'stroke-width':mode()==='failure'?1.5:2.5,'stroke-dasharray':mode()==='failure'?'':dashes[i],'stroke-linecap':'round','stroke-linejoin':'round','data-series':ser.name,'data-identity':pal[i]}));
+   if(mode()==='revised') ser.v.forEach((v,j)=>drawMarker(s,40+j*52,210-(v-35)*4,pal[i],markerTypes[i]));
+   const y=210-(ser.v.at(-1)-35)*4;
+   s.append(el('text',{x:328,y:y+3,class:'direct',opacity:mode()==='revised'?1:0,'data-direct':ser.name},ser.name));
+ });
+ catData.forEach((ser,i)=>{let x=38+i*62;s.append(el('line',{x1:x,y1:240,x2:x+18,y2:240,stroke:pal[i],'stroke-width':3}));s.append(el('text',{x:x+23,y:244,class:'legend'},ser.name))});
+}
+function drawMarker(s,x,y,c,t){
+ if(t==='circle')s.append(el('circle',{cx:x,cy:y,r:3.5,fill:css('--surface'),stroke:c,'stroke-width':2}));
+ if(t==='square')s.append(el('rect',{x:x-3.5,y:y-3.5,width:7,height:7,fill:css('--surface'),stroke:c,'stroke-width':2}));
+ if(t==='triangle')s.append(el('path',{d:`M ${x} ${y-4.3} L ${x+4} ${y+3.5} L ${x-4} ${y+3.5} Z`,fill:css('--surface'),stroke:c,'stroke-width':2}));
+ if(t==='diamond')s.append(el('path',{d:`M ${x} ${y-4} L ${x+4} ${y} L ${x} ${y+4} L ${x-4} ${y} Z`,fill:css('--surface'),stroke:c,'stroke-width':2}));
+ if(t==='cross'){s.append(el('path',{d:`M ${x-4} ${y-4} L ${x+4} ${y+4} M ${x+4} ${y-4} L ${x-4} ${y+4}`,fill:'none',stroke:c,'stroke-width':2}))}
+}
+function seqPalette(){if(mode()==='failure')return rainbow;if(theme()==='light')return ylgnbu;return darkSeq}
+function renderSeq(){
+ const s=document.getElementById('seq');clear(s);const pal=seqPalette();
+ s.append(el('text',{x:24,y:34,class:'label'},mode()==='failure'?'HSV rainbow — equal hue steps':'Theme-aware monotonic sequential scale'));
+ pal.forEach((c,i)=>{const x=24+i*38;s.append(el('rect',{x,y:72,width:34,height:78,rx:2,fill:c,'data-seq':i}));s.append(el('text',{x:x+17,y:169,'text-anchor':'middle',class:'label'},String(Math.round(i*12.5))))});
+ s.append(el('text',{x:24,y:198,class:'label'},'Low'));s.append(el('text',{x:330,y:198,class:'label'},'High'));
+ pal.forEach((c,i)=>s.append(el('rect',{x:24+i*38,y:212,width:6,height:6,fill:c,'data-small':i})));
+ s.append(el('text',{x:24,y:238,class:'label'},'6×6 px marks'));
+}
+function interpHex(a,b,t){const A=a.match(/\w\w/g).map(x=>parseInt(x,16)),B=b.match(/\w\w/g).map(x=>parseInt(x,16));return '#'+A.map((v,i)=>Math.round(v+(B[i]-v)*t).toString(16).padStart(2,'0')).join('')}
+function divColor(v){
+ const pal=theme()==='light'?divLight:divDark;
+ if(mode()==='failure'){
+   const mid=4.5,min=-3,max=12;
+   if(v==null)return pal[3];
+   if(v<=mid){let t=(v-min)/(mid-min);return interpHex(pal[0],pal[3],Math.max(0,Math.min(1,t)))}
+   let t=(v-mid)/(max-mid);return interpHex(pal[3],pal[6],Math.max(0,Math.min(1,t)))
+ }
+ if(v==null)return 'none';
+ if(v<0){let t=Math.abs(v)/3;return interpHex(pal[3],pal[0],Math.min(1,t))}
+ if(v>0){let t=v/12;return interpHex(pal[3],pal[6],Math.min(1,t))}
+ return pal[3]
+}
+function renderDiv(){
+ const s=document.getElementById('div');clear(s);const baseY=142;
+ s.append(el('line',{x1:30,y1:baseY,x2:352,y2:baseY,class:'axis'}));
+ s.append(el('line',{x1:30,y1:35,x2:30,y2:218,class:'axis'}));
+ if(mode()==='revised')s.append(el('line',{x1:30,y1:baseY,x2:352,y2:baseY,class:'zero-line','data-zero':'true'}));
+ variance.forEach((v,i)=>{const x=48+i*43,w=24;
+   if(v==null){
+     if(mode()==='failure'){s.append(el('rect',{x,y:baseY-6,width:w,height:6,fill:divColor(null),'data-div':i,'data-value':'NA'}))}
+     else {s.append(el('rect',{x,y:90,width:w,height:52,class:'na-mark','data-div':i,'data-value':'NA'}));s.append(el('path',{d:`M ${x+3} 94 L ${x+w-3} 138 M ${x+w-3} 94 L ${x+3} 138`,class:'na-mark'}));}
+     s.append(el('text',{x:x+w/2,y:164,'text-anchor':'middle',class:'label'},'N/A'));return;
+   }
+   const h=Math.abs(v)*6+2,y=v>=0?baseY-h:baseY;
+   s.append(el('rect',{x,y,width:w,height:h,fill:divColor(v),'data-div':i,'data-value':String(v)}));
+   const txt=mode()==='revised'?(v>0?`+${v}`:String(v)):String(Math.abs(v));
+   s.append(el('text',{x:x+w/2,y:v>=0?y-7:y+h+15,'text-anchor':'middle',class:'label'},txt));
+ });
+ s.append(el('text',{x:36,y:32,class:'label'},mode()==='failure'?'Wrong visual midpoint = observed range midpoint (4.5)':'Meaningful midpoint = zero; each side scaled independently'));
+}
+function render(){renderCat();renderSeq();renderDiv()}
+window.setCondition=(t,m)=>{document.body.dataset.theme=t;document.body.dataset.mode=m;render()};
+window.snapshot=()=>({theme:theme(),mode:mode(),rects:[...document.querySelectorAll('.panel,.chart')].map(e=>{let r=e.getBoundingClientRect();return [r.x,r.y,r.width,r.height]}),seq:[...document.querySelectorAll('[data-seq]')].map(e=>e.getAttribute('fill')),cat:[...document.querySelectorAll('[data-series]')].map(e=>({series:e.dataset.series,identity:e.dataset.identity,stroke:e.getAttribute('stroke'),width:e.getAttribute('stroke-width'),dash:e.getAttribute('stroke-dasharray')})),direct:[...document.querySelectorAll('[data-direct]')].map(e=>e.getAttribute('opacity')),markers:document.querySelectorAll('#cat circle,#cat rect,#cat path').length,selectionHalo:!!document.querySelector('[data-role="selection-halo"]'),div:[...document.querySelectorAll('[data-div]')].map(e=>({value:e.dataset.value,fill:e.getAttribute('fill')})),zeroLine:!!document.querySelector('[data-zero="true"]')});
+render();
+</script>
+</body></html>
