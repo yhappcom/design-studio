@@ -1,0 +1,110 @@
+{
+  "environment": {
+    "fonttools": "4.63.0",
+    "external_tools": {
+      "fontbakery": null,
+      "fontspector": null,
+      "ots-sanitize": null,
+      "hb-shape": null
+    }
+  },
+  "contract_definition": {
+    "characters": ["A", "V", "i", "한"],
+    "kern": "A V = -80 font units",
+    "locl": "latn/TRK locl maps i to alternate with retained 380-unit advance",
+    "vertical_metrics": {
+      "hhea": {"ascent": 820, "descent": -220, "lineGap": 20},
+      "OS/2": {"sTypoAscender": 800, "sTypoDescender": -200, "sTypoLineGap": 0, "usWinAscent": 900, "usWinDescent": 250}
+    }
+  },
+  "measured": {
+    "source_ttf": {
+      "sha256": "a7eb73f7e4a80be07fffd5cef6ce4f26736190823bd1c839170b69c66ef17234",
+      "size": 1264,
+      "contract_pass": true,
+      "cmap": [32, 65, 86, 105, 54620],
+      "kern_pair": ["A", "V", -80],
+      "locl_binding": ["latn", "TRK ", "locl"],
+      "locl_advances": [380, 380],
+      "hhea": [820, -220, 20],
+      "os2": [800, -200, 0, 900, 250]
+    },
+    "source_woff2": {
+      "sha256": "c1013c988f1976e81ebab219650b90c14850919ab61ebba4d626aa41cc236b95",
+      "size": 552,
+      "contract_pass": true
+    },
+    "subset_preserve_ttf": {
+      "sha256": "fe5fcd30cbe9b3dbc6de6ad8068820e549fff4fd73f218727c335177a6f05571",
+      "size": 1180,
+      "glyphs": [".notdef", "A", "V", "i", "glyph00004", "uniD55C"],
+      "cmap": [65, 86, 105, 54620],
+      "kern_pair": ["A", "V", -80],
+      "locl_binding": ["latn", "TRK ", "locl"],
+      "locl_target_after_subset": "glyph00004",
+      "locl_advances": [380, 380],
+      "hhea": [820, -220, 20],
+      "os2": [800, -200, 0, 900, 250],
+      "contract_pass": true
+    },
+    "subset_preserve_woff2": {
+      "sha256": "dc1413490f112c2ebff89f667b2f2a6620ccb878611f49eb9963a7bfcb8ddaab",
+      "size": 512,
+      "contract_pass": true
+    },
+    "subset_drop_layout_ttf": {
+      "sha256": "457022859451253973746d502cc5d8c34af1ea7f54c9fcdf9319bcfb32846978",
+      "size": 1040,
+      "cmap": [65, 86, 105, 54620],
+      "kern_present": false,
+      "locl_present": false,
+      "vertical_metrics_exact": true,
+      "parseable": true,
+      "contract_pass": false
+    },
+    "subset_drop_layout_woff2": {
+      "sha256": "800c7ba6f3a5d05071927a7e30ab6d5cc12be0421e4ed6f8d4f4e4bcdd80317a",
+      "size": 448,
+      "cmap": [65, 86, 105, 54620],
+      "kern_present": false,
+      "locl_present": false,
+      "vertical_metrics_exact": true,
+      "parseable": true,
+      "contract_pass": false
+    },
+    "subset_metric_mutated_ttf": {
+      "sha256": "47c2fa5d1b68ed4e3dcaad3b1fc3d7c1241113dc923cd9470d28fb5fdb9f62a9",
+      "size": 1180,
+      "kern_present": true,
+      "locl_present": true,
+      "hhea": [900, -220, 20],
+      "os2": [800, -200, 0, 900, 250],
+      "parseable": true,
+      "contract_pass": false
+    },
+    "subset_metric_mutated_woff2": {
+      "size": 520,
+      "kern_present": true,
+      "locl_present": true,
+      "hhea": [900, -220, 20],
+      "os2": [800, -200, 0, 900, 250],
+      "parseable": true,
+      "contract_pass": false
+    }
+  },
+  "derived": {
+    "normal_woff2_preserves_contract": true,
+    "feature_aware_subset_preserves_contract": true,
+    "layout_drop_parseable_but_contract_fails": true,
+    "layout_drop_keeps_requested_cmap_but_loses_kern_locl": true,
+    "metric_mutation_parseable_but_contract_fails": true,
+    "metric_mutation_hhea_ascent_delta": 80
+  },
+  "scope_limits": [
+    "Research-only seven-glyph static TrueType; not a production Latin/Hangul family.",
+    "Structural OpenType inspection only; HarfBuzz/hb-shape and browser shaping were unavailable in this environment.",
+    "The Hangul glyph is a simple research rectangle used only to prove cmap/script subset retention, not Hangul design quality or shaping.",
+    "No mark/mkmk anchors, complex-script shaping, variable axes, CFF2, hinting, CoreText/DirectWrite/Skia/browser or human evidence.",
+    "FontBakery/Fontspector/OTS were unavailable; no external sanitizer PASS is claimed."
+  ]
+}
