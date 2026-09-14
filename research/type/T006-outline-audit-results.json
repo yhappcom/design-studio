@@ -1,0 +1,387 @@
+{
+  "study": "T006",
+  "upm": 1000,
+  "cubic_to_quadratic_max_err_units": 1.0,
+  "source_model": "explicit integer cubic segment commands; PostScript direction",
+  "final_source_audits": {
+    "H": {
+      "contours": [
+        {
+          "role": "outer",
+          "signed_area": 137600.0,
+          "direction_ok_ps": true,
+          "integer_coordinates": true,
+          "zero_handles": 0,
+          "short_lines_le_2_units": 0,
+          "missing_internal_extrema": [],
+          "polygon_valid_after_flatten": true,
+          "source_point_records": 12,
+          "curve_segments": 0
+        }
+      ],
+      "same_role_outer_overlap_pairs": [],
+      "all_direction_ok_ps": true,
+      "all_integer_coordinates": true,
+      "total_missing_internal_extrema": 0,
+      "total_zero_handles": 0,
+      "all_flattened_polygons_valid": true
+    },
+    "O": {
+      "contours": [
+        {
+          "role": "outer",
+          "signed_area": 282838.8,
+          "direction_ok_ps": true,
+          "integer_coordinates": true,
+          "zero_handles": 0,
+          "short_lines_le_2_units": 0,
+          "missing_internal_extrema": [],
+          "polygon_valid_after_flatten": true,
+          "source_point_records": 13,
+          "curve_segments": 4
+        },
+        {
+          "role": "counter",
+          "signed_area": -139950.6,
+          "direction_ok_ps": true,
+          "integer_coordinates": true,
+          "zero_handles": 0,
+          "short_lines_le_2_units": 0,
+          "missing_internal_extrema": [],
+          "polygon_valid_after_flatten": true,
+          "source_point_records": 13,
+          "curve_segments": 4
+        }
+      ],
+      "same_role_outer_overlap_pairs": [],
+      "all_direction_ok_ps": true,
+      "all_integer_coordinates": true,
+      "total_missing_internal_extrema": 0,
+      "total_zero_handles": 0,
+      "all_flattened_polygons_valid": true
+    },
+    "n": {
+      "contours": [
+        {
+          "role": "outer",
+          "signed_area": 97953.9,
+          "direction_ok_ps": true,
+          "integer_coordinates": true,
+          "zero_handles": 0,
+          "short_lines_le_2_units": 0,
+          "missing_internal_extrema": [],
+          "polygon_valid_after_flatten": true,
+          "source_point_records": 20,
+          "curve_segments": 4
+        }
+      ],
+      "same_role_outer_overlap_pairs": [],
+      "all_direction_ok_ps": true,
+      "all_integer_coordinates": true,
+      "total_missing_internal_extrema": 0,
+      "total_zero_handles": 0,
+      "all_flattened_polygons_valid": true
+    },
+    "o": {
+      "contours": [
+        {
+          "role": "outer",
+          "signed_area": 171657.6,
+          "direction_ok_ps": true,
+          "integer_coordinates": true,
+          "zero_handles": 0,
+          "short_lines_le_2_units": 0,
+          "missing_internal_extrema": [],
+          "polygon_valid_after_flatten": true,
+          "source_point_records": 13,
+          "curve_segments": 4
+        },
+        {
+          "role": "counter",
+          "signed_area": -78534.0,
+          "direction_ok_ps": true,
+          "integer_coordinates": true,
+          "zero_handles": 0,
+          "short_lines_le_2_units": 0,
+          "missing_internal_extrema": [],
+          "polygon_valid_after_flatten": true,
+          "source_point_records": 13,
+          "curve_segments": 4
+        }
+      ],
+      "same_role_outer_overlap_pairs": [],
+      "all_direction_ok_ps": true,
+      "all_integer_coordinates": true,
+      "total_missing_internal_extrema": 0,
+      "total_zero_handles": 0,
+      "all_flattened_polygons_valid": true
+    },
+    "zero": {
+      "contours": [
+        {
+          "role": "outer",
+          "signed_area": 234266.4,
+          "direction_ok_ps": true,
+          "integer_coordinates": true,
+          "zero_handles": 0,
+          "short_lines_le_2_units": 0,
+          "missing_internal_extrema": [],
+          "polygon_valid_after_flatten": true,
+          "source_point_records": 13,
+          "curve_segments": 4
+        },
+        {
+          "role": "counter",
+          "signed_area": -106037.4,
+          "direction_ok_ps": true,
+          "integer_coordinates": true,
+          "zero_handles": 0,
+          "short_lines_le_2_units": 0,
+          "missing_internal_extrema": [],
+          "polygon_valid_after_flatten": true,
+          "source_point_records": 13,
+          "curve_segments": 4
+        }
+      ],
+      "same_role_outer_overlap_pairs": [],
+      "all_direction_ok_ps": true,
+      "all_integer_coordinates": true,
+      "total_missing_internal_extrema": 0,
+      "total_zero_handles": 0,
+      "all_flattened_polygons_valid": true
+    },
+    "colon": {
+      "contours": [
+        {
+          "role": "outer",
+          "signed_area": 5529.0,
+          "direction_ok_ps": true,
+          "integer_coordinates": true,
+          "zero_handles": 0,
+          "short_lines_le_2_units": 0,
+          "missing_internal_extrema": [],
+          "polygon_valid_after_flatten": true,
+          "source_point_records": 13,
+          "curve_segments": 4
+        },
+        {
+          "role": "outer",
+          "signed_area": 5529.0,
+          "direction_ok_ps": true,
+          "integer_coordinates": true,
+          "zero_handles": 0,
+          "short_lines_le_2_units": 0,
+          "missing_internal_extrema": [],
+          "polygon_valid_after_flatten": true,
+          "source_point_records": 13,
+          "curve_segments": 4
+        }
+      ],
+      "same_role_outer_overlap_pairs": [],
+      "all_direction_ok_ps": true,
+      "all_integer_coordinates": true,
+      "total_missing_internal_extrema": 0,
+      "total_zero_handles": 0,
+      "all_flattened_polygons_valid": true
+    }
+  },
+  "fixture_audits": {
+    "H.overlap": {
+      "contours": [
+        {
+          "role": "outer",
+          "signed_area": 56000.0,
+          "direction_ok_ps": true,
+          "integer_coordinates": true,
+          "zero_handles": 0,
+          "short_lines_le_2_units": 0,
+          "missing_internal_extrema": [],
+          "polygon_valid_after_flatten": true,
+          "source_point_records": 4,
+          "curve_segments": 0
+        },
+        {
+          "role": "outer",
+          "signed_area": 56000.0,
+          "direction_ok_ps": true,
+          "integer_coordinates": true,
+          "zero_handles": 0,
+          "short_lines_le_2_units": 0,
+          "missing_internal_extrema": [],
+          "polygon_valid_after_flatten": true,
+          "source_point_records": 4,
+          "curve_segments": 0
+        },
+        {
+          "role": "outer",
+          "signed_area": 38400.0,
+          "direction_ok_ps": true,
+          "integer_coordinates": true,
+          "zero_handles": 0,
+          "short_lines_le_2_units": 0,
+          "missing_internal_extrema": [],
+          "polygon_valid_after_flatten": true,
+          "source_point_records": 4,
+          "curve_segments": 0
+        }
+      ],
+      "same_role_outer_overlap_pairs": [
+        {"i": 0, "j": 2, "area": 6400.0},
+        {"i": 1, "j": 2, "area": 6400.0}
+      ],
+      "all_direction_ok_ps": true,
+      "all_integer_coordinates": true,
+      "total_missing_internal_extrema": 0,
+      "total_zero_handles": 0,
+      "all_flattened_polygons_valid": true
+    },
+    "O.missingExtrema": {
+      "contours": [
+        {
+          "role": "outer",
+          "signed_area": 288000.0,
+          "direction_ok_ps": true,
+          "integer_coordinates": true,
+          "zero_handles": 0,
+          "short_lines_le_2_units": 0,
+          "missing_internal_extrema": [
+            {"segment": 0, "t": 0.5},
+            {"segment": 1, "t": 0.5}
+          ],
+          "polygon_valid_after_flatten": true,
+          "source_point_records": 7,
+          "curve_segments": 2
+        },
+        {
+          "role": "counter",
+          "signed_area": -143424.0,
+          "direction_ok_ps": true,
+          "integer_coordinates": true,
+          "zero_handles": 0,
+          "short_lines_le_2_units": 0,
+          "missing_internal_extrema": [
+            {"segment": 0, "t": 0.5},
+            {"segment": 1, "t": 0.5}
+          ],
+          "polygon_valid_after_flatten": true,
+          "source_point_records": 7,
+          "curve_segments": 2
+        }
+      ],
+      "same_role_outer_overlap_pairs": [],
+      "all_direction_ok_ps": true,
+      "all_integer_coordinates": true,
+      "total_missing_internal_extrema": 4,
+      "total_zero_handles": 0,
+      "all_flattened_polygons_valid": true
+    }
+  },
+  "revision_audits": {
+    "O.extremaInserted": {
+      "contours": [
+        {
+          "role": "outer",
+          "signed_area": 288000.0,
+          "direction_ok_ps": true,
+          "integer_coordinates": true,
+          "zero_handles": 0,
+          "short_lines_le_2_units": 0,
+          "missing_internal_extrema": [],
+          "polygon_valid_after_flatten": true,
+          "source_point_records": 13,
+          "curve_segments": 4
+        },
+        {
+          "role": "counter",
+          "signed_area": -143424.0,
+          "direction_ok_ps": true,
+          "integer_coordinates": true,
+          "zero_handles": 0,
+          "short_lines_le_2_units": 0,
+          "missing_internal_extrema": [],
+          "polygon_valid_after_flatten": true,
+          "source_point_records": 13,
+          "curve_segments": 4
+        }
+      ],
+      "same_role_outer_overlap_pairs": [],
+      "all_direction_ok_ps": true,
+      "all_integer_coordinates": true,
+      "total_missing_internal_extrema": 0,
+      "total_zero_handles": 0,
+      "all_flattened_polygons_valid": true
+    }
+  },
+  "failure_revision_comparisons": {
+    "H_overlap_to_unified": {
+      "fixture_outer_overlap_pairs": 2,
+      "final_outer_overlap_pairs": 0,
+      "silhouette_symmetric_difference_area": 0.0
+    },
+    "O_missing_extrema_to_inserted_extrema_same_shape": {
+      "fixture_missing_internal_extrema": 4,
+      "revision_missing_internal_extrema": 0,
+      "shape_preserved_analytically_by_de_casteljau_split": true,
+      "dense_polygon_symmetric_difference_area": 0.53928,
+      "dense_boundary_hausdorff_distance_units": 0.000375
+    }
+  },
+  "compiled_ttf": {
+    "H": {"contours":1,"points":12,"bbox":[60,0,540,700],"advance":600,"lsb":60,"quadratic_signed_area_total":-137600.0,"tt_direction_reversed_from_ps_expected":true},
+    "O": {"contours":2,"points":36,"bbox":[50,-10,550,710],"advance":620,"lsb":50,"quadratic_signed_area_total":-142884.042,"tt_direction_reversed_from_ps_expected":true},
+    "n": {"contours":1,"points":19,"bbox":[50,0,455,510],"advance":560,"lsb":50,"quadratic_signed_area_total":-98002.917,"tt_direction_reversed_from_ps_expected":true},
+    "o": {"contours":2,"points":32,"bbox":[50,-10,470,510],"advance":520,"lsb":50,"quadratic_signed_area_total":-93059.333,"tt_direction_reversed_from_ps_expected":true},
+    "zero": {"contours":2,"points":36,"bbox":[90,-5,510,705],"advance":600,"lsb":90,"quadratic_signed_area_total":-128311.958,"tt_direction_reversed_from_ps_expected":true},
+    "colon": {"contours":2,"points":24,"bbox":[108,203,192,497],"advance":320,"lsb":108,"quadratic_signed_area_total":-11045.333,"tt_direction_reversed_from_ps_expected":true}
+  },
+  "roundtrip": {
+    "table_hashes_before": {
+      "glyf": "ef7eb4ea74ab655c11be76730cb38d3a94f189b3f25d774efdd1a2a480b5cc9f",
+      "loca": "a6c3e5367bdf212c6d54b57c4e05c6494b294fcbae1df50d9c9c197ba982f491",
+      "hmtx": "18bb4f3a057d9cb7ebe99e81c6248f8bc320156be47c24e1f58c4d042de35eeb",
+      "cmap": "d01e388921b42069e36e3d14c5d28323c8771ca67272284226a0d0ab22ecaf5b",
+      "maxp": "67ee7ba334f25c6b9b8b602ff44f0ceddd32ccb67e17a37a641c010f7081af95"
+    },
+    "table_hashes_after": {
+      "glyf": "ef7eb4ea74ab655c11be76730cb38d3a94f189b3f25d774efdd1a2a480b5cc9f",
+      "loca": "a6c3e5367bdf212c6d54b57c4e05c6494b294fcbae1df50d9c9c197ba982f491",
+      "hmtx": "18bb4f3a057d9cb7ebe99e81c6248f8bc320156be47c24e1f58c4d042de35eeb",
+      "cmap": "d01e388921b42069e36e3d14c5d28323c8771ca67272284226a0d0ab22ecaf5b",
+      "maxp": "67ee7ba334f25c6b9b8b602ff44f0ceddd32ccb67e17a37a641c010f7081af95"
+    },
+    "relevant_tables_identical": true
+  },
+  "raster_autohint_light": {
+    "14": {
+      "H":{"bitmap":[8,10],"advance":8.0,"nonzero_pixels":48,"strong_pixels_gte_128":34,"coverage_pixel_equivalent":27.345},
+      "O":{"bitmap":[8,10],"advance":9.0,"nonzero_pixels":50,"strong_pixels_gte_128":30,"coverage_pixel_equivalent":27.259},
+      "n":{"bitmap":[7,7],"advance":8.0,"nonzero_pixels":33,"strong_pixels_gte_128":16,"coverage_pixel_equivalent":18.553},
+      "o":{"bitmap":[7,7],"advance":7.0,"nonzero_pixels":36,"strong_pixels_gte_128":19,"coverage_pixel_equivalent":17.722},
+      "zero":{"bitmap":[7,10],"advance":8.0,"nonzero_pixels":48,"strong_pixels_gte_128":28,"coverage_pixel_equivalent":24.882},
+      "colon":{"bitmap":[2,5],"advance":4.0,"nonzero_pixels":8,"strong_pixels_gte_128":2,"coverage_pixel_equivalent":1.902}
+    },
+    "20": {
+      "H":{"bitmap":[10,14],"advance":12.0,"nonzero_pixels":68,"strong_pixels_gte_128":68,"coverage_pixel_equivalent":54.816},
+      "O":{"bitmap":[10,14],"advance":12.0,"nonzero_pixels":84,"strong_pixels_gte_128":60,"coverage_pixel_equivalent":55.702},
+      "n":{"bitmap":[9,10],"advance":11.0,"nonzero_pixels":57,"strong_pixels_gte_128":46,"coverage_pixel_equivalent":37.8},
+      "o":{"bitmap":[9,10],"advance":10.0,"nonzero_pixels":60,"strong_pixels_gte_128":38,"coverage_pixel_equivalent":35.702},
+      "zero":{"bitmap":[10,14],"advance":12.0,"nonzero_pixels":84,"strong_pixels_gte_128":58,"coverage_pixel_equivalent":50.596},
+      "colon":{"bitmap":[2,6],"advance":6.0,"nonzero_pixels":8,"strong_pixels_gte_128":4,"coverage_pixel_equivalent":3.898}
+    },
+    "48": {
+      "H":{"bitmap":[24,34],"advance":29.0,"nonzero_pixels":366,"strong_pixels_gte_128":332,"coverage_pixel_equivalent":322.004},
+      "O":{"bitmap":[25,34],"advance":30.0,"nonzero_pixels":414,"strong_pixels_gte_128":325,"coverage_pixel_equivalent":325.843},
+      "n":{"bitmap":[20,25],"advance":27.0,"nonzero_pixels":280,"strong_pixels_gte_128":241,"coverage_pixel_equivalent":232.086},
+      "o":{"bitmap":[21,25],"advance":25.0,"nonzero_pixels":285,"strong_pixels_gte_128":215,"coverage_pixel_equivalent":216.694},
+      "zero":{"bitmap":[21,34],"advance":29.0,"nonzero_pixels":380,"strong_pixels_gte_128":298,"coverage_pixel_equivalent":296.071},
+      "colon":{"bitmap":[5,15],"advance":15.0,"nonzero_pixels":40,"strong_pixels_gte_128":26,"coverage_pixel_equivalent":25.322}
+    }
+  },
+  "scope_limits": [
+    "research subset only; not a product typeface",
+    "no variable-master interpolation",
+    "no manual TrueType hinting",
+    "no CoreText/DirectWrite/Skia/browser/device validation",
+    "custom audit is not a FontBakery substitute"
+  ]
+}
