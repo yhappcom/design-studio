@@ -12,12 +12,14 @@ Research belongs here when its primary question concerns:
 - ICC/color management, white points, chromatic adaptation and device reproduction;
 - semantic color systems, brand-color behavior, environmental validation and color accessibility evidence.
 
-## Boundary with other disciplines
+## Relationship with other disciplines
 
-- **Layout, Spatial & Interaction** owns spatial grouping, grid, responsive geometry, navigation, state semantics, feedback and interaction behavior. Color may encode a defined state but does not invent the state model.
-- **Typography / Type Design** owns glyph/font systems, text metrics and typographic structure. Color may affect legibility and hierarchy but does not define the type system.
+- **Layout, Spatial & Interaction** is the canonical owner for spatial grouping, grid, responsive geometry, navigation, state semantics, feedback and interaction behavior.
+- **Typography / Type Design** is the canonical owner for glyph/font systems, text metrics and typographic structure.
 
-When a study crosses boundaries, keep one canonical owner and link to related research rather than duplicating conclusions.
+These boundaries define canonical ownership, not limits on what Color may study. Color may directly investigate Type or Layout/Interaction material for realistic color validation, replication, method comparison, contradiction review, transfer testing, prerequisite learning or project-specific work.
+
+When doing overlapping research, cite the peer canonical study and state why the overlap is useful. Store ordinary cross-domain verification in the Color specialist's writable area rather than editing peer files.
 
 ## Mandatory cross-domain scan
 
@@ -26,9 +28,11 @@ Before new Color work:
 1. read `progress/STATUS.md` and all specialist status files;
 2. read this README and relevant Color studies;
 3. search Type and Layout/Interaction research for related evidence;
-4. identify what can be reused and what dependency remains;
-5. verify the question is not already being studied elsewhere;
+4. identify what can be reused, independently verified, challenged or extended;
+5. identify dependencies and collaboration opportunities;
 6. record the result under `RELATED DOMAIN CHECK` in the new study.
+
+Existing work elsewhere is not an automatic reason to stop. Decide whether to reuse it or intentionally repeat/extend it, and document why.
 
 After completion, add `HANDOFFS TO OTHER SPECIALISTS` when the Color result can materially help Type or Layout/Interaction.
 
@@ -47,3 +51,5 @@ Existing study numbers remain stable. New Color studies use `C###` IDs.
 ## Status authority
 
 Color progress is tracked in `progress/COLOR_STATUS.md`. The specialist does not edit global `progress/STATUS.md` during ordinary work.
+
+Current operating state: **ACTIVE — research may resume immediately**.
