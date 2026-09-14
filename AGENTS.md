@@ -24,6 +24,21 @@ This repository is a reusable professional design knowledge base and studio prac
 - `case-studies/` contains product-specific decisions and experiments.
 - Product-specific decisions must never silently become universal studio rules.
 
+## Persistence and continuity
+
+GitHub is the canonical record of Design Studio learning. Chat history is a temporary working context and must not be treated as the persistence boundary.
+
+After every substantial study, practice, critique, validation, or other completed learning block:
+
+1. save the resulting research, exercise, critique, or other evidence in the appropriate repository location;
+2. update `progress/STATUS.md` whenever the learning state, evidence links, unresolved gaps, or immediate next priorities have materially changed;
+3. commit the changes before beginning a materially different learning block when practical;
+4. do not wait for the conversation to end before recording progress.
+
+A chat session may end or be replaced at any time. Future sessions must resume from the repository state and relevant evidence rather than assuming access to prior chat history.
+
+Do not record unfinished speculation as established knowledge merely to create a checkpoint. If a learning block is incomplete, preserve only clearly identified work-in-progress evidence when it is useful and mark its status accordingly.
+
 ## Study progression
 
 The studio progresses through four stages:
