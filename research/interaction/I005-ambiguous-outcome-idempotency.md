@@ -10,7 +10,9 @@ Reproducible artifacts:
 
 ## Question
 
-I002 established that timeout/transport failure can produce **outcome unknown**, not necessarily failure. I004 then established conflict prevention and durable offline intent. A remaining high-risk question is different:
+I002 established that timeout/transport failure can produce **outcome unknown**, not necessarily failure. I004 then established conflict prevention, durable offline intent, and an initial **15/15 applied-but-response-lost / application-operation-ID** proof. I005 is therefore a deliberate replication and extension, not a claim that duplicate execution was previously untested.
+
+The remaining high-value question is whether the prior application-specific result survives an independently rebuilt harness that follows the latest available HTTPAPI draft pattern more closely and adds **concurrent same-key processing**:
 
 > If a non-idempotent user action may already have committed but its response is lost, how can the product retry without performing the same user intent twice?
 
@@ -43,7 +45,9 @@ The target is not payments specifically. The same contract can matter for create
 ### Layout / Interaction
 - Evidence checked: I002 and I004 including HTTP preconditions and durable offline outbox.
 - Reusable finding: `outcome unknown ≠ failure`; retry is not automatically safe; durable intent must survive restart/reconnect.
-- Extension: I005 focuses on **duplicate execution of one intent**, which is distinct from I004's concurrent edits to a representation.
+- Existing overlap: `I004-ambiguous-outcome-idempotency-transfer.md` already reproduced duplicate POST after response loss and repaired it with an application-specific `X-Operation-Id`.
+- Replication/extension: I005 independently reproduces the duplicate failure with a fresh harness, then adds the expired draft-07 `Idempotency-Key`-style fingerprint/replay model and a **same-key concurrent in-flight request** case.
+- Value: confirms the earlier direction while testing a failure class I004 did not cover: a duplicate arriving **before** the original operation completes.
 
 ### Web Design
 - Evidence checked: `progress/WEB_STATUS.md`; **W001 now exists** and Web is in Stage 1 PRACTICE/CRITIQUE.
@@ -58,8 +62,8 @@ Authoritative/current sources checked:
 Important status boundary: as of this study, draft-07 is **expired Internet-Draft / work in progress**, not an RFC. Its `Idempotency-Key`, fingerprint, replay, 409 and 422 patterns are used as bounded practice evidence, not as a claim of standardized final semantics.
 
 ### Overlap decision
-- **NEW I005 + TRANSFER VALIDATION + ADVERSARIAL FAILURE REPRODUCTION**.
-- Why: I002 defined outcome uncertainty, and I004 defined stale-state conflict. Neither directly proved duplicate execution after a response is lost for a non-idempotent POST-like action.
+- **DELIBERATE REPLICATION + EXTENSION + ADVERSARIAL FAILURE REPRODUCTION**.
+- Why: I004 already proved response-loss duplicate POST and application-level dedupe. I005 independently checks that conclusion and adds draft-pattern payload fingerprinting plus concurrent same-key processing. The added evidence, not repetition alone, justifies the new study.
 
 ---
 
