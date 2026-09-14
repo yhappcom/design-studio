@@ -1,0 +1,28 @@
+{
+  "study": "L001-border-ownership",
+  "stimuli": {
+    "B0": {"size": [360,220], "local_crop_sha256": "610efe43d8fd9e7a7c7ff041157000ac8a5233e0f8c7be8be32cbb4726d48e2a"},
+    "E-L": {"size": [360,220], "local_crop_sha256": "610efe43d8fd9e7a7c7ff041157000ac8a5233e0f8c7be8be32cbb4726d48e2a"},
+    "E-R": {"size": [360,220], "local_crop_sha256": "610efe43d8fd9e7a7c7ff041157000ac8a5233e0f8c7be8be32cbb4726d48e2a"},
+    "T-L": {"size": [360,220], "local_crop_sha256": "610efe43d8fd9e7a7c7ff041157000ac8a5233e0f8c7be8be32cbb4726d48e2a"},
+    "T-R": {"size": [360,220], "local_crop_sha256": "610efe43d8fd9e7a7c7ff041157000ac8a5233e0f8c7be8be32cbb4726d48e2a"},
+    "C-L": {"size": [360,220], "local_crop_sha256": "610efe43d8fd9e7a7c7ff041157000ac8a5233e0f8c7be8be32cbb4726d48e2a"},
+    "C-R": {"size": [360,220], "local_crop_sha256": "610efe43d8fd9e7a7c7ff041157000ac8a5233e0f8c7be8be32cbb4726d48e2a"},
+    "X-L": {"size": [360,220], "local_crop_sha256": "610efe43d8fd9e7a7c7ff041157000ac8a5233e0f8c7be8be32cbb4726d48e2a"},
+    "X-R": {"size": [360,220], "local_crop_sha256": "610efe43d8fd9e7a7c7ff041157000ac8a5233e0f8c7be8be32cbb4726d48e2a"}
+  },
+  "pair_checks": {
+    "E-L_vs_E-R": {"local_crop_identical": true, "local_crop_diff_fraction": 0.0, "remote_context_diff_fraction": 0.022373737373737372},
+    "T-L_vs_T-R": {"local_crop_identical": true, "local_crop_diff_fraction": 0.0, "remote_context_diff_fraction": 0.012537878787878787},
+    "C-L_vs_C-R": {"local_crop_identical": true, "local_crop_diff_fraction": 0.0, "remote_context_diff_fraction": 0.0388510101010101},
+    "X-L_vs_X-R": {"local_crop_identical": true, "local_crop_diff_fraction": 0.0, "remote_context_diff_fraction": 0.034444444444444444}
+  },
+  "randomized_human_protocol_orders": [
+    {"seed": 101, "order": ["C-R","X-L","E-R","E-L","T-R","B0","X-R","C-L","T-L"]},
+    {"seed": 202, "order": ["E-R","T-R","B0","X-R","C-L","E-L","T-L","X-L","C-R"]},
+    {"seed": 303, "order": ["T-R","C-R","X-L","E-R","X-R","E-L","C-L","T-L","B0"]},
+    {"seed": 404, "order": ["E-R","T-L","X-R","C-L","X-L","T-R","B0","C-R","E-L"]}
+  ],
+  "chromium": "144.0.7559.96",
+  "all_local_crops_equal_baseline": true
+}
