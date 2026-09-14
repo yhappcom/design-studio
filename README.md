@@ -16,17 +16,20 @@ The long-term target is not only competent execution. Specialists are expected t
 
 ## Current specialist team
 
-The current team has three active specialist roles:
+The current team has four active specialist roles:
 
 1. **Typography / Type Design Specialist**
 2. **Color Specialist**
 3. **Layout, Spatial & Interaction Specialist**
+4. **Web Design Specialist**
 
-The team can expand. New specialist chats complete the onboarding protocol before opening a new canonical research area.
+Interaction is owned by the Layout, Spatial & Interaction Specialist. Spatial and interaction evidence remain separately indexed so spatial and temporal/behavioral claims are not conflated.
 
-Interaction is intentionally owned by the Layout, Spatial & Interaction Specialist. Its evidence remains in a separate `research/interaction/` directory so temporal/behavioral research is not conflated with spatial research.
+The Web Design Specialist is responsible for designing real websites and web applications. It integrates and stress-tests Type, Color, Layout and Interaction research in actual page systems, responsive compositions, components, browser/device contexts and production constraints. Frontend knowledge supports design quality and validation; software engineering itself is not the role's primary purpose.
 
-Accessibility, Human Factors, research methodology and other shared concerns remain cross-cutting unless a dedicated specialist is formally created later.
+The team can expand further. New specialist chats complete the onboarding protocol before opening a new canonical research structure.
+
+Accessibility, Human Factors, research methodology, information visualization, content design and other shared concerns remain cross-cutting unless a dedicated specialist is formally created later.
 
 ## Repository structure
 
@@ -37,6 +40,7 @@ Accessibility, Human Factors, research methodology and other shared concerns rem
   - `research/color/` — Color
   - `research/layout/` — Layout / Spatial
   - `research/interaction/` — Interaction, owned by Layout & Interaction specialist
+  - `research/web/` — Web Design
   - `research/README.md` — research-domain index and cross-domain lookup rules
 - `methods/` — reusable methods, critique frameworks and gates
 - `type-design/` — type-design exercises and production knowledge
@@ -51,48 +55,50 @@ Accessibility, Human Factors, research methodology and other shared concerns rem
 - `progress/TYPE_STATUS.md` — Typography / Type Design
 - `progress/COLOR_STATUS.md` — Color
 - `progress/LAYOUT_STATUS.md` — Layout, Spatial & Interaction
+- `progress/WEB_STATUS.md` — Web Design
 
 A specialist updates only its own specialist status during ordinary work. The coordinator updates global status.
+
+## Primary mission
+
+Research exists to improve real app, web and product decisions.
+
+When a live project arrives, specialists apply existing knowledge first, research material gaps as needed, and produce usable recommendations rather than detached theory summaries.
+
+The final measure is not how much was studied. It is how much better the project decision becomes.
 
 ## Cross-specialist research rule
 
 Specialist ownership boundaries are **not silos and not learning restrictions**.
 
-Before starting substantial work, every specialist reads all current specialist status files and searches related research from other domains. The goals are to:
+Before substantial work, every specialist reads all current specialist statuses and searches related research from the other domains. The goals are to:
 
-1. reuse strong evidence already available;
-2. identify uncertainty or contradictions;
+1. reuse strong evidence;
+2. identify uncertainty and contradictions;
 3. decide whether independent replication or challenge is useful;
 4. avoid accidental repetition with no analytical value;
 5. create better cross-domain project judgments.
 
-Each new substantial study records a `RELATED DOMAIN CHECK`, and each completed study records `HANDOFFS TO OTHER SPECIALISTS` when the result can help another domain.
+Each substantial study records a `RELATED DOMAIN CHECK`, and completed work records `HANDOFFS TO OTHER SPECIALISTS` when results can help another domain.
 
-Overlap is permitted and may be desirable when it provides replication, second-check confidence, transfer validation, method comparison, contradiction review, prerequisite learning, or project-specific evidence.
+Overlap is permitted and may be desirable for replication, second-check confidence, transfer validation, method comparison, contradiction review, prerequisite learning, implementation validation, or project-specific evidence.
 
-Examples:
+## Web Design collaboration
 
-- Layout/Interaction work involving text growth, labels or numeric alignment may reuse or independently stress-test Type evidence.
-- Layout/Interaction work involving state/focus color or environmental contrast may reuse or independently verify Color evidence.
-- Color work evaluating text contrast uses realistic Type roles and may reproduce typography conditions where needed.
-- Color work encoding states uses Layout/Interaction state semantics and may study those semantics deeply enough to validate the color system.
-- Type work under responsive or dense conditions uses Layout/Interaction contexts and may independently reproduce spatial constraints for typographic testing.
+Web Design is an integration and application specialist, not a subordinate implementation step.
 
-Canonical ownership tells the studio where authoritative knowledge is maintained. It does not forbid another specialist from learning, reproducing, challenging, or extending that knowledge.
+- Type provides canonical type knowledge; Web applies and tests it in real pages and browser conditions.
+- Color provides canonical color knowledge; Web applies and tests it in themes, surfaces, states and devices.
+- Layout/Interaction provides spatial and behavioral theory; Web turns it into complete responsive page systems and actual browser interactions.
+- Web returns browser, responsive, content, accessibility and implementation findings to the originating specialist when real-world behavior confirms, limits or contradicts prior conclusions.
+
+Other specialists should therefore consult Web research when their findings will be deployed in a web product.
 
 ## New specialist onboarding
 
-A newly created specialist chat must **read before creating a new canonical structure**. It follows `coordination/ONBOARDING.md`, reviews the current team and research, maps overlap and collaboration opportunities, then proposes its role.
+A newly created specialist chat reads before creating a new canonical structure. It reviews the current team and research, maps overlap and collaboration opportunities, then proposes its unique role.
 
-Only after coordinator/user approval does it receive:
-
-- a canonical path;
-- a specialist status file;
-- a unique study-ID prefix;
-- ownership boundaries;
-- overlap/dependency/handoff rules.
-
-The new specialist may still learn, critique, and analyze overlapping topics during onboarding. Approval governs canonical structure, not intellectual scope.
+Approval governs canonical structure, not intellectual scope.
 
 ## Professional standard
 
@@ -113,8 +119,4 @@ The goal is not to accumulate references. The goal is to develop judgment that i
 
 ## Operating state
 
-All three current specialists are **ACTIVE** and may resume self-directed research immediately. Live app/product project work takes priority over nonessential curriculum expansion.
-
-## First case study
-
-LogMate is the first major case study because it exposes demanding problems in typography, dense data, mobile/landscape composition, interaction, accessibility and product identity. LogMate-specific decisions remain product-specific; Design Studio extracts only transferable knowledge.
+All current specialists are **ACTIVE**. Existing specialists may continue research immediately. Web Design begins after its initial repository synchronization and may then proceed without another approval step.
