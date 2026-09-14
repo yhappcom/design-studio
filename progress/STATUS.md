@@ -1,6 +1,18 @@
-# Learning Status
+# Design Studio Global Status
 
-Status vocabulary:
+Governance model: **three current specialist roles + coordinator + future specialist onboarding**
+Governance sync: 2026-09-14
+Current operating state: **ALL CURRENT SPECIALISTS PAUSED BY OWNER**
+
+This is the coordinator-maintained studio summary. Specialists must not edit this file during ordinary research work.
+
+Detailed specialist status lives in:
+
+- Type: `progress/TYPE_STATUS.md`
+- Color: `progress/COLOR_STATUS.md`
+- Layout & Interaction: `progress/LAYOUT_STATUS.md`
+
+## Status vocabulary
 
 - `NOT STARTED` — not yet studied
 - `IN STUDY` — source study underway
@@ -8,66 +20,119 @@ Status vocabulary:
 - `CRITIQUE` — work exists and is being evaluated
 - `PASS` — evidence satisfies the gate
 - `REVISIT` — later work exposed a foundational gap
+- `PAUSED` — deliberately stopped; no new work begins until explicitly restarted
 
-## Specialist research map
+## Current specialist map
 
-Canonical source-grounded research is organized by specialist ownership:
+| Specialist | Canonical research | Specialist status | Current stage/state |
+| --- | --- | --- | --- |
+| Typography / Type Design | `research/type/` | `progress/TYPE_STATUS.md` | Stage 1; PRACTICE / CRITIQUE; PAUSED |
+| Color | `research/color/` | `progress/COLOR_STATUS.md` | Stage 1 with early intermediate bridge; CRITIQUE; PAUSED |
+| Layout, Spatial & Interaction | `research/layout/`, `research/interaction/` | `progress/LAYOUT_STATUS.md` | Stage 1; CRITIQUE in studied modules; PAUSED |
 
-| Specialist domain | Canonical research path | Cross-domain awareness |
-| --- | --- | --- |
-| Typography / Type Design | `research/type/` | Consult when font metrics, text growth, numerals, glyph ambiguity, semantic type roles, or rendering affect another domain. |
-| Color | `research/color/` | Consult when luminance, contrast, chromatic adaptation, gamut, color management, semantic state color, or viewing conditions affect another domain. |
-| Layout & Spatial Design | `research/layout/` | Consult when grouping, grid, alignment, whitespace, density, hierarchy, or responsive spatial transformation affect another domain. |
-| Interaction | `research/interaction/` | Consult when actions, navigation, state, feedback, modes, reversibility, async behavior, or recovery affect another domain. |
+These are the current specialist roles, not a permanently closed list. Future specialists may be added only through the onboarding and ownership-definition protocol in `AGENTS.md` and `coordination/ONBOARDING.md`.
 
-Before a new study block, read `research/README.md`, the relevant specialist `README.md`, and this STATUS file. Specialist folders are ownership boundaries, **not silos**. If work depends on another domain, read and cite that domain's canonical evidence rather than reconstructing it from memory or duplicating it.
+## Cross-cutting evidence
 
-## Stage 1 — Foundations
+Accessibility, Human Factors, research methodology, platform behavior and other shared concerns are not currently separate specialist roles. Existing evidence remains valid and may be used by all specialists.
 
-| Domain | Status | Evidence |
-| --- | --- | --- |
-| Composition / visual grammar | CRITIQUE | `research/layout/006-grid-composition-hierarchy.md`; `research/layout/014-perceptual-grouping-spatial-grammar.md`; `product-design/exercises/003-grid-composition-comparison.svg`; `product-design/exercises/003-grid-composition-comparison-critique.md`; `product-design/exercises/007-grid-responsive-transfer.svg`; `product-design/exercises/007-grid-responsive-transfer-critique.md`; `product-design/exercises/014-perceptual-grouping-spatial-grammar.svg`; `product-design/exercises/014-perceptual-grouping-spatial-grammar-critique.md`; narrow recomposition, forced-compression failure, unrelated editorial transfer, and perceptual-grouping cue conflict (proximity/common region/connectedness/container inflation) complete; real rendered human observation plus multilingual/enlarged-text/browser proof pending |
-| Grid / alignment systems | CRITIQUE | `research/layout/006-grid-composition-hierarchy.md`; three structural hypotheses in Exercise 003; `product-design/exercises/007-grid-responsive-transfer.svg`; `product-design/exercises/007-grid-responsive-transfer-critique.md`; semantic vs disposable alignments documented across breakpoint and second context; real-browser/multilingual proof pending |
-| Color / luminance / contrast | CRITIQUE | `research/color/008-color-luminance-contrast-hierarchy.md`; `research/color/010-color-science-colorimetry-foundations.md`; `research/color/011-lms-cone-fundamentals-observer-models.md`; `research/color/012-chromatic-adaptation-white-points.md`; `research/color/013-perceptual-color-spaces-difference.md`; `research/color/016-color-gamut-wide-gamut-mapping.md`; `product-design/exercises/005-color-luminance-cross-context-practice.md`; `product-design/exercises/009-color-nontext-focus-proof.svg`; `product-design/exercises/009-color-nontext-focus-proof-critique.md`; `product-design/exercises/010-srgb-linear-xyz-practice.md`; `product-design/exercises/012-d65-d50-bradford-practice.md`; `product-design/exercises/013-perceptual-difference-comparison.md`; `product-design/exercises/016-oklch-gamut-mapping-practice.md`; cross-context grayscale/state critique, representative text probes, measured non-text boundary, focus geometry, primary-source colorimetry foundation, encoded-sRGB → linear-light → XYZ bridge, LMS/observer-model foundation, D65↔D50 chromatic-adaptation practice, CIELAB/CIELCh/CIEDE2000 scope study, Oklab/OkLCh comparative practice, wide-gamut/out-of-gamut theory, and clipping vs constant-L/H OkLCh gamut-mapping calculations complete; official spectral integration/observer comparison, rendered HSL/CIELCh/OkLCh ramp and browser/device gamut validation, ICC-tool validation, and physical-display bright/low-light/interactive-focus validation pending |
-| Typography as information architecture | CRITIQUE | `research/type/009-typography-as-information-architecture.md`; `product-design/exercises/006-typography-information-architecture-practice.md`; `product-design/exercises/008-typography-enlarged-proof.svg`; `product-design/exercises/008-typography-enlarged-proof-critique.md`; three hypotheses, dense-table adaptation, distinction-removal critique, second-context transfer, and enlarged-text failure → revision cycle complete; real platform scaling/reflow validation pending |
-| Type anatomy / metrics | PRACTICE | `research/type/001-type-as-system.md`; `research/type/002-metrics-spacing-optical-rhythm.md`; `type-design/exercises/001-ho-metrics-critique.md` |
-| Stroke / contrast / construction | PRACTICE | `research/type/003-stroke-contrast-bezier-optics.md`; `type-design/exercises/002-construction-curve-optics.svg`; critique documents limits and required family extension |
-| Bézier drawing discipline | PRACTICE | `research/type/003-stroke-contrast-bezier-optics.md`; `type-design/exercises/002-construction-curve-optics.svg`; `type-design/exercises/002-construction-curve-optics-critique.md`; real font-source/raster audit still required |
-| Optical correction | PRACTICE | overshoot study in `research/type/002-metrics-spacing-optical-rhythm.md`; construction/optics practice in `research/type/003-stroke-contrast-bezier-optics.md` and Exercise 002; raster comparison pending |
-| Spacing before kerning | PRACTICE | `research/type/002-metrics-spacing-optical-rhythm.md`; `type-design/exercises/001-ho-metrics-three-hypotheses.svg`; `type-design/exercises/001-ho-metrics-critique.md` |
-| Numerals / punctuation | IN STUDY | `research/type/005-numerals-punctuation-systems.md`; `type-design/exercises/003-numeral-punctuation-system-brief.md`; native 0–9/punctuation drawing not yet complete |
-| Interaction foundations | CRITIQUE | `research/004-accessibility-reflow-targets-focus.md`; `research/interaction/007-interaction-agency-feedback-errors.md`; `research/interaction/015-directness-state-modes-reversibility.md`; `product-design/exercises/004-interaction-state-matrix.md`; `product-design/exercises/015-directness-state-coupling-practice.md`; `product-design/exercises/015-directness-state-coupling-critique.md`; agency/feedback/error recovery plus semantic/articulatory directness, explicit state modeling, mode salience, local-vs-remote commitment, reversibility, failure paths, and keyboard alternatives critiqued; running navigation/state prototype, keyboard/focus execution, assistive-technology status validation, and asynchronous failure recovery proof pending |
-| Accessibility foundations | PRACTICE | `research/004-accessibility-reflow-targets-focus.md`; `product-design/exercises/001-accessibility-geometry.svg`; `product-design/exercises/001-accessibility-geometry-critique.md`; static measured focus/non-text evidence added in Exercise 009; interactive/assistive-tech proof pending |
-| Design history / precedent literacy | IN STUDY | modernist grid/New Typography and reaction precedent study in `research/layout/006-grid-composition-hierarchy.md`; broader historical comparison still pending |
+Examples:
 
-## Stage 2 — Intermediate
+- `research/004-accessibility-reflow-targets-focus.md`
+- related `product-design/exercises/` evidence
 
-All modules: NOT STARTED.
+Interaction is no longer a fourth independent specialist: it is owned by the **Layout, Spatial & Interaction Specialist**, while its evidence remains separately indexed in `research/interaction/` to avoid mixing spatial and temporal/behavioral claims.
 
-## Stage 3 — Advanced
+## Current Foundation picture
 
-All modules: NOT STARTED.
+### Typography / Type Design
 
-## Stage 4 — Production / authorship
+Established: type system/anatomy foundations, metrics/spacing, construction/Bezier/optics, numerals/punctuation study, typography as information architecture, original exercises and critique.
 
-All modules: NOT STARTED.
+Main unresolved gates: real raster/source proof, native numeral/punctuation outlines, broader family/system proof, platform scaling/reflow, multilingual/fallback validation.
+
+### Color
+
+Established: luminance/contrast hierarchy, RGB→linear→XYZ foundations, LMS/observer foundations, chromatic adaptation, perceptual spaces/difference, gamut mapping, perceptual ramp authoring, numerical exercises and critique.
+
+Main unresolved gates: official spectral integration, observer comparison, browser/device gamut validation, ICC/CMM round trip, bounded CAT comparison, physical-display/environmental validation.
+
+### Layout, Spatial & Interaction
+
+Established spatial evidence: grid/composition hierarchy, responsive transfer, perceptual grouping/spatial grammar and critique of grouping conflicts.
+
+Established interaction evidence: agency/feedback/errors, state/modes/directness/reversibility, state-matrix practice and critique.
+
+Main unresolved gates: figure-ground/border ownership, visual mass/balance/tension, optical centering, explicit whitespace/density/rhythm study, real-browser multilingual/enlarged-text transfer, running navigation/state prototype, keyboard/focus/status validation, and async failure/recovery proof.
+
+## Mandatory mutual-awareness rule
+
+Before any specialist begins a new substantial work block, it must:
+
+1. read this global status;
+2. read **all specialist status files**;
+3. inspect related canonical research from the other specialists;
+4. identify reusable evidence before planning new work;
+5. confirm the question is not already answered or actively being studied elsewhere;
+6. record this in the new study under `RELATED DOMAIN CHECK`.
+
+After a study finishes, it must identify `HANDOFFS TO OTHER SPECIALISTS` whenever its findings could help another domain.
+
+The objective is not only non-duplication. The objective is active reuse of one another's research.
+
+## Concurrency rules
+
+1. Each specialist edits only its own canonical research paths and its own specialist status file.
+2. Specialists do not edit this global status, `AGENTS.md`, global indexes, curriculum, coordination documents, or another specialist's files unless explicitly authorized.
+3. No specialist moves, renames, deletes or renumbers existing research during ordinary study work.
+4. Existing studies `001`–`017` retain their identifiers.
+5. New studies use collision-resistant prefixes:
+   - Type `T###`
+   - Color `C###`
+   - Layout `L###`
+   - Interaction `I###` under the Layout & Interaction specialist
+   - future specialist prefix assigned by coordinator
+   - coordinator-owned cross-cutting `X###` when needed
+6. Dependencies are recorded in the requesting specialist's own status instead of solved by duplicating another domain.
+7. Conflicting conclusions are preserved and escalated to coordinator review rather than silently overwritten.
+
+## Future specialist entry
+
+A new specialist chat must not begin research immediately. It must first read:
+
+- `AGENTS.md`
+- root `README.md`
+- this global status
+- every existing specialist status file
+- `research/README.md`
+- relevant specialist/domain README files
+- `coordination/ONBOARDING.md`
+- `coordination/COLLABORATION_PROTOCOL.md`
+
+It then submits an onboarding report defining its unique scope, overlap risks, reusable existing evidence, canonical path and proposed prefix. No research files are created until the user/coordinator approves the boundary.
+
+## Current next-work queues
+
+All queues are **paused** until explicitly restarted.
+
+When restarted, specialists follow their own status files. In broad terms:
+
+- Type closes raster/native-outline/scaling evidence gaps before expanding breadth.
+- Color closes spectral/browser/ICC/device validation gaps before expanding breadth.
+- Layout & Interaction deepens spatial foundations and builds running interaction validation before expanding breadth.
+
+## Curriculum progression
+
+The studio uses five stages:
+
+1. Foundation
+2. Intermediate professional practice
+3. Advanced / systems practice
+4. Production and authorship
+5. Research and advisory
+
+No stage or specialist is considered complete from reading alone.
 
 ## Completion rule
 
-No global completion announcement until every stage gate in `curriculum/MASTER_CURRICULUM.md` is `PASS` with evidence links.
-
-The first immediate objective is not to design a font or app. It is to complete Stage 1 with enough rigor that later design decisions are materially better than pre-study work.
-
-## Immediate next study block
-
-1. execute Study 010/011 spectral colorimetry practice with official CIE datasets: spectral integration → CIE 1931 XYZ/xy → spectrum scaling → same-spectrum observer comparison → metamerism evidence;
-2. render HSL vs CIELCh vs OkLCh equal-step ramps and validate browser/device gamut mapping against Exercise 016, including P3→sRGB fallback behaviour;
-3. validate Exercise 012 through an actual ICC CMM/profile round trip and compare hand calculation vs managed conversion;
-4. compare Bradford/CAT02/CAT16 only on an explicitly defined research dataset; do not convert the comparison into a production recommendation prematurely;
-5. raster proof Exercise 002 at multiple sizes and record a failure → redraw cycle;
-6. execute Exercise 003 numeral/punctuation brief with native outlines and ambiguity alternatives;
-7. test Grid Exercise 007 with long/multilingual labels and enlarged text in an actual rendering environment;
-8. validate Color Exercise 009 on physical displays under controlled bright/low-light conditions and with interactive keyboard focus;
-9. validate Typography Exercise 008 with real platform text scaling/reflow and localized long labels;
-10. implement Exercise 015 as a running navigation/state prototype and validate keyboard/focus/status-message behavior plus at least one asynchronous failure-and-recovery path;
-11. continue Layout & Spatial foundations with figure-ground/border ownership, visual mass/balance, and optical-centering study; keep those claims separate from the perceptual-grouping evidence in Study 014.
+No global mastery announcement until all required curriculum gates are `PASS` with linked evidence and the specialist can explain, critique, apply, defend, revise, integrate peer-domain evidence, identify uncertainty, and advise across realistic constraints.
