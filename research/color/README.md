@@ -51,12 +51,16 @@ New Color studies use `C###` IDs:
 - `C002-semantic-color-role-token-architecture.md` — base/semantic/component/context architecture, pair contracts, state/status separation, project-readiness method.
 - `C003-data-visualization-color-systems.md` — categorical/sequential/diverging scale semantics, numerical monotonicity practice, CVD/redundant coding, interaction/theme transfer and chart failure modes.
 - `C004-spectral-integration-observer-metamerism.md` — spectral tristimulus practice, spectrum scaling, constructed CIE 1931 metamer, CIE 1931↔1964 observer comparison, and dataset-provenance audit.
-- `C005-icc-cmm-roundtrip-validation.md` — real ICC/CMM D65→D50 profile validation, profile-tag reconstruction, 4,913-color CMM-vs-hand comparison, and low-precision round-trip failure analysis.
+- `C005-icc-cmm-roundtrip-validation.md` — ICC/CMM D65→D50 profile validation, profile-tag reconstruction, 4,913-color CMM-vs-hand comparison, and low-precision round-trip failure analysis.
 - `C005-icc-cmm-roundtrip-validation.py` — reproducible Pillow/ImageCms + LittleCMS validation source.
 - `C005-icc-cmm-results.json` — measured profile/CMM results and interpretation boundaries.
 - `C006-semantic-token-transfer-two-contexts.md` — two-context semantic-token transfer proof, semantic-collision failure analysis, pair matrices, and project-readiness validation.
 - `C006-semantic-token-transfer-two-contexts.py` — reproducible contrast-contract validation for the two transfer specimens.
 - `C006-semantic-token-transfer-results.json` — measured pair-matrix results and evidence limits.
+- `C007-fixed-geometry-color-density-salience.md` — fixed-geometry Color→Layout transfer, salience/clutter literature synthesis, rendered chroma/luminance controls, and failure→revision evidence.
+- `C007-fixed-geometry-color-density-specimen.html` — four color conditions with identical content/geometry.
+- `C007-fixed-geometry-color-density-playwright.py` — Chromium geometry and Oklab image-analysis harness.
+- `C007-fixed-geometry-color-density-results.json` — measured geometry identity and rendered feature statistics.
 
 Next new Color study ID is tracked in `progress/COLOR_STATUS.md`.
 
@@ -73,7 +77,9 @@ Research should distinguish as appropriate:
 - `CONTRADICTION`
 - `TRANSFER VALIDATION`
 
-A color topic is not project-ready merely because a palette, formula, chart, token file, profile transform, or colorimetric calculation exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
+A color topic is not project-ready merely because a palette, formula, chart, token file, profile transform, screenshot statistic, or colorimetric calculation exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
+
+Computational salience/clutter proxies are not human-task or perceived-clutter evidence unless separately validated.
 
 ## Status authority
 
