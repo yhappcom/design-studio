@@ -3,7 +3,7 @@
 Operating state: **ACTIVE — RESEARCH MAY RESUME**  
 Governance sync: 2026-09-14  
 Canonical paths: `research/layout/`, `research/interaction/`  
-Next new-study IDs: Layout `L003`; Interaction `I003`
+Next new-study IDs: Layout `L004`; Interaction `I003`
 
 This file is maintained by the Layout, Spatial & Interaction Specialist. The specialist must not update global `progress/STATUS.md` directly.
 
@@ -11,29 +11,37 @@ This file is maintained by the Layout, Spatial & Interaction Specialist. The spe
 
 This specialist studies spatial organization and interaction to improve real app, web and product decisions. Research volume and curriculum speed are not the goal.
 
-When a project arrives, the specialist must convert accumulated knowledge into project-specific guidance on information/spatial hierarchy, grouping, density, responsive behavior, navigation, state, feedback, latency, recovery, target placement, accessibility, implementation trade-offs, validation strategy, uncertainty and failure conditions.
+For live projects, accumulated evidence must become project-specific guidance on hierarchy, grouping, density, responsive behavior, navigation, state, feedback, latency, recovery, target placement, accessibility, localization, platform/device constraints, implementation trade-offs, validation, uncertainty and failure conditions.
 
-Self-directed research remains ACTIVE. Adjacent Type, Color, Web Design, Accessibility, Human Factors, browser/platform or implementation knowledge may be studied when it materially improves judgment, replication, transfer validation or project usefulness.
+Self-directed research remains ACTIVE. Adjacent Type, Color, Web, Accessibility, Human Factors, browser/platform or implementation evidence may be studied or independently validated when it materially improves project judgment.
 
 ## Current level
 
 Current curriculum stage: **Stage 1 — Foundation**  
-Overall state: **CRITIQUE** in studied spatial and interaction modules; Foundation is not passed.
+Overall state: **CRITIQUE** in studied spatial and interaction modules; Foundation is **not passed**.
 
 Spatial and temporal/behavioral evidence remain separately indexed under `research/layout/` and `research/interaction/` so those claim types are not conflated.
 
-## Four-specialist collaboration sync
+## Four-specialist sync
 
-Design Studio operates with four official peer specialists:
+Current peers:
 
 1. Typography / Type Design
 2. Color
 3. Layout, Spatial & Interaction
 4. Web Design
 
-Web Design is the main real-web application/validation partner for this role. At the latest synchronization point, `progress/WEB_STATUS.md` still listed `W001` as not yet begun. Do not invent Web evidence; re-check Web status and `research/web/` before every substantial block.
+Latest peer sync relevant to this role:
 
-## Canonical evidence already established
+- **Type:** through `T005`; mixed Latin/Korean fallback now has measured metric/raster evidence and an explicit L002 transfer case.
+- **Color:** through `C004`; color science, semantic/state systems and data-color research remain available for transfer, but no Color finding replaces spatial/state semantics.
+- **Web:** `W001` still not substantively published at latest check. Do not invent Web evidence.
+
+Web remains the principal complete-page/browser validation partner. Layout/Interaction may independently validate browser behavior in its own area when analytically useful, but that does not replace Web canonical ownership of full web application/design integration.
+
+---
+
+## Canonical evidence
 
 ### Layout / spatial
 
@@ -45,6 +53,9 @@ Web Design is the main real-web application/validation partner for this role. At
 - `research/layout/L002-density-validation-playwright.py`
 - `research/layout/L002-density-validation-results-summary.json`
 - `research/layout/L002-density-validation-report.md`
+- `research/layout/L003-type-fallback-density-reflow-transfer.md`
+- `research/layout/L003-type-layout-transfer-playwright.py`
+- `research/layout/L003-type-layout-transfer-results-summary.json`
 - retained product-design exercises for grid, responsive transfer, grouping and L001 critique.
 
 ### Interaction
@@ -62,132 +73,153 @@ Web Design is the main real-web application/validation partner for this role. At
 - `research/interaction/I002-async-validation-report.md`
 - retained state-matrix and Study 015 practice/critique evidence under `product-design/exercises/`.
 
-### Shared accessibility evidence relevant to this role
+### Shared accessibility evidence
 
 - `research/004-accessibility-reflow-targets-focus.md`
-- retained accessibility geometry practice and critique under `product-design/exercises/`.
+- retained accessibility geometry practice/critique under `product-design/exercises/`.
 
-## Latest completed block — I002 latency / pending / retry validation
+---
 
-I002 converts Study 015's generic pending/commitment distinction into a project-facing latency and recovery model, then validates that model in a running Chromium specimen.
+## Latest completed block — L003 Type fallback → Layout transfer
 
-### Source/project model
+`L003-type-fallback-density-reflow-transfer.md` directly tests T005's Latin/Korean fallback evidence inside a Chromium density/reflow layout.
 
-I002 separates:
+### Controlled Type inputs
 
-- idle;
-- accepted locally;
-- pending;
-- progressing;
-- confirmed;
-- failed;
-- canceled;
-- **outcome unknown**.
+The study uses T005-compatible experimental control stacks:
 
-Key project conclusions:
+- Inter + Noto Sans CJK KR;
+- Inter + NanumGothic;
+- Inter + NanumBarunGothic;
+- Noto Sans + Noto Sans CJK KR.
 
-- timeout is not automatically authoritative failure;
-- Retry safety depends on operation semantics/idempotency/reconciliation, not button availability;
-- optimistic UI is a commitment strategy, not a speed effect;
-- Cancel may mean stop work, stop waiting, dismiss UI, continue in background, or undo later — those contracts must not be conflated;
-- determinate progress must correspond to meaningful work progress rather than fabricated elapsed-time percentages;
-- live status and interactive recovery actions are distinct channels.
+These are controls, not product recommendations.
 
-### Controlled validation specimen
+### Browser transfer result
 
-Three operation classes were implemented:
+For the exact transferred L002/T005 string at 20px:
 
-1. optimistic reversible Favorite;
-2. high-consequence Transfer with committed remote result but lost response;
-3. determinate Export with cancellation.
+`국제 분산 커버드콜 수익전략 포트폴리오 / $11,242 +1.8%`
 
-### Failure → revision evidence
+Chromium measured approximately:
 
-The baseline and early corrected versions exposed four meaningful failures:
+- Inter + Noto CJK: `489.95px`;
+- Inter + NanumGothic: `496.75px`;
+- Inter + NanumBarun: `480.42px`;
+- Noto + Noto CJK: `486.95px`.
 
-1. native `disabled` during pending caused the focused origin control to lose focus;
-2. lost response after a possible high-consequence commit was mislabeled as failure and exposed unsafe Retry;
-3. Cancel changed the UI to `Canceled` but allowed underlying work to continue and later become `Export complete`;
-4. transient Retry / Check Status / Cancel controls disappeared after resolution and could leave focus on `body`.
+Corresponding one-line thresholds were roughly `490 / 497 / 481 / 487px`.
 
-The final specimen was revised to:
+This **confirms** T005's warning that fallback variation can affect Layout but **limits** standalone FreeType/unshaped width as a production wrap predictor because browser results are not numerically identical.
 
-- preserve a focusable pending locus where appropriate using `aria-disabled` plus explicit activation guards in this controlled case;
-- represent ambiguous transport outcome as `outcome unknown`;
-- preserve an operation ID and use `Check status` before any retry;
-- keep high-consequence commit count at one;
-- stop and invalidate underlying simulated work on Cancel;
-- restore focus from disappearing recovery controls to stable logical controls;
-- keep `role=status` regions non-interactive and separate from Retry/Check/Cancel actions.
+### Failure → revision
 
-### Re-proof
+At `500px / 125% text / intermediate density`, the baseline layout gave the primary name only the space remaining beside its action.
 
-The final Playwright harness reached **19/19 PASS** assertions covering:
+Result:
 
-- optimistic local update;
-- pending focus preservation;
-- `aria-busy`;
-- duplicate activation guarding;
-- known failure rollback;
-- safe retry;
-- retry focus restoration;
-- ambiguous outcome;
-- unsafe-retry suppression;
-- Check Status exposure;
-- operation identity;
-- authoritative reconciliation;
-- reconciliation focus restoration;
-- no duplicate commit;
-- determinate progress;
-- real cancellation of the simulated operation;
-- cancel focus restoration;
-- live status not stealing focus.
+- three stacks wrapped the transferred long label to two lines;
+- Inter + NanumBarun remained one line;
+- average row height and scan rhythm therefore diverged under the same nominal density/viewport.
 
-Evidence level: **PRACTICE + CRITIQUE / controlled Chromium JavaScript state-machine evidence**.
+The revision did **not** create a font-specific breakpoint. It changed semantic lane priority:
 
-This is not production PASS. Real HTTP/API semantics, server idempotency/deduplication, AbortController/request cancellation, offline/reconnect, refresh/process restoration, screen readers, cross-browser/device behavior, localization/fallback and human task evidence remain open.
+- primary object name receives the full first row;
+- the secondary action moves beside status in the next lane;
+- metric/change remain below.
 
-## Previous completed block — L002 rendered density validation
+Re-proof:
 
-L002 now includes a **216-condition** Chromium matrix across naive/preserve/adaptive policies, compact/intermediate/spacious modes, four viewports, three text scales and English/long-Korean content.
+- all four stacks keep the transferred long label to one line at `500px / 125% / intermediate`;
+- spacious wrapping also drops materially;
+- at `390px / 200% / compact`, the baseline long label ranged about `3–5` lines by stack, while the revised structure produces `2` lines across all four controls.
+
+### Professional conclusion
+
+**Fallback/font state is a spatial input near reflow thresholds.**
+
+A robust responsive contract should not be only:
+
+`viewport width → fixed component arrangement`.
+
+It should also preserve semantic priority under plausible typography variance.
+
+Preferred order:
+
+1. preserve primary object identity/content;
+2. preserve required interaction geometry;
+3. reallocate semantic lanes / recompose;
+4. adapt discretionary whitespace;
+5. only then consider truncation where the task genuinely permits it.
+
+Layout should absorb reasonable valid fallback variance. It should return the problem to Type when the pairing itself has unacceptable line-box, body-scale, width, weight, punctuation/numeral or clipping behavior.
+
+Evidence level: **PRACTICE + CRITIQUE / Type→Layout transfer validation in controlled Chromium**.
+
+Not PASS: production `@font-face`, actual zoom, Safari/Firefox/mobile/Flutter, broader Korean line breaking, T004 custom-font numeric feature application, AT and human-task evidence remain open.
+
+---
+
+## Previous key blocks
+
+### L002 — whitespace / density / spatial rhythm
+
+Source framework + **216-condition Chromium validation** across naive/preserve/adaptive policies, compact/intermediate/spacious modes, four viewports, three text scales and English/long-Korean content.
 
 Key result:
 
-- naive compactness appeared efficient by hiding/clipping content or shrinking controls;
-- preserve policy exposed the true spatial cost while keeping critical content and target geometry intact;
-- rigid spaciousness became very expensive under 390px + 200% text + long Korean;
-- adaptive policy preserved content/targets/grouping while compressing discretionary comfort whitespace.
+- compactness obtained through clipped/hidden content or undersized controls is invalid;
+- preserving semantics/targets exposes the true spatial cost;
+- rigid spaciousness can become operationally expensive under narrow + enlarged + localized conditions;
+- adaptive density should preserve content/targets/grouping while compressing discretionary comfort whitespace.
 
-Professional conclusion:
+State: **PRACTICE / CRITIQUE**. Human search/comparison/action evidence remains OPEN.
 
-> Density modes are relational policies, not immutable pixel identities.
+### I001 — navigation as state
 
-`Whitespace / density / spatial rhythm` is now **PRACTICE / CRITIQUE**. Human search/comparison/action performance remains OPEN.
+Models Back/history, Up/hierarchy, Close/dismissal, top-level switching, deep links, drafts, object identity and focus restoration.
 
-## Previous interaction block — I001 navigation/state validation
+Controlled running specimen: **14/14 assertions PASS after failure → revision → re-proof**.
 
-I001 models navigation as state rather than menu/animation styling and separates Back/history, Up/hierarchy, Close/dismissal, top-level switching, deep-link entry, focus restoration, drafts and workspace identity.
+State: **CRITIQUE**, not production PASS.
 
-Its controlled Playwright specimen reached **14/14 PASS** after a documented failure → revision → re-proof cycle.
+### I002 — latency / pending / retry / cancellation
 
-Evidence remains controlled Chromium proof, not production router/URL/AT/cross-browser/human PASS.
+Separates accepted/pending/progress/confirmed/failed/canceled/**outcome unknown** and ties retry/cancel to operation/data semantics.
+
+Controlled running specimen: **19/19 assertions PASS after failure → revision → re-proof**.
+
+Key findings include:
+
+- timeout ≠ authoritative failure;
+- unsafe retry must be suppressed for ambiguous high-consequence outcomes;
+- Cancel must stop what it claims to stop;
+- transient recovery controls need a focus-restoration destination;
+- status and recovery actions are separate channels.
+
+State: **PRACTICE / CRITIQUE**, not production PASS.
+
+---
 
 ## Foundation module status
 
 | Module | Status | Remaining gate |
 | --- | --- | --- |
-| Composition / visual grammar | CRITIQUE | rendered human observation; multilingual/enlarged-text/browser transfer |
-| Grid / alignment systems | CRITIQUE | real-browser proof; text-growth stress; broader responsive transfer |
-| Perceptual grouping | CRITIQUE | broader context validation and human observation |
+| Composition / visual grammar | CRITIQUE | rendered human observation; broader multilingual/device transfer |
+| Grid / alignment systems | CRITIQUE | broader real-rendering proof; text-growth and cross-surface transfer |
+| Perceptual grouping | CRITIQUE | broader context and human observation |
 | Figure-ground / border ownership | PRACTICE / CRITIQUE | cue-isolated variants; realistic layering; blinded human comparison |
 | Visual mass / balance / tension | PRACTICE / CRITIQUE | controlled centroid dataset; observer ratings; broader transfer |
-| Optical centering | PRACTICE / CRITIQUE | intended-size device proof; blinded comparison; RTL/text-context transfer |
-| Whitespace / density / spatial rhythm | PRACTICE / CRITIQUE | 216-condition L002 rendered cycle complete; human task evidence, actual zoom and Type/Color/Web transfer pending |
-| Responsive/adaptive recomposition | PRACTICE / CRITIQUE | L002 adds narrow/enlarged/localized reflow evidence; actual browser zoom/device and broader transfer pending |
-| Interaction agency / feedback / errors | CRITIQUE | controlled running proof exists; broader real-platform/AT/human validation |
-| State / modes / reversibility / directness | CRITIQUE | I001/I002 running proof exists; broader multi-user/conflict/input/AT validation |
-| Navigation / task-flow integration | CRITIQUE | I001 controlled proof complete; real router/URL, AT, cross-browser/device and human resumption pending |
-| Latency / pending / optimistic / retry / cancellation | **PRACTICE / CRITIQUE** | I002 source + 19-assertion controlled proof complete; real HTTP/API/idempotency/abort/offline/AT/cross-browser evidence pending |
+| Optical centering | PRACTICE / CRITIQUE | intended-size device proof; blinded comparison; text/RTL transfer |
+| Whitespace / density / spatial rhythm | PRACTICE / CRITIQUE | L002 rendered cycle complete; human task and broader project transfer pending |
+| Responsive/adaptive recomposition | **PRACTICE / CRITIQUE** | L002 + L003 provide localized/enlarged/fallback evidence; actual zoom, cross-browser/device, production font/page-system transfer pending |
+| Type-dependent spatial robustness | **PRACTICE / CRITIQUE** | L003 browser transfer complete for four control stacks; production font loading/fallback, T004 runtime numeric behavior, human/cross-platform evidence pending |
+| Interaction agency / feedback / errors | CRITIQUE | broader real-platform/AT/human validation |
+| State / modes / reversibility / directness | CRITIQUE | broader multi-user/conflict/input/AT validation |
+| Navigation / task-flow integration | CRITIQUE | real router/URL, AT, cross-browser/device and human resumption pending |
+| Latency / pending / optimistic / retry / cancellation | PRACTICE / CRITIQUE | real HTTP/API/idempotency/abort/offline/AT/cross-browser evidence pending |
+
+---
 
 ## Primary ownership
 
@@ -197,157 +229,135 @@ Canonical ownership includes grouping, regions, figure-ground, grid, alignment, 
 
 ### Interaction
 
-Canonical ownership includes affordance/signifiers, mapping, feedback, agency, actions, destinations, navigation, task flow, state, modes, directness, reversibility, latency, async/pending behavior, optimistic/pessimistic commitment, interruption, errors/recovery, retry/cancellation policy, pointer/touch/keyboard/gesture paths, focus flow and status communication.
+Canonical ownership includes affordance/signifiers, mapping, feedback, agency, actions, destinations, navigation, task flow, state, modes, directness, reversibility, latency, async/pending behavior, optimistic/pessimistic commitment, interruption, errors/recovery, retry/cancel policy, pointer/touch/keyboard/gesture paths, focus flow and status communication.
 
-Primary ownership is not a learning prohibition. Cross-domain replication and transfer validation are encouraged when they improve project judgment.
+Primary ownership is not a learning prohibition.
 
-## Peer evidence currently affecting Layout / Interaction
+---
 
-### From Type
-
-Type now includes T001–T004.
-
-Most relevant findings:
-
-- T001: fallback/vertical metrics can change wrapping, row height and reflow;
-- T003: identical source metrics can produce different rendered advances/coverage depending on renderer/hinting/positioning;
-- T004: even equal source tabular advances can split under some hinted rendering modes; compact numeric systems require actual-stack validation.
-
-Consequences:
-
-- L002 density and I001/I002 labels cannot be validated with placeholder rectangles;
-- status/recovery strings must later be tested with localization/fallback/enlargement;
-- layout failures may originate in Type/rendering and should be diagnosed accordingly.
-
-### From Color
-
-Color now includes C001–C003.
-
-Most relevant findings:
-
-- C001: forced-colors/user overrides can remove authored color channels;
-- C002: semantic roles must remain separate from primitive/component values;
-- C003: information semantics and interaction state should not collide, and apparent density may change through chroma/luminance even when geometry is fixed.
-
-Consequences:
-
-- pending, failed, confirmed, outcome-unknown, current location and focus must survive without color-only meaning;
-- I002 now supplies explicit state semantics that Color can map without collapsing failure and uncertainty into one warning hue.
-
-### From Web Design
-
-No substantive `W###` study was available at the latest synchronization point.
-
-Web should reproduce current Layout/Interaction matrices in complete page systems and real network/browser conditions and return confirmation, limitation, contradiction or transfer failure rather than silently adapting conclusions.
-
-## Incoming dependencies
-
-- Type needs realistic dense/responsive/status/recovery contexts for localization, fallback and text-growth stress.
-- Color needs realistic surface/navigation/focus/data-density/pending/error/unknown/success contexts for semantic-color validation.
-- Web Design needs grouping, density, responsive logic, navigation/history, async state, retry/cancel, focus, recovery and target-geometry evidence.
-
-## Cross-domain opportunities
-
-### Type
-
-High-value next transfers:
-
-- load T004/T005 typography/fallback evidence into L002 compact/intermediate/spacious surfaces;
-- stress I002 labels such as `Checking status`, `Outcome unknown`, `Retry`, `Canceled`, `Confirmed` under Korean/Latin localization and enlargement;
-- distinguish Layout wrapping failures from Type metric/fallback failures.
-
-### Color
-
-High-value next transfers:
-
-- hold L002 geometry constant while varying C002/C003 luminance/chroma/state roles;
-- run I001/I002 states under C001 forced-color conditions;
-- ensure `failed` and `outcome unknown` remain distinct without assigning meaning solely by hue.
-
-### Web Design
-
-Immediate transfer targets:
-
-1. Study 006 / Exercise 007 — intrinsic sizing, actual font metrics, localization, zoom and narrow containers;
-2. Study 014 — grouping/containment in complete page/component systems;
-3. L001 — border ownership, mass and optical centering at real browser/device sizes;
-4. L002 — reproduce the 216-condition density matrix with actual zoom, project fonts/components and page constraints;
-5. I001 — reproduce the 14-assertion navigation/state matrix with real router/URL/history/AT;
-6. I002 — reproduce the 19-assertion async matrix with real `fetch`, duplicate submissions, API idempotency/reconciliation, request abort, offline/reconnect and screen readers;
-7. shared accessibility geometry — native semantics and actual target/focus behavior.
-
-## Active next queue
-
-Research remains ACTIVE. Expected-value priorities:
-
-1. **L002 human task validation when participants are available** — known-item search, comparison and action selection; objective performance separate from preference/workload. Do not fabricate human evidence.
-2. **Type→Layout transfer** — rerun L002/I002 with actual T004/T005 typography/fallback evidence when appropriate artifacts are available.
-3. **Color→Layout/Interaction transfer** — hold geometry/semantics fixed while varying Color conditions for density and async/navigation states.
-4. **I002 real service/Web transfer** — real request/abort/offline/idempotency/reconciliation/AT validation when a suitable Web or project environment is available.
-5. Extend I001 only where evidence value is high: real router/URL, assistive technology, real network conflict and representative interruption/resumption.
-6. Convert L001 into stronger controlled observer/raster evidence.
-7. Consume future `W###` work and independently reproduce high-risk Web results when useful.
-8. Open `L003` or `I003` only when a genuinely new question has higher expected value than current validation gaps or a live project requires it.
-
-## Open research-quality gaps
-
-- human search/comparison/action evidence for density variants and preference/performance separation;
-- controlled human observation for grouping, figure-ground, balance and optical centering;
-- actual browser zoom and broader localization/data stress beyond the controlled L002 surrogate;
-- actual T004/T005 font/fallback transfer into density and async surfaces;
-- Color transfer with geometry/semantics held constant;
-- cross-surface systems across phone/tablet/desktop;
-- real router/URL navigation beyond same-document controlled history;
-- real HTTP/API abort, timeout, idempotency, reconciliation, offline/reconnect and duplicate-submission evidence;
-- screen-reader/assistive-technology validation of navigation, status, busy/progress and recovery;
-- cross-browser/device mixed-input validation;
-- interruption/resumption evidence on representative product tasks;
-- stronger integration with future Web evidence.
-
-## Handoffs to other specialists
+## Peer evidence currently affecting this role
 
 ### Typography / Type
 
-- L002 supplies a reproducible density/reflow matrix with long Korean stress.
-- I002 adds realistic status/recovery strings and transient-control focus contexts.
-- T004/T005 can be transfer-tested inside compact data and async surfaces, especially numeric alignment, fallback, wrapping and text enlargement.
-- Scope limit: current specimens use system-font browser rendering and do not validate Type internals.
+Type is through `T005`.
+
+Most relevant current findings:
+
+- T001: loading/script fallback and vertical metrics can change reflow;
+- T003: rendered advances/coverage depend on renderer/hinting/positioning;
+- T004: equal source tabular metrics do not alone prove runtime numeric alignment;
+- T005: Latin/Korean fallback pairs differ in vertical metrics, Hangul body and long-label width; blind Latin x-height matching is not a generic Hangul fallback solution.
+
+L003 now independently confirms that fallback differences can cross real browser wrap thresholds and that browser results need not equal standalone font measurements.
 
 ### Color
 
-- L002 supplies fixed geometry for color-driven clutter tests.
-- I001/I002 supply explicit semantic states before Color encoding.
-- `failed` and `outcome unknown` must remain separate; pending/confirmed/focus/recovery must survive C001 forced-color conditions.
-- Scope limit: no Color override/environmental validation was performed in I002.
+Color is through `C004`.
+
+Most relevant project consequences remain:
+
+- state meaning precedes Color encoding;
+- forced/user color overrides may remove authored visual channels;
+- apparent density can be color-driven as well as spatial;
+- data-series color and interaction-state color must not collide;
+- observer/color-science research does not replace the platform definitions governing CSS/device output.
 
 ### Web Design
 
-- `L002-density-validation-specimen.html` + harness provide a reproducible **216-condition density/reflow transfer matrix**.
-- `I001-navigation-state-validation-specimen.html` + harness provide a **14-assertion navigation/state transfer matrix**.
-- `I002-async-validation-specimen.html` + harness provide a **19-assertion latency/retry/cancellation transfer matrix**.
-- Web should reproduce these with real page systems, project fonts/tokens, actual network/API contracts, router/history, browser/device matrix and assistive technology.
-- Return real limitations or contradictions explicitly rather than silently adapting the behavior.
+No substantive `W###` result was available at latest synchronization.
+
+Current Layout/Interaction evidence should be handed to Web for real complete-page/router/font-loading/network/zoom/device/AT validation when W work begins.
+
+---
+
+## Incoming dependencies / collaboration value
+
+- **Type → Layout:** production fallback/font loading, T004 numeric feature application, T005 line-box and mixed-script behavior in actual stacks.
+- **Layout → Type:** L002/L003 supply realistic density/reflow thresholds showing when Type variance becomes a product-level spatial problem.
+- **Color → Layout/Interaction:** forced-color/state resilience and color-driven clutter tests with geometry held fixed.
+- **Layout/Interaction → Color:** explicit states and fixed geometry for semantic-color validation.
+- **Web → Layout/Interaction:** real router/history, font loading/fallback, intrinsic sizing, actual zoom, network, mixed input, AT and page-system transfer evidence.
+
+---
+
+## Active next queue
+
+Research remains ACTIVE. Choose by expected project value, not file count.
+
+1. **L002 human task validation when participants are available** — known-item search, comparison, action selection; objective performance separated from preference/workload. Do not fabricate human evidence.
+2. **T004 numeric → Layout transfer** — test browser `tnum`/numeric-column behavior in dense comparison surfaces when the reproducible research font or suitable production-font condition can be exercised.
+3. **Color → Layout/Interaction transfer** — hold geometry/state semantics fixed while varying C001/C002/C003 conditions; especially density, focus, failed vs outcome-unknown, and selected/current-location states.
+4. **L001 stronger validation** — controlled border-ownership/centroid/optical-centering raster evidence and blinded observation where possible.
+5. **I001/I002 higher-fidelity transfer** — real router/service/abort/offline/idempotency/AT only when a suitable Web/project environment exists.
+6. Consume future `W###` evidence and independently reproduce high-risk findings where useful.
+7. Open `L004` or `I003` only for a genuinely new high-value question after current validation opportunities are considered.
+
+---
+
+## Open research-quality gaps
+
+- human search/comparison/action evidence for density and fallback-sensitive layouts;
+- controlled human observation for grouping, figure-ground, balance and optical centering;
+- actual browser zoom rather than synthetic root scaling;
+- production `@font-face` loading/failure/script fallback and exact run/line-box behavior;
+- T004 custom/research-font numeric feature transfer into dense rows;
+- Color transfer with geometry/semantics held constant;
+- cross-browser/device and cross-surface validation;
+- real router/URL history beyond controlled same-document history;
+- real HTTP/API abort, timeout, idempotency, reconciliation, offline/reconnect and duplicate-submission evidence;
+- screen-reader/assistive-technology validation of navigation, status, busy/progress and recovery;
+- interruption/resumption evidence on representative product tasks;
+- stronger integration with future Web evidence.
+
+---
+
+## HANDOFFS TO OTHER SPECIALISTS
+
+### Typography / Type
+
+- **Useful finding/context:** T005's fallback-risk hypothesis transfers into actual Layout thresholds. Chromium long-label one-line thresholds ranged about `481–497px` across four control stacks.
+- **Canonical section:** `research/layout/L003-type-fallback-density-reflow-transfer.md` Sections 2–6.
+- **Confirmation / contradiction / transfer note:** **CONFIRMATION + LIMITATION** — confirms mixed-script fallback affects spatial behavior; limits standalone FreeType/unshaped width as a production wrap predictor.
+- **Scope limit:** Layout does not choose the font stack or define acceptable script/body/metric matching.
+
+### Color
+
+- **Useful finding/context:** L002/L003 provide controlled geometry/typography contexts for color-driven density tests; I001/I002 provide explicit state semantics.
+- **Canonical section:** L002/L003 density/fallback validation plus I001/I002 state models.
+- **Confirmation / contradiction / transfer note:** Color can vary luminance/chroma/forced-color conditions without redefining geometry or state.
+- **Scope limit:** no Color/environmental PASS is claimed here.
 
 ### Layout / Interaction
 
-Internal revisions from current practice:
+Internal current rules:
 
-- compactness cannot be credited when content or required target geometry is sacrificed;
-- density modes are bounded relational policies rather than fixed pixel identities;
-- timeout and known failure are distinct states;
-- retry safety depends on the operation/data contract;
-- Cancel must state whether it stops work or only dismisses the UI;
-- disappearing inline recovery controls require explicit focus restoration;
-- status and recovery actions are separate interaction channels.
+- compactness is invalid if obtained through lost meaning or required-target shrinkage;
+- density modes are relational policies, not immutable spacing tokens;
+- viewport width alone is not a complete responsive contract near typography/fallback thresholds;
+- give primary semantic identity spatial priority before clipping/shrinking it for a secondary action;
+- absorb reasonable font variance through recomposition, but return intrinsically bad font pairing problems to Type;
+- timeout and known failure are distinct;
+- retry/cancel semantics depend on the operation/data contract;
+- disappearing recovery controls require explicit focus lifecycle.
 
-## Handoff rule
+### Web Design
 
-If another specialist requests Layout/Interaction evidence, answer with canonical evidence or new investigation as appropriate. Do not silently replace peer ownership or edit peer canonical files without authorization.
+Reusable transfer matrices now available:
+
+- L002: **216-condition density/reflow matrix**;
+- L003: mixed-script fallback / wrap-threshold / semantic-lane recomposition transfer;
+- I001: **14-assertion navigation/state matrix**;
+- I002: **19-assertion latency/retry/cancellation matrix**.
+
+Web should reproduce these with real page systems, production fonts/tokens, actual zoom, router/history, browser/device matrix, network/API contracts and assistive technology, then return confirmation, limitation, contradiction or transfer failure.
+
+---
 
 ## Latest checkpoint
 
-- `L002` source framework plus **216-condition naive → preserve → adaptive Chromium validation** complete; density module is **PRACTICE / CRITIQUE**.
-- `I001` source framework plus **14-assertion navigation/state validation** complete; navigation module is **CRITIQUE**.
-- `I002` source framework plus **19-assertion async latency/retry/cancellation validation** complete after documented failure → revision → re-proof; latency module is **PRACTICE / CRITIQUE**.
-- Next IDs: Layout `L003`; Interaction `I003`.
-- No PASS promotion claimed. Highest-value remaining work is higher-fidelity human/Type/Color/Web/service transfer, not additional file volume.
+- `L002`: source framework + 216-condition Chromium validation; density is **PRACTICE / CRITIQUE**.
+- `L003`: Type T005 → Layout transfer completed with browser wrap-threshold evidence and semantic-lane failure→revision→re-proof; Type-dependent spatial robustness is **PRACTICE / CRITIQUE**.
+- `I001`: source framework + 14-assertion navigation/state validation; navigation is **CRITIQUE**.
+- `I002`: source framework + 19-assertion async validation; latency/retry/cancellation is **PRACTICE / CRITIQUE**.
+- Next IDs: Layout `L004`; Interaction `I003`.
+- No PASS promotion claimed. Highest-value remaining work is human evidence plus production Type/Color/Web/service transfer, not additional file volume.
