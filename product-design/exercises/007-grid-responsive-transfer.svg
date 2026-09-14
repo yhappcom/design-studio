@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200">
+<rect width="1600" height="1200" fill="#f5f3ee"/>
+<style>.t{font:700 28px Arial,sans-serif;fill:#161616}.h{font:700 18px Arial,sans-serif;fill:#161616}.b{font:400 15px Arial,sans-serif;fill:#333}.s{font:400 12px Arial,sans-serif;fill:#555}.v{font:700 42px Arial,sans-serif;fill:#111}.m{font:700 24px Arial,sans-serif;fill:#181818}.frame{fill:#fff;stroke:#bbb}.g{stroke:#c9c5bc;stroke-width:1;stroke-dasharray:4 5}.r{stroke:#666;stroke-width:1}</style>
+<text x="60" y="52" class="t">Exercise 007 — Responsive Grid Transfer</text>
+<text x="60" y="82" class="b">Test semantic alignment under narrow width and transfer the method to unrelated editorial content. No product style is implied.</text>
+<!-- A desktop reference -->
+<text x="60" y="125" class="h">A — reference hierarchy, wide</text><rect x="60" y="145" width="690" height="430" class="frame"/>
+<line x1="90" y1="165" x2="90" y2="550" class="g"/><line x1="260" y1="165" x2="260" y2="550" class="g"/><line x1="470" y1="165" x2="470" y2="550" class="g"/><line x1="715" y1="165" x2="715" y2="550" class="g"/>
+<text x="90" y="195" class="s">ARCHIVE / CURRENT PERIOD</text><text x="90" y="265" class="v">12,480</text><text x="92" y="288" class="s">TOTAL RECORDS</text>
+<line x1="90" y1="315" x2="715" y2="315" class="r"/><text x="90" y="355" class="m">428</text><text x="260" y="355" class="m">31</text><text x="470" y="355" class="m">07</text>
+<text x="90" y="375" class="s">THIS YEAR</text><text x="260" y="375" class="s">THIS MONTH</text><text x="470" y="375" class="s">PENDING</text>
+<text x="90" y="430" class="h">LATEST</text><text x="90" y="467" class="m">SEOUL → TOKYO</text><text x="90" y="492" class="b">08 AUG 2026 · REFERENCE 703</text><text x="625" y="467" class="m">1+25</text>
+<text x="90" y="535" class="s">Semantic datums: primary left edge; support group starts; amount/duration right edge.</text>
+<!-- B narrow -->
+<text x="830" y="125" class="h">B — narrow recomposition, not scaled</text><rect x="830" y="145" width="330" height="600" class="frame"/>
+<line x1="855" y1="165" x2="855" y2="720" class="g"/><line x1="1135" y1="165" x2="1135" y2="720" class="g"/>
+<text x="855" y="195" class="s">ARCHIVE / CURRENT PERIOD</text><text x="855" y="265" class="v">12,480</text><text x="857" y="288" class="s">TOTAL RECORDS</text>
+<line x1="855" y1="318" x2="1135" y2="318" class="r"/><text x="855" y="357" class="m">428</text><text x="855" y="378" class="s">THIS YEAR</text><text x="990" y="357" class="m">31</text><text x="990" y="378" class="s">THIS MONTH</text>
+<text x="855" y="421" class="m">07</text><text x="855" y="442" class="s">PENDING</text><text x="855" y="500" class="h">LATEST</text><text x="855" y="537" class="m">SEOUL → TOKYO</text><text x="855" y="563" class="b">08 AUG 2026</text><text x="855" y="587" class="b">REFERENCE 703</text><text x="1082" y="537" class="m">1+25</text>
+<line x1="855" y1="618" x2="1135" y2="618" class="r"/><text x="855" y="651" class="s">KEEP: primary left edge + duration right edge.</text><text x="855" y="673" class="s">DISCARD: fixed three-column support grid.</text><text x="855" y="695" class="s">CHANGE: support facts wrap into 2 + 1.</text>
+<!-- C forced compression failure -->
+<text x="1230" y="125" class="h">C — forced compression</text><rect x="1230" y="145" width="300" height="310" class="frame"/>
+<text x="1250" y="190" class="s">ARCHIVE / CURRENT PERIOD</text><text x="1250" y="240" class="v">12,480</text><text x="1250" y="292" class="b">428 THIS YEAR   31 THIS MONTH   07 PENDING</text><text x="1250" y="345" class="m">SEOUL → TOKYO</text><text x="1250" y="380" class="b">08 AUG 2026 · REFERENCE 703 · 1+25</text><text x="1250" y="425" class="s">REJECT: labels collide and scan groups disappear.</text>
+<!-- second context -->
+<text x="60" y="650" class="h">D — second context: editorial article</text><rect x="60" y="675" width="690" height="410" class="frame"/><line x1="90" y1="695" x2="90" y2="1060" class="g"/><line x1="310" y1="695" x2="310" y2="1060" class="g"/><line x1="715" y1="695" x2="715" y2="1060" class="g"/>
+<text x="90" y="730" class="s">ESSAY / PERCEPTION</text><text x="90" y="780" class="t">When alignment carries meaning</text><text x="90" y="815" class="b">A study of shared datums, exceptions, and reading order.</text><text x="90" y="862" class="s">12 MIN READ · UPDATED 14 SEP 2026</text><line x1="90" y1="890" x2="715" y2="890" class="r"/><text x="90" y="930" class="h">Key finding</text><text x="310" y="930" class="b">Stable semantic edges may survive while column count changes.</text><text x="310" y="962" class="b">The grid is a relation system, not a frozen coordinate map.</text><text x="90" y="1025" class="s">Transfer test: same method, different information density and reading behavior.</text>
+<!-- editorial narrow -->
+<rect x="830" y="790" width="330" height="295" class="frame"/><text x="855" y="825" class="s">ESSAY / PERCEPTION</text><text x="855" y="868" class="h">When alignment carries meaning</text><text x="855" y="900" class="b">A study of shared datums,</text><text x="855" y="922" class="b">exceptions, and reading order.</text><text x="855" y="960" class="s">12 MIN READ · UPDATED 14 SEP 2026</text><line x1="855" y1="980" x2="1135" y2="980" class="r"/><text x="855" y="1012" class="h">Key finding</text><text x="855" y="1043" class="b">Stable semantic edges may survive</text><text x="855" y="1065" class="b">while column count changes.</text>
+<text x="1230" y="650" class="h">Critique result</text><text x="1230" y="686" class="b">KEEP — semantic edges and reading order.</text><text x="1230" y="714" class="b">REWORK — support groups by breakpoint.</text><text x="1230" y="742" class="b">REJECT — proportional shrinking of a desktop grid.</text><text x="1230" y="785" class="s">Transferable method: identify which alignments encode relationships</text><text x="1230" y="807" class="s">before deciding which coordinates may change.</text>
+</svg>
