@@ -1,0 +1,46 @@
+{
+  "study": "C013",
+  "datasets": [
+    {
+      "dataset": "CIE_xyz_1931_2deg.csv",
+      "doi": "10.25039/CIE.DS.xvudnb9b",
+      "page_url": "https://cie.co.at/datatable/cie-1931-colour-matching-functions-2-degree-observer",
+      "metadata_url": "https://files.cie.co.at/CIE_xyz_1931_2deg.csv_metadata.json",
+      "page_md5": "17cca777db64b17170f06f67ce9d3ab7",
+      "metadata_md5": "17cca777db64b17170f06f67ce9d3ab7"
+    },
+    {
+      "dataset": "CIE_xyz_1964_10deg.csv",
+      "doi": "10.25039/CIE.DS.sqksu2n5",
+      "page_url": "https://cie.co.at/datatable/cie-1964-colour-matching-functions-10-degree-observer",
+      "metadata_url": "https://files.cie.co.at/CIE_xyz_1964_10deg.csv_metadata.json",
+      "page_md5": "cd6135a724480eb8c5e7668bae914445",
+      "metadata_md5": "6140e032f9326d88c5a0959b29b4d8f3"
+    },
+    {
+      "dataset": "CIE_lms_cf_2deg.csv",
+      "doi": "10.25039/CIE.DS.tijidesg",
+      "page_url": "https://cie.co.at/datatable/cie-2006-lms-cone-fundamentals-2-field-size-terms-energy",
+      "metadata_url": "https://files.cie.co.at/CIE_lms_cf_2deg.csv_metadata.json",
+      "page_md5": "27c74cc0f98edecadc02fc71f540b116",
+      "metadata_md5": "dba2e9d1f5e6667575aa069832159510"
+    },
+    {
+      "dataset": "CIE_cfb_stv_2deg.csv",
+      "doi": "10.25039/CIE.DS.548rw69q",
+      "page_url": "https://www.cie.co.at/datatable/cie-cone-fundamental-based-spectral-tristimulus-values-2-degree-field-size",
+      "metadata_url": "https://files.cie.co.at/CIE_cfb_stv_2deg.csv_metadata.json",
+      "page_md5": "472cc50b14a6cf41ba9f08f8935aedc8",
+      "metadata_md5": "472cc50b14a6cf41ba9f08f8935aedc8"
+    },
+    {
+      "dataset": "CIE_cfb_stv_10deg.csv",
+      "doi": "10.25039/CIE.DS.dm6qiig7",
+      "page_url": "https://www.cie.co.at/datatable/cie-cone-fundamental-based-spectral-tristimulus-values-10-field-size",
+      "metadata_url": "https://files.cie.co.at/CIE_cfb_stv_10deg.csv_metadata.json",
+      "page_md5": "c8504e70d7f4760253a0a4d3a42b7d20",
+      "metadata_md5": "c8504e70d7f4760253a0a4d3a42b7d20"
+    }
+  ],
+  "evidence_boundary": "No raw_path entries are supplied because the current execution environment could not retrieve the exact CIE CSV bytes. The ledger therefore tests authority-surface consistency, not raw-file verification."
+}
