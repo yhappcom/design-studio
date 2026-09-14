@@ -3,13 +3,13 @@
 Operating state: **ACTIVE — RESEARCH MAY RESUME**  
 Governance sync: 2026-09-14  
 Primary path: `research/type/`  
-Next new-study ID: `T007`
+Next new-study ID: `T008`
 
 This file is maintained by the Typography / Type Design Specialist. The specialist must not update global `progress/STATUS.md` directly.
 
 ## Operational mission
 
-Type research exists to improve real app, web, and product decisions. Research volume or curriculum speed is not the objective.
+Type research exists to improve real app, web and product decisions. Research volume or curriculum speed is not the objective.
 
 For live projects, accumulated evidence must become project-specific guidance on font choice, hierarchy, metrics, spacing, numerals, density, localization, fallback, source/build quality, scaling, rendering, accessibility, implementation trade-offs, validation and failure conditions.
 
@@ -21,16 +21,17 @@ Current curriculum stage: **Stage 1 — Foundation**
 Overall state: **PRACTICE / CRITIQUE**  
 Foundation: **NOT PASSED**
 
-The Type program now has evidence at several distinct layers:
+The Type program now has evidence across:
 
-- source/type-system foundations and metrics;
+- type-system/anatomy/metrics foundations;
 - raster failure→redraw cycles;
 - compiled-font renderer comparison;
-- complete research numerals/punctuation with proportional/tabular behavior;
+- research numerals/punctuation with proportional/tabular behavior;
 - Latin/Korean fallback and vertical-metric comparison;
-- a manually auditable production-style outline subset with cubic→CFF/TTF export and raster-transfer evidence.
+- manually auditable production-style single-master outlines with CFF/TTF export/raster transfer;
+- two-master variable-font compatibility, generated-topology failure/revision, and adversarial point-correspondence validation.
 
-Remaining Foundation gaps include multi-master/interpolation compatibility, production build/binary QA, hinting strategy, broader glyph-family coherence, browser/platform/device transfer, mixed-script line layout, human recognition/reading evidence and full-family production proof.
+Remaining Foundation gaps include broader production glyph-family coherence, components/diacritics, three-master/multi-axis compatibility, production build/binary/release QA, hinting strategy, browser/platform/device transfer, mixed-script line layout, human recognition/reading evidence and production-fidelity transfer.
 
 ---
 
@@ -49,6 +50,7 @@ Remaining Foundation gaps include multi-master/interpolation compatibility, prod
 - `research/type/T004-native-numeral-punctuation-renderer-proof.md`
 - `research/type/T005-latin-korean-mixed-script-fallback.md`
 - `research/type/T006-production-outline-audit.md`
+- `research/type/T007-variable-interpolation-source-compatibility.md`
 
 ### Type-owned reproducibility/evidence artifacts
 
@@ -64,122 +66,102 @@ Remaining Foundation gaps include multi-master/interpolation compatibility, prod
 - `research/type/T006-production-outline-audit.py`
 - `research/type/T006-production-outline-results.json`
 - `research/type/T006-production-outline-evidence.svg`
+- `research/type/T007-variable-interpolation-build-proof.py`
+- `research/type/T007-variable-interpolation-results.json`
+- `research/type/T007-variable-interpolation-evidence.svg`
 
-Generated experimental font binaries remain local outputs; they are not product assets and are not treated as source authority.
+Generated experimental font binaries remain local outputs; they are not product assets and are not source authority.
 
 ---
 
-## Latest completed block — T006 production outline audit
+## Latest completed block — T007 multi-master interpolation compatibility
 
-`T006-production-outline-audit.md` converts the earlier outline-quality theory into a bounded source→build→binary→raster practice cycle.
+`T007-variable-interpolation-source-compatibility.md` extends T006 from clean single-master source/build QA into a bounded two-master `wght 300–700` variable-font experiment.
 
-### Source subset
+### Failure A — independent cubic→quadratic conversion
 
-The controlled 1000-UPM cubic source contains `H O n o` and explicitly audits:
+Both cubic masters are structurally related, but independent adaptive `Cu2QuPen` conversion produces different generated quadratic topology for `O`:
 
-- contour direction;
-- internal cubic extrema;
-- zero-length handles;
-- integer/fractional coordinate policy;
-- accidental short/near-axis segments;
-- self-intersection/invalid geometry;
-- same-role overlap;
-- bounds and source structure.
+- wght 300 `O`: `[16,16]` points by contour;
+- wght 700 `O`: `[16,12]`.
 
-The audit is study-specific QA, not a substitute for a full font-production QA suite.
+In tested FontTools `4.63.0`, `varLib` logs:
 
-### Failure → revision A — overlapping H
+`glyph O has incompatible masters; skipping`
 
-`H.v0` uses separate left stem, right stem and crossbar contours. They individually have valid winding but produce **3600 units²** of same-role overlap.
+but still emits a variable font.
 
-The revised H merges the black shape into one clean contour with no same-role overlap.
+Measured `gvar` tuple counts:
 
-Professional consequence: a correct-looking preview can hide source-topology debt. Overlap is not universally forbidden, but it must be an explicit source/build strategy rather than accidental geometry.
+- `H=1`;
+- `O=0`;
+- `n=1`;
+- `o=1`.
 
-### Failure → revision B — O extrema and winding
+The emitted `O` therefore freezes at its default-master advance/geometry/raster state at wght 300, 500 and 700.
 
-`O.v0` uses two cubic segments for the outer shape and two for the counter. The audit detects:
+Professional consequence: **successful VF build is not proof that every required glyph varies.** Build warnings and expected variation coverage are release gates.
 
-- four internal top/bottom extrema in total;
-- wrong PostScript winding for both outer and counter.
+### Revision — shared conversion
 
-The revised O uses explicit cardinal extrema, integer controls, correct opposite winding and no internal extrema.
+Converting corresponding cubic curves together with `Cu2QuMultiPen` produces `[16,16]` in both `O` masters and restores one `gvar` tuple for `O`.
 
-Professional consequence: **minimum useful topology is not the same as the fewest possible nodes**. Removing meaningful extrema to lower point count is not production discipline.
+Measured instances:
 
-### Revised source result
+- wght 300: advance `600`, black area `104,025.67`, 20ppem coverage `41.17`;
+- wght 500: advance `610`, black area `176,096.37`, coverage `69.67`;
+- wght 700: advance `620`, black area `230,545.65`, coverage `91.24`.
 
-Final `H O n o` all pass the bounded T006 source checks:
+The bounded midpoint lies between endpoint black areas and the metric interpolates intentionally.
 
-- correct declared contour direction;
-- zero internal extrema;
-- zero zero-length handles;
-- zero fractional coordinate values;
-- zero same-role overlap;
-- no flattened self-intersection/invalid contour.
+Professional consequence: multi-master conversion should optimize for **family compatibility**, not independent per-master point economy.
 
-This is a local audit PASS only; it is not family or production PASS.
+### Adversarial review — same point count is still insufficient
 
-### CFF versus TrueType export
+A third build deliberately rotates the Bold `O` counter start point 180° while keeping both master point counts `[16,16]`.
 
-The same clean cubic source is exported as:
+The VF builds, `gvar` exists, and simple count checks pass. Yet the wght 500 midpoint becomes malformed:
 
-- CFF cubic outlines;
-- TrueType quadratic outlines via fontTools `Cu2QuPen`, requested `max_err = 0.5` font unit and TrueType winding reversal.
+- midpoint black area `274,626.45`, **+19.12% above** the Bold endpoint;
+- midpoint 20ppem raster coverage `108.74`, **+19.18% above** the Bold endpoint coverage.
 
-Measured approximate source→TTF polyline differences:
+Professional consequence: **point-count compatibility is necessary, not sufficient.** Corresponding point indices must represent corresponding structural locations. Endpoint-only QA is also insufficient.
 
-- `H`: `0.000u`;
-- `O`: `0.436u`;
-- `n`: `0.363u`;
-- `o`: `0.355u`.
+### T007 production contract
 
-Measured absolute filled-area drift:
+Variable outline approval now requires layered checks:
 
-- `H`: `0.000%`;
-- `O`: `+0.069%`;
-- `n`: `-0.043%`;
-- `o`: `+0.162%`.
-
-CFF preserved the sampled cubic geometry exactly in this controlled build.
-
-The quadratic binary point structure is materially different from the editable cubic source: e.g. TTF `O` uses 44 points and `o` 40 points. The generated quadratic topology is therefore an output representation, not automatically the preferred editable-master topology.
-
-### Raster transfer
-
-CFF and TTF outputs were rendered with FreeType 2.13.2, no hinting, light grayscale target, at 14/20/48 ppem.
-
-Bounding dimensions stayed equal in the tested pairings, but coverage did not. Largest measured difference:
-
-`o @ 20ppem: approximately +2.49% TTF coverage versus CFF`
-
-This extends T003's conclusion: source geometry, format conversion and rasterizer are separate layers. Sub-unit geometric differences can still cross compact pixel-coverage thresholds.
+1. source correspondence — contours, order, start points, extrema/landmarks, node roles, components;
+2. generated-outline compatibility — point structure, no skipped glyphs, expected variation coverage, explained build warnings;
+3. metric interpolation — advances/sidebearings/phantom points vary intentionally;
+4. intermediate geometry — inspect endpoints and meaningful intermediate instances for mass/counter/kink/crossing failures;
+5. target rendering/use — compact raster, target platforms, Layout regression, Color/background transfer and human evidence where relevant.
 
 ### Evidence level
 
-**PRACTICE + CRITIQUE / source topology + generated CFF/TTF + FreeType transfer evidence.**
+**PRACTICE + CRITIQUE / two-master TrueType + FontTools varLib/gvar + FreeType evidence.**
 
-T006 does not establish variable-master compatibility, production build QA, hinting, browser/platform/device behavior or full-family optical quality.
+Not PASS: only two masters, one axis, original research glyphs, no components/diacritics, CFF2, hinting, browser/platform/device or human validation.
 
 ---
 
 ## Previous key blocks
 
+### T006 — production outline audit
+
+`H O n o` source topology audit with overlap/extrema/winding failure→revision; cubic CFF vs quadratic TrueType export comparison; FreeType no-hint compact raster transfer. Demonstrated that source cleanliness, conversion and raster output are separate gates.
+
 ### T005 — Latin/Korean fallback
 
-Measured Inter/Roboto/Noto/Nanum control pairings. Same nominal size did not imply equal Hangul/Latin body size or metric spans. Blind Latin x-height matching was rejected as a generic Hangul fallback-normalization method. One L002 long Korean label varied from 486px to 503px under different Korean fallbacks with the same Inter primary in the controlled unshaped measurement.
+Measured Inter/Roboto/Noto/Nanum control pairings. Equal nominal size did not imply equal Hangul/Latin body size or metric spans. Blind Latin x-height matching was rejected as a generic Hangul fallback-normalization method. Long localized labels materially changed measured width under fallback choice.
 
 ### T004 — numerals / punctuation
 
-Complete research `0–9`, proportional defaults, fixed-cell tabular alternates, `tnum`, zero alternatives, ambiguity controls and punctuation. Colon v0 failed compact raster presence and was redrawn. Equal source tabular widths were shown not to guarantee equal lower-level raw hinted advances in every mode.
+Complete research `0–9`, proportional/tabular alternates, `tnum`, zero strategies, ambiguity controls and punctuation; compact colon failure→redraw; lower-level renderer evidence showed equal source tabular widths are not the complete runtime alignment story.
 
-### T003 — compiled renderer matrix
+### T003 / T002
 
-Established that one outline/metric decision can behave differently under no-hint, normal autohint, light autohint and client positioning. Compact custom type requires target-renderer validation.
-
-### T002 — raster redraw cycle
-
-Established the first controlled Type failure→redraw→re-proof cycle and was later limited/refined by T003 renderer evidence.
+T003 established renderer/hinting/positioning dependence using compiled TrueType. T002 established the first controlled Type failure→redraw→re-proof cycle.
 
 ---
 
@@ -189,15 +171,16 @@ Established the first controlled Type failure→redraw→re-proof cycle and was 
 | --- | --- | --- |
 | Type anatomy / metrics | PRACTICE / CRITIQUE | broader family/role and target-platform validation |
 | Stroke / contrast / construction | PRACTICE / CRITIQUE | broader coherent family extension and role transfer |
-| Bézier / outline discipline | **PRACTICE / CRITIQUE** | T006 clean source audit exists; diagonals/complex curves/components, multi-master compatibility, interpolation/build/binary QA remain open |
-| Optical correction | PRACTICE / CRITIQUE | target family/platform decisions and broader intended-size proof |
-| Rasterization / rendering | PRACTICE / CRITIQUE | FreeType CFF/TTF evidence exists; hinting and CoreText/DirectWrite/Skia/browser/device matrix open |
-| Spacing before kerning | PRACTICE / CRITIQUE | broad alphabet/family spacing and runtime shaping open |
-| Numerals / punctuation | PRACTICE / CRITIQUE | production curves, browser feature application, human recognition and broader punctuation/language coverage open |
+| Bézier / outline discipline | **PRACTICE / CRITIQUE** | T006/T007 topology evidence exists; diagonals/complex curves/components/diacritics and broader family proof open |
+| Multi-master / interpolation | **PRACTICE / CRITIQUE** | T007 two-master one-axis proof complete; three-master/multi-axis/avar/components/CFF2/overlap strategy and release QA open |
+| Optical correction | PRACTICE / CRITIQUE | broader family/axis/platform intended-size proof |
+| Rasterization / rendering | PRACTICE / CRITIQUE | FreeType static/variable evidence exists; hinting and CoreText/DirectWrite/Skia/browser/device matrix open |
+| Spacing before kerning | PRACTICE / CRITIQUE | broad alphabet/family spacing, kerning and runtime shaping open |
+| Numerals / punctuation | PRACTICE / CRITIQUE | production curves, browser feature application, human recognition and localization-sensitive coverage open |
 | Typography as information architecture | CRITIQUE | production reflow, localization and enlarged-text transfer |
 | Web fallback / metric transfer | IN STUDY / TRANSFER BASELINE | actual loading/failure/script fallback, metric overrides, zoom/reflow and data stability in Web |
 | Mixed-script / fallback | PRACTICE / CRITIQUE | browser/platform shaping/line boxes, Korean breaking, weight integration and human evidence open |
-| Source/build production pipeline | **PRACTICE / CRITIQUE** | T006 single-master source→CFF/TTF path exists; multi-master/variable compatibility, reproducible production build, FontBakery/binary QA and release engineering open |
+| Source/build production pipeline | **PRACTICE / CRITIQUE** | T006 single-master and T007 variable baseline exist; reproducible release QA, binary checks, naming/axis metadata, FontBakery and production automation open |
 
 ---
 
@@ -205,49 +188,46 @@ Established the first controlled Type failure→redraw→re-proof cycle and was 
 
 ### Color
 
-Color is now through **C007**.
+Current `progress/COLOR_STATUS.md` reports next study `C010`; Color has advanced beyond the C006/C007 transfer evidence originally consumed by T006/T007.
 
-Relevant findings:
+Type-relevant standing rules remain:
 
-- C006 provides explicit finance/operational semantic foreground/surface systems ready for real Type transfer;
-- C007 holds geometry/type fixed and shows color-driven feature load can change materially without Layout changes;
-- C007 also rejects `desaturate = declutter` as a universal rule because strong luminance segmentation can remain visually forceful.
+- actual rendered glyph mass/coverage matters when evaluating Color foreground roles;
+- Color-driven salience experiments require Type geometry/build/instance to be held fixed explicitly;
+- T007 adds a new control requirement: future Color transfer must record the exact variable-font build and axis instance, because malformed interpolation can change black mass while color tokens remain identical.
 
-Type consequence:
-
-- T003–T006 raster/coverage evidence should later be placed into Color-defined foreground/background conditions rather than judged only black-on-white;
-- when Color is the variable, font geometry/render state must be controlled explicitly.
-
-Type does not infer human salience or contrast thresholds from Color's image-statistics proxies.
+Re-read current Color canonical evidence before opening the next Color-coupled Type study rather than assuming C007 is the latest result.
 
 ### Layout / Interaction
 
-Layout/Interaction is through **L004 / I004**.
+Current `progress/LAYOUT_STATUS.md` reports next IDs `L007` / `I005`; Layout has advanced beyond the earlier L003/L004 transfers.
 
-Relevant Type transfers already established by that specialist:
+Established Type-facing evidence still applies:
 
-- L003: Latin/Korean fallback can move real wrap thresholds and require semantic-lane recomposition;
-- L004: Chromium `tabular-nums` equalized tested digit/decimal layout positions, but the wider intrinsic numeric width caused overflow in a fixed 88px Inter numeric column until Layout allocated intrinsic width;
-- I004 adds local/remote values, version metadata, preserved drafts and conflict messages as future localization/wrapping stress contexts.
+- L003: fallback can cross wrap thresholds;
+- L004: browser tabular figures can improve comparison alignment while increasing intrinsic width;
+- later Layout work continues to treat actual rendered Type output as a spatial input.
 
-Type consequence:
+T007 consequence:
 
-- production outline/build changes must preserve advance/sidebearing contracts deliberately;
-- a Type change can be technically clean yet still require Layout regression tests near fixed-width/wrap thresholds.
+- interpolated advances/sidebearings must be regression-tested near constrained Layout thresholds;
+- a skipped variation glyph may freeze width unexpectedly;
+- malformed intermediate instances can change apparent/actual density even when endpoint layouts pass.
 
 ### Web Design
 
-At the latest sync, Web still lists `W001` as next and no substantive `W###` evidence exists.
+Current Web status still lists `W001` as next; no substantive `W###` evidence is available.
 
-Current Type→Web transfer contracts now include:
+Type→Web transfer contracts now include:
 
 - T001 — loading/failure/script fallback and reflow;
 - T003 — compact renderer/metric behavior;
 - T004 — `tnum`, zero/punctuation and numeric alignment risk;
 - T005 — Korean fallback/metrics/long localized strings;
-- T006 — editable source vs generated CFF/TTF and compact raster-transfer behavior.
+- T006 — source vs generated CFF/TTF and compact raster behavior;
+- T007 — variable-font variation coverage, metric interpolation and malformed-intermediate failure conditions.
 
-Do not invent Web evidence. Actual delivered webfont builds, browsers, zoom/DPR and page systems remain Web validation work.
+Do not invent browser evidence. Future Web validation should use actual delivered font builds and sample endpoint plus intermediate axis values.
 
 ---
 
@@ -255,33 +235,35 @@ Do not invent Web evidence. Actual delivered webfont builds, browsers, zoom/DPR 
 
 Choose by expected project value, not study count.
 
-1. **T007 — multi-master interpolation/source compatibility + reproducible build QA**: create a small two-master family, reproduce an incompatibility failure, establish compatible contour/point order, build interpolated/variable output and validate metrics/instances/raster behavior.
-2. **Browser/platform transfer of T001/T003/T004/T005/T006** when substantive Web or a live target stack is available.
-3. **Type→Layout production regression transfer** using L003/L004 thresholds when source/build changes affect width, fallback or compact rendering.
-4. **Type→Color transfer** using actual T003–T006 renderer output under C006/C007 conditions with geometry and semantic roles controlled.
-5. **Broader production-outline audit** of diagonals, `S`, bowl+stem forms, figures, punctuation, components and diacritics after T007 establishes the source/build system.
-6. **Target-platform mixed-script proof** for Flutter/CoreText/Skia/DirectWrite when a live project requires it.
-7. **Human evidence** only after target rendering/layout conditions are stable enough to test recognition and mixed-script balance meaningfully.
-8. Continue useful replication, contradiction review, method comparison or project-specific work when it materially improves decisions.
+1. **T008 — production build/release QA baseline**: add deterministic checks for expected tables/axes/variation coverage, naming/metric sanity, warnings/failures and representative instances; investigate FontBakery or equivalent without turning tooling into the objective.
+2. **Broaden variable-family compatibility**: three masters, non-linear mapping/`avar`, multiple axes, components/diacritics, overlap policy and CFF2 when that adds decision value.
+3. **Broader production-outline audit**: diagonals, `S`, bowl+stem forms, figures, punctuation, components and marks.
+4. **Browser/platform transfer of T001/T003/T004/T005/T006/T007** when substantive Web or a live target stack exists.
+5. **Type→Layout production regression** at known wrap/column/density thresholds using real built instances.
+6. **Type→Color transfer** with exact font build/axis/render condition pinned while varying Color conditions.
+7. **Target-platform mixed-script proof** for Flutter/CoreText/Skia/DirectWrite when a live project requires it.
+8. **Human evidence** only after target rendering/layout conditions are stable enough to test recognition and mixed-script balance meaningfully.
 
 ---
 
 ## Open research-quality gaps
 
-- multi-master contour/point compatibility and interpolation proof;
+- production build/release automation and binary QA;
+- FontBakery or equivalent broad QA integrated with studio-specific checks;
+- naming/STAT/avar/axis metadata and instance sanity;
+- three-master and multi-axis contour/point correspondence;
+- CFF2 variable outlines;
 - variable-font overlap/source strategy;
-- reproducible production build pipeline and release QA;
-- FontBakery/broader binary QA;
+- components/diacritics/anchors and broader language coverage;
 - complex production curves beyond `H O n o`;
-- components/diacritics and broader language coverage;
+- kerning/layout-feature interpolation;
 - manual/native hinting or justified hintless strategy;
 - CoreText, DirectWrite, Android/Skia, Flutter and browser transfer;
-- browser validation of T001/T003/T004/T005/T006;
 - mixed-script line-box construction and Korean line breaking on target stacks;
 - weight matching and family coherence across Latin/Korean roles;
 - human recognition/reading evidence;
-- regression evidence that outline/build revisions preserve Layout contracts;
-- Color/viewing-condition transfer of real renderer coverage.
+- regression evidence that variable/static build changes preserve Layout contracts;
+- Color/viewing-condition transfer with exact Type build/instance controlled.
 
 ---
 
@@ -289,18 +271,21 @@ Choose by expected project value, not study count.
 
 ### Color
 
-- T006 demonstrates that CFF/TTF conversion changed compact raster coverage by up to about 2.49% in the bounded no-hint proof while the nominal foreground color would remain identical.
-- Use actual renderer output when validating compact foreground roles; do not infer a contrast/environment threshold from T006 itself.
+- T007 shows malformed intermediate correspondence can produce about **+19% black-area/coverage overshoot** versus the Bold endpoint in the bounded proof while nominal foreground color could remain unchanged.
+- Future Type→Color transfer should pin exact variable font build and axis value.
+- Scope limit: no Color perceptual/contrast threshold is claimed.
 
 ### Layout / Interaction
 
-- T006 separates source cleanliness from runtime geometry. Production outline/build revisions must preserve advance/sidebearing contracts and should be regression-tested near L003/L004 wrap/column thresholds.
-- T006 itself keeps advances fixed and does not make a new Layout-policy claim.
+- Independent conversion can freeze a glyph's advance unexpectedly when variation is skipped; compatible conversion restored intentional `600→610→620` O advance interpolation.
+- Same-count malformed correspondence can still distort intermediate mass.
+- Regression-test real built instances near width/wrap/density thresholds; T007 does not define the Layout policy.
 
 ### Web Design
 
-- The shipped webfont is generated output, not equivalent to an editor/source preview. Format conversion and target rasterization can change compact results.
-- Future Web validation should use the actual delivered font build and page stack, not the source SVG/editor appearance.
+- A VF file loading successfully is insufficient. In the tested build one glyph was omitted from `gvar` while the font still existed.
+- Browser QA should verify critical glyph variation, endpoint/intermediate weights, width behavior and real delivered webfont instances rather than checking file-load success alone.
+- Scope limit: T007 itself is not browser evidence.
 
 ## Handoff rule
 
@@ -312,10 +297,11 @@ When another specialist requests Type evidence, answer with canonical Type evide
 
 - `T002`: raster failure→redraw cycle completed.
 - `T003`: compiled TrueType + FreeType renderer matrix completed.
-- `T004`: complete research numeral/punctuation system + renderer-aware tabular stress completed.
+- `T004`: research numeral/punctuation system + renderer-aware tabular stress completed.
 - `T005`: Latin/Korean fallback metrics/raster/reflow transfer completed.
-- `T006`: production-style `H O n o` source audit, overlap/extrema/winding failure→revision, CFF/TTF conversion and raster-transfer proof completed.
-- `Bézier / outline discipline` advances to **PRACTICE / CRITIQUE**, not PASS.
-- `Source/build production pipeline` begins at **PRACTICE / CRITIQUE**, not PASS.
-- Next Type study ID: `T007`.
+- `T006`: production-style source audit + CFF/TTF conversion/raster transfer completed.
+- `T007`: two-master interpolation incompatibility, shared-conversion repair and same-point-count adversarial correspondence proof completed.
+- `Multi-master / interpolation` enters **PRACTICE / CRITIQUE**, not PASS.
+- `Source/build production pipeline` remains **PRACTICE / CRITIQUE**, now with single-master and variable-family evidence.
+- Next Type study ID: `T008`.
 - Overall Type state remains **Stage 1 / PRACTICE + CRITIQUE / Foundation NOT PASSED**.
