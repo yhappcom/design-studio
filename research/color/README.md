@@ -54,6 +54,9 @@ New Color studies use `C###` IDs:
 - `C005-icc-cmm-roundtrip-validation.md` — real ICC/CMM D65→D50 profile validation, profile-tag reconstruction, 4,913-color CMM-vs-hand comparison, and low-precision round-trip failure analysis.
 - `C005-icc-cmm-roundtrip-validation.py` — reproducible Pillow/ImageCms + LittleCMS validation source.
 - `C005-icc-cmm-results.json` — measured profile/CMM results and interpretation boundaries.
+- `C006-semantic-token-transfer-two-contexts.md` — two-context semantic-token transfer proof, semantic-collision failure analysis, pair matrices, and project-readiness validation.
+- `C006-semantic-token-transfer-two-contexts.py` — reproducible contrast-contract validation for the two transfer specimens.
+- `C006-semantic-token-transfer-results.json` — measured pair-matrix results and evidence limits.
 
 Next new Color study ID is tracked in `progress/COLOR_STATUS.md`.
 
