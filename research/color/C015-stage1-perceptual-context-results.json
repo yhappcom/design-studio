@@ -1,0 +1,61 @@
+{
+  "study": "C015",
+  "simultaneous_contrast": {
+    "target_hex": "#808080",
+    "target_left_rgb": [128, 128, 128],
+    "target_right_rgb": [128, 128, 128],
+    "identical_encoded_target": true,
+    "target_relative_luminance": 0.21586050011389923,
+    "surrounds": ["#202020", "#E8E8E8"],
+    "note": "Pixel identity proves stimulus identity; contextual appearance remains a perceptual/source claim until observed by people."
+  },
+  "grayscale_first": {
+    "pairs": {
+      "primary_text_canvas": 15.272106481343322,
+      "secondary_text_canvas": 5.259979247769686,
+      "tertiary_text_canvas": 3.1625084764378246,
+      "primary_action_white_text": 14.353406478158625,
+      "revised_blue_action_white_text": 5.413255185205231,
+      "brand_mint_dark_content": 12.847878995271854
+    },
+    "ordering_note": "Add chroma to action/selection only after grayscale hierarchy is established."
+  },
+  "low_light_design_stress": {
+    "pairs": {
+      "primary_text_canvas": 15.983062677472857,
+      "secondary_text_canvas": 9.035826709000775,
+      "primary_text_surface": 14.708109191919236,
+      "secondary_text_surface": 8.315047532320442,
+      "dark_text_light_blue_action": 8.497983376740844,
+      "light_text_blue_action": 4.6308919771278525,
+      "boundary_surface": 3.662475825969161
+    },
+    "note": "Design-stress variant only; no physical low-light comfort claim."
+  },
+  "high_glare_math_stress": {
+    "veil_fraction": 0.15,
+    "pairs": {
+      "primary_text_canvas": {"baseline": 15.272106481343322, "veiled": 4.620552854519113},
+      "secondary_text_canvas": {"baseline": 5.259979247769686, "veiled": 3.115955273940078},
+      "boundary_white": {"baseline": 1.9836764845220203, "veiled": 1.728616564703857},
+      "white_text_blue_action": {"baseline": 5.413255185205231, "veiled": 3.2570958878443044}
+    },
+    "note": "White-veiling sensitivity diagnostic only; not a physical glare model or WCAG re-test."
+  },
+  "attractive_swatches_context_failure": {
+    "swatches": ["#A8F0E9", "#B8D8FF", "#FFD6A5", "#FFADAD"],
+    "white_text_contrast": {
+      "#A8F0E9": 1.287897937797906,
+      "#B8D8FF": 1.468078096487455,
+      "#FFD6A5": 1.3624022905540354,
+      "#FFADAD": 1.7747197616171118
+    },
+    "dark_text_contrast": {
+      "#A8F0E9": 12.847878995271854,
+      "#B8D8FF": 11.27103313010232,
+      "#FFD6A5": 12.145279685605006,
+      "#FFADAD": 9.323588558010066
+    },
+    "note": "Attractive light swatches can fail when assigned to filled controls with white content."
+  }
+}
