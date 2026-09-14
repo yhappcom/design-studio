@@ -8,7 +8,7 @@ Type owns font/glyph construction, metrics, spacing/kerning, numerals/punctuatio
 
 ## Mandatory cross-domain scan
 
-Before substantial Type work: read `AGENTS.md`, `progress/STATUS.md`, all four specialist statuses, this README and relevant Type studies; inspect materially related peer research; choose reuse/replication/challenge/transfer/extension deliberately; record `RELATED DOMAIN CHECK`; add handoffs when useful; update `progress/TYPE_STATUS.md` after substantial work.
+Before substantial Type work: read `AGENTS.md`, `progress/STATUS.md`, all four specialist statuses, `research/README.md`, this README and relevant Type studies; inspect materially related peer research; choose reuse/replication/challenge/transfer/extension deliberately; record `RELATED DOMAIN CHECK`; add handoffs when useful; update `progress/TYPE_STATUS.md` after substantial work.
 
 ## Current studies
 
@@ -22,57 +22,59 @@ Legacy:
 
 T-series:
 
-- `T001-web-typography-fallback-metrics-reflow-transfer.md` — web loading/failure/script fallback and metrics/reflow transfer baseline.
-- `T002-raster-proof-redraw-cycle.md` — controlled failure→redraw→re-proof.
-- `T003-minimal-font-renderer-matrix.md` — compiled TrueType / FreeType renderer dependence.
-- `T004-native-numeral-punctuation-renderer-proof.md` — original numeral/punctuation system and `tnum`/raster practice.
-- `T005-latin-korean-mixed-script-fallback.md` — Latin/Korean fallback metrics, apparent size and reflow.
-- `T006-production-outline-audit.md` — production-style source topology, CFF/TTF conversion and raster transfer.
-- `T007-variable-interpolation-source-compatibility.md` — two-master compatibility and adversarial correspondence proof.
-- `T008-production-build-release-qa.md` — generated-variable-font binary/reproducible-build release QA.
-- `T009-webfont-subset-feature-contract.md` — WOFF2/subset `tnum` semantic contract and feature-drop failure.
-- `T010-variable-webfont-axis-contract.md` — WOFF2/subset variable-axis semantic contract; deliberate `avar` loss changes the same user-axis value.
-- `T011-layout-multiscript-release-contract.md` — GPOS `kern`, language-bound GSUB `locl`, multi-script cmap and line-metric package contract.
-- `T012-mark-mkmk-anchor-release-contract.md` — GPOS `mark`/`mkmk`, combining-mark advances, exact anchor-chain preservation, adversarial partial feature loss, and post-subset glyph-identity checker revision.
-- `T013-normalization-sensitive-subset-contract.md` — Unicode NFC/NFD release contract; canonically equivalent strings can require different cmap/subset closure and different valid attachment paths.
+- `T001-web-typography-fallback-metrics-reflow-transfer.md`
+- `T002-raster-proof-redraw-cycle.md`
+- `T003-minimal-font-renderer-matrix.md`
+- `T004-native-numeral-punctuation-renderer-proof.md`
+- `T005-latin-korean-mixed-script-fallback.md`
+- `T006-production-outline-audit.md`
+- `T007-variable-interpolation-source-compatibility.md`
+- `T008-production-build-release-qa.md`
+- `T009-webfont-subset-feature-contract.md`
+- `T010-variable-webfont-axis-contract.md`
+- `T011-layout-multiscript-release-contract.md`
+- `T012-mark-mkmk-anchor-release-contract.md`
+- `T013-normalization-sensitive-subset-contract.md`
+- `T014-hangul-normalization-subset-contract.md` — Hangul NFC/NFD package transfer; precomposed-only and Jamo-only WOFF2 packages each fail the canonically equivalent opposite form, while a dual package covers both; deterministic rebuild proof included.
 
 T-series reproducibility scripts and measured JSON live beside the studies. Generated experimental font binaries remain local outputs and are not product assets or canonical source authority.
 
 ## Current production model
 
-T006–T013 establish a progressively stricter chain:
+T006–T014 establish a progressively stricter chain:
 
 1. **source/design validity** — contours, correspondence, spacing/metric intent;
 2. **build/interpolation compatibility** — topology, variation coverage, intermediate behavior;
 3. **binary/spec sanity** — required tables, axis/name/STAT/head/metric integrity;
-4. **distribution transformation contract** — exact package/subset preserves required characters, GSUB/GPOS behavior, script/langsys bindings, non-cmap closure, metrics, variable-axis semantics and required attachment anchors;
+4. **distribution transformation contract** — exact package/subset preserves required characters, GSUB/GPOS behavior, script/langsys bindings, non-cmap closure, metrics, variable-axis semantics and attachment anchors;
 5. **normalization-form closure** — the codepoint representation that can actually reach shaping must be covered; canonical equivalence does not imply identical subset closure;
-6. **attachment-chain completeness** — for combining marks, retaining one stage (`mark` or `mkmk`) does not certify the entire `base → mark → mark` path;
-7. **target shaping/rendering/layout integration** — exact shipped artifact in browser/OS/app;
-8. **human/product validation**.
+6. **script-specific normalization transfer** — T014 confirms the normalization problem on Hangul's algorithmic syllable↔conjoining-Jamo decomposition rather than only Latin combining marks;
+7. **attachment-chain completeness** — retaining one stage does not certify an entire attachment path;
+8. **target shaping/rendering/layout integration** — exact shipped artifact in browser/OS/app;
+9. **human/product validation**.
 
-T013 extends the release model to:
+Current synthesis:
 
-`character closure ≠ normalization-form closure ≠ metric identity ≠ feature binding ≠ anchor identity ≠ complete attachment chain ≠ shaping/rendering integration`.
+`content normalization boundary → required codepoint representation → subset closure → shaping/fallback → layout/rendering → human/product result`.
 
-A parseable subset can be correct for one Unicode normalization form and fail the canonically equivalent form. The correct release contract therefore depends on the product's explicit text-normalization boundary.
+A parseable package can be correct for one Unicode representation and fail a canonically equivalent representation. The required closure depends on the real product text-normalization contract.
 
 ## Highest-value next directions
 
-1. **T014 — external broad QA + sanitizer integration** when FontBakery/Fontspector/OTS or equivalent executables become available; classify universal/spec/vendor-policy checks separately from studio semantic assertions.
-2. HarfBuzz/browser shaping of T011–T013 exact artifacts, including normalization-sensitive combining-mark sequences and fallback behavior.
-3. Extend attachment QA into ligature marks, multiple mark classes, cursive attachment and production complex scripts.
-4. Test normalization/subset transfer on production-relevant Hangul and additional scripts rather than assuming the Latin specimen generalizes.
+1. **T015 — external broad QA + sanitizer integration** when FontBakery/Fontspector/OTS or equivalent executables become available; separate universal/spec/vendor-policy checks from studio semantic assertions.
+2. HarfBuzz/browser shaping of T011–T014 exact artifacts, especially Hangul NFC/NFD, combining marks and fallback behavior.
+3. Production Korean transfer: real conjoining-Jamo coverage/shaping, full Hangul subset strategy, Korean line breaking and mixed-script layout.
+4. Extend attachment QA into ligature marks, multiple mark classes, cursive attachment and complex scripts.
 5. Vertical-writing release semantics: `vhea`, `vmtx`, `vert`, `vrt2` where project relevance justifies it.
 6. Broaden variable-family compatibility: three masters, multiple axes, richer `avar`, components/diacritics, variable anchors, overlap strategy and CFF2.
-7. Browser/platform transfer of T001–T013 with substantive Web/live target stack.
+7. Browser/platform transfer of T001–T014 with substantive Web/live target stack.
 8. Type→Layout regression using exact shipped artifacts near known thresholds.
 9. Type→Color transfer with exact packaged artifact/axis/render condition pinned.
 10. Broader family/design proof and human reading/recognition evidence after target rendering/layout stabilizes.
 
 ## Tool availability checkpoint
 
-At the T013 checkpoint, `fontbakery`, `fontspector`, `ots-sanitize`, and `hb-shape` were unavailable. No external QA, sanitizer or shaping PASS is claimed.
+At T014, `fontbakery`, `fontspector`, `ots-sanitize`, and `hb-shape` were unavailable. No external QA, sanitizer or shaping PASS is claimed. `fontTools 4.63.0` and Python Unicode data `15.1.0` were used for the bounded experiment.
 
 Foundation remains **NOT PASSED**.
 
