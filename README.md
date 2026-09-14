@@ -29,12 +29,30 @@ Implementation constraints are considered seriously, but they do not pre-emptive
 ## Repository structure
 
 - `curriculum/` — structured study from foundations through advanced practice
-- `research/` — source-based studies and literature notes
+- `research/` — source-based studies and literature notes, indexed by specialist ownership
+  - `research/type/` — Typography / Type Design Specialist
+  - `research/color/` — Color Specialist
+  - `research/layout/` — Layout & Spatial Design Specialist
+  - `research/interaction/` — Interaction Specialist
+  - `research/README.md` — canonical research-domain index and cross-domain lookup rules
 - `methods/` — reusable design methods, critique frameworks, and gates
 - `type-design/` — professional type-design curriculum, exercises, and production knowledge
 - `product-design/` — product/interaction/visual-system curriculum and exercises
 - `case-studies/` — product-specific applications; these do not become universal style rules
 - `progress/` — current learning status, gates, and completion evidence
+
+## Cross-specialist research rule
+
+Specialist folders are **canonical ownership boundaries, not silos**. Before starting work that depends on another domain, the specialist must check `progress/STATUS.md`, `research/README.md`, and the relevant domain README/studies.
+
+Examples:
+
+- Layout work involving text growth or numeric alignment must consult Type research.
+- Layout/Interaction work using luminance, contrast, or state color must consult Color research.
+- Interaction work whose meaning depends on grouping or placement must consult Layout research.
+- Color work encoding state must consult Interaction research.
+
+Established knowledge should be referenced from its canonical domain rather than duplicated. New cross-domain notes should document only the transfer, contradiction, validation, or failure that is genuinely new.
 
 ## Professional standard
 
