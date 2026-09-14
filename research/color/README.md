@@ -16,7 +16,7 @@ Research belongs here when its primary question concerns:
 
 - **Layout, Spatial & Interaction** owns spatial grouping, responsive geometry, navigation, state/action semantics, feedback and interaction behavior. Color may encode those states but does not redefine their meaning silently.
 - **Typography / Type Design** owns glyph/font systems, text metrics, hierarchy and rendering. Color foreground roles and chart labels must be validated with realistic Type conditions.
-- **Web Design** owns complete website/web-app integration and real browser/device validation. Color supplies canonical palette, token, contrast, gamut, data-color and viewing-condition evidence and consumes Web findings that confirm, limit or contradict it.
+- **Web Design** owns complete website/web-app integration and real browser/device validation. Color supplies canonical palette, token, contrast, gamut, data-color, production-color and viewing-condition evidence and consumes Web findings that confirm, limit or contradict it.
 
 These boundaries define canonical ownership, not limits on what Color may study. Cross-domain replication, method comparison, contradiction review, transfer testing, prerequisite learning and project-specific research are allowed when analytically useful.
 
@@ -29,8 +29,8 @@ Before new Color work:
 3. inspect related Type, Layout/Interaction and Web evidence;
 4. identify reusable, uncertain, disputed or test-worthy findings;
 5. decide whether the work is reuse, extension, replication, contradiction review, transfer validation, implementation validation or project-specific study;
-6. record the result under `RELATED DOMAIN CHECK`;
-7. after completion, add `HANDOFFS TO OTHER SPECIALISTS` when useful;
+6. record the result under `## RELATED DOMAIN CHECK`;
+7. after completion, add `## HANDOFFS TO OTHER SPECIALISTS` when useful;
 8. update `progress/COLOR_STATUS.md` before moving to a materially different block.
 
 ## Current canonical studies
@@ -68,7 +68,10 @@ New Color studies use `C###` IDs:
 - `C009-type-rendering-color-contrast-transfer.md` — Type→Color transfer: declared contrast versus rendered raster coverage, weight/fallback/DPR dependence, and project diagnosis method.
 - `C009-type-color-rendering-specimen.html` — controlled 14px Inter/Noto/Nanum browser specimen with fixed Color pairs and Korean wrap stress.
 - `C009-type-color-rendering-playwright.py` — Chromium screenshot/raster diagnostic harness with explicit non-normative pixel-metric boundaries.
-- `C009-type-color-rendering-results.json` — compact measured results for weight, fallback, DPR, contrast-margin, and wrap-threshold comparisons.
+- `C009-type-color-rendering-results.json` — measured results for weight, fallback, DPR, contrast-margin, and wrap-threshold comparisons.
+- `C010-high-precision-p3-srgb-color-management.md` — high-precision Display-P3→sRGB production-path validation across float/16-bit/8-bit, in/out-of-gamut semantics, profile differences and delivery boundaries.
+- `C010-high-precision-p3-srgb-color-management.py` — reproducible LittleCMS 2.19 float/integer P3→sRGB harness.
+- `C010-high-precision-p3-srgb-results.json` — measured 35,937-sample grid, round-trip, quantization, gradient and independent-profile results.
 
 Next new Color study ID is tracked in `progress/COLOR_STATUS.md`.
 
@@ -85,9 +88,9 @@ Research should distinguish as appropriate:
 - `CONTRADICTION`
 - `TRANSFER VALIDATION`
 
-A color topic is not project-ready merely because a palette, formula, chart, token file, profile transform, screenshot statistic, simulation, raster metric, or colorimetric calculation exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
+A color topic is not project-ready merely because a palette, formula, chart, token file, profile transform, screenshot statistic, simulation, raster metric or colorimetric calculation exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
 
-Computational salience/clutter proxies, CVD simulations, and screenshot-pixel/raster diagnostics are not human-task, perceived-clutter, real-observer accessibility, or WCAG-conformance evidence unless the relevant method explicitly establishes that role.
+Computational salience/clutter proxies, CVD simulations, screenshot-pixel/raster diagnostics, unbounded float round trips and profile-to-profile comparisons are not human-task, perceived-clutter, real-observer accessibility, WCAG-conformance, device-match or physical-appearance evidence unless the relevant method explicitly establishes that role.
 
 ## Status authority
 
