@@ -1,0 +1,42 @@
+{
+  "final_result": {
+    "passed": 19,
+    "total": 19
+  },
+  "baseline_failures": [
+    "Native disabled during pending caused focus loss.",
+    "Ambiguous high-consequence timeout exposed an unsafe Retry action.",
+    "Cancel changed UI state but did not stop the underlying export, allowing Canceled to later become Export complete."
+  ],
+  "second_order_failure": "When transient recovery controls such as Retry, Check status, or Cancel disappeared after activation, focus could fall to body unless an explicit focus destination was defined.",
+  "revisions": [
+    "Use aria-disabled plus an activation guard where pending state must remain focusable.",
+    "Represent lost response after possible commit as outcome unknown, expose Check status, and withhold unsafe Retry.",
+    "Use operation identity and authoritative reconciliation before declaring the transfer confirmed.",
+    "Make Cancel actually stop the simulated operation and invalidate stale progress updates.",
+    "Restore focus from disappearing Retry, Check status, and Cancel controls to a stable logical control.",
+    "Keep live status regions non-interactive and separate from recovery actions."
+  ],
+  "final_assertions": [
+    "optimistic immediate visual",
+    "pending preserves focus",
+    "aria busy while saving",
+    "duplicate favorite ignored",
+    "failed optimistic action rolled back",
+    "retry safe favorite succeeds",
+    "retry completion restores focus",
+    "duplicate transfer guarded",
+    "lost response -> outcome unknown",
+    "unsafe retry not exposed",
+    "check status exposed",
+    "operation id exists",
+    "status reconciliation confirms",
+    "reconciliation restores focus",
+    "no duplicate commit after reconciliation",
+    "export is determinate and busy",
+    "cancel actually stops operation",
+    "cancel restores focus",
+    "status regions did not steal focus"
+  ],
+  "scope_limit": "Controlled same-document Chromium/JavaScript simulation only. No real HTTP request, server idempotency implementation, AbortController, offline/reconnect, screen reader, cross-browser/device, or human task evidence."
+}
