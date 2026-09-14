@@ -63,11 +63,13 @@ Main unresolved gates: official spectral integration, observer comparison, brows
 
 ### Layout, Spatial & Interaction
 
-Established spatial evidence: grid/composition hierarchy, responsive transfer, perceptual grouping/spatial grammar and critique of grouping conflicts.
+Established spatial evidence: grid/composition hierarchy, responsive transfer, perceptual grouping/spatial grammar, plus L001 source-grounded study/practice/critique covering figure-ground/border ownership, visual mass/balance/tension, and optical-centering method.
 
 Established interaction evidence: agency/feedback/errors, state/modes/directness/reversibility, state-matrix practice and critique.
 
-Main unresolved gates: figure-ground/border ownership, visual mass/balance/tension, optical centering, explicit whitespace/density/rhythm study, real-browser multilingual/enlarged-text transfer, running navigation/state prototype, keyboard/focus/status validation, and async failure/recovery proof.
+L001 advances three former gaps to `PRACTICE / CRITIQUE`; it does **not** justify PASS because controlled human comparison, actual-size raster/device proof, exact balance datasets, multilingual/RTL transfer, and repeated failure→revision evidence remain open.
+
+Main unresolved gates: stronger figure-ground/balance/optical validation, explicit whitespace/density/rhythm study, real-browser multilingual/enlarged-text transfer, running navigation/state prototype, keyboard/focus/status validation, and async failure/recovery proof.
 
 ## Mandatory mutual-awareness rule
 
@@ -152,7 +154,7 @@ In broad terms:
 
 - Type can continue raster/native-outline/scaling work and may also pursue useful cross-domain validation;
 - Color can continue spectral/browser/ICC/device work and may also pursue useful cross-domain validation;
-- Layout & Interaction can deepen spatial foundations and running interaction validation while using or independently testing Type/Color evidence where necessary.
+- Layout & Interaction should convert L001 into stronger observer/rendering evidence, explicitly study whitespace/density/rhythm, and advance the running interaction prototype while using or independently testing Type/Color evidence where necessary.
 
 ## Curriculum progression
 
