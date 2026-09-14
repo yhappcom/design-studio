@@ -3,37 +3,37 @@
 Operating state: **ACTIVE — RESEARCH MAY RESUME**
 Governance sync: 2026-09-14
 Primary path: `research/color/`
-Next new-study ID: `C002`
+Next new-study ID: `C003`
 
 This file is maintained by the Color Specialist. The specialist must not update global `progress/STATUS.md` directly.
 
 ## Operational mission
 
-This specialist is not studying color for academic self-satisfaction or file accumulation. The purpose of the Color program is to improve real app, web, and product decisions.
+This specialist studies color to improve real app, web, and product decisions. Research volume, token count, or curriculum speed are not success metrics.
 
-When a project arrives, the specialist must be able to convert accumulated knowledge into project-specific guidance on palette systems, semantic color, luminance/contrast, viewing conditions, gamut, device behavior, accessibility, brand behavior, browser/platform behavior, and implementation trade-offs.
+When a project arrives, the specialist must convert accumulated knowledge into project-specific guidance on palette systems, semantic color, luminance/contrast, viewing conditions, gamut, device behavior, accessibility, brand behavior, browser/platform behavior, implementation trade-offs, validation, failure conditions, and uncertainty.
 
-Self-directed research may resume immediately. Research breadth is not artificially limited to Color-only material: adjacent Type, Layout/Interaction, Web Design, Accessibility, Human Factors, or implementation knowledge may be studied directly when it improves understanding, independent verification, transfer testing, or project quality.
+Self-directed research may resume immediately. Adjacent Type, Layout/Interaction, Web Design, Accessibility, Human Factors, localization, data visualization, or implementation knowledge may be studied when it materially improves Color judgment or project usefulness.
 
 ## Current specialist-team awareness
 
-Design Studio currently has four official specialist roles:
+Design Studio currently has four official peer roles:
 
 1. Typography / Type Design Specialist;
 2. Color Specialist;
 3. Layout, Spatial & Interaction Specialist;
 4. Web Design Specialist.
 
-Web Design is a peer design discipline and an important implementation/transfer-validation partner for Color. It owns real web page/system/browser application; Color retains canonical ownership of color science, color systems, color accessibility, gamut/color management, and device/viewing-condition questions.
+Color retains canonical ownership of color science, color systems, color accessibility, gamut/color management, palette/ramp/semantic systems, and device/viewing-condition questions. Web Design is the main real-browser/page integration partner; Layout/Interaction owns state/action semantics; Type owns typography structure and rendering.
 
-Before substantial work, Color must read all four specialist status files and inspect materially related peer evidence. New research uses `RELATED DOMAIN CHECK`; completed work adds `HANDOFFS TO OTHER SPECIALISTS` when useful.
+Before substantial work, Color reads all four specialist statuses and related peer evidence. New research includes `RELATED DOMAIN CHECK`; useful results are recorded under `HANDOFFS TO OTHER SPECIALISTS`.
 
 ## Current level
 
-Current curriculum stage: **Stage 1 — Foundation with an early bridge into Intermediate**
+Current curriculum stage: **Stage 1 — Foundation with an early bridge into Intermediate Professional Practice**
 Overall state: **CRITIQUE**
 
-The Color program has progressed beyond basic UI palette work into color science and color-management foundations. It has not passed Foundation because key spectral, rendered, browser, ICC/CMM, physical-display, and environmental validations remain incomplete.
+The Color program now spans basic UI color, color science, color management foundations, perceptual authoring, web override behavior, and semantic color-system architecture. Foundation is not passed because spectral, rendered, browser, ICC/CMM, physical-display, environmental, and multi-project transfer validations remain incomplete.
 
 ## Canonical evidence already established
 
@@ -45,161 +45,146 @@ The Color program has progressed beyond basic UI palette work into color science
 - `research/color/016-color-gamut-wide-gamut-mapping.md`
 - `research/color/017-perceptual-ramp-authoring.md`
 - `research/color/C001-web-color-user-override-resilience.md`
-- `product-design/exercises/005-color-luminance-cross-context-practice.md`
-- `product-design/exercises/009-color-nontext-focus-proof.svg`
-- `product-design/exercises/009-color-nontext-focus-proof-critique.md`
-- `product-design/exercises/010-srgb-linear-xyz-practice.md`
-- `product-design/exercises/012-d65-d50-bradford-practice.md`
-- `product-design/exercises/013-perceptual-difference-comparison.md`
-- `product-design/exercises/016-oklch-gamut-mapping-practice.md`
+- `research/color/C002-semantic-color-role-token-architecture.md`
+- existing product-design Color exercises 005, 009, 010, 012, 013, and 016.
 
-## Foundation module status
+## Foundation / bridge module status
 
 | Module | Status | Remaining gate |
 | --- | --- | --- |
-| Luminance / contrast / hierarchy | CRITIQUE | physical-display and environmental validation; representative production contexts |
+| Luminance / contrast / hierarchy | CRITIQUE | physical-display/environmental validation; representative production contexts |
 | Encoded RGB → linear-light → XYZ | PRACTICE | verify against authoritative datasets/tooling |
-| LMS / observer models | IN STUDY / PRACTICE | spectral integration and observer comparison with official data |
+| LMS / observer models | IN STUDY / PRACTICE | official spectral integration and same-spectrum observer comparison |
 | Chromatic adaptation / white points | PRACTICE | ICC/CMM round-trip and bounded CAT comparison dataset |
-| Perceptual spaces / color difference | CRITIQUE | rendered/device comparison and tighter scope limits |
+| Perceptual spaces / color difference | CRITIQUE | rendered/device comparison and tighter scope validation |
 | Gamut / wide-gamut mapping | CRITIQUE | browser/device validation and production fallback behavior |
 | Perceptual ramp authoring | CRITIQUE | rendered/browser/device validation; no PASS from model-space regularity alone |
-| Web color override resilience | IN STUDY / TRANSFER VALIDATION | real browser forced-colors/theme/system-color tests; browser/device differences; complete page/component validation with Web Design |
+| Web color override resilience | IN STUDY / TRANSFER VALIDATION | real browser forced-colors/theme/system-color tests; browser/device differences |
+| Semantic color/token architecture | IN STUDY / PROJECT-READINESS SYNTHESIS | implement token graph + pair matrix in representative products; multi-theme/platform/browser transfer; semantic-collision critique |
+
+## Latest completed block — C002
+
+`C002-semantic-color-role-token-architecture.md` converts prior Color science and palette work into a product-facing system method.
+
+Key additions:
+
+- distinguishes **base/primitive → semantic/role → optional component → context resolution**;
+- treats foreground/background/boundary/focus relationships as explicit **pair contracts**, not isolated accessible swatches;
+- separates domain/status semantics from interaction states;
+- identifies semantic collisions such as brand = action = selected = success;
+- separates stable semantic role from light/dark/high-contrast/forced-color/platform resolution;
+- uses DTCG 2025.10 stable Community Group specifications as token-architecture evidence while explicitly noting they are not W3C Standards;
+- compares Apple and Material role-oriented systems without adopting either as the universal MintTap vocabulary;
+- adds a project-readiness decision framework, alternatives, trade-offs, failure modes, required inputs, and validation plan.
+
+Evidence level: source-grounded study + project-readiness synthesis. No implementation or multi-project PASS is claimed.
 
 ## Primary ownership
 
-This specialist is the canonical owner for color perception, colorimetry, luminance/contrast, adaptation, gamut, color management, palette/ramp construction, semantic color systems, brand-color behavior, color-specific accessibility, environmental viewing conditions, and display/device color validation.
+Color primarily owns:
 
-This is **primary ownership, not a research prohibition**.
+- color perception, luminance and contrast;
+- colorimetry, observer models, illuminants, XYZ, Lab/LCh, Oklab/OkLCh and color difference;
+- adaptation, gamut, gamut mapping, wide gamut and color management;
+- palette/ramp construction, semantic color systems and brand-color behavior;
+- color-specific accessibility, environmental conditions and display/device validation.
 
-The Color specialist may study Type, Layout, Interaction, Web Design, Accessibility, Human Factors or other adjacent subjects when needed to:
-
-- validate color in realistic UI and interaction conditions;
-- reproduce or challenge an important peer-domain result;
-- understand a prerequisite deeply enough to apply it correctly;
-- compare methods or standards;
-- test transfer into color systems or a live project;
-- answer a cross-domain research question.
-
-When doing so, link to peer canonical evidence and state whether the work is reuse, replication, independent validation, contradiction review, transfer validation, or project-specific research.
-
-Color may visually encode a state while also studying the surrounding interaction model deeply enough to validate that encoding. Layout/Interaction remains the canonical owner of the state semantics unless governance changes. Web Design remains the canonical owner of complete web page/system application and actual browser-context integration.
+This is primary ownership, not a learning restriction.
 
 ## Incoming dependencies
 
-Current recurring collaboration needs:
-
-- Type may require Color's measured contrast/luminance evidence for specific text roles and viewing contexts.
-- Layout & Interaction may require Color's state/focus contrast, luminance hierarchy, color-vision independence, gamut and environmental evidence.
-- Web Design may require Color's palette/ramp logic, semantic-color constraints, contrast, system-color/forced-colors guidance, gamut/fallback expectations, and device/viewing-condition evidence.
-
-Respond with canonical Color evidence, a Color-owned study, or an explicitly labeled cross-domain validation when useful. Do not edit the requesting specialist's files during ordinary work.
+- Type may require measured contrast/luminance evidence for realistic text roles and viewing contexts.
+- Layout & Interaction may require state/focus contrast, luminance hierarchy, color-vision independence, semantic-color constraints, gamut and environmental evidence.
+- Web Design may require palette/ramp logic, token architecture, semantic-color contracts, system/forced-colors guidance, gamut/fallback expectations, and device/viewing-condition evidence.
 
 ## Useful external findings
 
 ### From Type
 
-Use Type's canonical text-role, font-size/weight, numeral and scaling evidence when constructing realistic text/background contrast tests. Independently reproduce typographic conditions when necessary to validate the color result.
+`T001` strengthens the requirement to validate nominally unchanged text colors under real fallback, x-height/weight, wrapping, zoom and mixed-script conditions. Color should not treat text contrast as detached from actual typography.
 
 ### From Layout & Interaction
 
-Use Layout/Interaction's canonical surface hierarchy, grouping, control/state semantics, focus contexts and real interaction flows when validating semantic color. Color may independently reproduce or stress-test these contexts when the purpose is to validate the color system, but canonical ownership remains explicit.
+`L002` distinguishes information, visual, interaction and navigation/temporal density. This matters to Color because apparent clutter can be driven by contrast/chroma/feature variability rather than element count alone. Interaction Study 015 confirms that state semantics precede Color encoding.
 
 ### From Web Design
 
-The Web Design role is now formally responsible for real website/web-app structure, component/state application, browser/device validation, native control behavior, responsive page systems, and design-to-code fidelity. No `W###` study existed at the time C001 was opened, so there is not yet a Web research conclusion to inherit. However, Web is now the primary implementation-validation partner for Color findings that depend on CSS/browser/device behavior.
+At the latest synchronization, Web remains Stage 1 / not yet baselined and no substantive `W###` study is available. Do not invent Web evidence. C001 and C002 now provide concrete Color→Web validation contracts for browser/user overrides, semantic tokens, theme resolution, pair contracts and wide-gamut behavior.
 
-Color should actively consume future Web findings on:
+## Cross-domain opportunities
 
-- actual CSS wide-gamut/OkLCh rendering and fallback;
-- forced-colors and system-color behavior;
-- light/dark theme integration with native controls;
-- browser differences in focus/state rendering;
-- content/page conditions that expose semantic-color collapse;
-- implementation details that change a Color recommendation.
+### Typography / Type
 
-This section must be revisited at the start of each work block after reading the other specialist status files.
+Use real primary/secondary/numeric/status text roles, fallback states, scaling, and localization to validate foreground semantic roles and pair contracts.
 
-## Dependencies and cross-domain opportunities
+### Layout / Interaction
 
-### Type
-
-Text-contrast and legibility tests require realistic font size, weight, glyph density, numeral use and text-role contexts. Reuse Type evidence where sufficient; independently validate when a second check materially improves confidence.
-
-### Layout & Interaction
-
-Color hierarchy must be validated on real surfaces, spatial structures and real state models. A luminance hierarchy should not compensate for weak grouping, and semantic color should be tested against actual behavior and feedback contexts.
+Use real surface structures and state models to test whether hierarchy and status remain clear when hue/chroma are reduced, substituted, or removed. Hold geometry constant when investigating whether perceived density or visual mass is color-driven.
 
 ### Web Design
 
-Web is the strongest current partner for Color transfer validation. Prior Color studies that should be tested in real browser contexts include:
+High-value transfer targets:
 
-- Study 008: text/non-text contrast, focus, luminance hierarchy, color-only meaning;
-- Study 016: Display P3 / OkLCh out-of-gamut handling and fallback;
-- Study 017: ramp behavior after CSS mapping and real rendering;
-- C001: `color-scheme`, forced colors, system colors, semantic-state resilience, native-control integration.
+- C001: `color-scheme`, forced colors, system colors, focus, native controls, semantic-state resilience;
+- C002: primitive→semantic→component token resolution, pair contracts, theme modifiers, semantic collision handling;
+- Study 016/017: Display P3/OkLCh CSS behavior, gamut mapping/fallback, ramp rendering.
 
-Color should not infer browser parity from specifications alone. Web should return implementation confirmations, limitations, contradictions, and page-context failures.
-
-### Shared Accessibility / Human Factors
-
-Color-vision independence, environmental conditions, visual salience, glare and non-color redundancy are legitimate Color research inputs even when they cross specialist boundaries.
+Web should return confirmation, limitation, contradiction, or transfer failure rather than silently changing the Color model.
 
 ## Active next queue
 
-Research may resume now. Priorities are guidance, not hard constraints:
+Research remains ACTIVE. Priorities are expected-value guidance, not hard sequencing:
 
-1. Execute spectral colorimetry practice with official CIE data: spectral integration → CIE 1931 XYZ/xy → spectrum scaling → same-spectrum observer comparison → metamerism evidence.
-2. Render HSL vs CIELCh vs OkLCh equal-step ramps and test actual browser/device gamut behavior, including P3→sRGB fallback where applicable.
-3. Transfer C001 into a real browser validation matrix with Web Design: light/dark, forced colors, system colors, native controls, focus, semantic states, and P3/OkLCh CSS behavior.
-4. Validate the D65↔D50 adaptation exercise through an actual ICC CMM/profile round trip and compare managed conversion with hand calculation.
-5. Compare Bradford/CAT02/CAT16 on explicitly bounded research datasets and document where the conclusions do and do not transfer.
-6. Validate existing non-text/focus and ramp work on physical displays under controlled bright and low-light conditions, using realistic Layout/Interaction contexts and Type roles.
-7. Begin a dedicated data-visualization color study when it becomes the highest-value project/readiness gap.
-8. Pursue useful cross-domain replication, transfer validation, or adjacent learning when it materially strengthens professional judgment.
-9. Open `C002` for the next substantial Color or Color-led cross-domain study when justified.
-
-Do not limit growth merely to avoid overlap. Also do not repeat existing work without a reason that adds analytical value.
+1. Close the strongest remaining scientific Foundation gap with official CIE spectral integration and observer comparison.
+2. Convert C002 into practice by building a semantic token graph and contrast/pair matrix for at least two materially different product contexts; record collisions and rejected architectures.
+3. Transfer C001/C002 and Studies 016/017 into real browser validation with Web Design when `W###` work becomes available.
+4. Validate D65↔D50 adaptation through an actual ICC CMM/profile round trip and compare managed conversion with hand calculation.
+5. Compare Bradford/CAT02/CAT16 only on explicitly bounded datasets; do not generalize one winner beyond the studied conditions.
+6. Validate non-text/focus/ramp work on physical displays under controlled bright and low-light conditions using realistic Type and Layout/Interaction contexts.
+7. Begin dedicated categorical/sequential/diverging data-visualization color research as a major project-readiness gap.
+8. Continue cross-domain replication, contradiction review and transfer validation when it materially improves project decisions.
+9. Open `C003` for the next substantial new Color question when justified.
 
 ## Open research-quality gaps
 
 - official spectral-data integration and observer-model comparison;
-- browser implementation details for modern CSS color and gamut mapping;
-- real forced-colors/system-color/theme validation on complete web components/pages;
+- real browser implementation evidence for modern CSS color, gamut mapping, forced/system colors and token resolution;
+- C002 multi-project semantic-system practice and token/contrast audit evidence;
 - ICC/CMM and profile-based production validation;
 - physical-display/environmental testing with controlled documentation;
-- categorical/sequential/diverging data-visualization color systems;
-- stronger empirical evidence for visual salience/hierarchy claims where model-space regularity is insufficient;
-- stronger integration with Type, Layout/Interaction, and Web Design evidence in realistic project conditions.
+- categorical/sequential/diverging data-visualization systems;
+- stronger empirical evidence for visual salience/hierarchy where model-space regularity is insufficient;
+- automated color-token QA and production validation;
+- cultural/localization evidence beyond general guidance;
+- stronger integration with Type, Layout/Interaction and future Web evidence in realistic projects.
 
-## Handoffs to other specialists
+## Current handoffs to other specialists
 
 ### Typography / Type
 
-Current useful Color handoffs:
+- Validate C002 semantic foreground roles with actual text hierarchy, weight/size, fallback and zoom/localization states.
+- C001 remains relevant because user/browser palette replacement changes rendered foreground/background conditions even when Type roles stay constant.
 
-- role-dependent foreground/background contrast constraints;
-- environmental viewing implications for text hierarchy;
-- C001 warning that browser/user palette replacement can alter final text/background colors and therefore browser-rendered typography needs transfer validation.
+### Layout / Interaction
 
-### Layout & Interaction
-
-Current useful Color handoffs:
-
-- luminance hierarchy and state/focus contrast evidence;
-- color-independent semantic-state requirements;
-- C001 evidence that forced-colors can remove/rewrite fill, shadow, outline, border, and SVG color channels, so state semantics must survive those transformations.
+- Define state semantics before Color assigns visual roles; separate domain status from hover/focus/selected/pending/committed states.
+- Use C002 semantic-collision review to detect when one hue is carrying unrelated behavioral meanings.
+- L002 provides a useful controlled transfer case: hold geometry constant while varying luminance/chroma to test color-driven perceived density.
 
 ### Web Design
 
-Current useful Color handoffs:
-
-- Study 016 and 017 require real browser/device verification for CSS wide-gamut/gamut mapping and ramp behavior;
-- C001 provides a concrete test matrix for `color-scheme`, forced colors, system colors, native controls, focus, semantic states, and P3/OkLCh behavior;
-- Web should report browser/device confirmations, limitations, contradictions, and fallback failures back to Color rather than silently adapting the color system.
-
-When repeat research confirms, contradicts, or limits peer work, hand that result back explicitly.
+- Implement and challenge C001/C002 in actual page/component systems.
+- Validate role resolution across light/dark, forced colors, system colors, native/custom controls and focus states.
+- Test CSS P3/OkLCh rendering and fallback from Studies 016/017.
+- Return browser/device/framework limitations as explicit evidence.
 
 ## Handoff rule
 
-If another specialist requests Color evidence, answer with canonical Color evidence or new investigation as appropriate. Cross-domain work is allowed when useful; do not silently claim canonical ownership of the peer domain and do not edit their files without authorization.
+If another specialist requests Color evidence, answer with canonical Color evidence or new investigation as appropriate. Cross-domain work is allowed when useful; do not silently claim canonical ownership of peer domains and do not edit their files without authorization.
+
+## Latest checkpoint
+
+- `C001` established Web color override resilience and a Color→Web browser-validation matrix.
+- `C002` established a project-facing semantic color/token architecture method and project-readiness test.
+- Next Color study ID advanced to `C003`.
+- Overall Color state remains **CRITIQUE**, not PASS.
