@@ -1,0 +1,75 @@
+{
+  "environment": {
+    "python_unicodedata_version": "15.1.0",
+    "fonttools": "4.63.0",
+    "external_tools": {
+      "fontbakery": null,
+      "fontspector": null,
+      "ots-sanitize": null,
+      "hb-shape": null
+    }
+  },
+  "normalization": {
+    "가": {
+      "NFC": ["U+AC00"],
+      "NFD": ["U+1100", "U+1161"],
+      "canonically_equivalent": true
+    },
+    "각": {
+      "NFC": ["U+AC01"],
+      "NFD": ["U+1100", "U+1161", "U+11A8"],
+      "canonically_equivalent": true
+    }
+  },
+  "artifacts": {
+    "nfc_only": {
+      "file": "nfc_only.woff2",
+      "sha256": "a13f632702b25230fe16164dc337b38a45349af7a59a711bad1b39cdf528e344",
+      "size": 380,
+      "glyphs": [".notdef", "uniAC00", "uniAC01"],
+      "cmap": {"U+AC00": "uniAC00", "U+AC01": "uniAC01"},
+      "contracts": {
+        "가": {"nfc_sequence": ["U+AC00"], "nfd_sequence": ["U+1100", "U+1161"], "nfc_coverage": true, "nfd_coverage": false, "nfc_glyphs": ["uniAC00"], "nfd_glyphs": [null, null]},
+        "각": {"nfc_sequence": ["U+AC01"], "nfd_sequence": ["U+1100", "U+1161", "U+11A8"], "nfc_coverage": true, "nfd_coverage": false, "nfc_glyphs": ["uniAC01"], "nfd_glyphs": [null, null, null]}
+      }
+    },
+    "nfd_only": {
+      "file": "nfd_only.woff2",
+      "sha256": "fb9514bc55ec557217c2a1659c36c032a666d374b382c40f7ab6e3705c0edfac",
+      "size": 400,
+      "glyphs": [".notdef", "uni1100", "uni1161", "uni11A8"],
+      "cmap": {"U+1100": "uni1100", "U+1161": "uni1161", "U+11A8": "uni11A8"},
+      "contracts": {
+        "가": {"nfc_sequence": ["U+AC00"], "nfd_sequence": ["U+1100", "U+1161"], "nfc_coverage": false, "nfd_coverage": true, "nfc_glyphs": [null], "nfd_glyphs": ["uni1100", "uni1161"]},
+        "각": {"nfc_sequence": ["U+AC01"], "nfd_sequence": ["U+1100", "U+1161", "U+11A8"], "nfc_coverage": false, "nfd_coverage": true, "nfc_glyphs": [null], "nfd_glyphs": ["uni1100", "uni1161", "uni11A8"]}
+      }
+    },
+    "dual": {
+      "file": "dual.woff2",
+      "sha256": "769b9fa37bf8ad2a62d9063c9eba5708eca5c6de357fdbe20b7d0b36d82b0702",
+      "size": 436,
+      "glyphs": [".notdef", "uniAC00", "uniAC01", "uni1100", "uni1161", "uni11A8"],
+      "cmap": {"U+1100": "uni1100", "U+1161": "uni1161", "U+11A8": "uni11A8", "U+AC00": "uniAC00", "U+AC01": "uniAC01"},
+      "contracts": {
+        "가": {"nfc_sequence": ["U+AC00"], "nfd_sequence": ["U+1100", "U+1161"], "nfc_coverage": true, "nfd_coverage": true, "nfc_glyphs": ["uniAC00"], "nfd_glyphs": ["uni1100", "uni1161"]},
+        "각": {"nfc_sequence": ["U+AC01"], "nfd_sequence": ["U+1100", "U+1161", "U+11A8"], "nfc_coverage": true, "nfd_coverage": true, "nfc_glyphs": ["uniAC01"], "nfd_glyphs": ["uni1100", "uni1161", "uni11A8"]}
+      }
+    }
+  },
+  "reproducibility": {"nfc_only": true, "nfd_only": true, "dual": true},
+  "derived": {
+    "nfc_only_passes_nfc_fails_nfd": true,
+    "nfd_only_passes_nfd_fails_nfc": true,
+    "dual_passes_both": true,
+    "nfc_only_jamo_missing": ["U+1100", "U+1161", "U+11A8"],
+    "nfd_only_syllables_missing": ["U+AC00", "U+AC01"],
+    "all_packages_parseable": true,
+    "all_rebuild_hashes_identical": true
+  },
+  "scope_limits": [
+    "Structural cmap/subset proof only; no HarfBuzz/browser shaping available.",
+    "Synthetic glyph geometry; no claim about production Hangul design quality or actual Jamo composition behavior.",
+    "Supporting both NFC and NFD is product-contract dependent; a product that guarantees normalization before shaping may intentionally ship narrower closure.",
+    "No FontBakery/Fontspector/OTS sanitizer PASS claimed."
+  ]
+}
