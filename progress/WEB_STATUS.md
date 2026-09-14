@@ -1,11 +1,9 @@
 # Web Design Specialist Status
 
-Operating state: **APPROVED / ACTIVE AFTER INITIAL SYNC**
-Governance sync: 2026-09-14
-Primary path: `research/web/`
-Next new-study ID: `W001`
-
-This specialist is approved as the fourth Design Studio specialist. It should complete the common synchronization read before opening its first substantive study, then research may begin immediately without further approval.
+Operating state: **ACTIVE — RESEARCH MAY RESUME**  
+Governance sync: 2026-09-15  
+Primary path: `research/web/`  
+Next new-study ID: `W002`
 
 ## Operational mission
 
@@ -13,160 +11,335 @@ The Web Design Specialist exists to **design real websites and web applications*
 
 Its primary responsibility is to turn product goals, user tasks, information, brand direction, and Design Studio research into complete web experiences with strong visual hierarchy, responsive behavior, coherent components, usable interaction, accessibility, and production realism.
 
-Frontend knowledge is a supporting professional capability. The specialist should understand enough implementation to prototype, validate, communicate with engineering, preserve design intent, and recognize when browser/platform constraints should change a design decision.
-
-## Project outputs expected
-
-When a web project arrives, this specialist should be capable of producing or specifying:
-
-- site/web-app information architecture;
-- navigation and wayfinding;
-- page/screen hierarchy;
-- desktop/tablet/mobile layouts;
-- responsive/adaptive rules;
-- page templates and composition systems;
-- content hierarchy and scan paths;
-- component patterns, variants and state behavior;
-- forms, search, tables, filters, dashboards and data-dense interfaces;
-- landing and marketing surfaces when relevant;
-- loading/empty/error/partial/asynchronous states;
-- interaction behavior for mouse, keyboard, touch and mixed input;
-- application of typography, color, brand and visual identity to web contexts;
-- accessibility behavior;
-- implementation-aware specifications and prototype requirements;
-- critique/redesign recommendations;
-- browser/device validation criteria.
-
-The role should answer **what the website/web app should be and how it should behave**, not only whether it can be coded.
+Frontend knowledge is a supporting professional capability for prototyping, feasibility judgment, implementation fidelity, browser validation, and preservation of design intent.
 
 ## Current level
 
-Current curriculum stage: **Stage 1 — Foundation / NOT YET BASELINED**
-Overall state: **READY TO BEGIN AFTER REPOSITORY SYNC**
+Current curriculum stage: **Stage 1 — Foundation**  
+Overall state: **PRACTICE / CRITIQUE**  
+Foundation: **NOT PASSED**
 
-The first work block should read the repository, inherit relevant Type/Color/Layout-Interaction evidence, identify what must be independently validated in real web contexts, and then establish the Web Design learning baseline and first priorities.
+The initial Web-specific baseline has now been established through `W001`. The specialist is no longer in onboarding/synchronization state.
 
-## Primary canonical scope
+W001 provides a medium-level model of the Web, a cross-specialist transfer frame, a bounded Chromium failure→revision exercise, an initial Web failure taxonomy, and an operational project method. It does **not** yet establish complete competency in page composition, navigation, component systems, forms/data surfaces, accessibility, browser/device transfer, or production design.
 
-The Web Design Specialist primarily owns web-specific application and integration questions, including:
+---
 
-- web information architecture and page systems;
-- navigation and wayfinding on websites/web apps;
-- responsive/adaptive composition;
-- desktop/tablet/mobile web design;
-- component and design-system application on the web;
-- web-specific content hierarchy, density and progressive disclosure;
-- web-specific interaction patterns and state presentation;
-- forms, search, tables, dashboards, settings, list/detail and other common web structures;
-- browser-native behavior and controls where they affect design quality;
-- accessibility as expressed in actual web structure/interaction;
-- design-to-code fidelity and implementation-aware design specifications;
-- browser/device/input-mode validation;
-- performance-sensitive design decisions where runtime cost affects UX;
-- frontend implementation literacy necessary to test and preserve the design.
+## Canonical Web evidence
 
-This is primary ownership, not a learning boundary. The specialist may study typography, color, layout, interaction, accessibility, HCI, information architecture, content design, visual design, design systems, frontend technology, browser standards, or other adjacent areas whenever they improve web-design judgment.
+### W001 — Web as a Native Medium: History, Flexibility, and Design Contracts
 
-## Existing specialist evidence to inherit and test
+- `research/web/W001-web-as-native-medium-history-flexibility-design-contracts.md`
+- `research/web/W001-web-medium-resilience-specimen.html`
+- `research/web/W001-web-medium-resilience-playwright.py`
+- `research/web/W001-web-medium-resilience-results.json`
 
-### From Typography / Type Design
+Evidence level: **PRACTICE + CRITIQUE / Foundation baseline established / NOT PASS**.
 
-Use existing Type research for hierarchy, metrics, numerals, text density, scaling, localization and rendering. Web Design applies and stress-tests it under real browser layouts, font loading/fallback, line wrapping, zoom and responsive constraints.
+### W001 retained judgment
 
-### From Color
+The Web is modeled as:
 
-Use existing Color research for contrast, luminance, gamut, perceptual spaces, semantic colors and viewing conditions. Web Design applies and validates it in themes, surfaces, states, real CSS/browser rendering, system settings and device conditions.
+`addressable resource`
+`→ semantic document / task structure`
+`→ source order + browser-native behavior`
+`→ normal flow / intrinsic content geometry`
+`→ authored hierarchy, layout, type, color, surfaces`
+`→ conditional adaptation`
+`→ application state and enhancement`
+`→ browser/user override + runtime rendering`
+`→ validation under real content, input, device, failure and accessibility conditions`.
 
-### From Layout, Spatial & Interaction
+Primary design consequence:
 
-Use existing Layout/Interaction research for grouping, hierarchy, responsive recomposition, navigation, state, feedback, focus and recovery. Web Design integrates these into complete websites and web apps and tests whether they remain coherent across real page structures, browsers, inputs and content conditions.
+> Web Design should control relationships, priorities, constraints, states, and adaptation rules more strongly than exact coordinates.
 
-## Frontend literacy expected
+This does not reject precision, fixed dimensions, absolute positioning, custom controls, or dedicated compositions. It rejects using those mechanisms where the product actually requires variable-content relationships or browser-native behavior.
 
-The specialist should develop enough technical competence to design credibly and validate its work, including when useful:
+### W001 historical/standards baseline
 
-- semantic HTML;
-- CSS cascade, Grid, Flexbox, intrinsic sizing, media/container queries;
-- responsive implementation;
-- native controls and forms;
-- JavaScript/TypeScript behavior relevant to interfaces;
-- DOM/events/focus/history/navigation;
-- design tokens and component implementation;
-- accessibility implementation;
-- browser rendering differences;
-- loading/performance constraints;
-- PWA/offline behavior when relevant;
-- testing and production validation.
+Revalidated 2026-09-15:
+- CERN history of the Web;
+- HTML / WHATWG document and application model;
+- CSS1/CSS2 historical separation and expansion of presentation;
+- DOM Level 1 and ECMAScript historical application transition;
+- W3C Device Independence Principles;
+- Responsive Web Design historical framing;
+- current Media Queries, Flexbox, Grid, CSS Sizing and Container Queries;
+- WCAG Reflow;
+- WAI table/layout guidance.
 
-Technical depth should expand when it improves design quality, implementation fidelity, or project advice. General software engineering that does not materially serve web design is not the default research priority.
+Historical influence was used to explain current design constraints, not as authority for modern implementation details where current standards exist.
 
-## Incoming collaboration needs
+---
 
-Expected recurring collaboration:
+## W001 browser practice
 
-- Type → real web typography contexts and browser/font validation;
-- Color → real page/theme/state contexts and browser/device color validation;
-- Layout/Interaction → complete responsive web compositions and real interaction prototypes/flows.
+A controlled specimen compared two transfers of comparable semantic content:
 
-## Initial Foundation questions
+1. **fixed-canvas failure**
+   - fixed 960px shell;
+   - fixed hero height/columns;
+   - fixed preview geometry;
+   - absolutely positioned action group;
+   - no narrow-width recomposition.
 
-After synchronization, establish priorities around:
+2. **web-native revision**
+   - bounded fluid inline size;
+   - normal-flow actions;
+   - wrapping navigation/actions;
+   - Grid `auto-fit` + `minmax()`;
+   - intrinsic/flexible geometry;
+   - fluid padding;
+   - content wrapping.
 
-1. web information architecture and page hierarchy;
-2. responsive/adaptive composition from desktop through narrow mobile widths;
-3. navigation and wayfinding patterns;
-4. content hierarchy, scan behavior and density;
-5. component systems and reusable page structures;
-6. forms, tables, search, dashboards, settings and common web-product surfaces;
-7. interaction states and input-mode behavior on the web;
-8. accessibility, zoom/reflow and long/localized content;
-9. real browser typography/color/layout behavior using peer research;
-10. frontend literacy sufficient to prototype and validate the above;
-11. one or more complete web redesign/design exercises rather than isolated technical demos.
+Engine: Chromium through Playwright using `set_content` because the execution environment blocked browser navigation to local file/HTTP URLs.
 
-This is a starting map, not a restrictive syllabus.
+Tested viewports:
+- 1280 CSS px;
+- 768 CSS px;
+- 320 CSS px.
 
-## Project-readiness standard
+### Bounded result
 
-The Web Design Specialist should be able to answer:
+Fixed transfer:
+- 1280: no viewport overflow;
+- 768: 960px shell caused horizontal document overflow;
+- 320: horizontal overflow and not all primary actions remained within the viewport.
 
-- What should this website/web app's structure be?
-- What should users see first and why?
-- How should navigation work?
-- How should the experience change across desktop, tablet and mobile?
-- Which page/component patterns fit the task and content?
-- How should Type, Color and Layout/Interaction evidence be combined here?
-- What should remain browser-native vs custom-designed?
-- What accessibility, localization, performance and implementation trade-offs matter?
-- What should be prototyped and validated before production?
-- What should engineering preserve as essential design intent?
+Web-native revision:
+- 1280: fit;
+- 768: fit;
+- 320: fit;
+- primary actions remained within viewport at all three tested widths.
 
-## Handoffs to other specialists
+Author CSS removed at 320 CSS px:
+- no horizontal overflow;
+- 10/10 specimen links remained rendered;
+- 4/4 specimen headings remained rendered.
 
-After substantial Web Design research or project work, report useful findings back to:
+All intended bounded assertions passed.
 
-- Type: browser/page contexts that reveal typography strengths or failures;
-- Color: theme/surface/state/browser/device contexts that confirm or challenge color-system assumptions;
-- Layout/Interaction: responsive/page-system/input/navigation findings that confirm, refine or challenge spatial/interaction theory.
+### What W001 does not prove
 
-## First action on entering the role
+No claim of:
+- universal superiority of fluid layouts;
+- universal 320px-fit requirement for intrinsically two-dimensional content;
+- WCAG conformance;
+- actual 400% browser-zoom behavior;
+- keyboard/focus or screen-reader quality;
+- production font loading/fallback quality;
+- production localization quality;
+- Firefox/Safari/physical mobile parity;
+- human preference or task-performance superiority.
 
-Read the latest:
+Those remain separate validation gates.
 
-- `AGENTS.md`
-- root `README.md`
-- `progress/STATUS.md`
-- `progress/TYPE_STATUS.md`
-- `progress/COLOR_STATUS.md`
-- `progress/LAYOUT_STATUS.md`
-- `progress/WEB_STATUS.md`
-- `research/README.md`
-- `research/type/README.md`
-- `research/color/README.md`
-- `research/layout/README.md`
-- `research/interaction/README.md`
-- `research/web/README.md`
-- `coordination/COLLABORATION_PROTOCOL.md`
-- `methods/PROJECT_ENGAGEMENT.md`
+---
 
-Then report the current understanding of role, reusable peer evidence, overlap/validation opportunities, and first research priorities before beginning the first substantive study.
+## W001 failure taxonomy
+
+### A. Canvas transplant failure
+
+A reference screenshot is preserved while content/viewport variation breaks the product because coordinates were specified where relationships/constraints were required.
+
+### B. Device-folklore responsiveness
+
+Breakpoints are selected from assumed device categories rather than actual content/layout/task stress.
+
+### C. Visual-semantic inversion
+
+Semantic/source order or browser behavior is distorted solely to reproduce a visual arrangement.
+
+### D. Author-control illusion
+
+The design assumes exact fonts, colors, dimensions, pointer input, or uninterrupted resources and omits valid browser/user/runtime participation.
+
+### E. App exceptionalism
+
+A web application treats URLs, history, document semantics, native controls, or focus as irrelevant because it is “an app.”
+
+### F. Screenshot-only QA
+
+Pixel similarity is treated as proof of interaction, semantics, focus, navigation, overflow, loading, or accessibility correctness.
+
+---
+
+## Current Web Design method
+
+W001 establishes this working sequence for major surfaces:
+
+1. purpose and user task;
+2. resource/context and direct-entry behavior;
+3. content model;
+4. semantic/source order;
+5. browser-native baseline;
+6. relationship model;
+7. intrinsic geometry;
+8. constraints;
+9. adaptation/recomposition;
+10. enhancement and state;
+11. stress under real content/preferences/failure;
+12. browser/device/human validation at the evidence level the claim requires.
+
+This is a diagnostic framework, not a mandatory waterfall.
+
+---
+
+## Peer evidence currently affecting Web
+
+### Typography / Type
+
+Type is through **T014** at the latest Web synchronization.
+
+Highest-value incoming contracts:
+- loading/failure/script/user-substitution fallback are distinct;
+- exact font metrics and normalization/subset closure can alter actual browser layout;
+- Web must validate delivered WOFF2, font loading/fallback, Korean/English wrapping, zoom/DPR, normalization, and browser/platform behavior.
+
+W001 consequence:
+- page structure and core actions should not depend on one exact font metric realization.
+
+### Color
+
+Color is through **C012** at the latest Web synchronization.
+
+Highest-value incoming contracts:
+- authored color is not always final used color;
+- forced-colors can remove/replace visual channels;
+- semantic color, wide-gamut delivery, chart/SVG behavior and browser/device color management require Web transfer.
+
+W001 consequence:
+- final Web presentation is a browser/user/runtime negotiation rather than exclusive author pixel ownership.
+
+### Layout / Interaction
+
+Layout/Interaction is through **L006 / I004** at the latest Web synchronization.
+
+Highest-value incoming contracts:
+- responsive systems preserve semantic relationships rather than coordinates;
+- density is task-dependent;
+- type/color can change perceived or actual geometry;
+- visual, pointer, active gesture, focus, semantic/AT, data, stack and restoration ownership are separate;
+- screenshot QA cannot validate these behavioral layers;
+- history/focus restoration, pending/retry, forced-color state resilience, and concurrent conflict/recovery have controlled evidence awaiting full Web product transfer.
+
+W001 consequence:
+- later Web studies must integrate spatial and behavioral contracts into complete page systems rather than isolated components.
+
+---
+
+## Foundation module status
+
+| Module | Status | Remaining gate |
+| --- | --- | --- |
+| Web as a medium / historical evolution | **PRACTICE / CRITIQUE** | broader browser/device/project transfer; human evidence where relevant |
+| Document/semantic vs presentation model | **PRACTICE / CRITIQUE** | production semantic/source-order and accessibility-tree transfer |
+| Responsive/adaptive design philosophy | **PRACTICE / CRITIQUE** | W002/W003 deeper layout/recomposition, zoom, localization, cross-browser/device proof |
+| Normal flow / intrinsic geometry | **PRACTICE / CRITIQUE baseline** | deeper Grid/Flex/intrinsic sizing/composition evidence |
+| Information architecture / page hierarchy | NOT YET WEB-BASELINED | complete Web-specific study/practice required |
+| Navigation / wayfinding | NOT YET WEB-BASELINED | real URL/router/history/direct-entry patterns required |
+| Page composition / visual hierarchy / density | **NEXT** | W002 |
+| Component/page systems | NOT YET WEB-BASELINED | variants/states/tokens/templates + project transfer |
+| Forms/search/tables/dashboards/settings | NOT YET WEB-BASELINED | task-specific pattern and browser-native/custom decisions |
+| Web interaction/state systems | INCOMING PEER EVIDENCE ONLY | complete Web page/product transfer required |
+| Web typography | INCOMING TYPE EVIDENCE ONLY | exact delivered-font/browser/fallback/zoom practice required |
+| Web color/theme/state | INCOMING COLOR EVIDENCE ONLY | real page/browser/device/forced-color practice required |
+| Accessibility / zoom / localization | PARTIAL BASELINE | reflow concept only; semantics, keyboard, AT, real zoom, language stress open |
+| Performance-sensitive design | NOT YET WEB-BASELINED | runtime-cost/design trade-off study required |
+| Design-to-code/browser validation | **PRACTICE baseline** | broader cross-browser/device/production methods required |
+
+---
+
+## Active next queue
+
+### 1. W002 — Page Composition, Flow, Grid, Density & Visual Hierarchy
+
+Highest-priority next integrated block.
+
+Required scope:
+- normal flow as a design baseline, not a coding detail;
+- intrinsic sizing and content-driven geometry;
+- block/inline flow and writing-direction implications;
+- Flexbox vs Grid vs ordinary flow by relationship type;
+- fixed, fluid, min/max/clamp constraints;
+- page/container measure and readable/content widths without universal constants;
+- alignment systems and visual hierarchy;
+- whitespace, density and rhythm using Layout L002 rather than “more whitespace is better”;
+- full-bleed vs constrained content regions;
+- section composition and page-level rhythm;
+- simultaneous comparison vs sequential stacking;
+- cards, split layouts, sidebars and multi-column structures as task relationships rather than pattern catalogues;
+- long Korean/English content and font-metric stress;
+- actual zoom/reflow distinction;
+- browser-rendered failure→revision practice;
+- explicit reasons to choose ordinary flow, Flexbox, Grid, positioning, or local overflow.
+
+W002 must **not** become a CSS feature catalogue. The output must improve page-design judgment.
+
+### 2. W003 candidate — Responsive / Adaptive Recomposition
+
+After W002 geometry is grounded:
+- layout stress points;
+- media vs container query decision;
+- component-local adaptation;
+- priority changes vs hiding;
+- navigation/table/form/dashboard recomposition;
+- zoom/text growth/localization/device/input transfer.
+
+### 3. Later Foundation blocks
+
+- IA / navigation / wayfinding;
+- components / page systems / design systems;
+- forms, search, tables, dashboards and data-dense surfaces;
+- browser-native vs custom controls;
+- async/loading/error/empty/partial states;
+- integrated Web typography and Color transfer;
+- accessibility and actual AT/browser/device validation;
+- performance-sensitive design;
+- one or more complete website/web-app design/redesign exercises.
+
+---
+
+## Open research-quality gaps
+
+- Firefox/Safari and physical iOS/Android browser evidence;
+- actual browser zoom rather than narrow viewport proxy;
+- long Korean/English production content and localization stress;
+- exact delivered webfont loading/fallback/normalization transfer;
+- forced-colors and actual OS high-contrast transfer;
+- real keyboard/focus/screen-reader behavior;
+- routed URL/history/direct-entry/resume evidence;
+- native/custom control comparison;
+- image/media/aspect-ratio composition under real content;
+- responsive tables/forms/navigation/dashboards;
+- performance/loading effects on visual hierarchy and interaction;
+- real project design exercises;
+- human comprehension/search/comparison/task evidence where claims require it.
+
+---
+
+## HANDOFFS TO OTHER SPECIALISTS
+
+### Typography / Type
+
+W001 supports T001's project-level premise: Web layouts should not require exact preferred-font metrics to preserve core structure/actions. Future W work should validate exact delivered fonts, Korean/English reflow, fallback, loading, normalization and actual browser zoom.
+
+### Color
+
+W001 incorporates C001's broader implication that browser/user participation can change final presentation. Future Web specimens should combine responsive geometry with forced colors and system-color behavior rather than treating geometry and color resilience as independent forever.
+
+### Layout / Interaction
+
+W001 browser practice provides a bounded Web confirmation of the relationship-over-coordinate direction. It does not replace L002/L003/L006 or I-series evidence. W002 will deepen actual page composition; later Web studies must carry focus/history/layer/state contracts into complete page systems.
+
+---
+
+## Latest checkpoint
+
+- Initial repository synchronization: complete.
+- First substantive Web study: **W001 complete at PRACTICE + CRITIQUE**.
+- First reproducible Web browser specimen/harness/results: committed.
+- Foundation baseline: **established but NOT PASSED**.
+- Next new-study ID: **W002**.
+- Current next major work: **Page Composition, Flow, Grid, Density & Visual Hierarchy**.
