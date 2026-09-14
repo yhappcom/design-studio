@@ -61,6 +61,21 @@ https://www.cie.co.at/publications/colorimetry-part-3-cie-tristimulus-values-2
 
 Why it matters: normative calculation procedure for deriving tristimulus values from spectral colour-stimulus data, including sampling-range and interval requirements.
 
+### CIE 170-1:2006 — Fundamental chromaticity diagram with physiological axes, Part 1
+https://www.cie.co.at/publications/fundamental-chromaticity-diagram-physiological-axes-part-1
+
+Why it matters: defines the CIE 2006 physiologically relevant LMS cone fundamentals and the field-size, ocular-media, macular-pigment, photopigment-density, and age factors used to derive them.
+
+### CIE 170-2:2015 — Fundamental chromaticity diagram with physiological axes, Part 2
+https://www.cie.co.at/publications/fundamental-chromaticity-diagram-physiological-axes-part-2-spectral-luminous
+
+Why it matters: provides practical cone-fundamental-based colorimetric tools, including spectral luminous-efficiency functions and linear transformations from cone fundamentals to XF/YF/ZF and xF/yF coordinates.
+
+### CIE 254:2024 — A roadmap toward basing CIE colorimetry on cone fundamentals
+https://www.cie.co.at/publications/roadmap-toward-basing-cie-colorimetry-cone-fundamentals
+
+Why it matters: current CIE roadmap for a future self-consistent cone-fundamental-based colorimetry, explicitly addressing normal variation from age, field of view, and individual diversity.
+
 ### CIE official colorimetric datasets
 https://cie.co.at/data-tables
 
@@ -75,6 +90,12 @@ Study use: normative terminology for colour stimulus, stimulus function, metamer
 https://www.cie.co.at/publications/cie-2016-colour-appearance-model-colour-management-systems-ciecam16
 
 Why it matters: authoritative viewing-condition-specific colour appearance model; used later to distinguish tristimulus specification from appearance prediction.
+
+### NCBI Bookshelf — Neuroscience / Webvision colour-vision chapters
+https://www.ncbi.nlm.nih.gov/books/NBK11059/
+https://www.ncbi.nlm.nih.gov/books/NBK11550/
+
+Study use: authoritative neuroscience background for the principle of univariance at individual cones and for post-receptoral comparison/opponent processing. These sources support physiology education; CIE remains the colorimetric authority.
 
 ### International Color Consortium — ICC.1:2022 v4.4
 https://www.color.org/icc-1_specification/
