@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Interaction Validation Specimen</title>
+<style>
+  body{font-family:system-ui,sans-serif;margin:0;padding:0;line-height:1.4}
+  header{display:flex;gap:.75rem;padding:1rem;border-bottom:1px solid #888}
+  main{padding:1rem;max-width:52rem}
+  nav button[aria-current="page"]{font-weight:700;text-decoration:underline}
+  button,input{font:inherit;padding:.5rem .7rem;margin:.15rem}
+  .row{display:flex;gap:.5rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #bbb}
+  dialog{padding:1rem;min-width:18rem}
+  .status{min-height:1.5rem;margin-top:.75rem}
+  .muted{opacity:.75}
+</style>
+</head>
+<body>
+<header>
+  <nav aria-label="Primary">
+    <button id="nav-records" data-top="records">Records</button>
+    <button id="nav-reports" data-top="reports">Reports</button>
+  </nav>
+</header>
+<main id="app" tabindex="-1"></main>
+<div id="global-status" class="status" role="status" aria-live="polite" aria-atomic="true"></div>
+<div id="status-actions"></div>
+<dialog id="confirm-dialog" aria-labelledby="confirm-title">
+  <h2 id="confirm-title">Discard changes?</h2>
+  <p>Unsaved edits will be lost.</p>
+  <button id="discard-confirm">Discard</button>
+  <button id="discard-cancel">Keep editing</button>
+</dialog>
+<script>
+(() => {
+  const app = document.getElementById('app');
+  const statusEl = document.getElementById('global-status');
+  const statusActions = document.getElementById('status-actions');
+  let lastRouteKey = null;
+  const dialog = document.getElementById('confirm-dialog');
+  const resumeByTop = {
+    records: {view:'list', id:null},
+    reports: {view:'reports-home', id:null}
+  };
+  const drafts = {};
+  let top = 'records';
+  let view = 'list';
+  let selectedId = null;
+  let dirty = false;
+  let saveAttempt = 0;
+  let lastDialogInvoker = null;
+  let restoredFilter = 'all';
+
+  function parseLocation() {
+    const raw = location.hash.replace(/^#/, '');
+    const p = new URLSearchParams(raw);
+    top = p.get('top') || 'records';
+    view = p.get('view') || (top === 'reports' ? 'reports-home' : 'list');
+    selectedId = p.get('id');
+  }
+
+  function stateUrl(nextTop, nextView, id=null) {
+    const p = new URLSearchParams();
+    p.set('top', nextTop); p.set('view', nextView); if (id) p.set('id', id);
+    return '#' + p.toString();
+  }
+
+  function markCurrentTop() {
+    for (const b of document.querySelectorAll('[data-top]')) {
+      if (b.dataset.top === top) b.setAttribute('aria-current','page'); else b.removeAttribute('aria-current');
+    }
+  }
+
+  function push(nextTop, nextView, id=null, replace=false) {
+    top = nextTop; view = nextView; selectedId = id;
+    const entry = {top, view, id};
+    const url = stateUrl(top, view, id);
+    if (replace) history.replaceState(entry, '', url); else history.pushState(entry, '', url);
+    resumeByTop[top] = {view, id};
+    render({focus:true});
+  }
+
+  function focusMainTarget() {
+    const heading = app.querySelector('[data-route-heading]');
+    if (heading) heading.focus(); else app.focus();
+  }
+
+  function render({focus=false, preserveStatus=false}={}) {
+    resumeByTop[top] = {view, id:selectedId};
+    markCurrentTop();
+    if (!preserveStatus) statusEl.textContent = '';
+    statusActions.innerHTML = '';
+    lastRouteKey = `${top}|${view}|${selectedId ?? ''}`;
+    if (top === 'reports') {
+      app.innerHTML = `<h1 data-route-heading tabindex="-1">Reports</h1><p>Reporting workspace.</p><button id="report-detail">Open monthly report</button>`;
+      document.getElementById('report-detail').onclick = () => push('reports','report-detail');
+    } else if (view === 'list') {
+      app.innerHTML = `<h1 data-route-heading tabindex="-1">Records</h1>
+      <label>Filter <select id="filter"><option value="all">All</option><option value="open">Open</option></select></label>
+      <div class="row"><span>Record A</span><button id="open-a">Open</button></div>
+      <div class="row"><span>Record B</span><button id="open-b">Open</button></div>`;
+      const filter = document.getElementById('filter'); filter.value = restoredFilter; filter.onchange=()=>{restoredFilter=filter.value};
+      document.getElementById('open-a').onclick = () => push('records','detail','A');
+      document.getElementById('open-b').onclick = () => push('records','detail','B');
+    } else if (view === 'detail') {
+      app.innerHTML = `<h1 data-route-heading tabindex="-1">Record ${selectedId}</h1>
+      <button id="up-list" aria-label="Up to Records">Up to Records</button>
+      <p>Status: Draft</p>
+      <button id="edit">Edit</button>`;
+      document.getElementById('up-list').onclick = () => push('records','list',null);
+      document.getElementById('edit').onclick = () => push('records','edit',selectedId);
+    } else if (view === 'edit') {
+      const draftValue = drafts[selectedId] ?? `Record ${selectedId}`;
+      app.innerHTML = `<h1 data-route-heading tabindex="-1">Edit Record ${selectedId}</h1>
+      <button id="up-detail">Up to Record ${selectedId}</button>
+      <label>Name <input id="name" value="${draftValue.replace(/&/g,'&amp;').replace(/"/g,'&quot;')}" /></label>
+      <button id="save">Save</button>
+      <button id="cancel-edit">Cancel</button>`;
+      const input = document.getElementById('name');
+      input.addEventListener('input',()=>{dirty=true; drafts[selectedId]=input.value;});
+      document.getElementById('up-detail').onclick=()=>requestLeave(()=>push('records','detail',selectedId));
+      document.getElementById('cancel-edit').onclick=()=>requestLeave(()=>history.back());
+      document.getElementById('save').onclick=async()=>{
+        statusEl.textContent='Saving…';
+        document.getElementById('save').disabled=true;
+        await new Promise(r=>setTimeout(r,120));
+        saveAttempt++;
+        if(saveAttempt===1){
+          statusEl.textContent='Save failed. Check connection and retry.';
+          document.getElementById('save').disabled=false;
+          const retry=document.createElement('button');retry.id='retry';retry.textContent='Retry';
+          retry.onclick=()=>document.getElementById('save').click();statusActions.appendChild(retry);retry.focus();
+        }else{
+          dirty=false; delete drafts[selectedId];
+          push('records','detail',selectedId,true);
+          statusEl.textContent='Saved.';
+        }
+      };
+    } else if (view === 'reports-home') {
+      app.innerHTML = `<h1 data-route-heading tabindex="-1">Reports</h1><button id="report-detail">Open monthly report</button>`;
+    } else if (view === 'report-detail') {
+      app.innerHTML = `<h1 data-route-heading tabindex="-1">Monthly Report</h1><button id="up-reports">Up to Reports</button>`;
+      document.getElementById('up-reports').onclick=()=>push('reports','reports-home');
+    }
+    if (focus) focusMainTarget();
+  }
+
+  function requestLeave(continueFn){
+    if(!dirty){continueFn();return;}
+    lastDialogInvoker=document.activeElement;
+    dialog.showModal();
+    document.getElementById('discard-cancel').focus();
+    dialog.dataset.pending='1';
+    window.__pendingContinue=continueFn;
+  }
+
+  function closeDialogAndRestore(){
+    dialog.close();
+    if(lastDialogInvoker && document.contains(lastDialogInvoker)) lastDialogInvoker.focus();
+  }
+  document.getElementById('discard-cancel').onclick=closeDialogAndRestore;
+  document.getElementById('discard-confirm').onclick=()=>{dirty=false; if(selectedId) delete drafts[selectedId]; dialog.close();const fn=window.__pendingContinue;window.__pendingContinue=null;if(fn)fn();};
+  dialog.addEventListener('cancel',e=>{e.preventDefault();closeDialogAndRestore();});
+
+  document.getElementById('nav-records').onclick=()=>{
+    if(top==='records')return;
+    const resume=resumeByTop.records || {view:'list',id:null};
+    push('records',resume.view,resume.id);
+  };
+  document.getElementById('nav-reports').onclick=()=>{
+    if(top==='reports')return;
+    const resume=resumeByTop.reports || {view:'reports-home',id:null};
+    push('reports',resume.view,resume.id);
+  };
+
+  function syncFromLocation(){
+    const prevView=view;
+    parseLocation();
+    const key=`${top}|${view}|${selectedId ?? ''}`;
+    if(key===lastRouteKey) return;
+    render({focus:true});
+    if(prevView==='edit' && view!=='edit' && dirty) statusEl.textContent='Unsaved draft preserved.';
+    else if(view==='edit' && dirty && selectedId && drafts[selectedId]) statusEl.textContent='Unsaved draft restored.';
+  }
+  addEventListener('popstate',syncFromLocation);
+  addEventListener('hashchange',syncFromLocation);
+  parseLocation();
+  if (!location.hash) history.replaceState({top,view,id:selectedId},'',stateUrl(top,view,selectedId));
+  render({focus:false});
+
+  window.__spec = {getState:()=>({top,view,selectedId,dirty,saveAttempt,restoredFilter,url:location.href,activeId:document.activeElement?.id || '',activeTag:document.activeElement?.tagName || '',activeText:(document.activeElement?.textContent || '').trim().slice(0,80),status:statusEl.textContent,statusAction:statusActions.textContent.trim(),dialog:dialog.open,resumeByTop:JSON.parse(JSON.stringify(resumeByTop)),drafts:JSON.parse(JSON.stringify(drafts)),nameValue:document.getElementById('name')?.value ?? null}), sync:syncFromLocation};
+})();
+</script>
+</body>
+</html>
