@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>C007 Fixed Geometry Color Density / Salience Specimen</title>
+<style>
+:root{
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --canvas:#f7f9fa;--surface:#ffffff;--surface-alt:#ffffff;--header:#eef2f4;
+  --text:#152028;--secondary:#52616b;--boundary:#c5cdd3;--boundary-strong:#7d8c97;
+  --accent:#155eef;--accent-on:#ffffff;--selected:#e7f8f6;
+  --success:#167a4b;--success-bg:#ffffff;--caution:#9a6700;--caution-bg:#ffffff;
+  --critical:#b42318;--critical-bg:#ffffff;--info:#175cd3;--info-bg:#ffffff;
+  --positive:#167a4b;--negative:#b42318;
+  --row-even:#ffffff;--row-odd:#ffffff;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--text)}
+.app{padding:24px;max-width:1180px;margin:auto}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:20px}
+button{min-height:44px;padding:6px 10px;font:inherit;border:1px solid var(--boundary-strong);background:var(--surface);color:var(--text);border-radius:6px}
+button.primary{background:var(--accent);color:var(--accent-on);border-color:var(--accent)}
+.meta{font-size:.875rem;color:var(--secondary)}
+.summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:20px}
+.card{border:1px solid var(--boundary);background:var(--surface);padding:16.4px;min-width:0;border-radius:8px}
+.card .label{font-weight:700}.card .value{font-size:1.25rem;font-weight:750;margin-top:4px}.card .note{font-size:.8125rem;color:var(--secondary);margin-top:3px}
+.table{border:1px solid var(--boundary-strong);background:var(--surface)}
+.row{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,.9fr) minmax(0,.8fr) minmax(0,.8fr) minmax(76px,.55fr);gap:10px;align-items:center;padding:8px 10px;border-bottom:1px solid var(--boundary);background:var(--row-even)}
+.row:nth-child(odd){background:var(--row-odd)}
+.row:last-child{border-bottom:0}.cell{min-width:0;overflow-wrap:anywhere}.header{font-weight:700;background:var(--header)!important}
+.status{font-size:.875rem}.status .tag{display:inline-flex;align-items:center;gap:6px;padding:2px 6px;border-radius:999px;border:1px solid var(--boundary);background:var(--surface);color:var(--text);font-weight:650}
+.status .dot{width:8px;height:8px;border-radius:50%;background:currentColor;display:inline-block}
+.status.active .tag{color:var(--success);background:var(--success-bg);border-color:var(--success)}
+.status.review .tag{color:var(--caution);background:var(--caution-bg);border-color:var(--caution)}
+.status.paused .tag{color:var(--critical);background:var(--critical-bg);border-color:var(--critical)}
+.change{font-variant-numeric:tabular-nums;font-weight:700}.change.pos{color:var(--positive)}.change.neg{color:var(--negative)}
+.metric{font-variant-numeric:tabular-nums}.action{justify-self:end}.selected{background:var(--selected)!important;box-shadow:inset 4px 0 0 var(--accent)}
+/* Same geometry, only color values change below. */
+body[data-variant="neutral"]{
+  --canvas:#f7f9fa;--surface:#fff;--header:#eef2f4;--text:#152028;--secondary:#52616b;
+  --boundary:#c5cdd3;--boundary-strong:#7d8c97;--accent:#52616b;--accent-on:#fff;--selected:#eef2f4;
+  --success:#52616b;--success-bg:#fff;--caution:#52616b;--caution-bg:#fff;--critical:#52616b;--critical-bg:#fff;
+  --positive:#152028;--negative:#152028;--row-even:#fff;--row-odd:#fff;
+}
+body[data-variant="overloaded"]{
+  --canvas:#f5f8ff;--surface:#fff;--header:#cfe0ff;--text:#10233f;--secondary:#35506c;
+  --boundary:#8bb3f3;--boundary-strong:#3d7be0;--accent:#0b63f6;--accent-on:#fff;--selected:#c8f7ef;
+  --success:#08783e;--success-bg:#d7f8e8;--caution:#8a5b00;--caution-bg:#fff0b8;--critical:#b42318;--critical-bg:#ffe0dc;
+  --positive:#08783e;--negative:#c0192d;--row-even:#f7fbff;--row-odd:#eef6ff;
+}
+body[data-variant="high-contrast-mono"]{
+  --canvas:#fff;--surface:#fff;--header:#d2d2d2;--text:#000;--secondary:#222;
+  --boundary:#555;--boundary-strong:#111;--accent:#111;--accent-on:#fff;--selected:#dedede;
+  --success:#111;--success-bg:#efefef;--caution:#111;--caution-bg:#dcdcdc;--critical:#111;--critical-bg:#c8c8c8;
+  --positive:#000;--negative:#000;--row-even:#fff;--row-odd:#ededed;
+}
+body[data-variant="semantic-sparse"]{
+  --canvas:#f7f9fa;--surface:#fff;--header:#eef2f4;--text:#152028;--secondary:#52616b;
+  --boundary:#c5cdd3;--boundary-strong:#7d8c97;--accent:#155eef;--accent-on:#fff;--selected:#e7f8f6;
+  --success:#167a4b;--success-bg:#fff;--caution:#9a6700;--caution-bg:#fff;--critical:#b42318;--critical-bg:#fff;
+  --positive:#167a4b;--negative:#b42318;--row-even:#fff;--row-odd:#fff;
+}
+</style>
+<body data-variant="neutral">
+<main class="app">
+  <div class="toolbar"><button>Filter</button><button>Sort</button><button class="primary">Add record</button><div class="meta">Portfolio comparison · fixed geometry</div></div>
+  <section class="summary">
+    <div class="card c1"><div class="label">Total value</div><div class="value">$128,442</div><div class="note">All portfolios</div></div>
+    <div class="card c2"><div class="label">Monthly income</div><div class="value">$2,184</div><div class="note">After tax estimate</div></div>
+    <div class="card c3"><div class="label">Recovery</div><div class="value">38.4%</div><div class="note">Portfolio average</div></div>
+  </section>
+  <section class="table">
+    <div class="row header"><div>Name</div><div>Status</div><div>Value</div><div>Change</div><div></div></div>
+    <div id="rows"></div>
+  </section>
+</main>
+<script>
+const data=[
+['Alpha Income Portfolio','active','$12,884','+3.8%'],['Global Yield Strategy','review','$8,104','-1.2%'],['Long Duration Income Basket','active','$18,220','+0.6%'],['Technology Enhanced Income','active','$14,052','+2.4%'],['Monthly Distribution Core','paused','$9,994','-0.4%'],['International Covered Call','active','$11,242','+1.8%'],['High Volatility Income Sleeve','review','$7,880','-3.1%'],['Retirement Income Stability','active','$16,530','+0.2%'],['Tactical Opportunity Basket','active','$10,402','+4.9%'],['Capital Recovery Monitor','review','$6,884','-0.9%'],['Long-Term Reinvestment Plan','active','$13,290','+1.1%'],['Tax Adjustment Watchlist','active','$5,960','+0.1%']
+];
+rows.innerHTML=data.map((r,i)=>`<div class="row data-row ${i===5?'selected':''}" data-i="${i}"><div class="name cell">${r[0]}</div><div class="status ${r[1]}"><span class="tag"><span class="dot"></span>${r[1][0].toUpperCase()+r[1].slice(1)}</span></div><div class="metric cell">${r[2]}</div><div class="change cell ${r[3][0]==='+'?'pos':'neg'}">${r[3]}</div><button class="action">Open</button></div>`).join('');
+window.setVariant=v=>document.body.dataset.variant=v;
+window.geometry=()=>({
+  body:[document.body.scrollWidth,document.body.scrollHeight],
+  app:rect(document.querySelector('.app')),
+  summary:[...document.querySelectorAll('.card')].map(rect),
+  rows:[...document.querySelectorAll('.row')].map(rect),
+  buttons:[...document.querySelectorAll('button')].map(rect),
+  cells:[...document.querySelectorAll('.data-row .cell')].map(rect)
+});
+function rect(el){const r=el.getBoundingClientRect();return [round(r.x),round(r.y),round(r.width),round(r.height)]}
+function round(n){return Math.round(n*1000)/1000}
+</script>
+</body></html>
