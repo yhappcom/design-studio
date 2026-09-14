@@ -1,0 +1,415 @@
+{
+  "environment": {
+    "python_unicodedata_version": "15.1.0",
+    "fonttools": "4.63.0",
+    "external_tools": {
+      "fontbakery": null,
+      "fontspector": null,
+      "ots-sanitize": null,
+      "hb-shape": null
+    }
+  },
+  "normalization": {
+    "raw": [
+      "U+0041",
+      "U+0301",
+      "U+0307"
+    ],
+    "NFD": [
+      "U+0041",
+      "U+0301",
+      "U+0307"
+    ],
+    "NFC": [
+      "U+00C1",
+      "U+0307"
+    ],
+    "canonically_equivalent": true
+  },
+  "artifacts": {
+    "source_woff2": {
+      "file": "source.woff2",
+      "sha256": "498aa60e3d87e59a9d0c5d6dbbd81732786b722c92f5d02eb936f4152661ff8e",
+      "size": 528,
+      "flavor": "woff2",
+      "glyphs": [
+        ".notdef",
+        "A",
+        "Aacute",
+        "acutecomb",
+        "dotabovecomb"
+      ],
+      "cmap": {
+        "U+0041": "A",
+        "U+00C1": "Aacute",
+        "U+0301": "acutecomb",
+        "U+0307": "dotabovecomb"
+      },
+      "nfd_contract": {
+        "coverage": true,
+        "zero_advance_marks": true,
+        "acute_to_A": true,
+        "dot_to_acute": true
+      },
+      "nfd_pass": true,
+      "nfc_contract": {
+        "coverage": true,
+        "zero_advance_dot": true,
+        "dot_to_Aacute": true
+      },
+      "nfc_pass": true,
+      "semantics": {
+        "mark_to_base": [
+          {
+            "marks": [
+              {
+                "glyph": "acutecomb",
+                "class": 0,
+                "anchor": [
+                  100,
+                  0
+                ]
+              },
+              {
+                "glyph": "dotabovecomb",
+                "class": 0,
+                "anchor": [
+                  100,
+                  0
+                ]
+              }
+            ],
+            "bases": [
+              {
+                "glyph": "A",
+                "anchors": [
+                  [
+                    300,
+                    700
+                  ]
+                ]
+              },
+              {
+                "glyph": "Aacute",
+                "anchors": [
+                  [
+                    300,
+                    880
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "mark_to_mark": [
+          {
+            "mark1": [
+              {
+                "glyph": "acutecomb",
+                "class": 0,
+                "anchor": [
+                  100,
+                  0
+                ]
+              },
+              {
+                "glyph": "dotabovecomb",
+                "class": 0,
+                "anchor": [
+                  100,
+                  0
+                ]
+              }
+            ],
+            "mark2": [
+              {
+                "glyph": "acutecomb",
+                "anchors": [
+                  [
+                    100,
+                    220
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "nfd_only_woff2": {
+      "file": "nfd_only.woff2",
+      "sha256": "e1d54762761c710b6e2a5ca102716354d6d7805fcb953fd8c49195b6569dc53f",
+      "size": 464,
+      "flavor": "woff2",
+      "glyphs": [
+        ".notdef",
+        "A",
+        "acutecomb",
+        "uni0307"
+      ],
+      "cmap": {
+        "U+0041": "A",
+        "U+0301": "acutecomb",
+        "U+0307": "uni0307"
+      },
+      "nfd_contract": {
+        "coverage": true,
+        "zero_advance_marks": true,
+        "acute_to_A": true,
+        "dot_to_acute": true
+      },
+      "nfd_pass": true,
+      "nfc_contract": {
+        "coverage": false,
+        "zero_advance_dot": true,
+        "dot_to_Aacute": false
+      },
+      "nfc_pass": false,
+      "semantics": {
+        "mark_to_base": [
+          {
+            "marks": [
+              {
+                "glyph": "acutecomb",
+                "class": 0,
+                "anchor": [
+                  100,
+                  0
+                ]
+              },
+              {
+                "glyph": "uni0307",
+                "class": 0,
+                "anchor": [
+                  100,
+                  0
+                ]
+              }
+            ],
+            "bases": [
+              {
+                "glyph": "A",
+                "anchors": [
+                  [
+                    300,
+                    700
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "mark_to_mark": [
+          {
+            "mark1": [
+              {
+                "glyph": "acutecomb",
+                "class": 0,
+                "anchor": [
+                  100,
+                  0
+                ]
+              },
+              {
+                "glyph": "uni0307",
+                "class": 0,
+                "anchor": [
+                  100,
+                  0
+                ]
+              }
+            ],
+            "mark2": [
+              {
+                "glyph": "acutecomb",
+                "anchors": [
+                  [
+                    100,
+                    220
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "nfc_only_woff2": {
+      "file": "nfc_only.woff2",
+      "sha256": "2e9793f2f0b5af988ced4c0409351f6498d4f67a092402b5d559341513071518",
+      "size": 428,
+      "flavor": "woff2",
+      "glyphs": [
+        ".notdef",
+        "Aacute",
+        "uni0307"
+      ],
+      "cmap": {
+        "U+00C1": "Aacute",
+        "U+0307": "uni0307"
+      },
+      "nfd_contract": {
+        "coverage": false,
+        "zero_advance_marks": false,
+        "acute_to_A": false,
+        "dot_to_acute": false
+      },
+      "nfd_pass": false,
+      "nfc_contract": {
+        "coverage": true,
+        "zero_advance_dot": true,
+        "dot_to_Aacute": true
+      },
+      "nfc_pass": true,
+      "semantics": {
+        "mark_to_base": [
+          {
+            "marks": [
+              {
+                "glyph": "uni0307",
+                "class": 0,
+                "anchor": [
+                  100,
+                  0
+                ]
+              }
+            ],
+            "bases": [
+              {
+                "glyph": "Aacute",
+                "anchors": [
+                  [
+                    300,
+                    880
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "mark_to_mark": []
+      }
+    },
+    "dual_woff2": {
+      "file": "dual.woff2",
+      "sha256": "d23fe5c3a84dc2b320520e6c48a269fa6eabc9a732963ab5819bfbf307833795",
+      "size": 492,
+      "flavor": "woff2",
+      "glyphs": [
+        ".notdef",
+        "A",
+        "Aacute",
+        "acutecomb",
+        "uni0307"
+      ],
+      "cmap": {
+        "U+0041": "A",
+        "U+00C1": "Aacute",
+        "U+0301": "acutecomb",
+        "U+0307": "uni0307"
+      },
+      "nfd_contract": {
+        "coverage": true,
+        "zero_advance_marks": true,
+        "acute_to_A": true,
+        "dot_to_acute": true
+      },
+      "nfd_pass": true,
+      "nfc_contract": {
+        "coverage": true,
+        "zero_advance_dot": true,
+        "dot_to_Aacute": true
+      },
+      "nfc_pass": true,
+      "semantics": {
+        "mark_to_base": [
+          {
+            "marks": [
+              {
+                "glyph": "acutecomb",
+                "class": 0,
+                "anchor": [
+                  100,
+                  0
+                ]
+              },
+              {
+                "glyph": "uni0307",
+                "class": 0,
+                "anchor": [
+                  100,
+                  0
+                ]
+              }
+            ],
+            "bases": [
+              {
+                "glyph": "A",
+                "anchors": [
+                  [
+                    300,
+                    700
+                  ]
+                ]
+              },
+              {
+                "glyph": "Aacute",
+                "anchors": [
+                  [
+                    300,
+                    880
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "mark_to_mark": [
+          {
+            "mark1": [
+              {
+                "glyph": "acutecomb",
+                "class": 0,
+                "anchor": [
+                  100,
+                  0
+                ]
+              },
+              {
+                "glyph": "uni0307",
+                "class": 0,
+                "anchor": [
+                  100,
+                  0
+                ]
+              }
+            ],
+            "mark2": [
+              {
+                "glyph": "acutecomb",
+                "anchors": [
+                  [
+                    100,
+                    220
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "derived": {
+    "nfd_only_passes_nfd_fails_nfc": true,
+    "nfc_only_passes_nfc_fails_nfd": true,
+    "dual_passes_both": true,
+    "all_packages_parseable": true
+  },
+  "scope_limits": [
+    "Structural cmap/GPOS package audit only; no HarfBuzz/browser shaping was available.",
+    "Synthetic Latin normalization specimen; not production complex-script or canonical-combining-class stress evidence.",
+    "No guarantee that every product must support both NFC and NFD. The required contract depends on the product text-normalization boundary.",
+    "External FontBakery/Fontspector/OTS unavailable; no sanitizer PASS claimed."
+  ]
+}
