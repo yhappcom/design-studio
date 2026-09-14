@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1120" viewBox="0 0 1500 1120">
+  <rect width="1500" height="1120" fill="#f7f7f5"/>
+  <style>
+    .title{font:700 32px Arial,sans-serif;fill:#111}.h{font:700 21px Arial,sans-serif;fill:#111}.p{font:400 16px Arial,sans-serif;fill:#333}.m{font:400 15px 'Courier New',monospace;fill:#222}.s{font:400 13px Arial,sans-serif;fill:#555}.box{fill:#fff;stroke:#d8d8d4;stroke-width:1}
+  </style>
+  <text x="55" y="55" class="title">T004 — Numeral / Punctuation Measurement Summary</text>
+  <text x="55" y="84" class="p">Measured from the reproducible research TTF via FreeType. This SVG summarizes data; regenerate exact raster bitmaps with the T004 Python source.</text>
+
+  <text x="55" y="135" class="h">A. Source figure advances (UPM 1000)</text>
+  <rect x="55" y="155" width="1390" height="160" class="box"/>
+  <text x="80" y="195" class="m">digit          0    1    2    3    4    5    6    7    8    9</text>
+  <text x="80" y="230" class="m">proportional  600  480  570  560  600  560  580  560  590  580</text>
+  <text x="80" y="265" class="m">tabular       620  620  620  620  620  620  620  620  620  620</text>
+  <text x="80" y="295" class="s">Tabular conversion changes side-space/placement, not horizontal scale.</text>
+
+  <text x="55" y="365" class="h">B. Raw hinted advances for the 620-unit tabular set</text>
+  <rect x="55" y="385" width="1390" height="255" class="box"/>
+  <text x="80" y="425" class="m">14 ppem  no-hint         8.6875 × 10</text>
+  <text x="80" y="460" class="m">14 ppem  autohint-normal 8,9,9,9,8,9,9,9,9,9</text>
+  <text x="80" y="495" class="m">14 ppem  autohint-light  9 × 10</text>
+  <text x="80" y="535" class="m">20 ppem  no-hint         12.40625 × 10</text>
+  <text x="80" y="570" class="m">20 ppem  autohint-normal 12,12,12,12,12,12,13,12,12,12</text>
+  <text x="80" y="605" class="m">20 ppem  autohint-light  12 × 10</text>
+  <text x="775" y="425" class="m">48 ppem no-hint          29.765625 × 10</text>
+  <text x="775" y="460" class="m">48 ppem autohint-normal  29,30,30,29,29,30,30,30,29,30</text>
+  <text x="775" y="495" class="m">48 ppem autohint-light   30 × 10</text>
+  <text x="775" y="535" class="s">Result: equal source advances do not guarantee equal raw hinted advances.</text>
+  <text x="775" y="565" class="s">Client positioning/delta behavior remains a separate validation layer.</text>
+
+  <text x="55" y="695" class="h">C. Colon failure → redraw (strong pixels alpha ≥ 128)</text>
+  <rect x="55" y="715" width="675" height="190" class="box"/>
+  <text x="80" y="755" class="m">ppem        14      20      48</text>
+  <text x="80" y="790" class="m">v0           0       0       8</text>
+  <text x="80" y="825" class="m">v1           2       4      26</text>
+  <text x="80" y="865" class="s">v0 50-unit dots → v1 84-unit dots. v0 rejected for this compact system.</text>
+
+  <text x="770" y="695" class="h">D. Zero mark signal, autohint-light</text>
+  <rect x="770" y="715" width="675" height="190" class="box"/>
+  <text x="795" y="755" class="m">ppem              14      20      48</text>
+  <text x="795" y="790" class="m">slash strong Δ     +5      +8     +55</text>
+  <text x="795" y="825" class="m">dot strong Δ        0       0      +8</text>
+  <text x="795" y="865" class="s">Current dotted alternate rejected for compact use; slash kept as an alternate, not a default.</text>
+
+  <text x="55" y="965" class="h">Evidence classification</text>
+  <text x="55" y="1000" class="p">PRACTICE + CRITIQUE / compiled TrueType + FreeType transfer evidence.</text>
+  <text x="55" y="1032" class="p">OPEN: production curves, human recognition, HarfBuzz/browser feature application, CoreText/DirectWrite/Skia/device behavior, mixed-script fallback.</text>
+  <text x="55" y="1070" class="s">No production font selection or global zero policy is implied.</text>
+</svg>
