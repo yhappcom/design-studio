@@ -4,7 +4,7 @@
     .title{font:700 32px Arial,sans-serif;fill:#111}.h{font:700 21px Arial,sans-serif;fill:#111}.p{font:400 16px Arial,sans-serif;fill:#333}.m{font:400 15px 'Courier New',monospace;fill:#222}.s{font:400 13px Arial,sans-serif;fill:#555}.box{fill:#fff;stroke:#d8d8d4;stroke-width:1}
   </style>
   <text x="55" y="55" class="title">T004 — Numeral / Punctuation Measurement Summary</text>
-  <text x="55" y="84" class="p">Measured from the reproducible research TTF via FreeType. This SVG summarizes data; regenerate exact raster bitmaps with the T004 Python source.</text>
+  <text x="55" y="84" class="p">Measured from the T004 research TTF via FreeType. Canonical source reproduces the font and numeric measurements; contact-sheet bitmaps were local inspection evidence.</text>
 
   <text x="55" y="135" class="h">A. Source figure advances (UPM 1000)</text>
   <rect x="55" y="155" width="1390" height="160" class="box"/>
