@@ -16,7 +16,7 @@ Research belongs here when its primary question concerns:
 
 - **Layout, Spatial & Interaction** owns spatial grouping, responsive geometry, navigation, state/action semantics, feedback and interaction behavior. Color may encode those states but does not redefine their meaning silently.
 - **Typography / Type Design** owns glyph/font systems, text metrics, hierarchy and rendering. Color foreground roles and chart labels must be validated with realistic Type conditions.
-- **Web Design** owns complete website/web-app integration and real browser/device validation. Color supplies canonical palette, token, contrast, gamut, data-color and viewing-condition evidence and consumes Web implementation findings that confirm, limit or contradict it.
+- **Web Design** owns complete website/web-app integration and real browser/device validation. Color supplies canonical palette, token, contrast, gamut, data-color and viewing-condition evidence and consumes Web findings that confirm, limit or contradict it.
 
 These boundaries define canonical ownership, not limits on what Color may study. Cross-domain replication, method comparison, contradiction review, transfer testing, prerequisite learning and project-specific research are allowed when analytically useful.
 
@@ -28,7 +28,7 @@ Before new Color work:
 2. read `research/README.md`, this README, and relevant Color studies;
 3. inspect related Type, Layout/Interaction and Web evidence;
 4. identify reusable, uncertain, disputed or test-worthy findings;
-5. decide whether the new work is reuse, extension, replication, contradiction review, transfer validation, implementation validation or project-specific study;
+5. decide whether the work is reuse, extension, replication, contradiction review, transfer validation, implementation validation or project-specific study;
 6. record the result under `RELATED DOMAIN CHECK`;
 7. after completion, add `HANDOFFS TO OTHER SPECIALISTS` when useful;
 8. update `progress/COLOR_STATUS.md` before moving to a materially different block.
@@ -50,6 +50,7 @@ New Color studies use `C###` IDs:
 - `C001-web-color-user-override-resilience.md` — forced/user colors, semantic resilience, browser-transfer contract.
 - `C002-semantic-color-role-token-architecture.md` — base/semantic/component/context architecture, pair contracts, state/status separation, project-readiness method.
 - `C003-data-visualization-color-systems.md` — categorical/sequential/diverging scale semantics, numerical monotonicity practice, CVD/redundant coding, interaction/theme transfer and chart failure modes.
+- `C004-spectral-integration-observer-metamerism.md` — spectral tristimulus practice, spectrum scaling, constructed CIE 1931 metamer, CIE 1931↔1964 observer comparison, and dataset-provenance audit.
 
 Next new Color study ID is tracked in `progress/COLOR_STATUS.md`.
 
@@ -66,7 +67,7 @@ Research should distinguish as appropriate:
 - `CONTRADICTION`
 - `TRANSFER VALIDATION`
 
-A color topic is not considered project-ready merely because a palette, formula, chart, or token file exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
+A color topic is not project-ready merely because a palette, formula, chart, token file, or colorimetric calculation exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
 
 ## Status authority
 
