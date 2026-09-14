@@ -17,11 +17,11 @@ Status vocabulary:
 | Grid / alignment systems | IN STUDY | pending |
 | Color / luminance / contrast | IN STUDY | pending |
 | Typography as information architecture | IN STUDY | pending |
-| Type anatomy / metrics | IN STUDY | pending |
+| Type anatomy / metrics | PRACTICE | `research/001-type-as-system.md`; `research/002-metrics-spacing-optical-rhythm.md`; `type-design/exercises/001-ho-metrics-critique.md` |
 | Stroke / contrast / construction | IN STUDY | pending |
-| Bézier drawing discipline | IN STUDY | pending |
-| Optical correction | IN STUDY | pending |
-| Spacing before kerning | IN STUDY | pending |
+| Bézier drawing discipline | IN STUDY | first SVG exercise explicitly insufficient; see `type-design/exercises/001-ho-metrics-critique.md` |
+| Optical correction | PRACTICE | overshoot study in `research/002-metrics-spacing-optical-rhythm.md`; first control exercise critique pending measured redraw |
+| Spacing before kerning | PRACTICE | `research/002-metrics-spacing-optical-rhythm.md`; `type-design/exercises/001-ho-metrics-three-hypotheses.svg`; `type-design/exercises/001-ho-metrics-critique.md` |
 | Numerals / punctuation | NOT STARTED | — |
 | Interaction foundations | NOT STARTED | — |
 | Accessibility foundations | IN STUDY | pending |
