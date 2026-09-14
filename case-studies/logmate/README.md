@@ -1,0 +1,39 @@
+# Case Study — LogMate
+
+Status: ACTIVE / first studio case study.
+
+LogMate is used to test whether Design Studio methods survive a real product with dense operational data, multiple form factors, accessibility constraints, and strong identity ambitions.
+
+## What transfers to Design Studio
+
+Transferable lessons may include:
+
+- how to preserve design autonomy without ignoring product semantics;
+- how dense ledger/table structures change typography decisions;
+- how macro calm and micro precision can coexist;
+- how to distinguish product identity from domain cosplay;
+- how engineering contracts can bias design prematurely;
+- how custom typography should be evaluated against high-quality existing fonts;
+- how device, glare, text scaling, and orientation testing change static mockup decisions.
+
+## What does not transfer automatically
+
+Do **not** turn these LogMate-specific choices into universal studio rules:
+
+- Titanium Ledger visual language;
+- low-luminance single appearance;
+- aviation vocabulary;
+- Datum naming;
+- Index Line navigation;
+- any LogMate field taxonomy;
+- any particular palette, radius, grid, font, or material treatment.
+
+## Current major learning event
+
+The first bespoke typeface exploration exposed an important professional lesson: seeking originality before mastering rhythm, spacing, optical correction, type history, and production discipline can produce forms that are novel but not beautiful or authoritative.
+
+Therefore the LogMate Datum v0.x work is treated as pre-curriculum evidence. A future v1 may begin only after the relevant type-design gates are passed.
+
+## Evidence location
+
+The full product-specific design evidence remains in `yhappcom/logmate` on the design branch. This repository records only transferable study conclusions and later comparative case-study work.
