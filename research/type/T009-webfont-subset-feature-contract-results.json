@@ -1,0 +1,128 @@
+{
+  "environment": {
+    "fonttools": "4.63.0",
+    "external_tools": {
+      "fontbakery": null,
+      "fontspector": null,
+      "ots-sanitize": null
+    }
+  },
+  "artifacts": {
+    "source_ttf": {
+      "path": "source.ttf",
+      "sha256": "65ea30e38098d0cf661320b5a450fb71ccb90862011ed46c37d36c325b898f12",
+      "flavor": null,
+      "tables": ["GSUB", "GlyphOrder", "OS/2", "cmap", "glyf", "head", "hhea", "hmtx", "loca", "maxp", "name", "post"],
+      "glyphs": [".notdef", "space", "one", "two", "one.tnum", "two.tnum"],
+      "features": ["tnum"],
+      "gsub_outputs": ["one.tnum", "two.tnum"],
+      "tnum_present": true,
+      "tnum_output_count": 2,
+      "tnum_output_widths": [600, 600],
+      "tnum_equal_width": true,
+      "parseable": true,
+      "size": 1084
+    },
+    "source_woff2": {
+      "path": "source.woff2",
+      "sha256": "8d4a2439f2030a495532baa3630c87faf76466ad879b89294c465af23e28ae4f",
+      "flavor": "woff2",
+      "tables": ["GSUB", "GlyphOrder", "OS/2", "cmap", "glyf", "head", "hhea", "hmtx", "loca", "maxp", "name", "post"],
+      "glyphs": [".notdef", "space", "one", "two", "one.tnum", "two.tnum"],
+      "features": ["tnum"],
+      "gsub_outputs": ["one.tnum", "two.tnum"],
+      "tnum_present": true,
+      "tnum_output_count": 2,
+      "tnum_output_widths": [600, 600],
+      "tnum_equal_width": true,
+      "parseable": true,
+      "size": 440
+    },
+    "subset_preserve_ttf": {
+      "path": "subset-preserve.ttf",
+      "sha256": "b25a0efeb61fdff0db97d17d0f73ecb861bee480e844a81f524370e29d9a6760",
+      "flavor": null,
+      "tables": ["GSUB", "GlyphOrder", "OS/2", "cmap", "glyf", "head", "hhea", "hmtx", "loca", "maxp", "name", "post"],
+      "glyphs": [".notdef", "one", "two", "glyph00003", "glyph00004"],
+      "features": ["tnum"],
+      "gsub_outputs": ["glyph00003", "glyph00004"],
+      "tnum_present": true,
+      "tnum_output_count": 2,
+      "tnum_output_widths": [600, 600],
+      "tnum_equal_width": true,
+      "parseable": true,
+      "size": 1008
+    },
+    "subset_drop_layout_ttf": {
+      "path": "subset-drop-layout.ttf",
+      "sha256": "1931c200fcf0a925c61e052a517de1d26600ec7e21b97c3b9faf8caca3320d06",
+      "flavor": null,
+      "tables": ["GSUB", "GlyphOrder", "OS/2", "cmap", "glyf", "head", "hhea", "hmtx", "loca", "maxp", "name", "post"],
+      "glyphs": [".notdef", "one", "two"],
+      "features": [],
+      "gsub_outputs": [],
+      "tnum_present": false,
+      "tnum_output_count": 0,
+      "tnum_output_widths": [],
+      "tnum_equal_width": false,
+      "parseable": true,
+      "size": 908
+    },
+    "subset_preserve_woff2": {
+      "path": "subset-preserve.woff2",
+      "sha256": "d06373ccf1f4372daf9dfc2b3cfcdf438d20428a025b39eccde8c572797627c6",
+      "flavor": "woff2",
+      "tables": ["GSUB", "GlyphOrder", "OS/2", "cmap", "glyf", "head", "hhea", "hmtx", "loca", "maxp", "name", "post"],
+      "glyphs": [".notdef", "one", "two", "glyph00003", "glyph00004"],
+      "features": ["tnum"],
+      "gsub_outputs": ["glyph00003", "glyph00004"],
+      "tnum_present": true,
+      "tnum_output_count": 2,
+      "tnum_output_widths": [600, 600],
+      "tnum_equal_width": true,
+      "parseable": true,
+      "size": 436
+    },
+    "subset_drop_layout_woff2": {
+      "path": "subset-drop-layout.woff2",
+      "sha256": "cba00e7ede4952dc146fb3d34376bff6403864a390505b549b76f2c7fc7d6cbd",
+      "flavor": "woff2",
+      "tables": ["GSUB", "GlyphOrder", "OS/2", "cmap", "glyf", "head", "hhea", "hmtx", "loca", "maxp", "name", "post"],
+      "glyphs": [".notdef", "one", "two"],
+      "features": [],
+      "gsub_outputs": [],
+      "tnum_present": false,
+      "tnum_output_count": 0,
+      "tnum_output_widths": [],
+      "tnum_equal_width": false,
+      "parseable": true,
+      "size": 400
+    }
+  },
+  "feature_contract_pass": {
+    "source_ttf": true,
+    "source_woff2": true,
+    "subset_preserve_ttf": true,
+    "subset_drop_layout_ttf": false,
+    "subset_preserve_woff2": true,
+    "subset_drop_layout_woff2": false
+  },
+  "derived": {
+    "woff2_preserves_tnum": true,
+    "feature_aware_subset_preserves_tnum": true,
+    "layout_feature_drop_remains_parseable_but_breaks_contract": true,
+    "size_bytes": {
+      "source_ttf": 1084,
+      "source_woff2": 440,
+      "subset_preserve_ttf": 1008,
+      "subset_drop_layout_ttf": 908,
+      "subset_preserve_woff2": 436,
+      "subset_drop_layout_woff2": 400
+    }
+  },
+  "scope_limits": [
+    "Research-only six-glyph static TrueType; no variable axis or production family.",
+    "Table/metric inspection only; no HarfBuzz/browser shaping proof.",
+    "External FontBakery/Fontspector/OTS unavailable in this execution environment."
+  ]
+}
