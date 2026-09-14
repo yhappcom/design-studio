@@ -1,0 +1,148 @@
+{
+  "environment": {
+    "fonttools_version": "4.63.0",
+    "freetype_version": "2.13.2",
+    "upm": 1000,
+    "source_dependency": "T007-variable-interpolation-build-proof.py"
+  },
+  "baseline_from_T007_builder": {
+    "path": "baseline-VF.ttf",
+    "sha256": "0d48cf8af9ff25ceaf53f7505b450d8819fb10275078d696256257c433ca2c99",
+    "tables": ["GlyphOrder", "HVAR", "OS/2", "STAT", "cmap", "fvar", "glyf", "gvar", "head", "hhea", "hmtx", "loca", "maxp", "name", "post"],
+    "head_flags": 1,
+    "axis_records": [{"tag": "wght", "min": 300.0, "default": 300.0, "max": 700.0, "name_id": 256}],
+    "stat_axes": [{"tag": "wght", "name_id": 256, "ordering": 0}],
+    "name_ids": [1, 2, 3, 4, 6, 256],
+    "gvar_tuple_counts": {"H": 1, "O": 1, "n": 1, "o": 1},
+    "instance_checks": {
+      "300": {
+        "H": {"advance": 580, "lsb": 0, "xMin": 50, "lsb_equals_xMin": false},
+        "O": {"advance": 600, "lsb": 0, "xMin": 50, "lsb_equals_xMin": false},
+        "n": {"advance": 520, "lsb": 0, "xMin": 50, "lsb_equals_xMin": false},
+        "o": {"advance": 500, "lsb": 0, "xMin": 50, "lsb_equals_xMin": false}
+      },
+      "500": {
+        "H": {"advance": 610, "lsb": 0, "xMin": 50, "lsb_equals_xMin": false},
+        "O": {"advance": 610, "lsb": 0, "xMin": 50, "lsb_equals_xMin": false},
+        "n": {"advance": 550, "lsb": 0, "xMin": 50, "lsb_equals_xMin": false},
+        "o": {"advance": 520, "lsb": 0, "xMin": 50, "lsb_equals_xMin": false}
+      },
+      "700": {
+        "H": {"advance": 640, "lsb": 0, "xMin": 50, "lsb_equals_xMin": false},
+        "O": {"advance": 620, "lsb": 0, "xMin": 50, "lsb_equals_xMin": false},
+        "n": {"advance": 580, "lsb": 0, "xMin": 50, "lsb_equals_xMin": false},
+        "o": {"advance": 540, "lsb": 0, "xMin": 50, "lsb_equals_xMin": false}
+      }
+    },
+    "whole_font_checksum": "0xb1b0afba",
+    "failures": [
+      "head_bit1_not_set",
+      "instance_300_lsb_xmin_mismatch:H", "instance_300_lsb_xmin_mismatch:O", "instance_300_lsb_xmin_mismatch:n", "instance_300_lsb_xmin_mismatch:o",
+      "instance_500_lsb_xmin_mismatch:H", "instance_500_lsb_xmin_mismatch:O", "instance_500_lsb_xmin_mismatch:n", "instance_500_lsb_xmin_mismatch:o",
+      "instance_700_lsb_xmin_mismatch:H", "instance_700_lsb_xmin_mismatch:O", "instance_700_lsb_xmin_mismatch:n", "instance_700_lsb_xmin_mismatch:o"
+    ],
+    "warnings": [],
+    "pass": false
+  },
+  "revision": {
+    "master_lsb_normalization": {
+      "300": {
+        ".notdef": {"old_lsb": 0, "new_lsb": 50}, "H": {"old_lsb": 0, "new_lsb": 50}, "O": {"old_lsb": 0, "new_lsb": 50}, "n": {"old_lsb": 0, "new_lsb": 50}, "o": {"old_lsb": 0, "new_lsb": 50}
+      },
+      "700": {
+        ".notdef": {"old_lsb": 0, "new_lsb": 50}, "H": {"old_lsb": 0, "new_lsb": 50}, "O": {"old_lsb": 0, "new_lsb": 50}, "n": {"old_lsb": 0, "new_lsb": 50}, "o": {"old_lsb": 0, "new_lsb": 50}
+      }
+    },
+    "audit": {
+      "path": "revised-VF.ttf",
+      "sha256": "e3354d493cba74f03c857f022d529f8d03e7ae91c948beb79b32b126f1213119",
+      "tables": ["GlyphOrder", "HVAR", "OS/2", "STAT", "cmap", "fvar", "glyf", "gvar", "head", "hhea", "hmtx", "loca", "maxp", "name", "post"],
+      "head_flags": 3,
+      "axis_records": [{"tag": "wght", "min": 300.0, "default": 300.0, "max": 700.0, "name_id": 256}],
+      "stat_axes": [{"tag": "wght", "name_id": 256, "ordering": 0}],
+      "name_ids": [1, 2, 3, 4, 6, 256],
+      "gvar_tuple_counts": {"H": 1, "O": 1, "n": 1, "o": 1},
+      "instance_checks": {
+        "300": {
+          "H": {"advance": 580, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+          "O": {"advance": 600, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+          "n": {"advance": 520, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+          "o": {"advance": 500, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true}
+        },
+        "500": {
+          "H": {"advance": 610, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+          "O": {"advance": 610, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+          "n": {"advance": 550, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+          "o": {"advance": 520, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true}
+        },
+        "700": {
+          "H": {"advance": 640, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+          "O": {"advance": 620, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+          "n": {"advance": 580, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+          "o": {"advance": 540, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true}
+        }
+      },
+      "whole_font_checksum": "0xb1b0afba",
+      "failures": [],
+      "warnings": [],
+      "pass": true
+    }
+  },
+  "deliberate_STAT_removal": {
+    "path": "revised-no-STAT.ttf",
+    "sha256": "5f52f93f0bfd8a4d83def4e5f29b17d626b4ba77e6bc6835ada5f1936f01fdef",
+    "tables": ["GlyphOrder", "HVAR", "OS/2", "cmap", "fvar", "glyf", "gvar", "head", "hhea", "hmtx", "loca", "maxp", "name", "post"],
+    "head_flags": 3,
+    "axis_records": [{"tag": "wght", "min": 300.0, "default": 300.0, "max": 700.0, "name_id": 256}],
+    "stat_axes": [],
+    "name_ids": [1, 2, 3, 4, 6, 256],
+    "gvar_tuple_counts": {"H": 1, "O": 1, "n": 1, "o": 1},
+    "instance_checks": {
+      "300": {
+        "H": {"advance": 580, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+        "O": {"advance": 600, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+        "n": {"advance": 520, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+        "o": {"advance": 500, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true}
+      },
+      "500": {
+        "H": {"advance": 610, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+        "O": {"advance": 610, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+        "n": {"advance": 550, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+        "o": {"advance": 520, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true}
+      },
+      "700": {
+        "H": {"advance": 640, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+        "O": {"advance": 620, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+        "n": {"advance": 580, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true},
+        "o": {"advance": 540, "lsb": 50, "xMin": 50, "lsb_equals_xMin": true}
+      }
+    },
+    "whole_font_checksum": "0xb1b0afba",
+    "failures": ["missing_required_table:STAT"],
+    "warnings": [],
+    "pass": false
+  },
+  "reproducibility": {
+    "first_sha256": "e3354d493cba74f03c857f022d529f8d03e7ae91c948beb79b32b126f1213119",
+    "second_sha256": "e3354d493cba74f03c857f022d529f8d03e7ae91c948beb79b32b126f1213119",
+    "binary_identical": true,
+    "timestamp_control_probe": {
+      "requested_modified": 3800000000,
+      "automatic_recalc_saved_modified": 3872231860,
+      "automatic_recalc_overrode_requested": true,
+      "disabled_recalc_saved_modified": 3800000000,
+      "disabled_recalc_preserved_requested": true
+    }
+  },
+  "build_logs": {
+    "baseline_contains_incompatible_warning": false,
+    "revised_contains_incompatible_warning": false,
+    "revised2_contains_incompatible_warning": false
+  },
+  "scope_limits": [
+    "Research-only H/O/n/o family with one wght axis.",
+    "Studio-specific checker; not a replacement for FontBakery, OTS, OS/browser validation or foundry release engineering.",
+    "No hinting, GSUB/GPOS, components, marks, CFF2, avar, named instances or multi-axis family.",
+    "Name strings are research placeholders and are not a production naming system."
+  ]
+}
