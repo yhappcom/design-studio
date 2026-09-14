@@ -1,0 +1,75 @@
+<!doctype html><meta charset="utf-8">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font:16px Arial,sans-serif;background:#f4f6f8;color:#17212b}
+.demo{width:960px;margin:20px auto;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.case{position:relative;height:320px;background:white;border:1px solid #aeb7c0;overflow:hidden}
+.case h2{font-size:16px;margin:12px}
+.workspace{position:absolute;inset:48px 14px 14px;border:1px solid #ccd3da;background:#fff}
+.layer{position:absolute;background:#fff;border:1px solid #6f7d89;box-shadow:0 8px 22px rgb(0 0 0/.16);z-index:10}
+button,input{font:inherit}
+button{height:38px;padding:0 12px}
+.bgAction,.fgAction{position:absolute}
+.pop{left:110px;top:92px;width:250px;height:150px;padding:16px}
+.pop .fgAction{left:18px;top:90px}
+.popbg{left:114px;top:134px}
+.sticky{left:14px;right:14px;top:48px;height:58px;padding:9px 12px}
+.sticky .fgAction{left:300px;top:9px}
+.stickybg{left:300px;top:9px}
+.sheetBackdrop{position:absolute;inset:48px 14px 14px;background:rgb(0 0 0/.18);z-index:9}
+.sheet{left:14px;right:14px;bottom:14px;height:165px;padding:16px}
+.sheet .fgAction{left:20px;top:105px}
+.sheet .cancel{position:absolute;left:130px;top:105px}
+.sheetbg{left:20px;top:198px}
+.bgInput{position:absolute;left:20px;top:235px;width:180px;height:34px}
+.broken .layer,.broken .sheetBackdrop{pointer-events:none}
+.status{position:absolute;bottom:4px;left:14px;font:12px monospace}
+.layer:focus-within{outline:3px solid #1d4ed8;outline-offset:-3px}
+</style>
+<div class=demo>
+<section class="case broken" id=popBroken>
+<h2>Popover — broken</h2><div class=workspace><button class="bgAction popbg">Delete record</button></div>
+<div class="layer pop" id=pbLayer><strong>Record actions</strong><p>Foreground panel</p><button class=fgAction>Open details</button></div>
+</section>
+<section class="case revised" id=popRevised>
+<h2>Popover — revised</h2><div class=workspace><button class="bgAction popbg">Delete record</button></div>
+<div class="layer pop" id=prLayer><strong>Record actions</strong><p>Foreground panel</p><button class=fgAction>Open details</button></div>
+</section>
+
+<section class="case broken" id=stickyBroken>
+<h2>Sticky header — broken</h2><div class=workspace><button class="bgAction stickybg">Row action</button></div>
+<div class="layer sticky" id=sbLayer><strong>Sticky controls</strong><button class=fgAction>Filter</button></div>
+</section>
+<section class="case revised" id=stickyRevised>
+<h2>Sticky header — revised</h2><div class=workspace><button class="bgAction stickybg">Row action</button></div>
+<div class="layer sticky" id=srLayer><strong>Sticky controls</strong><button class=fgAction>Filter</button></div>
+</section>
+
+<section class="case broken" id=sheetBroken>
+<h2>Modal sheet — broken</h2><div class="workspace sheetBg"><button class="bgAction sheetbg">Commit background</button><input class=bgInput value="Background field"></div>
+<div class=sheetBackdrop></div><div class="layer sheet" id=shbLayer role=dialog aria-modal=true aria-label=Confirm>
+<strong>Confirm transfer</strong><p>This visually covers the editor.</p><button class=fgAction>Confirm</button><button class=cancel>Cancel</button></div>
+</section>
+<section class="case revised" id=sheetRevised>
+<h2>Modal sheet — revised</h2><div class="workspace sheetBg"><button class="bgAction sheetbg">Commit background</button><input class=bgInput value="Background field"></div>
+<div class=sheetBackdrop></div><div class="layer sheet" id=shrLayer role=dialog aria-modal=true aria-label=Confirm>
+<strong>Confirm transfer</strong><p>This visually covers the editor.</p><button class=fgAction>Confirm</button><button class=cancel>Cancel</button></div>
+</section>
+</div>
+<script>
+for(const c of document.querySelectorAll('.case')){
+ c.dataset.bg='0';c.dataset.fg='0';
+ c.querySelector('.bgAction').addEventListener('click',()=>c.dataset.bg=String(+c.dataset.bg+1));
+ c.querySelector('.fgAction').addEventListener('click',()=>c.dataset.fg=String(+c.dataset.fg+1));
+}
+const sr=sheetRevised, bg=sr.querySelector('.sheetBg'), dlg=sr.querySelector('.sheet');
+bg.inert=true;
+const fs=[...dlg.querySelectorAll('button')];
+dlg.addEventListener('keydown',e=>{
+ if(e.key==='Tab'){
+  const i=fs.indexOf(document.activeElement);
+  if(!e.shiftKey&&i===fs.length-1){e.preventDefault();fs[0].focus()}
+  else if(e.shiftKey&&i===0){e.preventDefault();fs.at(-1).focus()}
+ }
+});
+</script>
