@@ -10,6 +10,7 @@ Research belongs here when its primary question concerns:
 - CIE colorimetry, observer models, illuminants, XYZ, Lab/LCh, Oklab/OkLCh;
 - color difference, gamut, gamut mapping, wide-gamut and HDR-related color questions;
 - ICC/color management, white points, chromatic adaptation and device reproduction;
+- spectral data provenance, spectral integration and device/measurement color questions;
 - palette/ramp systems, semantic color architecture, brand-color behavior, data-visualization color, environmental validation and color accessibility evidence.
 
 ## Relationship with other disciplines
@@ -76,6 +77,9 @@ New Color studies use `C###` IDs:
 - `C011-forced-colors-semantic-data-specimen.html` — matched HTML/SVG failure/revision specimen.
 - `C011-forced-colors-semantic-data-playwright.py` — Chromium forced-colors + raster verification harness.
 - `C011-forced-colors-semantic-data-results.json` — 21-assertion measured state/SVG/focus/opt-out result summary.
+- `C012-spectral-provenance-sampling-resolution.md` — current CIE 1931 checksum reconstruction, full 360–830 nm synthetic SPD integration, 5 nm phase/spectral-bandwidth stress, 1964 current-vs-stale provenance separation, and unresolved CIE 2006 LMS identity boundary.
+- `C012-spectral-provenance-sampling-resolution.py` — reproducible checksum-gated CIE 1931 full-spectrum/sampling harness; CIE datasets are not redistributed in the repository.
+- `C012-spectral-provenance-sampling-results.json` — measured provenance ledger and broad/narrow synthetic SPD sampling diagnostics.
 
 Next new Color study ID is tracked in `progress/COLOR_STATUS.md`.
 
@@ -92,9 +96,9 @@ Research should distinguish as appropriate:
 - `CONTRADICTION`
 - `TRANSFER VALIDATION`
 
-A color topic is not project-ready merely because a palette, formula, chart, token file, profile transform, screenshot statistic, simulation, raster metric or colorimetric calculation exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
+A color topic is not project-ready merely because a palette, formula, chart, token file, profile transform, screenshot statistic, simulation, raster metric, spectral checksum, sampling diagnostic, or colorimetric calculation exists. It must be possible to state when the knowledge applies, what decision it changes, what trade-offs/failure modes exist, which peer evidence is required, and how the result will be validated.
 
-Computational salience/clutter proxies, CVD simulations, screenshot-pixel/raster diagnostics, unbounded float round trips, profile-to-profile comparisons and forced-colors emulation are not human-task, perceived-clutter, real-observer accessibility, WCAG-conformance, OS-wide high-contrast, device-match or physical-appearance evidence unless the relevant method explicitly establishes that role.
+Computational salience/clutter proxies, CVD simulations, screenshot-pixel/raster diagnostics, unbounded float round trips, profile-to-profile comparisons, forced-colors emulation and mathematical spectral-subsampling tests are not human-task, perceived-clutter, real-observer accessibility, WCAG-conformance, OS-wide high-contrast, instrument-performance, device-match or physical-appearance evidence unless the relevant method explicitly establishes that role.
 
 ## Status authority
 
