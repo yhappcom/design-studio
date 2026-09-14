@@ -34,42 +34,45 @@ T-series:
 - `T010-variable-webfont-axis-contract.md` — WOFF2/subset variable-axis semantic contract; deliberate `avar` loss changes the same user-axis value.
 - `T011-layout-multiscript-release-contract.md` — GPOS `kern`, language-bound GSUB `locl`, multi-script cmap and line-metric package contract.
 - `T012-mark-mkmk-anchor-release-contract.md` — GPOS `mark`/`mkmk`, combining-mark advances, exact anchor-chain preservation, adversarial partial feature loss, and post-subset glyph-identity checker revision.
+- `T013-normalization-sensitive-subset-contract.md` — Unicode NFC/NFD release contract; canonically equivalent strings can require different cmap/subset closure and different valid attachment paths.
 
 T-series reproducibility scripts and measured JSON live beside the studies. Generated experimental font binaries remain local outputs and are not product assets or canonical source authority.
 
 ## Current production model
 
-T006–T012 establish a progressively stricter chain:
+T006–T013 establish a progressively stricter chain:
 
 1. **source/design validity** — contours, correspondence, spacing/metric intent;
 2. **build/interpolation compatibility** — topology, variation coverage, intermediate behavior;
 3. **binary/spec sanity** — required tables, axis/name/STAT/head/metric integrity;
 4. **distribution transformation contract** — exact package/subset preserves required characters, GSUB/GPOS behavior, script/langsys bindings, non-cmap closure, metrics, variable-axis semantics and required attachment anchors;
-5. **attachment-chain completeness** — for combining marks, retaining one stage (`mark` or `mkmk`) does not certify the entire `base → mark → mark` path;
-6. **target shaping/rendering/layout integration** — exact shipped artifact in browser/OS/app;
-7. **human/product validation**.
+5. **normalization-form closure** — the codepoint representation that can actually reach shaping must be covered; canonical equivalence does not imply identical subset closure;
+6. **attachment-chain completeness** — for combining marks, retaining one stage (`mark` or `mkmk`) does not certify the entire `base → mark → mark` path;
+7. **target shaping/rendering/layout integration** — exact shipped artifact in browser/OS/app;
+8. **human/product validation**.
 
-T012 materially extends the release model:
+T013 extends the release model to:
 
-`character closure ≠ metric identity ≠ feature binding ≠ anchor identity ≠ complete attachment chain ≠ shaping/rendering integration`.
+`character closure ≠ normalization-form closure ≠ metric identity ≠ feature binding ≠ anchor identity ≠ complete attachment chain ≠ shaping/rendering integration`.
 
-A parseable subset can retain all requested combining-mark codepoints and zero advances while losing either the base attachment or stacked-mark attachment stage.
+A parseable subset can be correct for one Unicode normalization form and fail the canonically equivalent form. The correct release contract therefore depends on the product's explicit text-normalization boundary.
 
 ## Highest-value next directions
 
-1. **T013 — external broad QA + sanitizer integration** when FontBakery/Fontspector/OTS or equivalent executables become available; classify universal/spec/vendor-policy checks separately from studio semantic assertions.
-2. HarfBuzz/browser shaping of T011/T012 exact artifacts, including normalization-sensitive combining-mark sequences.
+1. **T014 — external broad QA + sanitizer integration** when FontBakery/Fontspector/OTS or equivalent executables become available; classify universal/spec/vendor-policy checks separately from studio semantic assertions.
+2. HarfBuzz/browser shaping of T011–T013 exact artifacts, including normalization-sensitive combining-mark sequences and fallback behavior.
 3. Extend attachment QA into ligature marks, multiple mark classes, cursive attachment and production complex scripts.
-4. Vertical-writing release semantics: `vhea`, `vmtx`, `vert`, `vrt2` where project relevance justifies it.
-5. Broaden variable-family compatibility: three masters, multiple axes, richer `avar`, components/diacritics, variable anchors, overlap strategy and CFF2.
-6. Browser/platform transfer of T001–T012 with substantive Web/live target stack.
-7. Type→Layout regression using exact shipped artifacts near known thresholds.
-8. Type→Color transfer with exact packaged artifact/axis/render condition pinned.
-9. Broader family/design proof and human reading/recognition evidence after target rendering/layout stabilizes.
+4. Test normalization/subset transfer on production-relevant Hangul and additional scripts rather than assuming the Latin specimen generalizes.
+5. Vertical-writing release semantics: `vhea`, `vmtx`, `vert`, `vrt2` where project relevance justifies it.
+6. Broaden variable-family compatibility: three masters, multiple axes, richer `avar`, components/diacritics, variable anchors, overlap strategy and CFF2.
+7. Browser/platform transfer of T001–T013 with substantive Web/live target stack.
+8. Type→Layout regression using exact shipped artifacts near known thresholds.
+9. Type→Color transfer with exact packaged artifact/axis/render condition pinned.
+10. Broader family/design proof and human reading/recognition evidence after target rendering/layout stabilizes.
 
 ## Tool availability checkpoint
 
-At the T012 checkpoint, `fontbakery`, `fontspector`, `ots-sanitize`, and `hb-shape` were unavailable. A FontBakery installation attempt could not reach the package index because network name resolution was unavailable. No external QA or shaping PASS is claimed.
+At the T013 checkpoint, `fontbakery`, `fontspector`, `ots-sanitize`, and `hb-shape` were unavailable. No external QA, sanitizer or shaping PASS is claimed.
 
 Foundation remains **NOT PASSED**.
 
