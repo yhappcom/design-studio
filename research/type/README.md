@@ -35,46 +35,47 @@ T-series:
 - `T011-layout-multiscript-release-contract.md`
 - `T012-mark-mkmk-anchor-release-contract.md`
 - `T013-normalization-sensitive-subset-contract.md`
-- `T014-hangul-normalization-subset-contract.md` — Hangul NFC/NFD package transfer; precomposed-only and Jamo-only WOFF2 packages each fail the canonically equivalent opposite form, while a dual package covers both; deterministic rebuild proof included.
+- `T014-hangul-normalization-subset-contract.md` — Hangul NFC/NFD structural package transfer; precomposed-only and Jamo-only WOFF2 packages have different `cmap` closure; deterministic rebuild proof included.
+- `T015-hangul-browser-canonical-cluster-transfer.md` — Chromium transfer of T014: deliberately asymmetric NFC-only/NFD-only/dual WOFF2 fonts render canonically equivalent Hangul identically in the bounded browser matrix, showing structural closure and target rendering are separate gates.
 
-T-series reproducibility scripts and measured JSON live beside the studies. Generated experimental font binaries remain local outputs and are not product assets or canonical source authority.
+T-series reproducibility scripts and measured JSON live beside the studies. Generated experimental font binaries and screenshots remain runtime outputs and are not product assets or canonical source authority.
 
 ## Current production model
 
-T006–T014 establish a progressively stricter chain:
+T006–T015 establish a progressively stricter chain:
 
 1. **source/design validity** — contours, correspondence, spacing/metric intent;
 2. **build/interpolation compatibility** — topology, variation coverage, intermediate behavior;
 3. **binary/spec sanity** — required tables, axis/name/STAT/head/metric integrity;
 4. **distribution transformation contract** — exact package/subset preserves required characters, GSUB/GPOS behavior, script/langsys bindings, non-cmap closure, metrics, variable-axis semantics and attachment anchors;
-5. **normalization-form closure** — the codepoint representation that can actually reach shaping must be covered; canonical equivalence does not imply identical subset closure;
-6. **script-specific normalization transfer** — T014 confirms the normalization problem on Hangul's algorithmic syllable↔conjoining-Jamo decomposition rather than only Latin combining marks;
-7. **attachment-chain completeness** — retaining one stage does not certify an entire attachment path;
-8. **target shaping/rendering/layout integration** — exact shipped artifact in browser/OS/app;
+5. **normalization-form / script-specific structural closure** — canonically equivalent text can have different codepoint and `cmap` closure;
+6. **target cluster matching/shaping** — T015 proves that different structural closure does not automatically produce different browser output: Chromium resolved canonically equivalent Hangul across deliberately asymmetric packages in the bounded test;
+7. **fallback/glyph selection and attachment-chain completeness** — retained codepoints/features do not by themselves certify the complete shaping path;
+8. **target rendering/layout integration** — exact shipped artifact in browser/OS/app;
 9. **human/product validation**.
 
 Current synthesis:
 
-`content normalization boundary → required codepoint representation → subset closure → shaping/fallback → layout/rendering → human/product result`.
+`content representation → binary cmap/feature closure → target cluster matching/shaping → fallback/glyph selection → rendered geometry/raster → layout/color consequence → human/product result`.
 
-A parseable package can be correct for one Unicode representation and fail a canonically equivalent representation. The required closure depends on the real product text-normalization contract.
+T014 remains valid as a structural package audit. T015 limits its runtime interpretation: **different `cmap` closure is not automatically a browser rendering failure** when canonical-equivalent matching/shaping can bridge the representations. Conversely, one Chromium result is not a cross-platform package-minimization PASS.
 
 ## Highest-value next directions
 
-1. **T015 — external broad QA + sanitizer integration** when FontBakery/Fontspector/OTS or equivalent executables become available; separate universal/spec/vendor-policy checks from studio semantic assertions.
-2. HarfBuzz/browser shaping of T011–T014 exact artifacts, especially Hangul NFC/NFD, combining marks and fallback behavior.
-3. Production Korean transfer: real conjoining-Jamo coverage/shaping, full Hangul subset strategy, Korean line breaking and mixed-script layout.
-4. Extend attachment QA into ligature marks, multiple mark classes, cursive attachment and complex scripts.
-5. Vertical-writing release semantics: `vhea`, `vmtx`, `vert`, `vrt2` where project relevance justifies it.
-6. Broaden variable-family compatibility: three masters, multiple axes, richer `avar`, components/diacritics, variable anchors, overlap strategy and CFF2.
-7. Browser/platform transfer of T001–T014 with substantive Web/live target stack.
+1. **T016 — external broad QA + sanitizer integration** when FontBakery/Fontspector/OTS or equivalent executables become available; separate universal/spec/vendor-policy checks from studio semantic assertions.
+2. Direct HarfBuzz CLI/`uharfbuzz` glyph/cluster tracing of T011–T015 artifacts when available, then Firefox/Safari/Windows/macOS/Android/Flutter replication of T015.
+3. Production Korean transfer: real conjoining-Jamo design/shaping, larger Hangul coverage, Korean line breaking and mixed-script line boxes using an exact production-relevant font.
+4. Real `@font-face` network loading/failure/`font-display` and browser zoom transfer, preferably through substantive Web/live-product work.
+5. Extend attachment QA into ligature marks, multiple mark classes, cursive attachment and production complex scripts.
+6. Study vertical-writing release semantics: `vhea`, `vmtx`, `vert`, `vrt2` where project relevance justifies it.
+7. Broaden variable-family compatibility: three masters, multiple axes, richer `avar`, components/diacritics, variable anchors, overlap strategy and CFF2.
 8. Type→Layout regression using exact shipped artifacts near known thresholds.
-9. Type→Color transfer with exact packaged artifact/axis/render condition pinned.
+9. Type→Color transfer with exact package/build/axis/render condition pinned.
 10. Broader family/design proof and human reading/recognition evidence after target rendering/layout stabilizes.
 
 ## Tool availability checkpoint
 
-At T014, `fontbakery`, `fontspector`, `ots-sanitize`, and `hb-shape` were unavailable. No external QA, sanitizer or shaping PASS is claimed. `fontTools 4.63.0` and Python Unicode data `15.1.0` were used for the bounded experiment.
+At T015, `fontbakery`, `fontspector`, `ots-sanitize`, `hb-shape`, and Python `uharfbuzz` were unavailable. Chromium `144.0.7559.96`, Playwright, `fontTools 4.63.0`, Python Unicode data `15.1.0`, and local `NanumGothic` were available. T015 therefore adds bounded Chromium shaping/rendering transfer, **not** external sanitizer or direct HarfBuzz PASS.
 
 Foundation remains **NOT PASSED**.
 
