@@ -61,6 +61,21 @@ https://www.cie.co.at/publications/colorimetry-part-3-cie-tristimulus-values-2
 
 Why it matters: normative calculation procedure for deriving tristimulus values from spectral colour-stimulus data, including sampling-range and interval requirements.
 
+### ISO/CIE 11664-4:2019 — CIE 1976 L*a*b* colour space
+https://www.cie.co.at/publications/colorimetry-part-4-cie-1976-lab-colour-space-1
+
+Why it matters: normative CIELAB coordinate definition, lightness/chroma/hue correlates, and baseline Euclidean colour-difference framework.
+
+### ISO/CIE 11664-6:2022 — CIEDE2000 Colour-Difference Formula
+https://www.cie.co.at/publications/colorimetry-part-6-ciede2000-colour-difference-formula-1
+
+Why it matters: current CIE/ISO definition of CIEDE2000, correcting known non-uniformity in simple CIELAB distance with lightness, chroma, hue, and interaction terms under specified reference conditions.
+
+### CIE 230:2019 — Validity of Formulae for Predicting Small Colour Differences
+https://www.cie.co.at/publications/validity-formulae-predicting-small-colour-differences
+
+Why it matters: compares multiple colour-difference formulae against visual datasets, including small differences, and reinforces that formula validity is empirical and condition-dependent.
+
 ### CIE 170-1:2006 — Fundamental chromaticity diagram with physiological axes, Part 1
 https://www.cie.co.at/publications/fundamental-chromaticity-diagram-physiological-axes-part-1
 
@@ -116,6 +131,21 @@ Why it matters: publishes the linearized Bradford D65→D50 matrix used for ICC 
 https://www.color.org/whyd50/
 
 Study use: authoritative explanation of the D50 profile connection space, adopted-white normalization, and the role of the `chad` tag in display profiles.
+
+### W3C — CSS Color Module Level 4
+https://www.w3.org/TR/css-color-4/
+
+Why it matters: current web-platform definition of sRGB, linear-light RGB, Display P3, CIE Lab/LCH, Oklab/OkLCh, XYZ conversion paths, and modern CSS colour syntax. Use as platform specification, not as a replacement for CIE measurement standards.
+
+### Björn Ottosson — Oklab primary author documentation
+https://bottosson.github.io/posts/oklab/
+
+Study use: primary derivation, matrices, intended image-processing properties, and design rationale for Oklab. Oklab is useful for modern digital authoring but is not itself a CIE standard.
+
+### Sharma, Wu, Dalal — CIEDE2000 implementation notes and test data
+https://hajim.rochester.edu/ece/sites/gsharma/ciede2000/
+
+Study use: peer-reviewed implementation guidance and supplemental test data for detecting common CIEDE2000 coding errors. It is not an official CIE implementation and must be identified as such.
 
 ## Product / interaction / visual design
 
