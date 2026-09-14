@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>C009 Type→Color Raster Transfer</title>
+<style>
+:root{--bg:#fff;--fg:#767676}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,sans-serif}.wrap{padding:24px}.sample{display:block;width:max-content;max-width:none;white-space:nowrap;background:var(--bg);color:var(--fg);padding:8px 10px;margin:10px 0;line-height:1.2}.t14{font-size:14px}.inter-thin{font-family:Inter,sans-serif;font-weight:100}.inter-regular{font-family:Inter,sans-serif;font-weight:400}.inter-semibold{font-family:Inter,sans-serif;font-weight:600}.ko-noto{font-family:Inter,"Noto Sans CJK KR",sans-serif;font-weight:400}.ko-nanum{font-family:Inter,NanumGothic,sans-serif;font-weight:400}.nums{font-family:Inter,sans-serif;font-weight:400;font-variant-numeric:tabular-nums}.wrapbox{width:365px;white-space:normal}.meta{position:absolute;left:-10000px;top:-10000px}
+</style></head>
+<body><div class="wrap">
+<div id="latin-thin" class="sample t14 inter-thin">Monthly income $2,184.35</div>
+<div id="latin-regular" class="sample t14 inter-regular">Monthly income $2,184.35</div>
+<div id="latin-semibold" class="sample t14 inter-semibold">Monthly income $2,184.35</div>
+<div id="ko-noto" class="sample t14 ko-noto">국제 분산 커버드콜 수익전략 포트폴리오 / $11,242 +1.8%</div>
+<div id="ko-nanum" class="sample t14 ko-nanum">국제 분산 커버드콜 수익전략 포트폴리오 / $11,242 +1.8%</div>
+<div id="nums" class="sample t14 nums">1,111.11 8,888.88 +12.4%</div>
+<div id="wrap-noto" class="sample t14 ko-noto wrapbox">국제 분산 커버드콜 수익전략 포트폴리오 / $11,242 +1.8%</div>
+<div id="wrap-nanum" class="sample t14 ko-nanum wrapbox">국제 분산 커버드콜 수익전략 포트폴리오 / $11,242 +1.8%</div>
+</div>
+<script>
+window.setColors=(bg,fg)=>{document.documentElement.style.setProperty('--bg',bg);document.documentElement.style.setProperty('--fg',fg)};
+window.metrics=()=>Object.fromEntries([...document.querySelectorAll('.sample')].map(el=>{const r=el.getBoundingClientRect();const cs=getComputedStyle(el);return [el.id,{x:r.x,y:r.y,width:r.width,height:r.height,fontFamily:cs.fontFamily,fontWeight:cs.fontWeight,fontSize:cs.fontSize,lineHeight:cs.lineHeight}]}));
+</script></body></html>
