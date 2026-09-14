@@ -13,12 +13,14 @@ Research belongs here when its primary question concerns:
 - typography as information architecture and semantic text-role systems;
 - type production, rendering, licensing and font engineering.
 
-## Boundary with other disciplines
+## Relationship with other disciplines
 
-- **Layout, Spatial & Interaction** owns screen-level geometry, grouping, responsive recomposition, navigation, state, feedback and interaction behavior. Type may study how text behaves inside those contexts but does not own them.
-- **Color** owns colorimetry, color perception, gamut, contrast/color systems and color-management questions. Type may use measured Color evidence when legibility depends on foreground/background behavior.
+- **Layout, Spatial & Interaction** is the canonical owner for screen geometry, grouping, responsive recomposition, navigation, state, feedback and interaction behavior.
+- **Color** is the canonical owner for colorimetry, color perception, gamut, contrast/color systems and color management.
 
-When a study crosses boundaries, keep one canonical owner and link to related research rather than duplicating the same knowledge.
+These boundaries define canonical ownership, not limits on what Type may study. Type may directly investigate Color or Layout/Interaction material for realistic typography validation, replication, method comparison, contradiction review, transfer testing, prerequisite learning or project-specific work.
+
+When doing overlapping research, cite the peer canonical study and state why the overlap is useful. Store ordinary cross-domain verification in the Type specialist's writable area rather than editing peer files.
 
 ## Mandatory cross-domain scan
 
@@ -27,9 +29,11 @@ Before new Type work:
 1. read `progress/STATUS.md` and all specialist status files;
 2. read this README and relevant Type studies;
 3. search Color and Layout/Interaction research for related evidence;
-4. identify what can be reused and what dependency remains;
-5. verify the question is not already being studied elsewhere;
+4. identify what can be reused, independently verified, challenged or extended;
+5. identify dependencies and collaboration opportunities;
 6. record the result under `RELATED DOMAIN CHECK` in the new study.
+
+Existing work elsewhere is not an automatic reason to stop. Decide whether to reuse it or intentionally repeat/extend it, and document why.
 
 After completion, add `HANDOFFS TO OTHER SPECIALISTS` when the Type result can materially help Color or Layout/Interaction.
 
@@ -46,3 +50,5 @@ Existing study numbers remain stable. New Type studies use `T###` IDs.
 ## Status authority
 
 Type progress is tracked in `progress/TYPE_STATUS.md`. The specialist does not edit global `progress/STATUS.md` during ordinary work.
+
+Current operating state: **ACTIVE — research may resume immediately**.
