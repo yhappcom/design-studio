@@ -1,0 +1,50 @@
+{
+  "study": "T021",
+  "upm": 1000,
+  "zones": {"baseline": 0, "xHeight": 500, "capHeight": 700, "roundOvershoot": 12},
+  "kerningEnabled": false,
+  "hypotheses": {
+    "A_compact_geometric": {
+      "intent": "compact, mechanically regular, low sidebearing variance",
+      "stem": 90,
+      "glyphs": {
+        "H": {"advance": 600, "lsb": 55, "rsb": 55},
+        "O": {"advance": 610, "lsb": 45, "rsb": 45},
+        "n": {"advance": 520, "lsb": 48, "rsb": 42},
+        "o": {"advance": 530, "lsb": 42, "rsb": 42},
+        "A": {"advance": 590, "lsb": 38, "rsb": 38},
+        "V": {"advance": 590, "lsb": 36, "rsb": 36},
+        "T": {"advance": 560, "lsb": 30, "rsb": 30}
+      }
+    },
+    "B_balanced_text": {
+      "intent": "moderate width, differentiated straight/round spacing, text-oriented rhythm",
+      "stem": 85,
+      "glyphs": {
+        "H": {"advance": 620, "lsb": 65, "rsb": 65},
+        "O": {"advance": 620, "lsb": 55, "rsb": 55},
+        "n": {"advance": 540, "lsb": 58, "rsb": 52},
+        "o": {"advance": 540, "lsb": 50, "rsb": 50},
+        "A": {"advance": 610, "lsb": 45, "rsb": 45},
+        "V": {"advance": 610, "lsb": 43, "rsb": 43},
+        "T": {"advance": 580, "lsb": 38, "rsb": 38}
+      }
+    },
+    "C_open_screen": {
+      "intent": "open counters and generous spacing for small-screen robustness",
+      "stem": 82,
+      "glyphs": {
+        "H": {"advance": 650, "lsb": 75, "rsb": 75},
+        "O": {"advance": 650, "lsb": 65, "rsb": 65},
+        "n": {"advance": 565, "lsb": 68, "rsb": 62},
+        "o": {"advance": 570, "lsb": 60, "rsb": 60},
+        "A": {"advance": 635, "lsb": 52, "rsb": 52},
+        "V": {"advance": 635, "lsb": 50, "rsb": 50},
+        "T": {"advance": 610, "lsb": 46, "rsb": 46}
+      }
+    }
+  },
+  "controlStrings": ["HHOO HHOH OOHO HOHOHO", "nn oo nono noon onno", "HOnonO HnOoH", "AVAVA TOTO LALO", "00112233445566778899", "010101 808080 111888", "1+05 12+40 999+59"],
+  "proofSizesPx": [14, 17, 24],
+  "evidenceBoundary": "Declared design metrics and deterministic vector specimen only. No browser raster, hinting, human preference, or production-font PASS is claimed."
+}
