@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>W008 Integrated Web Foundation Capstone</title>
+<style>
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45;color-scheme:light dark}
+*{box-sizing:border-box} body{margin:0} a,button,input,select{font:inherit} a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid currentColor;outline-offset:3px}
+.shell{display:grid;grid-template-columns:minmax(12rem,16rem) minmax(0,1fr);min-height:100vh}.sidebar{border-inline-end:1px solid;padding:1rem}.sidebar nav{display:grid;gap:.5rem}.sidebar a{display:block;padding:.55rem .7rem;border-radius:.4rem;text-decoration:none}.sidebar a[aria-current="page"]{font-weight:700;border:1px solid}
+main{min-width:0;padding:clamp(1rem,3vw,2rem)}.crumbs{font-size:.9rem;margin-block-end:1rem}.crumbs a{margin-inline-end:.4rem}.heading-row{display:flex;gap:1rem;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}.status{border:1px solid;padding:.4rem .65rem;border-radius:.4rem;max-width:28rem}.controls{display:grid;grid-template-columns:minmax(12rem,1fr) repeat(2,minmax(8rem,auto));gap:.75rem;margin-block:1.2rem}.field{display:grid;gap:.3rem}.field input,.field select{min-width:0;padding:.55rem}.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:.75rem;margin-block:1rem}.metric{border:1px solid;padding:.8rem;border-radius:.5rem}.metric strong{display:block;font-size:1.25rem}.workspace{display:grid;grid-template-columns:minmax(0,2fr) minmax(16rem,1fr);gap:1rem;align-items:start}.panel{border:1px solid;border-radius:.6rem;padding:1rem;min-width:0}.table-wrap{overflow-x:auto;max-width:100%}table{border-collapse:collapse;width:100%;min-width:42rem}th,td{text-align:start;padding:.6rem;border-block-end:1px solid}th{white-space:nowrap}td.num{text-align:end;font-variant-numeric:tabular-nums}.row-link{font-weight:650}.detail dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:.4rem .8rem}.detail dd{margin:0;overflow-wrap:anywhere}.edit-form{display:grid;gap:.7rem;margin-block-start:1rem}.edit-form textarea{width:100%;min-height:6rem;font:inherit}.actions{display:flex;gap:.6rem;flex-wrap:wrap}.message{border-inline-start:4px solid;padding:.6rem .8rem;margin-block:.8rem}.muted{opacity:.75}.mobile-nav{display:none}
+@media(max-width:800px){.shell{grid-template-columns:1fr}.sidebar{display:none}.mobile-nav{display:flex;gap:.5rem;overflow:auto;border-block-end:1px solid;padding:.75rem}.mobile-nav a{white-space:nowrap}.workspace{grid-template-columns:1fr}.controls{grid-template-columns:1fr 1fr}.controls .search{grid-column:1/-1}}
+@media(max-width:480px){.controls{grid-template-columns:1fr}main{padding:1rem}.detail dl{grid-template-columns:1fr}.heading-row{display:block}.status{margin-block-start:.7rem}}
+</style>
+</head>
+<body>
+<nav class="mobile-nav" aria-label="Primary">
+  <a href="/overview">Overview</a><a href="/portfolios" aria-current="page">Portfolios</a><a href="/income">Income</a><a href="/settings">Settings</a>
+</nav>
+<div class="shell">
+  <aside class="sidebar">
+    <strong>Portfolio Workspace</strong>
+    <nav aria-label="Primary">
+      <a href="/overview">Overview</a>
+      <a href="/portfolios" aria-current="page">Portfolios</a>
+      <a href="/income">Income</a>
+      <a href="/settings">Settings</a>
+    </nav>
+  </aside>
+  <main>
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/portfolios">Portfolios</a> › <span aria-current="page">Long-Term Income Portfolio / 장기 인컴 포트폴리오</span>
+    </nav>
+
+    <div class="heading-row">
+      <div>
+        <h1>Long-Term Income Portfolio / 장기 인컴 포트폴리오</h1>
+        <p class="muted">Compare holdings, inspect one resource, and edit without losing portfolio context.</p>
+      </div>
+      <p class="status" role="status"><strong>Last confirmed 09:41</strong><br>Refreshing income summary… existing holdings remain usable.</p>
+    </div>
+
+    <section aria-labelledby="criteria-heading">
+      <h2 id="criteria-heading">Find and compare holdings</h2>
+      <form class="controls" action="/portfolios/alpha" method="get">
+        <label class="field search">Search
+          <input name="q" value="" placeholder="Ticker or holding name / 종목 검색">
+        </label>
+        <label class="field">Period
+          <select name="period"><option>1 year</option><option>6 months</option><option>All</option></select>
+        </label>
+        <label class="field">Sort
+          <select name="sort"><option value="yield-desc">Yield, high to low</option><option value="ticker">Ticker</option></select>
+        </label>
+      </form>
+    </section>
+
+    <section class="summary" aria-label="Portfolio summary">
+      <article class="metric"><span>Total value</span><strong>$124,880</strong><span class="muted">Confirmed</span></article>
+      <article class="metric"><span>12M distributions</span><strong>$18,420</strong><span class="muted">Refreshing…</span></article>
+      <article class="metric"><span>Holdings</span><strong>14</strong><span class="muted">Current filter: all</span></article>
+    </section>
+
+    <div class="workspace">
+      <section class="panel" aria-labelledby="holdings-heading">
+        <div class="heading-row"><h2 id="holdings-heading">Holdings</h2><button type="button">Refresh holdings</button></div>
+        <p class="message">Some income values are still updating. Prices and holding identities below are from the last confirmed snapshot.</p>
+        <div class="table-wrap" tabindex="0" aria-label="Scrollable holdings comparison table">
+          <table>
+            <thead><tr><th scope="col">Ticker</th><th scope="col">Name</th><th scope="col">Qty</th><th scope="col">Value</th><th scope="col">12M dist.</th><th scope="col">Recovery</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><a class="row-link" href="/portfolios/alpha/holdings/CONY">CONY</a></th><td>Yield-focused option income strategy / 장문 한글 종목명 예시</td><td class="num">48.20</td><td class="num">$3,914</td><td class="num">$1,082</td><td class="num">27.6%</td></tr>
+              <tr><th scope="row"><a class="row-link" href="/portfolios/alpha/holdings/MSTY">MSTY</a></th><td>Strategy Holding with Long English Name</td><td class="num">32.00</td><td class="num">$2,680</td><td class="num">$944</td><td class="num">35.2%</td></tr>
+              <tr><th scope="row"><a class="row-link" href="/portfolios/alpha/holdings/NVDY">NVDY</a></th><td>NVIDIA option income holding</td><td class="num">18.75</td><td class="num">$1,734</td><td class="num">$462</td><td class="num">26.6%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <aside class="panel detail" aria-labelledby="detail-heading">
+        <h2 id="detail-heading">CONY holding</h2>
+        <p><a href="/portfolios/alpha/holdings/CONY">Open canonical holding page</a></p>
+        <dl>
+          <dt>Portfolio</dt><dd>Long-Term Income Portfolio / 장기 인컴 포트폴리오</dd>
+          <dt>Status</dt><dd>Confirmed holding; income refresh pending</dd>
+          <dt>Quantity</dt><dd>48.20</dd>
+          <dt>Value</dt><dd>$3,914</dd>
+        </dl>
+        <form class="edit-form">
+          <label class="field">Holding note
+            <textarea aria-describedby="note-help">Review tax adjustment after final statement.</textarea>
+          </label>
+          <div id="note-help" class="muted">This is an editable annotation. Saving it is separate from refreshing market data.</div>
+          <div class="actions"><button type="submit">Save note</button><button type="reset">Reset</button></div>
+        </form>
+        <p class="message" role="status">Example operation state: not saving. If response loss makes commit status unknown, reconcile before offering a duplicate-sensitive retry.</p>
+      </aside>
+    </div>
+  </main>
+</div>
+</body>
+</html>
