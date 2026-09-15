@@ -4,7 +4,7 @@ Status: ACTIVE
 
 The studio curriculum is designed to build professional judgment, not just familiarity with terminology. Reading alone does not complete a module.
 
-The curriculum applies across the current specialist roles — Typography / Type Design, Color, and Layout / Spatial / Interaction — with domain-specific evidence requirements. Future specialists inherit the same progression unless a justified domain-specific adaptation is approved.
+The curriculum applies across the current specialist roles — Typography / Type Design, Color, Layout / Spatial / Interaction, Web Design, and Content Design / UX Writing — with domain-specific evidence requirements. Future specialists inherit the same progression unless a justified domain-specific adaptation is approved.
 
 ## Stage 1 — Foundations
 
@@ -36,7 +36,20 @@ The curriculum applies across the current specialist roles — Typography / Type
 - reversibility, modes and recovery
 - accessibility as a design constraint
 
-**Gate:** explain and demonstrate each principle using original exercises, not only definitions; show that relevant peer-domain evidence was checked and reused rather than duplicated.
+### Content Design foundations
+- content design vs copywriting, technical writing, IA and UX research
+- language as interface material
+- user needs, user language and mental models
+- terminology, naming, taxonomy and concept consistency
+- object / state / action / consequence semantics
+- plain language and cognitive-load considerations
+- scanning, front-loading and information sequencing
+- clarity vs brevity vs necessary detail
+- accessible, inclusive and input-neutral language
+- content-design history, precedent and source literacy
+- distinguish semantic fidelity from human comprehension evidence
+
+**Gate:** explain and demonstrate each principle using original exercises, not only definitions; show that relevant peer-domain evidence was checked and reused rather than duplicated. Content Foundation additionally requires evidence that the specialist can identify when a wording problem is actually a product/state/interaction problem and avoid claiming human comprehension from expert/static critique alone.
 
 ## Stage 2 — Intermediate professional practice
 
@@ -68,6 +81,18 @@ The curriculum applies across the current specialist roles — Typography / Type
 - gamut-aware production values and fallback behavior
 - viewing-condition and device-aware validation
 
+### Content Design practice
+- action labels, commands and consequence wording
+- form questions, field labels, helper text and instructions
+- onboarding and empty-state content
+- validation, error, warning, success and confirmation messages
+- loading, pending, offline, ambiguous-outcome and recovery language
+- search/filter/settings terminology and content patterns
+- voice/tone systems with context-sensitive modulation
+- localization-ready content patterns and string expansion awareness
+- multiple wording strategies for the same product problem
+- content critique, rationale and collaboration with design/engineering/research
+
 ### Research and critique
 - precedent analysis without imitation
 - comparative studies
@@ -77,7 +102,7 @@ The curriculum applies across the current specialist roles — Typography / Type
 - identifying genericness, novelty-for-novelty and implementation bias
 - cross-specialist dependency and handoff discipline
 
-**Gate:** produce multiple solutions to the same problem and defend the selected direction using explicit criteria, including evidence borrowed correctly from adjacent specialties.
+**Gate:** produce multiple solutions to the same problem and defend the selected direction using explicit criteria, including evidence borrowed correctly from adjacent specialties. For Content, the selected wording must remain faithful to the actual product state/action/recovery contract and clearly separate expert judgment from claims that require human testing.
 
 ## Stage 3 — Advanced / systems practice
 
@@ -110,6 +135,18 @@ The curriculum applies across the current specialist roles — Typography / Type
 - data-visualization palette systems
 - dark/light/adaptive color behavior
 
+### Advanced Content Design
+- product-wide terminology and semantic architecture
+- multi-surface and cross-channel content systems
+- complex professional-domain language and expert-user terminology
+- cross-platform consistency without mechanical sameness
+- localization/internationalization and multilingual content strategy
+- adaptive tone for risk, stress, failure and success contexts
+- notifications, email and cross-channel continuity
+- content models, string architecture and semantic tokens where useful
+- terminology/content governance, ownership and change propagation
+- content strategy for long-form, dense-data and system-generated content
+
 ### Human factors and accessibility
 - contrast and glare
 - text scaling/reflow
@@ -119,8 +156,9 @@ The curriculum applies across the current specialist roles — Typography / Type
 - cognitive load and scan behavior
 - data legibility under stress
 - multi-modal equivalence and recovery
+- comprehension, terminology recognition and language burden where Content claims require human evidence
 
-**Gate:** demonstrate one coherent system across at least three form factors and adverse/accessibility states without losing identity, usability or evidence traceability.
+**Gate:** demonstrate one coherent system across at least three form factors and adverse/accessibility states without losing identity, usability or evidence traceability. Content must demonstrate that terminology/state meaning remains coherent across those surfaces and that unresolved human-outcome claims remain explicitly bounded.
 
 ## Stage 4 — Production and authorship
 
@@ -157,15 +195,27 @@ The curriculum applies across the current specialist roles — Typography / Type
 - async/failure/recovery scenarios
 - accessibility and assistive-technology evidence
 
+### Content production
+- reproducible content-design workflow and version history
+- string inventory and content audit methods
+- terminology source of truth and change tracking
+- content specifications and implementation/handoff contracts
+- localization/translation handoff and context documentation
+- implemented-product content QA
+- discrepancy tracking between accepted wording and shipped product
+- measurement plans and revision history
+- content-governance roles and approval/change burden
+- no undocumented string-level fixes that bypass the canonical content system
+
 ### Authorship
 - articulate a design thesis
 - distinguish reference influence from imitation
 - create a coherent body of work
-- explain why each formal decision exists
+- explain why each formal or semantic decision exists
 - document failures and course corrections
-- demonstrate that quality survives removal of fashionable effects
+- demonstrate that quality survives removal of fashionable effects or superficial personality
 
-**Gate:** complete an end-to-end case study with research, alternatives, critique, production constraints, accessibility evidence, peer-domain reuse and final rationale.
+**Gate:** complete an end-to-end case study with research, alternatives, critique, production constraints, accessibility evidence, peer-domain reuse and final rationale. Content production evidence must survive implementation/localization review rather than existing only as isolated copy decks.
 
 ## Stage 5 — Research and advisory
 
@@ -177,7 +227,7 @@ This is the target stage for specialists expected to support publication-quality
 - research-question and hypothesis formulation
 - experimental and observational design
 - sampling, measurement and operationalization literacy
-- statistical literacy sufficient to interpret design/HCI/perception research critically
+- statistical literacy sufficient to interpret design/HCI/perception/language research critically
 - effect-size and uncertainty awareness
 - replication, external-validity and ecological-validity critique
 - competing-evidence synthesis
@@ -187,7 +237,7 @@ This is the target stage for specialists expected to support publication-quality
 - identify `Known → Unknown → Gap → Research Question`
 - design reproducible studies appropriate to the domain
 - predefine variables, controls, evaluation criteria and failure conditions when applicable
-- separate model/calculation evidence from rendered, behavioral, device and human-observation evidence
+- separate model/calculation/expert-critique evidence from rendered, behavioral, device and human-observation evidence
 - produce research reports with Abstract / Introduction / Literature Review / Method / Results / Discussion / Limitations / Conclusion / References as appropriate
 - defend claims against expert critique and revise them when evidence fails
 
@@ -198,13 +248,24 @@ This is the target stage for specialists expected to support publication-quality
 - create multiple viable options rather than presenting taste as a single answer
 - analyze trade-offs, risks, reversibility, cost of change and governance burden
 - distinguish global rules from local exceptions
-- advise on multi-product / multi-platform design-system decisions
-- explain recommendations at executive, design and engineering levels without changing the underlying evidence
+- advise on multi-product / multi-platform design-system and content-system decisions
+- explain recommendations at executive, design, content and engineering levels without changing the underlying evidence
 - explicitly identify what remains unknown and what evidence would change the recommendation
+
+### Content Design research and advisory
+- comprehension, terminology and instruction research design
+- qualitative/quantitative content testing methods and their limits
+- enterprise terminology/content-governance architecture
+- multi-product and multi-language semantic consistency strategy
+- content-debt and migration analysis
+- voice/tone governance at organizational scale
+- legal/policy/technical complexity translated without semantic distortion
+- measurement plans that distinguish behavioral outcomes from vanity content metrics
+- advisory trade-offs among precision, comprehension, localization, risk and operational burden
 
 ### Cross-specialist synthesis
 - integrate findings from adjacent specialists without duplicating their research
-- recognize when a recommendation depends on Type, Color, Layout/Interaction or a future specialist
+- recognize when a recommendation depends on Type, Color, Layout/Interaction, Web, Content or a future specialist
 - request and use canonical peer evidence
 - document disagreements and unresolved evidence rather than forcing consensus
 - produce joint recommendations with traceable ownership of claims
@@ -230,12 +291,13 @@ Stage 5 does not mean the specialist is infallible or that learning stops. It me
 - industrial/product design precedents
 - editorial design
 - information visualization
-- perception and cognition
+- content-design and technical-communication history
+- psycholinguistics, perception and cognition where relevant
 - accessibility standards
-- platform HIG/material guidance as evidence, not stylistic law
+- platform HIG/material/service guidance as evidence, not stylistic law
 - research methodology and statistics
 - front-end implementation literacy sufficient for credible negotiation
-- organizational design-system governance
+- organizational design-system and content-system governance
 
 ## Completion
 
