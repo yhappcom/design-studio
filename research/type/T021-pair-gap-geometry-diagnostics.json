@@ -1,0 +1,42 @@
+{
+  "study": "T021 pair-gap geometry diagnostics",
+  "method": "Analytic scanline boundary intersections on the exact simplified A/V/T/L/I construction geometry used by the current T021 harness; kerning OFF; units are font units at 1000 UPM.",
+  "scanlines_y": [0, 85, 350, 615, 700],
+  "results": {
+    "A": {
+      "AV": [282.0, 277.8, 264.5, 251.3, 247.0],
+      "VA": [282.0, 277.8, 264.5, 251.2, 247.0],
+      "TA": [282.0, 301.8, 363.5, 219.2, 239.0],
+      "AT": [282.0, 301.8, 363.5, 219.2, 239.0],
+      "LI": [103.0, 103.0, 520.0, 438.0, 438.0],
+      "IL": [103.0, 103.0, 185.0, 103.0, 103.0]
+    },
+    "B": {
+      "AV": [300.0, 296.4, 285.0, 273.6, 270.0],
+      "VA": [300.0, 296.4, 285.0, 273.6, 270.0],
+      "TA": [300.0, 320.6, 385.0, 239.4, 260.0],
+      "AT": [300.0, 320.6, 385.0, 239.4, 260.0],
+      "LI": [114.0, 114.0, 543.0, 455.0, 455.0],
+      "IL": [114.0, 114.0, 202.0, 114.0, 114.0]
+    },
+    "C": {
+      "AV": [320.5, 317.2, 307.0, 296.8, 293.5],
+      "VA": [320.5, 317.2, 307.0, 296.8, 293.5],
+      "TA": [322.0, 343.6, 410.8, 259.9, 281.5],
+      "AT": [322.0, 343.6, 410.8, 259.9, 281.5],
+      "LI": [128.0, 128.0, 574.5, 481.0, 481.0],
+      "IL": [128.0, 128.0, 221.5, 128.0, 128.0]
+    }
+  },
+  "classification": {
+    "AV_VA": "Construction-level whitespace is extremely large in all three hypotheses; B is not validated merely because its advance sits between A and C.",
+    "TA_AT": "Large and strongly height-dependent whitespace indicates that pair-specific residuals cannot yet be separated cleanly from primitive glyph construction.",
+    "LI_IL": "Strong directional asymmetry at middle/high scanlines is caused by L/I construction geometry; this is a drawing/base-spacing diagnostic, not a kerning authorization."
+  },
+  "limits": [
+    "Analytic geometry, not raster measurement.",
+    "Simplified research glyphs, not production outlines.",
+    "No human optical-quality claim.",
+    "No kerning values are proposed from these numbers."
+  ]
+}
