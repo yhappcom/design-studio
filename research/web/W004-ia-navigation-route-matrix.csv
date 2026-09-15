@@ -1,0 +1,9 @@
+candidate,user_concept,identity,addressability,history_default,global_nav,local_or_contextual,orientation,direct_entry_requirement,open_validation
+/portfolios,Portfolio collection,stable collection,canonical route,push,yes,no,page heading + current global nav,Must explain collection without prior state,keyboard + responsive nav
+/portfolios/alpha,Portfolio Alpha,stable resource,canonical route,push,no,portfolio selector or contextual link,heading + parent context + breadcrumb candidate,Must expose portfolio identity and permissions,deleted or unauthorized route
+/portfolios/alpha/holdings/CONY,CONY holding in Alpha,stable contextual resource,canonical route,push,no,holding list/detail link,heading + breadcrumb,parent portfolio context must be explicit,long Korean/English labels
+?period=1y,One-year view,shareable view state,query candidate,push-or-replace project decision,no,filter control,visible filter state,URL must reconstruct chosen period,Back behavior decision
+?sort=yield-desc,Yield sort,view state,query candidate,usually replace candidate,no,table sort control,sort indicator,URL reconstruction if sharing is useful,rapid changes/history noise
+edit-holding-dialog,Edit holding,transient task layer,not automatically a route,no page history by default,no,edit action,dialog title + invoker restoration,requires underlying resource,focus restoration
+onboarding-step,Onboarding progress,process state,conditional route,resume policy required,no,stepper/process nav,step heading + progress,direct entry only if resumable contract supports it,expired state + permission
+search-results,Search results,query-derived collection,route/query candidate,push candidate,maybe search entry,search form,query heading + result context,query should be reconstructable when share/resume matters,empty/error/back restoration
