@@ -1,0 +1,27 @@
+{
+  "study": "W015",
+  "evidence": "DETERMINISTIC MODEL VALIDATION",
+  "browser_proof": false,
+  "passed": 17,
+  "total": 17,
+  "checks": [
+    {"name":"initial data usable","pass":true},
+    {"name":"filtered zero distinct","pass":true},
+    {"name":"zero retains criteria","pass":true},
+    {"name":"invalid blocks submit","pass":true},
+    {"name":"invalid preserves input","pass":true},
+    {"name":"valid enters pending","pass":true},
+    {"name":"pending no retry","pass":true},
+    {"name":"confirmed explicit","pass":true},
+    {"name":"known failure explicit","pass":true},
+    {"name":"known failure retry safe","pass":true},
+    {"name":"unknown not failed","pass":true},
+    {"name":"unknown blocks blind retry","pass":true},
+    {"name":"unknown directs verify","pass":true},
+    {"name":"partial preserves prior data","pass":true},
+    {"name":"partial marks incompleteness","pass":true},
+    {"name":"offline preserves cached data","pass":true},
+    {"name":"offline provenance visible","pass":true}
+  ],
+  "boundary": "Executed as a deterministic Python state-model oracle. Does not establish browser, fetch, network, DOM, accessibility-tree, AT, service-worker, or physical-device behavior."
+}
