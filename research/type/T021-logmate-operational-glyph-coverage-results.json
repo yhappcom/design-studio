@@ -1,0 +1,84 @@
+{
+  "study": "T021 LogMate operational glyph coverage audit",
+  "currentProvenT021Characters": [" ", "A", "H", "I", "L", "O", "T", "V", "n", "o"],
+  "corpus": {
+    "airports": ["ICN", "NRT", "SIN", "JFK", "LHR", "CDG", "HND", "DXB", "FRA", "LAX"],
+    "identifiers": ["KE704", "BA117", "AF264", "B737-900", "B737-8", "A320-200", "HL8301", "N12345", "G-EUOH"],
+    "numeric": ["00:45", "02:18", "09:55", "12:40", "1,284:35", "9,999:59", "1", "11", "111", "8", "88", "888"],
+    "ambiguity": ["0O", "1Il", "5S", "8B"]
+  },
+  "coverage": [
+    {
+      "name": "airport uppercase",
+      "required": ["A", "B", "C", "D", "F", "G", "H", "I", "J", "K", "L", "N", "R", "S", "T", "X"],
+      "requiredCount": 16,
+      "covered": ["A", "H", "I", "L", "T"],
+      "coveredCount": 5,
+      "coveragePct": 31.25,
+      "missing": ["B", "C", "D", "F", "G", "J", "K", "N", "R", "S", "X"]
+    },
+    {
+      "name": "identifier uppercase",
+      "required": ["A", "B", "E", "F", "G", "H", "K", "L", "N", "O", "U"],
+      "requiredCount": 11,
+      "covered": ["A", "H", "L", "O"],
+      "coveredCount": 4,
+      "coveragePct": 36.36,
+      "missing": ["B", "E", "F", "G", "K", "N", "U"]
+    },
+    {
+      "name": "identifier digits",
+      "required": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+      "requiredCount": 10,
+      "covered": [],
+      "coveredCount": 0,
+      "coveragePct": 0.0,
+      "missing": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    },
+    {
+      "name": "identifier punctuation",
+      "required": ["-"],
+      "requiredCount": 1,
+      "covered": [],
+      "coveredCount": 0,
+      "coveragePct": 0.0,
+      "missing": ["-"]
+    },
+    {
+      "name": "numeric digits",
+      "required": ["0", "1", "2", "3", "4", "5", "8", "9"],
+      "requiredCount": 8,
+      "covered": [],
+      "coveredCount": 0,
+      "coveragePct": 0.0,
+      "missing": ["0", "1", "2", "3", "4", "5", "8", "9"]
+    },
+    {
+      "name": "numeric punctuation",
+      "required": [",", ":"],
+      "requiredCount": 2,
+      "covered": [],
+      "coveredCount": 0,
+      "coveragePct": 0.0,
+      "missing": [",", ":"]
+    },
+    {
+      "name": "ambiguity characters",
+      "required": ["0", "1", "5", "8", "B", "I", "O", "S", "l"],
+      "requiredCount": 9,
+      "covered": ["I", "O"],
+      "coveredCount": 2,
+      "coveragePct": 22.22,
+      "missing": ["0", "1", "5", "8", "B", "S", "l"]
+    },
+    {
+      "name": "all corpus characters",
+      "required": [",", "-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "N", "O", "R", "S", "T", "U", "X", "l"],
+      "requiredCount": 33,
+      "covered": ["A", "H", "I", "L", "O", "T"],
+      "coveredCount": 6,
+      "coveragePct": 18.18,
+      "missing": [",", "-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", "B", "C", "D", "E", "F", "G", "J", "K", "N", "R", "S", "U", "X", "l"]
+    }
+  ]
+}
