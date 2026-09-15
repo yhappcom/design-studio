@@ -1,0 +1,38 @@
+{
+  "environment": "Pillow/FreeType runtime, 1000 UPM TrueType research fonts",
+  "kerning": false,
+  "sizes_px": [14, 17, 24],
+  "initial_execution_failure": "Original harness emitted cubic outlines into TrueType glyf format 0 and FontBuilder rejected O. Harness corrected by converting cubic construction curves through Cu2QuPen before glyf serialization.",
+  "representative_advances_px": {
+    "14": {
+      "HHOO": {"A": 33.9062, "B": 34.75},
+      "HOHOHO": {"A": 50.8594, "B": 52.125},
+      "nono": {"A": 29.4062, "B": 30.25},
+      "HOnonO": {"A": 47.4844, "B": 48.75}
+    },
+    "17": {
+      "HHOO": {"A": 41.1562, "B": 42.1875},
+      "HOHOHO": {"A": 61.7344, "B": 63.2812},
+      "nono": {"A": 35.7188, "B": 36.75},
+      "HOnonO": {"A": 57.6562, "B": 59.1875}
+    },
+    "24": {
+      "HHOO": {"A": 58.0938, "B": 59.5312},
+      "HOHOHO": {"A": 87.1406, "B": 89.2969},
+      "nono": {"A": 50.4062, "B": 51.8438},
+      "HOnonO": {"A": 81.375, "B": 83.5312}
+    }
+  },
+  "qualitative_raster_observations": [
+    "A is visibly the darkest/most compact control; C is visibly the lightest/most open; B remains intermediate at 14, 17 and 24 px.",
+    "The current lowercase n construction has an overly rectangular shoulder and is not coherent enough with round o to treat the family as visually resolved.",
+    "At 14 px all three controls remain distinguishable, but the comparison is dominated partly by stem mass as well as spacing; therefore spacing preference cannot be isolated from drawing yet.",
+    "B remains a defensible working direction, but not a final selected family: lowercase drawing revision is required before extending to kerning."
+  ],
+  "evidence_limits": [
+    "No browser/native renderer claim.",
+    "No human readability/preference claim.",
+    "No kerning evidence.",
+    "C numeric measurements are reproducible from the corrected harness but this summary intentionally records only representative A/B advances; the raster sheet remains the comparative visual evidence."
+  ]
+}
