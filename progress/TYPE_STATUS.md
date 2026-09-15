@@ -1,9 +1,9 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 ENTRY AUDIT COMPLETE / PRACTICE NEXT**  
+Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 IN PROGRESS**  
 Governance sync: 2026-09-15  
 Primary path: `research/type/`  
-Next new-study ID: `T021`
+Next new-study ID: `T022` only after T021 outline/render proof is sufficiently closed
 
 This file is maintained by the Typography / Type Design Specialist. The specialist must not update global `progress/STATUS.md` directly.
 
@@ -16,12 +16,11 @@ Type research exists to improve real app, web and product decisions. Research vo
 ## Current level
 
 Stage 1 — Foundations: **PASS**  
-Stage 2 — Intermediate Professional Practice: **ENTRY AUDIT COMPLETE / NOT PASSED**  
-Overall Stage 2 state: **PRACTICE PLANNING**
+Stage 2 — Intermediate Professional Practice: **PRACTICE / NOT PASSED**
 
-T019 closed the exact Stage 1 gate. T020 has now mapped the exact Stage 2 requirements against existing evidence and identified the main structural gap: Type has substantial early bridge evidence, but it is fragmented across mechanism studies and product transfers rather than integrated into one coherent family/system exercise with multiple alternatives and defended selection.
+T020 mapped the Stage 2 requirements. T021 has now opened the first integrated comparison exercise rather than returning to fragmented mechanism studies.
 
-The coordinator-maintained `progress/STATUS.md` may remain stale until coordinator synchronization; Type does not edit it directly.
+The coordinator-maintained `progress/STATUS.md` remains older than specialist evidence and is not edited by Type.
 
 ---
 
@@ -32,8 +31,6 @@ Canonical:
 
 Verdict: **PASS** under the exact Master Curriculum Foundation gate.
 
-This remains a narrow curriculum PASS and does not establish production font, platform parity, multilingual systems, automated QA or human validation.
-
 ---
 
 ## Stage 2 entry authority — T020
@@ -41,40 +38,74 @@ This remains a narrow curriculum PASS and does not establish production font, pl
 Canonical:
 - `research/type/T020-stage2-entry-audit.md`
 
-Exact Type requirements audited:
-1. coherent glyph families;
-2. spacing systems/control strings;
-3. kerning classes/exceptions;
-4. proportional/tabular and lining/oldstyle figure styles where relevant;
-5. diacritic/punctuation systems;
-6. weight/width relationships;
-7. interpolation fundamentals;
-8. screen rendering/small-size compensation;
-9. typography systems across multiple roles;
-10. shared gate: multiple solutions + defended selection using explicit criteria and peer evidence.
+Main structural gap identified:
 
-### Entry matrix
+`family construction → spacing/control strings → kerning → figures/punctuation/diacritics → weight relationship → intended-size proof → multi-role transfer → critique/selection`
+
+Existing T006–T018 evidence remains a constraint/stress-test layer, not a substitute for this chain.
+
+---
+
+## T021 — current practice state
+
+Canonical:
+- `research/type/T021-coherent-mini-family-spacing-comparison.md`
+- `research/type/T021-mini-family-comparison-metrics.json`
+- `research/type/T021-mini-family-comparison-specimen.svg`
+
+### What is established
+
+Three materially different pre-kerning hypotheses now exist under one 1000-UPM / cap 700 / x-height 500 / 12u round-overshoot contract:
+
+- **A — Compact geometric:** 90u stem, tighter bearings, lowest width cost;
+- **B — Balanced text:** 85u stem, explicit straight/round spacing differentiation, moderate width;
+- **C — Open screen:** 82u stem, generous bearings, highest white-space reserve and width cost.
+
+Representative calculated unkerned widths:
+
+| String | A | B | C |
+| --- | ---: | ---: | ---: |
+| `HHOO` | 2420u | 2480u | 2600u |
+| `HOHOHO` | 3630u | 3720u | 3900u |
+| `nono` | 2100u | 2160u | 2270u |
+| `HOnonO` | 3390u | 3480u | 3650u |
+
+C is roughly 5% wider than B on representative controls; A is the compact boundary.
+
+### Current critique
+
+- A: **REWORK** — useful compact control, but least white-space reserve and greatest risk of later exception pressure.
+- B: **KEEP AS WORKING DIRECTION** — balanced correction reserve and geometry cost.
+- C: **REJECT AS DEFAULT / KEEP AS STRESS CONTROL** — useful openness hypothesis, but width cost is materially higher.
+
+This is a **working selection**, not a visual/raster PASS.
+
+### Evidence boundary discovered
+
+The SVG comparison sheet uses the viewer's sans font and exposes the declared strategies; it is not custom-glyph rendering. Therefore:
+
+`metric hypothesis != coherent outline family != target-size raster proof`.
+
+T021 must not be marked complete on metrics alone.
+
+---
+
+## Stage 2 matrix after first T021 block
 
 | Requirement | Current state |
 | --- | --- |
-| coherent glyph family | **PARTIAL** |
-| spacing/control strings | **PARTIAL** |
+| coherent glyph family | **PARTIAL — hypotheses established, custom outlines OPEN** |
+| spacing/control strings | **PRACTICE — systematic strings + metrics established; rendered revision OPEN** |
 | kerning classes/exceptions | **OPEN** |
 | figure styles | **PARTIAL / STRONG BRIDGE** |
 | diacritics/punctuation family coherence | **PARTIAL** |
 | weight/width relationships | **PARTIAL / STRONG BRIDGE** |
 | interpolation fundamentals | **SUPPORTED FOR ENTRY** |
-| screen rendering/small-size compensation | **PARTIAL / STRONG BRIDGE** |
+| screen rendering/small-size compensation | **PARTIAL / STRONG BRIDGE; T021 custom proof OPEN** |
 | typography across multiple product roles | **PARTIAL / STRONG BRIDGE** |
-| multiple solutions + defended selection | **PARTIAL** |
+| multiple solutions + defended selection | **PRACTICE ESTABLISHED; final rendered selection OPEN** |
 
-### T020 synthesis
-
-The highest-value Stage 2 gap is not another isolated advanced font-engineering mechanism. It is a coherent practice chain:
-
-`family construction → spacing/control strings → kerning → figures/punctuation/diacritics → weight relationship → intended-size proof → multi-role transfer → critique/selection`
-
-Existing T006–T018 evidence becomes a constraint/stress-test layer for this work rather than a substitute for it.
+Stage 2 remains **NOT PASSED**.
 
 ---
 
@@ -93,56 +124,34 @@ Standing provisional decisions:
 - preserve multilingual fallback seams;
 - no bespoke LogMate font without a demonstrated mature-font failure.
 
-Measured T018 highlights:
-- 17px airport-code width variance: Roboto 25.9%, Inter 27.3%, Noto Sans 41.5%;
-- all tested controls fit current 56px airport cells at 100%;
-- explicit `tnum` digit spread: 0px for all three controls;
-- all three fail current fixed Opening/Ledger cell geometry under controlled 200% type-size stress.
-
-Exact Flutter/native Draft 02 validation remains OPEN and takes priority if the live implementation becomes available before the next curriculum exercise.
+T021 is a curriculum/type-design exercise, not a proposal to replace Roboto in LogMate.
 
 ---
 
 ## Active next queue
 
-1. **T021 — coherent mini-family + spacing/control-string system.** Use a bounded Latin core, at least three materially different hypotheses, systematic spacing proof, intended-size rendering, and explicit KEEP/REWORK/REJECT criteria.
-2. **T022 — kerning classes/exceptions + figure alternatives** on the selected T021 direction.
-3. **T023 — weight/interpolation + diacritic/punctuation coherence** on the same family system.
-4. **T024 — multi-role typography-system alternatives**, preferably LogMate transfer if project timing is suitable.
-5. If LogMate Draft 02 becomes executable first, exact shipped-font Flutter transfer pre-empts the curriculum sequence.
-6. Resume external QA/sanitizer/direct HarfBuzz/native/cross-browser work when environments become available.
+1. **Continue T021 before opening T022:** create actual custom H/O/n/o outlines for the hypotheses or at minimum the selected B plus adversarial A/C controls; render real control strings at 14/17/24px.
+2. Classify failures as drawing / general spacing / true pair-specific kerning.
+3. Extend the selected system to A/V/T/L/I with kerning OFF.
+4. Add numerals, core punctuation and one accented construction path.
+5. Only then open **T022 — kerning classes/exceptions + figure alternatives**.
+6. T023 — weight/interpolation + diacritic/punctuation coherence.
+7. T024 — multi-role typography alternatives, preferably LogMate transfer when useful.
+8. Exact LogMate Flutter transfer pre-empts curriculum work if live implementation becomes available.
 
 ---
 
-## Stage 2 critique criteria
-
-Future Type alternatives should be compared using explicit criteria including:
-- family coherence;
-- spacing rhythm before kerning;
-- exception cost;
-- numeral/punctuation task fit;
-- weight/interpolation continuity;
-- target-size raster robustness;
-- role hierarchy and dense-data behavior;
-- localization/fallback risk;
-- implementation complexity/reversibility;
-- Layout/Color/Web consequences.
-
-Selection must record trade-offs, not merely a preferred appearance.
-
----
-
-## OPEN / later dependencies
+## OPEN / dependencies
 
 ### Stage 2 genuine OPEN
-- coherent mini-family proof;
-- systematic control strings;
+- actual coherent mini-family outlines;
+- rendered control-string revision;
 - kerning class/exception model;
 - integrated figure alternatives;
 - diacritic/punctuation family coherence;
 - design-level weight relationship proof;
 - integrated small-size alternatives;
-- explicit multi-solution gate exercise with defended selection.
+- final multiple-solution selection after real rendering.
 
 ### Later-stage / production OPEN
 - FontBakery/Fontspector/OTS or equivalent external QA;
@@ -169,20 +178,21 @@ No human evidence is simulated or marked complete.
 ## RELATED DOMAIN / HANDOFF state
 
 ### Color
-Stage 2 Type family alternatives should initially hold Color stable, then final role systems should be tested with actual Color hierarchy. Later text/color claims still require exact Type artifact/render state.
+T021 holds Color stable while geometry alternatives are compared. Real Color hierarchy returns at product-role transfer.
 
 ### Layout / Interaction
-Reuse L003/L004: font/fallback/feature choices can alter geometry; enlarged-text failure must be solved spatially rather than disguised through smaller/narrower Type. Exact selected Type artifacts should be handed to Layout at transfer stage.
+L003 is directly reused: Type width is a spatial input near wrap thresholds. C's ~5% width premium over B is therefore a real transfer risk to test later, not an automatic rejection criterion by itself.
 
 ### Web Design
-T016 remains the canonical Type loading/fallback baseline. Final Stage 2 artifacts should later be transferred through actual Web delivery, but browser implementation does not replace Type family-system proof.
+The T021 SVG is not browser font proof. Actual font artifacts should later be tested under the Web loading/fallback/zoom/localization stack; T016 remains the baseline.
 
 ---
 
 ## Latest checkpoint
 
-- T019: Stage 1 Foundation closure — **PASS**.
-- **T020: Stage 2 entry audit — COMPLETE.**
-- Stage 2: **NOT PASSED / PRACTICE NEXT**.
-- Main missing evidence: integrated coherent family/system practice with alternatives and defended selection.
-- Next new Type study ID: **T021**.
+- Stage 1: **PASS**.
+- T020: Stage 2 entry audit **COMPLETE**.
+- T021 first comparison block: **COMPLETE AS METRIC/CRITIQUE PRACTICE, NOT AS OUTLINE/RASTER PROOF**.
+- Working direction: **B — Balanced text**.
+- Stage 2: **NOT PASSED**.
+- Next action: **continue T021 with real outlines and intended-size rendering before T022**.
