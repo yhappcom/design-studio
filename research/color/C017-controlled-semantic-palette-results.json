@@ -1,0 +1,26 @@
+{
+  "study": "C017",
+  "method": "WCAG relative luminance contrast on declared sRGB values",
+  "boundary": "declared pair calculation; not exact rendered glyph/device evidence",
+  "directions": {
+    "A": {
+      "intent": "restrained neutral + cyan-blue action",
+      "light_surface_contrast": {"text":16.38,"secondary":6.20,"action":6.02,"focus":4.52,"success":5.85,"caution":5.93,"critical":6.53,"onAction_action":6.02},
+      "dark_surface_contrast": {"text":14.92,"secondary":9.19,"action":8.67,"focus":8.16,"success":8.34,"caution":8.70,"critical":7.64,"onAction_action":8.67},
+      "verdict": "KEEP_CONTROL"
+    },
+    "B": {
+      "intent": "brand-forward teal",
+      "light_surface_contrast": {"text":16.30,"secondary":6.45,"action":5.21,"focus":5.84,"success":5.77,"caution":5.90,"critical":6.46,"onAction_action":5.21},
+      "dark_surface_contrast": {"text":14.97,"secondary":9.24,"action":8.80,"focus":7.36,"success":8.25,"caution":8.70,"critical":7.58,"onAction_action":8.75},
+      "verdict": "KEEP_BRAND_ALTERNATIVE"
+    },
+    "C": {
+      "intent": "low-chroma operational",
+      "light_surface_contrast": {"text":16.14,"secondary":6.33,"action":7.00,"focus":6.37,"success":5.88,"caution":6.02,"critical":6.79,"onAction_action":7.00},
+      "dark_surface_contrast": {"text":14.79,"secondary":9.23,"action":8.72,"focus":7.79,"success":8.73,"caution":8.83,"critical":7.63,"onAction_action":8.58},
+      "verdict": "PROVISIONAL_SELECT"
+    }
+  },
+  "open": ["exact browser CSS execution","forced-colors/system-color transfer","Firefox/Safari/OS parity","physical display/ambient validation","real CVD/human observer evidence","product-specific brand fit"]
+}
