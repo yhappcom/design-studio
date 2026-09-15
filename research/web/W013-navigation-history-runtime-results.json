@@ -1,0 +1,22 @@
+{
+  "browser": "144.0.7559.96",
+  "transport": "about:blank same-document hash surrogate",
+  "blocked": [
+    "loopback HTTP and file navigation blocked by administrator; true direct-entry/reload path validation not executable in this runtime"
+  ],
+  "first_run": {"passed": 10, "total": 11, "failure": "dialog focus restoration; element-id global 'close' collided with Window.close binding"},
+  "corrected_run": {"passed": 11, "total": 11},
+  "assertions": [
+    "initial route identity",
+    "push route state",
+    "route focus heading",
+    "replace view state",
+    "push adds history",
+    "back restores route+view",
+    "back control state",
+    "back focus heading",
+    "forward destination",
+    "dialog no history mutation",
+    "dialog focus restoration"
+  ]
+}
