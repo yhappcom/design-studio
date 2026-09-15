@@ -3,7 +3,7 @@
 Operating state: **ACTIVE — RESEARCH MAY RESUME**  
 Governance sync: 2026-09-15  
 Primary path: `research/web/`  
-Next new-study ID: `W007`
+Next new-study ID: `W008`
 
 ## Operational mission
 
@@ -15,23 +15,24 @@ Current curriculum stage: **Stage 1 — Foundation**
 Overall state: **PRACTICE / CRITIQUE**  
 Foundation: **NOT PASSED**
 
-Web now has six substantive studies:
+Web now has seven substantive studies:
 
 - `W001` — Web as a flexible/browser-participatory medium; relationship-over-coordinate baseline.
 - `W002` — page composition, mechanism selection and reproducible Chromium failure→revision validation; 25/25 bounded assertions across five stress cases.
 - `W003` — responsive/adaptive recomposition by relationship ownership; study, specimen and executable Playwright harness; measured results remain OPEN because the current automation environment cannot execute repository code.
 - `W004` — information architecture, URL/resource identity, navigation, history, direct entry and wayfinding; route/navigation decision matrix included.
-- `W005` — component/page systems, native semantic primitives, variants, independent state dimensions, disabled/unavailable decisions and component/composite/page-pattern boundaries.
+- `W005` — component/page systems, native semantic primitives, variants, independent state dimensions and component/composite/page-pattern boundaries.
 - `W006` — complete task surfaces: forms/search/filter/settings/table/dashboard/list-detail integrated with validation, loading/empty/partial/stale, pending/error/retry/outcome-unknown and region-vs-route state ownership.
+- `W007` — performance-sensitive design: task/resource priority, first truthful state, interaction readiness, progressive enrichment, geometry stability and design-led measurement contracts.
 
-Web remains the least complete Stage 1 specialist, but the breadth gap is materially smaller. The largest remaining Foundation gaps are measured browser transfer for W003–W006, integrated Web accessibility/Type/Color under real browser states, performance-sensitive design, and a complete project exercise/capstone sufficient to audit the Foundation gate.
+Web remains the least complete Stage 1 specialist, but the original breadth gap is now substantially reduced. The largest remaining Foundation gaps are **integrated measured browser transfer**, exact Web Type/Color/accessibility transfer, and a **complete project exercise/capstone + explicit Foundation closure audit**. Performance-sensitive design is no longer NOT YET WEB-BASELINED.
 
 ## Four-specialist balance
 
 - **Type:** Stage 1 PRACTICE / CRITIQUE, Foundation NOT PASSED, with deep controlled evidence through T016 across construction/package/render/loading/fallback states.
 - **Color:** Stage 1 PASS; Stage 2 entry audit next.
 - **Layout / Interaction:** Stage 1 PASS; Stage 2 entry audit next.
-- **Web:** Stage 1 NOT PASSED; W001–W006 now cover medium, composition, responsive ownership, IA/navigation, component/page systems and complete task-surface state/recovery foundations, but measured transfer and integrated project evidence remain behind peers.
+- **Web:** Stage 1 NOT PASSED; W001–W007 now cover medium, composition, responsive ownership, IA/navigation, component/page systems, complete task surfaces and performance-sensitive design. Integrated measured/project evidence remains behind peers.
 
 The coordinator `progress/STATUS.md` is intentionally not edited by this specialist and may remain stale.
 
@@ -60,8 +61,6 @@ Core model:
 
 Retained judgment: viewport/media-query adaptation for genuinely page/global relationships; container-query adaptation where reusable component allocation differs from viewport; intrinsic flow/wrapping where no discrete task-mode change is required; local 2-D overflow for intrinsically two-dimensional artifacts when stacking destroys meaning.
 
-OPEN: execute harness; exact font lifecycle; actual browser zoom; Firefox/Safari/physical mobile; navigation disclosure/AX transfer; human evidence deferred to project stage.
-
 ## W004 — IA / URL / navigation / wayfinding
 
 Canonical:
@@ -75,8 +74,6 @@ Core model:
 `user concept ↔ resource identity ↔ addressable location ↔ navigation access ↔ hierarchy ↔ traversal history ↔ page identity ↔ resumable state`
 
 W004 separates resource hierarchy, navigation hierarchy, URL structure and traversal history. It requires canonical routes to survive direct entry rather than assuming the designer's preferred funnel.
-
-OPEN: routed browser specimen; Back/Forward/reload; focus/scroll restoration; deleted/unauthorized deep links; responsive navigation state; long bilingual labels; human findability/orientation deferred.
 
 ## W005 — component/page systems
 
@@ -96,8 +93,6 @@ Retained judgments:
 - native `disabled`, discoverable unavailable, hidden/not-applicable and permission-denied are different product decisions;
 - components, composites, page patterns and page templates own different contracts.
 
-OPEN: browser/native-custom keyboard/focus validation; long bilingual/text-growth; forced-colors; async form/recovery transfer; cross-browser/mobile/AT later gates.
-
 ## W006 — complete task surfaces
 
 Canonical:
@@ -109,20 +104,31 @@ Core model:
 
 `resource/task identity → current authoritative/cached content → user intent/input → validation state → operation state → result/data-view state → recovery/continuation action → navigation/history consequence`
 
-W006 deliberately transfers I002/I004/I005 into complete Web page systems rather than redefining Interaction semantics.
+W006 transfers I002/I004/I005 into complete Web page systems while preserving Interaction ownership. It separates route, region, control and operation states and distinguishes unresolved, empty, filtered-zero, partial, stale/offline, failed, unauthorized and outcome-unknown states.
 
-Key retained judgments:
-- route, region, control and operation states should be owned at the smallest truthful task boundary;
-- initial unresolved, valid empty, filtered-zero, partial, stale/offline cached, failed acquisition and unauthorized/not-found are different states;
-- local validity, remote/business validity, accepted intent, pending, confirmed, known non-commit failure and outcome-unknown must remain distinguishable;
-- search/filter criteria state and result state are separate; URL/history ownership follows W004 when share/reload/traversal matters;
-- dense data surfaces should separate query, summary, collection, selection, detail, mutation and freshness ownership so local failure does not automatically destroy valid context;
-- retry safety depends on operation semantics and backend identity/atomicity guarantees, not the presence of a Retry button;
-- region-owned progressive workspace is the Foundation default unless product requirements establish atomicity or offline-first constraints.
+## W007 — performance-sensitive design
 
-Source checks revalidated current WHATWG form/constraint-validation behavior and W3C WAI Forms validation/notification guidance. Reading does not imply browser/AT PASS.
+Canonical:
+- `research/web/W007-performance-sensitive-design-priority-progressive-rendering.md`
 
-OPEN: integrated browser specimen; native constraint validation vs custom error summary; keyboard/focus/status announcements; actual zoom; long bilingual error/recovery text; forced colors; W004 query/history integration; real fetch abort/offline/response-loss; cross-browser/mobile/AT; complete project exercise.
+Evidence: **SOURCE + SYNTHESIS + PRACTICE / CRITIQUE + TRANSFER VALIDATION**.
+
+Core model:
+
+`user task → information/action priority → critical visible structure → resource dependency → fetch/decode/execute/render cost → first truthful presentation → interaction readiness → progressive enrichment → stable continuation → measurement`
+
+Retained judgments:
+- performance is **hierarchy over time**, not merely bytes or a benchmark score;
+- first paint and first usefulness are different;
+- visible UI must not imply interaction readiness when behavior is unavailable;
+- W006 region ownership determines which areas may resolve progressively;
+- late media/font/data insertion must preserve reading position, focus and target geometry;
+- `loading`, `fetchpriority`, preload and responsive-image mechanisms implement a task-priority decision; they do not define that decision;
+- for ordinary task-oriented Web products, task-first progressive composition is the Foundation default unless showcase-first or snapshot-first semantics are justified.
+
+W007 compares three materially different directions — showcase-first, task-first progressive shell, snapshot-first resilient workspace — with KEEP/REWORK/REJECT conditions.
+
+OPEN: executable W007 browser specimen; Resource/Paint/Event Timing; layout/readiness assertions; cache/network/CPU transfer; physical/cross-browser testing; field Core Web Vitals only on a live project; human perceived-speed/task evidence deferred where required.
 
 ## Foundation module status
 
@@ -136,32 +142,32 @@ OPEN: integrated browser specimen; native constraint validation vs custom error 
 | Information architecture | PRACTICE / CRITIQUE — W004 | browser/project/human transfer |
 | Navigation / wayfinding | PRACTICE / CRITIQUE — W004 | routed browser/history/direct-entry validation |
 | Component/page systems | PRACTICE / CRITIQUE — W005 | browser/task/project transfer |
-| Forms/search/tables/dashboards/settings | **PRACTICE / CRITIQUE — W006** | integrated browser + real-project transfer |
-| Web interaction/state | **PRACTICE / CRITIQUE — W004–W006 + peer transfer** | measured page/product state systems |
+| Forms/search/tables/dashboards/settings | PRACTICE / CRITIQUE — W006 | integrated browser + real-project transfer |
+| Web interaction/state | PRACTICE / CRITIQUE — W004–W006 + peer transfer | measured page/product state systems |
 | Web typography | PARTIAL TRANSFER | exact delivered-font/full-page loading/fallback/zoom |
 | Web color/theme/state | PARTIAL TRANSFER | real page/browser/device/forced-color practice |
 | Accessibility / zoom / localization | PARTIAL PRACTICE | actual zoom, keyboard/AT, broader language stress |
-| Performance-sensitive design | **NOT YET WEB-BASELINED** | runtime-cost/design trade-off study |
+| Performance-sensitive design | **PRACTICE / CRITIQUE — W007** | executable browser measurement + live-project field transfer |
 | Design-to-code/browser validation | PRACTICE | cross-browser/device/production methods |
 
 ## Active next queue
 
-1. **Measured integrated browser transfer for W004–W006** when execution-capable environment is available: route/history/direct-entry, query state, native/custom validation, keyboard/focus, local/global loading/error ownership, safe recovery and long bilingual stress. Do not invent measurements.
-2. **W007 candidate — performance-sensitive design:** loading priority, image/font/script cost, perceived hierarchy, progressive rendering, interaction readiness and design trade-offs; keep it design-led rather than generic performance engineering.
+1. **Integrated complete-project Web exercise/capstone candidate:** combine W002–W007 into one coherent task surface with IA/URL, responsive composition, semantic components, task-state ownership, Type/Color application, performance priority and explicit alternative directions. This should be project-like rather than another isolated mechanism note.
+2. Where execution becomes available, run **measured integrated browser transfer for W003–W007**: route/history/direct-entry, query state, native/custom validation, keyboard/focus, local/global loading/error ownership, safe recovery, resource/paint/readiness timing and long bilingual stress. Do not invent measurements.
 3. Integrated Web Type/Color/accessibility: exact fonts, themes/system colors, forced colors, actual zoom, keyboard/focus/AT and cross-browser/device transfer.
-4. **Foundation closure/capstone audit after the performance baseline and at least one integrated complete-project exercise.** Identify exact gate gaps rather than treating later production/human work as perpetual Foundation blockers.
-5. Human findability/task/accessibility validation remains deferred to app/project stage where instructed.
+4. **Foundation closure audit after the complete-project exercise.** Map the exact Master Curriculum Stage 1 gate to evidence and separate genuine Foundation gaps from later production/human/platform gates.
+5. Human findability/task/accessibility/perceived-speed validation remains deferred to app/project stage where instructed.
 
 ## HANDOFFS TO OTHER SPECIALISTS
 
 ### Type
-W006 makes validation/status/recovery copy part of live geometry. Future Type→Web transfer should include long bilingual failure/outcome-unknown states, not only steady-state labels.
+W007 transfers T016 into page-level temporal composition: font loading/failure is a priority and stability state, not only a Type implementation detail.
 
 ### Color
-W006 exposes page semantics — empty, filtered-zero, stale, partial, pending, known failure, outcome unknown, confirmed — that Color may reinforce but must not collapse or encode through hue alone.
+W006/W007 expose state and progressive-rendering semantics that Color may reinforce but must not collapse or encode through hue alone. Performance optimization must not silently erase contrast/state differentiation.
 
 ### Layout / Interaction
-W006 confirms I002/I004/I005 usefulness inside complete Web surfaces while preserving Interaction ownership. Future browser transfer should test whether region-owned states preserve focus/context and whether recovery actions remain semantically safe.
+W007 extends L003/I002 into temporal composition. Progressive insertion should preserve focus/context and must not imply operability before behavior exists.
 
 ## Latest checkpoint
 
@@ -170,6 +176,7 @@ W006 confirms I002/I004/I005 usefulness inside complete Web surfaces while prese
 - W003: PRACTICE + CRITIQUE; executable harness committed; measured results OPEN.
 - W004: PRACTICE + CRITIQUE; IA/URL/navigation/wayfinding baseline + route matrix.
 - W005: PRACTICE + CRITIQUE; component/page-system native semantics and state-contract baseline.
-- W006: **PRACTICE + CRITIQUE; complete task-surface state/validation/recovery integration and three materially different workspace directions.**
+- W006: PRACTICE + CRITIQUE; complete task-surface state/validation/recovery integration.
+- W007: **PRACTICE + CRITIQUE; performance-sensitive design priority/progressive-rendering baseline with three alternative directions.**
 - Web Foundation: **NOT PASSED**.
-- Next new Web study ID: **W007**.
+- Next new Web study ID: **W008**.
