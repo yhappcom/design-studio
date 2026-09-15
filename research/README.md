@@ -12,12 +12,15 @@ Canonical ownership is not a prohibition on cross-domain learning or repeat rese
 | Color | `research/color/` | color science, perception, contrast, gamut, color management, palette/system behavior |
 | Layout, Spatial & Interaction | `research/layout/`, `research/interaction/` | spatial composition, responsive systems, navigation, state, feedback, task/action behavior |
 | Web Design | `research/web/` | real website/web-app structure, page systems, navigation, responsive composition, components, web interaction, browser/device validation |
+| Content Design / UX Writing | `research/content/` | user-facing terminology, naming, action/state/consequence language, instructions, messaging, voice/tone, plain language, localization-ready content systems and content governance |
 
 `research/interaction/` remains separate because temporal/behavioral claims should not be mixed into spatial research files, although both are owned by the same Layout, Spatial & Interaction Specialist.
 
 The Web Design directory is design-led. It owns web-specific application and integration rather than general software engineering. Frontend knowledge is included when it helps prototype, validate, preserve design intent, or make credible production decisions.
 
-Shared/cross-cutting evidence such as accessibility, human factors, research methodology, information visualization or content design may remain outside these directories until a dedicated specialist is formally created.
+The Content Design directory owns the semantic and linguistic interface. It reuses actual product-state/action/recovery contracts from Interaction, typographic/rendering constraints from Type, semantic visual-state constraints from Color, and complete browser/page integration evidence from Web. It does not redefine those domains merely because their outputs affect wording.
+
+Shared/cross-cutting evidence such as accessibility, human factors, research methodology or information visualization may remain outside these directories until a dedicated specialist is formally created.
 
 ## Study IDs
 
@@ -28,6 +31,7 @@ Existing legacy study numbers remain stable. New work uses domain prefixes:
 - Layout `L###`
 - Interaction `I###`
 - Web Design `W###`
+- Content Design / UX Writing `CD###`
 - coordinator/shared cross-cutting `X###` when needed
 
 ## Mandatory pre-study cross-domain scan
@@ -35,7 +39,7 @@ Existing legacy study numbers remain stable. New work uses domain prefixes:
 Before opening a substantial new research file, every specialist must:
 
 1. read `progress/STATUS.md`;
-2. read all four specialist status files;
+2. read all specialist status files;
 3. read its own domain README(s) and relevant canonical studies;
 4. search the other specialists' canonical research for related concepts;
 5. identify reusable, uncertain, disputed, or test-worthy peer evidence;
@@ -43,7 +47,7 @@ Before opening a substantial new research file, every specialist must:
 7. identify dependencies or collaboration opportunities;
 8. record the scan under `## RELATED DOMAIN CHECK`.
 
-A compliant `RELATED DOMAIN CHECK` covers Type, Color, Layout/Interaction and Web Design evidence, plus other relevant cross-cutting work.
+A compliant `RELATED DOMAIN CHECK` covers Type, Color, Layout/Interaction, Web Design and Content Design evidence where materially relevant, plus other cross-cutting work.
 
 ## Overlapping and repeat research
 
@@ -79,6 +83,22 @@ Color provides canonical color knowledge. Web applies and stress-tests it in the
 
 Layout/Interaction provides canonical spatial and behavioral theory. Web turns it into complete page systems, navigation, components, responsive behavior and actual browser/input interactions.
 
+### Content ↔ Interaction
+
+Interaction owns actual state, action, recovery and behavior. Content owns how those truths are named and explained. A wording layer must not collapse pending/failure/ambiguous states or invent unsupported actions for the sake of brevity.
+
+### Content ↔ Type
+
+Content supplies semantic strings, terminology and information-order requirements. Type owns glyph/font systems, metrics and rendering. Necessary language may create layout or rendering stress that should be validated rather than silently shortened to preserve preferred geometry.
+
+### Content ↔ Color
+
+Color can encode semantic state visually; Content communicates meaning in language. State comprehension must not depend on visual color references alone.
+
+### Content ↔ Web
+
+Web integrates and transfer-tests content in actual forms, pages, components, browser accessibility, responsive reflow, localization and runtime states. Content hands back semantic requirements; Web hands back implementation/context failures that affect meaning or discoverability.
+
 ### Web → all peers
 
 Web hands back real-world confirmations, limitations, contradictions and transfer failures found under browser, content, responsive, accessibility, performance and implementation conditions.
@@ -105,6 +125,8 @@ Use as appropriate:
 - `TRANSFER VALIDATION`
 
 `PASS` is never inferred from folder placement or reading alone.
+
+For Content research specifically, expert critique, model output, readability formulae, string-length checks or static alternatives do not equal human comprehension/task-performance evidence. Human claims require appropriate human evidence.
 
 ## New specialist entry
 
