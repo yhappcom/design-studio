@@ -15,9 +15,10 @@
     {"id":"implementation_state_complexity","weight":3,"A":3,"B":3,"C":4},
     {"id":"future_change_flexibility","weight":3,"A":4,"B":4,"C":4}
   ],
-  "totals": {"A":185,"B":157,"C":145},
+  "totals": {"A":184,"B":157,"C":146},
   "selected": "A",
   "selected_name": "Record-Centric Workspace",
+  "correction_note": "Initial manual tally recorded A=185/C=145; arithmetic was recalculated from the criterion matrix before status promotion.",
   "assertions": [
     "query/filter state survives inspect/edit/back",
     "zero-result and zero-dataset are distinct",
