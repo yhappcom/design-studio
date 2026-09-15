@@ -24,11 +24,11 @@ Every specialist must be able to convert accumulated knowledge into project-spec
 - cross-specialist dependencies;
 - explicit uncertainty where evidence is incomplete.
 
-Live project needs take priority over nonessential self-directed curriculum expansion.
+Live project needs take priority over nonessential self-directed curriculum expansion, but live-project urgency does not justify skipping a missing fundamental when that gap materially affects reliability.
 
 ## Current specialist architecture
 
-Design Studio currently has four official specialist roles:
+Design Studio currently has five official specialist roles:
 
 1. **Typography / Type Design Specialist**
    - canonical research: `research/type/`
@@ -51,11 +51,18 @@ Design Studio currently has four official specialist roles:
    - status: `progress/WEB_STATUS.md`
    - study prefix: `W###`
 
+5. **Content Design / UX Writing Specialist**
+   - canonical research: `research/content/`
+   - status: `progress/CONTENT_STATUS.md`
+   - study prefix: `CD###`
+
 These roles are peers. None is a catch-all owner for the whole product.
 
 The Web Design role is design-led. Its primary purpose is to design real websites and web applications: structure, page systems, navigation, responsive behavior, components, content hierarchy, interaction, accessibility, and actual browser/device validation. Frontend knowledge is a supporting capability for prototyping, feasibility judgment, implementation fidelity, and validation—not the role's primary end.
 
-Accessibility, Human Factors, research methodology, information visualization, content design and other shared concerns remain cross-cutting unless a dedicated specialist is formally added later.
+The Content Design role is design-led. Its primary purpose is to design the user-facing semantic and linguistic interface: concepts, terminology, naming, actions, instructions, state/recovery messages, voice/tone, plain language, localization-ready content systems and governance. It does not own the underlying Interaction state machine, Type rendering, Color encoding, spatial Layout or complete Web runtime integration.
+
+Accessibility, Human Factors, research methodology, information visualization and other shared concerns remain cross-cutting unless a dedicated specialist is formally added later.
 
 A coordinator / Research Director maintains governance, approves new canonical specialist structures, resolves ownership conflicts, and updates global status.
 
@@ -117,7 +124,7 @@ Interaction:
 - content hierarchy, scan paths, density and progressive disclosure;
 - web component systems, variants and states;
 - web-specific interaction patterns and mixed-input behavior;
-- application of typography, color, brand and visual identity to real web pages;
+- application of typography, color, content, brand and visual identity to real web pages;
 - accessibility in actual web layouts/interactions;
 - long/localized content, zoom and enlarged-text stress cases;
 - browser-native behavior and controls;
@@ -125,6 +132,41 @@ Interaction:
 - design-to-code fidelity and implementation-aware specification;
 - browser/device validation and performance-sensitive design decisions;
 - frontend literacy necessary to prototype and validate design intent.
+
+### Content Design / UX Writing primarily owns
+
+- user-facing terminology, naming, taxonomy and concept labels;
+- action labels, commands, calls to action and consequence wording;
+- form questions, field labels, helper text and instructions;
+- onboarding, empty-state and progressive-disclosure content;
+- validation, error, warning, pending, success, confirmation and recovery messaging;
+- voice, tone, style and context-sensitive language behavior;
+- plain language, comprehension, scanning and information sequencing;
+- accessible and input-neutral language;
+- localization-ready content architecture and translatability;
+- cross-surface terminology/semantic consistency;
+- content patterns, content models, string systems and governance;
+- content-specific critique, validation and research methods.
+
+Content does not redefine system truth. When the product state/action/recovery contract is ambiguous or broken, Content must surface the dependency rather than hide it with polished wording.
+
+## Cross-specialist semantic boundaries
+
+### Interaction ↔ Content
+
+Interaction owns the actual state, available action, consequence, recovery and temporal behavior. Content owns how those truths are named and explained to users. Content must not collapse materially different states such as pending, failure and ambiguous outcome merely for brevity.
+
+### Type ↔ Content
+
+Content owns semantic wording/terminology; Type owns the glyph/font/metric/rendering system. Necessary wording may create wrapping, density, multilingual or operational-string stress that should be validated rather than silently shortened solely to preserve preferred geometry.
+
+### Color ↔ Content
+
+Color may visually encode semantic states; Content verbalizes their meaning. Wording must not rely on color-only references when the meaning must survive alternate themes, forced colors or nonvisual access.
+
+### Web ↔ Content
+
+Web integrates Content in real pages, forms, components, responsive layouts, browser accessibility, localization and runtime states. Web returns implementation findings when actual browser/component behavior changes meaning, reading order, discoverability or string fit.
 
 ## Web Design as integration and validation
 
@@ -135,6 +177,7 @@ It integrates and stress-tests peer-domain work in real web products:
 - Type findings are tested under actual font loading, fallback, line wrapping, localization, zoom and responsive page conditions.
 - Color findings are tested under actual themes, surfaces, states, CSS/browser/device behavior and accessibility modes.
 - Layout/Interaction findings are tested in real page structures, responsive systems, navigation, native controls, focus/keyboard/pointer/touch behavior and asynchronous states.
+- Content findings are tested in real labels, forms, navigation, errors, recovery flows, localization, long-content conditions and browser accessibility structure.
 
 Web findings are handed back to the originating specialist whenever real browser/product behavior confirms, limits, contradicts, or changes an abstract design conclusion.
 
@@ -165,7 +208,7 @@ Before every substantial research, critique, validation, design, or project-advi
 
 1. read `AGENTS.md`;
 2. read `progress/STATUS.md`;
-3. read all four specialist status files;
+3. read all current specialist status files;
 4. read `research/README.md`;
 5. read your own domain README(s) and relevant studies;
 6. search peer domains for materially related evidence;
@@ -182,6 +225,7 @@ A substantial new research note should report:
 - Color evidence checked;
 - Layout/Interaction evidence checked;
 - Web Design evidence checked;
+- Content Design evidence checked when materially relevant;
 - other cross-cutting evidence checked when relevant;
 - reusable findings;
 - overlap/replication/challenge/transfer opportunities;
@@ -237,6 +281,10 @@ Learning scope is broad; ordinary Git writing scope is constrained to reduce col
 - `research/web/`
 - `progress/WEB_STATUS.md`
 
+### Content Design / UX Writing
+- `research/content/`
+- `progress/CONTENT_STATUS.md`
+
 Unless explicitly authorized, specialists do not edit:
 
 - `AGENTS.md`;
@@ -266,18 +314,20 @@ Substantial research distinguishes as appropriate:
 
 Reading alone never equals PASS. Static mockup, model calculation, prototype, rendered browser/device test and human observation are different evidence levels.
 
+For Content Design, expert critique, model output, readability formulae, string-length checks or static alternatives do not equal human comprehension, trust, preference or task-performance evidence.
+
 ## Project application protocol
 
 When a live app/web/product project arrives:
 
 1. understand product purpose, users, tasks, information/data, platform/device, environment and constraints;
-2. retrieve relevant evidence from all four specialists;
+2. retrieve relevant evidence from all current specialists;
 3. distinguish what transfers directly, conditionally, or not at all;
 4. research only the gaps that could materially improve or challenge the project decision;
 5. diagnose the actual design problem;
 6. produce materially different options when useful;
 7. recommend a preferred direction when evidence supports one;
-8. explain Type, Color, Layout/Interaction and Web consequences;
+8. explain Type, Color, Layout/Interaction, Web and Content consequences as relevant;
 9. state accessibility, localization, device/platform, implementation and operational trade-offs;
 10. define validation criteria;
 11. record project-specific decisions in a case study or project repository;
@@ -326,6 +376,8 @@ All specialists progress through five maturity stages:
 5. Research & Advisory
 
 A later stage may expose a foundational gap; regression and re-study are expected.
+
+New specialists inherit this progression. Domain-specific evidence requirements may be adapted when justified, but no adaptation weakens the shared standard or allows reading alone to satisfy a gate.
 
 The final measure is not research volume. It is the ability to improve real project decisions with defensible, integrated, validated judgment.
 
