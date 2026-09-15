@@ -1,6 +1,6 @@
 # T021 — Coherent Mini-Family + Spacing Comparison Practice
 
-Status: **STAGE 2 PRACTICE + CRITIQUE — three bounded hypotheses compared; B selected as working direction for T022; custom-outline/raster proof remains OPEN**
+Status: **STAGE 2 PRACTICE + CRITIQUE — three bounded hypotheses compared; executable custom-outline/raster proof harness added; execution results remain OPEN**
 
 Owner: Typography / Type Design Specialist  
 Canonical path: `research/type/`
@@ -8,282 +8,123 @@ Canonical path: `research/type/`
 Companion evidence:
 - `T021-mini-family-comparison-metrics.json`
 - `T021-mini-family-comparison-specimen.svg`
+- `T021-outline-render-proof.py`
 
 ## Purpose
 
-T020 identified the largest Stage 2 gap as integrated family/system practice rather than another isolated production mechanism. T021 begins that chain with a bounded Latin control family and three materially different spacing/construction hypotheses.
-
-This is deliberately **pre-kerning**. The purpose is to force global sidebearing and family decisions before pair-specific repair.
-
----
+T020 identified the largest Stage 2 gap as integrated family/system practice rather than another isolated production mechanism. T021 begins that chain with a bounded Latin control family and three materially different spacing/construction hypotheses. This remains deliberately **pre-kerning** so general spacing and drawing failures cannot be hidden by pair-specific repair.
 
 ## RELATED DOMAIN CHECK
 
 ### Typography / Type
-
-Evidence checked:
-- `002-metrics-spacing-optical-rhythm.md`;
-- Stage 1 H/O construction/spacing exercises;
-- T002 intended-size failure/redraw logic;
-- T006 source/metric audit;
-- T020 Stage 2 entry audit.
-
-Reusable finding:
-- H/O and n/o are useful straight/round controls;
-- sidebearings and contours must be judged as coupled systems;
-- repeated strings expose rhythm defects better than isolated pairs;
-- spacing should be pushed as far as possible before kerning;
-- intended-size proof is a separate evidence layer.
+Evidence checked: Study 002, T002, T006, T020 and the first T021 comparison block. Reusable rule: H/O and n/o act as straight/round controls; repeated strings precede kerning; intended-size raster evidence is separate from metric hypotheses.
 
 ### Color
-
-Evidence checked:
-- `progress/COLOR_STATUS.md` through C015.
-
-Reuse decision:
-- hold Color constant during spacing comparison. Chroma must not become an accidental preference variable while Type geometry is being compared.
+Current Color Stage 1 PASS evidence checked. Color remains held constant so geometry is the manipulated variable.
 
 ### Layout / Interaction
-
-Evidence checked:
-- `research/layout/L003-type-fallback-density-reflow-transfer.md`;
-- current Layout status.
-
-Reusable finding:
-- width differences become product geometry differences near wrapping thresholds. Therefore the widest hypothesis is not automatically more readable, and the narrowest is not automatically more efficient.
+L003 remains directly relevant: modest font-width differences can cross wrap thresholds. Therefore compactness/openness is evaluated as a product-geometry tradeoff, not an isolated aesthetic preference.
 
 ### Web Design
-
-Evidence checked:
-- current Web status through W011;
-- T016 browser font-loading transfer remains the Type-owned loading baseline.
-
-Reuse decision:
-- actual browser delivery is not part of this first family-design exercise. Final selected artifacts must later be transferred to browser/runtime conditions.
+Current Web status through W011 checked. The new harness is FreeType/Pillow research evidence, not browser delivery proof; exact browser/runtime transfer remains later work.
 
 ### Overlap decision
-
-**PRACTICE + COMPARATIVE STUDY.** This intentionally reuses Foundation spacing principles because Stage 2 requires multiple solutions and defended selection, not another source summary.
-
----
-
-## SOURCE
-
-OpenType separates visible outline geometry from horizontal layout metrics. `hmtx` supplies advance widths and left sidebearings; right sidebearing follows from advance, left sidebearing and glyph bounds. A metric value therefore has meaning only relative to UPM and contour geometry.
-
-Canonical source already recorded in Study 002:
-- Microsoft OpenType `head`: https://learn.microsoft.com/en-us/typography/opentype/spec/head
-- Microsoft OpenType `hmtx`: https://learn.microsoft.com/en-us/typography/opentype/spec/hmtx
-
-Study 002 also records the Glyphs spacing workflow: establish H/O and n/o controls, inspect repeated strings, judge at intended size, and solve general spacing before kerning.
-
----
+**PRACTICE + COMPARATIVE STUDY + REPRODUCIBLE EXECUTION PREPARATION.** The new work closes the previous methodological defect—comparison without custom outlines—without pretending that an unexecuted harness is measured evidence.
 
 ## Exercise contract
 
-Common coordinate system:
-- UPM: 1000;
-- baseline: 0;
-- x-height: 500;
-- cap height: 700;
-- round overshoot target: 12;
-- kerning: OFF.
+Common system: UPM 1000; baseline 0; x-height 500; cap height 700; uppercase round overshoot 12u; kerning OFF.
 
-Initial control family:
-- repeated-form controls: `H O n o`;
-- stress forms prepared for the next pass: `A V T`;
-- later T021/T022 extension target: `L I`, numerals, punctuation and one accented construction path.
+Hypotheses remain:
+- A Compact geometric — 90u stem, tight bearings;
+- B Balanced text — 85u stem, moderate differentiated bearings;
+- C Open screen — 82u stem, generous bearings.
 
-Control strings:
-- `HHOO HHOH OOHO HOHOHO`;
-- `nn oo nono noon onno`;
-- `HOnonO HnOoH`;
-- `AVAVA TOTO LALO`;
-- `00112233445566778899`;
-- `010101 808080 111888`;
-- `1+05 12+40 999+59`.
+Control strings include `HHOO`, `HHOH`, `OOHO`, `HOHOHO`, `nono`, `noon`, `onno`, `HOnonO`, `HnOoH`.
 
-The last three strings are retained as future data-centric transfer controls; they do not replace H/O/n/o spacing proof.
+## First comparison checkpoint
 
----
+Representative unkerned widths remain:
 
-# Hypothesis A — Compact geometric
+| String | A | B | C |
+| --- | ---: | ---: | ---: |
+| `HHOO` | 2420u | 2480u | 2600u |
+| `HOHOHO` | 3630u | 3720u | 3900u |
+| `nono` | 2100u | 2160u | 2270u |
+| `HOnonO` | 3390u | 3480u | 3650u |
 
-Intent:
-- minimize horizontal footprint;
-- keep straight/round bearings close;
-- use a comparatively strong 90u stem.
+Working critique remains provisional: A **REWORK**, B **KEEP AS WORKING DIRECTION**, C **REJECT AS DEFAULT / KEEP AS STRESS CONTROL**. B is not visually proven yet.
 
-Representative metrics:
-- H: 600 advance, 55/55 bearings;
-- O: 610, 45/45;
-- n: 520, 48/42;
-- o: 530, 42/42.
+## New executable outline/raster layer
 
-Calculated unkerned control widths:
-- `HHOO`: 2420u;
-- `HOHOHO`: 3630u;
-- `nono`: 2100u;
-- `HOnonO`: 3390u.
+`T021-outline-render-proof.py` now defines actual custom research outlines for H/O/n/o for all three hypotheses and builds three TTFs with `fontTools`. It then prepares real FreeType/Pillow rendering of the control strings at **14px, 17px and 24px**.
 
-### Critique
+The harness intentionally contains no kerning feature. Therefore any visible defect at this step must first be considered as:
 
-**Strength:** lowest space cost of the three hypotheses.
+1. drawing/form defect;
+2. general sidebearing/advance defect;
+3. only later, if general rhythm survives, a true pair-specific kerning candidate.
 
-**Risk:** compactness plus the heaviest stem leaves the least white-space reserve. It is the direction most likely to tempt later pair-specific negative kerning to recover openness around diagonals/rounds.
+The outline strategy is deliberately bounded rather than production-quality: H uses explicit vertical stems/crossbar; O/o use cubic ellipse-like outer/inner contours with overshoot; n uses a simplified stem/shoulder construction. The purpose is comparative family/spacing practice, not authorship of a release font.
 
-**Verdict: REWORK.** Keep as the compact boundary/control, not the working family direction.
+### Evidence boundary
 
----
+The generator has been added canonically, but this connector session does not execute repository Python or attach generated binary/raster outputs. Therefore the existence of the script is **reproducibility infrastructure**, not a measured raster result.
 
-# Hypothesis B — Balanced text
+Do not claim:
+- that B survived 14/17/24px rendering;
+- that FreeType produced a particular pixel result;
+- browser/native equivalence;
+- human readability preference.
 
-Intent:
-- moderate width;
-- explicitly differentiate straight and round spacing;
-- preserve enough white space for text rhythm without maximizing footprint.
+The earlier SVG remains only a strategy sheet. The next evidence upgrade occurs when the harness is executed in a suitable environment and its generated PNG/JSON are inspected.
 
-Representative metrics:
-- H: 620, 65/65;
-- O: 620, 55/55;
-- n: 540, 58/52;
-- o: 540, 50/50;
-- stem: 85u.
+## Why this is still progress
 
-Calculated unkerned control widths:
-- `HHOO`: 2480u;
-- `HOHOHO`: 3720u;
-- `nono`: 2160u;
-- `HOnonO`: 3480u.
+The previous methodological gap was `declared metrics != custom outline family`. The new harness now encodes contour geometry, metrics, build and intended-size render procedure in one reproducible artifact. This converts the next decision from an informal drawing exercise into an executable comparison whose result can falsify the provisional B selection.
 
-### Critique
+## Next critique protocol after execution
 
-**Strength:** preserves a clear straight-vs-round bearing model while avoiding both A's compressed reserve and C's large width cost. H/O and n/o also share equal advances inside each case, simplifying early repeated-form comparison without forcing every future glyph into equal width.
+For each A/B/C rendering and each 14/17/24px size:
+- inspect H/H, H/O, O/O rhythm;
+- inspect n/n, n/o, o/o rhythm;
+- inspect mixed `HOnonO` and `HnOoH` transitions;
+- record whether round overshoot/raster mass is visually stable;
+- identify repeated imbalance across contexts as spacing, not kerning;
+- identify contour/counter darkness as drawing, not spacing;
+- reserve pair-specific correction only for exceptional geometry after general rhythm is stable.
 
-**Risk:** equal H/O and n/o advances can become a false symmetry if later contours prove to need different cells. These values are hypotheses, not rules.
-
-**Verdict: KEEP AS WORKING DIRECTION.** Advance B into T022, subject to custom-outline/control-string proof.
-
----
-
-# Hypothesis C — Open screen
-
-Intent:
-- maximize counters/white-space reserve;
-- use lighter 82u stems and more generous bearings;
-- treat small-screen robustness as the priority hypothesis.
-
-Representative metrics:
-- H: 650, 75/75;
-- O: 650, 65/65;
-- n: 565, 68/62;
-- o: 570, 60/60.
-
-Calculated unkerned control widths:
-- `HHOO`: 2600u;
-- `HOHOHO`: 3900u;
-- `nono`: 2270u;
-- `HOnonO`: 3650u.
-
-### Critique
-
-**Strength:** greatest white-space reserve and lowest nominal stem mass.
-
-**Risk:** width cost is substantial: `HHOO` is ~4.8% wider than B and ~7.4% wider than A; `HOnonO` is ~4.9% wider than B. L003 shows that modest Type-width differences can cross real layout thresholds, so openness cannot be selected without product geometry consequences.
-
-**Verdict: REJECT AS DEFAULT / RETAIN AS STRESS CONTROL.** C remains useful for small-size experiments but is not the default working direction.
-
----
-
-## Comparative decision matrix
-
-| Criterion | A compact | B balanced | C open |
-| --- | --- | --- | --- |
-| horizontal economy | strongest | moderate | weakest |
-| white-space reserve | weakest | moderate | strongest |
-| straight/round spacing differentiation | limited | explicit | explicit/generous |
-| likely exception pressure | higher risk | lowest current risk | moderate, mostly width-driven |
-| dense-product geometry risk | lowest width | controlled | highest width |
-| small-size openness hypothesis | weakest | balanced | strongest |
-| current decision | REWORK | **KEEP** | REJECT default / keep stress control |
-
-### SYNTHESIS
-
-The useful comparison is not `tight vs loose` in isolation. It is:
-
-`black-form mass + sidebearing ownership + sequence rhythm + exception cost + product width consequence`.
-
-A spacing system that looks orderly numerically can still fail once contours are drawn; a visually open system can still be the wrong product choice if its width repeatedly crosses layout thresholds.
-
-### STUDIO JUDGMENT
-
-**B is the correct working direction for the next exercise, not a finished design.**
-
-Why:
-- it keeps explicit straight/round spacing logic;
-- it preserves more correction reserve than A;
-- it avoids C's ~5% control-string width premium over B;
-- it provides a neutral middle hypothesis from which later kerning and small-size evidence can move in either direction;
-- it minimizes premature optimization for either density or openness.
-
-What B sacrifices:
-- it is not as compact as A;
-- it is not as open as C;
-- equal advances in the initial controls may need to be broken after real outline proof.
-
----
-
-## Failure discovered in the comparison artifact
-
-The companion SVG intentionally does **not** pretend to be a custom-font raster proof. Its visible sample text uses the viewer's sans font while labels expose the three declared metric strategies.
-
-This creates a useful evidence boundary:
-
-`declared metrics + comparison sheet != custom glyph family != target-size raster proof`.
-
-A prior Stage 2 mistake would be to call a metric table a coherent family. T021 does not do that.
-
----
+If B loses to A or C after actual raster evidence, revise the working selection. The Stage 2 gate requires defended selection, not attachment to the first hypothesis.
 
 ## OPEN
 
-T021 is **not complete enough to close the Stage 2 family requirement**.
+Before T021 can strongly support the Stage 2 family requirement:
+1. execute and inspect the custom H/O/n/o raster harness;
+2. record actual 14/17/24px results and revise A/B/C critique;
+3. extend selected/relevant controls to A/V/T/L/I with kerning OFF;
+4. add numerals/core punctuation;
+5. add one accented construction path;
+6. only then treat the selected direction as ready for T022 kerning-class work.
 
-Still required before this exercise can be considered strong family evidence:
-1. actual custom H/O/n/o outlines for A/B/C or at minimum B plus adversarial A/C controls;
-2. real control-string rendering from those outlines at 14/17/24px;
-3. classification of observed defects as drawing vs spacing vs true kerning;
-4. A/V/T/L/I extension with no kerning first;
-5. numeral/punctuation extension;
-6. accented construction path;
-7. proof that B remains preferable after actual rendering.
-
-No browser, native-platform, human-reading or production-font PASS is claimed.
-
----
+Stage 2 remains **NOT PASSED**.
 
 ## HANDOFFS TO OTHER SPECIALISTS
 
 ### Color
-- Hold Color constant during Type spacing comparisons; do not let chroma become a preference confound.
-- Later role-system transfer should restore real Color hierarchy.
+Keep Color neutral during this geometry proof. Restore actual semantic Color only at product-role transfer.
 
 ### Layout / Interaction
-- C is roughly 5% wider than B on representative control strings. L003 already shows that differences of this kind can matter near wrap thresholds.
-- Treat the final Type artifact as an input to layout stress testing rather than forcing Type to one width solely to preserve fixed cells.
+The A/B/C width differences remain spatial inputs. Once an executed Type artifact exists, Layout should stress the exact artifact rather than infer from declared metrics alone.
 
 ### Web Design
-- The SVG is not browser font validation. When actual font binaries exist, test exact artifacts under loading/fallback/zoom/localization conditions.
-- T016 remains the relevant loading-state baseline.
-
----
+The new TTF/FreeType harness still does not establish browser behavior. After Type selects a direction, Web should test the exact artifact under font loading/fallback, localization, zoom and responsive conditions.
 
 ## Checkpoint
 
-- Three materially different Stage 2 hypotheses: **ESTABLISHED**.
-- Explicit KEEP/REWORK/REJECT critique: **ESTABLISHED**.
-- Working direction: **B — Balanced text**.
-- Coherent custom-outline family proof: **OPEN**.
-- Actual intended-size raster proof: **OPEN**.
-- Stage 2: **NOT PASSED**.
-- Next action: continue T021 with real outlines/control-string rendering before opening T022 if the environment permits; otherwise T022 must not treat B as visually proven.
+- Multiple Stage 2 hypotheses: **ESTABLISHED**.
+- Explicit critique: **ESTABLISHED**.
+- Custom outline/build/render harness: **ESTABLISHED**.
+- Executed raster evidence: **OPEN**.
+- Working direction: **B — Balanced text, provisional**.
+- T021: **IN PROGRESS**.
+- T022: **DO NOT OPEN YET**.
