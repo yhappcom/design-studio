@@ -1,67 +1,73 @@
 # Layout, Spatial & Interaction Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PRACTICE / INTEGRATED CAPSTONE COMPLETE, CLOSURE AUDIT NEXT**  
+Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PASSED / STAGE 3 ENTRY AUDIT NEXT**  
 Governance sync: 2026-09-16  
 Canonical paths: `research/layout/`, `research/interaction/`  
-Next new-study IDs: Layout `L010`; Interaction `I007`
+Next new-study IDs: Layout `L011`; Interaction `I007`
 
 ## Mission / current level
 Research exists to improve real app, web and product decisions. Research volume is not the objective.
 
 Stage 1 — Foundations: **PASS**  
-Stage 2 — Intermediate Professional Practice: **PRACTICE / NOT YET AUDITED FOR CLOSURE**
+Stage 2 — Intermediate Professional Practice: **PASS**  
+Stage 3 — Advanced / Systems Practice: **NOT YET AUDITED**
 
 Authority:
 - L007 — Stage 1 closure / PASS;
 - L008 — Stage 2 entry audit;
-- L009 — integrated workflow architecture capstone.
+- L009 — integrated workflow architecture capstone;
+- **L010 — Stage 2 closure audit / PASS**.
 
 The coordinator-maintained `progress/STATUS.md` is stale relative to specialist evidence and remains outside this specialist's writing boundary.
 
 Human-observer/user-task validation remains **DEFERRED TO APP-DEVELOPMENT VALIDATION**. No human evidence is simulated.
 
-## Latest evidence — L009
-Canonical:
-- `research/layout/L009-integrated-workflow-architecture-capstone.md`
-- `research/layout/L009-integrated-workflow-architecture-results.json`
+## Latest evidence — L010
+Canonical: `research/layout/L010-stage2-intermediate-closure-audit.md`.
 
-L008 found that the remaining Stage 2 weakness was not another isolated mechanism but integrated product practice: task analysis→workflow, forms/search/settings/empty states, component architecture without sameness, non-text semantics, and product-scale alternatives with defended selection.
+L010 re-read the exact Master Curriculum after L009 rather than adding more Stage 2 material. It checked every Information/Product and Research/Critique requirement against L001–L009, I001–I006 and peer evidence.
 
-L009 addresses those gaps using one fixed operational-logbook substrate and three materially different complete architectures:
-- A Record-Centric Workspace;
-- B Summary-First Dashboard;
-- C Search/Command-First Workspace.
+The decisive gate evidence remains L009:
+- one fixed operational-logbook problem;
+- three materially different complete architectures A/B/C;
+- fixed explicit criteria;
+- arithmetic-verified comparison A=184, B=157, C=146;
+- conditional selection of A Record-Centric Workspace for the fixed lookup/comparison/correction task;
+- explicit KEEP/REWORK/REJECT;
+- correct Type/Color/Web evidence reuse.
 
-The fixed primary task is record lookup/comparison/correction with context preservation. A is provisionally selected because that task makes dense comparison and recognition more important than aggregate-first or command-first entry.
+L010 performs a CONTRADICTION REVIEW of L008's prior NOT PASSED verdict. L008 was correct when product-integration gaps existed; L009 materially closes those gaps, so the earlier blocker is historical rather than current.
 
-Structured criterion totals after arithmetic verification:
-- A **184/200**;
-- B **157/200**;
-- C **146/200**.
-
-The first manual tally recorded A=185/C=145; recalculation from the stored matrix exposed and corrected the arithmetic before status promotion. Scores are studio judgments, not human-performance measurements.
-
-## Stage 2 snapshot
-| Requirement | Current state |
+## Stage 2 closure matrix
+| Requirement | Verdict |
 |---|---|
-| task analysis / primary question | **DIRECT PRACTICE — L009** |
-| information hierarchy / IA | **STRONG** |
-| dense vs low-density composition | **STRONG** |
-| forms | **INTEGRATED PRACTICE — L009** |
-| tables | **STRONG — L004 + L009** |
-| search | **INTEGRATED PRACTICE — L009** |
-| settings | **INTEGRATED PRACTICE — L009** |
-| empty/error/loading/recovery | **INTEGRATED PRACTICE — L009 + I002/I004** |
-| responsive/adaptive | **STRONG; L009 spec-level product integration** |
-| typography across roles | **PEER REUSE — Type** |
-| iconography/non-text signals | **PEER TRANSFER + INTEGRATION — W011 → L009** |
-| component systems without sameness | **DIRECT PRACTICE — L009** |
-| interaction/async/recovery | **STRONG — I001–I006 + L009 integration** |
-| multiple solutions + defended selection | **DIRECT PRODUCT-SCALE PRACTICE — L009** |
-| critique / KEEP-REWORK-REJECT | **STRONG** |
-| dependency/handoff discipline | **STRONG** |
+| task analysis / primary question | **PASS** |
+| information hierarchy / IA | **PASS** |
+| dense vs low-density composition | **PASS** |
+| forms / tables / search / settings / empty-error-loading | **PASS** |
+| responsive/adaptive composition | **PASS for Stage 2** |
+| typography across roles | **PASS BY PEER REUSE for product-design gate** |
+| iconography/non-text signals | **PASS for Stage 2; human recognition OPEN** |
+| component systems without sameness | **PASS** |
+| interaction/async/recovery | **PASS** |
+| precedent/comparison/hypothesis/critique | **PASS** |
+| KEEP/REWORK/REJECT | **PASS** |
+| genericness / novelty / implementation-bias critique | **PASS** |
+| dependency/handoff discipline | **PASS** |
+| multiple solutions + defended selection | **PASS — L009 decisive gate evidence** |
 
-Stage 2 is **not automatically marked PASS**. L010 must re-read the exact Master Curriculum and determine whether the accumulated evidence satisfies the gate without importing Stage 3/4 requirements.
+## Evidence boundary
+Stage 2 PASS does **not** imply:
+- coherent three-form-factor system;
+- motion/reduced-motion system;
+- production framework/backend transfer;
+- exact font/localization/platform geometry;
+- real browser/native router/input parity;
+- AT/screen-reader evidence;
+- physical-device validation;
+- human task performance, recognition, workload or preference.
+
+Those remain Stage 3/4, project-specific or deferred human-validation work as appropriate.
 
 ## Reusable evidence beyond Foundation
 ### Spatial
@@ -71,7 +77,8 @@ Stage 2 is **not automatically marked PASS**. L010 must re-read the exact Master
 - L004 tabular-numeral dense comparison;
 - L005 Color-driven salience transfer;
 - L006 layer ownership cross-contract;
-- L009 integrated workflow/product architecture.
+- L009 integrated workflow/product architecture;
+- L010 exact Stage 2 closure audit.
 
 ### Interaction
 - I001 navigation/history/focus: 14 assertions;
@@ -89,16 +96,18 @@ Standing rules retained:
 - convergence, intent preservation and domain correctness are different gates;
 - component reuse follows repeated semantic/behavioral contracts, not visual resemblance alone.
 
-## Four-specialist balance after L009
+## Four-specialist balance after L010
 - **Type:** Stage 1 PASS; Stage 2 PRACTICE with actual outline/raster evidence and active drawing revision.
 - **Color:** Stage 1 PASS; **Stage 2 PASS**; Stage 3 entry not yet audited.
-- **Layout / Interaction:** Stage 1 PASS; **Stage 2 PRACTICE with integrated capstone complete; closure audit next**.
+- **Layout / Interaction:** Stage 1 PASS; **Stage 2 PASS**; Stage 3 entry not yet audited.
 - **Web:** Stage 1 PASS; Stage 2 PRACTICE through W013 Chromium transfer; runtime breadth remains active.
 
-Future balance cycles should compare Type drawing/family gaps, Layout Stage 2 closure, Web runtime breadth, Color Stage 3 entry and live-project risk rather than selecting Layout automatically.
+Layout should no longer receive automatic priority merely because its Stage 2 closure audit was pending. Future balance cycles should compare Type Stage 2 drawing/family gaps, Web Stage 2 runtime breadth, and Color/Layout Stage 3 entry needs against live-project risk.
 
 ## OPEN / later evidence
 - executable rendering of L009 selected architecture and a rejected control;
+- coherent system across at least three form factors;
+- motion hierarchy/reduced-motion equivalence;
 - real router/browser/native focus/keyboard/async transfer;
 - exact font/localization geometry;
 - physical-device/input parity;
@@ -110,25 +119,26 @@ These are not fabricated as Stage 2 evidence.
 
 ## Active next queue
 1. Re-evaluate all four specialists before selecting more Layout work.
-2. If Layout remains highest value, open **L010 — Stage 2 closure audit** against the exact Master Curriculum.
-3. If the gate passes, do not continue isolated Stage 2 accumulation merely for file volume; compare Stage 3 entry needs and live-project transfers.
-4. If the gate does not pass, identify only the exact missing requirement and perform that practice.
-5. Executable L009 transfer can be handed to Web or a live project when it materially reduces product risk.
+2. If Layout remains highest value, open **L011 — Stage 3 entry audit** against the exact Master Curriculum.
+3. Prefer a coherent multi-surface system question over more isolated Stage 2 accumulation.
+4. L009 direction A remains ready for Web or live-project TRANSFER VALIDATION when that materially reduces risk.
+5. Keep human validation deferred to app/project stage rather than simulating it.
 
 ## HANDOFFS TO OTHER SPECIALISTS
 ### Type
-L009's selected record-centric architecture depends on dense-table typography and tabular numeric behavior but prescribes no font. Exact Type assets should later stress geometry/text growth.
+L009 direction A remains a useful dense-table and localization geometry stress substrate. Layout Stage 2 PASS does not imply Type Stage 2 completion.
 
 ### Color
-L009 keeps pending/error/selected/focus semantics independent of palette. C017 direction C can be transferred without changing workflow meaning.
+Future Stage 3 multi-surface work can transfer C017 direction C while preserving state semantics independent of palette.
 
 ### Web
-L009 direction A is ready for independent browser transfer: responsive table→detail recomposition, router restoration, native controls, forced colors and async failure should be executed rather than assumed.
+L009 direction A is ready for independent browser transfer: responsive table→detail recomposition, router restoration, native controls, forced colors and async failure. This now serves Web runtime breadth or later-stage transfer rather than a missing Layout Stage 2 gate.
 
 ## Latest checkpoint
 - Stage 1: **PASS**.
 - L008: Stage 2 entry audit complete.
-- L009: **integrated three-architecture capstone complete**.
-- L009 arithmetic: initial manual tally corrected to **184 / 157 / 146** from the stored matrix.
-- Stage 2: **PRACTICE / closure audit pending**.
-- Next Layout ID: **L010**.
+- L009: integrated three-architecture capstone complete; arithmetic corrected to **184 / 157 / 146**.
+- L010: **Stage 2 closure audit PASS**.
+- Stage 2: **PASS**.
+- Stage 3: **NOT YET AUDITED**.
+- Next Layout ID: **L011**.
