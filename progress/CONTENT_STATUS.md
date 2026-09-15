@@ -1,10 +1,10 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 FOUNDATION / BASELINE IN PROGRESS**  
+Operating state: **ACTIVE — STAGE 1 FOUNDATION / CD001 EXECUTED / CD002 NEXT**  
 Governance activation: 2026-09-16  
 Primary path: `research/content/`  
 Study prefix: `CD###`  
-Next new-study ID: `CD002` after CD001 foundation evidence is reviewed
+Next new-study ID: `CD002`
 
 ## Current level
 
@@ -41,17 +41,36 @@ Foundation begins with principles rather than microcopy recipes:
 
 Reading or collecting style-guide rules does not satisfy the Foundation gate.
 
-## First study — CD001
+## CD001 — executed Foundation evidence
 
-`research/content/CD001-language-as-interface-foundations.md`
+Canonical: `research/content/CD001-language-as-interface-foundations.md`
 
-Purpose:
-- establish Content Design as product/interface design through language rather than decorative copywriting;
-- separate user need, product state, action and consequence;
-- compare first-party guidance from GOV.UK, Apple and Microsoft;
-- establish an initial studio semantic-contract model;
-- identify where wording problems are actually interaction/product problems;
-- perform an original non-human practice/critique exercise without claiming comprehension evidence.
+CD001 established the first Content-specific foundation model from first-party GOV.UK, Apple and Microsoft guidance plus direct reuse of existing Design Studio Interaction evidence.
+
+Key result:
+
+> Content is part of the product contract, not a decorative string layer. Before optimizing tone or brevity, verify semantic fidelity to the real object, state, available action and consequence.
+
+Initial diagnostic model:
+- **Object** — what thing/process is this about?
+- **State** — what is actually known to be true now?
+- **Action** — what can the user actually do now?
+- **Consequence** — what will that action change or risk?
+
+This is a diagnostic, not a mandatory sentence template.
+
+### Original practice result
+
+A controlled ambiguous network-outcome exercise compared three interface-message strategies. The shortest candidate, `Upload failed. Try again.`, was REJECTED because it asserted a failure state the system did not know and encouraged retry despite possible duplicate-effect risk.
+
+A longer uncertainty-preserving candidate was kept as the semantic baseline. This does **not** prove that users understand or prefer it; it proves only that semantic fidelity can rule out an incorrect short string before human testing.
+
+### Important evidence split introduced
+
+- **semantic fidelity** can often be checked against the actual product/interaction contract;
+- **human comprehensibility / task performance** requires appropriate human evidence when claimed.
+
+This prevents expert copy critique, readability scores or model judgments from being mislabeled as user validation.
 
 ## Initial cross-specialist map
 
@@ -62,14 +81,14 @@ Reusable evidence: typography-as-information-architecture, numeral/punctuation s
 Reusable evidence: semantic-state separation and accessibility constraints. Content may verbalize status but must not let wording contradict the state meaning encoded elsewhere.
 
 ### Layout / Interaction
-Highest-overlap dependency. Interaction owns actual action/state/recovery behavior. Content must describe the real contract accurately and must flag when copy is being used to compensate for missing or ambiguous behavior.
+Highest-overlap dependency. Interaction owns actual action/state/recovery behavior. CD001 directly reused pending/failure/ambiguous-outcome distinctions and confirmed that a copy layer can destroy correct state modeling if it collapses those states into one generic message.
 
 ### Web
 Web is the primary integration/transfer partner for real forms, navigation, components, browser accessibility, responsive long-content and localization stress.
 
 ## Evidence boundary
 
-Current evidence is source study + expert synthesis + original structured critique only.
+Current evidence is authoritative source study + synthesis + original structured critique + cross-domain semantic transfer.
 
 NOT established yet:
 - human comprehension;
@@ -84,13 +103,14 @@ These require later appropriate evidence and must not be inferred from style-gui
 
 ## Active next queue
 
-1. Complete and critique CD001 language-as-interface foundation model.
-2. CD002 — user needs, mental models, terminology and naming: establish concept/label mapping and ambiguity failure modes.
-3. CD003 — action labels and consequence clarity: distinguish command, object, state and outcome language.
-4. CD004 — plain language, scanning, information sequencing and sufficiency trade-offs.
-5. CD005 — accessible/input-neutral interface language and non-visual reference failures.
-6. Run a Stage 1 gap audit before adding higher-level voice/tone or pattern libraries.
-7. Only after sufficient foundations, study common product surfaces such as forms, errors, onboarding and empty states in Stage 2.
+1. **CD002 — user needs, mental models, terminology and naming:** establish concept/label mapping, expert-domain vocabulary boundaries and ambiguity failure modes.
+2. CD003 — action labels and consequence clarity: distinguish command, object, state and outcome language.
+3. CD004 — plain language, scanning, information sequencing and sufficiency trade-offs.
+4. CD005 — accessible/input-neutral interface language and non-visual reference failures.
+5. Add design-history/precedent literacy specific to content design before Foundation closure.
+6. Develop reproducible non-human content checks that validate semantic structure without pretending to measure comprehension.
+7. Run a Stage 1 gap/closure audit only after sufficient original practice exists.
+8. Only after Foundation evidence is strong enough, move into Stage 2 surfaces such as forms, errors, onboarding, empty states and voice/tone systems.
 
 ## OPEN / dependencies
 
@@ -107,5 +127,8 @@ These require later appropriate evidence and must not be inferred from style-gui
 - Canonical path: **CREATED**.
 - Status file: **CREATED**.
 - Five-stage progression: **DEFINED**.
-- CD001: **OPENING FOUNDATION STUDY**.
+- CD001: **EXECUTED**.
+- First original practice/critique: **EXECUTED**.
+- Human validation: **NOT CLAIMED**.
+- CD002: **NEXT**.
 - Stage 1: **NOT PASSED**.
