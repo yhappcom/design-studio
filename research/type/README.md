@@ -13,7 +13,6 @@ Before substantial Type work: read `AGENTS.md`, `progress/STATUS.md`, all four s
 ## Current studies
 
 Legacy:
-
 - `001-type-as-system.md`
 - `002-metrics-spacing-optical-rhythm.md`
 - `003-stroke-contrast-bezier-optics.md`
@@ -21,7 +20,6 @@ Legacy:
 - `009-typography-as-information-architecture.md`
 
 T-series:
-
 - `T001-web-typography-fallback-metrics-reflow-transfer.md`
 - `T002-raster-proof-redraw-cycle.md`
 - `T003-minimal-font-renderer-matrix.md`
@@ -35,54 +33,82 @@ T-series:
 - `T011-layout-multiscript-release-contract.md`
 - `T012-mark-mkmk-anchor-release-contract.md`
 - `T013-normalization-sensitive-subset-contract.md`
-- `T014-hangul-normalization-subset-contract.md` — Hangul NFC/NFD structural package transfer; precomposed-only and Jamo-only WOFF2 packages have different `cmap` closure; deterministic rebuild proof included.
-- `T015-hangul-browser-canonical-cluster-transfer.md` — Chromium transfer of T014: deliberately asymmetric NFC-only/NFD-only/dual WOFF2 fonts render canonically equivalent Hangul identically in the bounded browser matrix, showing structural closure and target rendering are separate gates.
-- `T016-webfont-loading-fallback-metric-contract.md` — delayed/failed `@font-face` lifecycle in Chromium; unadjusted fallback produced a measured 2-line→1-line swap and downstream movement, while a proportional `size-adjust` control nearly eliminated geometry change.
+- `T014-hangul-normalization-subset-contract.md`
+- `T015-hangul-browser-canonical-cluster-transfer.md`
+- `T016-webfont-loading-fallback-metric-contract.md`
+- `T017-logmate-operational-data-typography-semantic-geometry-transfer.md`
+- `T018-logmate-conservative-font-candidate-audit.md`
+- `T019-stage1-foundation-closure-audit.md` — exact Stage 1 gate audit; Type Foundations PASS without misclassifying later production/platform/human requirements as Foundation blockers.
+- `T020-stage2-entry-audit.md` — exact Stage 2 evidence map; existing bridge evidence is substantial but fragmented, and the main gap is an integrated coherent family/spacing/kerning/figure/weight/small-size comparative exercise.
 
-T-series reproducibility scripts and measured JSON live beside the studies. Generated experimental font binaries and screenshots remain runtime outputs and are not product assets or canonical source authority.
+Reproducibility scripts and measured JSON remain beside relevant studies. Generated experimental font binaries/screenshots are runtime outputs, not product assets or canonical source authority.
 
-## Current production model
+## Curriculum state
 
-T006–T016 establish a progressively stricter chain:
+### Stage 1 — Foundations: PASS
 
-1. **source/design validity** — contours, correspondence, spacing/metric intent;
-2. **build/interpolation compatibility** — topology, variation coverage, intermediate behavior;
-3. **binary/spec sanity** — required tables, axis/name/STAT/head/metric integrity;
-4. **distribution transformation contract** — exact package/subset preserves required characters, GSUB/GPOS behavior, script/langsys bindings, non-cmap closure, metrics, variable-axis semantics and attachment anchors;
-5. **normalization-form / script-specific structural closure** — canonically equivalent text can have different codepoint and `cmap` closure;
-6. **target cluster matching/shaping** — T015 proves that different structural closure does not automatically produce different browser output: Chromium resolved canonically equivalent Hangul across deliberately asymmetric packages in the bounded test;
-7. **font request/loading/failure state** — T016 proves that preferred-loaded, visible-loading-fallback and persistent-failed-fallback can be different geometry states;
-8. **fallback/glyph selection and attachment-chain completeness** — retained codepoints/features do not by themselves certify the complete shaping path;
-9. **target rendering/layout integration** — exact shipped artifact in browser/OS/app;
-10. **human/product validation**.
+Authority: `T019-stage1-foundation-closure-audit.md`.
 
-Current synthesis:
+This is a narrow curriculum PASS. It does not imply production-font, native-platform, multilingual-system, automated-QA or human-validation completion.
 
-`content representation → binary cmap/feature closure → target cluster matching/shaping → font request/loading/failure state → fallback/glyph selection → rendered geometry/raster → layout/color consequence → human/product result`.
+### Stage 2 — Intermediate Professional Practice: ENTRY AUDIT COMPLETE / NOT PASSED
 
-T014 remains valid as a structural package audit. T015 limits its runtime interpretation: **different `cmap` closure is not automatically a browser rendering failure** when canonical-equivalent matching/shaping can bridge the representations. T016 adds that even with semantically correct package/rendering behavior, **font acquisition state can still change geometry materially** when fallback metrics diverge.
+Authority: `T020-stage2-entry-audit.md`.
+
+Strong existing bridge evidence:
+- interpolation fundamentals: T007/T010;
+- screen proof/small-size failure cycles: T002–T004;
+- figure-feature and tabular-numeral behavior: Study 005, T004/T009/T018;
+- multi-role product typography: Study 009, T017/T018;
+- browser loading/fallback geometry: T016.
+
+Primary missing evidence:
+- coherent mini-family system;
+- systematic control strings;
+- kerning classes/exceptions;
+- integrated figure alternatives;
+- diacritic/punctuation family coherence;
+- design-level weight relationship proof;
+- one integrated multiple-solution exercise with explicit selection criteria and peer evidence.
+
+## Current production/transfer model
+
+T006–T018 retain a useful production-aware chain:
+
+1. source/design validity;
+2. build/interpolation compatibility;
+3. binary/spec sanity;
+4. distribution transformation contract;
+5. normalization/script-specific structural closure;
+6. target cluster matching/shaping;
+7. font request/loading/failure state;
+8. fallback/glyph selection and attachment completeness;
+9. target rendering/layout integration;
+10. human/product validation.
+
+These later-stage mechanisms now act as constraints and stress tests for Stage 2 practice rather than substitutes for the Stage 2 family-system gate.
 
 ## Highest-value next directions
 
-1. **T017 — external broad QA + sanitizer integration** when FontBakery/Fontspector/OTS or equivalent executables become available; separate universal/spec/vendor-policy checks from studio semantic assertions.
-2. Transfer T016 from proportional synthetic controls to real non-proportional Latin/Hangul fallback pairs, including `size-adjust` plus ascent/descent/line-gap overrides and production-relevant dense data strings.
-3. Direct HarfBuzz CLI/`uharfbuzz` glyph/cluster tracing of T011–T016 artifacts when available, then Firefox/Safari/Windows/macOS/Android/Flutter replication.
-4. Production Korean transfer: real conjoining-Jamo design/shaping, larger Hangul coverage, Korean line breaking and mixed-script line boxes using an exact production-relevant font.
-5. Real HTTP/CDN/cache/preload/service-worker and `font-display: block/fallback/optional` transfer, preferably through substantive Web/live-product work.
-6. Extend attachment QA into ligature marks, multiple mark classes, cursive attachment and production complex scripts.
-7. Study vertical-writing release semantics: `vhea`, `vmtx`, `vert`, `vrt2` where project relevance justifies it.
-8. Broaden variable-family compatibility: three masters, multiple axes, richer `avar`, components/diacritics, variable anchors, overlap strategy and CFF2.
-9. Type→Layout regression using exact shipped artifacts near known thresholds.
-10. Broader family/design proof and human reading/recognition evidence after target rendering/layout stabilizes.
+1. **T021 — coherent mini-family + spacing/control-string system** with at least three materially different hypotheses, intended-size proof, and explicit KEEP/REWORK/REJECT critique.
+2. T022 — kerning classes/exceptions + proportional/tabular figure alternatives on the selected T021 direction.
+3. T023 — weight/interpolation + diacritic/punctuation coherence on the same system.
+4. T024 — multi-role typography-system alternatives, preferably transferred to LogMate if live project timing is suitable.
+5. If LogMate Draft 02 becomes executable first, exact shipped-font Flutter transfer outranks nonessential curriculum expansion.
+6. External FontBakery/Fontspector/OTS and direct HarfBuzz/native/cross-browser work resume when suitable environments are available.
 
-## Tool availability checkpoint
+## Tool / platform OPEN
 
-At T016, `fontbakery`, `fontspector`, `ots-sanitize`, `hb-shape`, and Python `uharfbuzz` were unavailable. Chromium `144.0.7559.96`, Playwright, `fontTools 4.63.0`, and Python were available. T016 therefore adds bounded downloadable-font loading/failure/fallback geometry evidence, **not** external sanitizer or direct HarfBuzz PASS.
-
-Foundation remains **NOT PASSED**.
+- external FontBakery/Fontspector/OTS or equivalent broad QA;
+- direct HarfBuzz tracing;
+- exact shipped LogMate Flutter/native renderer transfer;
+- Android/iOS/Firefox/Safari cross-platform evidence;
+- production PWA loading/cache/failure transfer;
+- larger Korean/complex-script production transfer;
+- human recognition/scan/readability evidence at app-validation stage.
 
 ## Status authority
 
-Type progress is tracked in `progress/TYPE_STATUS.md`. The specialist does not edit global `progress/STATUS.md` during ordinary work.
+Type progress is tracked in `progress/TYPE_STATUS.md`. The specialist does not edit global `progress/STATUS.md` during ordinary research.
 
-Current operating state: **ACTIVE — research may resume immediately**.
+Current operating state: **ACTIVE — STAGE 2 ENTRY AUDIT COMPLETE / T021 NEXT**.
