@@ -1,0 +1,16 @@
+{
+  "study": "T021 lowercase n redraw validation",
+  "renderer": "Pillow/FreeType",
+  "upm": 1000,
+  "kerning": false,
+  "controlled_metrics": {"n_advance": 540, "n_lsb": 58, "nominal_stem": 85},
+  "strings": ["nono", "noon", "onno"],
+  "sizes_px": [14, 17, 24],
+  "advances_px": {"14": 30.25, "17": 36.75, "24": 51.8125},
+  "old_vs_curved_raster_difference": {
+    "14": {"changed_pixels": 168, "absolute_grayscale_difference_sum": 16650},
+    "17": {"changed_pixels": 312, "absolute_grayscale_difference_sum": 24612},
+    "24": {"changed_pixels": 414, "absolute_grayscale_difference_sum": 56310}
+  },
+  "interpretation_boundary": "Pixel differences establish a contour/rendering change while advances remain fixed; they do not establish human preference, readability, or final optical quality."
+}
