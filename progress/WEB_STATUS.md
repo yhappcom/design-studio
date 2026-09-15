@@ -3,11 +3,11 @@
 Operating state: **ACTIVE — RESEARCH MAY RESUME**  
 Governance sync: 2026-09-15  
 Primary path: `research/web/`  
-Next new-study ID: `W004`
+Next new-study ID: `W006`
 
 ## Operational mission
 
-The Web Design Specialist designs real websites and web applications. It integrates product goals, user tasks, information, brand direction and peer Design Studio evidence into complete web experiences. Frontend knowledge is supporting capability for prototyping, feasibility, fidelity and browser validation, not an end in itself.
+The Web Design Specialist designs real websites and web applications. It integrates product goals, user tasks, information, brand direction and peer Design Studio evidence into complete web experiences. Frontend knowledge supports prototyping, feasibility, fidelity and browser validation; it is not the end goal.
 
 ## Current level
 
@@ -15,27 +15,28 @@ Current curriculum stage: **Stage 1 — Foundation**
 Overall state: **PRACTICE / CRITIQUE**  
 Foundation: **NOT PASSED**
 
-Web now has three substantive studies:
+Web now has five substantive studies:
 
 - `W001` — Web as a flexible/browser-participatory medium; relationship-over-coordinate baseline.
 - `W002` — page composition, mechanism selection and reproducible Chromium failure→revision validation; 25/25 bounded assertions across five stress cases.
-- `W003` — responsive/adaptive recomposition by relationship ownership; SOURCE-grounded media/container-query distinction, adaptation-ownership model, three-direction practice, companion specimen, and an executable Playwright harness. **Measured harness results remain OPEN because this automation environment cannot execute repository code.**
+- `W003` — responsive/adaptive recomposition by relationship ownership; study, specimen and executable Playwright harness; measured results remain OPEN because this automation environment cannot execute repository code.
+- `W004` — information architecture, URL/resource identity, navigation, history, direct entry and wayfinding; route/navigation decision matrix included.
+- `W005` — component/page systems, native semantic primitives, variants, independent state dimensions, disabled/unavailable decisions, component/composite/page-pattern boundaries and three system strategies.
 
-Web remains the least complete Stage 1 specialist. Major Foundation gaps remain information architecture, navigation/wayfinding, component/page systems, complete task surfaces, integrated Web state/accessibility, and broader browser/device transfer.
+Web remains the least complete Stage 1 specialist, but the breadth gap is shrinking. Largest remaining Foundation gaps are complete task surfaces (forms/search/filter/settings/dashboard/list-detail), integrated Web interaction/state/accessibility, performance-sensitive design, browser validation of W003/W004/W005, and a complete project exercise.
 
 ## Four-specialist balance
 
-- **Type:** Stage 1 PRACTICE / CRITIQUE, Foundation NOT PASSED, but deep controlled evidence through T016 across font construction/package/render/loading/fallback states.
+- **Type:** Stage 1 PRACTICE / CRITIQUE, Foundation NOT PASSED, but deep controlled evidence through T016 across construction/package/render/loading/fallback states.
 - **Color:** Stage 1 PASS; Stage 2 entry audit next.
 - **Layout / Interaction:** Stage 1 PASS; Stage 2 entry audit next.
-- **Web:** Stage 1 NOT PASSED; W001–W003 cover medium, composition and responsive ownership, but breadth remains materially behind peers.
+- **Web:** Stage 1 NOT PASSED; W001–W005 now cover medium, composition, responsive ownership, IA/navigation and component/page-system foundations, but breadth and measured transfer remain behind peers.
 
 The coordinator `progress/STATUS.md` is intentionally not edited by this specialist and may remain stale.
 
 ## W002 retained evidence
 
 Canonical:
-
 - `research/web/W002-page-composition-flow-grid-density-hierarchy.md`
 - `research/web/W002-page-composition-specimen.html`
 - `research/web/W002-page-composition-playwright.py`
@@ -46,62 +47,59 @@ Chromium `144.0.7559.96` validation covered 1280, 768, 320, 320 long bilingual a
 ## W003 — responsive/adaptive recomposition
 
 Canonical:
-
 - `research/web/W003-responsive-adaptive-recomposition.md`
 - `research/web/W003-responsive-recomposition-specimen.html`
 - `research/web/W003-responsive-recomposition-playwright.py`
 
-Evidence level: **PRACTICE + CRITIQUE / TRANSFER VALIDATION / executable harness authored / measured browser results OPEN**.
+Evidence: **PRACTICE + CRITIQUE / TRANSFER VALIDATION / executable harness authored / measured browser results OPEN**.
 
-### Current synthesis
+Core model:
 
-Responsive design is modeled as:
+`task → relationship → stress signal → owner → adaptation → invariant → validation`
 
-`task → relationship → stress signal → owner → adaptation → invariant → validation`.
+Retained judgment: viewport/media-query adaptation for genuinely page/global relationships; container-query adaptation where reusable component allocation differs from viewport; intrinsic flow/wrapping where no discrete task-mode change is required; local 2-D overflow for intrinsically two-dimensional artifacts when stacking destroys meaning.
 
-Three ownership questions are separated:
+OPEN: execute harness; exact font lifecycle; actual browser zoom; Firefox/Safari/physical mobile; navigation disclosure/AX transfer; human evidence deferred to project stage.
 
-1. trigger ownership — what fact changed;
-2. recomposition ownership — page, component or intrinsic artifact;
-3. invariant — what task/meaning must survive.
+## W004 — IA / URL / navigation / wayfinding
 
-Current judgment:
+Canonical:
+- `research/web/W004-information-architecture-url-navigation-wayfinding.md`
+- `research/web/W004-ia-navigation-route-matrix.csv`
 
-- use viewport/media-query adaptation for genuinely page/global relationships;
-- use container-query adaptation where a reusable component's allocated space can differ materially from viewport space;
-- prefer intrinsic flow/wrapping where no discrete task-mode change is required;
-- preserve local 2-D overflow for intrinsically two-dimensional artifacts when forced stacking would destroy meaning.
+Evidence: **SOURCE + SYNTHESIS + PRACTICE / CRITIQUE / TRANSFER VALIDATION**.
 
-The companion specimen places equivalent KPI content in wide main and narrow aside allocations at the same viewport width, contrasting viewport-owned versus container-owned behavior. It also includes intrinsic action wrapping and a semantic table with local overflow.
+Core model:
 
-### W003 executable validation added this cycle
+`user concept ↔ resource identity ↔ addressable location ↔ navigation access ↔ hierarchy ↔ traversal history ↔ page identity ↔ resumable state`
 
-`W003-responsive-recomposition-playwright.py` now defines a reproducible Chromium matrix for:
+W004 separates resource hierarchy, navigation hierarchy, URL structure and traversal history. It requires canonical routes to survive direct entry rather than assuming the designer's preferred funnel. Portfolio-centric, task-domain and hybrid IA directions were compared by task/context-switching/direct-entry criteria.
 
-- 1180, 820 and 390 CSS-px viewports;
-- same viewport / different component allocations;
-- long Korean/English metric labels;
-- page-global media-query recomposition;
-- component-local container-query recomposition;
-- document horizontal overflow;
-- local table overflow;
-- stable source/sequential-focus sequence for buttons and the focusable table scroller.
+OPEN: routed browser specimen; Back/Forward/reload; focus/scroll restoration; deleted/unauthorized deep links; responsive navigation state; long bilingual labels; human findability/orientation deferred.
 
-The harness writes `W003-responsive-recomposition-results.json` only when actually executed. No result file or PASS count is committed in this cycle because the available GitHub connector can author repository files but cannot execute repository Python/Playwright. This blocker is recorded rather than fabricating measurements.
+## W005 — component/page systems
 
-W3C/WAI sources were rechecked on 2026-09-15: current W3C material continues to distinguish media-query environment/device conditions from container-size querying, and WAI guidance continues to require coherent responsive menu order plus sequential keyboard/focus behavior. These source checks support the harness contract but do not substitute for execution.
+Canonical:
+- `research/web/W005-component-page-systems-native-semantics-state-contracts.md`
 
-### W003 OPEN
+Evidence: **SOURCE + SYNTHESIS + PRACTICE / CRITIQUE / TRANSFER VALIDATION**.
 
-- execute the committed harness and commit measured JSON results;
-- deliberate measured failure→revision if the harness exposes a failure;
-- same container width + different viewport measurement beyond current matrix if needed;
-- exact preferred-font loading/failure transfer;
-- hover-independent essential-action validation;
-- actual browser-UI zoom;
-- Firefox/Safari/physical iOS/Android;
-- navigation disclosure/accessibility-tree transfer;
-- human evidence, deferred to project-stage validation.
+Core model:
+
+`user intent → semantic role → native/platform primitive candidate → state machine → content contract → geometry/adaptation → visual treatment → accessibility/input behavior → page-system placement → validation`
+
+Key retained judgments:
+
+- visual similarity does not establish semantic/interaction equivalence;
+- native-first is a decision test, not a ban on visual customization;
+- availability, focus, pointer, selection, toggle, expansion, validity, async, permission and destructive-risk dimensions must not be flattened into one generic state enum;
+- native `disabled`, discoverable unavailable (`aria-disabled` pattern), hidden/not-applicable and permission-denied are different product decisions;
+- components, composites, page patterns and page templates own different contracts;
+- prefer native-semantic thin layers or task-pattern-led systems as Foundation defaults; highly polymorphic component platforms require stronger scale/production evidence.
+
+W005 source checks revalidated current WHATWG form-control behavior and W3C APG Button, Disclosure, Menu Button and keyboard-interface guidance. No browser/AT PASS is inferred from source reading.
+
+OPEN: browser specimen comparing native and semantically collapsed controls; Tab/Enter/Space and disabled/`aria-disabled` measurement; long bilingual/text-growth stress; forced-colors transfer; async form/recovery pattern transfer; two-product component-boundary exercise; cross-browser/mobile/AT later gates.
 
 ## Foundation module status
 
@@ -109,61 +107,45 @@ W3C/WAI sources were rechecked on 2026-09-15: current W3C material continues to 
 | --- | --- | --- |
 | Web as medium / history | PRACTICE / CRITIQUE | broader project/browser/device transfer |
 | Document/semantic vs presentation | PRACTICE / CRITIQUE | production accessibility-tree/source-order transfer |
-| Responsive/adaptive philosophy | **PRACTICE / CRITIQUE — W003 + executable harness** | measured run, zoom, navigation/task transfer |
+| Responsive/adaptive philosophy | PRACTICE / CRITIQUE — W003 | measured run, zoom, navigation/task transfer |
 | Normal flow / intrinsic geometry | PRACTICE / CRITIQUE | broader media/form/task systems |
-| Page composition / hierarchy / density | PRACTICE / CRITIQUE — W002 | cross-browser/device + project/human evidence |
-| Information architecture | **NOT YET WEB-BASELINED** | dedicated Web practice |
-| Navigation / wayfinding | **NOT YET WEB-BASELINED** | URL/router/history/direct-entry/resume |
-| Component/page systems | **NOT YET WEB-BASELINED** | variants/states/tokens/templates + project transfer |
+| Page composition / hierarchy / density | PRACTICE / CRITIQUE — W002 | cross-browser/device + project evidence |
+| Information architecture | **PRACTICE / CRITIQUE — W004** | browser/project/human transfer |
+| Navigation / wayfinding | **PRACTICE / CRITIQUE — W004** | routed browser/history/direct-entry validation |
+| Component/page systems | **PRACTICE / CRITIQUE — W005** | browser/task/project transfer |
 | Forms/search/tables/dashboards/settings | PARTIAL | complete task-system practice |
-| Web interaction/state | INCOMING PEER EVIDENCE ONLY | complete Web page/product transfer |
+| Web interaction/state | PARTIAL — W004/W005 + peer transfer | complete page/product state systems |
 | Web typography | PARTIAL TRANSFER | exact delivered-font/full-page loading/fallback/zoom |
-| Web color/theme/state | INCOMING COLOR EVIDENCE ONLY | real page/browser/device/forced-color practice |
+| Web color/theme/state | PARTIAL TRANSFER | real page/browser/device/forced-color practice |
 | Accessibility / zoom / localization | PARTIAL PRACTICE | actual zoom, keyboard/AT, broader language stress |
 | Performance-sensitive design | **NOT YET WEB-BASELINED** | runtime-cost/design trade-off study |
 | Design-to-code/browser validation | PRACTICE | cross-browser/device/production methods |
 
-## Peer evidence currently affecting Web
-
-### Typography / Type
-
-Type T016 establishes that downloadable-font loading/failure/fallback can change wrapping and downstream geometry. W003 treats font realization as a stress input rather than breakpoint authority; exact full-page transfer remains open.
-
-### Color
-
-Color Stage 1 PASS is acknowledged. Responsive modes must retain semantic/task distinctions without making hue the sole information channel.
-
-### Layout / Interaction
-
-Layout/Interaction Stage 1 PASS is acknowledged. W003 transfers L002/L003/L006 into explicit Web adaptation ownership and preserves source/focus/task-order questions for executable validation.
-
 ## Active next queue
 
-1. **Execute W003 browser harness and commit measured results** when an execution-capable environment is available. Do not invent PASS counts.
-2. **W004 candidate — Information Architecture, URL Resource Structure, Navigation & Wayfinding.** This is now the largest untouched Foundation block and is executable as source-grounded design practice even if the W003 runtime blocker persists.
-3. Component/page systems and complete task surfaces: forms, search, filters, settings, tables, dashboards, list/detail, loading/error/empty/partial states.
-4. Integrated Web Type/Color/accessibility: exact fonts, themes/system colors, forced colors, real zoom, keyboard/focus/AT and cross-browser/device transfer.
-5. Performance-sensitive design and complete real-project design/redesign exercise.
+1. **W006 candidate — complete task surfaces:** forms, search, filters, settings, tables, dashboards/list-detail with loading, empty, partial, validation, pending, error, retry and outcome-unknown behavior. Integrate W002–W005 with I002/I004 rather than studying isolated widgets.
+2. Execute W003 browser harness when execution-capable environment is available; do not invent measurements.
+3. Browser validation for W004/W005: history/direct entry and native/custom state/focus contracts.
+4. Integrated Web Type/Color/accessibility: exact fonts, themes/system colors, forced colors, actual zoom, keyboard/focus/AT and cross-browser/device transfer.
+5. Performance-sensitive design and one complete real-project design/redesign exercise.
 
 ## HANDOFFS TO OTHER SPECIALISTS
 
 ### Type
-
-Provide exact delivered preferred/fallback pairs when available so W003 can test whether component-local thresholds survive real font lifecycle changes.
+W005 transfers T016's runtime-font lesson: reusable component geometry must survive realistic font/fallback and long-label conditions rather than assuming one preferred-font metric state.
 
 ### Color
-
-Later theme/forced-color transfer should exercise every responsive mode, not only the wide state.
+W005 exposes concrete semantic state dimensions for later Color→Web transfer; hue must not become the sole carrier of focus/selection/toggle/validity/async/permission/destructive meaning.
 
 ### Layout / Interaction
-
-W003's adaptation-ownership model should be challenged against simultaneous page-global and component-local recomposition, especially source/focus/task sequence.
+W004/W005 transfer I001/L006 and state-ownership evidence into Web resource/navigation/component contracts. Future complete task surfaces should preserve focus, restoration, async and conflict/recovery distinctions.
 
 ## Latest checkpoint
 
 - W001: PRACTICE + CRITIQUE.
 - W002: PRACTICE + CRITIQUE with reproducible Chromium validation; **25/25 bounded assertions after failure→revision**.
-- W003: **PRACTICE + CRITIQUE; study + specimen + executable Playwright harness committed; measured results OPEN**.
+- W003: PRACTICE + CRITIQUE; executable harness committed; measured results OPEN.
+- W004: **PRACTICE + CRITIQUE; IA/URL/navigation/wayfinding baseline + route matrix committed.**
+- W005: **PRACTICE + CRITIQUE; component/page-system native semantics and state-contract baseline committed.**
 - Web Foundation: **NOT PASSED**.
-- Next new Web study ID: **W004**.
-- Immediate runtime blocker: repository code cannot be executed through the current GitHub connector; continue with W004 rather than falsely closing W003 if that blocker persists.
+- Next new Web study ID: **W006**.
