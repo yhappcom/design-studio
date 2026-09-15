@@ -1,0 +1,67 @@
+{
+  "study": "T020",
+  "evidenceBoundary": "Chromium geometry control uses installed Roboto v2.138; product asset identity/provenance is separately verified as Google Fonts Roboto v2.137. Scale factors are controlled linear font-size stress, not actual Flutter TextScaler proof.",
+  "runtimeAvailability": {
+    "flutter": null,
+    "dart": null,
+    "chromium": "/usr/bin/chromium"
+  },
+  "productProvenance": {
+    "logmateRobotoRegular": {"gitBlobSha": "2c97eeadffe1a34bd67d3ff1c3887fd53e22c2ca", "bytes": 171676},
+    "logmateRobotoMedium": {"gitBlobSha": "1a7f3b0bba45b7470a4240c3ec67595eeeb02192", "bytes": 172064},
+    "matchingGoogleFontsCommit": "724bf98e9f5cb98a1d3d5044f45a2e286b817401",
+    "matchingRobotoBold700": {"gitBlobSha": "d3f01ad245b628f386ac95786f53167038720eb2", "bytes": 170760},
+    "logmateNotoSansKR": {"gitBlobSha": "b386890ba945e1f39448a6b59f20c5d194f58808", "bytes": 10414588, "matchesCurrentGoogleFontsAsset": true, "wghtAxis": [100, 900]}
+  },
+  "controlFonts": {
+    "400": {"version": "Version 2.138; 2017", "weightClass": 400, "sha256": "797e35f7f5d6020a5c6ea13b42ecd668bcfb3bbc4baa0e74773527e5b6cb3174", "unitsPerEm": 2048, "hhea": {"ascent": 1900, "descent": -500, "lineGap": 0}},
+    "500": {"version": "Version 2.138; 2017", "weightClass": 500, "sha256": "7984aafeaf437899ce89b251d2875fc5048cb7d290152eac070239cca7ff726c", "unitsPerEm": 2048, "hhea": {"ascent": 1900, "descent": -500, "lineGap": 0}},
+    "700": {"version": "Version 2.138; 2017", "weightClass": 700, "sha256": "36f3709dea3e3ce3c6aedc058079e55980825f898f1e901d091c73c40de8bab1", "unitsPerEm": 2048, "hhea": {"ascent": 1900, "descent": -500, "lineGap": 0}}
+  },
+  "fontChecks": {"r400": true, "r500": true, "r700": true},
+  "digitSpread": {"proportional": 0, "tabular": 0},
+  "normalWidths": {
+    "openingAirport": {"ICN": 27.984375, "NRT": 32.609375, "SIN": 27.15625, "JFK": 29.515625, "LHR": 31.921875, "CDG": 33.796875, "HND": 35.28125, "DXB": 32.421875, "FRA": 31.28125, "LAX": 31.4375},
+    "openingTime": {"00:45": 43.15625, "02:18": 43.15625, "09:55": 43.15625, "12:40": 43.15625},
+    "ledgerAirport": {"ICN": 24.546875, "NRT": 28.3125, "SIN": 23.6875, "JFK": 25.984375, "LHR": 28.03125, "CDG": 29.828125, "HND": 31.25, "DXB": 28.4375, "FRA": 27.328125, "LAX": 27.421875},
+    "registration": {"HL8301": 52.5, "N12345": 52.859375, "G-EUOH": 53.640625, "UR-82060": 65.28125},
+    "aircraft": {"B738": 34.640625, "B38M": 39.3125, "B77W": 39.515625, "B737-900": 64.078125, "B737-8": 47.21875, "A320-200": 64.515625},
+    "total500": {"12+30": 42.46875, "99,987+29": 71.359375, "99,999+59": 71.359375, "1,284:35": 58.4375, "9,999:59": 58.4375},
+    "date": {"09.02": 37.6875, "02/09": 39.921875, "9/2": 23.0625, "12.31": 37.6875, "31/12": 39.921875},
+    "carrier": {"7C": 18.203125, "KE": 17.9375, "AA": 19.578125, "BA": 19.140625, "AF": 18.078125},
+    "flightNumber": {"28": 16.875, "117": 25.296875, "132": 25.296875, "264": 25.296875, "704": 25.296875, "1123": 33.734375, "1234A": 43.515625}
+  },
+  "keyScaleFailures": {
+    "openingAirport": {"1.0": [], "1.20": [], "1.25": ["HND"], "1.50": ["NRT", "JFK", "LHR", "CDG", "HND", "DXB", "FRA", "LAX"], "2.0": ["ICN", "NRT", "SIN", "JFK", "LHR", "CDG", "HND", "DXB", "FRA", "LAX"]},
+    "openingTime": {"1.0": [], "1.50": [], "2.0": ["00:45", "02:18", "09:55", "12:40"]},
+    "registration": {"1.0": [], "1.20": ["UR-82060"], "1.50": ["HL8301", "N12345", "G-EUOH", "UR-82060"]},
+    "aircraft": {"1.0": ["B737-900", "A320-200"], "1.20": ["B737-900", "B737-8", "A320-200"]},
+    "total500": {"1.0": [], "1.20": ["99,987+29", "99,999+59"], "2.0": ["12+30", "99,987+29", "99,999+59", "1,284:35", "9,999:59"]},
+    "carrier19": {"1.0": ["AA", "BA"]},
+    "flightNumber47": {"1.0": [], "1.10": ["1234A"]}
+  },
+  "thresholds": {
+    "openingAirport": {"limitingValue": "HND", "maxWidth": 35.28125, "cellOrContentWidth": 44, "linearScaleRatio": 1.2471213463, "slack": 8.71875},
+    "openingTime": {"limitingValue": "00:45", "maxWidth": 43.15625, "cellOrContentWidth": 68, "linearScaleRatio": 1.5756698045, "slack": 24.84375},
+    "ledgerAirport": {"limitingValue": "HND", "maxWidth": 31.25, "cellOrContentWidth": 42, "linearScaleRatio": 1.344, "slack": 10.75},
+    "registration": {"limitingValue": "UR-82060", "maxWidth": 65.28125, "cellOrContentWidth": 76, "linearScaleRatio": 1.164193394, "slack": 10.71875},
+    "aircraftType": {"limitingValue": "A320-200", "maxWidth": 64.515625, "cellOrContentWidth": 52, "linearScaleRatio": 0.8060062969, "slack": -12.515625},
+    "total500": {"limitingValue": "99,987+29", "maxWidth": 71.359375, "cellOrContentWidth": 84, "linearScaleRatio": 1.1771403547, "slack": 12.640625},
+    "date": {"limitingValue": "02/09", "maxWidth": 39.921875, "cellOrContentWidth": 56, "linearScaleRatio": 1.402739726, "slack": 16.078125},
+    "carrierCurrent19": {"limitingValue": "AA", "maxWidth": 19.578125, "cellOrContentWidth": 19, "linearScaleRatio": 0.9704708699, "slack": -0.578125},
+    "flightNumberCurrent47": {"limitingValue": "1234A", "maxWidth": 43.515625, "cellOrContentWidth": 47, "linearScaleRatio": 1.0800718133, "slack": 3.484375}
+  },
+  "flightZoneProposal": {"carrierWidth": 20, "gap": 2, "numberWidth": 46, "contentWidth": 68, "carrierFits": true, "numberFits": true},
+  "assertions": {
+    "openingAirportsFitNormal44": true,
+    "openingTimesFitNormal68": true,
+    "openingAirportFixed44FailsBy1_25": true,
+    "ledgerAirportsFitNormal42Content": true,
+    "registrationsFitNormal76Content": true,
+    "currentFullAircraftCorpusDoesNotFit52Content": true,
+    "currentCarrier19DoesNotFitAll": true,
+    "proposedCarrier20AndNumber46FitNormal": true,
+    "totalsFitNormal84Content": true,
+    "tabularDigitSpreadZero": true
+  }
+}
