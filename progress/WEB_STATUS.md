@@ -3,7 +3,7 @@
 Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 ENTRY ACCEPTED / STAGE 2 NOT PASSED**  
 Governance sync: 2026-09-15  
 Primary path: `research/web/`  
-Next new-study ID: `W011`
+Next new-study ID: `W012`
 
 ## Operational mission
 
@@ -24,76 +24,86 @@ Closure authority:
 Stage 2 entry authority:
 - `research/web/W010-stage2-entry-audit.md`
 
-W010 re-read the exact Master Curriculum Stage 2 requirements rather than assuming that W008's integrated capstone automatically implied Stage 2 completion.
+Latest Stage 2 content practice:
+- `research/web/W011-iconography-nontext-signal-systems.md`
 
-### W010 result
+W010 identified iconography/non-text signals as the only explicit Stage 2 information/product-design content item without substantial direct Web-owned practice. W011 now closes that **content/practice gap** with a real task-surface role matrix, three complete alternatives, explicit KEEP/REWORK/REJECT criteria, a selected direction, source-backed naming/target/forced-color contracts and peer handoffs.
 
-Web already has substantial early Stage 2 evidence in:
-
-- task analysis and primary-question framing;
-- information hierarchy and IA;
-- dense-data vs low-density composition;
-- forms/tables/search/settings and empty/error/loading semantics;
-- responsive/adaptive composition;
-- typography systems across multiple roles;
-- component systems without component-driven sameness;
-- interaction states, async behavior and recovery;
-- comparative studies, experiment design, critique vocabulary and KEEP/REWORK/REJECT rationale;
-- cross-specialist evidence reuse and handoff discipline.
-
-The Stage 2 gate form is already demonstrated most clearly in W008: one fixed problem, three materially different complete directions, explicit criteria, a selected direction, rejected/rework conditions and correct Type/Color/Layout/Interaction reuse.
-
-However, Stage 2 is **NOT PASSED**.
+This does **not** close Stage 2. Web remains weaker than the other three specialists in reproducible runtime execution depth across W003–W008/W011.
 
 ---
 
-## Highest-value explicit Stage 2 content gap
+## W011 result — iconography / non-text signals
 
-### Iconography and non-text signals — NOT YET DIRECTLY BASELINED
+Evidence level:
 
-Existing Web studies contain incidental icons/status marks, but no substantial Web-owned practice yet establishes:
+`SOURCE → peer transfer → role matrix → three complete directions → critique → selected direction → implementation contract → executable validation matrix`
 
-- text-only vs icon+label vs icon-only decision boundaries;
-- action vs navigation vs status vs disclosure vs warning signal distinctions;
-- accessible naming/tooltips/focus/touch implications for icon-only controls;
-- localization and enlarged-text pressure;
-- forced-colors/high-contrast resilience;
-- semantic state behavior when hue or decorative treatment disappears;
-- platform/cultural convention vs product-specific symbol invention;
-- explicit alternatives and selection criteria in a real task surface.
+Selected direction:
 
-This is a true curriculum-content gap, not merely a missing file title.
+- default actionable toolbar control: **icon + visible label**;
+- bounded icon-only exceptions: conventional disclosure/overflow and strongly contextual repetitive controls;
+- text-first for consequential warning/status explanation and when an icon adds no task differentiation.
 
-**Next study: W011 — Iconography & Non-Text Signal Systems for Real Web Tasks.**
+Standing rules:
 
-W011 should use a real task surface rather than an icon gallery and compare materially different signaling strategies with explicit KEEP/REWORK/REJECT criteria and browser validation where executable.
+- `signal shape != semantic owner != action owner != state owner`;
+- icon-only buttons require an explicit accessible name;
+- visible-label controls normally let visible text provide the name;
+- internal decorative SVGs should not become duplicate semantic owners;
+- SVG `currentColor` is preferred where icon color should track effective control text/system color;
+- hue/shadow/icon shape alone must not carry critical state meaning;
+- WCAG 2.2 AA 24×24 CSS px is a target-size floor with defined exceptions, not the studio's default product recommendation;
+- tooltip/help is supplemental, not the sole semantic mechanism;
+- text enlargement/localization should trigger recomposition, not indiscriminate label deletion.
 
-Human recognition/preference evidence remains deferred to live product/app validation and must not be simulated.
+Human recognition/preference evidence remains deferred to live product/app validation and was not simulated.
 
 ---
 
-## Evidence-depth imbalance after W010
+## Stage 2 audit snapshot after W011
+
+| Requirement | Current state |
+| --- | --- |
+| task analysis / primary question | established early Stage 2 |
+| information hierarchy / IA | established early Stage 2 |
+| dense vs low-density composition | strong; W002 measured |
+| forms / tables / search / settings / empty-error-loading | established; integrated execution open |
+| responsive / adaptive | established; W003 execution open |
+| typography across multiple roles | established Web application; exact production transfer open |
+| iconography / non-text signals | **DIRECT PRACTICE / CRITIQUE ESTABLISHED by W011; execution open** |
+| component systems without sameness | strong conceptual practice |
+| async / interaction / recovery | strong conceptual transfer; execution open |
+| precedent analysis | established; product-precedent breadth can deepen |
+| comparative studies | strong |
+| hypothesis / experiment design | established; more executions needed |
+| critique / KEEP-REWORK-REJECT | strong |
+| genericness / novelty / implementation bias | established in principle |
+| cross-specialist dependency / handoff | strong |
+
+---
+
+## Evidence-depth imbalance
 
 Web's strongest measured block remains W002:
 
 `SOURCE → original alternatives → failure → revision → Chromium execution → 25/25 bounded assertions → peer handoff`
 
-W003–W008 provide broad original practice and critique but many runtime validations remain OPEN:
+W003–W008 and now W011 provide broad original practice and critique but several runtime validations remain OPEN:
 
 - W003 measured same-viewport/different-container responsive transfer;
 - W004 real Back/Forward/reload/direct-entry/focus restoration;
 - W005 native vs semantically collapsed custom keyboard/focus behavior;
 - W006 integrated search/filter/table/edit async/recovery execution;
 - W007 request/paint/readiness/stability measurement;
-- W008 integrated browser harness.
+- W008 integrated browser harness;
+- W011 accessible-name/target/enlargement/forced-color icon-signal harness.
 
-Therefore later Stage 2 work should become more execution-oriented after the explicit W011 content gap is closed.
+Therefore the next Web work should be **integrated executable transfer**, not another broad theory topic.
 
 ---
 
 ## Canonical Web evidence
-
-### Foundation / Stage 2 bridge
 
 - W001 Web as native medium / history / flexibility
 - W002 page composition / flow / grid / density / hierarchy + **25/25** Chromium assertions
@@ -104,46 +114,23 @@ Therefore later Stage 2 work should become more execution-oriented after the exp
 - W007 performance-sensitive design / temporal priority / progressive rendering
 - W008 integrated portfolio workspace capstone with three complete directions
 - W009 Stage 1 Foundation closure audit — **PASS**
-- **W010 Stage 2 entry audit — ENTRY ACCEPTED / Stage 2 NOT PASSED**
+- W010 Stage 2 entry audit — **ENTRY ACCEPTED / Stage 2 NOT PASSED**
+- W011 iconography & non-text signal systems — **direct Stage 2 content practice established**
 
 ---
 
-## Stage 2 audit snapshot
+## Four-specialist balance after W011
 
-| Requirement | Current state |
-| --- | --- |
-| task analysis / primary question | established early Stage 2 |
-| information hierarchy / IA | established early Stage 2 |
-| dense vs low-density composition | strong; W002 measured |
-| forms / tables / search / settings / empty-error-loading | established; integrated execution open |
-| responsive / adaptive | established; W003 execution open |
-| typography across multiple roles | established Web application; exact production transfer open |
-| iconography / non-text signals | **TRUE CONTENT GAP** |
-| component systems without sameness | strong conceptual practice |
-| async / interaction / recovery | strong conceptual transfer; execution open |
-| precedent analysis | established, product-precedent breadth can deepen |
-| comparative studies | strong |
-| hypothesis / experiment design | established; more executions needed |
-| critique / KEEP-REWORK-REJECT | strong |
-| genericness / novelty / implementation bias | established in principle |
-| cross-specialist dependency / handoff | strong |
-
----
-
-## Four-specialist balance after W010
-
-- **Type:** Stage 1 PASS; deep controlled build/browser evidence and recent LogMate live-product transfer; Stage 2 entry audit pending.
+- **Type:** Stage 1 PASS; deep controlled build/browser evidence plus current LogMate live-product transfer work; specialist status still awaits synchronization with newest T020 commits.
 - **Color:** Stage 1 PASS; substantial quantitative/rendered/browser/system evidence; Stage 2 entry audit pending.
 - **Layout / Interaction:** Stage 1 PASS; deep assertion-based spatial/state/async evidence; Stage 2 entry audit pending.
-- **Web:** Stage 1 PASS; **Stage 2 entry audit complete**; broad product-design coverage but one explicit content gap and weaker reproducible execution depth than the other three.
+- **Web:** Stage 1 PASS; Stage 2 entry audit complete; explicit iconography content gap closed; **runtime execution depth remains the largest relative weakness**.
 
-This comparison should be re-evaluated on every automatic balance cycle rather than used as a permanent priority rule.
+The coordinator global status is older than current specialist evidence and must not be used alone for balance decisions.
 
 ---
 
 ## Preserved later-stage / production OPEN items
-
-These remain important but are not falsely treated as Stage 2 content gaps:
 
 - actual browser-UI zoom and broader localization stress;
 - exact production fonts/CDN/cache/service-worker behavior;
@@ -152,7 +139,7 @@ These remain important but are not falsely treated as Stage 2 content gaps:
 - screen-reader/AT evidence;
 - field performance and live backend semantics;
 - physical-device validation;
-- human findability/task/perceived-speed/recognition evidence.
+- human findability/task/perceived-speed/icon-recognition evidence.
 
 Human/user observation remains deferred to app/project validation where instructed.
 
@@ -160,10 +147,11 @@ Human/user observation remains deferred to app/project validation where instruct
 
 ## Active next queue
 
-1. **W011 — Iconography & Non-Text Signal Systems for Real Web Tasks.**
-2. After W011, prioritize integrated executable transfer of W003–W008 rather than opening many new theory-only topics.
-3. Hand browser/product transfer findings back to Type, Color and Layout/Interaction when they confirm, limit or contradict canonical peer evidence.
-4. Keep later production/device/AT/human gaps explicit at the correct evidence level.
+1. **W012 — Integrated executable Stage 2 transfer harness.** Combine the highest-value contracts from W003–W008/W011 rather than opening a new theory topic.
+2. Minimum preferred execution slice: responsive/container ownership + URL/history + native semantic controls + search/filter/table/edit state + icon naming/target geometry + enlarged text/localized-label stress + forced-color-safe semantics.
+3. Add performance/readiness measurement where the available environment can support it without turning the study into engineering for its own sake.
+4. Hand browser/product transfer findings back to Type, Color and Layout/Interaction when they confirm, limit or contradict canonical peer evidence.
+5. Keep production/device/AT/human gaps explicit at the correct evidence level.
 
 ---
 
@@ -171,23 +159,22 @@ Human/user observation remains deferred to app/project validation where instruct
 
 ### Type
 
-W011 should test icon+text combinations under real font loading, localization and enlarged text. Type remains canonical for exact typography/fallback behavior.
+W011 confirms that visible-label removal is not a default solution to enlargement/localization pressure. Exact font/fallback geometry remains Type-owned.
 
 ### Color
 
-Icon/status meaning must survive without hue. W011 should consume Color semantic-state evidence rather than treating color as a replacement for symbol semantics.
+W011 independently transfers the semantic-resilience rule: status/warning/action meaning must survive hue loss; `currentColor` is a useful Web SVG transfer mechanism, not a substitute for semantic state.
 
 ### Layout / Interaction
 
-W011 should reuse ownership/focus/state distinctions and avoid treating visible icon shape as proof of action/state behavior. Responsive disclosure must preserve source/focus/task meaning.
+W011 transfers L006 ownership separation into icon controls: glyph visual ownership may differ from semantic/focus/action ownership; pointer target geometry belongs to the control rather than SVG path bounds.
 
 ---
 
 ## Latest checkpoint
 
 - **W009:** Stage 1 Foundation PASS.
-- **W010:** exact Stage 2 entry audit completed.
-- **Stage 2 entry: ACCEPTED. Stage 2: NOT PASSED.**
-- Highest-value explicit content gap: **iconography / non-text signals**.
-- Secondary imbalance: W003–W008 need deeper executable browser transfer.
-- Next new study ID: **W011**.
+- **W010:** Stage 2 entry accepted; Stage 2 not passed.
+- **W011:** direct iconography/non-text-signal content practice completed; previous explicit content gap closed.
+- Largest current Web imbalance: reproducible integrated browser execution depth.
+- Next new study ID: **W012**.
