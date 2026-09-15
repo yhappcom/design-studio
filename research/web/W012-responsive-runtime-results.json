@@ -1,0 +1,21 @@
+{
+  "engine": "Chromium 144.0.7559.96",
+  "purpose": "W003 transfer validation and assertion-model contradiction review",
+  "cases": [
+    {"name":"wide","viewport":1180,"document_scroll_width":1180,"main_container_owned_width":734.40625,"aside_container_owned_width":305.59375,"main_viewport_owned_cols":2,"aside_viewport_owned_cols":2,"main_container_owned_cols":2,"aside_container_owned_cols":1,"table_local_overflow":false,"focus_sequence_stable":true},
+    {"name":"mid","viewport":820,"document_scroll_width":820,"main_container_owned_width":474,"aside_container_owned_width":206,"main_viewport_owned_cols":2,"aside_viewport_owned_cols":2,"main_container_owned_cols":2,"aside_container_owned_cols":1,"table_local_overflow":true,"focus_sequence_stable":true},
+    {"name":"narrow","viewport":390,"document_scroll_width":390,"main_container_owned_width":308,"aside_container_owned_width":308,"main_viewport_owned_cols":1,"aside_viewport_owned_cols":1,"main_container_owned_cols":1,"aside_container_owned_cols":1,"table_local_overflow":true,"focus_sequence_stable":true},
+    {"name":"narrow_long","viewport":390,"document_scroll_width":390,"main_container_owned_width":308,"aside_container_owned_width":308,"main_viewport_owned_cols":1,"aside_viewport_owned_cols":1,"main_container_owned_cols":1,"aside_container_owned_cols":1,"table_local_overflow":true,"focus_sequence_stable":true}
+  ],
+  "original_harness_summary": {"passed":15,"total":16},
+  "failed_original_assertion": {"case":"wide","assertion":"table_overflow_is_local","classification":"ASSERTION_MODEL_DEFECT","reason":"Wide allocation does not require active table overflow; local ownership should be asserted conditionally."},
+  "validated_findings": [
+    "same viewport can produce different component-local recomposition",
+    "viewport-owned rule cannot see local allocation difference at wide viewport",
+    "page-global media recomposition activates at narrow viewport",
+    "document-level horizontal overflow absent in all four cases",
+    "table overflow activates locally when allocation becomes insufficient",
+    "focus/source sequence stable across all four cases",
+    "long bilingual label stress does not create document horizontal overflow"
+  ]
+}
