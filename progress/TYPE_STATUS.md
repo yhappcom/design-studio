@@ -3,7 +3,7 @@
 Operating state: **ACTIVE — RESEARCH MAY RESUME**  
 Governance sync: 2026-09-15  
 Primary path: `research/type/`  
-Next new-study ID: `T017`
+Next new-study ID: `T018`
 
 This file is maintained by the Typography / Type Design Specialist. The specialist must not update global `progress/STATUS.md` directly.
 
@@ -17,7 +17,7 @@ Current curriculum stage: **Stage 1 — Foundation**
 Overall state: **PRACTICE / CRITIQUE**  
 Foundation: **NOT PASSED**
 
-The program now has controlled evidence across source construction, raster behavior, numerals/punctuation, mixed-script fallback, production outline QA, two-master interpolation, variable-font binary QA, static/variable WOFF2 subset semantics, `kern`/`locl` package contracts, `mark`/`mkmk` anchor-chain release QA, Unicode normalization-sensitive subset closure, Hangul NFC↔NFD structural package transfer, bounded Chromium canonical-equivalent Hangul cluster matching/render transfer, and **downloadable-webfont loading/failure/fallback geometry with a controlled metric-matching revision**.
+The program now has controlled evidence across source construction, raster behavior, numerals/punctuation, mixed-script fallback, production outline QA, two-master interpolation, variable-font binary QA, static/variable WOFF2 subset semantics, `kern`/`locl` package contracts, `mark`/`mkmk` anchor-chain release QA, Unicode normalization-sensitive subset closure, Hangul NFC↔NFD structural package transfer, bounded Chromium canonical-equivalent Hangul cluster matching/render transfer, downloadable-webfont loading/failure/fallback geometry with a controlled metric-matching revision, and **a live LogMate transfer contract for operational identifiers, tabular numerics, semantic geometry, conservative font selection and multilingual/runtime boundaries**.
 
 Major unresolved gates remain: external broad QA/sanitizers; direct HarfBuzz trace; Firefox/Safari/native platform shaping; real HTTP/CDN/cache/service-worker font delivery; non-proportional production fallback calibration; production Korean and complex-script systems; vertical writing; three-master/multi-axis/CFF2 work; components/diacritics/family coherence; complete naming/style linking; hinting strategy; mixed-script line layout; and human reading/recognition evidence.
 
@@ -51,6 +51,7 @@ T-series:
 - `T014-hangul-normalization-subset-contract.md`
 - `T015-hangul-browser-canonical-cluster-transfer.md`
 - `T016-webfont-loading-fallback-metric-contract.md`
+- `T017-logmate-operational-data-typography-semantic-geometry-transfer.md`
 
 T016 reproducibility artifacts:
 
@@ -61,7 +62,7 @@ Generated experimental font binaries/screenshots remain runtime outputs, not pro
 
 ---
 
-## Latest completed block — T016 webfont loading / fallback metric contract
+## Latest controlled block — T016 webfont loading / fallback metric contract
 
 T016 was selected only after rechecking the top queue item. `fontbakery`, `fontspector`, `ots-sanitize`, `hb-shape`, and Python `uharfbuzz` were unavailable. No external QA, sanitizer, or direct HarfBuzz PASS is claimed.
 
@@ -202,6 +203,69 @@ T016 is **not PASS**.
 
 ---
 
+## Latest live-product transfer — T017 LogMate operational typography / semantic geometry
+
+Canonical:
+
+- `research/type/T017-logmate-operational-data-typography-semantic-geometry-transfer.md`
+
+Transfer target:
+
+- `yhappcom/logmate`, branch `design/design-studio-proposal`;
+- current Opening Draft 01 user review and regional sample-route policy.
+
+### Trigger
+
+LogMate's rendered Opening route rows exposed a real product failure: proportional uppercase airport codes visually shift even though every code has three letters. Tabular figures stabilize durations but do not stabilize alphabetic identifier widths.
+
+### Transfer contract
+
+T017 establishes:
+
+`information role → semantic geometry → alignment/anchor → type behavior → OpenType feature → runtime/fallback validation → product observation`.
+
+Short form:
+
+**Layout robustness → Type refinement.**
+
+This does not move the problem out of Type. Type remains responsible for identifier legibility, metrics, figures, punctuation, line metrics, fallback and platform behavior; Layout owns semantic tracks/anchors and responsive recomposition.
+
+### LogMate operational Type synthesis
+
+The provisional product system is:
+
+**proportional general UI + high-legibility operational identifiers + tabular comparison numerics + semantic column geometry + explicit fallback/runtime validation**.
+
+Current project decisions:
+
+- whole-product / whole-ledger monospace: **REJECT as default**;
+- airport code: proportional identifier by default, protected by DEP/ARR semantic slots;
+- time/duration/career totals/landing counts and comparison-centric ledger numeric columns: `tnum` candidate/default subject to production-font/runtime proof;
+- `KE704`, `HL8301`, `B737-8` etc.: identifier roles, not automatically tabular merely because digits occur;
+- `0/O`, `1/I/l`, `5/S`, `8/B`: mandatory candidate audit groups;
+- Crew/Remark/Notes: proportional + multilingual/Unicode-safe fallback;
+- regional sample substitution must not require per-airport spacing hacks;
+- Draft 02 may proceed structurally, but final typography lock remains blocked until candidate/platform audit.
+
+### Evidence classification
+
+- **TRANSFER VALIDATION:** T004/T005/T016 + Layout L004 are applied to an actual aviation-logbook product.
+- **SYNTHESIS:** operational identifier and numeric roles are separated instead of using one generic “technical data” style.
+- **STUDIO JUDGMENT:** prefer mature, conservative families and one-family solutions; introduce a mono companion or bespoke font only after controlled evidence shows a material unresolved need.
+- **OPEN:** final family, airport-code measured width variance, Flutter/Android/iOS/PWA rendering, exact fallback stack, enlarged-text stress and human recognition evidence.
+
+### Current transfer verdict
+
+T017's structural/type-role contract is usable for Draft 02, but the full LogMate Type Transfer Sprint is not finished.
+
+**NOT READY — BLOCKING TYPE ISSUE EXISTS**
+
+Blocking issue: a mature-font candidate audit using the fixed LogMate corpus has not selected the provisional primary family or verified exact identifier/numeric behavior in Flutter and target platform conditions.
+
+This blocks final typography lock, not Draft 02 structural implementation.
+
+---
+
 ## Foundation module status
 
 | Module | Status | Remaining gate |
@@ -213,10 +277,10 @@ T016 is **not PASS**.
 | Optical correction | PRACTICE / CRITIQUE | broader family/axis/platform intended-size proof |
 | Rasterization / rendering | PRACTICE / CRITIQUE | Chromium bounded evidence exists; CoreText/DirectWrite/Skia/Firefox/Safari/device + hinting strategy open |
 | Spacing / kerning / GPOS | PRACTICE / CRITIQUE | broader classes/complex shaping/cross-browser proof open |
-| Numerals / punctuation | PRACTICE / CRITIQUE | production figures, browser shaping, localization, human evidence |
-| Typography as information architecture | CRITIQUE | production reflow/localization/enlarged-text transfer |
+| Numerals / punctuation | PRACTICE / CRITIQUE | production figures, browser shaping, localization, human evidence; T017 adds direct LogMate role transfer |
+| Typography as information architecture | CRITIQUE | T017 adds live-product role/geometry transfer; production reflow/localization/enlarged-text transfer remains open |
 | Web fallback / metric transfer | **PRACTICE / CRITIQUE** | T016 adds delayed/failed downloadable-font geometry + proportional metric-matching proof; real delivery/cache/cross-browser/zoom open |
-| Mixed-script / fallback / normalization | **PRACTICE / CRITIQUE** | T005 + T011–T016 cover structural and bounded Chromium transfer; production Korean/line boxes/cross-platform/human evidence open |
+| Mixed-script / fallback / normalization | **PRACTICE / CRITIQUE** | T005 + T011–T017 cover structural and project-transfer boundaries; production Korean/line boxes/cross-platform/human evidence open |
 | Source/build/release pipeline | **PRACTICE / CRITIQUE** | T006–T016 span source→interpolation→binary→package→browser shaping/loading states; external broad QA and production target integration open |
 
 ---
@@ -225,29 +289,29 @@ T016 is **not PASS**.
 
 ### Color
 
-C009's retained conclusion is still relevant: fixed semantic Color does not normalize actual Type rendering. T016 adds a loading-state dimension — the rendered face/geometry can change while Color tokens remain unchanged.
+C009's retained conclusion is still relevant: fixed semantic Color does not normalize actual Type rendering. T017 also explicitly refuses to infer cockpit/night legibility from typography alone; physical/device/human low-light validation remains separate.
 
 ### Layout / Interaction
 
-L003 showed browser font selection can cross wrap thresholds and standalone font measurements are not production geometry proof. T016 **confirms and extends** that result with real downloadable-font state: the same controlled row changed two lines→one across a delayed swap.
+L003 showed browser font selection can cross wrap thresholds and standalone font measurements are not production geometry proof. T016 confirmed that through downloadable-font states. L004 additionally showed that browser `tnum` can improve numeric alignment while increasing intrinsic column width. T017 **transfers and extends** these findings into LogMate route and ledger geometry.
 
 ### Web Design
 
-W001 now exists at PRACTICE + CRITIQUE. Its browser-native model supports treating font loading/failure as runtime participation rather than assuming author-perfect pixels. T016 provides a concrete Type→Web transfer contract for future production font delivery/cache/zoom/browser testing.
+Web is now Stage 1 PASS through W009. T017 retains Web/PWA as a later runtime transfer layer for exact font delivery/fallback, responsive ledger behavior and enlarged-text stress; no PWA production PASS is inferred.
 
 ---
 
 ## Active next queue
 
-1. **T017 — external broad QA + sanitizer integration** when FontBakery/Fontspector/OTS or equivalent executables are available; keep universal/spec/vendor-policy checks separate from studio semantic assertions.
-2. Transfer T016 to **real non-proportional Latin/Hangul font pairs** and measure whether `size-adjust` plus ascent/descent/line-gap overrides reduce layout shifts without creating unacceptable apparent-size/script mismatch.
-3. Direct HarfBuzz glyph/cluster trace and cross-browser/platform replication: Firefox/Safari/Windows/macOS/Android/Flutter.
-4. Production Korean transfer using a real Korean font and larger corpus: conjoining Jamo, fallback, line breaking and mixed-script line boxes.
-5. Real HTTP/CDN/cache/preload/service-worker plus `font-display` mode transfer through Web/live-product work.
-6. Extend attachment QA into ligature marks, multiple mark classes, cursive attachment and production complex scripts.
-7. Study vertical-writing release semantics where project relevance justifies it.
-8. Broaden variable-family compatibility: three masters, multiple axes, richer `avar`, components/diacritics, variable anchors, overlap strategy and CFF2.
-9. Type→Layout regression against exact shipped artifacts.
+1. **T018 — LogMate conservative font candidate audit:** compare approximately 3–5 mature families using the fixed airport/flight/aircraft/registration/time/total/ambiguity corpus; measure airport-code width behavior, inspect identifier distinction, verify `tnum`/punctuation, render Opening + representative View Logbook, and choose one provisional baseline with explicit reject reasons.
+2. Transfer the selected LogMate candidate into executable **Flutter/Android** conditions first where available; keep iOS/CoreText and Web/PWA parity OPEN until executable evidence exists.
+3. **External broad QA + sanitizer integration** when FontBakery/Fontspector/OTS or equivalent executables are available; keep universal/spec/vendor-policy checks separate from studio semantic assertions.
+4. Transfer T016 to real non-proportional Latin/Hangul font pairs and measure whether `size-adjust` plus ascent/descent/line-gap overrides reduce layout shifts without unacceptable script mismatch.
+5. Direct HarfBuzz glyph/cluster trace and cross-browser/platform replication: Firefox/Safari/Windows/macOS/Android/Flutter.
+6. Production Korean transfer using a real Korean font and larger corpus: conjoining Jamo, fallback, line breaking and mixed-script line boxes.
+7. Real HTTP/CDN/cache/preload/service-worker plus `font-display` mode transfer through Web/live-product work.
+8. Extend attachment QA into ligature marks, multiple mark classes, cursive attachment and production complex scripts.
+9. Broaden variable-family compatibility and Type→Layout regression against exact shipped artifacts.
 10. Broader family coherence and human reading/recognition evidence after target rendering/layout stabilizes.
 
 ---
@@ -256,15 +320,19 @@ W001 now exists at PRACTICE + CRITIQUE. Its browser-native model supports treati
 
 ### Color
 
-Pin font loading state (`preferred loaded` / `fallback visible` / `preferred failed`) when Type materially affects rendered Color judgments. T016 establishes no Color threshold.
+T017 establishes no Night/cockpit luminance result. Keep physical low-light/device/human validation separate from Type role/geometry decisions.
 
 ### Layout / Interaction
 
-T016 confirms L003 with a downloadable-font lifecycle: `541.1719px → 440.0469px` changed a 500px controlled row from two lines to one and moved following content `38.3906px`. Validate loading/failure states and robust recomposition; do not tune only the preferred-loaded state.
+T017 transfers L004 into LogMate: protect semantic DEP/arrow/ARR/time and ledger tracks independently of proportional identifier ink width, and size numeric tracks only after the approved numeric feature/format is active. Do not convert the whole ledger to fixed-width type merely to stabilize columns.
 
 ### Web Design
 
-Reproduce T016 using production `@font-face` delivery, selected `font-display`, real CDN/cache/preload/service-worker behavior, actual content, zoom, target browsers/devices, and page-level layout-shift/performance tooling. Playwright-intercepted Chromium evidence is not Web production PASS.
+If LogMate PWA uses downloadable fonts, reproduce T016's preferred-loaded / loading-fallback / failed-fallback states with the final family and apply T017's same operational role semantics under responsive/enlarged-text conditions.
+
+### LogMate UI / product team
+
+Draft 02 may proceed with semantic route columns and separate UI / identifier / numeric Type roles. Final family, airport-code exact weight/tracking, mono companion and slashed-zero decisions remain OPEN until T018.
 
 ## Handoff rule
 
@@ -288,6 +356,7 @@ Answer peer requests with canonical Type evidence or new investigation as approp
 - T013: Latin NFC/NFD normalization-sensitive subset closure.
 - T014: Hangul NFC/NFD structural package transfer + deterministic rebuild proof.
 - T015: bounded Chromium canonical-equivalent Hangul cluster transfer.
-- **T016: delayed/failed downloadable-font lifecycle; unadjusted swap changed mixed-script width by ~101.125px and a 500px row 2→1 lines; proportional `size-adjust:80%` reduced width delta to ~0.0938px with stable row/downstream geometry; 12/12 bounded assertions true.**
-- Next Type study ID: `T017`.
+- T016: delayed/failed downloadable-font lifecycle; unadjusted swap changed mixed-script width by ~101.125px and a 500px row 2→1 lines; proportional `size-adjust:80%` reduced width delta to ~0.0938px with stable row/downstream geometry; 12/12 bounded assertions true.
+- **T017: LogMate live-product transfer — semantic route/ledger geometry, operational identifier vs tabular-numeric roles, conservative font policy, multilingual/runtime boundaries, and explicit Draft 02 handoff.**
+- Next Type study ID: `T018`.
 - Overall Type state remains **Stage 1 / PRACTICE + CRITIQUE / Foundation NOT PASSED**.
