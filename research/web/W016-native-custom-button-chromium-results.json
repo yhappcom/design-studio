@@ -1,0 +1,22 @@
+{
+  "browser": "Chromium 144.0.7559.96",
+  "passed": 14,
+  "total": 14,
+  "assertions": [
+    {"name":"tab_order_native_incomplete_custom","pass":true,"actual":["native","incomplete","custom"]},
+    {"name":"native_Enter_activation","pass":true,"actual":1},
+    {"name":"native_Space_activation","pass":true,"actual":1},
+    {"name":"incomplete_Enter_activation","pass":true,"actual":0},
+    {"name":"incomplete_Space_activation","pass":true,"actual":0},
+    {"name":"custom_Enter_activation","pass":true,"actual":1},
+    {"name":"custom_Space_activation","pass":true,"actual":1},
+    {"name":"native_pointer_activation_once","pass":true,"actual":1},
+    {"name":"incomplete_pointer_activation_once","pass":true,"actual":1},
+    {"name":"custom_pointer_activation_once","pass":true,"actual":1},
+    {"name":"native_focus_visible_outline","pass":true,"actual":{"active":"native","matches":true,"outline":"solid"}},
+    {"name":"native_aria_button_name","pass":true,"actual":"- button \"Save native\""},
+    {"name":"incomplete_aria_button_name","pass":true,"actual":"- button \"Save incomplete\""},
+    {"name":"custom_aria_button_name","pass":true,"actual":"- button \"Save custom\""}
+  ],
+  "note": "First harness attempt produced 12/14 because the reset click itself focused the native button; second produced 13/14 because blur preserved tab-cycle position for the focus-visible check. The final harness resets with set_content before the focus-visible assertion and passes 14/14. These were harness defects, not product/control defects."
+}
