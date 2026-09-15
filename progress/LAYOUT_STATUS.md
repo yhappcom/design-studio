@@ -1,269 +1,134 @@
 # Layout, Spatial & Interaction Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 ENTRY AUDIT NEXT**  
-Governance sync: 2026-09-15  
+Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PRACTICE / INTEGRATED CAPSTONE COMPLETE, CLOSURE AUDIT NEXT**  
+Governance sync: 2026-09-16  
 Canonical paths: `research/layout/`, `research/interaction/`  
-Next new-study IDs: Layout `L008`; Interaction `I007`
-
-This file is maintained by the Layout, Spatial & Interaction Specialist. It does not update global `progress/STATUS.md` during ordinary research.
+Next new-study IDs: Layout `L010`; Interaction `I007`
 
 ## Mission / current level
-
 Research exists to improve real app, web and product decisions. Research volume is not the objective.
 
 Stage 1 — Foundations: **PASS**  
-Next curriculum step: **Stage 2 — Intermediate Professional Practice / entry audit pending**
+Stage 2 — Intermediate Professional Practice: **PRACTICE / NOT YET AUDITED FOR CLOSURE**
 
-This PASS is deliberately narrow. L007 re-read the actual `curriculum/MASTER_CURRICULUM.md` and separated Foundation requirements from later production, platform, human and research gates.
+Authority:
+- L007 — Stage 1 closure / PASS;
+- L008 — Stage 2 entry audit;
+- L009 — integrated workflow architecture capstone.
 
-Human-observer/user-task validation remains **DEFERRED TO APP-DEVELOPMENT VALIDATION** exactly as instructed by the user. No human evidence is fabricated or implied.
+The coordinator-maintained `progress/STATUS.md` is stale relative to specialist evidence and remains outside this specialist's writing boundary.
 
-Stage 1 PASS does **not** mean:
-- production/browser/device/AT validation is complete;
-- every individual module has no OPEN items;
-- Stage 2+ is passed;
-- the specialist curriculum is complete.
+Human-observer/user-task validation remains **DEFERRED TO APP-DEVELOPMENT VALIDATION**. No human evidence is simulated.
 
-The coordinator-maintained `progress/STATUS.md` may remain stale until coordinator sync. This specialist does not edit it directly.
-
----
-
-## Four-specialist sync
-
-- **Type:** through T015 at latest synchronized checkpoint; cross-browser/native/production shaping remains Type-owned.
-- **Color:** Stage 1 PASS after C014/C015 closure; no production/device/human Color completion is inferred.
-- **Web:** W001 completed; W002 next. Web has a Stage 1 baseline, not production integration PASS.
-- **Layout/Interaction:** Stage 1 PASS established by L007; Stage 2 entry audit next.
-
----
-
-# Stage 1 closure authority — L007
-
+## Latest evidence — L009
 Canonical:
-- `research/layout/L007-stage1-foundation-closure-audit.md`
+- `research/layout/L009-integrated-workflow-architecture-capstone.md`
+- `research/layout/L009-integrated-workflow-architecture-results.json`
 
-L007 maps every Master Stage 1 visual and interaction requirement to existing original evidence and corrects the earlier stage-boundary error in which Stage 3–5/platform/human gaps were treated as perpetual Foundation blockers.
+L008 found that the remaining Stage 2 weakness was not another isolated mechanism but integrated product practice: task analysis→workflow, forms/search/settings/empty states, component architecture without sameness, non-text semantics, and product-scale alternatives with defended selection.
 
-## Visual Foundation verdict
+L009 addresses those gaps using one fixed operational-logbook substrate and three materially different complete architectures:
+- A Record-Centric Workspace;
+- B Summary-First Dashboard;
+- C Search/Command-First Workspace.
 
-**PASS under the current Master Curriculum Stage 1 gate.**
+The fixed primary task is record lookup/comparison/correction with context preservation. A is provisionally selected because that task makes dense comparison and recognition more important than aggregate-first or command-first entry.
 
-Evidence map:
-- figure/ground + Gestalt → Study 014, L001, L006;
-- visual mass / balance / tension → L001 + raster practice;
-- proportion / scale → Study 006 + Exercises 003/007;
-- rhythm / repetition → Study 006 + Exercise 003 + L002;
-- contrast → Exercise 003 + L001 + L005;
-- negative space → Study 014 + L002;
-- edge relationships → L001/L006;
-- grid systems / intentional grid breaking → Study 006 + Exercises 003/007 + responsive transfer;
-- color perception / luminance / simultaneous contrast → canonical Color Stage 1 PASS reused, especially C015;
-- typography as composition / IA → Type Study 009 + Exercise 006 reused, with L003/L004 browser transfer;
-- design history / precedent literacy → Study 006 modernist grid precedent + reaction/critique;
-- original exercises and peer-domain reuse → satisfied across L001–L006 and legacy exercises.
+Structured criterion totals after arithmetic verification:
+- A **184/200**;
+- B **157/200**;
+- C **146/200**.
 
-## Interaction Foundation verdict
+The first manual tally recorded A=185/C=145; recalculation from the stored matrix exposed and corrected the arithmetic before status promotion. Scores are studio judgments, not human-performance measurements.
 
-**PASS under the current Master Curriculum Stage 1 gate.**
+## Stage 2 snapshot
+| Requirement | Current state |
+|---|---|
+| task analysis / primary question | **DIRECT PRACTICE — L009** |
+| information hierarchy / IA | **STRONG** |
+| dense vs low-density composition | **STRONG** |
+| forms | **INTEGRATED PRACTICE — L009** |
+| tables | **STRONG — L004 + L009** |
+| search | **INTEGRATED PRACTICE — L009** |
+| settings | **INTEGRATED PRACTICE — L009** |
+| empty/error/loading/recovery | **INTEGRATED PRACTICE — L009 + I002/I004** |
+| responsive/adaptive | **STRONG; L009 spec-level product integration** |
+| typography across roles | **PEER REUSE — Type** |
+| iconography/non-text signals | **PEER TRANSFER + INTEGRATION — W011 → L009** |
+| component systems without sameness | **DIRECT PRACTICE — L009** |
+| interaction/async/recovery | **STRONG — I001–I006 + L009 integration** |
+| multiple solutions + defended selection | **DIRECT PRODUCT-SCALE PRACTICE — L009** |
+| critique / KEEP-REWORK-REJECT | **STRONG** |
+| dependency/handoff discipline | **STRONG** |
 
-Evidence map:
-- affordance / feedback / mapping / consistency → Study 007 + Exercise 004 + I002/L006;
-- recognition vs recall → Study 007 + Exercise 004;
-- task/object/action relationships → Studies 007/015;
-- navigation models → I001 **14/14**;
-- system status / error prevention → Study 007 + Exercise 004 + I002 **19/19**;
-- reversibility / modes / recovery → Study 015 + I002/I004;
-- accessibility as a design constraint → research/004 + Exercise 001 + I001/I003/L006;
-- original exercises / peer reuse → satisfied across I001–I006 and cross-specialist transfers.
+Stage 2 is **not automatically marked PASS**. L010 must re-read the exact Master Curriculum and determine whether the accumulated evidence satisfies the gate without importing Stage 3/4 requirements.
 
-Important historical correction:
-- Study 007/015 originally withheld PASS because interactive prototype, keyboard traversal and navigation/state evidence were missing;
-- later I001/I002/I003/L006 directly supplied those gaps.
-
----
-
-## Canonical evidence
-
-### Layout / spatial
-- `006-grid-composition-hierarchy.md`
-- `014-perceptual-grouping-spatial-grammar.md`
-- `L001-figure-ground-balance-optical-centering.md`
-- `L001-optical-centering-raster-validation.md`
-- `L001-border-ownership-cue-isolation-validation.md`
-- `L002-whitespace-density-spatial-rhythm.md` + **216-condition** validation
-- `L003-type-fallback-density-reflow-transfer.md`
-- `L004-tabular-numerals-dense-comparison-transfer.md`
-- `L005-color-driven-density-salience-transfer.md`
-- `L006-layer-ownership-cross-contract.md` and four higher-fidelity extensions
-- `L007-stage1-foundation-closure-audit.md`
+## Reusable evidence beyond Foundation
+### Spatial
+- L001 figure-ground/balance/optical centering;
+- L002 whitespace/density/rhythm with 216-condition validation;
+- L003 Type fallback/reflow transfer;
+- L004 tabular-numeral dense comparison;
+- L005 Color-driven salience transfer;
+- L006 layer ownership cross-contract;
+- L009 integrated workflow/product architecture.
 
 ### Interaction
-- `007-interaction-agency-feedback-errors.md`
-- `015-directness-state-modes-reversibility.md`
-- `I001-navigation-history-focus-restoration-interruption.md` + **14** assertions
-- `I002-latency-pending-optimistic-retry.md` + **19** assertions
-- `I003-forced-colors-state-semantic-resilience.md` + **14** assertions
-- I004 concurrency/offline family: **17 + 16 + 18 + 15 + 20 + 18** controlled assertions across state, HTTP, durable reconnect, ambiguous outcome, multi-operation queue, and authorization/finalization
-- `I005-ambiguous-outcome-idempotency.md` + **18** assertions
-- `I005-business-effect-dedupe-atomicity-transfer.md` + **26** assertions
-- `I006-sequence-collaboration-ot-crdt-boundary.md` + **18** assertions
+- I001 navigation/history/focus: 14 assertions;
+- I002 latency/pending/optimistic/retry: 19 assertions;
+- I003 forced-colors state resilience: 14 assertions;
+- I004 concurrency/offline family: multiple controlled assertion layers;
+- I005 idempotency/business-effect atomicity;
+- I006 sequence collaboration boundary.
 
-Shared accessibility baseline: `research/004-accessibility-reflow-targets-focus.md`.
-
----
-
-# Current reusable evidence beyond Foundation
-
-## L006 — layer ownership
-
-Ownership vector:
-
-`visual owner / pointer hit owner / active gesture-capture owner / keyboard-focus owner / semantic-AT owner / action-data owner / layer-stack position / restoration target`
-
-Five controlled layers:
-- custom ownership **15/15**;
-- native popover/dialog **13/13**;
-- pointer capture/dismissal/lost invoker **13/13**;
-- forced-colors/touch implicit capture/Chromium AX **28/28**;
-- custom `aria-modal=true` versus actual modality **14/14**.
-
-Standing rules:
+Standing rules retained:
 - screenshot appearance cannot prove operational ownership;
-- `aria-modal=true` describes but does not implement modality;
-- pointer capture can survive modal entry;
-- forced-colors can remove authored elevation while behavior remains foreground-owned;
-- AX-tree evidence is not screen-reader PASS.
-
-## I004 — concurrency / offline / queue
-
-Six evidence layers:
-- conflict state machine **17/17**;
-- real HTTP ETag/If-Match **16/16**;
-- durable offline/restart/reconnect **18/18**;
-- applied-but-response-lost operation identity **15/15**;
-- ordering/compaction/dependencies/temp identity **20/20**;
-- authorization/finalization/account switch **18/18**.
-
-Standing rules:
-- historical base, current authoritative state and local intent are separate;
+- route identity, view state, traversal history, transient layer and focus restoration are distinct;
 - retry is not conflict resolution;
-- queue is a dependency-aware preserved-intention structure, not just FIFO requests;
-- compaction safety depends on operation algebra, not path equality;
-- actor/account, authorization and workflow mutability are part of queued-operation validity.
+- queue is preserved intention with dependency semantics, not merely FIFO;
+- convergence, intent preservation and domain correctness are different gates;
+- component reuse follows repeated semantic/behavioral contracts, not visual resemblance alone.
 
-## I005 — duplicate-sensitive intent / atomicity
+## Four-specialist balance after L009
+- **Type:** Stage 1 PASS; Stage 2 PRACTICE with actual outline/raster evidence and active drawing revision.
+- **Color:** Stage 1 PASS; **Stage 2 PASS**; Stage 3 entry not yet audited.
+- **Layout / Interaction:** Stage 1 PASS; **Stage 2 PRACTICE with integrated capstone complete; closure audit next**.
+- **Web:** Stage 1 PASS; Stage 2 PRACTICE through W013 Chromium transfer; runtime breadth remains active.
 
-Stable-intent HTTP replication/extension: **18/18**.
+Future balance cycles should compare Type drawing/family gaps, Layout Stage 2 closure, Web runtime breadth, Color Stage 3 entry and live-project risk rather than selecting Layout automatically.
 
-Atomicity extension: **26/26**.
+## OPEN / later evidence
+- executable rendering of L009 selected architecture and a rejected control;
+- real router/browser/native focus/keyboard/async transfer;
+- exact font/localization geometry;
+- physical-device/input parity;
+- AT/screen-reader evidence;
+- production framework/backend transfer;
+- human task performance, recognition, workload and preference.
 
-Key finding:
-
-> Idempotency protection is only as strong as the atomicity or reconciliation boundary connecting the protected business effect and the dedupe result.
-
-Evidence distinguishes:
-- same-DB split commit duplicate failure;
-- same-DB effect+ledger transaction;
-- external-provider/local-ledger dual-write failure;
-- provider-owned stable operation identity;
-- transactional outbox producer boundary;
-- duplicate delivery and consumer inbox/dedupe boundary.
-
-Do not claim generic `exactly once` without naming effect/store/consumer/failure boundary.
-
-## I006 — sequence collaboration boundary
-
-Controlled matrix: **18/18**.
-
-Key finding:
-
-> Convergence, intent preservation and domain-semantic correctness are different gates.
-
-Whole-field LWW and raw index replay can be structurally inadequate for concurrently authored sequences. OT/CRDT/serialization/locking/domain-specific operations should be considered only when product requirements justify a sequence-aware model.
-
-The I006 OT-like/CRDT-like controls are didactic boundary evidence, not production algorithm proofs.
-
----
-
-# Individual module state after Stage 1 PASS
-
-Stage 1 PASS does not erase later validation gaps.
-
-| Area | Current evidence state | Later-stage/open work |
-| --- | --- | --- |
-| Figure-ground / grouping / balance / optical centering | PRACTICE / CRITIQUE beyond Foundation | app-stage human judgments; physical/platform transfer |
-| Grid / whitespace / density / responsive | PRACTICE / CRITIQUE beyond Foundation | Stage 2 multi-solution/product systems; real zoom/cross-browser/device |
-| Type-dependent spatial robustness | PRACTICE / CRITIQUE | exact production fonts/packages/shaping/platform transfer |
-| Color-driven spatial salience | PRACTICE / CRITIQUE | physical environment/device/human transfer |
-| Layer ownership | PRACTICE / CRITIQUE | real OS/AT, Firefox/Safari, physical mobile, production frameworks |
-| Navigation/state | CRITIQUE beyond Foundation | complete product/router/multi-form-factor transfer |
-| Async/retry/cancel | PRACTICE / CRITIQUE | production API/proxy/background-sync/AT |
-| Concurrent/offline sync | PRACTICE / CRITIQUE | production DB/storage/multi-device/security/operations |
-| Duplicate-sensitive intent | PRACTICE / CRITIQUE | production provider/gateway/distributed guarantees |
-| Sequence collaboration | PRACTICE / CRITIQUE | production OT/CRDT/editor integration only when product requires it |
-
----
-
-# Stage 2 entry policy
-
-The Master Curriculum Stage 2 gate requires **multiple solutions to the same problem and a defended selected direction using explicit criteria, including correct adjacent-specialist evidence reuse**.
-
-Stage 2 topics relevant to this specialist include:
-- task analysis and primary-question framing;
-- information hierarchy and IA;
-- dense-data vs low-density composition;
-- forms, tables, search, settings, empty/error/loading states;
-- responsive/adaptive composition;
-- iconography and non-text signals;
-- component systems without component-driven sameness;
-- interaction states, async behavior and recovery paths;
-- comparative studies / hypothesis / experiment design / KEEP-REWORK-REJECT critique / dependency handoffs.
-
-Existing L002–L006/I001–I006 provide substantial **early Stage 2 evidence**, but Stage 2 is not passed. The next step is an explicit entry audit rather than more unstructured expansion.
-
----
+These are not fabricated as Stage 2 evidence.
 
 ## Active next queue
-
-1. **Stage 2 entry audit** against the exact Master Curriculum; map existing evidence and identify only genuine intermediate-practice gaps.
-2. Use the audit to select the next project-useful exercise, likely one requiring multiple materially different complete solutions rather than another isolated mechanism proof.
-3. Consume W001/W002+ and current Type/Color evidence where the Stage 2 task depends on them.
-4. Production/platform studies remain active when the required environment becomes available, but are no longer mislabeled as Foundation blockers.
-5. Open `L008` or `I007` according to the highest-value Stage 2 gap revealed by the audit.
-
-## APP-DEVELOPMENT VALIDATION queue
-
-Execute with live app/prototype and suitable participants:
-- L001 border ownership and optical-centering judgments;
-- L002/L005/C007 task performance/error vs preference/workload;
-- L006 layer comprehension/dismissal expectations;
-- I004/I005 sync/conflict/retry/authorization-recovery comprehension;
-- I006 collaborative-editing comprehension if relevant to a live product;
-- real accessibility-user validation.
-
----
+1. Re-evaluate all four specialists before selecting more Layout work.
+2. If Layout remains highest value, open **L010 — Stage 2 closure audit** against the exact Master Curriculum.
+3. If the gate passes, do not continue isolated Stage 2 accumulation merely for file volume; compare Stage 3 entry needs and live-project transfers.
+4. If the gate does not pass, identify only the exact missing requirement and perform that practice.
+5. Executable L009 transfer can be handed to Web or a live project when it materially reduces product risk.
 
 ## HANDOFFS TO OTHER SPECIALISTS
-
 ### Type
-- Layout Stage 1 typography-as-composition requirement is satisfied by correct reuse of Type Study 009/Exercise 006 plus Layout browser transfer; no Type production PASS is inferred.
-- I006 operation identity must not be confused with Unicode/grapheme/shaping identity.
+L009's selected record-centric architecture depends on dense-table typography and tabular numeric behavior but prescribes no font. Exact Type assets should later stress geometry/text growth.
 
 ### Color
-- Color C014 directly exposed the same stage-boundary problem and informed L007's audit method.
-- L005/C007 and I003/C011 remain strong valid transfer examples.
+L009 keeps pending/error/selected/focus semantics independent of palette. C017 direction C can be transferred without changing workflow meaning.
 
-### Web Design
-- W001 is reused as independent support for relationship-preserving Web composition.
-- Production Web integration remains later evidence, not a Foundation prerequisite.
-- Highest-value future transfers remain L006 overlay ownership and I004/I005 sync/retry contracts; I006 only if a real collaborative editor exists.
-
----
+### Web
+L009 direction A is ready for independent browser transfer: responsive table→detail recomposition, router restoration, native controls, forced colors and async failure should be executed rather than assumed.
 
 ## Latest checkpoint
-
-- **Stage 1 — Foundations: PASS** by L007 audit under the current Master Curriculum.
-- No human/production/platform PASS is implied.
-- `L001`–`L006` and `I001`–`I006` retain their own higher-fidelity OPEN items.
-- Next IDs: Layout `L008`; Interaction `I007`.
-- Next action: **Stage 2 entry audit**.
+- Stage 1: **PASS**.
+- L008: Stage 2 entry audit complete.
+- L009: **integrated three-architecture capstone complete**.
+- L009 arithmetic: initial manual tally corrected to **184 / 157 / 146** from the stored matrix.
+- Stage 2: **PRACTICE / closure audit pending**.
+- Next Layout ID: **L010**.
