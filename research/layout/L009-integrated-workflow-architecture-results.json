@@ -1,0 +1,35 @@
+{
+  "study": "L009",
+  "evidence_boundary": "structured studio judgment; not human-performance evidence",
+  "scale": "1 weak to 5 strong",
+  "max_weighted_total": 200,
+  "criteria": [
+    {"id":"primary_task_directness","weight":5,"A":5,"B":3,"C":4},
+    {"id":"dense_comparison_efficiency","weight":5,"A":5,"B":4,"C":2},
+    {"id":"recognition_over_recall","weight":4,"A":5,"B":4,"C":2},
+    {"id":"state_recovery_visibility","weight":5,"A":5,"B":5,"C":4},
+    {"id":"responsive_relationship_survival","weight":4,"A":4,"B":4,"C":5},
+    {"id":"component_semantic_fit","weight":4,"A":5,"B":4,"C":4},
+    {"id":"localization_text_growth_resilience","weight":3,"A":4,"B":4,"C":4},
+    {"id":"accessibility_structure","weight":4,"A":5,"B":4,"C":4},
+    {"id":"implementation_state_complexity","weight":3,"A":3,"B":3,"C":4},
+    {"id":"future_change_flexibility","weight":3,"A":4,"B":4,"C":4}
+  ],
+  "totals": {"A":185,"B":157,"C":145},
+  "selected": "A",
+  "selected_name": "Record-Centric Workspace",
+  "assertions": [
+    "query/filter state survives inspect/edit/back",
+    "zero-result and zero-dataset are distinct",
+    "draft and persisted values are distinguishable",
+    "save failure preserves draft",
+    "ambiguous outcome forbids blind duplicate submission",
+    "narrow recomposition preserves comparison-context access",
+    "table columns prioritize/recompose rather than uniformly compress",
+    "task-critical filters remain outside settings",
+    "status semantics survive hue removal",
+    "consequential actions retain explicit names",
+    "component reuse follows semantic equivalence",
+    "focus selection route/view and transient-layer state remain separable"
+  ]
+}
