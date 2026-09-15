@@ -1,180 +1,120 @@
 # Web Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 ENTRY ACCEPTED / STAGE 2 NOT PASSED**  
+Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PRACTICE / RUNTIME TRANSFER ACTIVE**  
 Governance sync: 2026-09-15  
 Primary path: `research/web/`  
-Next new-study ID: `W012`
-
-## Operational mission
-
-The Web Design Specialist designs real websites and web applications. It integrates product goals, user tasks, information, brand direction and peer Design Studio evidence into complete Web experiences. Frontend knowledge supports prototyping, feasibility, fidelity and browser validation; it is not the end goal.
-
-The coordinator-maintained `progress/STATUS.md` remains outside this specialist's writing boundary and may show an older global summary until coordinator synchronization.
-
----
+Next new-study ID: `W013`
 
 ## Current level
 
 Stage 1 — Foundations: **PASS**  
-Stage 2 — Intermediate Professional Practice: **ENTRY ACCEPTED / NOT PASSED**
+Stage 2 — Intermediate Professional Practice: **PRACTICE / NOT PASSED**
 
-Closure authority:
-- `research/web/W009-stage1-foundation-closure-audit.md`
+Authority:
+- W009 — Stage 1 Foundation closure
+- W010 — Stage 2 entry audit
+- W011 — iconography/non-text signal direct practice
+- W012 — executed responsive runtime transfer / contradiction review
 
-Stage 2 entry authority:
-- `research/web/W010-stage2-entry-audit.md`
+The coordinator-maintained `progress/STATUS.md` is stale relative to specialist evidence and remains outside Web's writing boundary.
 
-Latest Stage 2 content practice:
-- `research/web/W011-iconography-nontext-signal-systems.md`
+## Latest evidence — W012
 
-W010 identified iconography/non-text signals as the only explicit Stage 2 information/product-design content item without substantial direct Web-owned practice. W011 now closes that **content/practice gap** with a real task-surface role matrix, three complete alternatives, explicit KEEP/REWORK/REJECT criteria, a selected direction, source-backed naming/target/forced-color contracts and peer handoffs.
+Canonical:
+- `research/web/W012-responsive-runtime-transfer-validation.md`
+- `research/web/W012-responsive-runtime-results.json`
 
-This does **not** close Stage 2. Web remains weaker than the other three specialists in reproducible runtime execution depth across W003–W008/W011.
+Reason for repetition: **TRANSFER VALIDATION + CONTRADICTION REVIEW**. W003 had a prepared Chromium harness but no executed canonical result; Web's largest relative weakness was runtime execution depth.
 
----
+Execution environment: Chromium `144.0.7559.96` through Playwright.
 
-## W011 result — iconography / non-text signals
+Four cases were executed: 1180px wide, 820px mid, 390px narrow, and 390px narrow with a long English/Korean label.
 
-Evidence level:
+Measured findings:
+- at 1180px the same viewport gave main/aside container widths `734.41 / 305.59px` and container-query modes `2 / 1` columns;
+- at 820px those widths were `474 / 206px`, still `2 / 1` columns;
+- at 390px both local containers were `308px` and both recomposed to one column;
+- no case produced document-level horizontal overflow;
+- table overflow activated locally at mid/narrow allocations but was unnecessary at wide allocation;
+- source/focus sequence remained stable in all four cases;
+- long bilingual label stress did not create document horizontal overflow.
 
-`SOURCE → peer transfer → role matrix → three complete directions → critique → selected direction → implementation contract → executable validation matrix`
+The original W003 assertion set returned **15/16**, but the single failure was classified as an **ASSERTION-MODEL DEFECT**, not a layout failure. The old predicate required table overflow to be active even when the wide allocation had enough room. W012 establishes the stronger testing distinction:
 
-Selected direction:
+`fallback ownership != fallback activation`.
 
-- default actionable toolbar control: **icon + visible label**;
-- bounded icon-only exceptions: conventional disclosure/overflow and strongly contextual repetitive controls;
-- text-first for consequential warning/status explanation and when an icon adds no task differentiation.
+A fallback mechanism should activate only when its stress condition exists. This rule transfers to scrolling, disclosure, truncation, compact navigation, sticky behavior and recovery UI.
 
-Standing rules:
-
-- `signal shape != semantic owner != action owner != state owner`;
-- icon-only buttons require an explicit accessible name;
-- visible-label controls normally let visible text provide the name;
-- internal decorative SVGs should not become duplicate semantic owners;
-- SVG `currentColor` is preferred where icon color should track effective control text/system color;
-- hue/shadow/icon shape alone must not carry critical state meaning;
-- WCAG 2.2 AA 24×24 CSS px is a target-size floor with defined exceptions, not the studio's default product recommendation;
-- tooltip/help is supplemental, not the sole semantic mechanism;
-- text enlargement/localization should trigger recomposition, not indiscriminate label deletion.
-
-Human recognition/preference evidence remains deferred to live product/app validation and was not simulated.
-
----
-
-## Stage 2 audit snapshot after W011
+## Stage 2 snapshot
 
 | Requirement | Current state |
 | --- | --- |
-| task analysis / primary question | established early Stage 2 |
-| information hierarchy / IA | established early Stage 2 |
-| dense vs low-density composition | strong; W002 measured |
-| forms / tables / search / settings / empty-error-loading | established; integrated execution open |
-| responsive / adaptive | established; W003 execution open |
-| typography across multiple roles | established Web application; exact production transfer open |
-| iconography / non-text signals | **DIRECT PRACTICE / CRITIQUE ESTABLISHED by W011; execution open** |
-| component systems without sameness | strong conceptual practice |
-| async / interaction / recovery | strong conceptual transfer; execution open |
-| precedent analysis | established; product-precedent breadth can deepen |
-| comparative studies | strong |
-| hypothesis / experiment design | established; more executions needed |
+| task analysis / primary question | established |
+| information hierarchy / IA | established |
+| dense vs low-density composition | strong; W002 executed |
+| responsive/adaptive | **PRACTICE + Chromium transfer executed in W012** |
+| forms/tables/search/settings/state | established; integrated runtime still open |
+| typography across roles | established; exact production transfer open |
+| iconography/non-text signals | direct W011 practice; runtime open |
+| component systems | strong conceptual practice |
+| async/recovery | strong peer transfer; Web runtime open |
+| comparative alternatives + explicit selection | strong |
 | critique / KEEP-REWORK-REJECT | strong |
-| genericness / novelty / implementation bias | established in principle |
-| cross-specialist dependency / handoff | strong |
+| cross-specialist handoff | strong |
 
----
+Stage 2 is not passed. Runtime depth is improving but remains uneven across navigation/history, native/custom semantics, integrated task state, icon/target/enlargement behavior and temporal readiness.
 
-## Evidence-depth imbalance
+## Four-specialist balance
 
-Web's strongest measured block remains W002:
+- **Type:** Stage 1 PASS; Stage 2 PRACTICE. T021 has actual outline build/raster execution and a diagnosed lowercase drawing defect.
+- **Color:** Stage 1 PASS; Stage 2 entry audit pending; strong quantitative/rendered/browser evidence already exists.
+- **Layout / Interaction:** Stage 1 PASS; Stage 2 entry audit pending; deep assertion-based spatial/state/async evidence.
+- **Web:** Stage 1 PASS; Stage 2 PRACTICE. W011 closed the explicit iconography content gap; W012 now adds real Chromium transfer, but runtime coverage remains the largest relative weakness.
 
-`SOURCE → original alternatives → failure → revision → Chromium execution → 25/25 bounded assertions → peer handoff`
+## Current OPEN / blockers
 
-W003–W008 and now W011 provide broad original practice and critique but several runtime validations remain OPEN:
+Highest-value executable gaps:
+1. correct and rerun W003's canonical overflow assertion contract;
+2. W004 real Back/Forward/reload/direct-entry/focus restoration;
+3. W005 native vs custom keyboard/focus/semantic behavior;
+4. W006 integrated search/filter/table/edit async/recovery execution;
+5. W011 accessible-name/target/enlargement/forced-color icon harness;
+6. W007 request/paint/readiness/stability measurement;
+7. broader integrated capstone execution.
 
-- W003 measured same-viewport/different-container responsive transfer;
-- W004 real Back/Forward/reload/direct-entry/focus restoration;
-- W005 native vs semantically collapsed custom keyboard/focus behavior;
-- W006 integrated search/filter/table/edit async/recovery execution;
-- W007 request/paint/readiness/stability measurement;
-- W008 integrated browser harness;
-- W011 accessible-name/target/enlargement/forced-color icon-signal harness.
-
-Therefore the next Web work should be **integrated executable transfer**, not another broad theory topic.
-
----
-
-## Canonical Web evidence
-
-- W001 Web as native medium / history / flexibility
-- W002 page composition / flow / grid / density / hierarchy + **25/25** Chromium assertions
-- W003 responsive/adaptive recomposition by relationship ownership
-- W004 information architecture / URL / navigation / wayfinding
-- W005 component/page systems / native semantics / state contracts
-- W006 complete task surfaces / state / validation / recovery
-- W007 performance-sensitive design / temporal priority / progressive rendering
-- W008 integrated portfolio workspace capstone with three complete directions
-- W009 Stage 1 Foundation closure audit — **PASS**
-- W010 Stage 2 entry audit — **ENTRY ACCEPTED / Stage 2 NOT PASSED**
-- W011 iconography & non-text signal systems — **direct Stage 2 content practice established**
-
----
-
-## Four-specialist balance after W011
-
-- **Type:** Stage 1 PASS; deep controlled build/browser evidence plus current LogMate live-product transfer work; specialist status still awaits synchronization with newest T020 commits.
-- **Color:** Stage 1 PASS; substantial quantitative/rendered/browser/system evidence; Stage 2 entry audit pending.
-- **Layout / Interaction:** Stage 1 PASS; deep assertion-based spatial/state/async evidence; Stage 2 entry audit pending.
-- **Web:** Stage 1 PASS; Stage 2 entry audit complete; explicit iconography content gap closed; **runtime execution depth remains the largest relative weakness**.
-
-The coordinator global status is older than current specialist evidence and must not be used alone for balance decisions.
-
----
-
-## Preserved later-stage / production OPEN items
-
-- actual browser-UI zoom and broader localization stress;
+Later/platform gaps:
+- actual browser-UI zoom;
 - exact production fonts/CDN/cache/service-worker behavior;
-- forced colors/system colors across complete task surfaces;
 - Firefox/Safari/physical mobile parity;
 - screen-reader/AT evidence;
-- field performance and live backend semantics;
-- physical-device validation;
-- human findability/task/perceived-speed/icon-recognition evidence.
+- physical-device and field performance evidence.
 
-Human/user observation remains deferred to app/project validation where instructed.
-
----
+Human findability/task/perceived-speed/icon-recognition evidence remains deferred to live project/app validation and is not simulated.
 
 ## Active next queue
 
-1. **W012 — Integrated executable Stage 2 transfer harness.** Combine the highest-value contracts from W003–W008/W011 rather than opening a new theory topic.
-2. Minimum preferred execution slice: responsive/container ownership + URL/history + native semantic controls + search/filter/table/edit state + icon naming/target geometry + enlarged text/localized-label stress + forced-color-safe semantics.
-3. Add performance/readiness measurement where the available environment can support it without turning the study into engineering for its own sake.
-4. Hand browser/product transfer findings back to Type, Color and Layout/Interaction when they confirm, limit or contradict canonical peer evidence.
-5. Keep production/device/AT/human gaps explicit at the correct evidence level.
-
----
+1. Re-evaluate all four specialists before choosing the next study.
+2. If Web remains the largest imbalance, prioritize another **executed browser transfer**, not a new theory topic.
+3. W004 navigation/history or W005 native/custom semantic-control execution is currently higher value than broadening content coverage.
+4. Preserve failure→critique→revision evidence rather than designing harnesses that only prove authored success states.
+5. Hand browser findings back to Type, Color and Layout/Interaction when they confirm, limit or contradict canonical peer evidence.
 
 ## HANDOFFS TO OTHER SPECIALISTS
 
 ### Type
-
-W011 confirms that visible-label removal is not a default solution to enlargement/localization pressure. Exact font/fallback geometry remains Type-owned.
+Responsive activation thresholds can move with exact font geometry; ownership of the adaptation mechanism is separate from the font-specific threshold.
 
 ### Color
-
-W011 independently transfers the semantic-resilience rule: status/warning/action meaning must survive hue loss; `currentColor` is a useful Web SVG transfer mechanism, not a substitute for semantic state.
+Forced-color/theme fallback capability and activation should likewise be asserted separately.
 
 ### Layout / Interaction
-
-W011 transfers L006 ownership separation into icon controls: glyph visual ownership may differ from semantic/focus/action ownership; pointer target geometry belongs to the control rather than SVG path bounds.
-
----
+W012 confirms relationship/ownership reasoning in Chromium and adds a validation rule: fallback ownership and fallback activation are separate assertions. This applies to disclosure, overlays, retry and compact-state transitions.
 
 ## Latest checkpoint
 
-- **W009:** Stage 1 Foundation PASS.
-- **W010:** Stage 2 entry accepted; Stage 2 not passed.
-- **W011:** direct iconography/non-text-signal content practice completed; previous explicit content gap closed.
-- Largest current Web imbalance: reproducible integrated browser execution depth.
-- Next new study ID: **W012**.
+- W009: **Stage 1 PASS**.
+- W010: **Stage 2 entry accepted**.
+- W011: **iconography/non-text direct practice established**.
+- W012: **Chromium runtime transfer executed; W003 assertion-model defect identified**.
+- Stage 2: **NOT PASSED**.
+- Next new Web study ID: **W013**.
