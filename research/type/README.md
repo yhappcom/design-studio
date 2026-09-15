@@ -40,6 +40,11 @@ T-series:
 - `T018-logmate-conservative-font-candidate-audit.md`
 - `T019-stage1-foundation-closure-audit.md` — exact Stage 1 gate audit; Type Foundations PASS without misclassifying later production/platform/human requirements as Foundation blockers.
 - `T020-stage2-entry-audit.md` — exact Stage 2 evidence map; existing bridge evidence is substantial but fragmented, and the main gap is an integrated coherent family/spacing/kerning/figure/weight/small-size comparative exercise.
+- `T021-coherent-mini-family-spacing-comparison.md` — Stage 2 comparison practice; three pre-kerning metric/spacing hypotheses (compact, balanced, open) with explicit KEEP/REWORK/REJECT critique. B is the working direction, while custom-outline and real target-size raster proof remain OPEN.
+
+T021 companion evidence:
+- `T021-mini-family-comparison-metrics.json`
+- `T021-mini-family-comparison-specimen.svg`
 
 Reproducibility scripts and measured JSON remain beside relevant studies. Generated experimental font binaries/screenshots are runtime outputs, not product assets or canonical source authority.
 
@@ -51,9 +56,11 @@ Authority: `T019-stage1-foundation-closure-audit.md`.
 
 This is a narrow curriculum PASS. It does not imply production-font, native-platform, multilingual-system, automated-QA or human-validation completion.
 
-### Stage 2 — Intermediate Professional Practice: ENTRY AUDIT COMPLETE / NOT PASSED
+### Stage 2 — Intermediate Professional Practice: PRACTICE / NOT PASSED
 
-Authority: `T020-stage2-entry-audit.md`.
+Authority for entry: `T020-stage2-entry-audit.md`.
+
+Latest practice: T021 begins the integrated family-system chain with three materially different pre-kerning hypotheses and explicit critique.
 
 Strong existing bridge evidence:
 - interpolation fundamentals: T007/T010;
@@ -62,14 +69,13 @@ Strong existing bridge evidence:
 - multi-role product typography: Study 009, T017/T018;
 - browser loading/fallback geometry: T016.
 
-Primary missing evidence:
-- coherent mini-family system;
-- systematic control strings;
+Primary missing evidence after the first T021 block:
+- actual custom mini-family outlines and target-size control-string proof;
 - kerning classes/exceptions;
 - integrated figure alternatives;
 - diacritic/punctuation family coherence;
 - design-level weight relationship proof;
-- one integrated multiple-solution exercise with explicit selection criteria and peer evidence.
+- final multiple-solution selection after rendered evidence rather than metrics alone.
 
 ## Current production/transfer model
 
@@ -86,16 +92,16 @@ T006–T018 retain a useful production-aware chain:
 9. target rendering/layout integration;
 10. human/product validation.
 
-These later-stage mechanisms now act as constraints and stress tests for Stage 2 practice rather than substitutes for the Stage 2 family-system gate.
+These later-stage mechanisms act as constraints and stress tests for Stage 2 practice rather than substitutes for the Stage 2 family-system gate.
 
 ## Highest-value next directions
 
-1. **T021 — coherent mini-family + spacing/control-string system** with at least three materially different hypotheses, intended-size proof, and explicit KEEP/REWORK/REJECT critique.
-2. T022 — kerning classes/exceptions + proportional/tabular figure alternatives on the selected T021 direction.
-3. T023 — weight/interpolation + diacritic/punctuation coherence on the same system.
-4. T024 — multi-role typography-system alternatives, preferably transferred to LogMate if live project timing is suitable.
-5. If LogMate Draft 02 becomes executable first, exact shipped-font Flutter transfer outranks nonessential curriculum expansion.
-6. External FontBakery/Fontspector/OTS and direct HarfBuzz/native/cross-browser work resume when suitable environments are available.
+1. **Continue T021** with actual H/O/n/o outlines and real control-string rendering at 14/17/24px; re-test whether B remains preferable.
+2. Extend T021 to A/V/T/L/I, numerals, core punctuation and one accented construction path with kerning still OFF.
+3. T022 only after that evidence: kerning classes/exceptions + proportional/tabular figure alternatives on the selected direction.
+4. T023 — weight/interpolation + diacritic/punctuation coherence on the same system.
+5. T024 — multi-role typography-system alternatives, preferably transferred to LogMate if live project timing is suitable.
+6. If LogMate Draft 02 becomes executable first, exact shipped-font Flutter transfer outranks nonessential curriculum expansion.
 
 ## Tool / platform OPEN
 
@@ -111,4 +117,4 @@ These later-stage mechanisms now act as constraints and stress tests for Stage 2
 
 Type progress is tracked in `progress/TYPE_STATUS.md`. The specialist does not edit global `progress/STATUS.md` during ordinary research.
 
-Current operating state: **ACTIVE — STAGE 2 ENTRY AUDIT COMPLETE / T021 NEXT**.
+Current operating state: **ACTIVE — STAGE 2 PRACTICE / T021 IN PROGRESS**.
