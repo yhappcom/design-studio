@@ -1,0 +1,125 @@
+{
+  "study": "T018",
+  "environment": {
+    "chromium": "144.0.7559.96"
+  },
+  "controls": {
+    "Roboto": {
+      "regular": {
+        "version": "Version 2.138; 2017",
+        "weightClass": 400,
+        "bytes": 305608,
+        "sha256": "797e35f7f5d6020a5c6ea13b42ecd668bcfb3bbc4baa0e74773527e5b6cb3174",
+        "features": ["locl", "pnum", "ss01", "tnum"],
+        "supports": {"accentedLatin_é": true, "cyrillic_Ж": true, "arabic_ا": false, "hangul_가": false, "combiningAcute": true}
+      },
+      "opening_role_face": {
+        "version": "Version 2.138; 2017",
+        "weightClass": 500,
+        "bytes": 306536,
+        "sha256": "7984aafeaf437899ce89b251d2875fc5048cb7d290152eac070239cca7ff726c"
+      },
+      "modeled_opening_weight": 500,
+      "note": "Closest bundled-role proxy for current LogMate, which declares Roboto 400/500 while requesting w600. Local control is not byte-identical proof of the app asset."
+    },
+    "Inter": {
+      "regular": {
+        "version": "Version 4.001;git-9221beed3",
+        "weightClass": 400,
+        "bytes": 609600,
+        "sha256": "d4f2b9e148059a15f014cb0f0b8fea8cd11bfa447dd483bedf1b0adc0e2ba799",
+        "features": ["case", "cv01", "locl", "pnum", "ss01", "tnum", "zero"],
+        "supports": {"accentedLatin_é": true, "cyrillic_Ж": true, "arabic_ا": false, "hangul_가": false, "combiningAcute": true}
+      },
+      "opening_role_face": {
+        "version": "Version 4.001;git-9221beed3",
+        "weightClass": 600,
+        "bytes": 629912,
+        "sha256": "0a4d30778fa2dc239368d90fd854b88b27e7ede737450da72686a90eca66f02c"
+      },
+      "modeled_opening_weight": 600
+    },
+    "Noto Sans": {
+      "regular": {
+        "version": "Version 2.004",
+        "weightClass": 400,
+        "bytes": 512672,
+        "sha256": "89c3c497f618fdaa0b2d1e98fef93582f28c71debd2c4a8cdf41f190ced2909d",
+        "features": ["case", "locl", "pnum", "tnum", "zero"],
+        "supports": {"accentedLatin_é": true, "cyrillic_Ж": true, "arabic_ا": false, "hangul_가": false, "combiningAcute": true}
+      },
+      "opening_role_face": {
+        "version": "Version 2.004",
+        "weightClass": 600,
+        "bytes": 515204,
+        "sha256": "68543590a7c3185d69ad16664c46df28832beeb72621d2470e86b04099eb4efb"
+      },
+      "modeled_opening_weight": 600
+    }
+  },
+  "measurements": {
+    "Roboto": {
+      "airport_17px": {"ICN": 27.984375, "NRT": 32.609375, "SIN": 27.15625, "JFK": 29.515625, "LHR": 31.921875, "CDG": 33.796875, "HND": 35.28125, "DXB": 32.421875, "FRA": 31.28125, "LAX": 31.4375},
+      "airport_stats": {"min": 27.15625, "max": 35.28125, "mean": 31.340625, "range": 8.125, "range_pct_mean": 25.924818027719613},
+      "identifiers_15px": {"KE704": 43.234375, "BA117": 44.421875, "AF264": 43.375, "B737-900": 64.078125, "B737-8": 47.21875, "A320-200": 64.515625, "HL8301": 52.5, "N12345": 52.859375, "G-EUOH": 53.640625},
+      "digit_prop_spread_15px": 0.0,
+      "digit_tnum_spread_15px": 0.0,
+      "times_tnum_15px": {"00:45": 37.359375, "02:18": 37.359375, "09:55": 37.359375, "12:40": 37.359375, "1,284:35": 57.171875, "9,999:59": 57.171875},
+      "punctuation_15px": {":": 3.640625, "/": 6.203125, "-": 4.15625, ",": 2.953125, "+": 8.515625},
+      "fit_failures": {
+        "opening_airport_100": [],
+        "opening_airport_200": ["NRT", "JFK", "LHR", "CDG", "HND", "DXB", "FRA", "LAX"],
+        "opening_time_100": [],
+        "opening_time_200": ["00:45", "02:18", "09:55", "12:40"],
+        "ledger_airport_100": [],
+        "ledger_airport_200": ["ICN", "NRT", "SIN", "JFK", "LHR", "CDG", "HND", "DXB", "FRA", "LAX"],
+        "ledger_registration_100": [],
+        "ledger_registration_200": ["HL8301", "N12345", "G-EUOH"],
+        "ledger_total_100": [],
+        "ledger_total_200": ["1,284:35", "9,999:59"]
+      }
+    },
+    "Inter": {
+      "airport_17px": {"ICN": 30.140625, "NRT": 35.234375, "SIN": 28.671875, "JFK": 31.8125, "LHR": 33.390625, "CDG": 37.546875, "HND": 37.875, "DXB": 34.9375, "FRA": 33.453125, "LAX": 34.21875},
+      "airport_stats": {"min": 28.671875, "max": 37.875, "mean": 33.728125, "range": 9.203125, "range_pct_mean": 27.286204021124803},
+      "identifiers_15px": {"KE704": 46.515625, "BA117": 40.359375, "AF264": 47.34375, "B737-900": 70.9375, "B737-8": 52.0, "A320-200": 72.703125, "HL8301": 53.75, "N12345": 54.40625, "G-EUOH": 60.890625},
+      "digit_prop_spread_15px": 3.59375,
+      "digit_tnum_spread_15px": 0.0,
+      "times_tnum_15px": {"00:45": 42.9375, "02:18": 42.9375, "09:55": 42.9375, "12:40": 42.9375, "1,284:35": 66.421875, "9,999:59": 66.421875},
+      "punctuation_15px": {":": 4.328125, "/": 5.40625, "-": 6.90625, ",": 4.328125, "+": 9.9375},
+      "fit_failures": {
+        "opening_airport_100": [],
+        "opening_airport_200": ["ICN", "NRT", "SIN", "JFK", "LHR", "CDG", "HND", "DXB", "FRA", "LAX"],
+        "opening_time_100": [],
+        "opening_time_200": ["00:45", "02:18", "09:55", "12:40"],
+        "ledger_airport_100": [],
+        "ledger_airport_200": ["ICN", "NRT", "SIN", "JFK", "LHR", "CDG", "HND", "DXB", "FRA", "LAX"],
+        "ledger_registration_100": [],
+        "ledger_registration_200": ["HL8301", "N12345", "G-EUOH"],
+        "ledger_total_100": [],
+        "ledger_total_200": ["1,284:35", "9,999:59"]
+      }
+    },
+    "Noto Sans": {
+      "airport_17px": {"ICN": 30.578125, "NRT": 34.15625, "SIN": 29.125, "JFK": 25.40625, "LHR": 33.1875, "CDG": 35.65625, "HND": 38.859375, "DXB": 34.28125, "FRA": 31.546875, "LAX": 31.578125},
+      "airport_stats": {"min": 25.40625, "max": 38.859375, "mean": 32.4375, "range": 13.453125, "range_pct_mean": 41.47398843930636},
+      "identifiers_15px": {"KE704": 43.375, "BA117": 45.078125, "AF264": 43.125, "B737-900": 66.0625, "B737-8": 48.90625, "A320-200": 65.90625, "HL8301": 53.296875, "N12345": 54.3125, "G-EUOH": 57.890625},
+      "digit_prop_spread_15px": 0.0,
+      "digit_tnum_spread_15px": 0.0,
+      "times_tnum_15px": {"00:45": 38.34375, "02:18": 38.34375, "09:55": 38.34375, "12:40": 38.34375, "1,284:35": 59.53125, "9,999:59": 59.53125},
+      "punctuation_15px": {":": 4.03125, "/": 5.59375, "-": 4.84375, ",": 4.03125, "+": 8.59375},
+      "fit_failures": {
+        "opening_airport_100": [],
+        "opening_airport_200": ["ICN", "NRT", "SIN", "LHR", "CDG", "HND", "DXB", "FRA", "LAX"],
+        "opening_time_100": [],
+        "opening_time_200": ["00:45", "02:18", "09:55", "12:40"],
+        "ledger_airport_100": [],
+        "ledger_airport_200": ["ICN", "NRT", "SIN", "JFK", "LHR", "CDG", "HND", "DXB", "FRA", "LAX"],
+        "ledger_registration_100": [],
+        "ledger_registration_200": ["HL8301", "N12345", "G-EUOH"],
+        "ledger_total_100": [],
+        "ledger_total_200": ["1,284:35", "9,999:59"]
+      }
+    }
+  }
+}
