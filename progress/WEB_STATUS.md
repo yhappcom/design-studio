@@ -19,7 +19,7 @@ Web now has three substantive studies:
 
 - `W001` — Web as a flexible/browser-participatory medium; relationship-over-coordinate baseline.
 - `W002` — page composition, mechanism selection and reproducible Chromium failure→revision validation; 25/25 bounded assertions across five stress cases.
-- `W003` — responsive/adaptive recomposition by relationship ownership; SOURCE-grounded media/container-query distinction, adaptation-ownership model, three-direction practice and companion specimen. Browser harness/results remain OPEN.
+- `W003` — responsive/adaptive recomposition by relationship ownership; SOURCE-grounded media/container-query distinction, adaptation-ownership model, three-direction practice, companion specimen, and an executable Playwright harness. **Measured harness results remain OPEN because this automation environment cannot execute repository code.**
 
 Web remains the least complete Stage 1 specialist. Major Foundation gaps remain information architecture, navigation/wayfinding, component/page systems, complete task surfaces, integrated Web state/accessibility, and broader browser/device transfer.
 
@@ -27,8 +27,8 @@ Web remains the least complete Stage 1 specialist. Major Foundation gaps remain 
 
 - **Type:** Stage 1 PRACTICE / CRITIQUE, Foundation NOT PASSED, but deep controlled evidence through T016 across font construction/package/render/loading/fallback states.
 - **Color:** Stage 1 PASS; Stage 2 entry audit next.
-- **Layout / Interaction:** Stage 1 PASS; Stage 2 entry audit underway/next.
-- **Web:** Stage 1 NOT PASSED; W001–W003 now cover medium, composition and responsive ownership, but breadth remains materially behind peers.
+- **Layout / Interaction:** Stage 1 PASS; Stage 2 entry audit next.
+- **Web:** Stage 1 NOT PASSED; W001–W003 cover medium, composition and responsive ownership, but breadth remains materially behind peers.
 
 The coordinator `progress/STATUS.md` is intentionally not edited by this specialist and may remain stale.
 
@@ -49,8 +49,9 @@ Canonical:
 
 - `research/web/W003-responsive-adaptive-recomposition.md`
 - `research/web/W003-responsive-recomposition-specimen.html`
+- `research/web/W003-responsive-recomposition-playwright.py`
 
-Evidence level: **PRACTICE + CRITIQUE / TRANSFER VALIDATION / browser validation OPEN**.
+Evidence level: **PRACTICE + CRITIQUE / TRANSFER VALIDATION / executable harness authored / measured browser results OPEN**.
 
 ### Current synthesis
 
@@ -71,16 +72,32 @@ Current judgment:
 - prefer intrinsic flow/wrapping where no discrete task-mode change is required;
 - preserve local 2-D overflow for intrinsically two-dimensional artifacts when forced stacking would destroy meaning.
 
-The companion specimen places equivalent KPI content in wide main and narrow aside allocations at the **same viewport width**, contrasting viewport-owned versus container-owned behavior. It also includes intrinsic action wrapping and a semantic table with local overflow.
+The companion specimen places equivalent KPI content in wide main and narrow aside allocations at the same viewport width, contrasting viewport-owned versus container-owned behavior. It also includes intrinsic action wrapping and a semantic table with local overflow.
+
+### W003 executable validation added this cycle
+
+`W003-responsive-recomposition-playwright.py` now defines a reproducible Chromium matrix for:
+
+- 1180, 820 and 390 CSS-px viewports;
+- same viewport / different component allocations;
+- long Korean/English metric labels;
+- page-global media-query recomposition;
+- component-local container-query recomposition;
+- document horizontal overflow;
+- local table overflow;
+- stable source/sequential-focus sequence for buttons and the focusable table scroller.
+
+The harness writes `W003-responsive-recomposition-results.json` only when actually executed. No result file or PASS count is committed in this cycle because the available GitHub connector can author repository files but cannot execute repository Python/Playwright. This blocker is recorded rather than fabricating measurements.
+
+W3C/WAI sources were rechecked on 2026-09-15: current W3C material continues to distinguish media-query environment/device conditions from container-size querying, and WAI guidance continues to require coherent responsive menu order plus sequential keyboard/focus behavior. These source checks support the harness contract but do not substitute for execution.
 
 ### W003 OPEN
 
-- reproducible Chromium failure→revision harness/results;
-- same viewport/different container and same container/different viewport measurements;
-- long Korean/English labels;
+- execute the committed harness and commit measured JSON results;
+- deliberate measured failure→revision if the harness exposes a failure;
+- same container width + different viewport measurement beyond current matrix if needed;
 - exact preferred-font loading/failure transfer;
-- source/focus sequence across recomposition;
-- hover-independent essential actions;
+- hover-independent essential-action validation;
 - actual browser-UI zoom;
 - Firefox/Safari/physical iOS/Android;
 - navigation disclosure/accessibility-tree transfer;
@@ -92,7 +109,7 @@ The companion specimen places equivalent KPI content in wide main and narrow asi
 | --- | --- | --- |
 | Web as medium / history | PRACTICE / CRITIQUE | broader project/browser/device transfer |
 | Document/semantic vs presentation | PRACTICE / CRITIQUE | production accessibility-tree/source-order transfer |
-| Responsive/adaptive philosophy | **PRACTICE / CRITIQUE — W003** | executable harness, zoom, navigation/task transfer |
+| Responsive/adaptive philosophy | **PRACTICE / CRITIQUE — W003 + executable harness** | measured run, zoom, navigation/task transfer |
 | Normal flow / intrinsic geometry | PRACTICE / CRITIQUE | broader media/form/task systems |
 | Page composition / hierarchy / density | PRACTICE / CRITIQUE — W002 | cross-browser/device + project/human evidence |
 | Information architecture | **NOT YET WEB-BASELINED** | dedicated Web practice |
@@ -122,8 +139,8 @@ Layout/Interaction Stage 1 PASS is acknowledged. W003 transfers L002/L003/L006 i
 
 ## Active next queue
 
-1. **Complete W003 executable browser validation** before claiming stronger responsive evidence: deliberate failure→revision, same viewport/different containers, long bilingual content, source/focus order and local overflow.
-2. **W004 candidate — Information Architecture, URL Resource Structure, Navigation & Wayfinding.** This is the largest remaining untouched Foundation block after responsive depth.
+1. **Execute W003 browser harness and commit measured results** when an execution-capable environment is available. Do not invent PASS counts.
+2. **W004 candidate — Information Architecture, URL Resource Structure, Navigation & Wayfinding.** This is now the largest untouched Foundation block and is executable as source-grounded design practice even if the W003 runtime blocker persists.
 3. Component/page systems and complete task surfaces: forms, search, filters, settings, tables, dashboards, list/detail, loading/error/empty/partial states.
 4. Integrated Web Type/Color/accessibility: exact fonts, themes/system colors, forced colors, real zoom, keyboard/focus/AT and cross-browser/device transfer.
 5. Performance-sensitive design and complete real-project design/redesign exercise.
@@ -146,6 +163,7 @@ W003's adaptation-ownership model should be challenged against simultaneous page
 
 - W001: PRACTICE + CRITIQUE.
 - W002: PRACTICE + CRITIQUE with reproducible Chromium validation; **25/25 bounded assertions after failure→revision**.
-- W003: **PRACTICE + CRITIQUE; study + specimen committed; browser harness/results OPEN**.
+- W003: **PRACTICE + CRITIQUE; study + specimen + executable Playwright harness committed; measured results OPEN**.
 - Web Foundation: **NOT PASSED**.
-- Next new Web study ID: **W004**, but W003 validation is the immediate continuation unless newer repository state changes the balance.
+- Next new Web study ID: **W004**.
+- Immediate runtime blocker: repository code cannot be executed through the current GitHub connector; continue with W004 rather than falsely closing W003 if that blocker persists.
