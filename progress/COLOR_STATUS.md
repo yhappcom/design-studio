@@ -1,116 +1,115 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PRACTICE / C017 INTEGRATED PALETTE CAPSTONE COMPLETE**  
+Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PASSED / STAGE 3 ENTRY AUDIT NEXT**  
 Governance sync: 2026-09-15  
 Primary path: `research/color/`  
-Next new-study ID: `C018`
+Next new-study ID: `C019`
 
 ## Current level
 
 Stage 1 — Foundations: **PASS**  
-Stage 2 — Intermediate Professional Practice: **PRACTICE / NOT YET RE-AUDITED FOR PASS**
+Stage 2 — Intermediate Professional Practice: **PASS**  
+Stage 3 — Advanced / Systems Practice: **NOT YET AUDITED**
 
 Authority:
-- C014 — Stage 1 closure audit
-- C015 — Stage 1 perceptual-context capstone
+- C014/C015 — Stage 1 closure
 - C016 — Stage 2 entry audit
 - C017 — controlled semantic palette derivation/token capstone
+- **C018 — Stage 2 closure audit / PASS**
 
 `progress/STATUS.md` is coordinator-owned and stale relative to specialist evidence.
 
-## Latest evidence — C017
+## Latest evidence — C018
 
-Canonical:
-- `research/color/C017-controlled-semantic-palette-derivation-token-contract.md`
-- `research/color/C017-controlled-semantic-palette-results.json`
+Canonical: `research/color/C018-stage2-intermediate-closure-audit.md`.
 
-C017 executed the integrated-authorship gap identified by C016. One dense operational/data-product problem was held fixed while three complete light/dark semantic systems were authored:
-- A — restrained neutral + cyan-blue action;
-- B — brand-forward teal;
-- C — low-chroma operational.
+C018 re-read the exact Master Curriculum after C017 rather than adding more theory. It distinguishes Stage 2 requirements from later physical-device, production and human gates.
 
-All three were intentionally viable rather than strawmen. Declared sRGB contrast pairs were measured reproducibly; whole-system KEEP/REWORK critique was performed; **C is provisionally selected for the bounded operational archetype**. A remains the conventional control and B the brand-forward alternative.
+Stage 2 closure evidence:
+- explicit palette/ramp authorship: Study 017 + C017;
+- semantic role architecture: C002/C006/C017;
+- state/focus semantics: C002/C006/C011 + I003 reuse + C017;
+- gamut-aware production/fallback reasoning: Study 016 + C010 + C017 complete sRGB baseline;
+- viewing/device-aware intermediate validation: C009 Chromium DPR transfer + C010 profile/CMM boundaries + C015 bounded viewing stress;
+- multiple viable solutions and defended selection: C017 A/B/C → C provisional selection;
+- system-scale critique and handoffs: C017 plus prior controlled failure→revision studies.
 
-Selection is conditional, not universal. C is preferred because hierarchy depends less on decorative chroma, action/focus contrast margins are strong, light/dark role continuity is simple, and the complete semantic contract works in sRGB without requiring P3 for correctness.
+The decisive gate evidence is C017: three viable systems solve the same fixed operational/data problem under identical semantic/geometry constraints, with explicit criteria and conditional selection rather than taste.
 
-## C017 token/shipping contract
+## Stage 2 closure matrix
 
-Stable semantic interface:
-`color.bg.canvas`, `color.bg.surface`, `color.text.primary`, `color.text.secondary`, `color.border.default`, `color.action.primary`, `color.action.onPrimary`, `color.focus.ring`, `color.selection.bg`, `color.status.success`, `color.status.caution`, `color.status.critical`.
-
-Rules:
-- components consume semantic tokens, not primitive step names;
-- sRGB is the complete baseline;
-- P3 is optional enhancement only when a future role materially benefits;
-- clipping/P3 must never create the only semantic distinction;
-- critical meaning retains a non-color cue;
-- selected/focus/status semantics remain Interaction-owned.
-
-## Stage 2 snapshot after C017
-
-| Requirement | Current state |
+| Requirement | Verdict |
 | --- | --- |
-| palette/ramp construction with explicit authoring model | **DIRECT PRACTICE — C017** |
-| semantic color-role systems | **STRONG — C002/C006/C017** |
-| state/focus coupled to interaction semantics | **STRONG — C002/C011/C017 + I003 reuse** |
-| gamut-aware production values/fallback | **STRONG — C010 + C017 sRGB baseline contract** |
-| viewing-condition/device-aware validation | **PARTIAL — C009/C010/C015; physical device/environment OPEN** |
-| multiple viable solutions + defended selection | **DIRECT PRACTICE — C017 A/B/C → C provisional select** |
-| comparative study / critique | **STRONG** |
-| KEEP / REWORK / REJECT at system scale | **DIRECT PRACTICE — C017** |
-| cross-specialist dependency / handoff | **STRONG** |
+| palette/ramp construction with explicit authoring model | **PASS** |
+| semantic color-role systems | **PASS** |
+| state/focus coupled to interaction semantics | **PASS** |
+| gamut-aware production values/fallback | **PASS for Stage 2** |
+| viewing-condition/device-aware validation | **PASS for Stage 2 with explicit limits** |
+| multiple viable solutions + defended selection | **PASS** |
+| comparative study / hypothesis / critique | **PASS** |
+| KEEP / REWORK / REJECT | **PASS** |
+| implementation-bias/genericness critique | **PASS** |
+| cross-specialist dependency / handoff | **PASS** |
 
-Stage 2 is not automatically marked PASS from this status update. The correct next action is a narrow re-audit against the exact Master Curriculum, not another broad theory study.
+## Evidence boundary
 
-## Four-specialist balance after C017
+Stage 2 PASS does **not** imply:
+- calibrated physical-display or ambient-light validation;
+- Firefox/Safari/OS/device parity;
+- real CVD/low-vision observer evidence;
+- production token pipeline/device acceptance;
+- enterprise multi-product governance;
+- Stage 3+ completion.
 
-- **Type:** Stage 1 PASS; Stage 2 PRACTICE with actual outline/raster work and active lowercase drawing revision.
-- **Color:** Stage 1 PASS; Stage 2 integrated multi-solution palette authorship now executed; re-audit next.
-- **Layout / Interaction:** Stage 1 PASS; status file is stale relative to newer L008 entry-audit evidence; deepest assertion-based runtime/state corpus.
-- **Web:** Stage 1 PASS; Stage 2 PRACTICE through W013 Chromium responsive/navigation transfer; runtime breadth remains active.
+Human/app-stage validation remains deferred exactly as instructed; no simulated human PASS.
 
-Research volume is not the balance metric.
+## Four-specialist balance after C018
 
-## Current OPEN / blockers
+- **Type:** Stage 1 PASS; Stage 2 PRACTICE with executed outline/raster evidence and active drawing revision.
+- **Color:** Stage 1 PASS; **Stage 2 PASS** after C018.
+- **Layout / Interaction:** Stage 1 PASS; strong assertion-based spatial/state corpus; Stage 2 entry status must be judged from latest tree rather than stale summary alone.
+- **Web:** Stage 1 PASS; Stage 2 PRACTICE through W013 Chromium transfer; runtime breadth remains active.
 
-Highest-value near-term:
-1. C018 narrow Stage 2 gate re-audit using C017 plus existing C009–C011/C015 transfer evidence;
-2. if the gate still requires more implementation transfer, hand C017 C to Web for independent CSS light/dark/forced-colors/system-color validation;
-3. exact rendered Type pair validation remains a Type/Web dependency.
+Color should no longer receive automatic priority merely because its Stage 2 audit was pending. Future balance cycles should compare Type/Layout/Web Stage 2 gaps against Color Stage 3 entry needs and live-project risk.
 
-Later/platform:
-- physical-display/environment/instrument validation;
-- real CVD/human-observer evidence;
-- Firefox/Safari/OS/device color-management breadth;
-- second CMM/print/soft-proof;
-- production multi-product token governance;
-- cultural/localization validation.
+## Current OPEN / next-stage backlog
 
-No human or physical-device PASS is fabricated.
+### Highest-value next Color work
+1. Re-evaluate all four specialists before selecting more Color work.
+2. If Color is selected, open **C019 — Stage 3 entry audit** against the exact Master Curriculum.
+3. Prefer an integrated multi-surface/adverse-state Color system over isolated color-science expansion.
+4. C017 direction C remains available for Web independent browser TRANSFER VALIDATION.
+
+### Stage 3+
+- coherent system across phone/tablet/desktop/web or other three-form-factor set;
+- broader cross-gamut system behavior;
+- environment/display validation;
+- product-scale data-visualization palette integration;
+- dark/light/adaptive behavior in a multi-surface system;
+- production token generation/conversion and browser/device/profile acceptance later at Stage 4.
+
+### Human / physical
+- real CVD/low-vision observer evidence;
+- perceived salience/clutter;
+- low-light/glare task performance;
+- calibrated display/instrument evidence.
 
 ## HANDOFFS TO OTHER SPECIALISTS
 
 ### Type
-C017 contrast numbers are declared color-pair evidence only. Exact font/raster/fallback validation remains required for production text conclusions.
+C009 remains binding: declared contrast does not prove final text robustness. Exact font/weight/fallback/raster validation remains Type/Web work.
 
 ### Layout / Interaction
-C017 holds geometry/state meaning fixed and demonstrates that three chroma strategies can encode the same semantics. Future product tests should stress selected/focus/status adjacency.
+C017 demonstrates palette strategy can change while state meaning stays fixed. Future multi-surface work should preserve Interaction ownership of selected/focus/status semantics.
 
 ### Web Design
-C017 direction C is ready for independent browser TRANSFER VALIDATION: CSS light/dark token resolution, `color-scheme`, forced-colors/system colors, and P3 fallback only if a useful enhancement is justified.
-
-## Active next queue
-
-1. Re-evaluate all four specialists before choosing work.
-2. If Color remains highest-value, open **C018 — Stage 2 closure/re-audit** rather than adding theory.
-3. If browser transfer is the only remaining Color gate, prefer a concrete Web handoff/transfer over duplicating Web runtime work inside Color without reason.
-4. Live-project Color needs pre-empt nonessential curriculum expansion.
+C017 direction C is ready for independent CSS light/dark, `color-scheme`, forced-colors/system-color and component-adjacency transfer. This strengthens later-stage evidence but was not required to fabricate Stage 2 closure.
 
 ## Latest checkpoint
 
 - Stage 1: **PASS**.
-- C016: **Stage 2 entry audit complete**.
-- C017: **integrated multi-solution palette capstone complete**.
-- Direction C: **provisional operational-data selection**.
-- Stage 2: **PRACTICE / NOT YET RE-AUDITED FOR PASS**.
-- Next Color ID: **C018**.
+- C016: Stage 2 entry audit complete.
+- C017: integrated multi-solution palette capstone complete.
+- C018: **Stage 2 closure audit PASS**.
+- Stage 3: **NOT YET AUDITED**.
+- Next Color ID: **C019**.
