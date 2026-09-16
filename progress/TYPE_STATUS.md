@@ -1,6 +1,6 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 EDITABLE-SOURCE RECOVERY + DRAWING BLOCKER**
+Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 EXECUTABLE SOURCE PACKAGE BLOCKER**
 Governance sync: 2026-09-16
 Primary path: `research/type/`
 Active authority: `T021` sequence in `research/type/README.md`
@@ -9,19 +9,19 @@ Active authority: `T021` sequence in `research/type/README.md`
 Stage 1 **PASS**; Stage 2 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-`T021-source-package-recovery-and-execution-decision.md` converts the prior source-readiness audit into an explicit execution decision. If the canonical editable source is recovered, the next valid evidence bundle is source/build identity + deterministic kerning-off build/proof + H/O/n/o/l/I/1/0 14/17/24px before/after critique + fallback/notdef report. If it is not recovered, reconstructing a font from raster proofs is a new candidate, not silent continuation of T021.
+`T021-executable-source-package-manifest.md` turns source recovery into a reproducible execution gate: editable source identity/hash, font metrics metadata, deterministic build/tool versions, explicit kerning-OFF proof mode, binary hash, 14/17/24px ambiguity-control proofs, fallback/notdef inspection and a defect ledger are all required before new drawing evidence is canonical. Raster-only reconstruction is explicitly a new candidate lineage rather than silent continuation.
 
-The bounded candidate therefore remains incomplete and T022 stays closed. Mature system/product fonts remain the transfer baseline; no width token or production identity recommendation is frozen from the incomplete candidate.
+The bounded candidate remains incomplete at the previously measured 6/33 corpus coverage. T022 stays closed; mature system/product fonts remain transfer baselines.
 
 ## Active queue
-1. Recover/establish the canonical editable glyph source + version/hash and deterministic build/proof commands.
-2. Build the H/O/n/o/l/I/1/0 ambiguity-control subset with kerning OFF and execute 14/17/24px proofs.
-3. Repair drawing/general-spacing/raster/fallback failures and rerun.
-4. Expand the remaining bounded repertoire; only after fallback closure enumerate pair-specific residuals and assess T022.
+1. Recover/establish the canonical editable source package satisfying the manifest.
+2. Build H/O/n/o/l/I/1/0 with kerning OFF; execute 14/17/24px proofs and defect repair.
+3. Expand bounded operational repertoire and close fallback/notdef.
+4. Only then enumerate pair-specific residuals and assess T022.
 5. Keep browser/native breadth and pilot recognition/task evidence OPEN.
 
 ## Cross-domain state
-CD040 preserves freshness/retrieval identifiers; W034 uses mature fallback; L025 must not freeze custom metrics; C034 cannot repair glyph ambiguity; I021 owns authority/action truth.
+CD041 supplies partial-authority strings; W035 uses mature fallback; L026 must not freeze custom metrics; C035 cannot repair glyph ambiguity; I022 owns action truth.
 
 ## Evidence boundary
 No new glyph drawing PASS, T021 closure, T022 entry, custom-font production recommendation, native platform PASS or human recognition PASS is claimed.
