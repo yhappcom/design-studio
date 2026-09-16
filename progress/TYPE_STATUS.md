@@ -1,6 +1,6 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / LOGMATE TYPE IDENTITY LIVE-PROJECT PRIORITY / T021 METHOD CALIBRATED, OPERATIONAL BREADTH NEXT**  
+Operating state: **ACTIVE — STAGE 2 PRACTICE / LOGMATE TYPE IDENTITY PRIORITY / T021 OPERATIONAL EXPANSION CONTRACT READY**  
 Governance sync: 2026-09-16  
 Primary path: `research/type/`  
 Next new-study ID: `T022` only after T021 family/spacing/operational evidence is sufficiently stable
@@ -11,172 +11,142 @@ Stage 2 — Intermediate Professional Practice: **PRACTICE / NOT PASSED**
 
 Authority: T019 for Stage 1; T020 for Stage 2 entry.
 
-## LIVE PROJECT PRIORITY — LogMate Type identity
+## Live-project priority — LogMate Type identity
 
-Canonical incoming directive: `research/type/LOGMATE_TYPE_IDENTITY_LIVE_PROJECT_DIRECTIVE.md`.
+Canonical directive: `research/type/LOGMATE_TYPE_IDENTITY_LIVE_PROJECT_DIRECTIVE.md`.
 
-The live LogMate project identified a transfer mismatch: T017–T020 solved conservative implementation safety but did not sufficiently answer the original product objective of developing a more distinctive LogMate typographic identity while preserving or improving operational alignment, scan rhythm and identifier legibility.
+Controls remain:
+- **Control A:** exact airport-only `LogMateRobotoMono` interim control — deterministic and validated in the product, but explicitly not the final Type contract.
+- **Control B:** proportional Roboto product baseline.
 
-The current product controls are now more precise than the earlier status wording:
+The custom research direction must earn a product-facing identity decision rather than win by aesthetic assertion.
 
-- **Control A — exact airport-only `LogMateRobotoMono` interim control.** The LogMate branch bundles a specific Roboto Mono artifact, labels the role `INTERIM_CONTROL_NOT_FINAL_TYPE_CONTRACT`, validates the asset in CI and has Flutter widget evidence for equal rendered width across airport samples. It is a deterministic temporary control, not the final identity.
-- **Control B — proportional Roboto product baseline.** This remains the conservative general-UI reference from T017–T020.
+## T021 executed evidence
 
-Future T021–T024 work must demonstrate why a proposed system belongs to LogMate and why it is at least as good operationally as these controls. The live-project need pre-empts nonessential curriculum expansion.
-
-## T021 current state
-
-Canonical evidence now includes:
-
-- original A/B/C mini-family comparison;
+Completed evidence includes:
+- A/B/C mini-family hypotheses and critique;
 - actual outline/raster proof;
 - lowercase `n` contour redraw;
-- broader A/V/T/L/I transfer;
-- shared-cap metric-model falsification;
-- shape-sensitive pre-kerning metrics;
-- pair/scanline geometry diagnostics;
-- **mature-font pair-gap method validation / contradiction review**;
-- **LogMate operational glyph-coverage audit**.
+- A/V/T/L/I transfer;
+- shared-cap metric-model falsification and shape-sensitive replacement;
+- pair/scanline geometry diagnostic;
+- mature-font method validation that withdrew an unsupported absolute AV-gap defect threshold;
+- LogMate operational glyph-coverage audit.
 
-Three pre-kerning hypotheses remain A Compact, B Balanced and C Open. B remains only a working direction; no candidate is selected for product transfer.
-
-### Executed evidence chain
-
-The first custom-outline run exposed and corrected a cubic→TrueType build defect. Target-size rendering then exposed B's lowercase `n` drawing defect. A contour-only redraw changed raster output while preserving advances, correctly classifying that defect as drawing rather than kerning.
-
-The broader A/V/T/L/I transfer exposed a second model-level defect: all new capitals originally shared one `cap_aw/cap_lsb`, forcing shape-different strings to identical advances. Per-glyph metrics removed that pathological equality while keeping kerning OFF.
-
-A subsequent pair-gap diagnostic measured B `AV` gaps around `270–300u / 1000 UPM` and strong `LI/IL` height/order asymmetry. The earlier status over-interpreted those values as sufficient proof that A/V/T/L/I primitives themselves were defective.
-
-### T021 method correction — CONTRADICTION REVIEW + INDEPENDENT VALIDATION
-
-`T021-pair-gap-method-validation.md` independently applied the same conceptual kerning-off scanline geometry to mature controls.
-
-Representative normalized `AV` ranges:
-
-- Inter: about `318.4`;
-- Noto Sans: `256.0–277.8`;
-- Lato: `292.5–298.0`;
-- DejaVu Sans: `293.9–294.4`;
-- Liberation Mono: `250.0–252.0`;
-- T021 B: `270.0–300.0`.
-
-Mature controls also showed large `LI/IL` directional/height asymmetry.
-
-Therefore:
-
-> **pair-gap geometry is a useful descriptive signal, but the absolute `270–300u AV` magnitude is not a calibrated drawing-defect threshold.**
-
-The automatic next step “redraw A/V/T/L/I until the scanline number shrinks” is withdrawn. This does not prove B is optically correct; it removes an unsupported defect rule.
-
-Current evidence chain:
-
-`metric alternatives → actual outlines → build correction → raster proof → drawing defect → contour redraw → broader transfer → shared-cap model failure → shape-sensitive base metrics → pair-gap diagnostic → mature-control method validation → absolute-gap threshold rejected → LogMate operational glyph breadth → target-size control comparison → kerning eligibility`
-
-### T021 live-product breadth audit
-
-`T021-logmate-operational-glyph-coverage-audit.md` compared the actual built mini-family (`H O n o A V T L I + space`) with the bounded LogMate corpus.
-
-Measured bounded coverage:
-
+The coverage audit remains the latest measured breadth result:
 - airport uppercase: **5/16 = 31.25%**;
 - identifier uppercase: **4/11 = 36.36%**;
-- identifier digits: **0/10**;
-- numeric punctuation `, :`: **0/2**;
-- ambiguity set `0 1 5 8 B I O S l`: **2/9 = 22.22%**;
-- all bounded corpus characters: **6/33 = 18.18%**.
+- digits: **0/10**;
+- ambiguity set: **2/9 = 22.22%**;
+- bounded non-space corpus: **6/33 = 18.18%**.
 
-The present blocker is therefore much clearer: the candidate does not yet have enough real operational glyph breadth to support a credible LogMate identity/operational comparison.
+B remains a working direction only.
+
+## New T021 operational expansion contract
+
+Canonical: `research/type/T021-logmate-operational-family-expansion-contract.md`.
+
+The previous broad instruction “add missing glyphs” is now replaced by one bounded construction/validation contract.
+
+Required next candidate repertoire:
+- uppercase `A B C D E F G H I J K L N O R S T U V X`;
+- lowercase controls `n o l`;
+- digits `0–9`;
+- punctuation `- : ,`;
+- one accented path, recommended `É` from E + acute;
+- space/notdef.
+
+Construction is organized by related form families: round (`O→C/G/D/0`), stem/bowl (`D→B`), vertical/horizontal (`H/L/I/T→E/F`), diagonal (`A/V→X/K/N`), independent S proof, J hook, U round-bottom, figure family, operational punctuation, and ambiguity controls.
+
+Kerning remains OFF through this expansion.
+
+### Pre-kerning product corpus
+The exact candidate must render the existing bounded LogMate airports, identifiers, time/totals and ambiguity strings at **14/17/24px** with no fallback/notdef before T022 is eligible.
+
+### Failure classification
+Observed defects must be classified in this order:
+1. drawing;
+2. general spacing;
+3. pair-specific residual.
+
+Only category 3 may seed T022 kerning. Absolute scanline-gap magnitude is descriptive only, not a defect threshold.
+
+### Product comparison gate
+After the candidate can render the corpus, compare against proportional Roboto and, when the exact product artifact is available to the test environment, the exact airport-only `LogMateRobotoMono` control. A generic mono may never be mislabeled as the product control.
 
 ## Stage 2 matrix
 
 | Requirement | Current state |
 | --- | --- |
-| coherent glyph family | **PRACTICE — H/O/n/o + A/V/T/L/I executed; pair-gap magnitude no longer treated as a defect threshold; operational uppercase breadth incomplete** |
-| spacing/control strings | **PRACTICE — shared-cap failure corrected; pair-gap diagnostic calibrated against mature controls; full LogMate control strings not yet renderable** |
-| kerning classes/exceptions | **OPEN; deliberately blocked until family/operational breadth is sufficient to identify residual pair-specific needs** |
-| figure styles | **PARTIAL / STRONG BRIDGE; current T021 candidate has no integrated product numerals yet** |
-| diacritics/punctuation coherence | **PARTIAL; one product-relevant accented construction path still needed** |
+| coherent glyph family | **PRACTICE — initial family executed; operational expansion system now specified; expanded build OPEN** |
+| spacing/control strings | **PRACTICE — method calibrated; full LogMate pre-kerning corpus specified; expanded render OPEN** |
+| kerning classes/exceptions | **OPEN / BLOCKED until residuals can be identified across expanded repertoire** |
+| figure styles | **PARTIAL / STRONG BRIDGE; default figure construction and product integration OPEN** |
+| diacritics/punctuation coherence | **PARTIAL; bounded punctuation + É path specified, build OPEN** |
 | weight/width relationships | **PARTIAL / STRONG BRIDGE** |
 | interpolation fundamentals | **SUPPORTED FOR ENTRY** |
-| screen rendering/small-size compensation | **PRACTICE — intended-size raster/redraw evidence exists; full LogMate corpus candidate render OPEN** |
-| typography across product roles | **PARTIAL / STRONG BRIDGE; live product controls established, custom candidate not yet broad enough** |
-| multiple solutions + defended selection | **PRACTICE — A/B/C exist; B working only; no mature LogMate identity candidate selected** |
+| screen rendering/small-size compensation | **PRACTICE — prior 14/17/24 evidence exists; expanded corpus proof OPEN** |
+| typography across product roles | **PARTIAL / STRONG BRIDGE; direct control comparison pending** |
+| multiple solutions + defended selection | **PRACTICE — A/B/C exist; final product-facing selection OPEN** |
 
-## Four-specialist balance
+## Studio balance
 
-- **Type:** Stage 1 PASS; Stage 2 PRACTICE; live LogMate identity priority; pair-gap over-interpretation corrected; operational family breadth is the current blocker.
-- **Color:** Stage 1 PASS; Stage 2 PASS; Stage 3 entry not yet audited.
-- **Layout / Interaction:** Stage 1 PASS; Stage 2 PASS; Stage 3 entry not yet audited.
-- **Web:** Stage 1 PASS; Stage 2 PRACTICE through W016; actual Chromium native/custom control transfer exists, network/runtime breadth remains incomplete.
+The studio now includes Content Design in addition to Type, Color, Layout/Interaction and Web. Type remains Stage 2 incomplete and the LogMate live-project identity need pre-empts nonessential curriculum expansion. Color and Layout have progressed beyond Type's current Stage 2 state; Web also remains an active transfer partner. Exact peer stages should be read from their current status files rather than frozen here.
 
-Type and Web remain the two Stage 2 incomplete specialists. The LogMate live-project Type need currently takes precedence over nonessential Type curriculum expansion.
+## Active next queue — large-block execution
 
-## Active next queue
+Do not return to micro-step reporting. The next substantive Type block should, in one pass where technically possible:
 
-1. **Expand T021 coherently toward the actual LogMate airport uppercase repertoire.** Missing airport letters are `B C D F G J K N R S X`; do not redraw A/V/T/L/I merely to chase a lower scanline-gap number.
-2. Add identifier-specific uppercase still missing after the airport set, especially `E U`.
-3. Add digits `0–9`, core operational punctuation `- : ,`, lowercase `l` for ambiguity inspection, and one accented construction path while preserving one family logic.
-4. Rerender at actual LogMate target sizes and compare the same corpus against both controls: proportional Roboto and exact airport-only `LogMateRobotoMono`.
-5. Use pair-gap geometry only as a descriptive diagnostic alongside raster proof, control strings, compactness and residual pair behavior.
-6. Only after sufficient family breadth exists, open T022 for kerning classes/exceptions + proportional/tabular figure systems where product evidence justifies them.
-7. T023 weight/interpolation + diacritic/punctuation coherence; T024 multi-role Type alternatives remain the likely LogMate identity integration path if evidence matures.
+1. implement the bounded operational uppercase expansion coherently;
+2. add identifier letters E/U, digits 0–9, `- : ,`, lowercase `l`, and É construction;
+3. build the candidate with kerning OFF;
+4. render the full LogMate corpus at 14/17/24px;
+5. revise drawing/base spacing defects and rerun;
+6. verify bounded corpus coverage reaches the contract target without fallback/notdef;
+7. compare exact candidate geometry against proportional Roboto and exact product mono only if that exact artifact is available;
+8. enumerate true residual pair candidates;
+9. only then decide whether T021 closes and T022 opens.
 
-## OPEN / dependencies
+If execution exposes a repairable build defect, repair and rerun in the same work block rather than stopping at the first failure.
 
-Stage 2:
-- coherent operational uppercase expansion;
-- integrated digits/punctuation/accent breadth;
-- target-size rendering across real LogMate airport/identifier/time strings;
-- residual kerning model after base spacing is broad enough;
-- integrated figure systems;
-- design-level weight/width proof;
-- final defended family selection;
-- direct product-facing comparison showing whether a new system improves on proportional Roboto and the exact airport-only mono control.
+## T021 closure gate
 
-Individual A/V/T/L/I outlines remain open to normal raster/family critique, but **absolute pair-gap magnitude alone is no longer a blocker**.
+T021 does not close until:
+- bounded repertoire is actually built;
+- full bounded corpus renders without fallback/notdef;
+- 14/17/24px raster evidence exists;
+- base spacing revision is evidence-driven;
+- pair-specific residuals are enumerated separately from drawing/spacing defects;
+- accented construction is demonstrated;
+- B is retained or replaced using rendered evidence;
+- gains and sacrifices versus product controls are documented.
 
-Later:
-- FontBakery/Fontspector/OTS;
-- direct HarfBuzz;
-- naming/style linking;
-- hinting;
-- multi-axis/CFF2/components;
-- Android/iOS/browser matrix;
-- production PWA;
-- larger complex scripts.
+## OPEN / later
 
-Human/app-stage validation remains deferred; no simulated human PASS.
+Stage 2 OPEN: expanded operational build, full-corpus raster proof, base-spacing revision, residual kerning candidates, figure alternatives, design-level weight/width proof, final defended product-facing selection.
 
-## RELATED DOMAIN / HANDOFF state
+Later production OPEN: broad external font QA, direct HarfBuzz tracing, naming/style linking, hinting, multi-axis/CFF2/component breadth, Android/iOS/browser matrix, production PWA, larger complex scripts.
 
-### Layout / Interaction
-Preserve semantic geometry and keep the airport Type seam replaceable. The exact mono control stabilizes current UI work but must not become immutable final geometry merely because it is deterministic.
+Human/app-stage validation remains deferred: recognition/error rates, scan speed and physical-device readability are not simulated.
 
-### Web Design
-Delay exact custom-family Web transfer until the candidate can render the bounded operational corpus without extensive fallback. When breadth is sufficient, test exact loading/fallback and responsive consequences.
+## HANDOFF state
 
-### Color
-Hold Color constant during Type identity comparisons; no Color contradiction was introduced by the pair-gap method review.
-
-### LogMate UI
-The current exact airport-only Roboto Mono implementation may continue as a **temporary validated control**. Do not spread mono automatically to aircraft type, registration, flight number, crew names or prose, and do not promote the interim airport control to final Type identity without comparison evidence.
+- **Layout / Interaction:** keep airport font seam replaceable; do not freeze final column geometry around the temporary mono control.
+- **Web:** wait for a no-fallback bounded candidate before exact loading/fallback/zoom transfer.
+- **Color:** hold semantic color constant during Type comparisons.
+- **Content Design:** preserve operational token syntax; if terminology changes the corpus, rerun rather than silently substituting strings.
+- **LogMate UI:** airport-only mono may remain as temporary validated control; do not spread mono to unrelated roles or promote it to final identity without evidence.
 
 ## Latest checkpoint
 
 - Stage 1: **PASS**.
-- T020: **COMPLETE as conservative implementation evidence, not final LogMate identity resolution**.
-- T021 actual outline/raster: **EXECUTED**.
-- T021 lowercase `n` contour redraw: **EXECUTED**.
-- T021 broader A/V/T/L/I transfer: **EXECUTED**.
-- Shared-cap spacing parameterization: **FALSIFIED / REPLACED**.
-- Shape-sensitive A/V/T/L/I base metrics: **EXECUTED**.
-- Initial pair-gap diagnostic: **EXECUTED; useful descriptively**.
-- Pair-gap defect-threshold interpretation: **CONTRADICTED / WITHDRAWN** after mature-control validation.
-- Forced primitive A/V/T/L/I redraw as automatic next step: **CANCELLED**; revise only if specific raster/family evidence exposes a real defect.
-- LogMate operational glyph coverage: **AUDITED — 18.18% of bounded corpus characters currently proven**.
-- Operational uppercase family expansion: **NEXT**.
-- Numerals/punctuation/accent breadth: **OPEN**.
+- T020: **COMPLETE as Stage 2 entry/conservative product evidence**.
+- T021 outline/raster/redraw/broader transfer: **EXECUTED**.
+- Shared-cap spacing model: **FALSIFIED / REPLACED**.
+- Absolute AV-gap defect threshold: **WITHDRAWN after mature-control validation**.
+- Operational glyph coverage: **AUDITED — 18.18% bounded corpus characters currently proven**.
+- Operational expansion construction/validation contract: **ESTABLISHED**.
+- Expanded operational build/raster: **NEXT LARGE BLOCK**.
 - B direction: **WORKING, NOT FINAL**.
 - T022: **NOT OPEN**.
 - Stage 2: **NOT PASSED**.
