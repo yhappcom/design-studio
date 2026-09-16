@@ -1,34 +1,28 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASS / STAGE 2 PASS / STAGE 3 PRACTICE**  
+Operating state: **ACTIVE — STAGE 1 PASS / STAGE 2 PASS / STAGE 3 PRACTICE — C021 STATIC PAIR SYSTEM READY FOR TRANSFER**  
 Governance sync: 2026-09-16  
 Primary path: `research/color/`  
-Next new-study ID: `C021`
+Next new-study ID: `C022`
 
 ## Current level
-Stage 1 — Foundations: **PASS**  
-Stage 2 — Intermediate Professional Practice: **PASS**  
-Stage 3 — Advanced / Systems Practice: **PRACTICE / NOT PASSED**
+Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
-Authority: C014/C015 Stage 1 closure; C016 entry; C017 capstone; C018 Stage 2 closure; C019 Stage 3 entry; **C020 multi-surface semantic token system**.
+Authority: C014/C015 Stage 1 closure; C016–C018 Stage 2; C019 entry; C020 semantic token architecture; **C021 concrete semantic pair matrix**.
 
-## Latest evidence — C020
-C020 converts the C019 brief into one semantic system contract across phone + tablet/EFB + desktop/web. It defines `meaning → role → interaction state → theme → output/gamut → surface`, keeps status and data-series namespaces separate, requires non-color carriers for consequential states, treats light/dark as authored mappings rather than inversion, retains sRGB as baseline and bounds wide-gamut use behind explicit fallback.
+## Latest evidence
+C021 authors candidate light/dark sRGB foreground/background pairs for primary/secondary text, action, confirmed, known-failure, outcome-unknown, offline/stale and focus roles. Consequential states require non-color carriers; status and data-series namespaces remain separate; dark is authored rather than inverted; forced-colors acceptance is defined by semantic/focus/control survival rather than hue preservation.
 
-C020 static system architecture passes its own contract gate, but Stage 3 remains open because concrete light/dark value authoring, pair matrices, P3 candidate/fallback measurement, actual browser forced-colors/theme transfer, physical displays and human/CVD observer evidence are not yet complete.
+Static pair-system practice passes. Stage 3 remains open because exact pair calculations, browser theme/forced-colors transfer, P3/fallback measurement, physical displays and human/CVD observer evidence are incomplete.
 
-## Active queue — large block only
-1. C021: author concrete light/dark sRGB role values and full foreground/background pair matrix for the C020 graph.
-2. Produce bounded P3 candidates only where they add product value and prove sRGB fallback.
-3. Stress status-vs-data palette collisions and adverse/forced-color survival.
-4. Hand mature token values to Web for integrated browser transfer.
-5. Keep physical/human validation OPEN.
+## Active queue
+1. C022 execute exact contrast/pair calculations and collision diagnostics for C021 candidates.
+2. Transfer mature aliases to W021 browser specimen and reconcile computed/forced-color contradictions.
+3. Add bounded P3 candidates only after sRGB baseline survives transfer.
+4. Keep physical/human validation OPEN.
 
 ## HANDOFFS
-- Layout/Interaction L012/I007 consume the state/non-color carrier contract.
-- Web W020 is ready to transfer mature role aliases into themes/forced colors.
-- Content CD020 verbalizes state independently of hue.
-- Type T021 ambiguity is never repaired with color.
+L013/I008 consume state/non-color contract; W021 consumes candidate aliases; CD021 verbalizes state independently; T021 ambiguity is never repaired with color.
 
 ## Evidence boundary
-No calibrated physical-display, CVD/low-vision observer, human salience, production-token, browser-parity or three-form-factor rendered acceptance is claimed.
+No production-token, browser-parity, calibrated-display, CVD/low-vision observer or human salience PASS.
