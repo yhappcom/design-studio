@@ -1,27 +1,27 @@
 # Web Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / W031 INTEGRATED CLOSURE MAP READY — EXECUTION BLOCKED**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / W032 PORTABLE EXECUTION PACKAGE READY — RUNTIME ARTIFACTS OPEN**
 Governance sync: 2026-09-16
 Primary path: `research/web/`
-Active studies: `W028`–`W031`
+Active studies: `W029`–`W032`
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-W031 stops accumulation of isolated browser micro-tests and defines the Stage 3 closure target as one integrated product-like transfer: IA/routes/history, authoritative network recovery, responsive/narrow + actual 200% zoom, keyboard/focus/forced-colors mechanics, localization/content binding, Color state survival, mature typography, independent-engine breadth and explicit performance provenance.
+W032 converts W031 closure requirements into portable execution lanes for authoritative network outcomes, route/interruption/resumption, narrow reflow + actual 200% zoom + focus/forced-colors, localization expansion and independent-engine breadth. It defines one provenance schema so C032, L023/I019 and CD038 can attach verdicts to the same run rather than disconnected screenshots.
 
-W030's environment blocker remains: the current execution path has not produced browser results. A runner or matrix is not execution evidence. Field LCP/INP/CLS claims remain reserved for actual field/RUM population context; lab timing is diagnostic only.
+The local/browser execution blocker remains. A portable package is not browser evidence. Safari-specific claims require Safari execution; WebKit alone is not labeled Safari evidence. Field LCP/INP/CLS remain reserved for actual field/RUM population context; lab diagnostics are not field Core Web Vitals.
 
 ## Active queue
-1. Execute W029-equivalent coverage in a browser-capable environment and bind results to W031 shared capture IDs.
-2. Add actual 200% zoom, forced-colors/high-contrast and at least one independent browser engine before cross-browser claims.
-3. Bind I018/L022/C031/CD037 contracts to the same product-like route/workflow fixture.
-4. Add AT and physical mobile only when executable.
-5. Preserve field-vs-lab performance evidence boundary.
+1. Execute W032 lanes in a browser-capable CI/local environment and preserve raw JSON/screenshots/logs with commit SHA.
+2. Require Chromium plus at least one independent engine before cross-browser claims; execute Safari separately for Safari claims.
+3. Bind actual 200% zoom, forced-colors/high-contrast, I019 resumption, L023 association, C032 cue independence and CD038 localization to shared run IDs.
+4. Add AT/physical mobile only when executable.
+5. Preserve field-vs-lab performance boundary.
 
 ## Cross-domain state
-C031 owns multimode state visual audit; L022/I018 own geometry/workflow truth; CD037 owns complete content system; custom Type remains behind T021.
+C032 owns cue-independence visual audit; L023/I019 own spatial/resumption truth; CD038 owns localization semantic invariants; custom Type remains behind T021.
 
 ## Evidence boundary
-No Web Stage 3 PASS, browser-runtime PASS, cross-browser, screen-reader, physical-device, field Core Web Vitals or human UX PASS is claimed.
+No Web Stage 3 PASS, browser-runtime PASS, cross-browser, Safari, screen-reader, physical-device, field Core Web Vitals or human UX PASS is claimed.
