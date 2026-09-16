@@ -1,15 +1,15 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 ENTRY READY / CD010 NEXT**  
+Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PRACTICE / CD010 FORMS BASELINE EXECUTED**  
 Governance activation: 2026-09-16  
 Primary path: `research/content/`  
 Study prefix: `CD###`  
-Next new-study ID: `CD010`
+Next new-study ID: `CD011`
 
 ## Current level
 
 Stage 1 — Foundations: **PASS**  
-Stage 2 — Intermediate Professional Practice: **READY TO ENTER / NOT PASSED**  
+Stage 2 — Intermediate Professional Practice: **PRACTICE / NOT PASSED**  
 Stage 3 — Advanced / Systems Practice: **NOT STARTED**  
 Stage 4 — Production & Authorship: **NOT STARTED**  
 Stage 5 — Research & Advisory: **NOT STARTED**
@@ -17,17 +17,16 @@ Stage 5 — Research & Advisory: **NOT STARTED**
 Authority:
 - CD001–CD007 — Foundation source/practice evidence;
 - CD008 — integrated Foundation capstone;
-- **CD009 — Stage 1 closure audit / PASS**.
+- CD009 — **Stage 1 closure audit / PASS**;
+- CD010 — Stage 2 entry audit + forms/validation/error baseline.
 
 ## Product-language direction
 
-Design Studio products are treated as English-first, global-release products. English is the source language, but content architecture must remain localization-ready. Specific target-locale studies, including Korean, open only when product/market need or transfer risk justifies them.
+English-first source language, global release, localization-ready architecture. Specific locale work opens only when product/market need or transfer risk justifies it.
 
 ## Stage 1 closure
 
 Canonical: `research/content/CD009-stage1-foundation-closure-audit.md`
-
-CD009 re-read the Foundation gate after CD008 rather than adding more theory.
 
 Stage 1 PASS is supported by:
 - language-as-interface semantic fidelity;
@@ -40,15 +39,14 @@ Stage 1 PASS is supported by:
 - history/disciplinary/source-provenance literacy;
 - English-first global/localization-ready architecture;
 - eight original practice/critique blocks;
-- explicit KEEP / REWORK / REJECT;
-- cross-specialist dependency reasoning;
 - one integrated machine-readable message contract;
-- one executable structural audit with preserved results;
+- one executable structural audit;
+- cross-specialist dependency reasoning;
 - ability to identify when a wording symptom is actually an Interaction, IA, service, Type, Layout, Web or implementation problem.
 
-Human comprehension/task evidence and production localization/runtime evidence remain explicitly outside the Stage 1 PASS claim.
+Human and production/runtime evidence remain outside the Stage 1 PASS claim.
 
-## Decisive integrated evidence — CD008
+## CD008 decisive integrated evidence
 
 Canonical:
 - `research/content/CD008-integrated-foundation-capstone.md`
@@ -56,85 +54,126 @@ Canonical:
 - `research/content/CD008-audit.py`
 - `research/content/CD008-audit-results.json`
 
-CD008 compared three content architectures for one bounded professional import/duplicate-review workflow:
+Three architectures for one bounded professional import/duplicate-review workflow:
 - A Minimal Command — **62/160**;
 - B Explanation-heavy — **118/160**;
 - C State-and-Decision — **154/160**.
 
-These are structured studio-judgment scores, not human-performance measurements.
+Scores are structured studio judgments, not human-performance measurements.
 
-Candidate C was retained because it preserves uncertainty, stable concepts, command/completion separation, minimum-sufficient information, accessible/input-neutral naming and localization-ready semantic message units.
+The executable audit returned **0 structural findings / exit 0** against the committed-equivalent selected contract.
 
-The executable audit returned **0 structural findings / exit 0** against the committed-equivalent selected contract. It checks encoded structure only and does not measure human or runtime outcomes.
+## CD010 — Stage 2 entry + forms / validation / error baseline
 
-## Stage 1 evidence boundary
+Canonical: `research/content/CD010-stage2-entry-forms-validation-error-baseline.md`
 
-PASS does **not** establish:
-- human comprehension, findability, task completion, time/error rate, trust or preference;
-- live-user expert-domain terminology recognition;
-- screen-reader/voice/magnification/disabled-user outcomes;
-- translation or cultural quality in any specific locale;
-- production localization/string governance;
-- live-project improvement;
-- Stage 2+ surface/system mastery.
+### Stage 2 gap map
 
-These remain later-stage, implementation or project-validation questions.
+| Area | State after CD010 |
+|---|---|
+| buttons/action labels | Foundation bridge; more repeated surface practice needed |
+| forms/questions/labels/helper text | **PRACTICE STARTED** |
+| validation/error/warning/success/confirmation | **PRACTICE STARTED; taxonomy incomplete** |
+| loading/pending/offline/recovery | Foundation/Interaction bridge; Content system practice needed |
+| onboarding | OPEN |
+| empty states | OPEN |
+| search/filter/settings | OPEN |
+| voice/tone | OPEN |
+| localization-ready patterns | strong Foundation bridge; repeated Stage 2 practice needed |
+| multiple solutions/defended selection | supported for Stage 2 practice |
+| design/engineering/research collaboration | boundary discipline established; production practice open |
+
+### CD010 core rules
+
+1. Form content is one contract, not independent strings: concept/purpose → question/label → accepted input → required/optional state → hint/instruction → example → validation trigger → error category → error message → preservation/recovery → programmatic relationship → localization context.
+2. `label/question`, `hint`, `placeholder`, `error`, and `status` are different semantic roles.
+3. Placeholder is not a stable label or sole instruction.
+4. Prevent avoidable errors before optimizing error copy.
+5. Validation errors are user-correctable input problems; eligibility, permission, service failure, external conflict and outcome-unknown are different product states.
+6. Specific errors should identify the affected concept and the correction condition rather than say only `Invalid`, `Required`, or `An error occurred`.
+7. Validation timing is Interaction + research territory; Content specifies wording for the chosen contract rather than universalizing one timing rule.
+8. Recoverable validation should preserve usable entered information.
+9. Required error meaning must survive without color/input-method assumptions.
+10. Exact professional-domain constraints/terms require domain truth and later user/domain evidence.
+
+### CD010 comparative practice
+
+- Candidate A — Placeholder-Led Compact Form: **REJECT**.
+- Candidate B — Rule-Heavy Instruction Form: **REWORK / NOT DEFAULT**.
+- Candidate C — Stable Label + Point-of-Need Constraint + Specific Recovery: **KEEP AS STAGE 2 BASELINE CONTROL**.
+
+### Forms/content audit v0.1
+
+Can flag:
+- unjustified/internal-data fields;
+- missing/ambiguous labels;
+- rules only in placeholder;
+- late required constraints;
+- avoidable rejection;
+- premature validation needing evidence;
+- user-correctable vs service-state confusion;
+- generic errors;
+- missing correction paths;
+- input loss;
+- unsafe retry/state collapse;
+- fragmented localization messages;
+- missing runtime/AT/human validation.
+
+It cannot prove form completion, recovery rate, comprehension or production accessibility.
 
 ## Cross-specialist state
 
 ### Type
-T021 now has 36/36 bounded cmap coverage but a failed coherent-family drawing gate. Content must not shorten necessary strings to hide Type defects. CD008 strings are valid future Type stress inputs.
+Current T021 bounded custom-font build reaches 36/36 cmap coverage but still fails the coherent-family drawing gate. Content must not shorten necessary form strings to hide Type defects.
 
 ### Color
-Pending/confirmed/failure/outcome-unknown identity is semantic/textual first; Color may reinforce but not own meaning.
+Validation/error meaning cannot depend on red alone. Color reinforces after semantic state exists.
 
 ### Layout / Interaction
-Interaction owns actual state, dedupe certainty, commitment, retry safety and recovery. Content preserves those distinctions and does not expose blind retry for outcome-unknown.
+Interaction owns validation timing, focus, control constraints, input preservation, server/client behavior, submission and retry/recovery. Content owns labels/questions, constraint explanation, error language and information order.
 
 ### Web
-Web remains the runtime transfer partner for semantic controls, visible/programmatic naming, status delivery, narrow reflow, zoom, localization, RTL and browser/AT behavior.
+Web later transfers the baseline into actual controls, label/error relationships, focus/error-summary behavior, zoom/reflow, browser validation policy and AT behavior. GOV.UK web patterns are precedent, not universal native/mobile law.
 
 ### User Research / Human Factors
-Human methods are required for comprehension, terminology recognition, action prediction, task performance and preference claims.
+Human evidence remains required for terminology recognition, validation timing effects, comprehension, completion and error-rate claims.
 
-## Stage 2 entry target
+## Evidence boundary
 
-Stage 2 should now apply Foundation judgment repeatedly across professional product surfaces rather than add more isolated first-principle theory.
+Stage 2 practice now includes a source-grounded forms baseline and original competing form systems, but does **not** establish:
+- best validation timing for all tasks;
+- universal required/optional conventions;
+- production mobile/web forms;
+- actual AT behavior;
+- domain-user terminology recognition;
+- measured completion/recovery/error rates;
+- production localization quality;
+- complete Stage 2 surface coverage.
 
-Priority areas:
-1. forms and field-question architecture;
-2. validation, error, warning and recovery messaging;
-3. empty/loading/pending/success states as reusable product systems;
-4. onboarding and progressive disclosure;
-5. search/filter/settings content;
-6. voice/tone modulation by risk and context;
-7. localization-ready pattern comparison;
-8. multiple materially different solutions with defended selection;
-9. design/engineering/research collaboration and later runtime transfer.
+## Active next queue
 
-Recommended CD010:
-
-> **Stage 2 Entry Audit + Forms / Validation / Error System Baseline**
-
-Forms are the highest-value entry because they combine terminology, questions, instructions, error prevention, recovery, accessibility, localization and Interaction dependencies in one professional workflow.
+1. **CD011 — Error / Warning / Service Failure / Recovery State Taxonomy and Comparative Practice.** Prevent validation errors, warnings, service problems, async failure and outcome-unknown from collapsing into one generic `error` pattern.
+2. Extend into multi-field validation + review/confirmation + consequential edits.
+3. Then cover empty/loading/pending/success systems and onboarding/progressive disclosure in larger blocks.
+4. Build voice/tone only after functional state language remains stable.
+5. Preserve English-first/global localization readiness throughout.
+6. Later produce materially different complete Stage 2 content systems and run a closure audit.
 
 ## OPEN / dependencies
 
-- expert-domain abbreviation/terminology elicitation with appropriate domain/user evidence;
+- error/warning/service-failure/recovery taxonomy;
+- expert-domain abbreviation/terminology elicitation;
 - product-wide terminology governance;
 - human methods separating findability, comprehension, recall, actionability and preference;
-- progressive-disclosure validation where omission cost is asymmetric;
 - real status/accessibility delivery with Web/Interaction;
 - production localization/string workflow;
 - live-project transfer and later human testing.
 
 ## Latest checkpoint
 
-- CD001–CD007: **FOUNDATION EVIDENCE EXECUTED**.
-- CD008: **INTEGRATED FOUNDATION CAPSTONE EXECUTED**.
-- CD009: **STAGE 1 CLOSURE AUDIT PASS**.
 - Stage 1: **PASS**.
-- Stage 2: **READY TO ENTER / NOT PASSED**.
+- CD010 Stage 2 entry audit: **EXECUTED**.
+- Forms/validation/error baseline: **EXECUTED**.
+- Stage 2: **PRACTICE / NOT PASSED**.
 - Human validation: **NOT CLAIMED**.
-- Production runtime/localization validation: **NOT CLAIMED**.
-- Next Content study: **CD010**.
+- Next Content study: **CD011**.
