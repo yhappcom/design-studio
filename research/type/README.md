@@ -3,118 +3,78 @@
 This directory is the canonical research home for the **Typography / Type Design Specialist**.
 
 ## Primary scope
-
-Type owns font/glyph construction, metrics, spacing/kerning, numerals/punctuation, family/variable-font planning, OpenType behavior, multiscript/fallback, typography systems, rendering, packaging/release integrity and font engineering. Canonical ownership does not prohibit cross-domain replication or transfer validation.
+Type owns font/glyph construction, metrics, spacing/kerning, numerals/punctuation, family/variable-font planning, OpenType behavior, multiscript/fallback, typography systems, rendering, packaging/release integrity and font engineering.
 
 ## Mandatory cross-domain scan
-
-Before substantial Type work: read `AGENTS.md`, `progress/STATUS.md`, all four specialist statuses, `research/README.md`, this README and relevant Type studies; inspect materially related peer research; choose reuse/replication/challenge/transfer/extension deliberately; record `RELATED DOMAIN CHECK`; add handoffs when useful; update `progress/TYPE_STATUS.md` after substantial work.
-
-## Current studies
-
-Legacy:
-- `001-type-as-system.md`
-- `002-metrics-spacing-optical-rhythm.md`
-- `003-stroke-contrast-bezier-optics.md`
-- `005-numerals-punctuation-systems.md`
-- `009-typography-as-information-architecture.md`
-
-T-series:
-- `T001-web-typography-fallback-metrics-reflow-transfer.md`
-- `T002-raster-proof-redraw-cycle.md`
-- `T003-minimal-font-renderer-matrix.md`
-- `T004-native-numeral-punctuation-renderer-proof.md`
-- `T005-latin-korean-mixed-script-fallback.md`
-- `T006-production-outline-audit.md`
-- `T007-variable-interpolation-source-compatibility.md`
-- `T008-production-build-release-qa.md`
-- `T009-webfont-subset-feature-contract.md`
-- `T010-variable-webfont-axis-contract.md`
-- `T011-layout-multiscript-release-contract.md`
-- `T012-mark-mkmk-anchor-release-contract.md`
-- `T013-normalization-sensitive-subset-contract.md`
-- `T014-hangul-normalization-subset-contract.md`
-- `T015-hangul-browser-canonical-cluster-transfer.md`
-- `T016-webfont-loading-fallback-metric-contract.md`
-- `T017-logmate-operational-data-typography-semantic-geometry-transfer.md`
-- `T018-logmate-conservative-font-candidate-audit.md`
-- `T019-stage1-foundation-closure-audit.md` — exact Stage 1 gate audit; Type Foundations PASS without misclassifying later production/platform/human requirements as Foundation blockers.
-- `T020-stage2-entry-audit.md` — exact Stage 2 evidence map; existing bridge evidence is substantial but fragmented, and the main gap is an integrated coherent family/spacing/kerning/figure/weight/small-size comparative exercise.
-- `T021-coherent-mini-family-spacing-comparison.md` — Stage 2 comparison practice; three pre-kerning metric/spacing hypotheses (compact, balanced, open) with explicit KEEP/REWORK/REJECT critique. B is the working direction, while custom-outline and real target-size raster proof remain OPEN.
-
-T021 companion evidence:
-- `T021-mini-family-comparison-metrics.json`
-- `T021-mini-family-comparison-specimen.svg`
-
-Reproducibility scripts and measured JSON remain beside relevant studies. Generated experimental font binaries/screenshots are runtime outputs, not product assets or canonical source authority.
+Before substantial Type work: read studio governance, global and specialist statuses, research indexes, relevant Type studies and materially related peer evidence. Record `RELATED DOMAIN CHECK`, handoffs, evidence boundaries and status updates. The studio now includes Content Design as an active peer domain.
 
 ## Curriculum state
 
 ### Stage 1 — Foundations: PASS
-
 Authority: `T019-stage1-foundation-closure-audit.md`.
 
-This is a narrow curriculum PASS. It does not imply production-font, native-platform, multilingual-system, automated-QA or human-validation completion.
-
 ### Stage 2 — Intermediate Professional Practice: PRACTICE / NOT PASSED
-
 Authority for entry: `T020-stage2-entry-audit.md`.
 
-Latest practice: T021 begins the integrated family-system chain with three materially different pre-kerning hypotheses and explicit critique.
+The active live-project priority is LogMate Type identity. T017–T020 remain useful conservative product evidence, but the current T021–T024 chain must test whether a more distinctive system can preserve or improve operational behavior rather than treating generic mono or proportional Roboto as the final identity answer.
 
-Strong existing bridge evidence:
-- interpolation fundamentals: T007/T010;
-- screen proof/small-size failure cycles: T002–T004;
-- figure-feature and tabular-numeral behavior: Study 005, T004/T009/T018;
-- multi-role product typography: Study 009, T017/T018;
-- browser loading/fallback geometry: T016.
+## T021 current evidence chain
 
-Primary missing evidence after the first T021 block:
-- actual custom mini-family outlines and target-size control-string proof;
-- kerning classes/exceptions;
-- integrated figure alternatives;
-- diacritic/punctuation family coherence;
-- design-level weight relationship proof;
-- final multiple-solution selection after rendered evidence rather than metrics alone.
+T021 now includes:
+- A/B/C pre-kerning family/spacing hypotheses;
+- custom H/O/n/o outline and 14/17/24px raster proof;
+- lowercase `n` contour redraw after raster failure;
+- A/V/T/L/I family expansion;
+- shared-cap metric-model falsification and shape-sensitive spacing revision;
+- pair/scanline geometry diagnostics;
+- mature-font method validation that withdrew an unsupported absolute AV-gap defect threshold;
+- bounded LogMate operational glyph-coverage audit;
+- `T021-logmate-operational-family-expansion-contract.md` — one coherent construction/spacing/validation contract for the next product-relevant breadth block.
 
-## Current production/transfer model
+Latest measured coverage of the built candidate remains only **6/33 = 18.18%** of distinct non-space characters in the bounded LogMate corpus. Therefore the present blocker is operational family breadth, not an arbitrary AV gap target.
 
-T006–T018 retain a useful production-aware chain:
+## T021 next large block
 
-1. source/design validity;
-2. build/interpolation compatibility;
-3. binary/spec sanity;
-4. distribution transformation contract;
-5. normalization/script-specific structural closure;
-6. target cluster matching/shaping;
-7. font request/loading/failure state;
-8. fallback/glyph selection and attachment completeness;
-9. target rendering/layout integration;
-10. human/product validation.
+Build, with kerning OFF, enough coherent repertoire to render the bounded LogMate corpus itself:
+- uppercase `A B C D E F G H I J K L N O R S T U V X`;
+- lowercase controls `n o l`;
+- digits `0–9`;
+- punctuation `- : ,`;
+- one accented path (`É` recommended for the bounded curriculum proof);
+- space/notdef.
 
-These later-stage mechanisms act as constraints and stress tests for Stage 2 practice rather than substitutes for the Stage 2 family-system gate.
+Then in the same work block where technically possible:
+1. render airports, identifiers, time/totals and ambiguity controls at 14/17/24px;
+2. repair drawing/general-spacing defects and rerun;
+3. verify no fallback/notdef across the bounded corpus;
+4. compare against proportional Roboto and the exact product mono control only when that exact artifact is available;
+5. enumerate residual pair-specific candidates;
+6. decide whether T021 can close.
 
-## Highest-value next directions
+T022 remains blocked until this evidence exists.
 
-1. **Continue T021** with actual H/O/n/o outlines and real control-string rendering at 14/17/24px; re-test whether B remains preferable.
-2. Extend T021 to A/V/T/L/I, numerals, core punctuation and one accented construction path with kerning still OFF.
-3. T022 only after that evidence: kerning classes/exceptions + proportional/tabular figure alternatives on the selected direction.
-4. T023 — weight/interpolation + diacritic/punctuation coherence on the same system.
-5. T024 — multi-role typography-system alternatives, preferably transferred to LogMate if live project timing is suitable.
-6. If LogMate Draft 02 becomes executable first, exact shipped-font Flutter transfer outranks nonessential curriculum expansion.
+## Kerning boundary
+
+OpenType GPOS supports individual-pair and class-pair positioning, but T021 deliberately does not use kerning to repair unfinished base drawings or sidebearings. Observed failures are classified as drawing → general spacing → pair-specific residual. Only the last category becomes T022 evidence.
+
+## Later sequence
+- **T022:** kerning classes/exceptions + proportional/tabular figure alternatives after T021 closure evidence.
+- **T023:** weight/interpolation + diacritic/punctuation coherence.
+- **T024:** multi-role typography alternatives / LogMate identity integration if evidence is mature enough.
+
+## Production/transfer constraints retained
+T006–T018 remain useful constraints covering source validity, interpolation/build compatibility, binary/spec sanity, distribution transforms, normalization/script closure, shaping, loading/fallback, target rendering/layout and human/product validation. These later mechanisms constrain Stage 2 practice; they do not substitute for the Stage 2 family-system gate.
 
 ## Tool / platform OPEN
-
-- external FontBakery/Fontspector/OTS or equivalent broad QA;
+- broad external font QA;
 - direct HarfBuzz tracing;
-- exact shipped LogMate Flutter/native renderer transfer;
-- Android/iOS/Firefox/Safari cross-platform evidence;
-- production PWA loading/cache/failure transfer;
+- exact shipped LogMate Flutter/native renderer transfer for a custom candidate;
+- Android/iOS/Firefox/Safari matrix;
+- production PWA loading/cache/failure;
 - larger Korean/complex-script production transfer;
 - human recognition/scan/readability evidence at app-validation stage.
 
 ## Status authority
+Type progress is tracked in `progress/TYPE_STATUS.md`; the specialist does not edit global `progress/STATUS.md` during ordinary research.
 
-Type progress is tracked in `progress/TYPE_STATUS.md`. The specialist does not edit global `progress/STATUS.md` during ordinary research.
-
-Current operating state: **ACTIVE — STAGE 2 PRACTICE / T021 IN PROGRESS**.
+Current operating state: **ACTIVE — STAGE 2 PRACTICE / LOGMATE TYPE IDENTITY PRIORITY / T021 OPERATIONAL EXPANSION CONTRACT READY**.
