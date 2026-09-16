@@ -1,27 +1,27 @@
 # Layout, Spatial & Interaction Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / I025 COMPENSATION REVERSIBILITY + L029 RECOVERY CONTINUITY READY**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / I026 CORRECTION TERMINATION + L030 ESCALATION LAYOUT READY**
 Governance sync: 2026-09-16
 Canonical paths: `research/layout/`, `research/interaction/`
-Active studies: L028–L029, I024–I025
+Active studies: L029–L030, I025–I026
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-I025 distinguishes undo, rollback, retry and compensation and gives compensating operations independent identity/certainty. A late original response cannot overwrite newer authority; compensation response loss returns to outcome-unknown until reconciled. L029 preserves affected object → current consequence → reversal/compensation status → safe action → history/detail through reflow, zoom and localization while preventing stale success from retaining spatial dominance.
+I026 closes a new failure class exposed by I025: compensation cannot recurse indefinitely. Every correction chain receives stable identity, explicit terminal success and escalation conditions; automatic mutation stops on outcome-unknown, changed authority beyond preconditions, undocumented replay safety or professional-judgment conflict. L030 preserves affected object → current consequence → chain status → stop reason → safe action → history through reflow/zoom/localization without letting stale success dominate the terminal surface.
 
-These remain deterministic systems diagnostics, not evidence of perceived salience, workload, trust or comprehension.
+These remain deterministic systems diagnostics, not human salience/workload/trust evidence.
 
 ## Active queue
-1. Execute I025/L029 on W038 rollback/compensation race with shared run IDs.
+1. Execute I026/L030 on W039 bounded correction-chain runtime with shared run IDs.
 2. Obtain production idempotency/deduplication/compensation contracts before production retry/reversal claims.
 3. Execute actual 200% zoom, focus/overlay, localized expansion and reduced visual viewport geometry where supported.
 4. Add native Flutter transfer only on executable app surface.
 5. Keep AT, physical-device, discoverability, interruption workload and human task evidence OPEN.
 
 ## HANDOFFS
-C038 consumes visual-truth precedence; W038 owns browser/network provenance; CD044 maps reversal language; Type supplies accepted custom metrics only after T021 drawing/general-spacing gates.
+C039 consumes terminal visual precedence; W039 owns browser/network provenance; CD045 maps intervention language; Type supplies accepted custom metrics only after T021 drawing/general-spacing gates.
 
 ## Evidence boundary
 No Layout/Interaction Stage 3 PASS, browser geometry PASS, production-backend PASS, AT, physical-device or human PASS is claimed.
