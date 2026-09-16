@@ -1,30 +1,28 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASS / STAGE 2 PASS / STAGE 3 PRACTICE — C022 EXACT PAIR AUDIT PASS, BROWSER TRANSFER NEXT**  
+Operating state: **ACTIVE — STAGE 1 PASS / STAGE 2 PASS / STAGE 3 PRACTICE — C023 CONTEXTUAL FOCUS/NON-TEXT TRANSFER READY**  
 Governance sync: 2026-09-16  
 Primary path: `research/color/`  
-Next new-study ID: `C023`
+Next new-study ID: `C024`
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
-Authority: C014/C015 Stage 1 closure; C016–C018 Stage 2; C019 entry; C020 semantic architecture; C021 pair matrix; **C022 exact pair calculation/collision audit**.
+Authority: C014/C015 Stage 1; C016–C018 Stage 2; C019 entry; C020 semantic architecture; C021 pair matrix; C022 exact text/state calculation; **C023 contextual focus/non-text transfer contract**.
 
 ## Latest evidence
-C022 executed WCAG 2.x relative-luminance calculations on the exact C021 sRGB pairs. All bounded text/state pairs exceed 7:1 in both authored themes: light values range 7.13:1–16.29:1 and dark values 9.41:1–16.89:1. This closes the numeric uncertainty for those exact pairs only.
+C022 closed numeric uncertainty for exact authored text/state sRGB pairs. C023 now targets the unresolved rendered problem: focus and component boundaries must be tested against every actual adjacent surface they touch, including page, card/panel, state banner, control and sticky/transient regions. Forced-colors acceptance records computed system-color mapping and survival of non-color carriers rather than authored hue.
 
-The audit preserves semantic collisions: outcome-unknown is not generic warning; known failure is not destructive action; offline/stale is not outcome-unknown; focus remains contextual and requires actual adjacent-surface testing. Status/data namespaces remain separate.
-
-W021 now contains the candidate aliases in an executable integrated specimen. Stage 3 remains open because browser computed/forced-colors behavior, contextual focus/non-text contrast, P3/fallback, physical displays and human/CVD observer evidence remain incomplete.
+C023 explicitly keeps WCAG 2.2 criteria scoped to the rendered component and keeps Focus Appearance distinct from Focus Not Obscured; it does not silently treat Focus Appearance as AA. Disabled availability remains an Interaction semantic and cannot be conveyed solely by contrast reduction.
 
 ## Active queue
-1. Receive W021 browser execution results and reconcile computed/forced-color contradictions.
-2. Audit contextual focus/non-text component pairs after rendered geometry exists.
-3. Add bounded P3 candidates only if sRGB transfer demonstrates a product need.
-4. Keep physical/human validation OPEN.
+1. Receive W021 computed adjacent-surface/focus/component/forced-color results.
+2. Calculate contextual non-text/focus pairs where the rendered geometry makes the criterion applicable.
+3. Reconcile contradictions before any P3 expansion.
+4. Keep physical display and human/CVD/low-vision evidence OPEN.
 
 ## HANDOFFS
-L013/I008 preserve state/action distinctions; W021 consumes exact aliases; CD021 verbalizes state independently; Type ambiguity is never repaired with color.
+L014 supplies adjacency/overlap geometry; I009 supplies availability/state; W021 is transfer surface; CD024 preserves verbal semantics; T022 ambiguity remains non-color.
 
 ## Evidence boundary
-C022 is numeric sRGB pair evidence, not production-token, browser-parity, calibrated-display, CVD/low-vision observer or human salience PASS.
+C022 provides bounded numeric authored-pair evidence; C023 is transfer design. No browser-parity, calibrated-display, CVD/low-vision observer or human salience PASS.
