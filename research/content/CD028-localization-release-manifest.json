@@ -1,0 +1,65 @@
+{
+  "manifest_version": "0.1",
+  "product": "bounded-professional-record-fixture",
+  "source_semantic_revision": "2026.09.16.1",
+  "locale": "xx",
+  "policy": {
+    "critical_tiers": [2, 3],
+    "approved_fallbacks": {"tier_0": ["source_en"], "tier_1": ["source_en"], "tier_2": [], "tier_3": []},
+    "require_linguistic_review_for": [1, 2, 3],
+    "require_structural_validation_for": [0, 1, 2, 3],
+    "require_render_qa_for": [2, 3],
+    "require_functional_qa_for": [2, 3]
+  },
+  "messages": [
+    {
+      "message_id": "record.save.confirmed",
+      "semantic_revision": "2026.09.16.1",
+      "risk_tier": 1,
+      "locale_present": true,
+      "fallback": null,
+      "linguistic_review": "passed",
+      "structural_validation": "passed",
+      "render_qa": "not_required",
+      "functional_qa": "not_required"
+    },
+    {
+      "message_id": "record.save.outcome_unknown",
+      "semantic_revision": "2026.09.16.1",
+      "risk_tier": 2,
+      "locale_present": true,
+      "fallback": null,
+      "linguistic_review": "passed",
+      "structural_validation": "passed",
+      "render_qa": "passed",
+      "functional_qa": "passed"
+    },
+    {
+      "message_id": "record.offline.summary",
+      "semantic_revision": "2026.09.16.1",
+      "risk_tier": 1,
+      "locale_present": true,
+      "fallback": null,
+      "linguistic_review": "passed",
+      "structural_validation": "passed",
+      "render_qa": "not_required",
+      "functional_qa": "not_required",
+      "plural_select": {
+        "required_categories": ["one", "other"],
+        "provided_categories": ["one", "other"]
+      }
+    }
+  ],
+  "rollback": {
+    "content_revision": "2026.09.15.3",
+    "semantic_revision": "2026.09.15.3",
+    "resource_bundle": "xx-2026.09.15.3",
+    "owner": "release-owner"
+  },
+  "approvals": {
+    "content": "approved",
+    "localization": "approved",
+    "qa": "approved",
+    "release": "approved"
+  }
+}
