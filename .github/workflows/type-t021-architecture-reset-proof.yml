@@ -1,0 +1,29 @@
+name: Type T021 Architecture Reset Proof
+on:
+  push:
+    paths:
+      - 'research/type/T021-family-architecture-reset-harness.py'
+      - 'research/type/T021-family-architecture-reset-complete-harness.py'
+      - '.github/workflows/type-t021-architecture-reset-proof.yml'
+  workflow_dispatch:
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install proof dependencies
+        run: python -m pip install --disable-pip-version-check fonttools pillow
+      - name: Execute construction-complete A/B reset
+        run: python research/type/T021-family-architecture-reset-complete-harness.py
+      - name: Show result
+        if: always()
+        run: cat /tmp/t021-family-architecture-reset-complete/T021-family-architecture-reset-complete-results.json || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: t021-family-architecture-reset-complete
+          path: /tmp/t021-family-architecture-reset-complete/
+          if-no-files-found: error
