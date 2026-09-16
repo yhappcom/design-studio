@@ -1,6 +1,6 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / LOGMATE TYPE IDENTITY PRIORITY / T021 R4E EXECUTED, INCREMENTAL R4 METHOD REJECTED**  
+Operating state: **ACTIVE — STAGE 2 PRACTICE / LOGMATE TYPE IDENTITY PRIORITY / T021 FAMILY-ARCHITECTURE RESET OPEN, CONSTRUCTION-COMPLETENESS GATE ADDED**  
 Governance sync: 2026-09-16  
 Primary path: `research/type/`  
 Next new-study ID: `T022` only after T021 family/drawing/spacing/operational evidence is sufficiently stable
@@ -13,25 +13,28 @@ Authority: T019 for Stage 1; T020 for Stage 2 entry.
 
 ## T021 latest evidence
 
-Canonical R4E review: `research/type/T021-r4e-full-family-integration-review.md`.  
-R4E harness: `research/type/T021-r4e-full-family-integration-harness.py`.  
-Predecessor: `research/type/T021-r4d-full-family-exact-ci-raster-critique.md`.
+Canonical reset review: `research/type/T021-family-architecture-reset-review.md`.  
+Executable comparison: `research/type/T021-family-architecture-reset-harness.py`.  
+Predecessor: `research/type/T021-r4e-full-family-integration-review.md`.
 
-R4E tested the direct repair hypothesis after R4D: impose shared terminal/join/aperture parameters on C/G/S/P/R, retain the complete bounded operational family, keep kerning OFF, and compare slash-zero against a plain-zero control with all unrelated geometry held constant.
+R4E falsified serial local glyph repair as a sufficient family-building strategy. The current block therefore does not open R4F. It defines two materially different complete-family hypotheses before accepting more raster evidence:
 
-Exact GitHub execution run `35044716022` succeeded. Artifact `10425858762` retained two TTFs, six 14/17/24 px specimens and result JSON. Coverage remained **36/36**, missing `[]`.
+- **A — restrained humanist/technical proportional:** lighter stem, proportional capital widths, tighter aperture, plain zero, proportional operational rhythm;
+- **B — engineered operational semi-mono:** stronger repeated width rhythm with optical exceptions, heavier stem, wider aperture, slashed zero.
 
-The exact retained 17 px artifacts were downloaded and inspected. The new rules improve source-system consistency but do **not** clear drawing validity. C/G remain mechanical, S remains unsettled, P/R remain schematic, and—most importantly—the new forms still coexist with inherited straight/diagonal skeletons that were never designed under one complete family architecture.
+Both use the same bounded LogMate corpus, kerning OFF and deterministic 14/17/24 px specimen contract.
 
-R4E therefore falsifies the incremental-repair method as sufficient: adding a small set of numeric grammar tokens to the visibly weak glyphs does not integrate an alphabet assembled incrementally.
+An adversarial source review then found that the first executable reset still delegates figures 2/3/4/6/7/9 to the R4D digit constructor. Therefore the reset is **not yet construction-complete** even though its architecture contracts are materially different. No coherent-family drawing PASS is claimed from that mixed-provenance implementation.
 
-**Decision: reject further R4F/R4G isolated glyph patching as the primary path.** The next Type block is a family-architecture reset with at least two materially different complete construction hypotheses.
+This adds a new gate before raster acceptance: **construction-class completeness**. A family cannot pass merely because new architecture metadata exists while predecessor geometry remains hidden inside part of the repertoire.
 
 ## Evidence chain
 
-`declared repertoire → complete metric map → explicit glyph construction → executable build → cmap coverage → deterministic intended-size raster → drawing validity → general spacing → pair residual → kerning`
+Updated chain:
 
-R4E passes reproducibly through exact retained full-family raster production and still stops at **drawing validity FAIL**.
+`declared repertoire → architecture contract → construction-class completeness → complete metric map → explicit glyph construction → executable build → cmap coverage → deterministic intended-size raster → drawing validity → general spacing → pair residual → kerning`
+
+Current work stops at **construction-class completeness REWORK**. This is intentionally earlier than R4D/R4E's drawing-validity failure and prevents another misleading full-raster iteration.
 
 ## Current LogMate control boundary
 
@@ -41,45 +44,41 @@ Current `yhappcom/logmate` main uses proportional Roboto plus Noto Sans KR fallb
 
 | Requirement | Current state |
 | --- | --- |
-| coherent glyph family | **PRACTICE / FAIL — R4E rejects incremental repair; architecture reset required** |
-| spacing/control strings | **PRACTICE; exact full strings exist, judgment blocked by drawing** |
+| coherent glyph family | **PRACTICE / REWORK — A/B architecture reset defined; construction completeness not yet satisfied** |
+| spacing/control strings | **PRACTICE; judgment blocked before spacing by architecture completeness/drawing** |
 | kerning classes/exceptions | **OPEN / BLOCKED** |
-| figure styles | **PRACTICE; controlled slash/plain-zero pair now exists, product selection OPEN** |
-| diacritics/punctuation coherence | **PRACTICE; executable, optical quality downstream of family architecture** |
-| weight/width relationships | **PARTIAL / STRONG BRIDGE** |
+| figure styles | **PRACTICE / REWORK — A/B width/zero hypotheses defined; six inherited R4D figure constructions must be eliminated** |
+| diacritics/punctuation coherence | **PRACTICE; optical quality downstream of architecture completion** |
+| weight/width relationships | **PRACTICE — A proportional vs B semi-mono contracts now explicit** |
 | interpolation fundamentals | **SUPPORTED FOR ENTRY** |
-| screen rendering/small-size compensation | **PRACTICE — exact R3/R4D/R4E 14/17/24 evidence plus R4A/B/C critiques** |
+| screen rendering/small-size compensation | **PRACTICE — exact prior 14/17/24 evidence; reset raster acceptance waits for construction completeness** |
 | typography across product roles | **PARTIAL / STRONG BRIDGE; proportional Roboto current-main control verified** |
-| multiple solutions + defended selection | **PRACTICE; next block must compare complete family architectures rather than serial revisions** |
+| multiple solutions + defended selection | **PRACTICE — complete A/B method comparison now active; no selection before valid full-family evidence** |
 
 ## Active next queue — large block only
 
-Do not begin spacing or T022. Next Type block is **T021 family-architecture reset**:
+Do not begin spacing or T022. Continue the **T021 family-architecture reset**:
 
-1. define construction classes for the entire bounded 36-character operational repertoire before drawing;
-2. define complete skeleton, proportion, terminal, join, curve, aperture, diagonal and figure rules for each architecture;
-3. build at least two materially different hypotheses from the same operational corpus:
-   - A: restrained humanist/technical proportional;
-   - B: engineered operational semi-mono with optical width exceptions;
-4. keep kerning OFF and keep literal identifiers/numerics unchanged;
-5. render both complete hypotheses at 14/17/24 px under identical specimen strings;
-6. include controlled ambiguity strings `5S`, `0O`, `1Il`, `8B` and slash/plain-zero alternatives only where structurally justified;
-7. critique skeleton coherence before spacing; reject any architecture that requires local patching to appear coherent;
-8. compare surviving architecture(s) against proportional Roboto current-product control;
-9. only after drawing validity survives full-family critique, begin repeated-context general-spacing analysis;
-10. only after base spacing stabilizes, enumerate pair-specific residuals and consider T021 closure/T022.
+1. eliminate predecessor drawing delegation for figures 2/3/4/6/7/9;
+2. make architecture tokens operational across straight, diagonal, round, aperture, spine, lowercase and figure classes;
+3. add executable provenance/completeness assertions for every bounded glyph;
+4. rebuild A and B over the same 36-character operational repertoire with kerning OFF;
+5. execute identical 14/17/24 px specimens;
+6. critique complete A/B skeleton and family coherence side by side;
+7. reject any architecture that requires proliferating local patches to look coherent;
+8. compare only a surviving drawing-valid architecture against proportional Roboto current-product control;
+9. only then begin repeated-context sidebearing/general-spacing analysis;
+10. only after base spacing stabilizes enumerate pair residuals and consider T021 closure/T022.
 
 ## Evidence boundary
 
-No R4 coherent-family PASS is claimed. R4E evidence is exact GitHub execution + deterministic FreeType/Pillow raster + designer critique. It is not Flutter/native/browser transfer and not human recognition/readability evidence. Human/physical-device validation remains OPEN/deferred as appropriate.
-
-The temporary R4E workflow was removed after execution because `.github/` is outside ordinary Type writing scope. Future Type work remains within `research/type/` and this status unless coordinator authorization changes the boundary.
+No architecture-reset drawing PASS is claimed yet. The current result is method architecture + executable first implementation + adversarial construction-provenance critique. It is not Flutter/native/browser transfer and not human recognition/readability evidence. Human/physical-device validation remains OPEN/deferred to app-development validation.
 
 ## HANDOFFS
 
-- Layout/Interaction: keep literal operational controls and current geometry reversible; do not widen layouts to rescue Type defects.
-- Web: do not transfer-test R4E as a release candidate; exact browser font transfer waits for a drawing-valid architecture.
-- Content: preserve literal identifiers/numerics; CD016 localization semantics remain a valid stress input.
+- Layout/Interaction: keep literal operational controls and geometry reversible; do not widen layouts to rescue Type defects.
+- Web: do not transfer-test the mixed-provenance reset as a release candidate.
+- Content: preserve literal identifiers/numerics; CD016 localization semantics remain future stress input.
 - Color: character identity remains independent of color.
 
 ## Latest checkpoint
@@ -88,11 +87,12 @@ The temporary R4E workflow was removed after execution because `.github/` is out
 - T020: **COMPLETE as Stage 2 entry**.
 - R3 exact full CI: **PASS through retained raster / drawing FAIL**.
 - R4A mechanical curve substitution: **REJECTED**.
-- R4B grammar invariants: **10/10 internal constraints PASS**.
-- R4B/R4C bounded actual-outline raster: **EXECUTED; R4C PROMOTED**.
+- R4B/R4C bounded grammar: **EXECUTED**.
 - R4D exact full-family: **36/36 + 14/17/24 artifacts PASS / drawing FAIL**.
 - R4E exact full-family integration: **36/36 + dual-zero 14/17/24 artifacts PASS / drawing FAIL**.
 - incremental R4 repair method: **REJECTED as sufficient family-building strategy**.
+- architecture reset A/B: **DEFINED + EXECUTABLE FIRST IMPLEMENTATION**.
+- construction-class completeness: **REWORK — inherited R4D figures detected**.
 - general spacing: **BLOCKED**.
 - T022: **BLOCKED**.
 - Stage 2: **NOT PASSED**.
