@@ -1,0 +1,91 @@
+{
+  "schema_version": "0.1",
+  "registries": {
+    "concepts": ["record", "flight"],
+    "states": ["pending", "confirmed", "known_failure", "outcome_unknown", "offline_stale"],
+    "actions": ["verify_record", "retry_save", "edit_record"]
+  },
+  "messages": [
+    {
+      "message_id": "record.save.pending",
+      "concept_id": "record",
+      "state_id": "pending",
+      "action_id": null,
+      "certainty": "unconfirmed",
+      "required_semantics": ["certainty"],
+      "variables": [{"name": "flight_number", "type": "operational_literal", "localize": false, "bidi_isolate": true}],
+      "channels": {"in_app": {"eligible": true}, "notification": {"eligible": false}},
+      "locale_key": "record.save.pending"
+    },
+    {
+      "message_id": "record.save.confirmed",
+      "concept_id": "record",
+      "state_id": "confirmed",
+      "action_id": null,
+      "certainty": "confirmed",
+      "required_semantics": ["certainty", "object"],
+      "variables": [{"name": "flight_number", "type": "operational_literal", "localize": false, "bidi_isolate": true}],
+      "channels": {"in_app": {"eligible": true}, "history": {"eligible": true}},
+      "locale_key": "record.save.confirmed"
+    },
+    {
+      "message_id": "record.save.outcome_unknown",
+      "concept_id": "record",
+      "state_id": "outcome_unknown",
+      "action_id": "verify_record",
+      "certainty": "unknown",
+      "required_semantics": ["certainty", "object", "safe_action"],
+      "variables": [{"name": "flight_number", "type": "operational_literal", "localize": false, "bidi_isolate": true}],
+      "channels": {
+        "in_app": {"eligible": true},
+        "notification": {"eligible": true, "freshness": "current_state_sensitive", "revalidate": true}
+      },
+      "locale_key": "record.save.outcome_unknown"
+    },
+    {
+      "message_id": "record.save.known_failure",
+      "concept_id": "record",
+      "state_id": "known_failure",
+      "action_id": "retry_save",
+      "certainty": "failed",
+      "required_semantics": ["certainty", "object", "safe_action"],
+      "variables": [{"name": "flight_number", "type": "operational_literal", "localize": false, "bidi_isolate": true}],
+      "channels": {"in_app": {"eligible": true}},
+      "locale_key": "record.save.known_failure"
+    },
+    {
+      "message_id": "record.offline_stale",
+      "concept_id": "record",
+      "state_id": "offline_stale",
+      "action_id": null,
+      "certainty": "stale",
+      "required_semantics": ["certainty", "freshness"],
+      "variables": [{"name": "updated_at", "type": "datetime", "localize": true, "bidi_isolate": false}],
+      "channels": {"in_app": {"eligible": true}},
+      "locale_key": "record.offline_stale"
+    }
+  ],
+  "fixtures": {
+    "en": {
+      "record.save.pending": "Saving {flight_number}…",
+      "record.save.confirmed": "{flight_number} saved.",
+      "record.save.outcome_unknown": "We couldn’t confirm whether {flight_number} was saved. Verify the record before trying again.",
+      "record.save.known_failure": "{flight_number} wasn’t saved. Try saving again.",
+      "record.offline_stale": "Showing saved data from {updated_at}. Current data isn’t available."
+    },
+    "pseudo_expanded": {
+      "record.save.pending": "[Šààvïïng {flight_number}…]",
+      "record.save.confirmed": "[{flight_number} šààvëëd çøñfïïrmëëd.]",
+      "record.save.outcome_unknown": "[Wëë çøüülďñ’t çøñfïïrm whëëthëër {flight_number} wààš šààvëëd. Vëërïïfy thëë rëëçørď bëëførëë tryïïng ààgààïïn.]",
+      "record.save.known_failure": "[{flight_number} wààšñ’t šààvëëd. Try šààvïïng ààgààïïn.]",
+      "record.offline_stale": "[Šhøwïïng šààvëëd ďààtàà frøm {updated_at}. Çürrëëñt ďààtàà ïïšñ’t ààvààïïlààblëë.]"
+    },
+    "rtl": {
+      "record.save.pending": "جارٍ الحفظ ⁦{flight_number}⁩…",
+      "record.save.confirmed": "تم حفظ ⁦{flight_number}⁩.",
+      "record.save.outcome_unknown": "تعذر تأكيد حفظ ⁦{flight_number}⁩. تحقّق من السجل قبل المحاولة مرة أخرى.",
+      "record.save.known_failure": "لم يتم حفظ ⁦{flight_number}⁩. أعد محاولة الحفظ.",
+      "record.offline_stale": "تُعرض بيانات محفوظة من {updated_at}. البيانات الحالية غير متاحة."
+    }
+  }
+}
