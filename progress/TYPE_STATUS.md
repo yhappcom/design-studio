@@ -1,56 +1,62 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / LOGMATE TYPE IDENTITY PRIORITY / T021 NORMALIZED SEMANTIC ARCHITECTURE PASS, A/B DRAWING FAIL, ROUTE COMPARISON NEXT**  
+Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 CLOSED / T022 MATURE-FONT ROLE SYSTEM OPEN**  
 Governance sync: 2026-09-16  
 Primary path: `research/type/`  
-Next new-study ID: `T022` only after T021 drawing/route and spacing decisions stabilize
+Active study: `T022`
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PRACTICE / NOT PASSED**.
 
-Authority: T019 Stage 1; T020 Stage 2 entry; T021 operational-family authorship.
+Authority: T019 Stage 1; T020 Stage 2 entry; T021 operational-family authorship and route decision.
 
-## Latest executed evidence
-`T021-normalized-architecture-ci-raster-review.md` records exact GitHub Actions run `35048673549` / job `104644072791` at commit `21f9bc8470403716cbf2b45ab3f8338db18c3323`.
+## T021 closure
+`T021-bespoke-vs-product-roboto-route-comparison.md` closes the current LogMate whole-family bespoke route.
 
-The normalized semantic sensitivity gate is now **11/11 PASS**: every mandatory consumer changed under its token perturbation and protected consumers remained invariant. The architecture is therefore executable rather than metadata-only.
+The live LogMate main repository was checked directly. Current product typography is exact bundled proportional `LogMateRoboto`: `Roboto-Regular.ttf` and `Roboto-Medium.ttf`, with `NotoSansKR-wght.ttf` also bundled. `pubspec.yaml` declares `LogMateRoboto` at 400/500 and `LogMateNotoSansKR` at 400; `lib/theme/logmate_theme.dart` applies `LogMateRoboto` at ThemeData/TextTheme level. No current `LogMateRobotoMono` / `RobotoMono` asset is present, so mono is not the current product control.
 
-Both A/B normalized families then built with kerning OFF, rendered the same bounded corpus at **36/36 coverage, missing=[]**, and emitted deterministic 14/17/24px specimens. Exact CI artifact `10428146590` was downloaded and A/B 17px and 24px rasters were inspected directly.
+T021 normalized bespoke evidence reached semantic architecture 11/11 PASS, exact 36/36 build and 14/17/24 raster, but both A/B failed professional drawing coherence. Route comparison found no established operational width, ambiguity or role-coverage advantage sufficient to justify replacing the mature integrated Roboto baseline. B's slashed zero remains a separable feature hypothesis, not a whole-family justification.
 
-## Drawing verdict
-Both A and B remain **DRAWING FAIL**. The remaining defects are no longer architecture-token inertness: they are optical/coherence defects in 5/S, 8/B, 1/I/l, round/bowl relationships, several figures and overall family texture. B's slashed zero is a real operational distinction but is insufficient to justify the family.
+**T021 verdict: CLOSED — stop full bespoke-family repair for current LogMate scope; retain proportional LogMateRoboto as product baseline.** Custom type may return only under a new bounded identity/display hypothesis.
 
-The previously defined stop condition is therefore reached: do **not** start another serial bespoke glyph-patch cycle. Next method is route comparison against the current proportional Roboto product control.
+## Evidence chain learned
+`repertoire → semantic architecture → executable sensitivity → coverage/build → intended-size raster → drawing validity → product-route comparison → role contract`
 
-## Evidence chain
-`repertoire → semantic architecture contract → executable sensitivity 11/11 PASS → 36/36 build → exact 14/17/24 raster → drawing FAIL → bespoke-route vs mature-control comparison`
-
-Spacing/pair residual/kerning are not opened for a drawing-invalid bespoke family.
+T021 also established that spacing/kerning work is conditional on the candidate family surviving drawing and product-route gates. A rejected family does not need to be polished merely to complete a curriculum checklist.
 
 ## Stage 2 snapshot
-- coherent glyph family: **FAIL / PRACTICE**
-- bounded repertoire: **36/36 PASS**
-- normalized semantic architecture: **PASS as specification + executable 11/11**
+- Stage 1 foundations: **PASS**
+- coherent glyph-family authorship exercise: **EXECUTED; custom product route REJECTED after evidence**
+- bounded repertoire/build: **36/36 PASS**
+- normalized semantic architecture: **11/11 PASS**
 - exact CI reproducibility: **PASS**
 - intended-size raster: **14/17/24 EXECUTED**
-- bespoke A drawing: **FAIL**
-- bespoke B drawing: **FAIL**
-- bespoke serial repair route: **STOP**
-- current next method: **bespoke route vs proportional Roboto control**
-- general spacing: **BLOCKED for bespoke candidates**
-- kerning/T022: **BLOCKED**
+- product-route comparison: **EXECUTED**
+- whole-family bespoke LogMate route: **STOP / CLOSED**
+- mature-font role system: **T022 OPEN**
+- human readability/recognition: **DEFERRED / NOT CLAIMED**
+- native Flutter feature/shaping proof: **OPEN**
 
-## Active queue — large block only
-1. construct a same-corpus proportional Roboto control proof using the current LogMate product artifact/source where available;
-2. compare operational ambiguity, figure behavior, width/density, target-size texture, multilingual/fallback implications and implementation cost without pretending human recognition evidence;
-3. decide whether bespoke authorship remains justified, should be narrowed to a display/identity role, or should be deferred in favor of mature product typography;
-4. if a viable drawing route remains, define the minimum new evidence required before reopening custom-family spacing;
-5. open T022 only after T021 route and base-spacing gate genuinely close.
+## T022 scope — mature product typography, not rejected-family continuation
+1. establish exact product-role inventory for identifiers, airports, aircraft, registration, time/duration, cumulative totals, labels and prose;
+2. test proportional vs tabular figure behavior for comparison-critical numeric roles while retaining proportional text elsewhere;
+3. inspect punctuation/time/total alignment and determine whether alignment belongs to font feature, formatting, column geometry, or a combination;
+4. test bounded ambiguity mechanisms without global monospace or whole-family replacement;
+5. verify actual Flutter/native support and behavior before product recommendation;
+6. analyze kerning/classes only where the selected mature-font role actually exposes a residual need;
+7. produce multiple role-system alternatives and defend the selected direction under explicit product criteria, satisfying the Stage-2 comparison method rather than forcing a custom-family artifact.
+
+## Product controls
+- Current control: exact bundled proportional `LogMateRoboto` 400/500.
+- Korean companion: bundled `LogMateNotoSansKR` 400; mixed-script weight/fallback seam remains a transfer concern.
+- Generic/system Roboto is not an exact product artifact when binary-level claims matter.
+- Generic monospace must not be labeled as a LogMate product control.
 
 ## HANDOFFS
-- Layout/Web: continue current product typography/flexible geometry; normalized A/B metrics are not stable product inputs.
-- Content: preserve literal operational identifiers/numerics.
-- Color: do not compensate glyph ambiguity.
+- Layout/Interaction: keep flexible column geometry; numeric alignment is a joint font-feature/column-layout contract.
+- Web: rejected bespoke A/B metrics are historical research evidence only; preserve metric-flexible layout.
+- Content: preserve literal airport/registration/flight/time strings in T022 proof corpora.
+- Color: ambiguity remains typographic/structural; do not encode character distinction by color.
 
 ## Evidence boundary
-No custom-family drawing PASS, spacing PASS, kerning PASS, human readability/recognition, browser/native or physical-device PASS is claimed. Semantic architecture operationality and exact bounded build/raster are proven; product superiority is not.
+No claim of Roboto universal superiority is made. No human pilot readability/recognition, native-device, browser equivalence, or exact Flutter OpenType-feature PASS is yet established. T021 closed a product route because its custom candidates did not earn continuation under the available evidence; T022 now studies the mature baseline at the role-system level.
