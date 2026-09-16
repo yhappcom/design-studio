@@ -1,10 +1,10 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 FOUNDATION / CD001–CD005 EXECUTED / CD006 NEXT**  
+Operating state: **ACTIVE — STAGE 1 FOUNDATION / CD001–CD006 EXECUTED / CD007 NEXT**  
 Governance activation: 2026-09-16  
 Primary path: `research/content/`  
 Study prefix: `CD###`  
-Next new-study ID: `CD006`
+Next new-study ID: `CD007`
 
 ## Current level
 
@@ -20,7 +20,7 @@ Content Design progresses deliberately from fundamentals to expert/research-advi
 
 Content Design owns the user-facing semantic and linguistic interface: terminology, naming, action labels, questions, instructions, state/recovery messaging, voice/tone, plain language, accessibility-oriented language, localization-ready content systems and content governance.
 
-It does not own font/rendering mechanics, visual color encoding, spatial composition, interaction state machines or complete web page/browser architecture. Those remain with Type, Color, Layout/Interaction and Web respectively.
+It does not own font/rendering mechanics, visual color encoding, spatial composition, interaction state machines, User Research methodology, complete service architecture or complete web runtime architecture. Those remain peer/cross-cutting domains.
 
 ## Stage 1 Foundation target
 
@@ -37,7 +37,8 @@ Foundation begins with principles rather than microcopy recipes:
 9. accessible and input-neutral wording;
 10. source literacy, precedent/history and basic research/critique method;
 11. original exercises with explicit KEEP / REWORK / REJECT rationale;
-12. cross-specialist reuse and dependency reasoning.
+12. cross-specialist reuse and dependency reasoning;
+13. Korean/bilingual transfer before Foundation closure.
 
 Reading or collecting style-guide rules does not satisfy the Foundation gate.
 
@@ -104,101 +105,113 @@ Current rule:
 
 > **Optimize for minimum sufficient content, not minimum character count.**
 
-Original practice separated brevity-induced omission, sufficient-but-poorly-ordered prose and a minimum-sufficient structured candidate.
-
-Information-sufficiency audit v0.1 flags missing object/state/action/consequence/condition/scope, late task facts, generic headings, internal jargon, false simplification and human/localization evidence needs.
+Information-sufficiency audit v0.1 checks semantic completeness/order without claiming scan/comprehension outcomes.
 
 ## CD005 — accessible, input-neutral language and non-visual reference
 
 Canonical: `research/content/CD005-accessible-input-neutral-language-nonvisual-reference.md`
 
-CD005 establishes the language-side accessibility contract without claiming that wording alone makes an implementation accessible.
-
-### Key source-grounded results
-
-- instructions must not rely solely on sensory characteristics such as color, shape, size, visual position, orientation or sound;
-- color cannot be the only way semantic state/action is communicated;
-- input-neutral wording is appropriate when the physical input method is incidental, while modality-specific wording is correct when the modality itself is what is being taught;
-- visible control label and accessible/programmatic name should preserve the same command identity;
-- input fields require stable labels/instructions where needed;
-- status-message wording and programmatic status delivery are separate contracts.
-
-### Foundation model
+Key results:
+- instructions must not rely only on color, shape, position, size, orientation or sound;
+- input-neutral wording is appropriate when physical input is incidental;
+- modality-specific wording is appropriate when the modality itself is the subject;
+- visible label and programmatic name should preserve the same command identity;
+- status wording and status delivery are separate contracts;
+- hidden accessibility text must not create a second terminology system.
 
 Preferred reference order:
 
 **semantic label/name → role/object → state → optional sensory/location cue**
 
-Current rule:
+Accessibility-language audit v0.1 flags modality/sensory/label-name dependencies without claiming AT-user outcomes.
 
-> **Use input-neutral language for input-independent tasks; use modality-specific language when modality-specific behavior is genuinely the subject.**
+## CD006 — history, disciplinary boundaries and source literacy
 
-Content now explicitly separates:
-- control/object name;
-- description;
-- instruction;
-- status;
-- error/recovery message.
+Canonical: `research/content/CD006-history-disciplinary-boundaries-source-literacy.md`
 
-Hidden accessibility text must not create a second terminology system or expose internal vocabulary.
+CD006 closes the Foundation precedent/source-literacy gap without claiming a complete global history.
 
-### Original practice
+### Historical correction
 
-- `Click the blue button on the right` — **REJECT** for pointer/color/location lock;
-- `Select Review duplicates` — **KEEP AS SEMANTIC CONTROL**;
-- generic wording for a genuinely touch-specific gesture — **REJECT / INSUFFICIENT**;
-- touch-specific gesture instruction — **KEEP FOR THAT MODALITY-SPECIFIC CONTEXT**;
-- visible `Import 121 records` vs hidden `Commit batch` — **REJECT** for label/name drift and internal-name leakage.
+Current evidence does **not** support a single-inventor or single-origin story for Content Design / UX Writing.
 
-### Accessibility-language audit v0.1
+Documented lineages include:
+- editorial practice — accuracy, revision and publication discipline;
+- technical communication — complex-domain information, task support, structured content and long-standing usability overlap;
+- information architecture — organization, taxonomy, labeling and findability;
+- content strategy — purpose, lifecycle, workflow and governance;
+- service design — end-to-end/channel/process context;
+- HCI/usability/user research — task, behavior and evaluation evidence;
+- modern UX writing — interface-language craft and product-language systems.
 
-Can flag:
-- `SENSORY-ONLY REFERENCE`;
-- `LOCATION-LOCK`;
-- `COLOR-LOCK`;
-- `ICON-ONLY SEMANTICS`;
-- `INPUT-METHOD LOCK`;
-- `FALSE INPUT NEUTRALITY`;
-- `LABEL-NAME DRIFT`;
-- `INTERNAL NAME LEAK`;
-- `NAME-DESCRIPTION COLLAPSE`;
-- `MISSING INPUT LABEL`;
-- `LATE REQUIRED RULE`;
-- `STATUS DELIVERY DEPENDENCY`;
-- `COLOR-ONLY ERROR`;
-- browser/AT/voice/keyboard/touch/forced-colors/zoom/localization validation needs.
+GDS provides strong evidence of influential early-2010s formalization of a user-needs-led Content Design practice, but that is not treated as proof of universal invention.
 
-It cannot prove screen-reader announcement quality, speech recognition success, keyboard/touch operability, low-vision findability, cognitive accessibility outcomes or disabled-user task performance.
+### Role-boundary rule
 
-## Cross-specialist state after CD005
+> **Diagnose the primary problem before claiming ownership merely because words appear on the surface.**
+
+Content may collaborate across all adjacent domains but does not absorb IA, User Research, Interaction, Service Design, technical communication or enterprise Content Strategy by default.
+
+### Source-provenance model
+
+CD006 distinguishes:
+- normative/official/standards sources;
+- primary historical artifacts;
+- peer-reviewed scholarship;
+- established practitioner synthesis;
+- current job/blog/community evidence.
+
+The appropriate source depends on claim type: origin, adoption, current role boundary, method, platform behavior or human outcome.
+
+Historical-source audit v0.1 can flag:
+- `ORIGIN OVERCLAIM`;
+- `TITLE/PRACTICE CONFUSION`;
+- `RETROSPECTIVE MEMORY ONLY`;
+- `ONE-ORG GENERALIZATION`;
+- `PRACTITIONER RULE PRESENTED AS EMPIRICAL`;
+- `CURRENT GUIDANCE USED AS HISTORY`;
+- `HISTORICAL PRACTICE USED AS CURRENT REQUIREMENT`;
+- `SECONDARY SOURCE WITHOUT PRIMARY CHECK`;
+- unstated geographic/cultural transfer;
+- human outcomes without human evidence.
+
+### Internal studio naming judgment
+
+Design Studio retains **Content Design / UX Writing Specialist**, with Content Design as the broader canonical domain and UX Writing as a major interface-language practice within it. This is an internal ownership model, not a claim of universal industry title standardization.
+
+## Cross-specialist state after CD006
 
 ### Type
-Necessary labels/instructions/status messages remain actual rendering stress content. Enlargement/wrapping pressure is not permission to delete visible semantic identity.
+Operational terms are not cosmetic. If Content changes live terminology, Type corpus/geometry validation inputs may change and must be rerun.
 
 ### Color
-Content removes color from sole semantic ownership. Color can reinforce state, but wording/state identity must survive alternate themes and forced colors.
+CD006 reuses Color’s evidence-boundary discipline: bounded design evidence must not be generalized into unobserved physical/human claims.
 
 ### Layout / Interaction
-Responsive position is not a stable semantic identifier. Interaction owns actual modality/state/focus/recovery behavior; Content chooses input-neutral or modality-specific wording from that contract.
+Words can be symptoms of architecture/state/service defects. Content escalates rather than writing around a broken behavioral contract.
 
 ### Web
-W017 directly supports CD005’s separation of icon appearance, semantic name, visible label and runtime accessibility behavior. Future Web transfer should validate label/name, status delivery, field labeling and zoom/reflow under actual browser conditions. W017 remains bounded Chromium evidence, not AT-user evidence.
+Current guidance or static content specifications are not browser/AT runtime proof. Web remains the transfer-validation partner.
+
+### User Research / Human Factors
+Content must be research-literate and can formulate content hypotheses, but actual comprehension/findability/task-performance claims require appropriate human methodology and evidence.
 
 ## Evidence boundary
 
 Current Content evidence includes:
 - authoritative/primary source study;
-- historical/contemporary HCI conceptual evidence;
+- historical and professional precedent analysis;
+- contemporary HCI/technical-communication evidence;
 - controlled empirical evidence from adjacent communication domains;
 - direct cross-specialist reuse/transfer;
-- five original structured practice blocks;
-- terminology, command, information-sufficiency and accessibility-language audits.
+- six original structured practice/critique blocks;
+- terminology, command, information-sufficiency, accessibility-language and source-provenance audits.
 
 NOT established yet:
+- a complete global history or first-ever use of `Content Design`/`UX Writing`;
+- universal industry role-title agreement;
 - human comprehension/findability/task completion;
-- terminology recall;
-- action-label speed/error effects;
-- trust/confidence effects;
+- terminology recall or action-label speed/error effects;
 - actual expert-domain vocabulary recognition;
 - Korean information-order/action-language/input-neutral terminology behavior;
 - Korean↔English semantic equivalence;
@@ -208,18 +221,17 @@ NOT established yet:
 
 ## Active next queue
 
-1. **CD006 — Content Design / UX Writing history, disciplinary boundaries and precedent/source literacy.** Map the field’s lineage through editorial practice, technical communication, information architecture, content strategy, service design and HCI; distinguish documented history from modern job-title branding; clarify what methods/ownership Content Design inherits and what remains adjacent-domain work.
-2. **CD007 — Korean-language / bilingual Foundation transfer.** Study Korean plain-language, information-order, action-label and professional-domain terminology evidence without literal English-rule translation.
-3. Execute an integrated Foundation exercise that applies CD001–CD005 together to one bounded product workflow and preserves peer-domain dependencies.
+1. **CD007 — Korean-language / bilingual Foundation transfer.** Study Korean plain-language, information order, action-label and professional-domain terminology evidence without translating English heuristics mechanically.
+2. **CD008 — integrated Foundation capstone.** Apply CD001–CD007 to one bounded professional-product workflow, produce materially different solutions, preserve Interaction/Type/Web dependencies and execute the existing non-human audits together.
+3. Run a Stage 1 closure audit only after CD007 and integrated practice are credible.
 4. Extend reproducible checks only where they validate known semantic structure; do not convert formulas/model output into human evidence.
-5. Run the Stage 1 gap/closure audit only after history/source literacy, Korean transfer and integrated practice are credible.
-6. Begin Stage 2 forms/errors/onboarding/empty states/voice-tone work only after Foundation PASS.
+5. Begin Stage 2 forms/errors/onboarding/empty states/voice-tone work only after Foundation PASS.
 
 ## OPEN / dependencies
 
-- documented Content Design / UX Writing history and disciplinary lineage;
 - stronger Korean-language authoritative/empirical evidence;
 - Korean input-neutral/action-label conventions;
+- Korean↔English concept/designation non-equivalence;
 - expert-domain abbreviation and terminology elicitation;
 - terminology governance for professional-domain products;
 - appropriate human methods separating findability, comprehension, recall and actionability;
@@ -237,7 +249,8 @@ NOT established yet:
 - CD003: **EXECUTED** — command semantics and consequence clarity.
 - CD004: **EXECUTED** — plain language, scanning, information order and minimum-sufficient content.
 - CD005: **EXECUTED** — accessible/input-neutral language and non-visual reference.
-- Original practice/critique blocks: **5 EXECUTED**.
+- CD006: **EXECUTED** — history, disciplinary boundaries and source-provenance method.
+- Original practice/critique blocks: **6 EXECUTED**.
 - Human validation: **NOT CLAIMED**.
-- CD006: **NEXT**.
+- CD007: **NEXT**.
 - Stage 1: **NOT PASSED**.
