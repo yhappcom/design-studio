@@ -1,28 +1,49 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASS / STAGE 2 PASS / STAGE 3 PRACTICE — CD024 EXECUTABLE TEST CONTRACT READY**  
+Operating state: **ACTIVE — STAGE 1 PASS / STAGE 2 PASS / STAGE 3 PRACTICE — CD025 EXECUTED STRUCTURAL VALIDATION**  
 Governance sync: 2026-09-16  
 Primary path: `research/content/`  
-Active study: `CD024`
+Active study: `CD025`
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
-Authority: CD018 Stage 2 closure; CD019 entry; CD020 semantic schema; CD021 inventory/localization stress; CD022 cross-channel continuity; CD023 governance/schema; **CD024 executable content-system test contract**.
+Authority: CD018 Stage 2 closure; CD019 entry; CD020 semantic schema; CD021 inventory/localization stress; CD022 cross-channel continuity; CD023 governance/schema; CD024 executable test contract; **CD025 serialized inventory + executable lint/mutation evidence**.
 
 ## Latest evidence
-CD024 defines the bounded machine-readable record and failure conditions needed to turn CD023 governance into executable evidence. Required lint failures include unknown semantic IDs, missing typed variables, localization of literal operational identifiers as prose, blind retry in outcome-unknown, certainty strengthening across channels, missing freshness/revalidation policy, incompatible message-ID reuse, semantic loss through fallback, missing bidi-isolation metadata and qualifier deletion to fix expansion.
+CD025 converts part of CD024 from validation design into executed evidence. A bounded five-message professional-record inventory is serialized as JSON and consumed by deterministic Python lint. The clean baseline returns zero failures.
 
-Pseudo fixtures explicitly include +30–40% expansion, accented Latin, RTL wrappers with isolated flight/registration/airport/time literals, long safe actions and locale-realized count/date-time/duration types. Channel suppression remains a legitimate result when interruption/sensitivity/freshness constraints fail.
+Six controlled mutations were executed and correctly rejected: unknown state, missing required variable, operational literal marked localizable, blind retry on outcome-unknown, actionable external projection without revalidation, and RTL operational literal without isolation.
+
+This establishes that selected semantic/governance failures are machine-detectable and that the checker does more than pass its own golden fixture. It does not establish browser/native rendering, linguistic quality, translator workflow, AT or human evidence.
+
+## Cross-domain state
+- **Interaction I009** remains authoritative for lifecycle certainty and safe action; Content consumes it.
+- **Layout L014** still owns rendered qualifier preservation under reflow.
+- **Web W021** is execution-ready but browser runtime remains blocked in the current connector environment; CD025 now supplies stable IDs/fixtures for later binding.
+- **Type T022** literal operational strings are represented as typed non-prose variables with bidi metadata.
+- **Color C023** remains reinforcement; Content state identity is not hue-dependent.
 
 ## Active queue
-1. Serialize a bounded CD024 inventory and implement/run structural lint where tooling permits.
-2. Bind W021 rendered fixtures to stable message/state IDs and reconcile expansion/bidi/status contradictions.
-3. Build production localization/TMS workflow only after executable schema evidence.
-4. Keep notification delivery, native runtime, AT and human comprehension/trust OPEN.
+1. Extend executable coverage to versioned semantic-contract snapshots / incompatible message-ID reuse.
+2. Add cross-channel certainty comparison and fallback semantic-requirement checks.
+3. Add typed count/date-time/duration validation and produce a W021-consumable fixture package.
+4. Reconcile actual pseudo/RTL/reflow/status contradictions only after browser execution; do not simulate them.
+5. Build production localization/TMS workflow after executable schema/transfer evidence is sufficiently mature.
 
-## HANDOFFS
-I009 remains authoritative state/action source; L014 must preserve qualifiers under reflow; W021 should consume IDs rather than infer state from English; T022 receives literal typed operational strings; C022 remains reinforcement only.
+## OPEN
+- actual +30–40% rendered expansion tolerance;
+- actual bidi rendering correctness;
+- browser/native runtime state binding;
+- real route/network ambiguity;
+- locale formatting correctness beyond structural typing;
+- production translator/TMS workflow;
+- notification delivery;
+- screen-reader/AT;
+- human comprehension, trust, recovery and task performance.
 
 ## Evidence boundary
-CD024 is executable validation design, not executable lint PASS. No production localization, translator workflow, browser/native localization, notification delivery, AT or human evidence is claimed. Stage 3 remains OPEN.
+**EXECUTED:** serialization, baseline lint, six adversarial mutation detections.  
+**NOT CLAIMED:** complete CD024 coverage, browser/native localization, production i18n, translator/locale quality, AT, backend/network truth or human evidence.
+
+Stage 3 remains **PRACTICE / NOT PASSED**. Next Content block should deepen executable semantic-diff/channel/fallback coverage before opening production localization workflow.
