@@ -1,10 +1,10 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PRACTICE / CD010–CD013 EXECUTED**  
+Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PRACTICE / CD010–CD014 EXECUTED**  
 Governance activation: 2026-09-16  
 Primary path: `research/content/`  
 Study prefix: `CD###`  
-Next new-study ID: `CD014`
+Next new-study ID: `CD015`
 
 ## Current level
 
@@ -18,175 +18,127 @@ Authority:
 - CD001–CD007 — Foundation source/practice evidence;
 - CD008 — integrated Foundation capstone;
 - CD009 — Stage 1 closure audit / PASS;
-- CD010 — Stage 2 forms/validation/error baseline;
+- CD010 — forms/validation/error baseline;
 - CD011 — error/warning/service-failure/recovery taxonomy;
-- CD012 — empty/loading/pending/success/recovery lifecycle content system;
-- **CD013 — onboarding/progressive-disclosure professional-workflow system**.
+- CD012 — empty/loading/pending/success/recovery lifecycle;
+- CD013 — onboarding/progressive-disclosure professional-workflow system;
+- **CD014 — search/filter/sort/settings task-system study**.
 
 ## Product-language direction
 
-English-first source language for global release. Content architecture remains localization-ready. Specific locale work opens only when product/market need or transfer risk justifies it. Korean remains an optional later transfer locale rather than a Stage 2 gate by itself.
+English-first source language for global release. Architecture remains localization-ready. Locale-specific work opens only when product/market need or transfer risk justifies it; Korean is not a Stage 2 blocker.
 
 ## Stage 1 closure
 
-Canonical: `research/content/CD009-stage1-foundation-closure-audit.md`.
+`research/content/CD009-stage1-foundation-closure-audit.md` remains the bounded authority for Stage 1 PASS. It does not claim human comprehension/task evidence or production localization/runtime evidence.
 
-Stage 1 PASS remains valid and bounded to Foundation evidence. Human comprehension/task evidence and production localization/runtime evidence are not included in the PASS claim.
+## Stage 2 evidence through CD013
 
-## Stage 2 executed evidence
+CD010–CD012 establish form contracts, state taxonomy, and lifecycle content. CD013 adds professional onboarding/progressive disclosure with the critical distinction `domain expertise ≠ product expertise`, decision-relative disclosure timing, skip/resume/re-entry/replay contracts, and three onboarding strategies. These remain practice evidence rather than live-product or human validation.
 
-### CD010 — forms / validation baseline
-`research/content/CD010-stage2-entry-forms-validation-error-baseline.md`
+## CD014 — Search / Filter / Sort / Settings task systems
 
-Form content is a contract linking concept/purpose, stable label/question, accepted input, requiredness, point-of-need guidance, validation state, specific repair, preservation/recovery, programmatic relationship and localization context.
+Canonical: `research/content/CD014-search-filter-sort-settings-task-systems.md`.
 
-### CD011 — error / warning / service-failure / recovery taxonomy
-`research/content/CD011-error-warning-service-failure-recovery-taxonomy.md`
+### New result
 
-Cause + certainty + agency + recovery distinguish validation, warning, blocks, conflict, pending, authoritative failure, outcome unknown, service unavailable and confirmed success. Known failure and outcome unknown remain non-collapsible; retry requires Interaction truth.
+Retrieval/configuration content is now modeled as four different contracts:
+- **search** changes membership through query matching within a scope;
+- **filter** constrains membership through structured predicates;
+- **sort** changes ordering, not membership;
+- **settings** change persistent or semi-persistent product behavior/preferences.
 
-### CD012 — lifecycle content system
-`research/content/CD012-empty-loading-pending-success-recovery-content-system.md`
+The system rejects control-driven collapse such as one generic `Filter` surface silently changing scope, membership, ordering and persistent defaults.
 
-Lifecycle content is classified by product truth rather than visual component. Empty causes are separated; loading is not pending; rendered is not ready; success is confirmation rather than automatic celebration; recovery is broader than retry. Semantic state belongs in keys/metadata rather than English grammar.
+### Search scope
 
-### CD013 — onboarding + progressive disclosure for professional workflows
-Canonical: `research/content/CD013-onboarding-progressive-disclosure-professional-workflows.md`.
+Every search requires an explicit or reliably inferable corpus/scope and a truthful searchable-field contract. Professional identifiers need deliberate normalization rules; ordinary natural-language normalization can damage flight numbers, registrations, airport codes, tickers or transaction IDs. Placeholder examples cannot promise fields the implementation does not search.
 
-#### Core result
+### Filter causality
 
-Onboarding is now modeled as a **knowledge-transition system**, not a first-run screen sequence:
+Filters are treated as predicates with named dimensions, values/operators, combination semantics, default state, persistence and clear behavior. Active constraints must remain semantically visible after a filter panel closes. `No flights found` is rejected when the truth is `No flights match the active filters`.
 
-> insufficient knowledge → sufficient knowledge for the next meaningful task.
+### Sort semantics
 
-Every onboarding item should identify a real knowledge gap, affected decision/action, risk if unknown, timing, requiredness, persistence and re-entry behavior.
+Sort labels name the domain field and direction when ambiguity matters. `Newest` is insufficient if multiple dates exist. Algorithmic labels such as `Best` or `Recommended` require an appropriate explainable basis rather than implying objective quality.
 
-#### Timing rule
+### Settings boundary
 
-CD013 introduces the bounded design model:
+A setting is a persistent behavior contract with scope, application timing, persistence/sync, reversibility and default source. Task-critical filters must not be moved into Settings merely to simplify layout; this directly transfers L009.
 
-**earliest useful moment ≤ presentation moment ≤ latest safe moment**
+### Reset/default distinctions
 
-Information taught too early lacks context and creates memory dependency; information taught after the governed consequential decision is too late. This is a studio design model, not a measured cognitive equation.
+`Clear query`, `Clear filters`, `Reset changes`, `Restore defaults`, and deleting a saved preset/view are separate operations. `Reset` is defective when its baseline is unknown. `Default` is defective when the source/value is not intelligible to the user.
 
-#### Progressive-disclosure classes
+### Apply vs immediate
 
-- **immediate** — needed for current primary task;
-- **consequence-critical** — must be available before commitment;
-- **contextual** — reveal when condition/advanced path becomes relevant;
-- **reference** — persistent deeper help for infrequent complexity.
+Content must match actual commitment semantics. Immediate changes do not need a false `Apply` stage. Staged edits require saved-vs-draft distinction and explicit commit/discard behavior. `Done` is rejected when it obscures whether filters/settings were actually committed.
 
-Critical invariant: **progressive disclosure must not defer truth beyond the decision it governs.**
+### Localization architecture
 
-#### Requiredness taxonomy
+Retrieval logic lives in semantic metadata, not English concatenation. Dimension key, machine value, localized label, operator, sort field/direction, count/plural formatting and literal-data rules remain separate. Compact English filter chips do not justify deleting semantic dimensions needed by other locales.
 
-CD013 separates:
-- required setup;
-- conditionally required setup;
-- recommended configuration;
-- optional education.
+### Comparative practice
 
-Audit question: `What breaks if the user skips this?` Feature awareness alone normally does not justify mandatory setup.
+Three retrieval architectures were compared for a fixed professional-record lookup task:
+- A global search + hidden advanced filters — REWORK;
+- B persistent query + explicit active-filter summary + explicit sort — provisional KEEP;
+- C settings-driven default views with minimal task controls — REJECT as primary retrieval architecture, though saved views may supplement B.
 
-#### Novice/expert model
+This is studio practice, not a LogMate production decision and not human-performance evidence.
 
-Professional-domain expertise and product expertise are explicitly separated. The assistance ladder is:
-1. recognizable primary task;
-2. point-of-need label/helper;
-3. example/short explanation;
-4. expandable contextual detail;
-5. persistent reference;
-6. guided flow only when sequence/dependency itself requires guidance.
-
-Experts should not be blocked by optional education; novices need a discoverable path to greater depth.
-
-#### Skip/resume/re-entry
-
-`Skip` alone is insufficient. Dismissible/deferred learning must define progress persistence, partial-configuration preservation, resume, dismissal scope, later re-entry and replay behavior. Repeated resurfacing after dismissal requires a new contextual reason, material change or user request.
-
-#### Multi-step orientation
-
-W3C cognitive-accessibility guidance was transferred into a professional workflow contract: meaningful completed/current/pending steps, important choices, explicit save/resume/back semantics, and step titles that name decisions/objects rather than generic process labels.
-
-#### Teach the product delta
-
-For professional users, do not indiscriminately reteach established domain concepts. Teach where the product's terminology, interpretation, calculation, scope, assumptions, source of truth or consequences differ from domain expectation.
-
-#### Comparative practice
-
-Three strategies were compared for one fixed professional setup problem:
-- A front-loaded guided setup;
-- B workspace-first contextual onboarding;
-- C adaptive checkpoint model.
-
-For the fixed hypothetical exercise, **C with a strong B bias** is retained provisionally: minimal initial classification, early entry into the real task/workspace, consequence-aware checkpoints, persistent contextual/reference help. This is not a universal rule or live LogMate decision.
-
-#### Audit model
-
-New flags include front-loaded memory dependency, tutorial-dependent UI, optional-as-mandatory, required-as-optional, disclosure-after-decision, feature concealment, expert blocking, novice abandonment, skip-without-reentry, repeated nagging, false progress, generic step labels, domain reteaching, help-as-IA-patch, transient critical help and localization sequence coupling.
-
-#### Evidence boundary
-
-CD013 uses authoritative W3C accessibility evidence, cross-domain transfer, deep system synthesis, three-architecture comparative practice, contradiction review and reproducible non-human audit assertions. It does **not** establish human cognitive load, comprehension, completion, preference, production accessibility, localized-product quality or live-project improvement.
-
-## Cross-specialist state
+## Cross-specialist transfer
 
 ### Type
-Operational instructions, examples, step titles, consequence text and professional identifiers are realistic wrapping/fallback/localization stress. Semantic requirements are not shortened to hide Type defects.
+Compact filters, sort labels, counts, literal identifiers and localization expansion are realistic operational stress strings; semantic dimensions are not removed to hide Type defects.
 
 ### Color
-Required/optional/current/completed/warning semantics must survive color removal/transformation.
+Active filters/changed settings must survive color loss and forced-color transformation.
 
 ### Layout / Interaction
-Interaction owns actual prerequisite, skip/resume persistence, branching, back behavior, invalidation of later choices and commitment boundaries. Content owns naming/explanation and disclosure timing requirements.
+Interaction owns apply timing, persistence, restoration and synchronization truth. Content preserves task-local versus persistent-setting boundaries.
 
 ### Web
-Web should transfer-test disclosure controls, route/resume/replay, keyboard/focus, narrow/enlarged text, direct-entry contextual help and persistent reference access.
+Search scope/query/filter/sort state is ready for later URL/history/browser transfer, dynamic-result status, keyboard/focus and direct-entry restoration tests.
 
-### User Research / Human Factors
-Human evidence remains required for time-to-first-meaningful-task, comprehension, skip reasons, abandonment, re-entry findability, novice support and expert obstruction.
-
-## Stage 2 gap map after CD013
+## Stage 2 gap map after CD014
 
 | Area | State |
 |---|---|
-| buttons/action labels | strong Foundation bridge; repeated Stage 2 practice useful |
+| buttons/action labels | strong Foundation bridge + repeated practice |
 | forms/questions/labels/helper text | **PRACTICE — strong** |
-| validation/error/warning/recovery taxonomy | **PRACTICE — strong** |
-| empty/loading/pending/success/recovery lifecycle | **PRACTICE — strong** |
-| onboarding/progressive disclosure | **PRACTICE — strong system baseline after CD013** |
-| search/filter/settings | **NEXT MAJOR SURFACE GAP** |
-| voice/tone system | OPEN; functional risk modulation bridge exists |
-| localization-ready patterns | strong architecture bridge; repeated cross-surface transfer needed |
-| complete multiple-solution system | OPEN for Stage 2 capstone |
+| validation/error/warning/recovery | **PRACTICE — strong** |
+| empty/loading/pending/success lifecycle | **PRACTICE — strong** |
+| onboarding/progressive disclosure | **PRACTICE — strong** |
+| search/filter/sort/settings | **PRACTICE — strong after CD014** |
+| voice/tone system | **NEXT MAJOR GAP** |
+| localization-ready patterns | strong repeated bridge; broader cross-surface transfer still needed |
+| complete multiple-solution content system | OPEN for Stage 2 capstone |
 
-## Active next queue — large blocks only
+## Active next queue
 
-1. **CD014 — search / filter / sort / settings content as professional task systems**, not isolated labels. Include query scope, zero-result causality, filter persistence/reset, sort meaning, defaults, preference vs task-state boundaries, destructive/reset settings and localization.
-2. Voice/tone modulation grounded in risk, urgency, expertise and recovery rather than brand adjectives.
-3. Localization-ready transfer across forms, lifecycle, onboarding and search/settings surfaces.
-4. Integrated Stage 2 capstone with materially different complete content-system solutions and defended selection.
-5. Stage 2 closure audit only after the explicit gate is evidenced.
+1. **CD015 — voice/tone as controlled modulation of functional content**, not brand adjective lists: risk, urgency, user agency, emotional context, professional-domain neutrality, error/success modulation and global-English constraints.
+2. Localization-ready pattern transfer across forms, lifecycle, onboarding and retrieval/configuration surfaces.
+3. Integrated Stage 2 capstone: materially different complete content systems for one fixed professional-product problem, explicit criteria, defended selection, critique and handoffs.
+4. Stage 2 closure audit only after the explicit gate is evidenced.
 
 ## OPEN / dependencies
 
-- actual LogMate/MintTap first-run and prerequisite contracts;
-- actual import/manual-entry/setup branching;
-- permission and data-safety consequences;
-- offline/multi-device conflict language using actual LogMate semantics;
-- actual native/web resume, status persistence and announcement behavior;
+- actual LogMate/MintTap searchable fields and normalization rules;
+- actual saved-view/filter persistence and settings sync semantics;
+- multi-device conflict behavior;
+- native/web history restoration and AT announcements;
 - production localization/message-format and translator workflow;
-- human comprehension/recovery/onboarding evidence;
-- telemetry questions and privacy boundaries for measuring onboarding/recovery usefulness.
+- human findability, comprehension, recovery and trust evidence;
+- telemetry linking zero-results/filter/reset/message states to outcomes.
 
 ## Latest checkpoint
 
 - Stage 1: **PASS**.
-- CD010: **STAGE 2 FORMS BASELINE EXECUTED**.
-- CD011: **STATE TAXONOMY + COMPARATIVE PRACTICE EXECUTED**.
-- CD012: **LIFECYCLE CONTENT SYSTEM + COMPARATIVE PRACTICE EXECUTED**.
-- CD013: **DEEP ONBOARDING / PROGRESSIVE-DISCLOSURE SYSTEM + THREE-ARCHITECTURE PRACTICE EXECUTED**.
+- CD010–CD012: forms/state/lifecycle systems executed.
+- CD013: **DEEP ONBOARDING / PROGRESSIVE DISCLOSURE PRACTICE EXECUTED**.
+- CD014: **SEARCH / FILTER / SORT / SETTINGS TASK-SYSTEM PRACTICE EXECUTED**.
 - Stage 2: **PRACTICE / NOT PASSED**.
 - Human validation: **NOT CLAIMED**.
 - Production runtime/localization validation: **NOT CLAIMED**.
-- Next Content study: **CD014 — search/filter/sort/settings task systems**.
+- Next Content study: **CD015 — voice/tone controlled modulation system**.
