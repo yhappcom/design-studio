@@ -1,16 +1,16 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PRACTICE / CD010–CD016 EXECUTED**  
+Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PASSED / STAGE 3 ENTRY AUDIT NEXT**  
 Governance activation: 2026-09-16  
 Primary path: `research/content/`  
 Study prefix: `CD###`  
-Next new-study ID: `CD017`
+Next new-study ID: `CD019`
 
 ## Current level
 
 Stage 1 — Foundations: **PASS**  
-Stage 2 — Intermediate Professional Practice: **PRACTICE / NOT PASSED**  
-Stage 3 — Advanced / Systems Practice: **NOT STARTED**  
+Stage 2 — Intermediate Professional Practice: **PASS**  
+Stage 3 — Advanced / Systems Practice: **NOT YET AUDITED**  
 Stage 4 — Production & Authorship: **NOT STARTED**  
 Stage 5 — Research & Advisory: **NOT STARTED**
 
@@ -18,128 +18,94 @@ Authority:
 - CD001–CD007 — Foundation source/practice evidence;
 - CD008 — integrated Foundation capstone;
 - CD009 — Stage 1 closure audit / PASS;
-- CD010 — forms/validation/error baseline;
-- CD011 — error/warning/service-failure/recovery taxonomy;
-- CD012 — empty/loading/pending/success/recovery lifecycle;
-- CD013 — onboarding/progressive-disclosure professional-workflow system;
-- CD014 — search/filter/sort/settings task-system study;
-- CD015 — voice/tone controlled functional modulation system;
-- **CD016 — localization-ready cross-surface semantic transfer**.
+- CD010–CD016 — repeated Stage 2 surface/system practice;
+- CD017 — integrated three-solution Stage 2 content-system capstone;
+- **CD018 — Stage 2 closure audit / PASS**.
+
+`progress/STATUS.md` is coordinator-owned and stale relative to Content evidence; this specialist does not edit it.
 
 ## Product-language direction
 
-English-first source language for global release. Architecture remains localization-ready. Locale-specific work opens when product/market need or transfer risk justifies it; Korean is not a Stage 2 blocker.
+English-first source language for global release. Architecture remains localization-ready. Locale-specific work opens when product/market need or transfer risk justifies it; Korean or any other single locale is not a Stage 1/2 blocker.
 
-## Stage 1 closure
+## Stage 2 decisive evidence
 
-`research/content/CD009-stage1-foundation-closure-audit.md` remains the bounded authority for Stage 1 PASS. It does not claim human comprehension/task evidence or production localization/runtime evidence.
+CD017 fixes one professional-record problem and compares three materially different complete content systems:
+- A Task-Direct / Contextual Assistance;
+- B Guided / Explanation-First;
+- C Expert-Dense / Command-Oriented.
 
-## Stage 2 evidence through CD015
+A is conditionally selected under explicit criteria. B is rejected for the fixed substrate because it invents unsupported prerequisite education/front-loads memory; C is rejected as a complete system because compression collapses material state/action distinctions. The exercise integrates forms, validation, lifecycle/recovery, onboarding, retrieval/configuration, tone and localization-ready semantic architecture.
 
-CD010–CD012 establish forms, state taxonomy and lifecycle content. CD013 establishes professional onboarding/progressive disclosure. CD014 establishes retrieval/configuration task contracts. CD015 establishes controlled voice/tone modulation with functional truth taking priority over personality.
+CD018 audits the complete CD010–CD017 corpus against the exact Stage 2 gate and finds the gate satisfied. The prior NOT PASSED verdict after CD016 was correct at that time because the complete multiple-solution capstone was missing; CD017 materially closes that gap.
 
-## CD016 — Localization-ready cross-surface semantic transfer
+## Stage 2 closure matrix
 
-Canonical: `research/content/CD016-localization-ready-cross-surface-semantic-transfer.md`.
+| Requirement | Verdict |
+|---|---|
+| forms/questions/labels/helper | **PASS** |
+| validation/error/warning/recovery | **PASS** |
+| loading/pending/offline/success/recovery | **PASS** |
+| onboarding/progressive disclosure | **PASS** |
+| empty/no-result distinctions | **PASS** |
+| search/filter/sort/settings | **PASS** |
+| voice/tone contextual modulation | **PASS** |
+| localization-ready architecture | **PASS for Stage 2** |
+| cross-surface semantic consistency | **PASS for Stage 2** |
+| materially different complete solutions | **PASS — CD017** |
+| explicit criteria + defended selection | **PASS — CD017** |
+| product state/action contract preserved | **PASS** |
+| critique / KEEP-REWORK-REJECT | **PASS** |
+| cross-specialist reuse/handoff | **PASS** |
+| evidence-boundary discipline | **PASS** |
 
-### New result
+## Evidence boundary
 
-Localization readiness is now modeled as a five-layer transfer chain:
+Stage 2 PASS does **not** imply human comprehension/trust/preference/task performance, production brand-voice acceptance, live LogMate/MintTap terminology correctness, production localization/message-format/RTL/bidi, AT/screen-reader evidence, native/browser parity, notification/email continuity, enterprise content governance or production telemetry effects.
 
-`product truth → semantic message contract → locale realization → surface realization → render/runtime realization`.
-
-The critical rule is **state selects message; message text never selects state**. Externalized English strings alone are not localization architecture.
-
-### Semantic portability
-
-A portable content unit carries material meaning independently of prose: message role, state, object, action/event, scope, certainty, consequence, agency, recovery, typed variables, literal data, quantities/time, tone, surface context, localizer context and accessibility intent as applicable.
-
-Similar English words do not imply semantic equivalence. `Record saved`, `Saved filter` and `Saved locally` have different contracts.
-
-### Cross-surface consistency
-
-Consistency is defined as preserved product truth, not literal sentence reuse. Form status, compact history, dialog and notification may realize one event differently. Surface-specific omission is allowed only when structure/context reliably carries the omitted meaning and interpretation does not change.
-
-### Forms/state/onboarding/retrieval transfer
-
-- labels and validation remain separate messages;
-- requiredness is metadata, not punctuation alone;
-- loading/pending/failure/outcome-unknown/empty classes remain distinct across locales;
-- onboarding cannot delete consequence-critical information merely because localized text expands;
-- search/filter/sort/settings logic remains structured rather than assembled from English fragments.
-
-### Variables and professional identifiers
-
-Variables are typed. Counts, currency, date/time, duration, percentage, units, enum values, user literals and professional identifiers require different formatting/context policies. Flight numbers, registrations, airport codes, tickers and similar identifiers must not be silently treated as ordinary localized numbers.
-
-### Plural and grammar rule
-
-English binary singular/plural logic and fragment concatenation are rejected as universal language models. Locale realization must be able to reorder or replace complete propositions.
-
-### Voice/tone transfer
-
-Localizers receive communication intent and tone constraints rather than personality words to translate literally. Truth, certainty, consequence, agency and recovery remain invariant while warmth/politeness may adapt.
-
-### RTL/bidi and pseudo-localization
-
-RTL mixed-direction literals are an explicit future executable-transfer requirement. Pseudo-localization is recognized as useful engineering evidence for hard-coded strings, expansion, clipping, concatenation and some bidi/layout failures, but it cannot prove translation quality, cultural appropriateness, terminology acceptance or human comprehension.
-
-### Evidence boundary
-
-CD016 is specification-level integration, contradiction testing and production-validation planning. No production localization, RTL/bidi, AT, human-language or live-product PASS is claimed.
+No human evidence is simulated.
 
 ## Cross-specialist transfer
 
 ### Type
-Typed variables, literal identifiers, long state propositions and pseudo-localized expansion are future rendering stress inputs. Semantic deletion is not an acceptable geometry fix.
+CD017 retains full consequential propositions and literal identifiers as rendering stress. Current Type Stage 2 family work remains independent; Content will not shorten necessary semantics to rescue glyph/geometry defects.
 
 ### Color
-State/consequence identity must survive color loss in every locale and surface.
+Content state meaning remains complete without hue; Color can reinforce but not redefine state.
 
 ### Layout / Interaction
-Machine-readable state, scope, persistence, certainty, recovery and decision timing are prerequisites; Content must not infer these from strings.
+CD017 transfers L009's fixed substrate and confirms compatibility of task-direct contextual content with Record-Centric architecture. Interaction still owns actual state, retry safety, persistence, query restoration and recovery mechanics.
 
 ### Web
-Next production transfer should verify message loading/fallback, dynamic status, URL/state restoration, pseudo-localized reflow, bidi literals, zoom/text expansion and failure behavior.
+CD017 supplies a browser-transfer matrix for no-data/no-match, pending/failure/outcome-unknown/success, long recovery strings, active filters, help re-entry, pseudo-localized expansion and literal identifiers. W018 supports reflow over semantic deletion; real network/AT/browser breadth remains open.
 
-## Stage 2 gap map after CD016
+## Stage 3 entry queue — large block only
 
-| Area | State |
-|---|---|
-| buttons/action labels | strong Foundation bridge + repeated practice |
-| forms/questions/labels/helper text | **PRACTICE — strong** |
-| validation/error/warning/recovery | **PRACTICE — strong** |
-| empty/loading/pending/success lifecycle | **PRACTICE — strong** |
-| onboarding/progressive disclosure | **PRACTICE — strong** |
-| search/filter/sort/settings | **PRACTICE — strong** |
-| voice/tone system | **PRACTICE — strong** |
-| localization-ready patterns | **PRACTICE — integrated cross-surface architecture after CD016** |
-| complete multiple-solution content system | **NEXT MAJOR GAP / Stage 2 capstone** |
+1. **CD019 — Stage 3 entry audit** against canonical curriculum/governance and current live-project priorities. Do not begin advanced accumulation until the audit distinguishes already-supported bridges from genuine new gates.
+2. If Stage 3 opens, prioritize product-wide terminology/concept architecture + semantic source of truth, not another microcopy pattern library.
+3. Then integrate multi-surface/channel content models, string/message schema, ownership/change propagation, internationalization architecture, complex professional vocabulary, adaptive risk/stress tone and notification/email continuity.
+4. Preserve human validation as actual project/research evidence, not model simulation.
 
-## Active next queue
+## OPEN / later-stage dependencies
 
-1. **CD017 — integrated Stage 2 capstone**: one fixed professional-product problem, materially different complete content-system hypotheses, explicit criteria, defended selection, forms + lifecycle + onboarding + retrieval/configuration + tone + localization transfer, critique and specialist handoffs.
-2. Stage 2 closure audit only after CD017 evidence is complete; do not auto-promote.
-3. If the closure audit passes, enter Stage 3 with product-wide terminology/semantic architecture rather than repeating Stage 2 micro-patterns.
-
-## OPEN / dependencies
-
-- executable message-format/pseudo-localization and RTL/bidi transfer;
-- actual LogMate/MintTap product contracts and terminology review;
-- actual search/filter/settings persistence and sync semantics;
-- multi-device conflict behavior;
-- native/web history restoration and AT announcements;
+- actual LogMate/MintTap terminology/product contracts;
+- product-wide semantic governance and change propagation;
+- executable message-format/pseudo-localization/RTL-bidi transfer;
 - production translator/localization workflow;
-- locale-specific terminology/politeness validation;
-- human findability, comprehension, recovery, trust and emotional-response evidence;
-- production telemetry tied to task/recovery outcomes.
+- notification/email/cross-channel continuity;
+- native/web history/status/AT behavior;
+- multi-device conflict semantics;
+- human findability/comprehension/recovery/trust evidence;
+- production telemetry tied to content/task outcomes.
 
 ## Latest checkpoint
 
 - Stage 1: **PASS**.
-- CD010–CD015: common Stage 2 product-content systems executed.
-- CD016: **LOCALIZATION-READY CROSS-SURFACE SEMANTIC TRANSFER EXECUTED**.
-- Stage 2: **PRACTICE / NOT PASSED**.
+- CD010–CD016: Stage 2 surface/system practice complete.
+- CD017: **INTEGRATED MULTIPLE-SOLUTION CAPSTONE COMPLETE**.
+- CD018: **STAGE 2 CLOSURE AUDIT PASS**.
+- Stage 2: **PASS**.
+- Stage 3: **NOT YET AUDITED**.
 - Human validation: **NOT CLAIMED**.
 - Production runtime/localization validation: **NOT CLAIMED**.
-- Next Content study: **CD017 — integrated Stage 2 capstone**.
+- Next Content study: **CD019 — Stage 3 entry audit**.
