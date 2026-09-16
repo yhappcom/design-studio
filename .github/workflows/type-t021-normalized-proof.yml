@@ -1,0 +1,30 @@
+name: Type T021 Normalized Proof
+on:
+  push:
+    paths:
+      - 'research/type/T021-normalized-architecture-harness.py'
+      - 'research/type/T021-normalized-semantic-sensitivity-audit.py'
+      - '.github/workflows/type-t021-normalized-proof.yml'
+  workflow_dispatch:
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check fonttools pillow
+      - name: Run semantic sensitivity audit
+        run: python research/type/T021-normalized-semantic-sensitivity-audit.py
+      - name: Run normalized A/B proof
+        run: python research/type/T021-normalized-architecture-harness.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: t021-normalized-proof
+          path: |
+            /tmp/t021-normalized-sensitivity/
+            /tmp/t021-normalized-architecture/
+          if-no-files-found: error
