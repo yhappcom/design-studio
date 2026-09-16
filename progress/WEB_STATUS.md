@@ -1,29 +1,27 @@
 # Web Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / W029 MULTI-ENGINE RUNNER READY — EXECUTION OPEN**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / W029 RUNNER READY / W030 ENVIRONMENT BLOCKER RECORDED**
 Governance sync: 2026-09-16
 Primary path: `research/web/`
-Active studies: `W025`–`W029`
+Active studies: `W025`–`W030`
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-W028 validated the controlled same-origin backend contract: identical client-visible transport drops can reconcile to different authoritative outcomes. W029 now adds a repeatable Playwright execution runner that attempts the same W027/W028 workflow in Chromium, Firefox and WebKit at baseline and 320 CSS px narrow viewports, recording route/history, immediate/reconciled semantic state, overflow and focused-action/sticky-layer intersection.
+W029 provides the repeatable Playwright multi-engine runner for W027/W028. This cycle attempted to execute it from the available container, but repository transfer failed before runner launch because the environment could not resolve `github.com`. W030 records the exact blocker and a CI/developer-workstation transfer contract. No result JSON or browser PASS was fabricated.
 
-The runner is executable infrastructure, not browser evidence. No W029 result file has been committed because this connector environment has not executed the browser engines. Actual 200% zoom, forced-colors, AT, software keyboard/safe area and physical-device transfer remain separate evidence requirements.
-
-WCAG 2.2 remains the accessibility baseline. Lab diagnostics remain distinct from field LCP/INP/CLS; field labels require actual field/RUM population context.
+W028 remains valid executed backend-contract evidence. Browser DOM/focus/zoom/forced-colors/history transfer remains OPEN. Actual 200% zoom is kept separate from 320 CSS px narrow reflow. Lab diagnostics remain distinct from field LCP/INP/CLS; field labels require actual field/RUM population context.
 
 ## Active queue
-1. Execute `W029-browser-capture-runner.py` where Playwright browser engines are installed and commit only actual results.
-2. Extend executed captures to actual 200% zoom and forced-colors/high-contrast; bind C029/L020 evidence to the same run IDs.
-3. Transfer the identical workflow to Firefox/WebKit/Safari, AT and physical mobile where executable.
-4. Bind CD035 semantic IDs/resources and valid Type product-font evidence after T021.
+1. Execute W029 via a GitHub Actions/developer environment with repository access plus Playwright Chromium/Firefox/WebKit; preserve actual JSON artifact.
+2. Review and bind actual captures to C030/L021/I017/CD036.
+3. Extend to actual 200% zoom, forced-colors/high-contrast, AT and physical mobile/Safari where executable.
+4. Bind valid Type product-font evidence only after T021.
 5. Preserve field-vs-lab performance evidence boundary.
 
 ## Cross-domain state
-C029 owns focus/state visual audit; L020/I016 own geometry/recovery semantics; CD035 owns certainty-bound recovery language; custom Type work remains behind T021.
+C030 owns Color acceptance; L021/I017 own geometry/action truth; CD036 owns action-language contract; custom Type work remains behind T021.
 
 ## Evidence boundary
-No Web Stage 3 PASS, browser-runtime PASS, cross-browser, screen-reader, physical-device, field Core Web Vitals or human UX PASS is claimed. W029 is a reproducible execution protocol until an actual result artifact exists.
+No Web Stage 3 PASS, browser-runtime PASS, cross-browser, screen-reader, physical-device, field Core Web Vitals or human UX PASS is claimed.
