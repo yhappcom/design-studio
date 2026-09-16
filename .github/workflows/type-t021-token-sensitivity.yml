@@ -1,0 +1,28 @@
+name: Type T021 Token Sensitivity
+on:
+  push:
+    paths:
+      - 'research/type/T021-token-sensitivity-audit.py'
+      - 'research/type/T021-family-architecture-reset-harness.py'
+      - 'research/type/T021-family-architecture-reset-complete-harness.py'
+      - '.github/workflows/type-t021-token-sensitivity.yml'
+  workflow_dispatch:
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check fonttools pillow
+      - name: Execute token sensitivity audit
+        run: python research/type/T021-token-sensitivity-audit.py
+      - name: Show result
+        run: cat /tmp/t021-token-sensitivity/T021-token-sensitivity-results.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: t021-token-sensitivity
+          path: /tmp/t021-token-sensitivity/
+          if-no-files-found: error
