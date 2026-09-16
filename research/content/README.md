@@ -3,187 +3,71 @@
 This directory is the canonical research home for the **Content Design / UX Writing Specialist**.
 
 ## Mission
-
-Content Design treats language as part of the product interface. Its purpose is not decorative copywriting or generic tone polishing. It designs the words, concepts, labels, explanations and content systems that help people understand what a product means, what state it is in, what they can do, what will happen next, and how to recover when something goes wrong.
-
-The long-term goal is professional judgment from fundamentals through research/advisory capability, with the same evidence discipline used by the rest of Design Studio.
+Content Design treats language as part of the product interface. It designs concepts, terminology, labels, explanations and content systems that help people understand product meaning, state, available action, consequence and recovery. The long-term goal is research-grade professional judgment, not microcopy accumulation.
 
 ## Product-language direction
-
-Current Design Studio product work is treated as:
-- English-first source language;
-- global release;
-- localization-ready from the beginning;
-- specific locale work added when product/market need or transfer risk justifies it.
-
-English source quality and localization readiness are separate requirements. English grammar must not become product logic.
+Current work is English-first for global release and localization-ready from the beginning. English source quality and localization readiness are separate requirements. English grammar or displayed strings must not become product logic. Locale-specific work is added when product/market need or transfer risk justifies it.
 
 ## Primary ownership
+Content owns the user-facing semantic/linguistic interface: terminology/naming/taxonomy; action/consequence wording; forms/instructions; onboarding/empty/progressive disclosure; validation/error/warning/pending/success/recovery; voice/tone; plain language/information sequencing; accessible/input-neutral language; localization-ready architecture; cross-surface semantic consistency; content patterns/models/string systems/governance; content-specific critique/research methods.
 
-Content Design canonically owns questions whose primary issue is the **user-facing semantic and linguistic interface**, including:
-- terminology, naming, taxonomy and concept labels;
-- action labels, commands and consequence wording;
-- form questions, labels, helper text and instructions;
-- onboarding, empty-state and progressive-disclosure content;
-- validation, error, warning, pending, success, confirmation and recovery messaging;
-- voice, tone and context-sensitive language behavior;
-- plain language, scanning and information sequencing;
-- accessible/input-neutral language;
-- localization-ready content architecture and translatability;
-- cross-surface terminology/semantic consistency;
-- content patterns, content models, string systems and governance;
-- content-specific critique, validation and research methods.
-
-## Explicit non-ownership
-
-### Typography / Type Design remains canonical for
-- glyphs, fonts, metrics, spacing and rendering;
-- script support and fallback mechanics;
-- numeral/punctuation drawing and font engineering.
-
-### Color remains canonical for
-- color perception, contrast and semantic color systems;
-- gamut, color management and device reproduction.
-
-### Layout / Interaction remains canonical for
-- spatial hierarchy and responsive geometry;
-- task flow, navigation, state, modes, async behavior and recovery mechanics;
-- pointer, touch, keyboard, gesture and focus/status behavior.
-
-### Web Design remains canonical for
-- complete web IA/page systems and responsive composition;
-- browser-native behavior, web components and runtime validation;
-- integrated application of Content in actual browser/device conditions.
-
-### User Research / Human Factors remains cross-cutting
-
-Content can formulate hypotheses and participate in research design, but static copy critique does not establish comprehension, findability, trust, preference or task performance.
+Type owns glyph/font/rendering; Color owns color perception/encoding; Layout/Interaction owns spatial and actual state/action/recovery mechanics; Web owns complete browser/page integration. Human comprehension, trust, preference and task-performance claims require actual human evidence.
 
 ## Core collaboration model
-
-- **Interaction** defines the actual state/action/recovery contract.
-- **Content** defines how that contract is named and explained.
-- **Layout** determines spatial priority.
-- **Color** reinforces semantic state visually.
-- **Type** renders the language system.
-- **Web** integrates and transfer-tests the complete result in browser contexts.
-
-No specialist may use wording to conceal a broken product contract.
+Interaction defines actual state/action/recovery → Content names/explains it → Layout prioritizes it → Color reinforces it → Type renders it → Web integrates and transfer-tests it. No wording layer may conceal a broken product contract.
 
 ## Study progression
 
 ### Stage 1 — Foundation — PASS
-
 Authority: `CD009-stage1-foundation-closure-audit.md`.
 
-Executed Foundation evidence:
-- CD001 language as interface;
-- CD002 user needs, mental-model caution and terminology;
-- CD003 action labels and consequence clarity;
-- CD004 plain language, information order and minimum-sufficient content;
-- CD005 accessible/input-neutral wording;
-- CD006 history, disciplinary boundaries and source literacy;
-- CD007 English-first global/localization-ready architecture;
-- CD008 integrated professional-workflow capstone + machine-readable content contract + executable structural audit;
-- CD009 closure audit / PASS.
+Evidence: CD001–CD007 fundamentals; CD008 integrated capstone/structural audit; CD009 closure PASS. This does not imply human or production validation.
 
-Foundation PASS requires and now has original practice, explicit critique, cross-domain reuse, project-facing judgment and evidence-boundary discipline. It does not imply human or production validation.
+### Stage 2 — Intermediate Professional Practice — PASS
+Authority: `CD018-stage2-intermediate-closure-audit.md`.
 
-### Stage 2 — Intermediate Professional Practice — READY TO ENTER
+Evidence:
+- CD010 forms/validation/error baseline;
+- CD011 error/warning/service-failure/recovery taxonomy;
+- CD012 empty/loading/pending/success/recovery lifecycle;
+- CD013 onboarding/progressive disclosure;
+- CD014 search/filter/sort/settings task systems;
+- CD015 voice/tone controlled functional modulation;
+- CD016 localization-ready cross-surface semantic transfer;
+- CD017 integrated three-solution content-system capstone;
+- CD018 Stage 2 closure audit / PASS.
 
-Apply Foundation judgment repeatedly across common product surfaces:
-- forms, field questions, labels and helper text;
-- validation, error, warning, success and confirmation;
-- loading, pending, offline and recovery language;
-- onboarding and empty states;
-- search/filter/settings content;
-- voice/tone systems and contextual modulation;
-- localization-ready patterns;
-- content pattern comparison and multiple-solution critique;
-- collaboration with design, engineering and research.
+Decisive gate evidence: CD017 holds one professional-record problem constant, produces three materially different complete content systems, applies explicit criteria, conditionally selects one, critiques alternatives, preserves Interaction truth, and integrates localization/accessibility/cross-specialist constraints. CD018 audits the full corpus and bounds the PASS.
 
-Gate: produce materially different solutions to the same product problem, defend a selected direction using explicit criteria, and preserve the actual product state/action contract.
+### Stage 3 — Advanced / Systems Practice — ENTRY AUDIT NEXT
+Expected areas: product-wide terminology/semantic architecture; multi-surface content systems; complex professional-domain language; cross-platform consistency without mechanical sameness; internationalization/multilingual strategy; adaptive tone under risk/stress/success; notifications/email/cross-channel continuity; content tokens/string architecture; governance/ownership/change propagation; accessibility/human-factors integration.
 
-### Stage 3 — Advanced / Systems Practice
-
-- product-wide terminology and semantic architecture;
-- multi-surface content systems;
-- complex workflows and dense professional-domain language;
-- cross-platform consistency without mechanical sameness;
-- internationalization/multilingual strategy;
-- adaptive tone for risk/stress/success contexts;
-- notifications/email/cross-channel continuity;
-- content tokens/string architecture;
-- governance, ownership and change propagation;
-- accessibility/human-factors integration.
+Do not begin Stage 3 by repeating Stage 2 micro-patterns. First perform `CD019` entry audit against canonical requirements and live-project priorities.
 
 ### Stage 4 — Production & Authorship
-
-- reproducible content workflow/version history;
-- string inventories and audits;
-- implementation/handoff contracts;
-- localization/translation handoff;
-- content QA in implemented products;
-- discrepancy tracking;
-- measurement and revision history;
-- defensible content-system authorship;
-- end-to-end production case study.
+Reproducible workflow/version history; string inventories/audits; implementation/handoff contracts; localization handoff; implemented-product content QA; discrepancy tracking; measurement/revision history; defensible authorship; end-to-end production case study.
 
 ### Stage 5 — Research & Advisory
+Systematic literature/source review; content/HCI research-method literacy; comprehension/behavioral study design; sampling/measurement/uncertainty/external-validity critique; independent reproducible research; competing-evidence synthesis; enterprise terminology/content governance; multi-product/multi-language advisory; long-form research artifact.
 
-- systematic literature/source review;
-- content/HCI research-method literacy;
-- comprehension/behavioral study design;
-- sampling, measurement, uncertainty and external-validity critique;
-- independent reproducible research;
-- competing-evidence synthesis;
-- enterprise terminology/content governance;
-- multi-product/multi-language advisory;
-- long-form thesis/research artifact.
+## Current semantic architecture
+`product truth → semantic message contract → locale realization → surface realization → render/runtime realization`
+
+State selects message; message text never selects state. Semantically distinct states remain distinct even when English strings happen to match. Variables are typed; professional identifiers remain distinct from ordinary localized numbers. Cross-surface consistency means preserved truth, not literal sentence sameness.
 
 ## Evidence vocabulary
-
-Use as appropriate:
-- `SOURCE`
-- `SYNTHESIS`
-- `STUDIO JUDGMENT`
-- `OPEN`
-- `DEPENDENCY`
-- `REPLICATION`
-- `CONTRADICTION`
-- `TRANSFER VALIDATION`
-
-Human comprehension, preference, confidence, trust or task-performance claims require actual human evidence. Model judgment, readability formulae, static comparison or structural lint must not be mislabeled as human validation.
+Use as appropriate: `SOURCE`, `SYNTHESIS`, `STUDIO JUDGMENT`, `OPEN`, `DEPENDENCY`, `REPLICATION`, `CONTRADICTION`, `TRANSFER VALIDATION`. Reading/static critique/model output/string-length checks do not equal human evidence.
 
 ## Mandatory cross-domain scan
-
-Before substantial Content work:
-1. read `AGENTS.md`;
-2. read `progress/STATUS.md` and every specialist status;
-3. read `research/README.md` and this README;
-4. inspect relevant Type, Color, Layout/Interaction and Web evidence;
-5. identify reusable, uncertain, disputed or test-worthy findings;
-6. choose reuse, extension, replication, contradiction review, transfer validation or project-specific study deliberately;
-7. record `## RELATED DOMAIN CHECK`;
-8. add handoffs when useful;
-9. update `progress/CONTENT_STATUS.md` after substantial work.
+Before substantial Content work: read `AGENTS.md`, global and all specialist statuses, `research/README.md`, this README and relevant studies; inspect related Type/Color/Layout-Interaction/Web evidence; identify known/uncertain/disputed/test-worthy findings; deliberately choose reuse/extension/replication/contradiction/transfer; record `RELATED DOMAIN CHECK`; add handoffs; update `progress/CONTENT_STATUS.md` after substantial work.
 
 ## Authoritative-source direction
-
-Prioritize first-party standards/service/platform sources before secondary commentary, including:
-- GOV.UK service/content guidance;
-- W3C/WCAG and W3C Internationalization;
-- Apple Human Interface Guidelines / localization guidance;
-- Microsoft Writing Style Guide;
-- Unicode CLDR;
-- relevant ISO standards and empirical HCI/communication research where the claim requires them.
+Prioritize first-party standards/service/platform sources: GOV.UK, W3C/WCAG/W3C Internationalization, Apple HIG/localization, Microsoft Writing Style Guide, Unicode CLDR, relevant ISO standards, and empirical HCI/communication research when claims require it.
 
 ## Study IDs
-
-New Content studies use `CD###` identifiers.
+New Content studies use `CD###`.
 
 ## Status authority
-
 Progress is tracked in `progress/CONTENT_STATUS.md`.
 
-Current operating state: **ACTIVE — Stage 1 PASS / Stage 2 entry ready / CD010 next**.
+Current operating state: **ACTIVE — Stage 1 PASS / Stage 2 PASS / CD019 Stage 3 entry audit next**.
