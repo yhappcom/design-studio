@@ -1,10 +1,10 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PRACTICE / CD010–CD014 EXECUTED**  
+Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PRACTICE / CD010–CD015 EXECUTED**  
 Governance activation: 2026-09-16  
 Primary path: `research/content/`  
 Study prefix: `CD###`  
-Next new-study ID: `CD015`
+Next new-study ID: `CD016`
 
 ## Current level
 
@@ -22,7 +22,8 @@ Authority:
 - CD011 — error/warning/service-failure/recovery taxonomy;
 - CD012 — empty/loading/pending/success/recovery lifecycle;
 - CD013 — onboarding/progressive-disclosure professional-workflow system;
-- **CD014 — search/filter/sort/settings task-system study**.
+- CD014 — search/filter/sort/settings task-system study;
+- **CD015 — voice/tone controlled functional modulation system**.
 
 ## Product-language direction
 
@@ -32,76 +33,82 @@ English-first source language for global release. Architecture remains localizat
 
 `research/content/CD009-stage1-foundation-closure-audit.md` remains the bounded authority for Stage 1 PASS. It does not claim human comprehension/task evidence or production localization/runtime evidence.
 
-## Stage 2 evidence through CD013
+## Stage 2 evidence through CD014
 
-CD010–CD012 establish form contracts, state taxonomy, and lifecycle content. CD013 adds professional onboarding/progressive disclosure with the critical distinction `domain expertise ≠ product expertise`, decision-relative disclosure timing, skip/resume/re-entry/replay contracts, and three onboarding strategies. These remain practice evidence rather than live-product or human validation.
+CD010–CD012 establish form contracts, state taxonomy and lifecycle content. CD013 adds professional onboarding/progressive disclosure with `domain expertise ≠ product expertise`, decision-relative disclosure timing and skip/resume/re-entry/replay contracts. CD014 models search/filter/sort/settings as different task contracts and preserves scope, membership, ordering and persistent-setting distinctions.
 
-## CD014 — Search / Filter / Sort / Settings task systems
+## CD015 — Voice & Tone as controlled functional modulation
 
-Canonical: `research/content/CD014-search-filter-sort-settings-task-systems.md`.
+Canonical: `research/content/CD015-voice-tone-controlled-functional-modulation.md`.
 
 ### New result
 
-Retrieval/configuration content is now modeled as four different contracts:
-- **search** changes membership through query matching within a scope;
-- **filter** constrains membership through structured predicates;
-- **sort** changes ordering, not membership;
-- **settings** change persistent or semi-persistent product behavior/preferences.
+Voice/tone is now modeled as a constrained product system rather than an adjective list.
 
-The system rejects control-driven collapse such as one generic `Filter` surface silently changing scope, membership, ordering and persistent defaults.
+**Voice invariants** remain stable:
+- truthful certainty;
+- consistent domain terminology;
+- user-respecting agency;
+- explicit material consequence;
+- actionable recovery where available;
+- plain/global-English architecture;
+- non-blaming system-failure framing;
+- no unsupported promise.
 
-### Search scope
+**Tone variables** may change with context:
+- compression;
+- warmth;
+- acknowledgement;
+- salience;
+- bounded formality;
+- explanatory depth;
+- celebration;
+- evidence-backed urgency.
 
-Every search requires an explicit or reliably inferable corpus/scope and a truthful searchable-field contract. Professional identifiers need deliberate normalization rules; ordinary natural-language normalization can damage flight numbers, registrations, airport codes, tickers or transaction IDs. Placeholder examples cannot promise fields the implementation does not search.
+### Modulation inputs
 
-### Filter causality
+Tone decisions now require consequence, urgency, certainty, user agency, reversibility, responsibility, emotional load, frequency, domain criticality and separate domain/product expertise.
 
-Filters are treated as predicates with named dimensions, values/operators, combination semantics, default state, persistence and clear behavior. Active constraints must remain semantically visible after a filter panel closes. `No flights found` is rejected when the truth is `No flights match the active filters`.
+Functional priority is explicit:
+`truth/certainty → consequence/scope → action/recovery → preserved work → real urgency → context → personality`.
 
-### Sort semantics
+Personality loses whenever it conflicts with an earlier requirement.
 
-Sort labels name the domain field and direction when ambiguity matters. `Newest` is insufficient if multiple dates exist. Algorithmic labels such as `Best` or `Recommended` require an appropriate explainable basis rather than implying objective quality.
+### Professional-user rule
 
-### Settings boundary
+Plain language does not require dilution of precise professional vocabulary. Domain expertise and product expertise remain separate. Routine expert work should not receive patronizing coaching or automatic praise. Product-specific behavior and nonstandard meanings should be explained.
 
-A setting is a persistent behavior contract with scope, application timing, persistence/sync, reversibility and default source. Task-critical filters must not be moved into Settings merely to simplify layout; this directly transfers L009.
+### Error/warning/uncertainty
 
-### Reset/default distinctions
+Empathy is primarily operational: preserve work, state truth, provide real recovery, avoid blame and acknowledge uncertainty. Apology is not a substitute for recovery. Warning seriousness comes from consequence/scope/reversibility rather than exclamation marks. Known failure and outcome unknown retain different wording.
 
-`Clear query`, `Clear filters`, `Reset changes`, `Restore defaults`, and deleting a saved preset/view are separate operations. `Reset` is defective when its baseline is unknown. `Default` is defective when the source/value is not intelligible to the user.
+### Success/urgency
 
-### Apply vs immediate
+Routine success is proportionate and often quiet; celebration is reserved for meaningful milestones. Urgency terms are allowed only when a real timing constraint exists. Engagement pressure must not masquerade as operational urgency.
 
-Content must match actual commitment semantics. Immediate changes do not need a false `Apply` stage. Staged edits require saved-vs-draft distinction and explicit commit/discard behavior. `Done` is rejected when it obscures whether filters/settings were actually committed.
+### Global/localization rule
 
-### Localization architecture
+The semantic proposition must survive removal of personality language. Idiom, sarcasm, synonym churn and fragile English grammar are rejected as semantic carriers. Locales may adapt warmth/politeness while preserving certainty, consequence, agency and recovery.
 
-Retrieval logic lives in semantic metadata, not English concatenation. Dimension key, machine value, localized label, operator, sort field/direction, count/plural formatting and literal-data rules remain separate. Compact English filter chips do not justify deleting semantic dimensions needed by other locales.
+### Evidence boundary
 
-### Comparative practice
-
-Three retrieval architectures were compared for a fixed professional-record lookup task:
-- A global search + hidden advanced filters — REWORK;
-- B persistent query + explicit active-filter summary + explicit sort — provisional KEEP;
-- C settings-driven default views with minimal task controls — REJECT as primary retrieval architecture, though saved views may supplement B.
-
-This is studio practice, not a LogMate production decision and not human-performance evidence.
+CD015 uses current authoritative guidance, peer transfer, system synthesis, cross-state comparative practice and contradiction testing. It does **not** establish user trust, perceived warmth, emotional response, locale suitability, production brand voice or runtime behavior.
 
 ## Cross-specialist transfer
 
 ### Type
-Compact filters, sort labels, counts, literal identifiers and localization expansion are realistic operational stress strings; semantic dimensions are not removed to hide Type defects.
+Warnings/failures/uncertainty strings are operational stress material; typography does not authorize deleting consequence.
 
 ### Color
-Active filters/changed settings must survive color loss and forced-color transformation.
+Visual severity and linguistic tone are separate channels and must not contradict each other or depend on color alone.
 
 ### Layout / Interaction
-Interaction owns apply timing, persistence, restoration and synchronization truth. Content preserves task-local versus persistent-setting boundaries.
+Consequence/certainty/agency/reversibility are Interaction/product truth and must precede tone decisions.
 
 ### Web
-Search scope/query/filter/sort state is ready for later URL/history/browser transfer, dynamic-result status, keyboard/focus and direct-entry restoration tests.
+Identical semantics should later be transfer-tested across inline, banner, toast/dialog and live-status contexts because presentation changes force and accessibility behavior.
 
-## Stage 2 gap map after CD014
+## Stage 2 gap map after CD015
 
 | Area | State |
 |---|---|
@@ -110,35 +117,36 @@ Search scope/query/filter/sort state is ready for later URL/history/browser tran
 | validation/error/warning/recovery | **PRACTICE — strong** |
 | empty/loading/pending/success lifecycle | **PRACTICE — strong** |
 | onboarding/progressive disclosure | **PRACTICE — strong** |
-| search/filter/sort/settings | **PRACTICE — strong after CD014** |
-| voice/tone system | **NEXT MAJOR GAP** |
-| localization-ready patterns | strong repeated bridge; broader cross-surface transfer still needed |
+| search/filter/sort/settings | **PRACTICE — strong** |
+| voice/tone system | **PRACTICE — strong after CD015** |
+| localization-ready patterns | strong repeated bridge; **cross-surface transfer next** |
 | complete multiple-solution content system | OPEN for Stage 2 capstone |
 
 ## Active next queue
 
-1. **CD015 — voice/tone as controlled modulation of functional content**, not brand adjective lists: risk, urgency, user agency, emotional context, professional-domain neutrality, error/success modulation and global-English constraints.
-2. Localization-ready pattern transfer across forms, lifecycle, onboarding and retrieval/configuration surfaces.
-3. Integrated Stage 2 capstone: materially different complete content systems for one fixed professional-product problem, explicit criteria, defended selection, critique and handoffs.
-4. Stage 2 closure audit only after the explicit gate is evidenced.
+1. **CD016 — localization-ready cross-surface transfer audit/practice** across forms, state/lifecycle, onboarding, retrieval/configuration and tone: semantic keys, variables, plurals, literal identifiers, expansion/reordering and localizer context.
+2. Integrated Stage 2 capstone: materially different complete content systems for one fixed professional-product problem, explicit criteria, defended selection, critique and handoffs.
+3. Stage 2 closure audit only after the explicit gate is evidenced.
 
 ## OPEN / dependencies
 
-- actual LogMate/MintTap searchable fields and normalization rules;
-- actual saved-view/filter persistence and settings sync semantics;
+- actual LogMate/MintTap brand-expression ranges and domain terminology review;
+- actual searchable fields/filter/settings persistence and sync semantics;
 - multi-device conflict behavior;
-- native/web history restoration and AT announcements;
+- native/web history restoration, surface force and AT announcements;
 - production localization/message-format and translator workflow;
-- human findability, comprehension, recovery and trust evidence;
-- telemetry linking zero-results/filter/reset/message states to outcomes.
+- locale-specific politeness/formality transfer;
+- human findability, comprehension, recovery, trust and emotional-response evidence;
+- production telemetry tied to task/recovery outcomes.
 
 ## Latest checkpoint
 
 - Stage 1: **PASS**.
 - CD010–CD012: forms/state/lifecycle systems executed.
-- CD013: **DEEP ONBOARDING / PROGRESSIVE DISCLOSURE PRACTICE EXECUTED**.
-- CD014: **SEARCH / FILTER / SORT / SETTINGS TASK-SYSTEM PRACTICE EXECUTED**.
+- CD013: deep onboarding/progressive-disclosure practice executed.
+- CD014: search/filter/sort/settings task-system practice executed.
+- CD015: **VOICE/TONE CONTROLLED MODULATION SYSTEM EXECUTED**.
 - Stage 2: **PRACTICE / NOT PASSED**.
 - Human validation: **NOT CLAIMED**.
 - Production runtime/localization validation: **NOT CLAIMED**.
-- Next Content study: **CD015 — voice/tone controlled modulation system**.
+- Next Content study: **CD016 — localization-ready cross-surface transfer**.
