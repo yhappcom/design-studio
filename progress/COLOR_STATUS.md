@@ -1,28 +1,28 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASS / STAGE 2 PASS / STAGE 3 PRACTICE — C023 CONTEXTUAL FOCUS/NON-TEXT TRANSFER READY**  
-Governance sync: 2026-09-16  
-Primary path: `research/color/`  
-Next new-study ID: `C024`
+Operating state: **ACTIVE — STAGE 3 PRACTICE / C024 TRANSFER CLOSURE MAP**
+Governance sync: 2026-09-16
+Primary path: `research/color/`
+Next new-study ID: `C025`
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
-Authority: C014/C015 Stage 1; C016–C018 Stage 2; C019 entry; C020 semantic architecture; C021 pair matrix; C022 exact text/state calculation; **C023 contextual focus/non-text transfer contract**.
+Authority: C014/C015 Stage 1; C016–C018 Stage 2; C019 entry; C020–C023 systems work; **C024 transfer closure map**.
 
 ## Latest evidence
-C022 closed numeric uncertainty for exact authored text/state sRGB pairs. C023 now targets the unresolved rendered problem: focus and component boundaries must be tested against every actual adjacent surface they touch, including page, card/panel, state banner, control and sticky/transient regions. Forced-colors acceptance records computed system-color mapping and survival of non-color carriers rather than authored hue.
+C024 identifies rendered contextual transfer—not more palette breadth—as the current bottleneck. Semantic architecture, candidate light/dark sRGB pairs, exact authored text/state calculations and forced-colors acceptance semantics already exist. Missing evidence is actual adjacent-surface focus/component behavior, computed/used forced-colors behavior, rendered theme/state collision review and sufficient browser breadth.
 
-C023 explicitly keeps WCAG 2.2 criteria scoped to the rendered component and keeps Focus Appearance distinct from Focus Not Obscured; it does not silently treat Focus Appearance as AA. Disabled availability remains an Interaction semantic and cannot be conveyed solely by contrast reduction.
+P3 expansion is deliberately deferred until the sRGB semantic system survives transfer. A global token PASS cannot substitute for a component/context matrix.
 
 ## Active queue
-1. Receive W021 computed adjacent-surface/focus/component/forced-color results.
-2. Calculate contextual non-text/focus pairs where the rendered geometry makes the criterion applicable.
-3. Reconcile contradictions before any P3 expansion.
-4. Keep physical display and human/CVD/low-vision evidence OPEN.
+1. Receive W021/W022 rendered adjacency, focus, component and forced-color captures.
+2. Compute contextual non-text/focus results only against actual rendered surfaces.
+3. Reconcile theme/state collisions before gamut expansion.
+4. Keep physical-display, CVD/low-vision observer and human salience evidence OPEN.
 
 ## HANDOFFS
-L014 supplies adjacency/overlap geometry; I009 supplies availability/state; W021 is transfer surface; CD024 preserves verbal semantics; T022 ambiguity remains non-color.
+L015 supplies adjacency; I010 supplies state truth; W022 is the capture contract; CD029 preserves verbal state identity; T022 ambiguity remains non-color.
 
 ## Evidence boundary
-C022 provides bounded numeric authored-pair evidence; C023 is transfer design. No browser-parity, calibrated-display, CVD/low-vision observer or human salience PASS.
+No integrated browser, cross-browser, calibrated-display, observer or human PASS is claimed.
