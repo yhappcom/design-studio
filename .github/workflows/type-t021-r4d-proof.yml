@@ -1,0 +1,25 @@
+name: Type T021 R4D Proof
+on:
+  push:
+    paths:
+      - 'research/type/T021-r4d-full-family-promotion-harness.py'
+      - '.github/workflows/type-t021-r4d-proof.yml'
+  workflow_dispatch:
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install --disable-pip-version-check fonttools pillow
+      - name: Execute R4D full-family proof
+        run: python research/type/T021-r4d-full-family-promotion-harness.py
+      - name: Show result
+        run: cat /tmp/t021-logmate-r4d/T021-r4d-full-family-results.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: t021-r4d-full-family-proof
+          path: /tmp/t021-logmate-r4d/
+          if-no-files-found: error
