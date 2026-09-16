@@ -1,28 +1,28 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 REPAIR RERENDER REGRESSION GATE READY — EXECUTION OPEN**
+Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 R1 REPAIR EXECUTION READY — RASTER EXECUTION OPEN**
 Governance sync: 2026-09-17
 Primary path: `research/type/`
-Active authority: `T021` direct critique + repair decision + implementation handoff + repair/rerender regression matrix
+Active authority: `T021` direct critique + repair decision + implementation handoff + regression matrix + R1 readiness review
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-`T021-repair-rerender-regression-matrix.md` converts the verified repair locus into a bounded R1 acceptance gate. Only `I`, `l`, `1`, and candidate-B `0` slash geometry may change; kerning remains OFF and sidebearings/advance widths remain frozen. Rerender must preserve the existing bounded operational corpus at 14/17/24px, record source/build/font/raster identity, and reject local ambiguity gains that create family regressions.
+`T021-r1-repair-execution-readiness-review.md` independently reconciles the repair package before mutation. R1 remains bounded to `I`, `l`, `1`, and candidate-B `0` slash geometry; kerning stays OFF and advance widths/sidebearings stay frozen. The evidence bundle must join source diff/build/font/raster identity with 14/17/24px before/after critique and reject local ambiguity gains that regress operational or temporal strings.
 
 No repaired raster exists. General-spacing critique remains blocked until repair/rerender/direct critique. T022 kerning remains closed.
 
 ## Active queue
-1. In an executable environment, mutate only the bounded R1 constructions with kerning OFF and frozen metrics.
-2. Rerender exact ambiguity + bounded operational + timestamp/ID strings at 14/17/24px with source/build/raster hashes.
-3. Execute the regression matrix and direct drawing critique; reject synthetic-only improvements that degrade operational strings.
-4. Only after drawing is defensible, execute general-spacing critique and fallback/notdef recheck.
+1. Mutate only bounded R1 constructions in an executable environment.
+2. Build/rerender exact ambiguity + operational + temporal corpus at 14/17/24px with hashes.
+3. Execute regression matrix and direct critique.
+4. Only after drawing is defensible, execute general spacing and fallback/notdef recheck.
 5. Open T022 only for residual pair-specific defects after general spacing.
 6. Keep browser/native and human recognition/task evidence OPEN.
 
 ## Cross-domain state
-CD049 adds temporal-provenance strings; W043 remains on mature fallback; L034 must not freeze provisional metrics; C043 cannot repair glyph ambiguity; I030 owns temporal truth.
+CD050 adds causal-order strings; W044 remains on mature fallback; L035 must not freeze provisional metrics; C044 cannot repair glyph ambiguity; I031 owns ordering truth.
 
 ## Evidence boundary
-Direct critique, repair specification, source-locus handoff and rerender regression criteria exist, but no repaired raster, drawing PASS, T021 closure, T022 entry, custom-font production recommendation, native/browser transfer or human recognition PASS is claimed.
+No repaired raster, drawing PASS, T021 closure, T022 entry, custom-font production recommendation, native/browser transfer or human recognition PASS is claimed.
