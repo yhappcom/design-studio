@@ -1,27 +1,27 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / CD037 COMPLETE WORKFLOW CONTENT SYSTEM READY — TOOLCHAIN OPEN**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / CD038 LOCALIZATION SEMANTIC VECTORS READY — TOOLCHAIN OPEN**
 Governance sync: 2026-09-16
 Primary path: `research/content/`
-Active studies: `CD034`–`CD037`
+Active studies: `CD035`–`CD038`
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-CD037 unifies forms, validation, onboarding/progressive disclosure, retrieval, lifecycle states, tone, localization and cross-surface continuity into one governed professional-workflow content system. The governing chain is domain concept → semantic ID → state/action/consequence → source string → typed variables → locale/surface realization → runtime evidence → revision history.
+CD038 converts CD037 governance into localization test vectors for pending, outcome-unknown, confirmed, rejection, reconciled-not-found, conflict and resumption states. It defines truth-drift, typed-variable, retrieval-continuity, spatial-stress and tone discrepancy classes and requires pseudo-expansion, long values, plural/select and fallback cases without weakening certainty/action semantics.
 
-I018 remains authoritative for state/action/recovery truth. Localization expansion is treated as runtime stress, not permission to delete consequence/recovery language. Actual ARB/ICU/TMS round trip, linguistic review and human comprehension remain OPEN.
+Static vectors are not an ARB/ICU/TMS round trip. Actual tooling/runtime binding, linguistic review and human comprehension remain OPEN.
 
 ## Active queue
-1. Materialize the CD037 semantic inventory/resources through actual localization tooling.
-2. Bind semantic IDs/revisions/locales to W031 shared captures and deterministic I018 states.
-3. Execute plural/select/date/time/duration plus pseudo/expansion cases.
-4. Build discrepancy/revision ledger across form → operation → recovery → later retrieval.
+1. Materialize CD038 vectors through actual localization tooling and record resource/build identity.
+2. Bind semantic ID + content revision + locale to W032 shared run IDs and I019 resumption states.
+3. Execute plural/select/date/time/duration, pseudo-expansion and missing-resource/fallback cases.
+4. Maintain discrepancy/revision ledger across form → operation → interruption/recovery → later retrieval.
 5. Keep linguistic review and human comprehension/task evidence OPEN.
 
 ## Cross-domain state
-I018 owns workflow truth; L022 owns disrupted geometry; W031 owns browser integration; C031 verifies non-color/focus survival; Type consumes strings within T021 gate sequence.
+I019 owns resumption/certainty truth; L023 owns expanded spatial association; W032 owns browser provenance; C032 verifies cue independence; Type consumes unchanged strings within T021.
 
 ## Evidence boundary
 No Content Stage 3 PASS, real TMS/ARB round trip, linguistic review, native functional QA, AT, production backend/network or human PASS is claimed.
