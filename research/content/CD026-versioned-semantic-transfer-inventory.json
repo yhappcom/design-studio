@@ -1,0 +1,86 @@
+{
+  "schema_version": "0.2",
+  "registries": {
+    "concepts": ["record", "flight", "sync"],
+    "states": ["pending", "confirmed", "known_failure", "outcome_unknown", "offline_stale"],
+    "actions": ["verify_record", "retry_save", "edit_record"],
+    "certainties": ["unconfirmed", "confirmed", "failed", "unknown", "stale"],
+    "variable_types": ["operational_literal", "count", "datetime", "duration"]
+  },
+  "previous_contracts": {
+    "record.save.confirmed": {
+      "concept_id": "record",
+      "state_id": "confirmed",
+      "action_id": null,
+      "certainty": "confirmed",
+      "required_semantics": ["certainty", "object"],
+      "variable_signature": {"flight_number": "operational_literal"}
+    },
+    "record.save.outcome_unknown": {
+      "concept_id": "record",
+      "state_id": "outcome_unknown",
+      "action_id": "verify_record",
+      "certainty": "unknown",
+      "required_semantics": ["certainty", "object", "safe_action"],
+      "variable_signature": {"flight_number": "operational_literal"}
+    }
+  },
+  "messages": [
+    {
+      "message_id": "record.save.confirmed",
+      "concept_id": "record",
+      "state_id": "confirmed",
+      "action_id": null,
+      "certainty": "confirmed",
+      "required_semantics": ["certainty", "object"],
+      "variables": [{"name": "flight_number", "type": "operational_literal", "localize": false, "bidi_isolate": true}],
+      "channels": {
+        "in_app": {"eligible": true, "certainty": "confirmed"},
+        "history": {"eligible": true, "certainty": "confirmed"},
+        "notification": {"eligible": false}
+      },
+      "locale_key": "record.save.confirmed"
+    },
+    {
+      "message_id": "record.save.outcome_unknown",
+      "concept_id": "record",
+      "state_id": "outcome_unknown",
+      "action_id": "verify_record",
+      "certainty": "unknown",
+      "required_semantics": ["certainty", "object", "safe_action"],
+      "variables": [{"name": "flight_number", "type": "operational_literal", "localize": false, "bidi_isolate": true}],
+      "channels": {
+        "in_app": {"eligible": true, "certainty": "unknown"},
+        "notification": {"eligible": true, "certainty": "unknown", "freshness": "current_state_sensitive", "revalidate": true}
+      },
+      "locale_key": "record.save.outcome_unknown"
+    },
+    {
+      "message_id": "record.offline.summary",
+      "concept_id": "sync",
+      "state_id": "offline_stale",
+      "action_id": null,
+      "certainty": "stale",
+      "required_semantics": ["certainty", "freshness", "count", "time_context"],
+      "variables": [
+        {"name": "record_count", "type": "count", "localize": true, "bidi_isolate": false},
+        {"name": "updated_at", "type": "datetime", "localize": true, "bidi_isolate": false},
+        {"name": "sync_age", "type": "duration", "localize": true, "bidi_isolate": false}
+      ],
+      "channels": {"in_app": {"eligible": true, "certainty": "stale"}},
+      "locale_key": "record.offline.summary"
+    }
+  ],
+  "fixtures": {
+    "en": {
+      "record.save.confirmed": {"text": "{flight_number} saved.", "semantics": ["certainty", "object"]},
+      "record.save.outcome_unknown": {"text": "We couldn’t confirm whether {flight_number} was saved. Verify the record before trying again.", "semantics": ["certainty", "object", "safe_action"]},
+      "record.offline.summary": {"text": "Showing {record_count} saved records from {updated_at} ({sync_age} ago). Current data isn’t available.", "semantics": ["certainty", "freshness", "count", "time_context"]}
+    },
+    "fallback": {
+      "record.save.confirmed": {"text": "{flight_number} saved.", "semantics": ["certainty", "object"]},
+      "record.save.outcome_unknown": {"text": "Save status for {flight_number} is unknown. Verify the record before trying again.", "semantics": ["certainty", "object", "safe_action"]},
+      "record.offline.summary": {"text": "Showing {record_count} saved records from {updated_at} ({sync_age} ago). Current data isn’t available.", "semantics": ["certainty", "freshness", "count", "time_context"]}
+    }
+  }
+}
