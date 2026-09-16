@@ -1,0 +1,27 @@
+{
+  "browser": "144.0.7559.96",
+  "mode": "set_content DOM + forced-colors emulation; no network navigation",
+  "passed": 12,
+  "total": 12,
+  "checks": [
+    {"name":"#edit named button","pass":true,"observed":"button Edit record"},
+    {"name":"#more named button","pass":true,"observed":"button More actions"},
+    {"name":"#disc named button","pass":true,"observed":"button Details"},
+    {"name":"decorative SVG hidden","pass":true,"observed":3},
+    {"name":"#edit target >=24","pass":true,"observed":{"width":94.453125,"height":32}},
+    {"name":"#more target >=24","pass":true,"observed":{"width":32,"height":32}},
+    {"name":"#disc target >=24","pass":true,"observed":{"width":70.75,"height":32}},
+    {"name":"disclosure programmatic state","pass":true,"observed":{"expanded":"true","visible":true}},
+    {"name":"200% labels remain visible","pass":true,"observed":true},
+    {"name":"keyboard focus visible","pass":true,"observed":"solid"},
+    {"name":"forced colors retains boundary","pass":true,"observed":"solid"},
+    {"name":"warning meaning has text","pass":true,"observed":"Sync failed. Retry after checking connection."}
+  ],
+  "failed_attempts": [
+    "W015 real loopback HTTP transfer attempt: Chromium navigation blocked by environment administrator",
+    "W015 route-intercepted https navigation attempt: Chromium navigation blocked by environment administrator",
+    "W017 icon harness first run: 11/12 because no explicit focus-visible rule",
+    "W017 focus correction first rerun: 11/12 because programmatic focus did not establish keyboard focus-visible modality",
+    "W017 final rerun: keyboard Tab used; 12/12"
+  ]
+}
