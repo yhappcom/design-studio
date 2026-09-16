@@ -1,28 +1,28 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / C024 TRANSFER CLOSURE MAP**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / C025 CHROMIUM CONTEXT TRANSFER PARTIAL PASS**
 Governance sync: 2026-09-16
 Primary path: `research/color/`
-Next new-study ID: `C025`
+Next new-study ID: `C026`
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
-Authority: C014/C015 Stage 1; C016–C018 Stage 2; C019 entry; C020–C023 systems work; **C024 transfer closure map**.
+Authority: C014/C015 Stage 1; C016–C018 Stage 2; C019 entry; C020–C024 systems/closure map; **C025 rendered-context transfer audit**.
 
 ## Latest evidence
-C024 identifies rendered contextual transfer—not more palette breadth—as the current bottleneck. Semantic architecture, candidate light/dark sRGB pairs, exact authored text/state calculations and forced-colors acceptance semantics already exist. Missing evidence is actual adjacent-surface focus/component behavior, computed/used forced-colors behavior, rendered theme/state collision review and sufficient browser breadth.
+W023 supplied actual Chromium dark and forced-colors computed evidence. C025 independently calculated the measured dark focus outline at 10.41:1 against the root background and 8.05:1 against the dark button background; forced-colors black/white computes 21:1. Forced colors collapses authored semantic hues while textual state identity remains, confirming the intended non-color semantic fallback on this bounded specimen.
 
-P3 expansion is deliberately deferred until the sRGB semantic system survives transfer. A global token PASS cannot substitute for a component/context matrix.
+This advances C024's browser-transfer blocker but does not establish global component/focus, cross-browser, physical-display, observer or human PASS. P3 remains deferred until sRGB contextual transfer is broader.
 
 ## Active queue
-1. Receive W021/W022 rendered adjacency, focus, component and forced-color captures.
-2. Compute contextual non-text/focus results only against actual rendered surfaces.
-3. Reconcile theme/state collisions before gamut expansion.
-4. Keep physical-display, CVD/low-vision observer and human salience evidence OPEN.
+1. Extend contextual matrix across all rendered semantic states/components when captures exist.
+2. Reconcile exact focus/adjacency geometry with Layout.
+3. Broaden forced-colors/high-contrast transfer beyond Chromium when executable.
+4. Keep P3, calibrated display, CVD/low-vision observer and human salience OPEN until justified.
 
 ## HANDOFFS
-L015 supplies adjacency; I010 supplies state truth; W022 is the capture contract; CD029 preserves verbal state identity; T022 ambiguity remains non-color.
+Web retains outline-based focus resilience; Layout supplies adjacency; Content preserves textual state identity; Interaction owns state truth; Type ambiguity remains non-color.
 
 ## Evidence boundary
-No integrated browser, cross-browser, calibrated-display, observer or human PASS is claimed.
+No Color Stage 3 PASS, global conformance, cross-browser, calibrated-display, observer or human PASS is claimed.
