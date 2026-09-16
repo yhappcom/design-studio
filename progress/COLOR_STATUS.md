@@ -1,44 +1,34 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASS / STAGE 2 PASS / STAGE 3 PRACTICE OPEN**  
+Operating state: **ACTIVE — STAGE 1 PASS / STAGE 2 PASS / STAGE 3 PRACTICE**  
 Governance sync: 2026-09-16  
 Primary path: `research/color/`  
-Next new-study ID: `C020`
+Next new-study ID: `C021`
 
 ## Current level
 Stage 1 — Foundations: **PASS**  
 Stage 2 — Intermediate Professional Practice: **PASS**  
 Stage 3 — Advanced / Systems Practice: **PRACTICE / NOT PASSED**
 
-Authority: C014/C015 Stage 1 closure; C016 entry; C017 capstone; C018 Stage 2 closure; **C019 Stage 3 entry audit**.
+Authority: C014/C015 Stage 1 closure; C016 entry; C017 capstone; C018 Stage 2 closure; C019 Stage 3 entry; **C020 multi-surface semantic token system**.
 
-## Latest evidence — C019
-`research/color/C019-stage3-entry-audit.md` finds no missing Stage 1/2 prerequisite blocking advanced practice. Existing C009/C010/C015/C017 are bridges, not Stage 3 closure evidence.
+## Latest evidence — C020
+C020 converts the C019 brief into one semantic system contract across phone + tablet/EFB + desktop/web. It defines `meaning → role → interaction state → theme → output/gamut → surface`, keeps status and data-series namespaces separate, requires non-color carriers for consequential states, treats light/dark as authored mappings rather than inversion, retains sRGB as baseline and bounds wide-gamut use behind explicit fallback.
 
-Stage 3 now requires one coherent semantic color system across at least phone + tablet/EFB + desktop/web, including light/dark, adverse/forced-color states, explicit sRGB baseline and bounded wide-gamut behavior, data-series/status separation and evidence traceability.
-
-First system model: `meaning → role → interaction state → theme mode → gamut/output mapping → surface instance`.
-
-## Gate boundary
-Stage 3 is **NOT PASSED**. No calibrated physical-display, CVD/low-vision observer, human salience, production-token, browser-parity or three-form-factor acceptance is claimed. Color never substitutes for character identity or semantic wording.
+C020 static system architecture passes its own contract gate, but Stage 3 remains open because concrete light/dark value authoring, pair matrices, P3 candidate/fallback measurement, actual browser forced-colors/theme transfer, physical displays and human/CVD observer evidence are not yet complete.
 
 ## Active queue — large block only
-1. C020: construct one multi-surface semantic token graph from a fixed professional-record substrate.
-2. Author light/dark + sRGB baseline and bounded wide-gamut candidate/fallback.
-3. Separate status palette from data-series palette.
-4. Stress forced-colors/high-contrast and non-color state carriers.
-5. Hand accepted candidate to Web for actual browser transfer when mature.
-6. Keep physical/human validation OPEN until executable.
+1. C021: author concrete light/dark sRGB role values and full foreground/background pair matrix for the C020 graph.
+2. Produce bounded P3 candidates only where they add product value and prove sRGB fallback.
+3. Stress status-vs-data palette collisions and adverse/forced-color survival.
+4. Hand mature token values to Web for integrated browser transfer.
+5. Keep physical/human validation OPEN.
 
 ## HANDOFFS
-- Layout/Interaction: supply three-form-factor state/surface inventory.
-- Web: later transfer accepted tokens to actual CSS/browser modes.
-- Content: state meaning must survive without hue.
-- Type: final text robustness waits for actual shipped font/rendering.
+- Layout/Interaction L012/I007 consume the state/non-color carrier contract.
+- Web W020 is ready to transfer mature role aliases into themes/forced colors.
+- Content CD020 verbalizes state independently of hue.
+- Type T021 ambiguity is never repaired with color.
 
-## Latest checkpoint
-- Stage 1: **PASS**.
-- Stage 2: **PASS**.
-- C019: **Stage 3 entry audit complete; practice OPEN**.
-- Stage 3: **NOT PASSED**.
-- Next: **C020 multi-surface semantic color system**.
+## Evidence boundary
+No calibrated physical-display, CVD/low-vision observer, human salience, production-token, browser-parity or three-form-factor rendered acceptance is claimed.
