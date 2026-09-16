@@ -1,10 +1,10 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PRACTICE / CD010–CD011 EXECUTED**  
+Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PRACTICE / CD010–CD012 EXECUTED**  
 Governance activation: 2026-09-16  
 Primary path: `research/content/`  
 Study prefix: `CD###`  
-Next new-study ID: `CD012`
+Next new-study ID: `CD013`
 
 ## Current level
 
@@ -19,11 +19,12 @@ Authority:
 - CD008 — integrated Foundation capstone;
 - CD009 — Stage 1 closure audit / PASS;
 - CD010 — Stage 2 forms/validation/error baseline;
-- **CD011 — error/warning/service-failure/recovery taxonomy**.
+- CD011 — error/warning/service-failure/recovery taxonomy;
+- **CD012 — empty/loading/pending/success/recovery lifecycle content system**.
 
 ## Product-language direction
 
-English-first source language for global release. Content architecture remains localization-ready. Specific locale work opens only when product/market need or transfer risk justifies it.
+English-first source language for global release. Content architecture remains localization-ready. Specific locale work opens only when product/market need or transfer risk justifies it. Korean is an optional later transfer locale, not a Foundation or Stage 2 blocker.
 
 ## Stage 1 closure
 
@@ -31,134 +32,111 @@ Canonical: `research/content/CD009-stage1-foundation-closure-audit.md`.
 
 Stage 1 PASS remains valid and bounded to Foundation evidence. Human comprehension/task evidence and production localization/runtime evidence are not included in the PASS claim.
 
-## CD010 — forms / validation / error baseline
+## CD010–CD011 retained baseline
 
-Canonical: `research/content/CD010-stage2-entry-forms-validation-error-baseline.md`.
+CD010: `research/content/CD010-stage2-entry-forms-validation-error-baseline.md`. Form content is a contract linking concept/purpose, stable label/question, accepted input, requiredness, point-of-need guidance, validation state, specific repair, preservation/recovery, programmatic relationship and localization context.
 
-Core result: form content is a contract linking concept/purpose, stable label/question, accepted input, requiredness, point-of-need guidance, validation state, specific repair message, preservation/recovery, programmatic relationship and localization context.
+CD011: `research/content/CD011-error-warning-service-failure-recovery-taxonomy.md`. Error is not one category; cause + certainty + agency + recovery distinguish validation, warning, business/permission blocks, conflict, pending, authoritative failure, outcome unknown, service unavailable and confirmed success. Known failure and outcome unknown remain non-collapsible; retry requires Interaction truth.
 
-Comparative practice retained **Stable Label + Point-of-Need Constraint + Specific Recovery** as the Stage 2 baseline control. Placeholder-led compact forms were rejected; rule-heavy instruction forms remain conditional rather than default.
+## CD012 — empty / loading / pending / success / recovery lifecycle
 
-## CD011 — error / warning / service failure / recovery taxonomy
-
-Canonical: `research/content/CD011-error-warning-service-failure-recovery-taxonomy.md`.
+Canonical: `research/content/CD012-empty-loading-pending-success-recovery-content-system.md`.
 
 ### New result
 
-`error` is no longer treated as one content category. CD011 classifies product states by **cause + certainty + user agency + recovery**:
-- validation error;
-- warning;
-- business-rule block;
-- permission block;
-- conflict;
-- pending;
-- authoritative failure;
-- outcome unknown;
-- service unavailable;
-- confirmed success.
+Lifecycle content is classified by product truth rather than visual component:
+- **empty / absence**;
+- **loading / preparation**;
+- **pending / unconfirmed commitment**;
+- **success / confirmed result**;
+- **recovery / available next action**.
 
-### Critical rule
+Empty is further separated into first-use, user-cleared, filter-empty, search-no-results, permission, unavailable/offline and meaningful-zero states. `No data` is rejected as a universal empty pattern because it can falsely claim absence when data is filtered, inaccessible or temporarily unavailable.
 
-> **Failure certainty determines language.**
+### Critical distinctions
 
-A known authoritative failure may state non-completion. An outcome-unknown state must not claim failure or success and must not expose blind retry when duplicate commitment could be harmful.
+1. **Loading is not pending.** Retrieval/preparation does not imply a user commitment; pending does.
+2. **Rendered is not ready.** W018's first-frame/data-visible/task-ready Chromium distinction transfers into Content: `Ready` is a capability claim, not a generic completion label.
+3. **Success is confirmation, not celebration.** Self-evident changes may need no extra message; routine confirmed commitment may need concise object-specific confirmation; stronger celebration is reserved for meaningful milestones.
+4. **Recovery is not synonymous with retry.** Edit, clear scope, resume, reconnect, verify, reconcile, request access, alternate path, undo and safe retry are different contracts.
 
-This directly transfers Interaction I002 rather than inventing network/retry semantics inside Content.
+### Lifecycle content contract v0.2
 
-### Comparative state practice
+Adds:
+- readiness level;
+- commitment certainty;
+- progress basis;
+- freshness/cache state when material;
+- primary/secondary recovery;
+- announcement priority;
+- variables/plural requirements;
+while retaining CD011 cause/certainty/agency/retry-safety fields.
 
-One `Save record` action was held constant across four truths:
-1. local validation failure;
-2. authoritative remote failure;
-3. outcome unknown after response loss;
-4. confirmed success.
+### Global/localization rule
 
-A generic `Something went wrong. Try again.` pattern was rejected because it collapses authoritative failure and outcome uncertainty and can create unsafe duplicate submission.
+Semantic state lives in keys/metadata rather than English grammar. Keep `empty.search`, `empty.filter`, `empty.first_use`, `pending.save`, `success.save` and analogous classes distinct even when English wording appears similar. Do not concatenate English fragments or make unsupported time promises such as `Almost done` / `just a moment`.
 
-### Warning rule
+### Evidence boundary
 
-Warning is not a softer error. It communicates a material consequence/risk while the action remains available. `Are you sure?` is insufficient when scope/consequence can be named.
-
-### State-content contract v0.1
-
-Consequential messages should specify:
-- state class;
-- object;
-- known fact;
-- uncertainty;
-- user agency;
-- consequence;
-- preserved intent/data;
-- available recovery;
-- retry safety;
-- dismissal meaning;
-- persistence duration;
-- visible/programmatic status relationship;
-- localizer context.
-
-Audit flags include state-class collapse, false failure/success, warnings without consequence, user blame for service failure, unsafe retry, dismissal ambiguity, color-only severity and fragmented localization messages.
+CD012 used authoritative-source checks, peer transfer, system synthesis, comparative practice and contradiction testing. It does **not** establish human comprehension, perceived speed, trust, screen-reader behavior, production localization quality or live-project improvement.
 
 ## Cross-specialist state
 
 ### Type
-Necessary form/state/recovery strings are operational stress inputs. Type pressure does not authorize semantic truncation.
+Necessary lifecycle/recovery strings, counts and literal identifiers are operational stress inputs. Type pressure does not authorize semantic truncation.
 
 ### Color
-State/severity meaning must survive color loss/transformation. Color reinforces only after semantic classification.
+Lifecycle meaning must survive color loss/transformation. Visual state mapping follows semantic classification.
 
 ### Layout / Interaction
-Interaction owns validation timing, accepted-input semantics, pending/commitment/conflict truth, retry safety, cancellation and recovery. Content preserves and explains those states.
+Interaction owns accepted/pending/confirmed/canceled/outcome-unknown truth, cancellation, retry safety and recovery mechanics. Content names and explains those truths.
 
 ### Web
-Web owns runtime association, focus, status delivery, persistence, browser validation, reflow and AT transfer. CD010–CD011 now provide semantic contracts for later executable transfer.
+W018 provides direct transfer evidence that first frame, data visibility and task readiness can differ. Web owns actual status delivery, focus, persistence, browser/network ambiguity, reflow and AT transfer.
 
 ### User Research / Human Factors
-Comprehension, repair success, trust, stress response, task time and preference remain human-evidence questions.
+Comprehension, recovery success, perceived latency, trust, stress response, task time and preference remain human-evidence questions.
 
-## Stage 2 gap map after CD011
+## Stage 2 gap map after CD012
 
 | Area | State |
 |---|---|
 | buttons/action labels | strong Foundation bridge; repeated Stage 2 practice still useful |
 | forms/questions/labels/helper text | **PRACTICE** |
-| validation/error/warning/recovery taxonomy | **PRACTICE — materially stronger** |
-| loading/pending/offline/success state systems | **NEXT MAJOR GAP** |
-| onboarding/progressive disclosure | OPEN |
-| empty states | OPEN |
-| search/filter/settings | OPEN |
+| validation/error/warning/recovery taxonomy | **PRACTICE — strong** |
+| empty/loading/pending/success/recovery lifecycle | **PRACTICE — strong** |
+| onboarding/progressive disclosure | **NEXT MAJOR GAP** |
+| search/filter/settings | PARTIAL bridge from CD012 empty-state causes; broader task-system work OPEN |
 | voice/tone system | OPEN; functional risk modulation bridge exists |
 | localization-ready patterns | strong bridge; repeated transfer practice needed |
 | complete multiple-solution system | OPEN for Stage 2 capstone |
 
 ## Active next queue
 
-1. **CD012 — empty / loading / pending / success / recovery content system**, integrating CD011 taxonomy with Interaction state truth.
-2. Onboarding + progressive disclosure in a larger professional workflow block.
-3. Search/filter/settings content.
-4. Voice/tone modulation after functional state language is stable.
-5. Localization-ready pattern transfer across multiple surfaces.
-6. Integrated Stage 2 capstone + closure audit only after surface coverage is sufficient.
-
-## Evidence boundary
-
-Stage 2 is **NOT PASSED**. Current evidence does not establish human comprehension/findability/task performance, actual AT behavior, locale-specific translation quality, production string governance, or live-project improvement.
+1. **CD013 — onboarding + progressive disclosure for a professional workflow**, including skip/resume/re-entry, novice/expert tension, minimum necessary instruction and localization-ready sequencing.
+2. Search/filter/settings content as task systems rather than isolated labels.
+3. Voice/tone modulation after functional lifecycle language is stable.
+4. Localization-ready pattern transfer across multiple surfaces.
+5. Integrated Stage 2 capstone with materially different complete content systems and defended selection.
+6. Stage 2 closure audit only after the explicit gate is evidenced.
 
 ## OPEN / dependencies
 
-- offline/multi-device conflict language using actual LogMate sync semantics;
+- real LogMate/MintTap freshness, sync, offline and recovery contracts;
+- offline/multi-device conflict language using actual LogMate semantics;
 - warning thresholds for high-consequence professional actions;
-- actual status persistence/dismissal behavior;
-- real LogMate/MintTap form/business constraints;
-- human repair/comprehension studies;
-- Web/native focus/announcement transfer;
-- production localization/string instrumentation and recovery metrics.
+- actual native/web status persistence and announcement behavior;
+- production localization/message-format and translator workflow;
+- human comprehension/recovery/perceived-latency studies;
+- production instrumentation linking state class to abandonment/retry/recovery outcomes.
 
 ## Latest checkpoint
 
 - Stage 1: **PASS**.
 - CD010: **STAGE 2 FORMS BASELINE EXECUTED**.
 - CD011: **STATE TAXONOMY + COMPARATIVE PRACTICE EXECUTED**.
+- CD012: **LIFECYCLE CONTENT SYSTEM + COMPARATIVE PRACTICE EXECUTED**.
 - Stage 2: **PRACTICE / NOT PASSED**.
 - Human validation: **NOT CLAIMED**.
 - Production runtime/localization validation: **NOT CLAIMED**.
-- Next Content study: **CD012**.
+- Next Content study: **CD013 — onboarding + progressive disclosure**.
