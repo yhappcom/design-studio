@@ -1,27 +1,27 @@
 # Layout, Spatial & Interaction Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / I020 RESUMPTION SCENT + L024 CONTEXT PRIORITY READY**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / I021 AUTHORITY-STALENESS + L025 SPATIAL PRIORITY READY**
 Governance sync: 2026-09-16
 Canonical paths: `research/layout/`, `research/interaction/`
-Active studies: L022–L024, I018–I020
+Active studies: L023–L025, I019–I021
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-I020 extends interruption/resumption from state persistence to safe information scent: a returning surface must expose object identity, operation correlation where available, authoritative certainty, consequence, conflict, safe action and a history/detail path without silently reconstructing missing certainty. L024 translates that oracle into a spatial priority and failure taxonomy for association, priority, reachability, occlusion and density under responsive/zoom/localization stress.
+I021 identifies stale-but-plausible resumption as a separate interaction failure: presentation restored, authority checked, freshness known, authority unavailable and conflict are distinct states. Route/history restoration does not prove authoritative freshness, and actions whose safety depends on current state remain blocked until the product contract permits them. L025 maps this truth to a spatial priority stack: identity → freshness/certainty → consequence/conflict → safe action → history/reconciliation → secondary metadata.
 
-These diagnostics can identify structural risk but do not establish perceived workload, discoverability, trust or comprehension. Browser/product and human evidence remain OPEN.
+These deterministic diagnostics expose contradictions but do not establish perceived salience, workload, trust or comprehension. Browser/product and human evidence remain OPEN.
 
 ## Active queue
-1. Execute I020/L024 on W033 product-like resumption routes with shared run IDs.
-2. Obtain production idempotency/deduplication/persistence contracts before retry-safe claims.
-3. Execute actual 200% zoom, focus/overlay, localized expansion and keyboard-reduced viewport geometry where supported.
+1. Execute I021/L025 on W034 restoration/cache/authority scenarios with shared run IDs.
+2. Obtain production idempotency/deduplication/persistence/freshness contracts before retry/current-state claims.
+3. Execute actual 200% zoom, focus/overlay, localized expansion and reduced visual viewport geometry where supported.
 4. Add native Flutter transfer only on executable app surface.
 5. Keep AT, physical-device, discoverability, interruption workload and human task evidence OPEN.
 
 ## HANDOFFS
-C033 consumes state-cue/visibility evidence; W033 owns browser provenance; CD039 maps resumption/retrieval content; Type supplies custom metrics only after T021.
+C034 consumes state-cue/visibility evidence; W034 owns browser restoration provenance; CD040 maps freshness/staleness/conflict language; Type supplies custom metrics only after T021.
 
 ## Evidence boundary
 No Layout/Interaction Stage 3 PASS, browser geometry PASS, production-backend PASS, AT, physical-device or human PASS is claimed.
