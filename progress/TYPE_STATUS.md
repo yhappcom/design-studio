@@ -1,6 +1,6 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / LOGMATE TYPE IDENTITY PRIORITY / T021 R2 DRAWING GATE FAIL**  
+Operating state: **ACTIVE — STAGE 2 PRACTICE / LOGMATE TYPE IDENTITY PRIORITY / T021 R2 EXACT RASTER DRAWING GATE FAIL**  
 Governance sync: 2026-09-16  
 Primary path: `research/type/`  
 Next new-study ID: `T022` only after T021 family/drawing/spacing/operational evidence is sufficiently stable
@@ -13,76 +13,74 @@ Authority: T019 for Stage 1; T020 for Stage 2 entry.
 
 ## T021 evidence state
 
-Canonical CI review: `research/type/T021-r2-canonical-ci-and-gate-review.md`.
+Canonical CI review: `research/type/T021-r2-canonical-ci-and-gate-review.md`.  
+Exact raster critique: `research/type/T021-r2-exact-raster-critique.md`.
 
-The prior exact-source M metrics/construction blocker is **RESOLVED**. Commit `340705130357eed2d715439bec1577ed94d40561` repaired repertoire/metrics/construction consistency and the exact repository generator executed successfully on GitHub-hosted CI.
+The prior exact-source M metrics/construction blocker is **RESOLVED**. Exact repository R2 builds on GitHub-hosted CI with bounded required non-space corpus coverage **36/36**, no missing characters, kerning OFF, and 14/17/24px measurements.
 
-Current engineering evidence:
-- exact repository generator: **PASS on clean CI**;
-- bounded required non-space corpus coverage: **36/36 PASS**;
-- intended-size advance measurement: **EXECUTED at 14/17/24px**;
-- kerning: **OFF**;
-- exact-source build/repertoire blocker: **CLOSED**.
+Workflow run `35041942223` on commit `eeb618682ba56b8bb762669f1fb401806e3eecef` additionally executed a deterministic raster-proof step and uploaded the exact R2 TTF, JSON and 14/17/24px specimen PNGs. Artifact `10425870809` has digest `sha256:43304420f417126c883309248f04bd63b66af9b1e1920d2788ebe2e94658c765`.
 
-Latest adversarial drawing audit:
+The exact 17px and 24px specimens were directly inspected. The drawing gate is **FAIL**, not merely OPEN. Dominant defects are rectangular/debug-like round and bowl vocabulary, immature seven-segment-like figures, weak family coherence between capitals/lowercase, and construction extremity in ambiguity controls. These are DRAWING defects and must not be compensated with spacing/kerning.
+
+Existing adversarial source audit remains canonical and complementary:
 - `research/type/T021-r2-structural-collision-review.md`;
 - `research/type/T021-r2-structural-collision-audit.py`;
 - `research/type/T021-r2-structural-collision-audit-results.json`.
 
-The R2 source audit found:
-- `5` and `S` use the **same normalized five-element construction recipe** and differ primarily by width;
-- `D`, `O`, and `0` share the same broad rectangular-ring topology at this construction abstraction, leaving `0/O` structurally weak for an explicit ambiguity control;
-- `1/I/l` retain materially different source construction signatures;
-- `8/B` retain materially different source construction signatures.
-
-This is static source/topology evidence, not human-recognition evidence. Nevertheless the literal `5S` ambiguity control makes the `5/S` construction collapse sufficient to keep the current drawing gate at **FAIL** rather than merely OPEN.
+It found `5/S` normalized construction collapse and broad `D/O/0` rectangular-ring weakness, while `1/I/l` and `8/B` retain materially different source signatures. The fresh raster evidence independently confirms that the current ambiguity/figure system is not optically mature.
 
 ## Evidence chain
 
-`declared repertoire → complete metric map → explicit glyph construction → executable build → cmap coverage → drawing validity → intended-size raster → general spacing → pair residual → kerning`
+`declared repertoire → complete metric map → explicit glyph construction → executable build → cmap coverage → deterministic intended-size raster → drawing validity → general spacing → pair residual → kerning`
 
-The chain now passes through encoded coverage but stops at drawing validity.
+The chain now has direct evidence through intended-size raster production and stops at **drawing validity FAIL**.
+
+## Current LogMate control boundary
+
+Fresh audit of current `yhappcom/logmate` `main` found font assets `NotoSansKR-wght.ttf`, `Roboto-Regular.ttf`, and `Roboto-Medium.ttf`. Current `pubspec.yaml` declares only `LogMateNotoSansKR` and `LogMateRoboto`; no `LogMateRobotoMono` asset/family is present on current main.
+
+Therefore proportional Roboto is the current-main product control. Any historical Roboto Mono experiment must remain historical unless a specific branch/artifact is deliberately restored. Generic mono must not be mislabeled as a current product control.
 
 ## Stage 2 matrix
 
 | Requirement | Current state |
 | --- | --- |
-| coherent glyph family | **PRACTICE / FAIL at current R2 drawing gate; 5/S structural collapse found** |
-| spacing/control strings | **PRACTICE; measured advances exist, optical/base-spacing judgment blocked by redraw** |
+| coherent glyph family | **PRACTICE / FAIL at R2 drawing gate; exact raster + source collision evidence agree** |
+| spacing/control strings | **PRACTICE; exact advances/raster exist, optical/base-spacing judgment blocked by redraw** |
 | kerning classes/exceptions | **OPEN / BLOCKED** |
-| figure styles | **PRACTICE; equal-advance R2 figures measured, proportional-vs-tabular decision deferred** |
+| figure styles | **PRACTICE; equal-advance geometry measured but current figure drawings FAIL; proportional-vs-tabular decision deferred** |
 | diacritics/punctuation coherence | **PRACTICE; encoded/executable evidence exists, optical quality OPEN** |
 | weight/width relationships | **PARTIAL / STRONG BRIDGE** |
 | interpolation fundamentals | **SUPPORTED FOR ENTRY** |
-| screen rendering/small-size compensation | **PRACTICE; deterministic R2/R3 specimen artifact still required** |
-| typography across product roles | **PARTIAL / STRONG BRIDGE** |
-| multiple solutions + defended selection | **PRACTICE; B direction remains provisional, final identity selection OPEN** |
+| screen rendering/small-size compensation | **PRACTICE — deterministic 14/17/24 R2 artifact EXECUTED; drawing quality FAIL** |
+| typography across product roles | **PARTIAL / STRONG BRIDGE; current-main proportional Roboto control verified** |
+| multiple solutions + defended selection | **PRACTICE; B/R2 rejected as product identity candidate, retained as falsification/control evidence** |
 
 ## Active next queue — large block only
 
-Do not report after one micro-step. The next Type block should proceed through as many linked gates as executable:
+Do not report after one micro-step. Next Type block should proceed through as many linked gates as executable:
 
-1. produce **R3** with construction-level separation of `5/S`;
-2. strengthen `0/O` distinction without relying on color/context;
-3. preserve or improve `1/I/l` and `8/B` distinction;
-4. keep kerning OFF;
-5. emit deterministic 14/17/24px specimen images covering ambiguity controls + airports + identifiers + numeric/time + spacing strings;
-6. execute the exact repository generator/CI path and retain TTF + JSON + specimen evidence;
-7. critique drawing at all intended sizes and revise again in the same block if technically possible;
-8. only after drawing validity, audit general spacing;
-9. enumerate only residual pair-specific problems as future kerning candidates;
-10. compare accepted candidate against proportional Roboto and exact `LogMateRobotoMono` only when that exact artifact is available;
-11. close T021 only if its contract is actually satisfied; then open T022.
+1. produce **R3** within the same bounded repertoire; do not add breadth;
+2. replace rectangular round/bowl grammar with credible curved/optically corrected O/0/C/G/D/B/R/U forms;
+3. separate `5/S` at construction and raster levels;
+4. redesign figures, especially `1`, `8`, and seven-segment-like forms, while preserving useful operational alignment where justified;
+5. improve lowercase n/o relationship to the capital system;
+6. keep kerning OFF;
+7. emit deterministic 14/17/24 specimens and execute exact CI;
+8. inspect exact artifacts and revise again in the same block if repairable;
+9. only after drawing validity, revise sidebearings/general spacing from repeated-context evidence;
+10. enumerate only true pair-specific residuals as T022 kerning candidates;
+11. close T021 only if its contract is satisfied; then open T022 immediately.
 
 ## Evidence boundary
 
-No R2 drawing/raster PASS is claimed. No human/native/browser recognition evidence is simulated. Exact LogMate mono comparison remains OPEN. Static construction differentiation is necessary but not sufficient for human recognition.
+No R2 drawing PASS is claimed. No human/native/browser recognition evidence is simulated. Static construction differentiation and designer inspection are necessary evidence but not human recognition/error-rate evidence.
 
 ## HANDOFFS
 
-- Layout/Interaction: retain literal ambiguity controls; do not compensate for glyph defects by globally loosening dense operational layouts.
-- Web: custom-font loading success is not drawing validity; browser transfer waits for a structurally stable candidate.
-- Content: do not rewrite necessary identifiers to hide glyph ambiguity.
+- Layout/Interaction: keep product column geometry reversible; do not compensate for R2 glyph defects by globally loosening layouts.
+- Web: exact artifact reproducibility is established; browser transfer waits for a stable drawing candidate.
+- Content: preserve literal operational identifiers and ambiguity corpus.
 - Color: glyph identity must not depend on color.
 
 ## Latest checkpoint
@@ -91,8 +89,9 @@ No R2 drawing/raster PASS is claimed. No human/native/browser recognition eviden
 - T020: **COMPLETE as Stage 2 entry**.
 - T021 exact canonical source reproducibility: **PASS on CI**.
 - T021 bounded encoded coverage: **36/36 PASS**.
-- T021 R2 drawing gate: **FAIL — 5/S normalized construction collision; 0/O structural weakness**.
-- deterministic R2/R3 intended-size specimen artifact: **OPEN**.
+- deterministic intended-size specimen: **14/17/24 EXECUTED and retained as CI artifact**.
+- T021 R2 drawing gate: **FAIL — exact raster + 5/S source collision + 0/O weakness**.
+- current LogMate main control: **proportional Roboto + Noto Sans KR fallback; no bundled Roboto Mono**.
 - general spacing: **BLOCKED by drawing gate**.
 - T022: **BLOCKED**.
 - Stage 2: **NOT PASSED**.
