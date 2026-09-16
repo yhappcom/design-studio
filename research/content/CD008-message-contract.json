@@ -1,0 +1,179 @@
+{
+  "study": "CD008",
+  "artifact": "selected content architecture control",
+  "language": "en",
+  "product_context": "bounded professional record import and duplicate-review workflow",
+  "interaction_contract": {
+    "duplicate_status": "possible_duplicate_not_confirmed_duplicate",
+    "precommit_choices": [
+      "keep_existing",
+      "replace_existing",
+      "keep_both"
+    ],
+    "commit_state_sequence": [
+      "idle",
+      "pending",
+      "confirmed",
+      "known_failure",
+      "outcome_unknown"
+    ],
+    "retry_policy": {
+      "known_failure": "allowed_only_when_interaction_contract_confirms_safe_retry",
+      "outcome_unknown": "verify_before_retry"
+    }
+  },
+  "entries": [
+    {
+      "id": "import.review.title",
+      "role": "heading",
+      "concept": "possible_duplicate_review",
+      "state": "review_required",
+      "text": "Review possible duplicates",
+      "scope": "records flagged as possible matches",
+      "consequence": "no data change",
+      "localizer_context": "Heading after parsing; records are possible matches, not confirmed duplicates.",
+      "accessible_name": null,
+      "variables": {}
+    },
+    {
+      "id": "import.review.summary",
+      "role": "instruction",
+      "concept": "possible_duplicate_review",
+      "state": "review_required",
+      "text": "We found {count} records that may match existing records. Review them before import.",
+      "scope": "flagged records",
+      "consequence": "review is required before commit",
+      "localizer_context": "count = number of records flagged as possible duplicates; 'may match' expresses uncertainty.",
+      "accessible_name": null,
+      "variables": {
+        "count": "number of flagged records"
+      }
+    },
+    {
+      "id": "import.choice.keep_existing",
+      "role": "action",
+      "concept": "duplicate_resolution_keep_existing",
+      "state": "review_required",
+      "text": "Keep existing",
+      "scope": "existing record remains authoritative; incoming possible match is not imported as replacement",
+      "consequence": "incoming possible match does not replace existing record",
+      "localizer_context": "Resolution choice for one possible duplicate pair.",
+      "accessible_name": "Keep existing",
+      "variables": {}
+    },
+    {
+      "id": "import.choice.replace_existing",
+      "role": "action",
+      "concept": "duplicate_resolution_replace_existing",
+      "state": "review_required",
+      "text": "Replace existing",
+      "scope": "selected existing record",
+      "consequence": "incoming record replaces the existing record when import is committed",
+      "localizer_context": "Resolution choice; does not execute replacement until final import commit.",
+      "accessible_name": "Replace existing",
+      "variables": {}
+    },
+    {
+      "id": "import.choice.keep_both",
+      "role": "action",
+      "concept": "duplicate_resolution_keep_both",
+      "state": "review_required",
+      "text": "Keep both",
+      "scope": "both records",
+      "consequence": "both records will remain after import",
+      "localizer_context": "Resolution choice for one possible duplicate pair.",
+      "accessible_name": "Keep both",
+      "variables": {}
+    },
+    {
+      "id": "import.confirm.action",
+      "role": "action",
+      "concept": "import_commit",
+      "state": "ready_to_commit",
+      "text": "Import {count} records",
+      "scope": "selected records and reviewed duplicate resolutions",
+      "consequence": "starts import; does not assert completion",
+      "localizer_context": "Primary commit action; count = records selected for import after review.",
+      "accessible_name": "Import {count} records",
+      "variables": {
+        "count": "records selected for import"
+      }
+    },
+    {
+      "id": "import.pending.status",
+      "role": "status",
+      "concept": "import_commit",
+      "state": "pending",
+      "text": "Importing {count} records…",
+      "scope": "current import operation",
+      "consequence": "completion not yet confirmed",
+      "localizer_context": "Visible/programmatic pending status; do not translate as completed.",
+      "accessible_name": null,
+      "variables": {
+        "count": "records in current import operation"
+      }
+    },
+    {
+      "id": "import.success.status",
+      "role": "status",
+      "concept": "import_commit",
+      "state": "confirmed",
+      "text": "{count} records imported",
+      "scope": "confirmed imported records",
+      "consequence": "authoritative completion is known",
+      "localizer_context": "Success status shown only after authoritative confirmation.",
+      "accessible_name": null,
+      "variables": {
+        "count": "confirmed imported records"
+      }
+    },
+    {
+      "id": "import.failure.status",
+      "role": "status",
+      "concept": "import_commit",
+      "state": "known_failure",
+      "text": "Import failed.",
+      "scope": "current import operation",
+      "consequence": "authoritative failure is known",
+      "localizer_context": "Failure is confirmed; separate recovery action depends on Interaction retry contract.",
+      "accessible_name": null,
+      "variables": {}
+    },
+    {
+      "id": "import.failure.retry",
+      "role": "action",
+      "concept": "import_retry",
+      "state": "known_failure",
+      "text": "Try import again",
+      "scope": "same reviewed import intent",
+      "consequence": "repeats import only when Interaction confirms the failed attempt did not commit and retry is safe",
+      "localizer_context": "Show only when retry is behaviorally safe after a known failure.",
+      "accessible_name": "Try import again",
+      "variables": {}
+    },
+    {
+      "id": "import.unknown.status",
+      "role": "status",
+      "concept": "import_commit",
+      "state": "outcome_unknown",
+      "text": "We couldn’t confirm whether the import finished.",
+      "scope": "current import operation",
+      "consequence": "success and failure are both unconfirmed",
+      "localizer_context": "Outcome-unknown state; must not be translated as failure.",
+      "accessible_name": null,
+      "variables": {}
+    },
+    {
+      "id": "import.unknown.next_step",
+      "role": "instruction",
+      "concept": "import_verify_before_retry",
+      "state": "outcome_unknown",
+      "text": "Check imported records before starting another import.",
+      "scope": "authoritative record list",
+      "consequence": "verify prior outcome before any new commit attempt",
+      "localizer_context": "Recovery instruction for outcome-unknown state; avoids blind retry.",
+      "accessible_name": null,
+      "variables": {}
+    }
+  ]
+}
