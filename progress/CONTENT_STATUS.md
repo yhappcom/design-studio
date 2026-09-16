@@ -1,10 +1,10 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 FOUNDATION / CD001–CD003 EXECUTED / CD004 NEXT**  
+Operating state: **ACTIVE — STAGE 1 FOUNDATION / CD001–CD004 EXECUTED / CD005 NEXT**  
 Governance activation: 2026-09-16  
 Primary path: `research/content/`  
 Study prefix: `CD###`  
-Next new-study ID: `CD004`
+Next new-study ID: `CD005`
 
 ## Current level
 
@@ -61,157 +61,151 @@ A controlled ambiguous network-outcome exercise rejected a shorter but semantica
 
 Canonical: `research/content/CD002-user-needs-mental-models-terminology-naming.md`
 
-CD002 extends semantic fidelity from single messages to product-wide concept and terminology architecture.
-
-### Key additions
-
+Key additions:
 - user needs are task/outcome based and should not be confused with proposed features;
-- “mental model” is not accepted as an intuition shortcut: Design model, system image and user model are distinct, and HCI literature uses the mental-model construct diversely;
+- “mental model” is not accepted as an intuition shortcut: Design model, system image and user model are distinct;
 - concept and designation are separate, supporting concept-first terminology analysis;
 - same concept/function should normally preserve a stable designation;
 - different concepts should remain distinct when their action, consequence, recovery, persistence or interpretation differs;
-- consistency means stable concept mapping, not mechanically identical strings;
-- domain-native expert vocabulary can coexist with plain language when it is genuinely audience-native and task-critical;
-- internal implementation terms, common words used with unusual product meanings and product-created neologisms require explicit justification.
+- domain-native expert vocabulary can coexist with plain language when genuinely audience-native and task-critical;
+- internal implementation terms and product-created neologisms require explicit justification.
 
-### CD002 original practice
+Original practice rejected concept collision and false simplification in a professional data-import vocabulary system.
 
-A synthetic professional data-import scenario compared one-word simplification, concept-preserving terminology and friendlier generic wording.
-
-- collapsing file/event/result under `Import` was **REJECTED** for concept collision;
-- `File / Import / Record / Possible duplicate` was **KEPT as a semantic control**, not proven final user wording;
-- `Document / Add data / Item / Match / Fix matches` was **REJECTED / REWORKED** where common words distorted fixed product facts.
-
-### CD002 non-human audit v0.1
-
-Can flag:
-- `COLLISION`;
-- `DRIFT`;
-- `INTERNALISM`;
-- `AUDIENCE EVIDENCE NEEDED`;
-- `LOCALIZATION REVIEW NEEDED`;
-- `HUMAN VALIDATION NEEDED`.
-
-It cannot measure comprehension, recall, preference, trust, task time or error rate.
+Terminology audit v0.1 can flag `COLLISION`, `DRIFT`, `INTERNALISM`, audience/localization/human-evidence needs, but cannot measure comprehension or performance.
 
 ## CD003 — action labels, command grammar and consequence clarity
 
 Canonical: `research/content/CD003-action-labels-command-grammar-consequence-clarity.md`
 
-CD003 applies CD001/CD002 to commands and control labels.
-
-### Key source-grounded result
-
-Apple, GOV.UK and Microsoft all support action labels that clearly communicate purpose, but GOV.UK provides a particularly useful semantic distinction:
-- `Continue` when no save occurs;
-- `Save and continue` when data is persisted;
-- `Save and come back later` when persistence supports leaving/resuming;
-- `Confirm and send` vs `Accept and send` when legal/commitment semantics differ.
-
-This supports a stronger rule than “start buttons with verbs”:
+Key result:
 
 > **Label wording must reflect the real command contract when persistence, commitment, object scope, destructive consequence or temporal outcome changes.**
 
-### Command semantic layers
+CD003 separates command, object/scope, immediate behavior, persistence, outcome state and recoverability.
 
-CD003 separates:
-1. command;
-2. object/scope;
-3. immediate product behavior;
-4. commitment/persistence;
-5. outcome state;
-6. recoverability.
-
-A label need not contain all six, but the interface must not misrepresent them.
-
-### Action-label principles now adopted provisionally
-
-- short conventional labels are acceptable when risk/context ambiguity is low;
-- specificity should rise when object, persistence, commitment, destructive scope or external side effect matters;
+Provisional rules:
+- specificity rises when object/persistence/commitment/destructive scope/external side effect matters;
 - `Save`, `Submit`, `Publish`, `Delete`, `Remove`, `Archive`, `Retry` are not interchangeable by default;
-- an action label describes what the user initiates/authorizes, not an unconfirmed completed outcome;
-- `Retry` is unavailable as a Content choice until Interaction establishes that retry is behaviorally safe;
-- destructive meaning must survive without red styling alone;
-- visible label and accessible name must preserve the same command identity.
+- action labels describe what the user initiates/authorizes, not an unconfirmed completed outcome;
+- `Retry` requires Interaction evidence that retry is behaviorally safe;
+- visible and accessible names must preserve the same command identity.
 
-### CD003 original practice
+Original practice executed four controlled command contracts and rejected false persistence, hidden deletion scope and premature completion wording.
 
-Four controlled command contracts were tested:
+Command audit v0.1 can flag `FALSE PERSISTENCE`, `FALSE COMPLETION`, `OBJECT AMBIGUITY`, `CONSEQUENCE HIDING`, `UNSAFE RETRY LANGUAGE`, `TERM COLLISION`, `ACCESSIBLE-NAME DRIFT` and human-validation needs.
 
-1. advance without persistence → `Save and continue` **REJECTED**, `Continue` retained as semantic control;
-2. durable draft save + advance → `Save and continue` retained as semantic control;
-3. permanent record deletion among multiple scopes → generic `Confirm` **REJECTED**, `Delete record` retained as semantic control;
-4. asynchronous export generation → `Export ready` and premature `Download` rejected, `Create export` retained until completion creates a real download action.
+## CD004 — plain language, scanning, information order and sufficiency
 
-The result is not “always use longer labels.” The current Content rule is:
+Canonical: `research/content/CD004-plain-language-scanning-information-order-sufficiency.md`
 
-> **Use the smallest amount of language that preserves the distinctions the user is actually authorizing.**
+CD004 moves beyond the shortcut “shorter is better.”
 
-### CD003 non-human command audit v0.1
+### Key source/evidence additions
+
+- ISO 24495-1 provides an international plain-language frame that goes beyond sentence length and vocabulary simplification;
+- GOV.UK supports user-language, front-loading, scanning and removing unnecessary words while warning that an over-explained interface may itself need redesign;
+- W3C cognitive-accessibility guidance supports clear words, short logical chunks, descriptive headings and separated instructions, while remaining supplemental rather than a universal word-count law;
+- controlled health-communication studies show that plain-language revisions can improve comprehension but effects vary by content/audience;
+- readability-formula research shows word/sentence length and grade scores are incomplete proxies for actual comprehension.
+
+### Foundation correction introduced by CD004
+
+Content now separates:
+- **clarity** — ambiguity/interpretability;
+- **brevity** — amount of language;
+- **sufficiency** — whether enough task-relevant information is present.
+
+Current rule:
+
+> **Optimize for minimum sufficient content, not minimum character count.**
+
+CD004 also classifies information as:
+- required-before-action;
+- helpful-at-point-of-need;
+- background/explanatory.
+
+Required-before-action information must not be hidden merely to reduce density.
+
+### Original practice
+
+A controlled import-state message compared:
+- compressed but insufficient wording — **REJECT**;
+- complete but poorly ordered bureaucratic wording — **REWORK**;
+- front-loaded, scoped, minimum-sufficient content — **KEEP AS SEMANTIC/INFORMATION-ORDER CONTROL**.
+
+No human comprehension/finding claim is made.
+
+### Information-sufficiency audit v0.1
 
 Can flag:
-- `FALSE PERSISTENCE`;
-- `FALSE COMPLETION`;
-- `OBJECT AMBIGUITY`;
-- `CONSEQUENCE HIDING`;
-- `UNSAFE RETRY LANGUAGE`;
-- `TERM COLLISION`;
-- `ACCESSIBLE-NAME DRIFT`;
-- `HUMAN VALIDATION NEEDED`.
+- `MISSING OBJECT / STATE / ACTION / CONSEQUENCE / CONDITION / SCOPE`;
+- `LATE TASK FACT`;
+- `GENERIC HEADING`;
+- `MULTI-TOPIC CHUNK`;
+- `FRAGMENTED RELATIONSHIP`;
+- `INTERNAL JARGON`;
+- `UNEXPLAINED UNCOMMON TERM`;
+- `FALSE SIMPLIFICATION`;
+- `REDUNDANT PREFACE`;
+- readability/audience/human/localization validation needs.
 
-## Cross-specialist state after CD003
+It cannot prove scan pattern, comprehension, reading speed, trust, preference or task performance.
+
+## Cross-specialist state after CD004
 
 ### Type
-Semantically necessary terms/labels must become actual Type/layout stress strings; they must not be shortened merely to preserve preferred geometry.
+Semantically necessary headings, conditions and warnings become real Type stress content. Wrapping/geometry pressure is not permission to delete necessary meaning. Current Type live-project work remains Stage 2 PRACTICE with LogMate identity priority.
 
 ### Color
-Destructive/warning state can be reinforced visually but cannot depend on color alone. No Color contradiction introduced.
+Visual salience can reinforce information priority, but meaning/findability cannot depend on authored hue alone.
 
 ### Layout / Interaction
-Highest-overlap dependency remains active. Interaction owns actual state, persistence, reversibility, retry safety and consequence; Content cannot invent these through wording.
+Content now distinguishes required-before-action vs point-of-need vs background information. Layout owns spatial realization; Interaction owns whether information is prerequisite to a safe/valid action.
 
 ### Web
-Future transfer must validate visible label/accessibility-name identity, correct semantic controls, keyboard/focus behavior, pending/disabled/busy states and consequential duplicate activation.
+W017’s preservation of visible labels under enlargement aligns with CD004. Future Web transfer should stress minimum-sufficient content under narrow width, zoom/enlargement, localization and runtime states.
 
 ## Evidence boundary
 
-Current Content evidence now includes:
+Current Content evidence includes:
 - authoritative/primary source study;
-- historical/contemporary HCI conceptual evidence;
+- HCI/conceptual evidence;
+- controlled empirical evidence from adjacent communication domains;
 - cross-specialist reuse;
-- three original structured practice blocks;
-- provisional terminology and command audits that can reject semantic falsehoods without pretending to measure human comprehension.
+- four original structured practice blocks;
+- provisional terminology, command and information-sufficiency audits.
 
 NOT established yet:
-- human comprehension;
-- task completion effects;
+- human comprehension/findability/task completion;
 - terminology recall;
 - action-label speed/error effects;
 - trust/confidence effects;
 - actual expert-domain vocabulary recognition;
-- Korean command-language behavior;
-- Korean↔English terminology equivalence;
+- Korean information-order/action-language behavior;
+- Korean↔English equivalence;
+- screen-reader/AT user outcomes;
 - production string-governance behavior;
 - live-project improvement.
 
 ## Active next queue
 
-1. **CD004 — plain language, scanning, information order and sufficiency trade-offs.** Move beyond “shorter is better” and establish when front-loading, chunking, sentence complexity and necessary detail improve or damage task communication.
-2. CD005 — accessible/input-neutral interface language and non-visual reference failures.
-3. Add design-history/precedent literacy specific to content design before Foundation closure.
-4. Add stronger Korean-language and bilingual evidence.
-5. Extend reproducible non-human checks without treating formulas/model critique as human evidence.
-6. Run a Stage 1 gap/closure audit only after sufficient original practice exists.
-7. Only after Foundation evidence is strong enough, move into Stage 2 surfaces such as forms, errors, onboarding, empty states and voice/tone systems.
+1. **CD005 — accessible/input-neutral language and non-visual reference failures.** Establish how wording survives screen-reader, keyboard, pointer/touch, forced-colors, magnification and modality changes without claiming AT user evidence.
+2. Add design-history/precedent literacy specific to Content Design before Foundation closure.
+3. Add stronger Korean-language/bilingual evidence, including information order and professional-domain terminology.
+4. Extend reproducible non-human checks without treating formulas/model critique as human evidence.
+5. Run Stage 1 gap/closure audit only after the remaining Foundation evidence is present.
+6. Only after Foundation closure should Stage 2 surface-pattern work begin (forms, errors, onboarding, empty states, voice/tone systems).
 
 ## OPEN / dependencies
 
-- information scent, recognition and comprehension evidence;
-- plain-language evidence beyond practitioner rules;
+- input-neutral and non-visual language foundations;
 - Korean word order/action-label transfer;
-- research methods for expert-domain terminology elicitation;
+- expert-domain abbreviation/terminology elicitation;
 - terminology governance for professional-domain products;
-- cross-surface command mapping for mobile/web/notifications/voice;
+- appropriate human methods separating findability, comprehension, recall and actionability;
+- progressive-disclosure validation where omission cost is asymmetric;
+- cross-surface command/content mapping for mobile/web/notifications/voice;
 - later human testing protocol once live projects support it.
 
 ## Latest checkpoint
@@ -220,9 +214,10 @@ NOT established yet:
 - Canonical path/status: **ACTIVE**.
 - Five-stage progression: **DEFINED**.
 - CD001: **EXECUTED** — language-as-interface semantic contract.
-- CD002: **EXECUTED** — user needs, mental-model caution, terminology architecture, original practice, terminology audit v0.1.
-- CD003: **EXECUTED** — command semantics, consequence clarity, original practice, action audit v0.1.
-- Original practice/critique blocks: **3 EXECUTED**.
+- CD002: **EXECUTED** — user needs, mental-model caution, terminology architecture.
+- CD003: **EXECUTED** — command semantics and consequence clarity.
+- CD004: **EXECUTED** — plain language, scanning, information order and minimum-sufficient content.
+- Original practice/critique blocks: **4 EXECUTED**.
 - Human validation: **NOT CLAIMED**.
-- CD004: **NEXT**.
+- CD005: **NEXT**.
 - Stage 1: **NOT PASSED**.
