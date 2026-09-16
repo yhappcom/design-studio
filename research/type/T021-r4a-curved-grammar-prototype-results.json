@@ -1,0 +1,19 @@
+{
+  "revision": "R4A-curved-grammar-prototype",
+  "execution": "local fontTools FontBuilder + TTGlyphPen + Pillow/FreeType deterministic raster",
+  "upm": 1000,
+  "kerning": false,
+  "scope": ["S","B","D","O","C","G","R","U","n","o","0","5","1","8"],
+  "sizes_px": [14,17,24],
+  "strings": ["S5 5S SSS 555","0O O0 000 OOO","B8 8B BBB 888","BDOCGRU","nono noon","S0B8 5O18"],
+  "measurements_px": {
+    "14": [101.5469,103.6562,103.6562,60.8125,67.5,71.8594],
+    "17": [123.2344,125.8125,125.8125,73.8281,82.0,87.2031],
+    "24": [173.9688,177.5625,177.5625,104.125,115.625,123.0938]
+  },
+  "raster_inspection_17px": {
+    "verdict": "REJECT as R4 canonical candidate",
+    "finding": "Quadratic-curve substitution removed some rectangular primitives but produced compressed/malformed round/bowl rhythm and did not establish a coherent family. S/5 and 0/O remain structurally distinct, but curve presence alone did not improve family validity enough to pass the drawing gate."
+  },
+  "evidence_boundary": "Prototype/raster designer critique only; no human recognition, native/browser, physical-device or production claim."
+}
