@@ -1,29 +1,27 @@
 # Layout, Spatial & Interaction Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / L016 + I011 CHROMIUM TRANSFER PARTIAL PASS**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / L017 + I012 SIX-STATE CHROMIUM TRANSFER PASS (BOUNDED)**
 Governance sync: 2026-09-16
 Canonical paths: `research/layout/`, `research/interaction/`
-Next IDs: L017 / I012
+Next IDs: L018 / I013
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
-Authority: L011 entry; L012–L015 spatial systems/oracles; I007–I010 state/recovery systems/oracles; **L016/I011 W023 runtime reconciliation**.
-
 ## Latest evidence
-W023 supplied actual Chromium transfer. L016 confirmed bounded responsive rules, no horizontal overflow at strict 320 CSS px for the expanded fixture, measured Edit focus visibility and LTR literal direction under RTL. The tablet list-hiding behavior is technically confirmed but remains a product-IA question, not a positive UX verdict.
+L017 consumes W024's 18 state×width executions: pending/confirmed/failure/unknown/offline/conflict at 1280/390/320 CSS px all avoid body/status horizontal overflow; the sampled sticky Edit focus remains fully visible under the combined media run.
 
-I011 confirmed the bounded certainty invariant: outcome unknown keeps blind retry disabled; Check record verifies certainty; confirmed state then enables retry. This is runtime system evidence, not user comprehension/discoverability evidence.
+I012 validates the complete deterministic action invariant: pending→none, confirmed→Edit, failure→Try again, unknown→Check record, offline→View local record, conflict→Compare versions. This extends I011 beyond unknown/confirmed without collapsing certainty states.
 
 ## Active queue
-1. Extend integrated runtime to all canonical states: pending, failure, offline/stale, conflict.
-2. Measure broader focus/recovery geometry and exact component adjacency.
+1. Test overlays/keyboard/safe-area and actual 200% zoom when executable.
+2. Bind future true backend/network outcomes to I012 states; deterministic fixtures are not backend truth.
 3. Keep numeric width freeze blocked until T022 Track A metrics.
 4. Add native Flutter transfer only on executable app surface.
 5. Keep AT, physical-device, discoverability, workload and human task evidence OPEN.
 
 ## HANDOFFS
-Web owns next integrated runtime; C025 consumes adjacency/focus; CD029 preserves certainty semantics; T022 returns numeric metrics.
+W024 is the current browser integration surface; C026 consumes state contexts; CD031 preserves semantic distinctions; T022 returns product metrics later.
 
 ## Evidence boundary
 No Layout/Interaction Stage 3 PASS, native/backend/network/AT/physical-device/human PASS is claimed.
