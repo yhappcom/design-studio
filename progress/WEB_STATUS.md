@@ -1,27 +1,27 @@
 # Web Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / W035 PARTIAL-AUTHORITY RUNTIME PROTOCOL READY — EXECUTION OPEN**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / W036 SHARED ACTION-ORACLE PROVENANCE READY — EXECUTION OPEN**
 Governance sync: 2026-09-16
 Primary path: `research/web/`
-Active studies: `W032`–`W035`
+Active studies: `W033`–`W036`
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-W035 extends restoration-authority transfer into full confirmation, timeout/unavailable, partial authority with action-critical fields unknown, revision conflict, later recovery and direct deep-link scenarios. Provenance now records request timing/timeout observation and known/unknown fields in addition to presented/authoritative revision, route/lifecycle, semantic state/action, locale, viewport, forced-colors, focus geometry and raw network trace.
+W036 extends W035 browser provenance so every rendered action carries I023 required-fact/dependency verdict beside raw authority evidence, semantic resource ID, locale, geometry and visual-mode evidence. A browser run now fails integration if the UI enables an action whose authoritative prerequisites are missing/expired/conflicting, even if the page otherwise renders correctly.
 
-The browser execution blocker remains: no executed multi-engine W035 artifact exists. Safari-specific claims still require Safari execution. WCAG 2.2 remains the baseline. Functional/lab timings remain diagnostics; field LCP/INP/CLS require actual field/RUM population context.
+The browser execution blocker remains: no executed multi-engine W036 artifact exists. Existing successful GitHub Actions Type artifacts demonstrate CI feasibility, but Web research did not modify noncanonical workflow infrastructure. Safari-specific claims still require Safari execution. WCAG 2.2 remains the baseline. Functional/lab timings remain diagnostics; field LCP/INP/CLS require actual field/RUM population context.
 
 ## Active queue
-1. Implement/execute W035 in a browser-capable CI/local environment and preserve raw artifacts with commit SHA.
+1. Implement/execute W036 in an authorized browser-capable CI/local environment and preserve raw artifacts with commit SHA.
 2. Require Chromium plus an independent engine before cross-browser claims; execute Safari separately for Safari claims.
-3. Bind actual 200% zoom, C035 forced-color degradation, I022/L026 partial-authority semantics/geometry and CD041 resources to shared run IDs.
+3. Bind actual 200% zoom, C036 cue composition, I023/L027 action semantics/geometry and CD042 resources to shared run IDs.
 4. Add AT/physical mobile only when executable.
 5. Preserve field-vs-lab performance boundary.
 
 ## Cross-domain state
-C035 owns visual cue degradation; L026/I022 own partial-authority structure/action truth; CD041 owns language; custom Type remains behind T021.
+C036 owns visual cue composition; L027/I023 own action/evidence locality and truth; CD042 owns language; normalized Type A/B has executable 36/36 proof but remains behind drawing/general-spacing critique before product transfer.
 
 ## Evidence boundary
 No Web Stage 3 PASS, browser-runtime PASS, cross-browser, Safari, screen-reader, physical-device, field Core Web Vitals or human UX PASS is claimed.
