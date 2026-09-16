@@ -19,10 +19,10 @@ jobs:
         run: python research/type/T021-logmate-operational-family-expansion-harness.py
       - name: Show measured result
         if: always()
-        run: cat /tmp/t021-logmate-expanded/T021-logmate-operational-family-expansion-results.json || true
+        run: cat /tmp/t021-logmate-expanded-r2/T021-logmate-operational-family-expansion-results.json || true
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: t021-logmate-operational-proof
-          path: /tmp/t021-logmate-expanded/
+          path: /tmp/t021-logmate-expanded-r2/
           if-no-files-found: warn
