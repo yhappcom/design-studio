@@ -1,36 +1,28 @@
 # Layout, Spatial & Interaction Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASS / STAGE 2 PASS / STAGE 3 PRACTICE**  
+Operating state: **ACTIVE — STAGE 1 PASS / STAGE 2 PASS / STAGE 3 PRACTICE — DETERMINISTIC THREE-SURFACE MODEL READY FOR RUNTIME TRANSFER**  
 Governance sync: 2026-09-16  
 Canonical paths: `research/layout/`, `research/interaction/`  
-Next new-study IDs: Layout `L013`; Interaction `I008`
+Next new-study IDs: Layout `L014`; Interaction `I009`
 
 ## Current level
-Stage 1 — Foundations: **PASS**  
-Stage 2 — Intermediate Professional Practice: **PASS**  
-Stage 3 — Advanced / Systems Practice: **PRACTICE / NOT PASSED**
+Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
-Authority: L007 Stage 1 closure; L008 Stage 2 entry; L009 capstone; L010 Stage 2 closure; L011 Stage 3 entry; **L012 three-surface spatial system + I007 state/navigation/recovery system**.
+Authority: L011 entry; L012 system architecture; I007 state system; **L013 recomposition assertions + I008 cross-surface state/recovery invariants**.
 
 ## Latest evidence
-L012 derives phone, tablet/EFB and desktop/web compositions from one invariant professional-record task model rather than scaling one screen. Record identity, state adjacency, consequence/recovery priority, reading/task order, focus access and long-content survival are invariant; density, simultaneous regions, navigation persistence and disclosure may adapt.
+L013 fixes invariant record identity, state/recovery adjacency, task/reading order, focus access and expansion survival while allowing phone/tablet/desktop recomposition. I008 proves the behavioral contract is surface-independent: viewport/layout changes cannot mutate certainty or safe action; outcome-unknown blocks blind retry; recovery restores object + task + certainty context.
 
-I007 formalizes `idle → edited → commit-requested → pending → {confirmed | known-failure | outcome-unknown}` with offline/stale, conflict, selection/navigation and overlays as distinct conditions. Outcome-unknown blocks blind retry. Recovery means returning to meaningful object/task/certainty context, not merely the same screen. Motion cannot carry required state meaning without reduced-motion equivalence.
+Static/deterministic gates pass. Rendered browser/native, actual zoom, router/network, AT, physical-device and human evidence remain OPEN.
 
-Both static/deterministic contracts pass their local architecture gates. Stage 3 does not pass without rendered/native/web transfer, router/network evidence, AT, physical-device and human evidence.
-
-## Active queue — large block only
-1. L013/I008: turn the contracts into a deterministic three-surface specimen/model with explicit state transitions and recomposition assertions.
-2. Stress Type metric/fallback change, CD020 expansion/localization, C020 adverse states and 200% text/zoom.
-3. Verify focus order/obscuration and reduced-motion equivalence where executable.
-4. Hand browser-executable behaviors to Web and reconcile contradictions.
-5. Preserve native/physical/human evidence as OPEN.
+## Active queue
+1. Transfer L013/I008 to W021 executable browser specimen.
+2. Stress CD021 expansion/bidi, C021 adverse states, 200% text/zoom, focus obscuration and reduced motion.
+3. Reconcile browser contradictions in canonical spatial/interaction contracts.
+4. Preserve native/physical/human validation as OPEN.
 
 ## HANDOFFS
-- Color C020 receives a concrete state/surface inventory.
-- Web W020 can now integrate L012/I007 instead of isolated micro-tests.
-- Content CD020 maps directly to I007 states.
-- Type geometry remains flexible until T021 passes.
+W021 has an integrated executable target; C021 receives exact state inventory; CD021 maps message IDs to I008; Type metrics remain flexible until T021 drawing PASS.
 
 ## Evidence boundary
-No coherent rendered three-form-factor PASS, native router, AT/screen-reader, physical-device, production backend or human task-performance evidence.
+No coherent rendered three-form-factor, native router, AT/screen-reader, physical-device, backend/network or human task-performance PASS.
