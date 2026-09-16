@@ -1,31 +1,29 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / CD029 RESOURCE TRANSFER + RECONCILIATION NEXT**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / CD030 RENDERED SEMANTIC TRANSFER PARTIAL PASS; CD029 RESOURCE GATE OPEN**
 Governance sync: 2026-09-16
 Primary path: `research/content/`
-Active study: `CD029`
+Active studies: `CD029` resource transfer, `CD030` rendered transfer
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
-Authority: CD018 Stage 2 closure; CD019 entry; CD020–CD028 systems/localization governance; **CD029 resource-format transfer contract**.
+Authority: CD018 Stage 2 closure; CD019 entry; CD020–CD029 systems/localization governance; **CD030 W023 rendered semantic transfer**.
 
 ## Latest evidence
-CD027/CD028 established localization release governance and a deterministic synthetic release gate. CD029 now defines the next production-transfer step: semantic inventory → Flutter-ARB-class export → synthetic locale realization → import/reconciliation → semantic/release gates.
+W023 actual Chromium execution confirms bounded semantic survival: unknown outcome remains distinct from confirmed, retry remains unavailable until verification, expanded English preserves recovery meaning without horizontal overflow at tested widths, RTL surrounding copy preserves LTR operational literals, and forced colors demonstrates why textual state identity cannot depend on hue.
 
-The round trip must reject dropped IDs, stale semantic revisions, placeholder drift, plural/select branch loss, accidental localization of operational literals, untracked semantic source changes, missing QA evidence and policy-violating fallback. Machine-valid resources do not equal linguistic quality.
-
-The current GitHub-only environment does not execute the ARB/tooling round trip, so the contract is ready but execution remains OPEN.
+CD030 therefore gains rendered semantic transfer evidence. CD029 remains OPEN because no ARB export/import, placeholder/plural/select, locale-data, terminology-propagation or TMS reconciliation was executed.
 
 ## Active queue
-1. Create bounded ARB fixtures and deterministic reconciliation harness in an executable environment.
-2. Add authoritative locale-data execution for plural/select/date/time/duration where supported.
-3. Bind message ID + semantic revision to W022 runtime captures.
-4. Exercise terminology propagation across source and locale resources.
+1. Execute bounded ARB fixtures + deterministic reconciliation harness when tooling is available.
+2. Add authoritative locale-data execution for plural/select/date/time/duration.
+3. Bind message ID + semantic revision to future runtime captures.
+4. Extend rendered transfer across pending/failure/offline/conflict states.
 5. Keep linguistic review and human comprehension/task evidence OPEN.
 
 ## Cross-domain state
-I010 remains state authority; L015 owns rendered survival; W022 is runtime integration; T022 receives mixed-width/literal corpora; C024 reinforces but does not define state.
+I011 is state authority; L016 owns geometry; W023 supplies runtime; T022 preserves literals; C025 confirms non-color semantic necessity.
 
 ## Evidence boundary
-No real TMS, ARB import/export execution, linguistic review, rendered localization, browser/native functional QA, AT, backend/network or human PASS is claimed.
+No Content Stage 3 PASS, real TMS/ARB round trip, linguistic review, native functional QA, AT, backend/network or human PASS is claimed.
