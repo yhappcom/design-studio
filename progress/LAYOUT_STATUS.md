@@ -1,27 +1,27 @@
 # Layout, Spatial & Interaction Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / I021 AUTHORITY-STALENESS + L025 SPATIAL PRIORITY READY**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / I022 PARTIAL AUTHORITY + L026 ACTION PROXIMITY READY**
 Governance sync: 2026-09-16
 Canonical paths: `research/layout/`, `research/interaction/`
-Active studies: L023–L025, I019–I021
+Active studies: L024–L026, I020–I022
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-I021 identifies stale-but-plausible resumption as a separate interaction failure: presentation restored, authority checked, freshness known, authority unavailable and conflict are distinct states. Route/history restoration does not prove authoritative freshness, and actions whose safety depends on current state remain blocked until the product contract permits them. L025 maps this truth to a spatial priority stack: identity → freshness/certainty → consequence/conflict → safe action → history/reconciliation → secondary metadata.
+I022 extends I021 beyond globally current/stale states: authority checks can time out, return only some action-critical facts, conflict, or later recover. Action enablement is now explicitly dependent on the authoritative facts that action requires; a partial response cannot silently authorize an action whose prerequisite remains unknown. L026 maps that dependency to spatial proximity so uncertainty stays associated with the affected object/action under reflow, zoom and localization.
 
-These deterministic diagnostics expose contradictions but do not establish perceived salience, workload, trust or comprehension. Browser/product and human evidence remain OPEN.
+These are deterministic systems diagnostics, not evidence of perceived salience, workload, trust or comprehension.
 
 ## Active queue
-1. Execute I021/L025 on W034 restoration/cache/authority scenarios with shared run IDs.
+1. Execute I022/L026 on W035 full/timeout/partial/conflict/recovery scenarios with shared run IDs.
 2. Obtain production idempotency/deduplication/persistence/freshness contracts before retry/current-state claims.
 3. Execute actual 200% zoom, focus/overlay, localized expansion and reduced visual viewport geometry where supported.
 4. Add native Flutter transfer only on executable app surface.
 5. Keep AT, physical-device, discoverability, interruption workload and human task evidence OPEN.
 
 ## HANDOFFS
-C034 consumes state-cue/visibility evidence; W034 owns browser restoration provenance; CD040 maps freshness/staleness/conflict language; Type supplies custom metrics only after T021.
+C035 consumes cue/visibility evidence; W035 owns browser/network provenance; CD041 maps partial-authority language; Type supplies custom metrics only after T021.
 
 ## Evidence boundary
 No Layout/Interaction Stage 3 PASS, browser geometry PASS, production-backend PASS, AT, physical-device or human PASS is claimed.
