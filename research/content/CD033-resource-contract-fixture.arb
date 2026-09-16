@@ -1,0 +1,13 @@
+{
+  "@@locale": "en",
+  "savePendingTitle": "Saving…",
+  "@savePendingTitle": {"description": "Title while save outcome is pending."},
+  "saveUnknownTitle": "We don't know whether this was saved",
+  "@saveUnknownTitle": {"description": "Title when the client cannot establish commit outcome."},
+  "saveKnownFailureTitle": "This wasn't saved",
+  "@saveKnownFailureTitle": {"description": "Use only when non-commit is established."},
+  "recordsCount": "{count, plural, =0{No records} =1{1 record} other{{count} records}}",
+  "@recordsCount": {"description": "Record count.", "placeholders": {"count": {"type": "int"}}},
+  "lastUpdated": "Last updated {when}",
+  "@lastUpdated": {"description": "Timestamp label.", "placeholders": {"when": {"type": "DateTime"}}}
+}
