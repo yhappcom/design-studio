@@ -1,10 +1,10 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 FOUNDATION / CD001–CD006 EXECUTED / CD007 NEXT**  
+Operating state: **ACTIVE — STAGE 1 FOUNDATION / CD001–CD007 EXECUTED / CD008 NEXT**  
 Governance activation: 2026-09-16  
 Primary path: `research/content/`  
 Study prefix: `CD###`  
-Next new-study ID: `CD007`
+Next new-study ID: `CD008`
 
 ## Current level
 
@@ -15,6 +15,17 @@ Stage 4 — Production & Authorship: **NOT STARTED**
 Stage 5 — Research & Advisory: **NOT STARTED**
 
 Content Design progresses deliberately from fundamentals to expert/research-advisory practice. No stage may be skipped because later project work appears more immediately useful.
+
+## Product-language direction
+
+Design Studio products are currently treated as:
+
+- **English-first source language**;
+- **global-release products**;
+- localization-ready from the beginning;
+- additional languages selected later by product/market need rather than by the specialist curriculum itself.
+
+Korean is therefore a possible later transfer case, not a primary Foundation focus or PASS blocker.
 
 ## Canonical role
 
@@ -36,9 +47,9 @@ Foundation begins with principles rather than microcopy recipes:
 8. clarity vs brevity vs necessary detail;
 9. accessible and input-neutral wording;
 10. source literacy, precedent/history and basic research/critique method;
-11. original exercises with explicit KEEP / REWORK / REJECT rationale;
-12. cross-specialist reuse and dependency reasoning;
-13. Korean/bilingual transfer before Foundation closure.
+11. English-first global content and localization-ready architecture;
+12. original exercises with explicit KEEP / REWORK / REJECT rationale;
+13. cross-specialist reuse and dependency reasoning.
 
 Reading or collecting style-guide rules does not satisfy the Foundation gate.
 
@@ -129,109 +140,111 @@ Accessibility-language audit v0.1 flags modality/sensory/label-name dependencies
 
 Canonical: `research/content/CD006-history-disciplinary-boundaries-source-literacy.md`
 
-CD006 closes the Foundation precedent/source-literacy gap without claiming a complete global history.
+Key results:
+- current evidence does not support a single-inventor/single-origin story for Content Design or UX Writing;
+- the field draws from editorial practice, technical communication, information architecture, content strategy, service design, HCI/usability/user research and modern interface writing;
+- a visible wording symptom may actually be an IA, Interaction, Service or technical-architecture problem;
+- source type must match claim type: origin, current role boundary, method, platform behavior or human outcome.
 
-### Historical correction
-
-Current evidence does **not** support a single-inventor or single-origin story for Content Design / UX Writing.
-
-Documented lineages include:
-- editorial practice — accuracy, revision and publication discipline;
-- technical communication — complex-domain information, task support, structured content and long-standing usability overlap;
-- information architecture — organization, taxonomy, labeling and findability;
-- content strategy — purpose, lifecycle, workflow and governance;
-- service design — end-to-end/channel/process context;
-- HCI/usability/user research — task, behavior and evaluation evidence;
-- modern UX writing — interface-language craft and product-language systems.
-
-GDS provides strong evidence of influential early-2010s formalization of a user-needs-led Content Design practice, but that is not treated as proof of universal invention.
-
-### Role-boundary rule
+Current studio rule:
 
 > **Diagnose the primary problem before claiming ownership merely because words appear on the surface.**
 
-Content may collaborate across all adjacent domains but does not absorb IA, User Research, Interaction, Service Design, technical communication or enterprise Content Strategy by default.
+Historical-source audit v0.1 flags origin overclaim, title/practice confusion, one-organization generalization, practitioner guidance presented as empirical evidence and other provenance failures.
 
-### Source-provenance model
+## CD007 — global English and localization-ready content architecture
 
-CD006 distinguishes:
-- normative/official/standards sources;
-- primary historical artifacts;
-- peer-reviewed scholarship;
-- established practitioner synthesis;
-- current job/blog/community evidence.
+Canonical: `research/content/CD007-global-english-localization-ready-content.md`
 
-The appropriate source depends on claim type: origin, adoption, current role boundary, method, platform behavior or human outcome.
+CD007 replaces the earlier Korean-specific Foundation plan with the actual product constraint: English-first apps intended for global release.
 
-Historical-source audit v0.1 can flag:
-- `ORIGIN OVERCLAIM`;
-- `TITLE/PRACTICE CONFUSION`;
-- `RETROSPECTIVE MEMORY ONLY`;
-- `ONE-ORG GENERALIZATION`;
-- `PRACTITIONER RULE PRESENTED AS EMPIRICAL`;
-- `CURRENT GUIDANCE USED AS HISTORY`;
-- `HISTORICAL PRACTICE USED AS CURRENT REQUIREMENT`;
-- `SECONDARY SOURCE WITHOUT PRIMARY CHECK`;
-- unstated geographic/cultural transfer;
-- human outcomes without human evidence.
+### Key source-grounded results
 
-### Internal studio naming judgment
+- W3C distinguishes internationalization from localization; global readiness must be designed before translation;
+- source English can be clear yet architecturally hostile to localization if grammar is assembled from fragments, formatting is hard-coded, or context is hidden;
+- Unicode CLDR demonstrates that plural, unit, number, date/time and regional conventions vary by locale;
+- Apple’s current localization workflow treats plural variants, string catalogs, localizer context and per-locale testing as first-class requirements;
+- Microsoft global-writing guidance supports avoiding gratuitous idioms, culture-specific references and ambiguous modifier stacks for global content;
+- right-to-left transfer strengthens CD005’s rule that position/direction cannot own semantic identity.
 
-Design Studio retains **Content Design / UX Writing Specialist**, with Content Design as the broader canonical domain and UX Writing as a major interface-language practice within it. This is an internal ownership model, not a claim of universal industry title standardization.
+### Current rule
 
-## Cross-specialist state after CD006
+> **Preserve the semantic contract across locales; allow the linguistic realization to change.**
+
+English is the canonical source language, but the content architecture must not encode English grammar as product logic.
+
+### Localization-readiness model
+
+High-value strings should preserve:
+- concept identity;
+- state/action/consequence fidelity;
+- complete message units rather than concatenated fragments;
+- variable meaning/context;
+- localizer notes where ambiguity exists;
+- semantic key separation when identical English words have different meanings;
+- locale-sensitive number/date/currency/unit behavior;
+- layout independence from English string length/direction.
+
+Localization-readiness audit v0.1 flags:
+- idiom/culture dependency;
+- ambiguous referent/part of speech;
+- string concatenation;
+- pseudo-plurals such as `(s)`;
+- semantic key collision;
+- missing variable/localizer context;
+- hard-coded locale formatting;
+- fixed-width/direction dependencies;
+- locale-expert/runtime/human-validation needs.
+
+It cannot prove translation quality, cultural appropriateness or user comprehension.
+
+## Cross-specialist state after CD007
 
 ### Type
-Operational terms are not cosmetic. If Content changes live terminology, Type corpus/geometry validation inputs may change and must be rerun.
+Localized strings become real glyph/width/fallback test corpora. Geometry pressure is not permission to delete necessary semantics. Script/font support remains Type-owned.
 
 ### Color
-CD006 reuses Color’s evidence-boundary discipline: bounded design evidence must not be generalized into unobserved physical/human claims.
+Localized wording must not introduce color-only state references; semantic meaning must survive alternate themes and forced colors.
 
 ### Layout / Interaction
-Words can be symptoms of architecture/state/service defects. Content escalates rather than writing around a broken behavioral contract.
+Interaction state/action/recovery truth remains invariant across locales. Layout must permit reflow/recomposition rather than forcing English-length assumptions.
 
 ### Web
-Current guidance or static content specifications are not browser/AT runtime proof. Web remains the transfer-validation partner.
+Web is the runtime transfer partner for language/direction metadata, localized reflow, zoom, browser accessibility and RTL behavior.
 
 ### User Research / Human Factors
-Content must be research-literate and can formulate content hypotheses, but actual comprehension/findability/task-performance claims require appropriate human methodology and evidence.
+Actual comprehension/findability/task-performance claims in English or any locale require appropriate human evidence.
 
 ## Evidence boundary
 
 Current Content evidence includes:
 - authoritative/primary source study;
-- historical and professional precedent analysis;
+- historical/professional precedent analysis;
 - contemporary HCI/technical-communication evidence;
 - controlled empirical evidence from adjacent communication domains;
 - direct cross-specialist reuse/transfer;
-- six original structured practice/critique blocks;
-- terminology, command, information-sufficiency, accessibility-language and source-provenance audits.
+- seven original structured practice/critique blocks;
+- terminology, command, information-sufficiency, accessibility-language, source-provenance and localization-readiness audits.
 
 NOT established yet:
-- a complete global history or first-ever use of `Content Design`/`UX Writing`;
-- universal industry role-title agreement;
 - human comprehension/findability/task completion;
 - terminology recall or action-label speed/error effects;
 - actual expert-domain vocabulary recognition;
-- Korean information-order/action-language/input-neutral terminology behavior;
-- Korean↔English semantic equivalence;
+- quality/cultural appropriateness in any specific target locale;
 - actual screen-reader/voice/magnification/disabled-user outcomes;
 - production string-governance behavior;
 - live-project improvement.
 
 ## Active next queue
 
-1. **CD007 — Korean-language / bilingual Foundation transfer.** Study Korean plain-language, information order, action-label and professional-domain terminology evidence without translating English heuristics mechanically.
-2. **CD008 — integrated Foundation capstone.** Apply CD001–CD007 to one bounded professional-product workflow, produce materially different solutions, preserve Interaction/Type/Web dependencies and execute the existing non-human audits together.
-3. Run a Stage 1 closure audit only after CD007 and integrated practice are credible.
-4. Extend reproducible checks only where they validate known semantic structure; do not convert formulas/model output into human evidence.
-5. Begin Stage 2 forms/errors/onboarding/empty states/voice-tone work only after Foundation PASS.
+1. **CD008 — integrated Foundation capstone.** Apply CD001–CD007 to one bounded English-first professional-product workflow; produce materially different content architectures; preserve Interaction/Type/Web dependencies; run the existing non-human audits together; explicitly expose what still needs human evidence.
+2. **CD009 — Stage 1 closure audit** only if CD008 demonstrates integrated judgment rather than rule recitation.
+3. Begin Stage 2 forms/errors/onboarding/empty states/voice-tone work only after Foundation PASS.
+4. Specific locale studies, including Korean, should be opened later only when product/market need or transfer risk justifies them.
 
 ## OPEN / dependencies
 
-- stronger Korean-language authoritative/empirical evidence;
-- Korean input-neutral/action-label conventions;
-- Korean↔English concept/designation non-equivalence;
+- integrated Foundation authorship across a complete workflow;
 - expert-domain abbreviation and terminology elicitation;
 - terminology governance for professional-domain products;
 - appropriate human methods separating findability, comprehension, recall and actionability;
@@ -250,7 +263,8 @@ NOT established yet:
 - CD004: **EXECUTED** — plain language, scanning, information order and minimum-sufficient content.
 - CD005: **EXECUTED** — accessible/input-neutral language and non-visual reference.
 - CD006: **EXECUTED** — history, disciplinary boundaries and source-provenance method.
-- Original practice/critique blocks: **6 EXECUTED**.
+- CD007: **EXECUTED** — English-first global content and localization-ready architecture.
+- Original practice/critique blocks: **7 EXECUTED**.
 - Human validation: **NOT CLAIMED**.
-- CD007: **NEXT**.
+- CD008: **NEXT**.
 - Stage 1: **NOT PASSED**.
