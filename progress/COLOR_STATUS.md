@@ -1,26 +1,27 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / C042 STATIC EXPORT CUE-LOSS MATRIX READY**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / C043 TEMPORAL PROVENANCE VISUAL CONTRACT READY**
 Governance sync: 2026-09-17
 Primary path: `research/color/`
-Active studies: `C035`–`C042`
+Active studies: `C035`–`C043`
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-C042 converts C041 export visual-truth principles into an acceptance matrix for screen color, print-color emulation, grayscale, background loss and independent cue removal. Historical success, current consequence, snapshot provenance, intervention state and selection/focus must remain semantically distinct. WCAG 2.2 remains the screen accessibility baseline; print/PDF is not declared conformant merely from source-page checks.
+C043 extends export/recheck visual truth to multi-clock provenance. Event, observed, reconciled, snapshot-generated, authority-confirmed and rechecked times must not collapse into a recency-based visual hierarchy. The matrix covers theme, grayscale, hue/background/icon/shape loss, forced-colors, print and long localized zone labels. WCAG 2.2 remains the screen accessibility baseline.
 
-Actual artifacts require W042 execution.
+Actual artifacts require W043 execution.
 
 ## Active queue
-1. Execute C035–C042 against shared W042 run/event/artifact IDs.
-2. Bind L033 static-to-live hierarchy, I029 recheck truth and CD048 semantics.
-3. Broaden beyond Chromium where executable; keep physical print/display, CVD/low-vision observer, perceived salience and human task evidence OPEN.
-4. Defer P3 absent product need.
+1. Execute C035–C043 against shared W043 run/event/artifact IDs.
+2. Bind L034 chronology geometry, I030 temporal truth and CD049 semantics.
+3. Verify that focus/selection/brand emphasis cannot masquerade as freshness/current authority.
+4. Broaden beyond Chromium where executable; keep physical print/display, CVD/low-vision observer, perceived salience and human task evidence OPEN.
+5. Defer P3 absent product need.
 
 ## HANDOFFS
-L033 supplies geometry; I029 owns recheck truth; W042 supplies runtime/export evidence; CD048 preserves non-color semantics; Type remains provisional.
+L034 supplies geometry; I030 owns temporal/recheck truth; W043 supplies runtime/export evidence; CD049 preserves non-color semantics; Type remains provisional.
 
 ## Evidence boundary
-No Color Stage 3 PASS, print/PDF runtime PASS, global conformance, cross-browser, calibrated-display, observer or human PASS is claimed.
+No Color Stage 3 PASS, W043 runtime PASS, print/PDF runtime PASS, global conformance, cross-browser, calibrated-display, observer or human PASS is claimed.
