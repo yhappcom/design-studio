@@ -1,0 +1,26 @@
+{
+  "study": "T021 R4B pre-drawing grammar",
+  "status": "CONSTRAINT MODEL ONLY",
+  "kerning": "OFF / NOT MODELED",
+  "checks": {
+    "cap_overshoot_symmetric": true,
+    "lower_overshoot_symmetric": true,
+    "cap_counter_side_symmetry": true,
+    "lower_counter_side_symmetry": true,
+    "cap_counter_vertical_balance": true,
+    "lower_counter_vertical_balance": true,
+    "bowl_group_shared_policy": true,
+    "aperture_group_shared_policy": true,
+    "figures_coordinated_advance": true,
+    "ambiguity_constraints_explicit": true
+  },
+  "passed": 10,
+  "total": 10,
+  "metrics": {
+    "cap_outer_width_height_ratio": 0.649,
+    "lower_outer_width_height_ratio": 0.788,
+    "cap_counter_clearance": {"left": 90, "right": 90, "top": 90, "bottom": 90},
+    "lower_counter_clearance": {"left": 80, "right": 80, "top": 80, "bottom": 80}
+  },
+  "evidence_boundary": "These checks prove internal consistency of the declared construction grammar only. They do not prove good drawing, optical balance, target-size raster quality, recognition, readability, spacing, or family coherence."
+}
