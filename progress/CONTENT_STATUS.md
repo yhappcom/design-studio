@@ -1,10 +1,10 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PRACTICE / CD010–CD012 EXECUTED**  
+Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PRACTICE / CD010–CD013 EXECUTED**  
 Governance activation: 2026-09-16  
 Primary path: `research/content/`  
 Study prefix: `CD###`  
-Next new-study ID: `CD013`
+Next new-study ID: `CD014`
 
 ## Current level
 
@@ -20,11 +20,12 @@ Authority:
 - CD009 — Stage 1 closure audit / PASS;
 - CD010 — Stage 2 forms/validation/error baseline;
 - CD011 — error/warning/service-failure/recovery taxonomy;
-- **CD012 — empty/loading/pending/success/recovery lifecycle content system**.
+- CD012 — empty/loading/pending/success/recovery lifecycle content system;
+- **CD013 — onboarding/progressive-disclosure professional-workflow system**.
 
 ## Product-language direction
 
-English-first source language for global release. Content architecture remains localization-ready. Specific locale work opens only when product/market need or transfer risk justifies it. Korean is an optional later transfer locale, not a Foundation or Stage 2 blocker.
+English-first source language for global release. Content architecture remains localization-ready. Specific locale work opens only when product/market need or transfer risk justifies it. Korean remains an optional later transfer locale rather than a Stage 2 gate by itself.
 
 ## Stage 1 closure
 
@@ -32,103 +33,151 @@ Canonical: `research/content/CD009-stage1-foundation-closure-audit.md`.
 
 Stage 1 PASS remains valid and bounded to Foundation evidence. Human comprehension/task evidence and production localization/runtime evidence are not included in the PASS claim.
 
-## CD010–CD011 retained baseline
+## Stage 2 executed evidence
 
-CD010: `research/content/CD010-stage2-entry-forms-validation-error-baseline.md`. Form content is a contract linking concept/purpose, stable label/question, accepted input, requiredness, point-of-need guidance, validation state, specific repair, preservation/recovery, programmatic relationship and localization context.
+### CD010 — forms / validation baseline
+`research/content/CD010-stage2-entry-forms-validation-error-baseline.md`
 
-CD011: `research/content/CD011-error-warning-service-failure-recovery-taxonomy.md`. Error is not one category; cause + certainty + agency + recovery distinguish validation, warning, business/permission blocks, conflict, pending, authoritative failure, outcome unknown, service unavailable and confirmed success. Known failure and outcome unknown remain non-collapsible; retry requires Interaction truth.
+Form content is a contract linking concept/purpose, stable label/question, accepted input, requiredness, point-of-need guidance, validation state, specific repair, preservation/recovery, programmatic relationship and localization context.
 
-## CD012 — empty / loading / pending / success / recovery lifecycle
+### CD011 — error / warning / service-failure / recovery taxonomy
+`research/content/CD011-error-warning-service-failure-recovery-taxonomy.md`
 
-Canonical: `research/content/CD012-empty-loading-pending-success-recovery-content-system.md`.
+Cause + certainty + agency + recovery distinguish validation, warning, blocks, conflict, pending, authoritative failure, outcome unknown, service unavailable and confirmed success. Known failure and outcome unknown remain non-collapsible; retry requires Interaction truth.
 
-### New result
+### CD012 — lifecycle content system
+`research/content/CD012-empty-loading-pending-success-recovery-content-system.md`
 
-Lifecycle content is classified by product truth rather than visual component:
-- **empty / absence**;
-- **loading / preparation**;
-- **pending / unconfirmed commitment**;
-- **success / confirmed result**;
-- **recovery / available next action**.
+Lifecycle content is classified by product truth rather than visual component. Empty causes are separated; loading is not pending; rendered is not ready; success is confirmation rather than automatic celebration; recovery is broader than retry. Semantic state belongs in keys/metadata rather than English grammar.
 
-Empty is further separated into first-use, user-cleared, filter-empty, search-no-results, permission, unavailable/offline and meaningful-zero states. `No data` is rejected as a universal empty pattern because it can falsely claim absence when data is filtered, inaccessible or temporarily unavailable.
+### CD013 — onboarding + progressive disclosure for professional workflows
+Canonical: `research/content/CD013-onboarding-progressive-disclosure-professional-workflows.md`.
 
-### Critical distinctions
+#### Core result
 
-1. **Loading is not pending.** Retrieval/preparation does not imply a user commitment; pending does.
-2. **Rendered is not ready.** W018's first-frame/data-visible/task-ready Chromium distinction transfers into Content: `Ready` is a capability claim, not a generic completion label.
-3. **Success is confirmation, not celebration.** Self-evident changes may need no extra message; routine confirmed commitment may need concise object-specific confirmation; stronger celebration is reserved for meaningful milestones.
-4. **Recovery is not synonymous with retry.** Edit, clear scope, resume, reconnect, verify, reconcile, request access, alternate path, undo and safe retry are different contracts.
+Onboarding is now modeled as a **knowledge-transition system**, not a first-run screen sequence:
 
-### Lifecycle content contract v0.2
+> insufficient knowledge → sufficient knowledge for the next meaningful task.
 
-Adds:
-- readiness level;
-- commitment certainty;
-- progress basis;
-- freshness/cache state when material;
-- primary/secondary recovery;
-- announcement priority;
-- variables/plural requirements;
-while retaining CD011 cause/certainty/agency/retry-safety fields.
+Every onboarding item should identify a real knowledge gap, affected decision/action, risk if unknown, timing, requiredness, persistence and re-entry behavior.
 
-### Global/localization rule
+#### Timing rule
 
-Semantic state lives in keys/metadata rather than English grammar. Keep `empty.search`, `empty.filter`, `empty.first_use`, `pending.save`, `success.save` and analogous classes distinct even when English wording appears similar. Do not concatenate English fragments or make unsupported time promises such as `Almost done` / `just a moment`.
+CD013 introduces the bounded design model:
 
-### Evidence boundary
+**earliest useful moment ≤ presentation moment ≤ latest safe moment**
 
-CD012 used authoritative-source checks, peer transfer, system synthesis, comparative practice and contradiction testing. It does **not** establish human comprehension, perceived speed, trust, screen-reader behavior, production localization quality or live-project improvement.
+Information taught too early lacks context and creates memory dependency; information taught after the governed consequential decision is too late. This is a studio design model, not a measured cognitive equation.
+
+#### Progressive-disclosure classes
+
+- **immediate** — needed for current primary task;
+- **consequence-critical** — must be available before commitment;
+- **contextual** — reveal when condition/advanced path becomes relevant;
+- **reference** — persistent deeper help for infrequent complexity.
+
+Critical invariant: **progressive disclosure must not defer truth beyond the decision it governs.**
+
+#### Requiredness taxonomy
+
+CD013 separates:
+- required setup;
+- conditionally required setup;
+- recommended configuration;
+- optional education.
+
+Audit question: `What breaks if the user skips this?` Feature awareness alone normally does not justify mandatory setup.
+
+#### Novice/expert model
+
+Professional-domain expertise and product expertise are explicitly separated. The assistance ladder is:
+1. recognizable primary task;
+2. point-of-need label/helper;
+3. example/short explanation;
+4. expandable contextual detail;
+5. persistent reference;
+6. guided flow only when sequence/dependency itself requires guidance.
+
+Experts should not be blocked by optional education; novices need a discoverable path to greater depth.
+
+#### Skip/resume/re-entry
+
+`Skip` alone is insufficient. Dismissible/deferred learning must define progress persistence, partial-configuration preservation, resume, dismissal scope, later re-entry and replay behavior. Repeated resurfacing after dismissal requires a new contextual reason, material change or user request.
+
+#### Multi-step orientation
+
+W3C cognitive-accessibility guidance was transferred into a professional workflow contract: meaningful completed/current/pending steps, important choices, explicit save/resume/back semantics, and step titles that name decisions/objects rather than generic process labels.
+
+#### Teach the product delta
+
+For professional users, do not indiscriminately reteach established domain concepts. Teach where the product's terminology, interpretation, calculation, scope, assumptions, source of truth or consequences differ from domain expectation.
+
+#### Comparative practice
+
+Three strategies were compared for one fixed professional setup problem:
+- A front-loaded guided setup;
+- B workspace-first contextual onboarding;
+- C adaptive checkpoint model.
+
+For the fixed hypothetical exercise, **C with a strong B bias** is retained provisionally: minimal initial classification, early entry into the real task/workspace, consequence-aware checkpoints, persistent contextual/reference help. This is not a universal rule or live LogMate decision.
+
+#### Audit model
+
+New flags include front-loaded memory dependency, tutorial-dependent UI, optional-as-mandatory, required-as-optional, disclosure-after-decision, feature concealment, expert blocking, novice abandonment, skip-without-reentry, repeated nagging, false progress, generic step labels, domain reteaching, help-as-IA-patch, transient critical help and localization sequence coupling.
+
+#### Evidence boundary
+
+CD013 uses authoritative W3C accessibility evidence, cross-domain transfer, deep system synthesis, three-architecture comparative practice, contradiction review and reproducible non-human audit assertions. It does **not** establish human cognitive load, comprehension, completion, preference, production accessibility, localized-product quality or live-project improvement.
 
 ## Cross-specialist state
 
 ### Type
-Necessary lifecycle/recovery strings, counts and literal identifiers are operational stress inputs. Type pressure does not authorize semantic truncation.
+Operational instructions, examples, step titles, consequence text and professional identifiers are realistic wrapping/fallback/localization stress. Semantic requirements are not shortened to hide Type defects.
 
 ### Color
-Lifecycle meaning must survive color loss/transformation. Visual state mapping follows semantic classification.
+Required/optional/current/completed/warning semantics must survive color removal/transformation.
 
 ### Layout / Interaction
-Interaction owns accepted/pending/confirmed/canceled/outcome-unknown truth, cancellation, retry safety and recovery mechanics. Content names and explains those truths.
+Interaction owns actual prerequisite, skip/resume persistence, branching, back behavior, invalidation of later choices and commitment boundaries. Content owns naming/explanation and disclosure timing requirements.
 
 ### Web
-W018 provides direct transfer evidence that first frame, data visibility and task readiness can differ. Web owns actual status delivery, focus, persistence, browser/network ambiguity, reflow and AT transfer.
+Web should transfer-test disclosure controls, route/resume/replay, keyboard/focus, narrow/enlarged text, direct-entry contextual help and persistent reference access.
 
 ### User Research / Human Factors
-Comprehension, recovery success, perceived latency, trust, stress response, task time and preference remain human-evidence questions.
+Human evidence remains required for time-to-first-meaningful-task, comprehension, skip reasons, abandonment, re-entry findability, novice support and expert obstruction.
 
-## Stage 2 gap map after CD012
+## Stage 2 gap map after CD013
 
 | Area | State |
 |---|---|
-| buttons/action labels | strong Foundation bridge; repeated Stage 2 practice still useful |
-| forms/questions/labels/helper text | **PRACTICE** |
+| buttons/action labels | strong Foundation bridge; repeated Stage 2 practice useful |
+| forms/questions/labels/helper text | **PRACTICE — strong** |
 | validation/error/warning/recovery taxonomy | **PRACTICE — strong** |
 | empty/loading/pending/success/recovery lifecycle | **PRACTICE — strong** |
-| onboarding/progressive disclosure | **NEXT MAJOR GAP** |
-| search/filter/settings | PARTIAL bridge from CD012 empty-state causes; broader task-system work OPEN |
+| onboarding/progressive disclosure | **PRACTICE — strong system baseline after CD013** |
+| search/filter/settings | **NEXT MAJOR SURFACE GAP** |
 | voice/tone system | OPEN; functional risk modulation bridge exists |
-| localization-ready patterns | strong bridge; repeated transfer practice needed |
+| localization-ready patterns | strong architecture bridge; repeated cross-surface transfer needed |
 | complete multiple-solution system | OPEN for Stage 2 capstone |
 
-## Active next queue
+## Active next queue — large blocks only
 
-1. **CD013 — onboarding + progressive disclosure for a professional workflow**, including skip/resume/re-entry, novice/expert tension, minimum necessary instruction and localization-ready sequencing.
-2. Search/filter/settings content as task systems rather than isolated labels.
-3. Voice/tone modulation after functional lifecycle language is stable.
-4. Localization-ready pattern transfer across multiple surfaces.
-5. Integrated Stage 2 capstone with materially different complete content systems and defended selection.
-6. Stage 2 closure audit only after the explicit gate is evidenced.
+1. **CD014 — search / filter / sort / settings content as professional task systems**, not isolated labels. Include query scope, zero-result causality, filter persistence/reset, sort meaning, defaults, preference vs task-state boundaries, destructive/reset settings and localization.
+2. Voice/tone modulation grounded in risk, urgency, expertise and recovery rather than brand adjectives.
+3. Localization-ready transfer across forms, lifecycle, onboarding and search/settings surfaces.
+4. Integrated Stage 2 capstone with materially different complete content-system solutions and defended selection.
+5. Stage 2 closure audit only after the explicit gate is evidenced.
 
 ## OPEN / dependencies
 
-- real LogMate/MintTap freshness, sync, offline and recovery contracts;
+- actual LogMate/MintTap first-run and prerequisite contracts;
+- actual import/manual-entry/setup branching;
+- permission and data-safety consequences;
 - offline/multi-device conflict language using actual LogMate semantics;
-- warning thresholds for high-consequence professional actions;
-- actual native/web status persistence and announcement behavior;
+- actual native/web resume, status persistence and announcement behavior;
 - production localization/message-format and translator workflow;
-- human comprehension/recovery/perceived-latency studies;
-- production instrumentation linking state class to abandonment/retry/recovery outcomes.
+- human comprehension/recovery/onboarding evidence;
+- telemetry questions and privacy boundaries for measuring onboarding/recovery usefulness.
 
 ## Latest checkpoint
 
@@ -136,7 +185,8 @@ Comprehension, recovery success, perceived latency, trust, stress response, task
 - CD010: **STAGE 2 FORMS BASELINE EXECUTED**.
 - CD011: **STATE TAXONOMY + COMPARATIVE PRACTICE EXECUTED**.
 - CD012: **LIFECYCLE CONTENT SYSTEM + COMPARATIVE PRACTICE EXECUTED**.
+- CD013: **DEEP ONBOARDING / PROGRESSIVE-DISCLOSURE SYSTEM + THREE-ARCHITECTURE PRACTICE EXECUTED**.
 - Stage 2: **PRACTICE / NOT PASSED**.
 - Human validation: **NOT CLAIMED**.
 - Production runtime/localization validation: **NOT CLAIMED**.
-- Next Content study: **CD013 — onboarding + progressive disclosure**.
+- Next Content study: **CD014 — search/filter/sort/settings task systems**.
