@@ -1,109 +1,59 @@
 # T021 — R2 Canonical CI and Gate Review
 
-Status: **CANONICAL CI EXECUTED / BUILD + BOUNDED COVERAGE PASS / DRAWING + SPACING GATES STILL OPEN**  
+Status: **CANONICAL CI EXECUTED / BUILD + BOUNDED COVERAGE PASS / DRAWING GATE SUBSEQUENTLY FAILED**  
 Date: 2026-09-16  
 Owner: Typography / Type Design Specialist
 
 ## Scope
 
-This review closes the reproducibility defect found after the first equivalent local execution. Commit `340705130357eed2d715439bec1577ed94d40561` repaired the exact repository generator and triggered `Type T021 Proof` run `35041460583`. The GitHub-hosted Ubuntu runner checked out that exact commit and executed `research/type/T021-logmate-operational-family-expansion-harness.py` with Python 3.13.15, FontTools 4.65.0 and Pillow 12.3.0.
+Commit `340705130357eed2d715439bec1577ed94d40561` repaired the exact repository generator and triggered `Type T021 Proof` run `35041460583`. The GitHub-hosted Ubuntu runner checked out that exact commit and executed `research/type/T021-logmate-operational-family-expansion-harness.py` with Python 3.13.15, FontTools 4.65.0 and Pillow 12.3.0.
 
 ## SOURCE → EXECUTION evidence
 
-The canonical CI job completed successfully. All workflow steps, including dependency installation, T021 proof execution and artifact upload, completed with `success`.
+The canonical CI job completed successfully. The exact source reported revision `R2-structural`, kerning OFF, artifact `T021-LogMate-Balanced-Expanded-R2.ttf`, declared uppercase `ABCDEFGHIJKLMNOPRSTUVX`, 36 required distinct non-space corpus characters, 36 covered, no missing characters, and 14/17/24px measurements.
 
-The exact source reported:
-- revision `R2-structural`;
-- kerning `false`;
-- artifact `T021-LogMate-Balanced-Expanded-R2.ttf`;
-- declared uppercase `ABCDEFGHIJKLMNOPRSTUVX`;
-- required distinct non-space corpus characters: 36;
-- covered: 36;
-- missing: `[]`;
-- intended-size measurement at 14/17/24px.
+Representative exact-CI advances at 17px: `ICN` 28.1406px; `NRT` 31.2031px; `JFK` 28.7344px; `B737-900` 74.3438px; `1,284:35` 67.2812px; `0O` 20.0625px; `1Il` 25.8438px; `5S` 19.5469px; `8B` 19.9688px; `AVAVA` 51.8750px.
 
-This supersedes the prior exact-source reproducibility FAIL. It does not supersede the drawing-quality failure from the first raster review.
-
-## Measured R2 evidence
-
-Representative exact-CI advances at 17px:
-- `ICN` 28.1406px
-- `NRT` 31.2031px
-- `JFK` 28.7344px
-- `B737-900` 74.3438px
-- `1,284:35` 67.2812px
-- `0O` 20.0625px
-- `1Il` 25.8438px
-- `5S` 19.5469px
-- `8B` 19.9688px
-- `AVAVA` 51.8750px
-
-All four equal-length time strings `00:45`, `02:18`, `09:55`, `12:40` measured 43.1562px at 17px. `1`, `11`, `111` and `8`, `88`, `888` also scale by an equal 9.5156px per figure. This demonstrates the current R2 default figures behave as equal-advance figures in this bounded generator. It does **not** establish that tabular figures should be the default product style; that choice belongs to T022's proportional-vs-tabular comparison.
+All four equal-length time strings `00:45`, `02:18`, `09:55`, `12:40` measured 43.1562px at 17px. The R2 figures are equal-advance in this bounded generator. This is geometry evidence, not a decision that the product should use tabular figures everywhere.
 
 ## Reproducibility defect resolution
 
-The previous blocker was valid for the prior source: declared repertoire, metrics and construction dispatch were inconsistent around M. R2 repairs this by requiring explicit metric coverage and explicit uppercase construction. Unsupported uppercase construction now fails rather than silently becoming a generic filled box.
+The prior M blocker was valid for the older source. R2 requires explicit metric coverage and explicit uppercase construction. Unsupported uppercase construction now fails rather than silently becoming a generic filled box.
 
-Therefore the evidence chain now passes through:
+Evidence therefore passes through:
+`declared repertoire → metric completeness → explicit construction dispatch → canonical CI executable build → bounded cmap coverage`.
 
-`declared repertoire → metric completeness → explicit construction dispatch → canonical CI executable build → bounded cmap coverage`
+## Correction to earlier artifact-path wording
 
-The next gate remains raster drawing validity.
+The first version of this note incorrectly stated that the R2 script wrote under `/tmp/t021-logmate-expanded-r2/`. Re-reading the exact canonical source showed `OUT=Path('/tmp/t021-logmate-expanded')`. The workflow had been changed to the wrong `-r2` path after that mistaken audit. That change was subsequently corrected: the workflow now reads and uploads from `/tmp/t021-logmate-expanded/` and runs a deterministic raster-proof script.
 
-## Artifact-path defect found in workflow
+This correction is intentionally explicit: repository source, not prior prose, is canonical.
 
-The proof script wrote the JSON result under `/tmp/t021-logmate-expanded-r2/`, while the workflow's `cat` command still looked under `/tmp/t021-logmate-expanded/`. The log therefore printed `No such file or directory` for that display step even though the proof command itself succeeded. Artifact upload targeted the parent `/tmp/t021-logmate-expanded/` tree and uploaded two files, so the run remained successful.
+## Subsequent raster evidence
 
-**STUDIO JUDGMENT:** this is a proof-workflow observability defect, not a font-build failure. The workflow should be aligned to the R2 output directory before treating its human-readable result-display step as reliable.
+Workflow run `35041942223` on commit `eeb618682ba56b8bb762669f1fb401806e3eecef` completed successfully with a new deterministic raster step. Its artifact contains the exact R2 TTF, measured JSON, and 14/17/24px specimen PNGs. The fresh raster inspection is recorded separately and **fails drawing validity**. Therefore the earlier OPEN drawing gate is no longer merely untested; it has direct negative evidence.
+
+## Product-control correction
+
+A fresh tree audit of current `yhappcom/logmate` `main` found `assets/fonts/NotoSansKR-wght.ttf`, `Roboto-Regular.ttf`, and `Roboto-Medium.ttf`, but no Roboto Mono binary. Current `pubspec.yaml` declares only `LogMateNotoSansKR` and `LogMateRoboto`. Therefore an exact `LogMateRobotoMono` product-control comparison is not a current-main requirement unless that asset is reintroduced or another branch is explicitly selected. A generic mono must not be mislabeled as a current product control.
 
 ## Gate review
 
-### PASS — exact-source reproducibility
-
-The exact repository generator builds on a clean GitHub-hosted runner and produces the expected bounded measurements.
-
-### PASS — bounded encoded coverage
-
-36/36 distinct non-space characters required by the current operational corpus are encoded with no missing characters.
-
-### OPEN — drawing validity
-
-R2 removed known placeholder/fallback mechanisms and replaced several structural primitives, but CI success cannot judge visual coherence. No claim is made that S, figures, n, bowls, terminals, joins or ambiguity forms are visually mature. The earlier raster critique remains a reason to require a fresh R2 raster inspection rather than infer PASS from source structure.
-
-### OPEN — general spacing
-
-Advance equality and string widths are measurements, not proof of optical spacing. Base sidebearings must be judged only after R2 drawings are inspected.
-
-### OPEN — pair-specific residual / kerning
-
-No pair is promoted to T022 while drawing and general-spacing gates remain open.
-
-### OPEN — product control comparison
-
-Proportional Roboto has bounded prior geometry evidence. Exact `LogMateRobotoMono` binary comparison remains unavailable in the current evidence chain and must not be substituted with a generic mono.
-
-## T021 closure decision
-
-**DO NOT CLOSE T021 YET.**
-
-The exact-source reproducibility blocker is resolved, which is a major gate advance. However, the T021 contract also requires credible drawing/base-spacing evidence and rendered intended-size critique. R2 still needs an actual raster artifact suitable for inspection and any resulting redraw/spacing iteration.
-
-## Next large block
-
-1. Repair the workflow output-directory mismatch.
-2. Make the canonical proof emit deterministic 14/17/24 specimen PNG(s), not only a TTF and JSON measurements.
-3. Run canonical CI again and inspect the emitted R2 raster artifact.
-4. Redraw any remaining structural defects and rerun in the same block.
-5. Only after drawing validity, revise general spacing and enumerate residual pairs.
-6. Decide T021 closure and, if it passes, open T022 immediately.
+- exact-source reproducibility: **PASS**
+- bounded encoded coverage: **PASS — 36/36**
+- deterministic 14/17/24 raster production: **PASS as evidence-generation mechanism**
+- drawing validity: **FAIL — see fresh raster critique**
+- general spacing: **BLOCKED by drawing failure**
+- pair-specific residual / kerning: **BLOCKED**
+- T021 closure: **NO**
 
 ## RELATED DOMAIN CHECK
 
-- Layout/Interaction: equal figure advances are useful evidence for comparison columns, but whole-family geometry must not be frozen around a research candidate.
-- Web: canonical CI reproducibility improves transfer readiness; browser rendering remains untested for R2.
-- Content Design: literal LogMate operational strings remain unchanged.
-- Color: held constant; no Type conclusion depends on color.
+- Layout/Interaction: do not freeze product columns around this research candidate.
+- Web: browser rendering remains separate evidence.
+- Content Design: operational corpus literals remain stable.
+- Color: held constant.
 
 ## Verdict
 
-**R2 resolves the exact-source build/repertoire blocker and establishes canonical CI reproducibility with 36/36 bounded coverage. T021 remains OPEN because visual drawing and optical spacing are independent gates that CI build success does not satisfy.**
+**R2 is now reproducible and fully inspectable, but the new exact raster proves that executable coverage is not sufficient: the drawing system is still too primitive for T021 closure.**
