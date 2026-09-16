@@ -1,51 +1,39 @@
 # Web Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASS / STAGE 2 PASS / STAGE 3 ENTRY NEXT**  
+Operating state: **ACTIVE — STAGE 1 PASS / STAGE 2 PASS / STAGE 3 PRACTICE OPEN**  
 Governance sync: 2026-09-16  
 Primary path: `research/web/`  
-Next new-study ID: `W020`
+Next new-study ID: `W021`
 
 ## Current level
 Stage 1 — Foundations: **PASS**  
 Stage 2 — Intermediate Professional Practice: **PASS**  
-Stage 3 — Advanced / Systems Practice: **NOT YET AUDITED**
+Stage 3 — Advanced / Systems Practice: **PRACTICE / NOT PASSED**
 
-Authority: W009 Stage 1 closure; W010 entry; W011–W018 professional/browser practice; **W019 Stage 2 closure/runtime-gap audit**.
+Authority: W009 Stage 1 closure; W010 entry; W011–W018 practice; W019 Stage 2 closure; **W020 Stage 3 entry + integrated system contract**.
 
-## W019 closure verdict
-`research/web/W019-stage2-closure-runtime-gap-audit.md` audits the exact Master Curriculum rather than silently turning blocked HTTP/network work into an undocumented Stage 2 prerequisite.
+## Latest evidence — W020
+W020 finds no missing prerequisite blocking Stage 3. The next Web evidence is one coherent professional-record system integrating L012 spatial invariants, I007 state/navigation/recovery truth, C020 semantic color roles and CD020 semantic message IDs rather than isolated Chromium micro-tests.
 
-W011–W018 collectively establish responsive/adaptive composition, navigation/history partial runtime, native/custom controls, keyboard activation, icon/non-text behavior, forms/search/settings/state practice, deterministic async/recovery modeling, progressive readiness/geometry reservation/enlarged-text transfer, multiple alternatives and explicit critique.
-
-Therefore **Stage 2 PASS**. This does not convert missing runtime evidence into success: W015 outcome ambiguity remains model evidence, real HTTP direct-entry/reload/network remains blocked/open, and production/browser/device/AT evidence remains later work.
+Integrated runtime target includes responsive three-form-factor composition, meaningful DOM/focus order, sticky/transient focus-not-obscured behavior, semantic status exposure, pseudo-localized long strings, 200% text/zoom, light/dark/forced colors, reduced motion, and route/Fetch transfer when environment policy permits.
 
 ## Accessibility / performance boundary
-WCAG 2.2 is the current W3C baseline. Target Size (Minimum) 2.5.8 and Focus Not Obscured (Minimum) 2.4.11 are AA; Focus Appearance 2.4.13 is AAA in WCAG 2.2. Do not mislabel it AA.
+Published WCAG 2.2 remains the W3C conformance baseline used by the studio. Focus Not Obscured (Minimum) and Target Size (Minimum) are treated as conformance constraints with their normative exceptions, not complete UX quality measures. Supporting techniques are not substituted for the normative success criteria.
 
-Production LCP/INP/CLS require field-capable evidence. Headless lab timings or a local layout-shift observer are not field Core Web Vitals proof.
+Production LCP/INP/CLS remain field-evidence gates; headless/local diagnostics are not promoted to field Core Web Vitals claims.
 
 ## Active queue — large block only
-1. W020 Stage 3 entry audit against C019/L011/CD019 system contracts.
-2. Move from isolated micro-tests to one coherent phone/tablet/desktop-web system.
-3. When executable, test route identity/direct-entry/reload/history and Fetch known-vs-unknown outcome.
-4. Test real browser zoom, focus-not-obscured, pseudo-localized strings and semantic status exposure.
-5. Broaden Firefox/Safari/physical mobile/AT later.
-6. Preserve production field-performance evidence as a separate gate.
-
-## Evidence boundary
-No real HTTP/network, Firefox/Safari, screen-reader, physical-device, production field-performance or human UX PASS is claimed.
+1. W021: build one integrated executable three-form-factor specimen from L012/I007/C020/CD020.
+2. Test keyboard/focus order, focus obscuration, long strings/200% text or actual zoom where executable, semantic status exposure, theme/forced colors and reduced motion together.
+3. Attempt route/history and Fetch known-vs-unknown only where environment permits; label surrogate/model evidence honestly.
+4. Broaden Firefox/Safari/physical mobile/AT later.
+5. Keep production field performance separate.
 
 ## HANDOFFS
-- Layout/Interaction: Stage 3 browser transfer should test L011 invariants.
-- Content: CD019 supplies structured state/message truth.
-- Color: C019 token graph can later transfer into themes/forced colors.
-- Type: custom font transfer waits for drawing validity.
+- Layout/Interaction: W021 should return transfer contradictions against L012/I007.
+- Color: mature C020/C021 values can be transferred to CSS themes.
+- Content: CD020 stable IDs/messages are browser stress inputs.
+- Type: custom font transfer waits for T021 drawing validity.
 
-## Latest checkpoint
-- Stage 1: **PASS**.
-- W012/W016/W017/W018: direct Chromium transfer retained.
-- W015: deterministic state/recovery model; network transfer OPEN.
-- W019: **Stage 2 closure PASS with runtime boundaries**.
-- Stage 2: **PASS**.
-- Stage 3: **NOT YET AUDITED**.
-- Next: **W020 Stage 3 entry audit**.
+## Evidence boundary
+No integrated rendered Stage 3 PASS, real HTTP/network, Firefox/Safari, screen-reader, physical-device, production field-performance or human UX PASS.
