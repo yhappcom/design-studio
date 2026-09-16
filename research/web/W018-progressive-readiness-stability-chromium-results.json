@@ -1,0 +1,10 @@
+{
+  "browser": "144.0.7559.96",
+  "events_ms": {"first-frame": 86.4, "data-visible": 185.6, "task-ready": 325.1},
+  "layout_shift_button_top_px": {"bad": 44.0, "good": 0.0},
+  "cls_observed": 0,
+  "stress": {"viewport_css_px": [320,900], "root_font_size": "200%", "horizontal_overflow": false, "buttons": [{"w":262,"sw":258,"txt":"Confirm synchronized operational record after verification"},{"w":262,"sw":258,"txt":"Confirm synchronized operational record after verification"}]},
+  "checks": {"first_frame_before_data":true,"data_visible_before_task_ready":true,"bad_layout_shift_exceeds_good":true,"good_shift_zero_or_small":true,"narrow_200pct_no_horizontal_overflow":true,"long_button_labels_fit":true,"keyboard_focus_reaches_button":true,"task_ready_not_inferred_from_first_frame":true},
+  "pass": 8,
+  "total": 8
+}
