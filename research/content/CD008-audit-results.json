@@ -1,0 +1,14 @@
+{
+  "study": "CD008",
+  "structural_findings": [],
+  "structural_finding_count": 0,
+  "candidate_weighted_totals": {
+    "A_minimal_command": 62,
+    "B_explanation_heavy": 118,
+    "C_state_decision_architecture": 154
+  },
+  "maximum_weighted_total": 160,
+  "selected_by_structured_studio_criteria": "C_state_decision_architecture",
+  "execution": "Executed locally against the committed-equivalent CD008 message contract and audit logic on 2026-09-16; exit code 0.",
+  "evidence_boundary": "Deterministic structural lint and arithmetic consistency only. Does not measure comprehension, findability, trust, task time, error rate, screen-reader quality, localization quality, or user preference."
+}
