@@ -1,53 +1,58 @@
 # Web Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PRACTICE / W016 NATIVE-CUSTOM CHROMIUM TRANSFER EXECUTED**  
+Operating state: **ACTIVE — STAGE 1 PASSED / STAGE 2 PRACTICE / W017 ICON-SIGNAL CHROMIUM TRANSFER EXECUTED**  
 Governance sync: 2026-09-16  
 Primary path: `research/web/`  
-Next new-study ID: `W017`
+Next new-study ID: `W018`
 
 ## Current level
 Stage 1 — Foundations: **PASS**  
 Stage 2 — Intermediate Professional Practice: **PRACTICE / NOT PASSED**
 
 Authority:
-- W009 — Stage 1 Foundation closure
+- W009 — Stage 1 closure
 - W010 — Stage 2 entry audit
-- W011 — iconography/non-text signal direct practice
-- W012 — responsive Chromium runtime transfer / contradiction review
-- W013 — navigation/history Chromium runtime transfer
-- W014 — native vs custom button source-grounded runtime contract
+- W011 — iconography/non-text direct practice
+- W012 — responsive Chromium transfer
+- W013 — navigation/history Chromium transfer
+- W014 — native/custom control contract
 - W015 — integrated task-state/recovery deterministic execution
-- **W016 — native vs custom button actual Chromium transfer, 14/14**
+- W016 — native/custom actual Chromium transfer, 14/14
+- **W017 — icon/non-text actual Chromium transfer, 12/12 after failure→revision**
 
-The coordinator-maintained `progress/STATUS.md` is stale relative to specialist evidence and remains outside Web's writing boundary.
-
-## Latest evidence — W016
+## Latest evidence — W017
 Canonical:
-- `research/web/W016-native-custom-button-chromium-transfer.md`
-- `research/web/W016-native-custom-button-chromium-transfer.py`
-- `research/web/W016-native-custom-button-chromium-results.json`
+- `research/web/W017-icon-signal-chromium-transfer.md`
+- `research/web/W017-icon-signal-chromium-transfer.py`
+- `research/web/W017-icon-signal-chromium-results.json`
 
-Reason: **TRANSFER VALIDATION + REPLICATION + CONTRADICTION REVIEW** of W014.
+Reason: **TRANSFER VALIDATION + REPLICATION + CONTRADICTION REVIEW** of W011.
 
-Playwright drove system Chromium **144.0.7559.96** against three controls: native button, click-only focusable `role=button`, and reconstructed custom button. Final result: **14/14 assertions PASS**.
+The run first attempted the higher-priority W015 real Fetch/DOM/network transfer. Both loopback HTTP navigation and route-intercepted HTTPS navigation were blocked by the execution environment with `ERR_BLOCKED_BY_ADMINISTRATOR`; no network PASS is claimed.
 
-Confirmed within Chromium:
-- Tab reaches all three in controlled order;
-- native button activates once on Enter and Space;
-- click-only ARIA button exposes role/name but does not activate on Enter or Space;
-- reconstructed custom activates once on Enter and Space;
-- pointer activation works once for all three;
-- keyboard-focused native button matches `:focus-visible` with a solid outline;
-- Playwright ARIA snapshots expose all three as named buttons.
+The same Web block then moved to the next executable gap. Playwright drove Chromium **144.0.7559.96** against a bounded icon/non-text specimen. Final result: **12/12 assertions PASS**.
 
-The first two runs exposed harness defects (12/14 then 13/14): a reset click changed focus, then blur retained tab-cycle position. The corrected harness reloads the controlled document before the focus-visible assertion and reaches 14/14. These failures are preserved as harness critique, not misclassified as product defects.
+Confirmed within this bounded Chromium transfer:
+- native buttons expose non-empty names;
+- decorative SVGs are removed from the naming path;
+- tested target boxes remain >=24×24 CSS px;
+- disclosure couples `aria-expanded` to the controlled region;
+- visible labels remain available at 200% text enlargement in the narrow specimen;
+- keyboard-Tab focus has a visible solid outline;
+- forced-colors emulation preserves control boundary;
+- warning meaning remains explicit text.
+
+Failure evidence is preserved. The first run was 11/12 because no explicit focus-visible treatment existed. A second 11/12 run exposed a harness-method error: programmatic focus did not reproduce the intended keyboard modality. The final harness uses Tab and reaches 12/12.
 
 ## Runtime evidence boundary
-W012 provides responsive Chromium transfer. W013 provides navigation/history partial Chromium transfer with prior harness correction. W016 now provides actual Chromium keyboard/pointer/focus-visible/accessibility-snapshot control transfer.
+W012: responsive Chromium transfer.  
+W013: navigation/history partial Chromium transfer.  
+W016: native/custom keyboard/pointer/focus/accessibility-snapshot transfer.  
+W017: icon naming/target/disclosure/enlargement/forced-colors Chromium transfer.
 
-W015 remains deterministic Python model validation, **not** Fetch/DOM/network/browser proof. True HTTP direct-entry/reload remains OPEN because the prior environment blocked loopback HTTP and `file://` navigation.
+W015 remains deterministic Python model validation, **not** real Fetch/DOM/network proof. Real HTTP navigation was attempted in W017 but blocked by the environment. True HTTP direct-entry/reload also remains OPEN.
 
-W016 does not prove screen-reader behavior, Firefox/Safari parity, disabled-state parity, physical touch/device behavior, forced-colors or enlarged-text behavior. `aria_snapshot()` is bounded browser/tool accessibility representation, not AT speech/navigation evidence.
+W017 does not prove human icon recognition, screen-reader behavior, Firefox/Safari parity, physical touch/device behavior, actual OS high-contrast observation or production browser zoom.
 
 ## Stage 2 snapshot
 | Requirement | Current state |
@@ -55,63 +60,62 @@ W016 does not prove screen-reader behavior, Firefox/Safari parity, disabled-stat
 | task analysis / primary question | established |
 | information hierarchy / IA | established; W004 + W013 partial runtime |
 | dense vs low-density composition | strong; W002 executed |
-| responsive/adaptive | PRACTICE + Chromium transfer W012 |
-| forms/tables/search/settings/state | strong: W006 + W015 17/17 deterministic execution |
+| responsive/adaptive | PRACTICE + Chromium W012 |
+| forms/tables/search/settings/state | strong; W006 + W015 17/17 deterministic execution |
 | typography across roles | established; exact production transfer open |
-| iconography/non-text signals | W011 direct practice; runtime open |
-| native/custom controls | **stronger: W014 contract + W016 Chromium 14/14** |
+| iconography/non-text signals | **stronger: W011 practice + W017 Chromium 12/12** |
+| native/custom controls | **strong: W014 + W016 Chromium 14/14** |
 | component systems | strong conceptual practice |
-| async/recovery | W015 executable model; real browser/network transfer open |
+| async/recovery | W015 executable model; real browser/network transfer OPEN/BLOCKED in current environment |
 | comparative alternatives + explicit selection | strong |
 | critique / KEEP-REWORK-REJECT | strong |
 | cross-specialist handoff | strong |
 
-Stage 2 is not passed. Actual browser/network/accessibility runtime coverage remains uneven.
+Stage 2 remains **NOT PASSED**. Runtime breadth is materially stronger, but network/route integration remains uneven.
 
-## Four-specialist balance
-- **Type:** Stage 1 PASS; Stage 2 PRACTICE. Shape-sensitive base metrics executed; pair-gap diagnostics + numerals/punctuation/accent breadth next.
-- **Color:** Stage 1 PASS; **Stage 2 PASS**; Stage 3 entry not yet audited.
-- **Layout / Interaction:** Stage 1 PASS; **Stage 2 PASS**; Stage 3 entry not yet audited.
-- **Web:** Stage 1 PASS; Stage 2 PRACTICE through W016; native/custom Chromium transfer is now executed, while network/runtime breadth remains incomplete.
+## Studio balance
+Among the four balance-loop domains: Type and Web remain Stage 2 PRACTICE; Color and Layout/Interaction are Stage 2 PASS. Type also has a live LogMate identity priority and a newly bounded operational-family expansion contract. Web should therefore not receive automatic repeat priority after W017.
 
-This cycle selected Web because Type had just completed shape-sensitive base-spacing correction while W014 had a directly executable Chromium blocker that could now be removed. Future cycles must re-evaluate all four again.
+Content Design is an active fifth peer domain under current governance and remains Foundation-stage; it is checked for dependencies even though the current balance-loop instruction names four comparison domains.
 
 ## Current OPEN / blockers
-Highest-value gaps:
-1. transfer W015 to real Fetch/DOM/network behavior including known failure vs outcome ambiguity;
-2. true HTTP path direct-entry/reload/404/auth route validation when environment permits;
-3. W011 accessible-name/target/enlargement/forced-color icon harness;
+Highest-value Web gaps:
+1. real Fetch/DOM/network transfer of W015 known failure vs outcome ambiguity when navigation policy permits;
+2. true HTTP direct-entry/reload/404/auth route validation;
+3. integrated long-label/localization and actual browser-zoom stress for W011/W017;
 4. W007 request/paint/readiness/stability measurement;
-5. broader integrated Stage 2 capstone/closure audit only after runtime breadth is credible.
+5. broader integrated Stage 2 closure audit only after runtime breadth is credible.
 
-Later/platform gaps: actual browser-UI zoom; exact production fonts/CDN/cache/service-worker behavior; Firefox/Safari/physical mobile parity; screen-reader/AT evidence; physical-device and field performance evidence.
+Later/platform gaps: exact production fonts/CDN/cache/service-worker behavior; Firefox/Safari/physical mobile parity; screen-reader/AT evidence; physical-device and field performance evidence.
 
 Human findability/task/perceived-speed/icon-recognition evidence remains deferred to live project/app validation and is not simulated.
 
 ## Active next queue
-1. Re-evaluate all four specialists before choosing the next study.
-2. If Web remains highest value, prefer W015 Fetch/DOM/network Chromium transfer now that executable Chromium is available.
-3. Compare that against Type's pair-gap/family-breadth work and Color/Layout Stage 3 entry needs.
-4. Preserve failure → critique → revision evidence; never infer universal browser/AT PASS from Chromium success.
+1. Re-evaluate all four named balance-loop specialists before choosing the next study.
+2. Give Type's live LogMate operational-family build serious priority against Web's remaining runtime gaps.
+3. If Web is selected again and network navigation remains blocked, do not fabricate HTTP evidence; choose the next executable Web gap.
+4. Preserve failure → critique → revision evidence.
 
 ## HANDOFFS TO OTHER SPECIALISTS
 ### Type
-W016 confirms that label/font customization does not require semantic-element replacement. Exact shipped-font/loading/wrapping transfer remains separate and should wait for stable family metrics.
+W017 confirms visible labels should survive enlargement/recomposition rather than be removed merely for geometry pressure. Exact shipped-font transfer remains separate.
 
 ### Color
-Focus/state tokens must attach to behaviorally correct controls; semantic color cannot repair missing keyboard activation.
+W017 transfers semantic resilience into Chromium forced-colors emulation: control boundary and warning meaning survive without relying on authored hue alone.
 
 ### Layout / Interaction
-W016 independently confirms in Chromium that focusability/role exposure and activation behavior are separate contracts. The click-only ARIA control had button role/name yet failed Enter/Space activation.
+W017 confirms disclosure semantics belong to control/region state, not chevron appearance.
+
+### Content Design
+Consequential warning/status meaning remained textual while icons stayed supplemental.
 
 ## Latest checkpoint
 - W009: **Stage 1 PASS**.
-- W010: **Stage 2 entry accepted**.
-- W012: **responsive Chromium runtime transfer executed**.
-- W013: **navigation/history partial Chromium transfer executed; 10/11 → defect correction → 11/11**.
-- W014: source-grounded native/custom contradiction review.
-- W015: integrated task-state/recovery deterministic execution 17/17; browser/network transfer OPEN.
-- W016: **native/custom actual Chromium transfer 14/14 after harness correction**.
-- True HTTP direct-entry/reload: **OPEN**.
+- W012: responsive Chromium transfer executed.
+- W013: navigation/history partial Chromium transfer executed.
+- W015: task-state/recovery deterministic execution 17/17; browser/network transfer OPEN.
+- W016: native/custom Chromium transfer 14/14.
+- W017: **icon/non-text Chromium transfer 12/12 after 11/12 failure→revision**.
+- Real HTTP/network navigation in current environment: **BLOCKED; no PASS claimed**.
 - Stage 2: **NOT PASSED**.
-- Next new Web study ID: **W017**.
+- Next new Web study ID: **W018**.
