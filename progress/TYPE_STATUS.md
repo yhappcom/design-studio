@@ -1,24 +1,27 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / T022 DRAWING OPEN + T023 PRODUCT-STRING TRANSFER CONTRACT**
+Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 OPERATIONAL FAMILY BREADTH BLOCKER / LATER GATES CLOSED**
 Governance sync: 2026-09-16
 Primary path: `research/type/`
-Active studies: `T022`, `T023`
+Active authority: `T021` sequence in `research/type/README.md`
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-T022 Revision 2 remains an authored vector with PARTIAL CONSTRUCTION PASS only; trustworthy raster/outline inspection is still required before spacing or kerning. T023 now defines a separate mature-product-font transfer gate using real semantic/localized strings, numeric/identifier classes, fallback, supported OpenType features, wrapping and ambiguity-critical glyphs. T023 explicitly does not bypass T022's drawing → spacing → kerning order.
+A CONTRADICTION REVIEW in `T021-W027-product-runtime-handoff.md` reconciles recent cross-domain notes with the canonical Type README. The authoritative sequence remains T021 drawing/general-spacing and operational family breadth first; T022 kerning, T023 weight/interpolation and T024 identity integration remain later gates. A newly drafted conflicting T024 runtime note was removed rather than redefining the identifier.
+
+W027 is still useful as a future product-transfer surface, but it must use mature product fonts until the custom LogMate candidate can render the bounded operational corpus without fallback/notdef and drawing/general-spacing defects are repaired with kerning OFF.
 
 ## Active queue
-1. T022: obtain trustworthy raster/outline inspection before any spacing/kerning/repertoire expansion.
-2. T023: execute exact shipped/product font versions against CD033-generated and operational string corpora in browser/Flutter/native surfaces.
-3. Record actual feature support and fallback; do not assume tabular figures or other OpenType behavior.
-4. Keep human readability/recognition OPEN.
+1. T021: expand the bounded LogMate repertoire with kerning OFF.
+2. Render operational strings and ambiguity controls at 14/17/24px; repair drawing/general-spacing failures.
+3. Verify no fallback/notdef and compare against exact controls when available.
+4. Only then classify pair-specific residuals and consider T022.
+5. Keep native/browser breadth and human recognition evidence OPEN.
 
 ## Cross-domain state
-CD033 supplies resource strings; W026 captures runtime/font evidence; L019 consumes measured wrap geometry; C028 cannot repair glyph ambiguity; I014 owns behavior truth.
+CD034 supplies truthful strings; W027 is the future runtime surface; L020 consumes measured geometry; C029 cannot repair glyph ambiguity; I015 owns behavior truth.
 
 ## Evidence boundary
-No full drawing PASS, spacing/kerning PASS, custom font binary, product-font platform PASS or human recognition PASS is claimed.
+No T021 closure, T022 kerning entry, custom-font production recommendation, native platform PASS or human recognition PASS is claimed.
