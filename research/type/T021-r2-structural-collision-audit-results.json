@@ -1,0 +1,47 @@
+{
+  "revision": "R2-structural-source-audit",
+  "scope": "ambiguity-critical and control pairs; static source topology only",
+  "pairs": [
+    {
+      "pair": "5S",
+      "same_normalized_topology": true,
+      "a_signature": ["top", "middle", "bottom", "left-upper", "right-lower"],
+      "b_signature": ["top", "middle", "bottom", "left-upper", "right-lower"]
+    },
+    {
+      "pair": "DO",
+      "same_normalized_topology": true,
+      "a_signature": ["left-full", "top", "bottom", "right-full"],
+      "b_signature": ["left-full", "top", "bottom", "right-full"]
+    },
+    {
+      "pair": "0O",
+      "same_normalized_topology": true,
+      "a_signature": ["left-full", "top", "bottom", "right-full"],
+      "b_signature": ["left-full", "top", "bottom", "right-full"]
+    },
+    {
+      "pair": "1I",
+      "same_normalized_topology": false,
+      "a_signature": ["center-stem", "base", "upper-flag"],
+      "b_signature": ["top", "bottom", "center-stem"]
+    },
+    {
+      "pair": "1l",
+      "same_normalized_topology": false,
+      "a_signature": ["center-stem", "base", "upper-flag"],
+      "b_signature": ["narrow-stem", "foot"]
+    },
+    {
+      "pair": "8B",
+      "same_normalized_topology": false,
+      "a_signature": ["upper-ring", "lower-ring"],
+      "b_signature": ["left-full", "top", "middle", "bottom", "right-upper", "right-lower"]
+    }
+  ],
+  "exact_topology_collisions": ["5S", "DO", "0O"],
+  "drawing_gate": "FAIL",
+  "human_recognition_claim": false,
+  "raster_quality_claim": false,
+  "kerning_eligible": false
+}
