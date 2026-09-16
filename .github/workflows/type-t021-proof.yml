@@ -1,0 +1,28 @@
+name: Type T021 Proof
+on:
+  push:
+    paths:
+      - 'research/type/T021-logmate-operational-family-expansion-harness.py'
+      - '.github/workflows/type-t021-proof.yml'
+  workflow_dispatch:
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install proof dependencies
+        run: python -m pip install --disable-pip-version-check fonttools pillow
+      - name: Execute T021 operational proof
+        run: python research/type/T021-logmate-operational-family-expansion-harness.py
+      - name: Show measured result
+        if: always()
+        run: cat /tmp/t021-logmate-expanded/T021-logmate-operational-family-expansion-results.json || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: t021-logmate-operational-proof
+          path: /tmp/t021-logmate-expanded/
+          if-no-files-found: warn
