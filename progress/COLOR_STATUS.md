@@ -1,6 +1,6 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / C061 CI RENDERED TRANSFER / EXECUTION OPEN**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / C062 EXECUTABLE CONTRADICTION FIXTURE / FIRST RUN OPEN**
 Governance sync: 2026-09-17
 Primary path: `research/color/`
 
@@ -8,12 +8,12 @@ Primary path: `research/color/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-C061 turns C060's MintTap source preflight into a finite W061 CI transfer matrix: ko/ja versus non-ko/ja polarity, neutral zero, high-income+negative-return contradiction, estimated/final, partial/unavailable, gross/net and tax-adjustment states. Numeric sign and explicit wording remain mandatory redundancy; brand, outcome polarity, certainty and availability remain independent axes.
+C062 binds Color to the implemented MintTap narrow 2.0-scale contradiction fixture combining high income + negative total return + partial data + KRW, with baseline and wide controls. Numeric sign and explicit wording remain mandatory redundancy; brand, outcome polarity, certainty and availability remain independent axes. No Actions run was observed, so rendered evidence remains OPEN.
 
 ## Active queue
-1. Consume the first W061 artifact manifest and run C061 contradiction review.
+1. Consume the first W062 artifact manifest and run the C062 contradiction review.
 2. Apply applicable WCAG 2.2 rendered contrast checks; separately record grayscale/color-loss and high/forced-contrast diagnostics.
-3. Bind L052 adjacency, T030 rendering and CD067 explicit semantics.
+3. Bind L053 adjacency, T031 rendering and CD068 explicit semantics.
 4. Keep calibrated-display, observer and representative-human evidence OPEN.
 
 ## Evidence boundary
