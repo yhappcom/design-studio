@@ -1,27 +1,24 @@
 # Layout, Spatial & Interaction Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / I040 + L044 DEPENDENCY GRAPH INTEGRITY SYSTEM READY**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / I040+L044 EXECUTION OPEN + L045/I041 PRODUCT TRANSFER**
 Governance sync: 2026-09-17
 Canonical paths: `research/layout/`, `research/interaction/`
-Active studies: L031–L044, I027–I040
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-I040 adds authoritative graph validation before consequential dependency execution: unknown policy, missing references and cycles safe-block affected members without heuristic order invention; explicitly independent members may proceed only when production policy proves independence. L044 preserves graph-level cause, affected region, member outcome/reason, safe action and provenance through density, sorting/filtering/collapse, reflow, 200% text, focus change and static transfer.
-
-These remain deterministic systems contracts, not human causal comprehension/workload evidence.
+L045 transfers systems practice to MintTap whole-product hierarchy rather than isolated cards: context → portfolio value → total performance → income/recovery → holdings → distribution → ROC/tax, with full workflow review across onboarding/auth, detail, transaction and settings. I041 formalizes two loops: deterministic internal iteration first, then coherent owner/expert review; owner review is not representative-user usability evidence.
 
 ## Active queue
-1. Execute I040/L044 on W053 artifacts with shared batch/graph/member/dependency/context/object IDs.
-2. Verify cycle, missing reference, policy unavailable, independent-member, cancellation/revalidation, graph-revision change, response-loss, reload/deep-link/history/export.
-3. Obtain production dependency/ordering/atomicity/idempotency/graph-validation policy before production audit claims.
-4. Add native Flutter transfer only on executable app surface.
-5. Keep AT, physical-device/print, discoverability and human task evidence OPEN.
+1. Execute I040/L044 on W053 artifacts when runtime exists.
+2. Transfer L045/I041 to a coherent MintTap build with shared scenario/build IDs.
+3. Verify narrow/wide, 200% text, focus, empty/loading/error, negative/ambiguous states, recovery/history.
+4. Add Flutter transfer only on executable app surface.
+5. Keep AT, physical-device, discoverability and representative-user evidence OPEN.
 
 ## HANDOFFS
-C053 consumes graph/member cue conditions; W053 owns runtime/reconstruction provenance; CD059 maps graph-integrity language; Type supplies accepted custom metrics only after T021 gates.
+T022 supplies string stress; C054 outcome cues; W054 artifact identity; CD060 financial semantics.
 
 ## Evidence boundary
-No Layout/Interaction Stage 3 PASS, executed W053 geometry/provenance PASS, production dependency semantics, AT, physical-device or human PASS is claimed.
+No Stage 3 PASS, W053 execution PASS, MintTap native transfer PASS, AT, physical-device or human usability PASS is claimed.
