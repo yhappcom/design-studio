@@ -1,27 +1,27 @@
 # Web Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / W049 TENANT-CONTEXT CACHE-ISOLATION RUNTIME READY — EXECUTION OPEN**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / W050 OFFLINE-OUTBOX TENANT-BINDING RUNTIME READY — EXECUTION OPEN**
 Governance sync: 2026-09-17
 Primary path: `research/web/`
-Active studies: `W038`–`W049`
+Active studies: `W038`–`W050`
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-W049 extends W048 into tenant/workspace switching and cache isolation: delayed A responses after B confirmation, same object IDs across tenants, B authorization denial, switch outcome unknown, rapid A→B→A reorder, reload/deep-link/history/offline/export. Client route/context selectors and opaque IDs are explicitly not authorization enforcement.
+W050 extends W049 from stale cache/response isolation into persisted deferred mutations. A queued operation retains origin-context provenance across B switching, same-ID collisions, reconnect, permission revocation, response loss, reload/history/export. Current UI context may not substitute for authored origin context. OWASP current guidance supports verified tenant context, deny-by-default and per-request authorization; it does not prescribe the product queue implementation.
 
-Current OWASP guidance supports verified tenant context, per-request/object authorization and tenant-aware cache/session isolation. WCAG 2.2 remains baseline. No executed multi-engine W049 artifact exists. Timings remain lab/functional diagnostics; field LCP/INP/CLS require actual RUM population context.
+WCAG 2.2 remains baseline. No executed multi-engine W050 artifact exists. Queue/reconnect timings remain lab/functional diagnostics; field LCP/INP/CLS require actual RUM population context.
 
 ## Active queue
-1. Implement/execute W049 in authorized browser-capable CI/local environment and preserve raw artifacts with commit SHA/hash.
-2. Obtain production tenant/authorization/cache policy and server/data-layer isolation evidence; otherwise exercise safe blocking only.
+1. Implement/execute W050 in authorized browser-capable CI/local environment and preserve raw artifacts with commit SHA/hash.
+2. Obtain production tenant/authorization/outbox/idempotency/reconciliation policy; otherwise exercise safe blocking only.
 3. Require Chromium plus an independent engine before cross-browser claims; Safari separately for Safari claims.
-4. Bind C049, I036/L040 and CD055 to shared IDs; include localization/forced-colors/reflow/offline/export stress.
+4. Bind C050, I037/L041 and CD056 to shared IDs; include localization/forced-colors/reflow/offline/export stress.
 5. Preserve field-vs-lab performance boundary.
 
 ## Cross-domain state
-C049 owns context visual truth; L040/I036 own context-change behavior; CD055 owns context language; Type R1 remains frozen pending actual repair/rerender.
+C050 owns queue/context visual truth; L041/I037 own context-bound dispatch behavior; CD056 owns queue/context language; Type R1 remains frozen pending actual repair/rerender.
 
 ## Evidence boundary
-No Web Stage 3 PASS, W049 runtime PASS, production tenant isolation, cross-browser, Safari, screen-reader, physical-device/print, field Core Web Vitals or human UX PASS is claimed.
+No Web Stage 3 PASS, W050 runtime PASS, production tenant/outbox isolation, cross-browser, Safari, screen-reader, physical-device/print, field Core Web Vitals or human UX PASS is claimed.
