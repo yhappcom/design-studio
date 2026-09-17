@@ -1,6 +1,6 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / C069 RENDERED STATE OWNERSHIP TRANSFER AUDIT**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / C070 RENDERED STATE-LAYER CONTRADICTION TRANSFER**
 Governance sync: 2026-09-18
 Primary path: `research/color/`
 
@@ -8,11 +8,11 @@ Primary path: `research/color/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-Existing runtime evidence includes compact spatial failure and a wide-workflow Material/ListTile feedback-layer assertion. C069 extends the gate from token correctness to token → paint owner → visible surface → non-color cue → accessibility meaning. TOKEN_PASS / RENDER_FAIL remains a failure.
+Existing runtime evidence includes compact spatial failure and a wide-workflow Material/ListTile feedback-layer assertion. C070 turns the repair into a finite contradiction matrix and requires token → paint owner → visible surface → non-color cue → accessible meaning. TOKEN_PASS / RENDER_FAIL remains an explicit failure.
 
 ## Active queue
-1. After Material/layer repair, rerun brand, polarity, certainty/finality, availability/integrity, selected/pressed/focus and contradiction fixtures.
-2. Verify high-income + negative-return, zero/unavailable, estimated/final, partial/complete and gross/net remain independent semantic axes.
+1. After Material/layer repair, execute C070 across brand, polarity, certainty/finality, availability/integrity and selected/pressed/focus states.
+2. Verify high-income + negative-return, zero/unavailable, estimated/final, partial/complete, gross/net and selected+negative remain independent semantic axes.
 3. Apply applicable WCAG 2.2 rendered contrast/non-color checks under the same run identity as Layout/Interaction/Web/Content.
 4. Keep calibrated-display, observer and representative-human evidence OPEN.
 
