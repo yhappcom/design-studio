@@ -1,6 +1,6 @@
 # Layout, Spatial & Interaction Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / L062 CONSTRAINT-BUDGET REPAIR + I058 RECOVERY OBSERVABILITY**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / L063 FAILURE LOCALIZATION + I059 MATERIAL OWNERSHIP**
 Governance sync: 2026-09-18
 Canonical paths: `research/layout/`, `research/interaction/`
 
@@ -8,13 +8,13 @@ Canonical paths: `research/layout/`, `research/interaction/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-Existing EXECUTED-FAIL evidence remains 9.3 px compact baseline overflow, 47 px enlarged-text overflow, and repeated Material/ListTile feedback-layer assertions. L062 converts L061 measurement into a structural repair decision tree: localize exact RenderFlex, measure the width budget, remove non-semantic fixed competition, recompose secondary metadata/flexible regions, then use Wrap/vertical or evidence-based breakpoint when required. I058 defines observable known-failure versus ambiguous/reconcile recovery families without sacrificing Material feedback.
+Run 35255971379 still provides EXECUTED-FAIL evidence: 9.3 px baseline overflow, 47 px enlarged-text overflow and repeated ListTile/DecoratedBox Material assertions. New inspection shows the overflow log is collapsed at a shared `tester.takeException()` boundary, so the exact RenderFlex owner is still unproven. L063 now requires creator-chain/constraint/claimant instrumentation before repair. I059 localizes the Material failure to the ListTile→decorated surface→nearest Material ownership boundary without weakening tap/focus/pressed/selected behavior.
 
 ## Active queue
-1. Capture the exact overflowing RenderFlex and claimant widths at baseline and enlarged text; apply L062 rather than pixel shaving, Type compression or semantic deletion.
-2. Correct Material ownership so idle/focus/pressed/selected feedback reaches the visible surface without removing activation or target geometry.
-3. Rerun compact baseline, enlarged text, localization/value stress and 1024×768 workflow under one build identity.
-4. When smoke is green, execute I058 pending→known-failure→correction/retry and ambiguous→verify/reconcile→safe-retry with focus/message/history observability.
+1. Capture exact overflowing RenderFlex creator chain, constraints and direct-child widths at baseline/enlarged text; treat the AppBar fixed claimant set as hypothesis until confirmed.
+2. Correct affected ListTile Material ownership while preserving activation, target geometry and state feedback.
+3. Rerun baseline, enlarged text, value/locale stress and 1024×768 traversal under one build identity.
+4. After smoke is green, resume I058 pending→known-failure→correction/retry and ambiguous→verify/reconcile→safe-retry.
 5. Keep AT, physical-device, discoverability, workload and representative-user evidence OPEN.
 
 ## Evidence boundary
