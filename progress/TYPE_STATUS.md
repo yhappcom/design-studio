@@ -1,6 +1,6 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE OPEN + T036 REPAIR REGRESSION GATE**
+Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE OPEN + T037 REPAIR ATTRIBUTION GATE**
 Governance sync: 2026-09-18
 Primary path: `research/type/`
 
@@ -8,12 +8,12 @@ Primary path: `research/type/`
 Stage 1 **PASS**; Stage 2 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-MintTap run `35255971379` passed analysis and executed the widget matrix. Compact baseline overflowed 9.3 px horizontally; 2.0-scale stress overflowed 47 px. T035 classifies both as composition pressure, not kerning/drawing evidence. T036 now defines the post-Layout-repair Type regression gate while preserving T021 drawing→spacing→residual kerning order.
+MintTap runtime evidence remains the executed 9.3 px compact baseline overflow and 47 px 2.0-scale overflow. T037 converts the next repair run into an attribution gate: glyph/drawing, metrics, general spacing, pair residual, fallback, line break, composition pressure, semantic truncation and raster are separated before any Type intervention. T021 drawing→spacing→residual kerning order remains authoritative.
 
 ## Active queue
 1. Continue T021 bounded R1 drawing repair; no spacing/kerning compensation for unfinished drawing.
-2. After L058 repair, execute T036 against the same compact identities: font/fallback, line breaks, clipping, vertical metrics, numerals/punctuation and raster where available.
-3. Keep production compact-iOS 1.10 clamp versus unclamped diagnostic differences as composition/accessibility evidence unless a genuine glyph/metric defect is demonstrated.
+2. After compact recomposition, execute T037 across baseline, 200% scale, long localization and financial-value stress; treat layout pressure as Layout evidence unless a genuine Type defect is reproduced.
+3. Keep production compact-iOS clamp versus unclamped diagnostic differences as composition/accessibility evidence unless glyph/metric evidence proves otherwise.
 4. Keep browser/native breadth, AT and human recognition/task evidence OPEN.
 
 ## Evidence boundary
