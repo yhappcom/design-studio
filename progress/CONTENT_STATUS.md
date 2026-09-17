@@ -1,6 +1,6 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / CD070 SECOND CI CLASSIFICATION / REPAIRED RUN OPEN**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / CD071 CI GATE CLASSIFICATION / FOURTH RUN OPEN**
 Governance sync: 2026-09-18
 Primary path: `research/content/`
 
@@ -8,11 +8,11 @@ Primary path: `research/content/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-CD070 records that MintTap run `35243795007` again failed at analysis before the synthetic English semantic fixture executed. Content result is `NOT EXECUTED — analyzer gate`; no runtime semantic continuity claim is available. The actual MintTap Dart locale pipeline also remains untested. Product repair `27ad199db553b75b7067852a902c7d39c7784587` removes the unstable semantics debug helper.
+CD071 records run `35249891233` as `NOT EXECUTED — analyzer gate`: three info lints stopped execution before the synthetic English semantic fixture. The actual MintTap Dart locale pipeline remains untested. MintTap commit `27b8f3938350ed83e1380511bc357d0929b7f171` makes info diagnostics non-blocking; run `35255971379` is the next shared execution identity.
 
 ## Active queue
-1. Consume the repaired artifact-bearing run and verify visible semantic continuity under the implemented stress matrix.
-2. After smoke success, add an executable fixture through the actual MintTap Dart locale keys/typed variables/fallback path rather than assuming ARB/TMS.
+1. Consume the fourth artifact-bearing run and verify visible semantic continuity under the implemented stress matrix.
+2. After smoke success, add an executable fixture through actual MintTap Dart locale keys/typed variables/fallback path rather than assuming ARB/TMS.
 3. Hand fit pressure to Type/Layout rather than deleting semantic truth; bind Color and Interaction state/recovery contracts.
 4. Keep linguistic review, AT comprehension and representative-human task evidence OPEN.
 
