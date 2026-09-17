@@ -1,6 +1,6 @@
 # Layout, Spatial & Interaction Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / L056 + I052 CI GATE CLASSIFICATION / FOURTH RUN OPEN**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / L057 + I053 FIRST EXECUTED TRANSFER FAILURES**
 Governance sync: 2026-09-18
 Canonical paths: `research/layout/`, `research/interaction/`
 
@@ -8,16 +8,14 @@ Canonical paths: `research/layout/`, `research/interaction/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-L056/I052 classify run `35249891233` as `NOT EXECUTED — analyzer gate`: three info lints prevented phone baseline, 2.0-scale contradiction and wide workflow traversal. MintTap commit `27b8f3938350ed83e1380511bc357d0929b7f171` corrects the severity gate; run `35255971379` is the next shared execution identity.
+Run `35255971379` passed analysis and executed all three widget scenarios. L057 records horizontal RenderFlex overflow of 9.3 px at 390×844 baseline and 47 px at 2.0-scale stress. I053 records repeated wide-workflow ListTile assertions that an intervening DecoratedBox may hide Material ink/background feedback. These are EXECUTED-FAIL transfer results.
 
 ## Active queue
-1. Consume the fourth Actions artifact under the shared manifest identity.
-2. Verify protected groups, reflow, focus visibility/order, target geometry and first-value flow before promotional/ad interruption.
-3. If smoke succeeds, extend the executable fixture to pending, known failure, ambiguous outcome, verify/reconcile and retry states rather than adding theory.
-4. Keep AT, physical-device, discoverability and representative-user evidence OPEN.
-
-## HANDOFFS
-T034 classifies genuine Type failures; C065 supplies state redundancy; W065 packages execution evidence; CD071 preserves semantic truth.
+1. Localize and recompose the compact overflowing group without shrinking Type or deleting Content semantics.
+2. Correct Material ownership so pressed/selected feedback paints on the visible surface.
+3. Rerun protected groups, focus/order, target geometry and first-value flow.
+4. After smoke repair, add pending, known failure, ambiguous outcome, verify/reconcile and retry states.
+5. Keep AT, physical-device, discoverability and representative-user evidence OPEN.
 
 ## Evidence boundary
 No Stage 3 PASS, runtime/native/browser transfer PASS, AT, physical-device or representative-human usability PASS is claimed.
