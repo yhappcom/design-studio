@@ -9,7 +9,7 @@ Active authority: `T021` direct critique + bounded R1 repair
 Stage 1 **PASS**; Stage 2 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-T021 batch-dependency CONTRADICTION REVIEW confirms W052/CD058 prerequisite/dependent terminology still does not justify expanding provisional custom glyph scope. R1 remains only `I/l/1` and candidate-B `0` slash refinement; kerning OFF; widths, sidebearings and unrelated glyphs frozen. Dependency strings use mature fallback.
+T021 dependency-graph-integrity CONTRADICTION REVIEW confirms W053/CD059 cycle/missing-reference/policy terminology still does not justify expanding provisional custom glyph scope. R1 remains only `I/l/1` and candidate-B `0` slash refinement; kerning OFF; widths, sidebearings and unrelated glyphs frozen. Systems strings use mature fallback.
 
 This is gate protection, not repaired-raster evidence. General spacing and T022 kerning remain closed.
 
@@ -22,7 +22,7 @@ This is gate protection, not repaired-raster evidence. General spacing and T022 
 6. Keep browser/native and human recognition/task evidence OPEN.
 
 ## Cross-domain state
-W052/CD058 use mature fallback; C052 cannot repair glyph ambiguity; L043 must not freeze provisional metrics.
+W053/CD059 use mature fallback; C053 cannot repair glyph ambiguity; L044 must not freeze provisional metrics.
 
 ## Evidence boundary
 No R1 mutation, repaired raster, drawing PASS, T021 closure, kerning entry, custom-font production recommendation, native/browser transfer or human recognition PASS is claimed.
