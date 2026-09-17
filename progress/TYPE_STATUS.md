@@ -1,28 +1,24 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 R1 SCOPE FROZEN — MUTATION + RASTER EXECUTION OPEN**
+Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 R1 EXECUTION OPEN + T022 PRODUCT TRANSFER AUDIT**
 Governance sync: 2026-09-17
 Primary path: `research/type/`
-Active authority: `T021` direct critique + bounded R1 repair
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-T021 dependency-graph-integrity CONTRADICTION REVIEW confirms W053/CD059 cycle/missing-reference/policy terminology still does not justify expanding provisional custom glyph scope. R1 remains only `I/l/1` and candidate-B `0` slash refinement; kerning OFF; widths, sidebearings and unrelated glyphs frozen. Systems strings use mature fallback.
-
-This is gate protection, not repaired-raster evidence. General spacing and T022 kerning remain closed.
+T022 transferred Type judgment into MintTap financial UI: currency marks, signed percentages, large monetary values, dates, tickers and localized labels create a stronger product stress corpus than brand-glyph authorship. Mature fallback remains required for product strings while T021 custom drawing is provisional. T022 does not bypass drawing → spacing → residual kerning gates.
 
 ## Active queue
-1. Apply the bounded R1 geometry patch in an inspectable complete-source environment.
-2. Run normalized CI with kerning OFF and frozen metrics; capture source/build/font/raster hashes.
-3. Critique ambiguity + accepted corpus at 14/17/24px.
-4. Only after drawing is defensible, execute general spacing and fallback/notdef recheck.
-5. Open kerning only for residual pair-specific defects after general spacing.
-6. Keep browser/native and human recognition/task evidence OPEN.
+1. Apply bounded T021 R1 geometry patch (`I/l/1`, candidate-B `0` slash) in complete source; kerning OFF, metrics frozen.
+2. Capture normalized source/build/font/raster hashes and critique 14/17/24px.
+3. Then spacing; kerning only for residual pair defects.
+4. Transfer-test MintTap KRW/USD, signed/zero/large values and 200% text on executable native artifacts.
+5. Keep browser/native and human recognition/task evidence OPEN.
 
 ## Cross-domain state
-W053/CD059 use mature fallback; C053 cannot repair glyph ambiguity; L044 must not freeze provisional metrics.
+T022 hands full financial strings to C054, L045/I041, W054 and CD060; no peer may shorten semantic truth to protect provisional geometry.
 
 ## Evidence boundary
-No R1 mutation, repaired raster, drawing PASS, T021 closure, kerning entry, custom-font production recommendation, native/browser transfer or human recognition PASS is claimed.
+No T021 repair/raster PASS, custom-font production recommendation, MintTap native raster PASS, browser transfer or human recognition PASS is claimed.
