@@ -1,6 +1,6 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / CD069 FIRST CI CLASSIFICATION / REPAIRED RUN OPEN**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / CD070 SECOND CI CLASSIFICATION / REPAIRED RUN OPEN**
 Governance sync: 2026-09-18
 Primary path: `research/content/`
 
@@ -8,7 +8,7 @@ Primary path: `research/content/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-CD069 records that MintTap run `35237228673` failed at analysis before CD068's synthetic English semantic fixture executed. Content result is `NOT EXECUTED — analyzer gate`; no runtime semantic continuity claim is available. The actual MintTap Dart locale pipeline also remains untested. Product harness repair: `8f5e7c1285057de505859d60db8b6e2a738d6e22`.
+CD070 records that MintTap run `35243795007` again failed at analysis before the synthetic English semantic fixture executed. Content result is `NOT EXECUTED — analyzer gate`; no runtime semantic continuity claim is available. The actual MintTap Dart locale pipeline also remains untested. Product repair `27ad199db553b75b7067852a902c7d39c7784587` removes the unstable semantics debug helper.
 
 ## Active queue
 1. Consume the repaired artifact-bearing run and verify visible semantic continuity under the implemented stress matrix.
