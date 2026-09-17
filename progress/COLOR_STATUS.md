@@ -1,27 +1,27 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / C047 RETENTION-EXPIRY VISUAL CONTRACT READY**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / C048 AUTHORIZATION-REVOCATION VISUAL CONTRACT READY**
 Governance sync: 2026-09-17
 Primary path: `research/color/`
-Active studies: `C035`–`C047`
+Active studies: `C035`–`C048`
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-C047 extends C046 destructive-state truth across bounded recoverability. Countdown emphasis, destructive hue, disappearance, disabled controls or local elapsed time cannot prove recovery availability or irreversible expiry. Recoverable-confirmed, approaching, outcome-unknown, unavailable-confirmed, authority-unavailable and policy-unknown remain distinct under cue removal, grayscale, forced colors and static transfer.
+C048 separates recovery capability from current subject authorization. Cached primary/green Restore styling, prior role badges, selection/focus and retention countdown cannot prove current permission. `authorized`, `authorization pending/unknown`, `not authorized`, `permission changed` and prior-operation ambiguity remain distinct under cue removal, grayscale, forced colors and static transfer.
 
-Actual artifacts require W047 execution.
+Actual artifacts require W048 execution.
 
 ## Active queue
-1. Execute C035–C047 against shared W047 run/object/deletion/recovery/artifact IDs.
-2. Bind L038 geometry, I034 recoverability/action truth and CD053 semantics.
-3. Verify local countdown or disappearance cannot masquerade as authoritative expiry.
+1. Execute C035–C048 against shared W048 run/object/authorization/recovery/artifact IDs.
+2. Bind L039 geometry, I035 authorization/action truth and CD054 semantics.
+3. Verify stale enabled-control styling cannot masquerade as current authorization.
 4. Broaden beyond Chromium where executable; keep physical print/display, CVD/low-vision observer, perceived salience and human task evidence OPEN.
 5. Defer P3 absent product need.
 
 ## HANDOFFS
-L038 supplies retention/recovery geometry; I034 owns recoverability truth; W047 supplies runtime/export evidence; CD053 preserves non-color semantics; Type remains provisional.
+L039 supplies permission-change geometry; I035 owns action truth; W048 supplies runtime evidence; CD054 preserves non-color semantics; Type remains provisional.
 
 ## Evidence boundary
-No Color Stage 3 PASS, W047 runtime PASS, cross-browser, calibrated-display, observer or human PASS is claimed.
+No Color Stage 3 PASS, W048 runtime PASS, production authorization enforcement, cross-browser, calibrated-display, observer or human PASS is claimed.
