@@ -1,6 +1,6 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / CD059 TOOLCHAIN OPEN + CD061 PRODUCT SYSTEM TRANSFER**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / CD059 TOOLCHAIN OPEN + CD062 ACCESSIBLE PRODUCT TRANSFER**
 Governance sync: 2026-09-17
 Primary path: `research/content/`
 
@@ -8,14 +8,14 @@ Primary path: `research/content/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-CD061 converts MintTap financial semantics into a product-wide language ledger: object, measure, scope, polarity, certainty, availability, basis, time, consequence, action and recovery. It preserves distinctions among portfolio value, invested capital, total performance, distributions, recovery/payback, gross/net, estimated/final ROC and tax adjustments across surfaces.
+CD062 extends CD061 into accessibility/localization execution: truth-bearing financial qualifiers cannot be removed to fit; visible labels, accessible names, state announcements, errors/recovery and export/history wording must preserve the same object/measure/scope/polarity/certainty/availability/basis semantics.
 
 ## Active queue
-1. Materialize CD038–CD061 through actual Flutter localization tooling/equivalent production toolchain with resource/build identity.
-2. Execute KRW/USD, signed/zero/large values, long labels, estimated/final ROC, partial/unavailable data, locale change, history/export and tax-adjustment scenarios.
-3. Bind W055 build/scenario IDs and L046 hierarchy; preserve C055 non-color semantics and I042 state truth.
-4. Maintain discrepancy/revision ledger from implemented strings and accessible names.
+1. Materialize CD038–CD062 through actual Flutter localization tooling/equivalent production toolchain with W056 identity.
+2. Execute KRW/USD, signed/zero/large, long labels, estimated/final ROC, partial/unavailable, locale change, history/export and tax-adjustment scenarios.
+3. Maintain discrepancy/revision ledger across visible and accessible strings.
+4. Hand fit pressure to T025/L047 rather than deleting semantic truth; bind C056 and I043 state/recovery contracts.
 5. Keep linguistic review, AT comprehension and representative-human task evidence OPEN.
 
 ## Evidence boundary
-No Content Stage 3 PASS, real Flutter/TMS/ARB round trip, MintTap localization PASS, linguistic review, AT or human comprehension/task PASS is claimed.
+No Content Stage 3 PASS, real Flutter/TMS/ARB round trip, product localization PASS, linguistic review, AT or human comprehension/task PASS is claimed.
