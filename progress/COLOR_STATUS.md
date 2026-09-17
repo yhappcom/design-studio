@@ -1,6 +1,6 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / C068 STATE-LAYER REPAIR REGRESSION GATE**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / C069 RENDERED STATE OWNERSHIP TRANSFER AUDIT**
 Governance sync: 2026-09-18
 Primary path: `research/color/`
 
@@ -8,12 +8,12 @@ Primary path: `research/color/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-Existing runtime evidence shows spatial failure in compact scenarios and a wide-workflow Material/ListTile feedback-layer assertion. C068 now requires post-repair verification of brand, polarity, certainty, availability and interaction-state axes independently. TOKEN_PASS / RENDER_FAIL remains a failure, and every meaning-bearing state must remain recoverable without hue alone.
+Existing runtime evidence includes compact spatial failure and a wide-workflow Material/ListTile feedback-layer assertion. C069 extends the gate from token correctness to token → paint owner → visible surface → non-color cue → accessibility meaning. TOKEN_PASS / RENDER_FAIL remains a failure.
 
 ## Active queue
-1. After Material/layer repair, rerun high-income + negative-return, zero/unavailable, estimated/final, partial/complete, gross/net and locale-polarity contradictions.
-2. Verify selected/pressed/focus feedback reaches the visible surface rather than suppressing feedback to remove the assertion.
-3. Apply applicable WCAG 2.2 rendered contrast/non-color checks and bind evidence to Layout, Type and Content under one run identity.
+1. After Material/layer repair, rerun brand, polarity, certainty/finality, availability/integrity, selected/pressed/focus and contradiction fixtures.
+2. Verify high-income + negative-return, zero/unavailable, estimated/final, partial/complete and gross/net remain independent semantic axes.
+3. Apply applicable WCAG 2.2 rendered contrast/non-color checks under the same run identity as Layout/Interaction/Web/Content.
 4. Keep calibrated-display, observer and representative-human evidence OPEN.
 
 ## Evidence boundary
