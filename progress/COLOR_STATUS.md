@@ -1,6 +1,6 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / C067 VISIBLE STATE-SURFACE GATE**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / C068 STATE-LAYER REPAIR REGRESSION GATE**
 Governance sync: 2026-09-18
 Primary path: `research/color/`
 
@@ -8,12 +8,12 @@ Primary path: `research/color/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-Run `35255971379` executed. Compact scenarios failed spatially; wide workflow produced repeated ListTile assertions that selected/ink feedback may be hidden by an intervening DecoratedBox. C067 converts C066 into a rendered acceptance gate: token correctness is insufficient unless semantic/feedback color reaches the visible Material surface and meaning remains recoverable without hue.
+Existing runtime evidence shows spatial failure in compact scenarios and a wide-workflow Material/ListTile feedback-layer assertion. C068 now requires post-repair verification of brand, polarity, certainty, availability and interaction-state axes independently. TOKEN_PASS / RENDER_FAIL remains a failure, and every meaning-bearing state must remain recoverable without hue alone.
 
 ## Active queue
-1. After I054/L058 repair, rerun high-income + negative-return + partial + KRW contradiction review and visible pressed/selected states.
-2. Apply applicable WCAG 2.2 rendered text/non-text contrast checks; separately record grayscale/color-loss and high/forced-contrast diagnostics.
-3. Bind Layout adjacency, Type rendering and Content explicit semantics under one run identity.
+1. After Material/layer repair, rerun high-income + negative-return, zero/unavailable, estimated/final, partial/complete, gross/net and locale-polarity contradictions.
+2. Verify selected/pressed/focus feedback reaches the visible surface rather than suppressing feedback to remove the assertion.
+3. Apply applicable WCAG 2.2 rendered contrast/non-color checks and bind evidence to Layout, Type and Content under one run identity.
 4. Keep calibrated-display, observer and representative-human evidence OPEN.
 
 ## Evidence boundary
