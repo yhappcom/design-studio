@@ -1,6 +1,6 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / C064 SECOND CI CLASSIFICATION / REPAIRED RUN OPEN**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / C065 CI GATE CLASSIFICATION / FOURTH RUN OPEN**
 Governance sync: 2026-09-18
 Primary path: `research/color/`
 
@@ -8,10 +8,10 @@ Primary path: `research/color/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-C064 records that MintTap run `35243795007` failed at analysis before the high-income + negative-return + partial + KRW contradiction fixture executed. Color result is `NOT EXECUTED — analyzer gate`, not FAIL. Product repair `27ad199db553b75b7067852a902c7d39c7784587` removes the unstable semantics debug helper.
+C065 records run `35249891233` as `NOT EXECUTED — analyzer gate`: only three info lints were emitted before the contradiction fixture. MintTap commit `27b8f3938350ed83e1380511bc357d0929b7f171` makes info diagnostics non-blocking while retaining warning/error gates; run `35255971379` is the next shared execution identity.
 
 ## Active queue
-1. Consume the repaired artifact-bearing run and execute the contradiction review.
+1. Consume the artifact-bearing fourth run and execute high-income + negative-return + partial + KRW contradiction review.
 2. Apply applicable WCAG 2.2 rendered contrast checks; separately record grayscale/color-loss and high/forced-contrast diagnostics.
 3. Bind Layout adjacency, Type rendering and Content explicit semantics under one run identity.
 4. Keep calibrated-display, observer and representative-human evidence OPEN.
