@@ -1,6 +1,6 @@
 # Web Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / W064 SECOND CI RUN TRIAGED / REPAIRED RUN OPEN**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / W065 SEVERITY-AWARE CI / FOURTH RUN OPEN**
 Governance sync: 2026-09-18
 Primary path: `research/web/`
 
@@ -8,12 +8,12 @@ Primary path: `research/web/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-W064 records MintTap Actions run `35243795007` on product commit `8f5e7c1285057de505859d60db8b6e2a738d6e22`. Checkout, Flutter setup, identity and dependencies passed on Flutter 3.47.4 / Dart 3.13.3, but analysis again failed because `debugDumpSemanticsTreeInTraversalOrder()` is undefined. Widget tests, Web build and manifest generation were skipped; artifact upload succeeded. Product commit `27ad199db553b75b7067852a902c7d39c7784587` removes the unstable debug helper entirely while retaining behavioral assertions. No runtime PASS is claimed until its run is observed.
+W065 records MintTap run `35249891233` on product commit `27ad199...`. API drift was gone; checkout, Flutter 3.47.4 setup, identity and dependencies passed. Analysis emitted only three info lints but exited 1, skipping widget matrix/Web build/manifest. Product commit `27b8f3938350ed83e1380511bc357d0929b7f171` changes analysis to `--no-fatal-infos`, preserving diagnostics while warnings/errors remain blocking. Push-triggered run `35255971379` is in progress.
 
 ## Active queue
-1. Obtain and inspect the Actions run for `27ad199db553b75b7067852a902c7d39c7784587`; classify every stage.
-2. If analyzer passes, consume baseline / 2.0-scale contradiction / wide workflow results before adjacent Web theory.
-3. Add semantics/focus diagnostics only with SDK-supported, versioned mechanisms that cannot mask primary behavioral execution.
+1. Consume run `35255971379`; classify every stage and artifact.
+2. If analyzer passes, prioritize baseline / 2.0-scale contradiction / wide workflow results before adjacent Web theory.
+3. Add semantics/focus diagnostics only with SDK-supported versioned mechanisms that cannot mask primary behavioral execution.
 4. After minimum smoke, add actual product localization and pending/failure/ambiguous/recovery states.
 5. Require Chromium plus an independent engine before cross-browser claims; Safari/WebKit separately where product scope requires it.
 6. Treat Lighthouse/local traces as LAB; only provenance-bearing CrUX/RUM/equivalent counts as field LCP/INP/CLS.
