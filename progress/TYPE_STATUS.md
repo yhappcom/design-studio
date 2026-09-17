@@ -1,6 +1,6 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE OPEN + T024 PRODUCT TRANSFER**
+Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE OPEN + T025 ACCESSIBILITY TRANSFER**
 Governance sync: 2026-09-17
 Primary path: `research/type/`
 
@@ -8,17 +8,17 @@ Primary path: `research/type/`
 Stage 1 **PASS**; Stage 2 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-T024 transfers Type practice into MintTap nonlinear text scaling. Product validation now treats scaling as a composition input: complete financial strings, large signed KRW/USD values, qualifiers and localized labels must survive reflow without a global scale clamp. Mature fallback remains the product-safe choice while custom drawing is provisional.
+T025 converts nonlinear accessibility scaling from a screenshot stress case into an intrinsic-layout contract: complete localized financial strings remain truth-bearing inputs, `TextScaler` is not reduced to one global multiplier, and composition must wrap/recompose before shrinking or deleting qualifiers.
 
 ## Active queue
-1. Continue the canonical T021 drawing sequence; do not use spacing/kerning to hide unresolved drawing defects.
-2. Execute T024 on real Flutter artifacts at supported large/nonlinear text settings with exact build identity.
-3. Capture wrap, fallback, numeral/punctuation and hierarchy behavior for KRW/USD, signed/zero/large values and long localized strings.
-4. Hand runtime failures to Layout/Interaction, Web and Content without shortening semantic truth.
+1. Continue T021 drawing sequence; drawing defects may not be hidden with spacing/kerning.
+2. Execute T025 on real Flutter artifacts at default and maximum supported scaling with exact W056 identity.
+3. Capture fallback, numerals/punctuation, wrapping and hierarchy for KRW/USD, signed/zero/large values and long localization.
+4. Hand geometry failures to L047/I043 and semantic conflicts to C056/CD062.
 5. Keep browser/native breadth, AT and human recognition/task evidence OPEN.
 
 ## Cross-domain state
-T024 supplies pressure conditions to C055, L046/I042, W055 and CD061. Required content qualifiers remain immutable inputs to Type validation.
+T025 supplies immutable string/render pressure to C056, L047/I043, W056 and CD062.
 
 ## Evidence boundary
-No T021 drawing/spacing closure, kerning entry, custom-font production recommendation, MintTap runtime raster PASS, cross-browser/native breadth, AT or human recognition PASS is claimed.
+No T021 drawing/spacing closure, kerning entry, custom-font production recommendation, runtime raster PASS, cross-browser/native breadth, AT or human PASS is claimed.
