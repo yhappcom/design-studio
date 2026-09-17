@@ -1,6 +1,6 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / C071 STATE-VISIBILITY INDEPENDENCE MATRIX**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / C072 MATERIAL STATE-SURFACE REPAIR ACCEPTANCE**
 Governance sync: 2026-09-18
 Primary path: `research/color/`
 
@@ -8,12 +8,12 @@ Primary path: `research/color/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-Existing runtime evidence includes compact spatial failure and a wide-workflow Material/ListTile feedback-layer assertion. C071 turns the next repair into an orthogonal execution ledger across financial polarity, certainty/finality, availability/integrity, accounting basis and interaction/recovery state. Promotion requires token → paint owner → visible surface → non-color cue → accessible meaning; TOKEN_PASS / RENDER_FAIL remains an explicit failure.
+Run 35255971379 directly demonstrates C071's TOKEN_PASS / RENDER_FAIL class: ListTile state paint/ink can be configured yet hidden by an intermediate background-colored DecoratedBox. C072 converts I059's paint-owner repair into rendered acceptance across idle/focus/pressed/selected plus financial polarity, certainty/finality and availability.
 
 ## Active queue
-1. After Material/layer repair, execute C071 under the same run identity as Layout/Interaction/Web/Content.
-2. Verify positive-income + negative-return, zero/unavailable, estimated/final, partial/complete, gross/net, selected+negative and focus+unavailable remain independent semantic axes.
-3. Apply applicable WCAG 2.2 contrast, non-color and focus checks to the rendered surface, not token declarations alone.
+1. After I059 repair, execute C072 under the same run identity as Layout/Interaction/Web/Content.
+2. Verify selected+negative and focus+unavailable as well as positive-income+negative-return, zero/unavailable, estimated/final, partial/complete and gross/net.
+3. Apply WCAG 2.2 contrast/non-color/focus checks to the visible surface, not declarations alone.
 4. Keep calibrated-display, observer and representative-human evidence OPEN.
 
 ## Evidence boundary
