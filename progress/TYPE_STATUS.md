@@ -1,24 +1,24 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE OPEN + T031 EXECUTABLE TRANSFER FIXTURE**
-Governance sync: 2026-09-17
+Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE OPEN + T032 FIRST CI CLASSIFICATION**
+Governance sync: 2026-09-18
 Primary path: `research/type/`
 
 ## Current level
 Stage 1 **PASS**; Stage 2 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-T031 binds Type to the now-implemented MintTap Flutter widget-transfer matrix: 390×844 baseline, 390×844 at 2.0 text scale with long/KRW/negative/partial pressure, and 1024×768 workflow traversal. Mature fallback remains mandatory while T021 R1 drawing is open. No Actions run was observed after harness creation, so no runtime/raster PASS is claimed.
+T032 classifies MintTap Actions run `35237228673` as `NOT EXECUTED — analyzer gate` for Type. Flutter setup and dependency resolution succeeded, but unsupported semantics-dump test symbols stopped analysis before the T031 widget matrix ran. Therefore no glyph, spacing, kerning, fallback, wrapping, clipping or raster conclusion is available. The product harness repair is commit `8f5e7c1285057de505859d60db8b6e2a738d6e22`.
 
 ## Active queue
 1. Continue T021 bounded R1 drawing repair; no spacing/kerning compensation for unfinished drawing.
-2. Consume the first W062 artifact-bearing run and classify font/fallback, line breaks, clipping/overflow, raster and semantic text.
+2. Consume the first artifact-bearing repaired run and classify font/fallback, line breaks, clipping/overflow, raster and semantic text.
 3. Keep production compact-iOS 1.10 clamp versus unclamped diagnostic differences classified as composition/accessibility evidence unless a genuine glyph/metric defect is demonstrated.
-4. Route composition pressure to L053/W062 and semantic truncation to CD068.
+4. Route composition pressure to Layout/Web and semantic truncation to Content.
 5. Keep browser/native breadth, AT and human recognition/task evidence OPEN.
 
 ## Cross-domain state
-T031 consumes CD068 truth-bearing strings and hands classified failures to C062, L053/I049 and W062.
+T032 consumes W063 execution triage and shares the next run identity with C063, L054/I050 and CD069.
 
 ## Evidence boundary
 No T021 drawing/spacing closure, kerning entry, custom-font production recommendation, runtime raster PASS, cross-browser/native breadth, AT or human PASS is claimed.
