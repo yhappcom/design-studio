@@ -1,6 +1,6 @@
 # Layout, Spatial & Interaction Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / L066 PROJECTION DENSITY + I062 REORDER EQUIVALENCE**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / L067 CONTROL DENSITY + I063 REORDER EQUIVALENCE CONTRACT**
 Governance sync: 2026-09-18
 Canonical paths: `research/layout/`, `research/interaction/`
 
@@ -8,14 +8,14 @@ Canonical paths: `research/layout/`, `research/interaction/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-L066 transfers LogMate's implemented 35-item Customize session shell into a projection-density matrix covering Standard/minimum/totals/operational/qualification/group-heavy configurations while preserving semantic identity. I062 identifies a new high-value accessibility gate: current drag reorder evidence is positive direct-manipulation evidence, but WCAG 2.2 dragging functionality requires an equivalent single-pointer non-drag path unless essential. Persistence/Sync remain unimplemented.
+L067 compares persistent inline, selected-row rail and dedicated reorder-mode architectures under the 35-field catalog, 200% text and WCAG 2.2 target constraints. I063 turns the I062 dragging gap into a behavioral oracle: drag, non-drag pointer and keyboard paths must converge on identical semantic order while preserving hidden-item stability, group rules, one-visible floor and Reset semantics.
 
 ## Active queue
-1. Execute projection extremes with header/body/total alignment and group adjacency preserved.
-2. Add non-drag reorder equivalence plus keyboard path; do not declare drag essential for column ordering.
-3. Preserve hidden≠deleted, Reset≠erase and display-config≠entry-field semantics through persistence when implemented.
-4. Extend to 200% text, narrow/wide landscape, forced colors and independent browser engine.
-5. Keep AT, physical-device, discoverability, workload and representative-pilot evidence OPEN.
+1. Implement/execute a non-drag single-pointer reorder path; keyboard support does not substitute for WCAG 2.2 SC 2.5.7.
+2. Compare L067 architectures with real target boxes, reflow, focus and semantic-order evidence.
+3. Run I063 transition ledger twice per path; boundary attempts must not mutate order silently.
+4. Preserve hidden≠deleted, Reset≠erase and display-config≠entry-field semantics through persistence when implemented.
+5. Extend to forced colors and independent browser engine; keep AT, physical-device, discoverability, workload and representative-pilot evidence OPEN.
 
 ## Evidence boundary
 No Stage 3 PASS, persisted/synced configuration, non-drag reorder PASS, independent-browser/native transfer, AT, physical-device or representative-human usability PASS is claimed.
