@@ -1,6 +1,6 @@
 # Layout, Spatial & Interaction Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / L065 REFLOW CONTROL + I061 AUTH RECOVERY TRANSFER**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / L066 PROJECTION DENSITY + I062 REORDER EQUIVALENCE**
 Governance sync: 2026-09-18
 Canonical paths: `research/layout/`, `research/interaction/`
 
@@ -8,13 +8,14 @@ Canonical paths: `research/layout/`, `research/interaction/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-LogMate run 35293644138 supplies a same-product contradiction: older auth layouts fail 200% text with 41/41/147 px bottom overflows, while V4 passes comparable 200% error/recovery scenarios and explicit continuous-reflow/content-before-actions assertions. I061 adds executed production auth state integrity and Chrome recovery reachability evidence. This supersedes further abstract acceptance-rule accumulation as the immediate learning priority.
+L066 transfers LogMate's implemented 35-item Customize session shell into a projection-density matrix covering Standard/minimum/totals/operational/qualification/group-heavy configurations while preserving semantic identity. I062 identifies a new high-value accessibility gate: current drag reorder evidence is positive direct-manipulation evidence, but WCAG 2.2 dragging functionality requires an equivalent single-pointer non-drag path unless essential. Persistence/Sync remain unimplemented.
 
 ## Active queue
-1. Use V4 as positive structural control for constraint-triggered reflow; reject font/copy compression and pixel shaving.
-2. Preserve action/focus/recovery order under large text, keyboard-up and short-height constraints.
-3. Extend deterministic auth state tests to ambiguous transport → verify/reconcile → safe retry.
-4. Keep AT, physical-device, discoverability, workload and representative-user evidence OPEN.
+1. Execute projection extremes with header/body/total alignment and group adjacency preserved.
+2. Add non-drag reorder equivalence plus keyboard path; do not declare drag essential for column ordering.
+3. Preserve hidden≠deleted, Reset≠erase and display-config≠entry-field semantics through persistence when implemented.
+4. Extend to 200% text, narrow/wide landscape, forced colors and independent browser engine.
+5. Keep AT, physical-device, discoverability, workload and representative-pilot evidence OPEN.
 
 ## Evidence boundary
-No Stage 3 PASS, independent-browser/native transfer, real-network ambiguity, AT, physical-device or representative-human usability PASS is claimed.
+No Stage 3 PASS, persisted/synced configuration, non-drag reorder PASS, independent-browser/native transfer, AT, physical-device or representative-human usability PASS is claimed.
