@@ -1,6 +1,6 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE + T051 SEMANTIC-IDENTITY TRANSFER**
+Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE + T052 DISAPPEARING-OBJECT TRANSFER**
 Governance sync: 2026-09-18
 Primary path: `research/type/`
 
@@ -8,13 +8,13 @@ Primary path: `research/type/`
 Stage 1 **PASS**; Stage 2 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-T051 extends the protected LogMate corpus with I069/CD088 semantic-object status strings and repeated position/professional identifiers. It does not change T021: bounded R1 drawing → general spacing → residual kerning. Recomposition/status pressure is not evidence for Type compression.
+T052 extends T051 with I070/CD089 disappearing-object/fallback strings. It does not change T021: bounded R1 drawing → general spacing → residual kerning. Dynamic focus/removal and recovery pressure is not evidence for Type compression.
 
 ## Active queue
 1. Continue T021 bounded R1 drawing repair with widths/sidebearings frozen and kerning OFF.
-2. After drawing/spacing gates permit, run T044–T051 corpora on repaired candidate versus mature fallback.
+2. After drawing/spacing gates permit, run T044–T052 corpora on repaired candidate versus mature fallback.
 3. Recheck ambiguity-critical glyphs, repeated position numerals, punctuation, clipping, mixed-script fallback and 200% line breaks.
-4. Attribute failures to Type only with reproduced glyph/metric/fallback/raster evidence; composition pressure returns to Layout.
+4. Attribute failures to Type only with reproduced glyph/metric/fallback/raster evidence; composition/behavior pressure returns to Layout/Interaction/Content.
 5. Keep browser/native breadth, AT and human recognition/task evidence OPEN.
 
 ## Evidence boundary
