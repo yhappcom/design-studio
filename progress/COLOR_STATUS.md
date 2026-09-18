@@ -1,6 +1,6 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / C091 POINTER PREVIEW-CANCEL-COMMIT SEPARATION**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / C092 POINTER-CAPTURE-INTERRUPTION SEPARATION**
 Governance sync: 2026-09-19
 Primary path: `research/color/`
 
@@ -8,14 +8,14 @@ Primary path: `research/color/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-C091 extends C090 from reorder availability into pointer lifecycle state separation. Focus, selection, pressed/preview, candidate destination, cancelled, committed, boundary no-op, recovery, failure/supersession and hidden/disabled remain independent; cancellation is not failure and preview is not success.
+C092 extends C091 by separating browser/gesture stream ownership and interruption from semantic focus, selection, preview/candidate, cancellation, commit and recovery. Capture routes events; it is not itself a success/failure color state. Layout-driven boundary changes must not create committed-looking destination cues.
 
 ## Active queue
-1. Carry C091 into rendered light/night/forced-colors and independent-engine runtime once I078/W091 are executable.
-2. Verify preview/candidate/cancel/commit states retain non-color cues and never impersonate focus/selection or transaction truth.
-3. Recheck state visibility after L082 baseline/200% cancellation geometry.
+1. Carry C091–C092 into rendered light/night/forced-colors and independent-engine runtime once I079/W092 are executable.
+2. Verify preview/candidate/interruption/commit states retain non-color cues and never impersonate focus/selection or transaction truth.
+3. Recheck state visibility after L083 baseline/200% stationary-pointer recomposition geometry.
 4. Keep persistence color semantics dormant until persistence truth exists.
 5. Keep calibrated-display, observer and representative-human evidence OPEN.
 
 ## Evidence boundary
-No Color Stage 3 PASS, rendered C091, forced-colors/cross-browser/device, calibrated-display, observer or human PASS is claimed.
+No Color Stage 3 PASS, rendered C092, forced-colors/cross-browser/device, calibrated-display, observer or human PASS is claimed.
