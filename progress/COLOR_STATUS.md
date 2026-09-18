@@ -1,6 +1,6 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / C076 REORDER STATE ORTHOGONALITY**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / C077 POST-MUTATION FOCUS-STATE INTEGRITY**
 Governance sync: 2026-09-18
 Primary path: `research/color/`
 
@@ -8,12 +8,12 @@ Primary path: `research/color/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-C076 extends C075 to the future non-drag reorder path: SHOWN/HIDDEN, focus/pressed, boundary-disabled, drag insertion and non-drag/keyboard states are separate axes. Acceptance remains semantic token→paint owner→visible surface→non-color cue→accessible meaning; token-only success is insufficient.
+C077 extends C076 temporally: after reorder mutation, SHOWN/HIDDEN, focus, boundary-disabled, selection/insertion and enabledness must remain orthogonal while the moved semantic item changes location. Acceptance remains semantic token→paint owner→visible surface→non-color cue→accessible meaning; token-only success is insufficient.
 
 ## Active queue
-1. Carry C076 scenario IDs into light/night/forced-colors and independent-engine runtime once controls exist.
-2. Prevent SHOWN, focus, insertion and boundary-disabled states from collapsing onto one accent/opacity cue.
-3. Recheck focus/insertion visibility after L067 dense-list/large-text recomposition.
+1. Carry C077 scenario IDs into light/night/forced-colors and independent-engine runtime once controls exist.
+2. Verify post-move focus does not collapse with selection, insertion, visibility or opacity-only disabled treatment.
+3. Recheck focus visibility after L068 wrap/scroll recomposition.
 4. Keep calibrated-display, observer and representative-human evidence OPEN.
 
 ## Evidence boundary
