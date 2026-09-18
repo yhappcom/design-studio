@@ -1,6 +1,6 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / CD090 UNDO-RESTORATION AND FOCUS LANGUAGE CONTRACT**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / CD091 CAUSAL-UNDO INTERVENING-ACTION LANGUAGE CONTRACT**
 Governance sync: 2026-09-18
 Primary path: `research/content/`
 
@@ -8,11 +8,11 @@ Primary path: `research/content/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-CD090 extends CD089 across I071 Undo restoration. Message source truth separates restored object from current focus owner and preserves restored≠focused, visible again≠selected, Undo applied≠Saved/Synced and configuration restoration≠focus return.
+CD091 extends CD090 across I072. Message source truth now includes inverse transaction, Undo eligibility and intervening-action presence. Successful restoration must not fabricate focus return or erase later agency; unavailable, failed and superseded remain distinct; local change is not Saved/Synced.
 
 ## Active queue
-1. Carry CD090 payloads through I071 and W084 runtime evidence.
-2. Build actual multilingual runtime coverage for full labels, compact aviation headers, hide/group-collapse/Reset/Undo consequence and recovery scope.
+1. Carry CD091 payloads through I072 and W085 runtime evidence.
+2. Build actual English/Korean runtime coverage for full labels, compact aviation headers, hide/group-collapse/Reset/Undo consequence and causal recovery scope.
 3. Compare concise visible feedback with richer accessibility payload under actual responsive/layout-direction conditions.
 4. Preserve Hide≠delete, restored≠focused, Reset≠Undo≠erase, display order≠flight data and display configuration≠entry-field configuration.
 5. Keep persistence wording dormant until implementation truth exists; keep linguistic review, AT comprehension and representative-pilot task evidence OPEN.
