@@ -1,6 +1,6 @@
 # Web Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / W080 RESET-BASELINE + NAVIGATION CLOSURE**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / W081 POST-RESET FOCUS + STATUS RUNTIME CLOSURE**
 Governance sync: 2026-09-18
 Primary path: `research/web/`
 
@@ -8,10 +8,10 @@ Primary path: `research/web/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-W080 extends W079 transaction history into baseline-aware Reset. Served-runtime evidence must now prove exact declared baseline restoration, no-op behavior, Reset/Undo policy, navigation stability, focus/scroll geometry and accessibility payload. Persistence/offline/Sync branches remain NOT IMPLEMENTED until product truth exists.
+W081 extends W080: served-runtime evidence must prove not only exact baseline restoration but post-Reset focus/recovery locus, no-op truth, accessibility status payload, scroll/obscuration and navigation stability. Persistence/offline/Sync remain NOT IMPLEMENTED until product truth exists.
 
 ## Active queue
-1. Execute I063–I067 once non-drag reorder/recovery exists.
+1. Execute I063–I068 once non-drag reorder/recovery exists.
 2. Run production Web build → served primary engine → independent engine with identical Reset/transaction scenarios.
 3. Add 200% text/zoom, light/night/forced-colors, focus/scroll/recovery geometry and target evidence.
 4. Add reload/offline/sync baseline conflict only after persistence/Sync exist.
