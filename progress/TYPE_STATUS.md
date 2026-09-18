@@ -1,6 +1,6 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE + T043 LOGMATE TRANSFER CONTROL**
+Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE + T044 LEDGER TRANSFER CORPUS**
 Governance sync: 2026-09-18
 Primary path: `research/type/`
 
@@ -8,13 +8,13 @@ Primary path: `research/type/`
 Stage 1 **PASS**; Stage 2 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-T043 adds real LogMate transfer evidence from run 35293644138: the same declared LogMateRoboto family appears in older 200% layouts that overflow and V4 layouts that pass comparable large-text error/recovery scenarios. This is positive evidence for structural recomposition and against Type compensation. T021 drawing→general spacing→residual kerning remains authoritative.
+T044 converts LogMate's confirmed 35-item Customize catalog into a professional compact-header/numeral transfer corpus: DEP/ARR, operational abbreviations, role-time labels, identifiers and cumulative `99,999+59` capacity. It explicitly preserves T021 drawing→general spacing→residual kerning and forbids using Type compensation for ledger density.
 
 ## Active queue
 1. Continue T021 bounded R1 drawing repair; no spacing/kerning compensation for unfinished drawing.
-2. Use V4 as a same-product positive control for large-text causal isolation.
-3. Open Type repair only for reproduced glyph/metric/fallback/raster evidence.
-4. After structural repair, rerun fallback, clipping, line-break and raster regression.
+2. After drawing/spacing gates permit transfer, run T044 corpus on repaired custom candidate versus mature fallback.
+3. Open Type repair only for reproduced glyph/metric/fallback/raster evidence; composition pressure returns to Layout.
+4. Recheck I/l/1/0, punctuation/numerals, clipping and line breaks in registrations/identifiers/totals.
 5. Keep browser/native breadth, AT and human recognition/task evidence OPEN.
 
 ## Evidence boundary
