@@ -1,6 +1,6 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / C092 POINTER-CAPTURE-INTERRUPTION SEPARATION**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / C093 SCROLL-DRAG ARBITRATION STATE SEPARATION**
 Governance sync: 2026-09-19
 Primary path: `research/color/`
 
@@ -8,14 +8,14 @@ Primary path: `research/color/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-C092 extends C091 by separating browser/gesture stream ownership and interruption from semantic focus, selection, preview/candidate, cancellation, commit and recovery. Capture routes events; it is not itself a success/failure color state. Layout-driven boundary changes must not create committed-looking destination cues.
+C093 extends C092 into scroll-versus-reorder arbitration. Focus, selection, pending/preview, scroll ownership, candidate validity, cancellation, commit and recovery remain independent; scroll/arena resolution must not inherit reorder-success paint merely because the stream began on a reorder affordance.
 
 ## Active queue
-1. Carry C091–C092 into rendered light/night/forced-colors and independent-engine runtime once I079/W092 are executable.
-2. Verify preview/candidate/interruption/commit states retain non-color cues and never impersonate focus/selection or transaction truth.
-3. Recheck state visibility after L083 baseline/200% stationary-pointer recomposition geometry.
+1. Carry C091–C093 into rendered light/night/forced-colors and independent-engine runtime once I080/W093 are executable.
+2. Verify pending/preview/scroll/cancel/commit states retain non-color cues and never impersonate focus/selection or transaction truth.
+3. Recheck state visibility after L084 baseline/200% scroll/reflow geometry.
 4. Keep persistence color semantics dormant until persistence truth exists.
 5. Keep calibrated-display, observer and representative-human evidence OPEN.
 
 ## Evidence boundary
-No Color Stage 3 PASS, rendered C092, forced-colors/cross-browser/device, calibrated-display, observer or human PASS is claimed.
+No Color Stage 3 PASS, rendered C093, forced-colors/cross-browser/device, calibrated-display, observer or human PASS is claimed.
