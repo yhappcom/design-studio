@@ -1,6 +1,6 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / C074 LOGMATE AUTH STATE TRANSFER**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / C075 CUSTOMIZE STATE-VISIBILITY TRANSFER**
 Governance sync: 2026-09-18
 Primary path: `research/color/`
 
@@ -8,12 +8,12 @@ Primary path: `research/color/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-C074 adds executed LogMate product evidence: production auth contrast evidence and broad light/night/focus/error render scenarios passed in run 35293644138, including textual error identity in Night. This is rendered state evidence rather than token-only inspection. The workflow's unrelated failures are scoped separately.
+C075 extends executed LogMate product work from auth states into Customize: SHOWN/HIDDEN, focus/pressed, drag lift/insertion, Reset and disabled Custom Field are now one contradiction matrix. The acceptance chain remains semantic token→paint owner→visible surface→non-color cue→accessible meaning; token-only success is insufficient.
 
 ## Active queue
-1. Preserve per-scenario token→paint owner→visible surface→non-color cue evidence.
-2. Recheck state visibility after large-text/reflow recomposition.
-3. Carry light/night/focus/error scenarios into independent-engine and forced-colors validation.
+1. Carry C075 scenario IDs into light/night/forced-colors and independent-engine runtime.
+2. Preserve switch/section/text redundancy so SHOWN/HIDDEN never depends on hue alone.
+3. Recheck focus/insertion visibility after dense-list and large-text recomposition.
 4. Keep calibrated-display, observer and representative-human evidence OPEN.
 
 ## Evidence boundary
