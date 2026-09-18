@@ -1,6 +1,6 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / CD091 CAUSAL-UNDO INTERVENING-ACTION LANGUAGE CONTRACT**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / CD092 RECOVERY-BRANCH ELIGIBILITY LANGUAGE CONTRACT**
 Governance sync: 2026-09-18
 Primary path: `research/content/`
 
@@ -8,13 +8,13 @@ Primary path: `research/content/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-CD091 extends CD090 across I072. Message source truth now includes inverse transaction, Undo eligibility and intervening-action presence. Successful restoration must not fabricate focus return or erase later agency; unavailable, failed and superseded remain distinct; local change is not Saved/Synced.
+CD092 extends CD091 across I073 branch replacement. Message source truth now includes current branch and eligible inverse. Eligible, consumed, superseded, no-op and failed remain distinct; successful restoration must not fabricate focus return, persistence or stale recovery availability.
 
 ## Active queue
-1. Carry CD091 payloads through I072 and W085 runtime evidence.
-2. Build actual English/Korean runtime coverage for full labels, compact aviation headers, hide/group-collapse/Reset/Undo consequence and causal recovery scope.
+1. Carry CD092 payloads through I073 and W086 runtime evidence.
+2. Build actual English/Korean runtime coverage for full labels, compact aviation headers, move/hide/group-collapse/Reset/Undo and branch-recovery eligibility.
 3. Compare concise visible feedback with richer accessibility payload under actual responsive/layout-direction conditions.
-4. Preserve Hide≠delete, restored≠focused, Reset≠Undo≠erase, display order≠flight data and display configuration≠entry-field configuration.
+4. Preserve Hide≠delete, restored≠focused, unavailable≠failed≠superseded, Reset≠Undo≠erase, display order≠flight data and display configuration≠entry-field configuration.
 5. Keep persistence wording dormant until implementation truth exists; keep linguistic review, AT comprehension and representative-pilot task evidence OPEN.
 
 ## Evidence boundary
