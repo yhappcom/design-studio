@@ -1,6 +1,6 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / CD086 RESET BASELINE + CONSEQUENCE LANGUAGE**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / CD087 RESET RESULT + FOCUS-NEUTRAL STATUS**
 Governance sync: 2026-09-18
 Primary path: `research/content/`
 
@@ -8,10 +8,10 @@ Primary path: `research/content/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-CD086 extends CD085 into Reset provenance: product default≠session-entry≠last saved≠last synced; Reset≠Undo≠erase; applied locally≠saved≠synced; already-at-baseline≠successful changed Reset. English text never selects baseline state; persistence language remains dormant.
+CD087 extends CD086 into post-Reset feedback: changed≠no-op≠failed; Reset≠Undo≠erase; applied locally≠saved≠synced; focus location≠status meaning. Status payload must preserve baseline/recovery truth without moving focus merely to force announcement.
 
 ## Active queue
-1. Carry CD086 payloads through I067 and W080 runtime evidence.
+1. Carry CD087 payloads through I068 and W081 runtime evidence.
 2. Build actual multilingual runtime coverage for full labels, compact aviation headers, Reset baseline/consequence and recovery scope.
 3. Compare action-only, inline consequence+Undo, preview and confirmation language under actual consequence/risk and responsive/layout-direction conditions.
 4. Preserve Hide≠delete, Reset≠Undo≠erase, display order≠flight data and display configuration≠entry-field configuration.
