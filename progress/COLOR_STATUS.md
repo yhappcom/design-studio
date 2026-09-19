@@ -1,6 +1,6 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / C114 SEMANTIC-SALIENCE ORACLE**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / C115 HOME SALIENCE TRANSFER**
 Governance sync: 2026-09-20
 Primary path: `research/color/`
 
@@ -8,13 +8,13 @@ Primary path: `research/color/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-C114 turns C113's state matrix into explicit falsifiers: focus/current/selection, zero-result/error, offline/failure, pending/success and local/synced states must not collapse; semantic rank and non-color boundaries must survive theme and forced-colors transfer.
+C115 applies C114 to the first canonical LogMate Home fixture. The static concept's scarce brand accent is not enough for closure: coded focus, selection, invalid/error, pending/offline/recovery and forced-colors states must preserve semantic rank and non-color boundaries.
 
 ## Active queue
-1. Execute C114 on the shared production scenarios in light/night/forced-colors.
-2. Capture semantic IDs plus rendered non-color boundaries under enlarged/text-spacing and actual font fallback.
-3. Reject premature success paint and decorative salience that outranks consequence-bearing state.
+1. Execute C115 on the coded Home in light/night/forced-colors when available.
+2. Inject consequence-bearing state fixtures without inventing production semantics.
+3. Capture semantic IDs plus non-color boundaries under enlarged/text-spacing and actual font fallback.
 4. Keep calibrated-display, glare/night, observer and representative-human evidence OPEN.
 
 ## Evidence boundary
-No Stage 3, production palette/brand-color code, forced-colors/browser/device, calibrated-display, glare/night, observer or human PASS is claimed.
+No Stage 3, production palette/brand-color code, coded Home forced-colors/browser/device, calibrated-display, glare/night, observer or human PASS is claimed.
