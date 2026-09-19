@@ -1,6 +1,6 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE + T067 EXIT/RECOVERY TRANSFER**
+Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE + T068 FORM-STATE TRANSFER**
 Governance sync: 2026-09-19
 Primary path: `research/type/`
 
@@ -8,12 +8,12 @@ Primary path: `research/type/`
 Stage 1 **PASS**; Stage 2 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-T067 extends the downstream corpus with unsaved-change, stay/leave/discard, draft-restoration and recovery strings from I085/CD104 while preserving position numerals, aviation abbreviations and EN/KO stress. It explicitly preserves T021 as the upstream drawing gate.
+T068 extends the downstream corpus through I086/CD105 with redundant-entry, previous-value selection, restored/validated form-state, recovery strings, position numerals, aviation abbreviations and EN/KO stress. T021 remains the upstream drawing gate; no spacing/kerning compensation is permitted.
 
 ## Active queue
 1. Continue T021 bounded R1 drawing repair with widths/sidebearings frozen and kerning OFF.
-2. Only after drawing then general-spacing gates permit, run T044–T067 corpora against repaired candidate and mature fallback.
-3. Recheck ambiguity-critical glyphs, position numerals, punctuation/key legends, Korean/Latin fallback, exit/restoration/recovery labels, clipping and 200% line breaks.
+2. Only after drawing then general-spacing gates permit, run T044–T068 corpora against repaired candidate and mature fallback.
+3. Recheck ambiguity-critical glyphs, position numerals, punctuation/key legends, Korean/Latin fallback, form/recovery labels, clipping and 200% line breaks.
 4. Attribute failures to Type only with reproduced glyph/metric/fallback/raster evidence.
 5. Keep browser/native breadth, AT and human recognition/task evidence OPEN.
 
