@@ -1,6 +1,6 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE + T082 CLOSURE EVIDENCE COMPRESSION**
+Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE + T083 ACCEPTANCE ORACLE**
 Governance sync: 2026-09-20
 Primary path: `research/type/`
 
@@ -8,14 +8,13 @@ Primary path: `research/type/`
 Stage 1 **PASS**; Stage 2 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-T082 confirms the Type bottleneck is upstream rather than lack of more product corpora: T021 bounded drawing repair → general-spacing validation → only then residual kerning. Accumulated LogMate corpora are downstream falsification fixtures, not substitutes for those gates. Mature fallback remains mandatory while T021 is open.
+T083 converts accumulated product constraints into a falsifiable implementation oracle while preserving the upstream sequence: T021 bounded drawing repair → general spacing → residual kerning. Runtime evidence must record actual resolved font/fallback rather than intended CSS family alone.
 
 ## Active queue
-1. Continue T021 bounded drawing repair only in a complete-source execution environment; widths/sidebearings frozen, kerning OFF.
-2. After drawing PASS, run general-spacing evidence before any kerning entry.
-3. Replay accumulated LogMate operational/search/navigation/reorder/runtime corpora at baseline/enlarged/text-spacing/fallback.
-4. Capture requested/resolved family, fallback, wraps/truncation and protected geometry in actual runtime.
-5. Resolve exact production mono/fallback without provisional custom metrics.
+1. Continue T021 bounded drawing repair only in a complete-source environment; widths/sidebearings frozen, kerning OFF.
+2. After drawing PASS, run general-spacing evidence before kerning.
+3. Apply T083 to shared LogMate runtime scenarios at baseline/enlarged/text-spacing/fallback.
+4. Resolve exact production mono/fallback only from mature fonts.
 
 ## Evidence boundary
-No T021 closure, general-spacing PASS, kerning entry, custom-font production recommendation, exact production mono selection, runtime transfer, AT or human recognition/task PASS is claimed.
+No T021 closure, spacing PASS, kerning entry, production custom font/mono, runtime transfer, AT or human PASS is claimed.
