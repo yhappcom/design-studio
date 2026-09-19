@@ -1,24 +1,21 @@
-# Candidate 04 — Content Design Review R2
+# Candidate 04 — Content Design Review R2 — 2026-09-20
 
-Status: PASS FOR OWNER AESTHETIC REVIEW / RUNTIME COPY STATES OPEN
+Status: **PASS FOR OWNER AESTHETIC REVIEW**
 
-Evidence:
-- corrected Flutter implementation c696e5a6d473949f1a9c7f8c88c31dceb7cb7030
-- canonical DateFormats, MASTER and ui-contract
-- 390x844 deterministic V2 render
+Evidence reviewed:
+- corrected visual-only implementation and dark/light renders
+- canonical Home product contract and DateFormats behavior
 
 No prior Home candidate was consulted.
 
-- Current Period now explicitly identifies Block Time.
-- Static month/year fixture is numeric: 09/2026; production locale behavior remains DateFormats authority.
-- Canonical current literals are used: Recent, Add flight, View logbook.
-- Activity remains 7 / 28 / 90 days + Custom per current owner concept direction.
-- No greeting, slogan, rank, weather, sync claim, analytics claim or invented state copy appears.
-- Existing professional terminology is preserved.
+## Recheck
 
-OPEN:
-- live locale switching in preview;
-- Search result/status/recovery copy when corresponding runtime authority exists;
-- linguistic/AT/human comprehension.
+- Same canonical Home content and data fixtures are retained.
+- Product-authored UI remains English-only.
+- `09/2026` is a valid numeric static fixture; production locale behavior remains unchanged.
+- Current Period remains Block Time.
+- Activity periods remain `7 days / 28 days / 90 days / Custom`.
+- No greeting, slogan, rank, weather, sync claim or invented analytics appears.
+- Visual uppercase treatment changes presentation only, not wording or product meaning.
 
-Verdict: PASS FOR OWNER AESTHETIC REVIEW.
+Verdict: **PASS FOR OWNER AESTHETIC REVIEW.**
