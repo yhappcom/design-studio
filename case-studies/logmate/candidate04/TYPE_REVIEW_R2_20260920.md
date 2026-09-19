@@ -1,24 +1,29 @@
-# Candidate 04 — Type Review R2
+# Candidate 04 — Typography / Type Review R2 — 2026-09-20
 
-Status: PASS FOR OWNER AESTHETIC REVIEW / PRODUCTION TYPE OPEN
+Status: **PASS FOR OWNER AESTHETIC REVIEW / PRODUCTION TYPE OPEN**
 
-Evidence:
-- corrected Flutter implementation c696e5a6d473949f1a9c7f8c88c31dceb7cb7030
-- canonical-literal test update 80100bc0d58ecec15748823a9bbf8b331c9d0068
-- 390x844 deterministic V2 render
+Evidence reviewed:
+- corrected visual-only Flutter implementation `d6d46d014b10ea6ff905991a95e9b586450bc5a5`
+- corrected 390×844 dark/light deterministic renders
+- current Type constraints
 
 No prior Home candidate was consulted.
 
-- Route entries keep Date / Flight / Route / Block in a bounded operational mono role.
-- Flight carrier + number zoning remains stable.
-- Large DEP/ARR codes are the visual center, but do not force mono onto Current Period, Activity, Totals or general UI.
-- Summary numerics remain proportional tabular.
-- The hierarchy is now clear without typographic decoration.
+## Recheck
 
-OPEN:
-- production proportional family;
-- production mono/fallback;
-- enlarged/text-spacing/fallback evidence;
-- representative-human readability.
+- Product-authored UI remains proportional.
+- Operational mono is bounded to repeated Date / Flight / Route / Block rows.
+- Flight carrier and number remain separately zoned and stable.
+- Current Period, Activity and Totals use proportional tabular numerics.
+- Uppercase tracked section/micro labels give the concept an editorial technical character without turning the whole interface into mono.
+- Current Period now uses one Block Time identity label shared by the two period metrics.
+- Flutter-invalid intermediate weight values were removed; the current source uses supported weight values.
 
-Verdict: PASS FOR OWNER AESTHETIC REVIEW.
+## Remaining OPEN
+
+- exact production proportional family;
+- exact production mono/fallback;
+- enlarged/text-spacing/fallback rendering;
+- representative-human readability/brand perception.
+
+Verdict: **PASS FOR OWNER AESTHETIC REVIEW.**
