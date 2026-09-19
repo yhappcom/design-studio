@@ -1,23 +1,34 @@
-# Candidate 04 — Color Review R2
+# Candidate 04 — Color Review R2 — 2026-09-20
 
-Status: PASS FOR OWNER AESTHETIC REVIEW / PRODUCTION COLOR OPEN
+Status: **PASS FOR OWNER AESTHETIC REVIEW / PRODUCTION PALETTE OPEN**
 
-Evidence:
-- corrected Flutter implementation c696e5a6d473949f1a9c7f8c88c31dceb7cb7030
-- 390x844 deterministic V2 render
+Evidence reviewed:
+- corrected visual-only Flutter implementation `d6d46d014b10ea6ff905991a95e9b586450bc5a5`
+- corrected dark/light deterministic renders
+- current Color constraints
 
 No prior Home candidate was consulted.
 
-- Add flight and View logbook are now visually equal and neutral.
-- Brand green is limited to the wordmark and selected Activity boundary/focus role.
-- Neutral canvas and rules carry hierarchy without decorative chroma.
-- No gradient, glass, metallic or aviation-color shortcut appears.
-- Selected Activity is not color-only because weight and boundary geometry also change.
+## Recheck
 
-OPEN:
-- focus/error/recovery/offline/success palette;
-- forced colors;
-- coded dark/night;
-- calibrated-display/glare/device evidence.
+Appearance-specific accent/tertiary values resolve the R1 contrast blockers while preserving the mint identity.
 
-Verdict: PASS FOR OWNER AESTHETIC REVIEW.
+Static contrast checks:
+- dark accent `#00A693` on `#11120F`: approximately 6.15:1;
+- light accent `#007C70` on `#F3F1EC`: approximately 4.52:1;
+- dark tertiary `#80827B` on `#11120F`: approximately 4.83:1;
+- light tertiary `#6B6E67` on `#F3F1EC`: approximately 4.59:1.
+
+The concept remains neutral-dominant:
+- brand accent is limited to wordmark/focus/selection;
+- tonal panels create depth without shadow/gradient/glass;
+- state is not expressed by color alone.
+
+## Remaining OPEN
+
+- production semantic palette for error/recovery/offline/success;
+- forced-colors behavior;
+- calibrated-display/glare/night evidence;
+- device rendering.
+
+Verdict: **PASS FOR OWNER AESTHETIC REVIEW.**
