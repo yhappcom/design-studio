@@ -1,6 +1,6 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE + T077 CROSS-SURFACE TRANSFER**
+Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE + T078 RUNTIME FALLBACK INTEGRITY**
 Governance sync: 2026-09-20
 Primary path: `research/type/`
 
@@ -8,14 +8,14 @@ Primary path: `research/type/`
 Stage 1 **PASS**; Stage 2 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-T077 advances H4 cross-surface signature transfer. SC-B is a semantic role contract, not a mono aesthetic: product language stays mature proportional, operational comparison uses mature mono only where materially useful, and source/user text remains fallback-safe. Cross-surface sameness does not require identical type sizes/weights/mono ratios. T021 remains upstream; widths/sidebearings stay frozen and kerning remains OFF.
+T078 advances H5: production Type truth includes the actually rendered family under delayed/failed font load, fallback, offline/reload and update conditions. Fallback metric changes are runtime geometry inputs, not permission for negative tracking, glyph narrowing or semantic shortening. T021 remains upstream; widths/sidebearings stay frozen and kerning remains OFF.
 
 ## Active queue
 1. Continue T021 bounded drawing repair only in a complete-source execution environment.
-2. Execute T077 with C108/I095/L099/W108/CD114 across Home, ledger, Activity, Add Flight, import/review and recovery fixtures.
-3. Capture actual font/fallback, wraps/truncation and local comparison-axis geometry at baseline/enlarged/text-spacing.
-4. Resolve exact production mono/fallback without using provisional custom metrics.
+2. Execute T078 with C109/I096/L100/W109/CD115 across first-load, blocked-font, offline, reload and recovery fixtures.
+3. Capture requested/actual family, wraps/truncation and protected comparison geometry at baseline/enlarged/text-spacing.
+4. Resolve exact production mono/fallback without provisional custom metrics.
 5. After drawing then general-spacing PASS, run accumulated product corpora before any kerning entry.
 
 ## Evidence boundary
-No T021 closure, general-spacing PASS, kerning entry, custom-font production recommendation, exact production mono selection, cross-surface runtime, cross-browser/native, AT or human recognition/task PASS is claimed.
+No T021 closure, general-spacing PASS, kerning entry, custom-font production recommendation, exact production mono selection, H5 runtime execution, cross-browser/native, AT or human recognition/task PASS is claimed.
