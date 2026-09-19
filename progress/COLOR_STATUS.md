@@ -1,6 +1,6 @@
 # Color Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / C112 SEARCH RETRIEVAL STATE SEPARATION**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / C113 CLOSURE EVIDENCE COMPRESSION**
 Governance sync: 2026-09-20
 Primary path: `research/color/`
 
@@ -8,14 +8,14 @@ Primary path: `research/color/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-C112 separates search focus, active/highlighted result, committed selection, loading, zero-match, error, offline/degraded, stale/superseded, filter-active and recovery states. Color cannot turn zero results into error, active option into selection, or successful retrieval into persistence success; hue is never the sole carrier.
+C113 finds that Color no longer needs another isolated palette exercise. The closure bottleneck is proving semantic salience transfer across real LogMate surfaces and light/night/forced-colors conditions without collapsing focus/current/selection/error/offline/persistence/recovery into one accent channel.
 
 ## Active queue
-1. Execute C112 with T081/I099/L103/W112/CD118 in actual search runtime.
-2. Capture semantic state IDs and rendered boundaries in light/night/forced-colors across superseded requests, zero/error/offline and record return.
-3. Reject transfer that merges focus/active/selected, zero/error, or brand accent with functional search state.
+1. Execute the C113 shared state matrix on Home/navigation, ledger/search, form/recovery and one offline/persistence flow.
+2. Capture semantic state IDs and rendered non-color boundaries in light/night/forced-colors and enlarged/text-spacing layouts.
+3. Reject premature success paint, current=focus collapse, zero-result=error collapse and quiet/premium treatments that weaken consequence-bearing salience.
 4. Use shipped/fallback Type conditions; do not certify provisional T021 metrics.
 5. Keep calibrated-display, glare/night, observer and representative-human evidence OPEN.
 
 ## Evidence boundary
-No Color Stage 3 PASS, production palette/brand-color code, rendered C112, forced-colors/cross-browser/device, calibrated-display, glare/night, observer or human PASS is claimed.
+No Color Stage 3 PASS, production palette/brand-color code, forced-colors/cross-browser/device, calibrated-display, glare/night, observer or human PASS is claimed.
