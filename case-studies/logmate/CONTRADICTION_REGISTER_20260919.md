@@ -131,4 +131,4 @@ The next phase must consume this register rather than reopening resolved histori
 
 The owner clarification for repeated Flight identifiers was propagated to the LogMate visual-identity restart branch at commit `b52bb43cb87632ca5000760e2c95a5fc8581c7a7`.
 
-This closes the documentation conflict identified by CR03. The remaining high-risk items H1–H5 are explicit implementation/runtime/cross-surface evidence gaps, not hidden contradictions.
+This closes the documentation conflict identified by CR03. The remaining high-risk items H1–H7 are explicit implementation/runtime/cross-surface or scoped product-decision gaps, not hidden contradictions.
