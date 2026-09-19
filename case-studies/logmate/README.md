@@ -37,3 +37,17 @@ Therefore the LogMate Datum v0.x work is treated as pre-curriculum evidence. A f
 ## Evidence location
 
 The full product-specific design evidence remains in `yhappcom/logmate` on the design branch. This repository records only transferable study conclusions and later comparative case-study work.
+
+
+## Current LogMate synthesis chain — 2026-09-19
+
+The current pre-design sequence is:
+
+1. `EVIDENCE_MAP_20260919.md`
+2. `CONTRADICTION_REGISTER_20260919.md`
+3. `INTEGRATION_PRINCIPLES_20260919.md`
+4. `DESIGN_CORRIDOR_20260919.md`
+5. `OPERATIONAL_GEOMETRY_CONTRACT_20260919.md`
+6. `SIGNATURE_CODE_STUDY_20260919.md`
+
+All six phases are complete for concept generation. Production typography, large-text ledger adaptation, runtime/device validation, final NAV-001 semantics, SEARCH-001 and human evidence remain explicitly OPEN.
