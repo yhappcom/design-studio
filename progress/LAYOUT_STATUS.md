@@ -1,6 +1,6 @@
 # Layout, Spatial & Interaction Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / I092 + L096 SIGNATURE TRANSFER AUDITS**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / I093 + L097 LARGE-TEXT LEDGER ADAPTATION**
 Governance sync: 2026-09-19
 Canonical paths: `research/layout/`, `research/interaction/`
 
@@ -8,14 +8,14 @@ Canonical paths: `research/layout/`, `research/interaction/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-I092/L096 consume the now-complete Signature Code gate. SC-A is constrained to local semantic calibration rather than global rails/coordinates; SC-C is conditional boundary expression rather than blanket chrome removal; SC-D must preserve truthful recovery and input equivalence. Cross-surface workflow and geometry rejection criteria now cover Home, ledger, Activity, Add Flight, Customize and import. NAV-001/SEARCH-001 remain OPEN.
+I093/L097 advance LogMate H2 beyond a generic responsive-table question. Three bounded adaptation modes are now explicit: preserved comparison plane, priority-preserving hybrid, and record-detail transfer. Stable geometry means stable semantic relationships, while Interaction requires record/focus/selection/action/recovery identity to survive representation changes. WCAG 2.2 Reflow table exceptions are treated as scoped, not blanket permission for clipping or page-level failure.
 
 ## Active queue
-1. Apply I092/L096 to new white-canvas concepts before aesthetic preference review.
-2. Implement/execute the non-drag single-pointer reorder path and compare with drag; keyboard does not substitute where WCAG 2.2 SC 2.5.7 applies.
-3. Execute baseline/enlarged-text cross-surface operational stress with mature Type controls.
-4. Resolve large-text dense-ledger adaptation and locale-date width with W105 runtime evidence.
-5. Extend to reduced motion, forced colors, independent engine and physical device; keep AT, discoverability, comprehension, workload and representative-pilot evidence OPEN.
+1. Execute L097 modes only as needed to compare/falsify them in the production ledger with W106 and mature Type controls.
+2. Run baseline/enlarged/text-spacing geometry plus focus/selection/edit/delete/Undo/route-return scenarios from I093.
+3. Implement/execute the non-drag single-pointer reorder path and compare with drag; keyboard does not substitute where WCAG 2.2 SC 2.5.7 applies.
+4. Resolve which simultaneous ledger comparisons are essential using real product/workflow evidence; do not infer pilot preference from static design.
+5. Extend to forced colors, reduced motion, independent engine and physical device; keep AT, discoverability, comprehension, workload and representative-pilot evidence OPEN.
 
 ## Evidence boundary
-No Stage 3 PASS, production signature-code transfer, non-drag reorder PASS, large-text ledger PASS, cross-surface runtime PASS, independent-browser/native transfer, AT, physical-device or representative-human usability PASS is claimed.
+No Stage 3 PASS, production large-text ledger mode, non-drag reorder PASS, cross-surface runtime PASS, independent-browser/native transfer, AT, physical-device or representative-human usability PASS is claimed.
