@@ -1,6 +1,6 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / CD110 LOGMATE INTEGRATION INPUTS**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / CD111 SIGNATURE CONTENT TRANSFER AUDIT**
 Governance sync: 2026-09-19
 Primary path: `research/content/`
 
@@ -8,12 +8,12 @@ Primary path: `research/content/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-CD110 consumes the completed LogMate synthesis audit and supplies Content inputs for Integration Principles: semantic job before brevity/voice, canonical terminology stability, quiet/non-theatrical candidate voice without consequence loss, English-only product-authored UI, and shared state truth across visible/accessibility payloads. Prior EN/KO product-copy stress is explicitly scoped out for LogMate; Unicode/source-data and numeric-date locale stress remain.
+CD111 audits the completed signature stack against the complete content system. The content expression of LogMate authorship is semantic economy, not minimum word count: professional meaning and actual state/action/consequence/recovery precede concise realization and candidate voice. SC-A–SC-D cannot justify semantic shortening, false persistence claims or collapsed ambiguity/recovery states. Product-authored UI remains English-only; Unicode/source/user and numeric-date locale stress remain separate.
 
 ## Active queue
-1. Carry CD110 across Home, Add Flight, View Logbook, Activity, Customize and import review using the same cross-surface fixtures as I091/L095/W104.
-2. Use canonical English UI strings; stress Unicode/source/user evidence and numeric date locale ordering separately.
-3. Preserve CD096–CD109 state/import/mapping contracts and CD094–095 IME/shortcut contracts where relevant to source/user input.
+1. Apply CD111 across new Home, Add Flight, View Logbook, Activity, Customize and import concepts using shared fixtures.
+2. Preserve canonical English UI strings; stress Unicode/source/user evidence and numeric-date locale ordering separately.
+3. Preserve CD096–CD110 state/import/mapping contracts and CD094–095 input contracts where relevant.
 4. Keep Saved/Synced wording dormant until implementation truth exists; never offer Undo after inverse expiry/failure.
 5. Keep production voice approval, linguistic review, AT comprehension and representative-pilot terminology/comprehension/task evidence OPEN.
 
