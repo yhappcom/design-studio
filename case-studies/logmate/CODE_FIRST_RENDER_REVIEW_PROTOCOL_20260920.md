@@ -1,56 +1,81 @@
-# LogMate Code-First Render Review Protocol — 2026-09-20
+# LogMate Candidate Generation & Review Protocol — 2026-09-20
 
-Status: OWNER-CONFIRMED PROCESS CORRECTION
+Status: **OWNER-CONFIRMED / SUPERSEDES EARLIER CANDIDATE-02 PROCESS**
 
-## Trigger
+## Core rule
 
-An image-only Home Candidate 02 attempt was rejected because it:
-- visually mutated Candidate 01 instead of beginning from an independent code exploration;
-- was generated from prose rather than from the designated structural restore point;
-- had no code-render provenance;
-- was shown without post-render specialist analysis.
+A saved candidate is **not** a design baseline. It is a sealed comparison artifact.
 
-## Required process
+Candidate 01 was preserved so later, genuinely independent directions can be compared against it. It must not influence the generation of those directions.
 
-`restore point -> isolated candidate code -> contract tests -> code render/golden -> inspect actual render -> cross-specialist critique -> owner review -> save candidate`
+Candidate 02 is rejected/discarded and must not influence any future generation.
 
-Restore point:
-`yhappcom/logmate checkpoint/home-structural-baseline-20260919 @ f992d62a98193629d19346a022a64deef824570c`
+## Generation isolation
 
-## Evidence rules
+Before a new candidate is generated:
+- start from `checkpoint/home-structural-baseline-20260919 @ f992d62a98193629d19346a022a64deef824570c`;
+- do not inspect prior candidate renders;
+- do not reuse prior candidate composition, rationale, spacing, hierarchy or signature details;
+- do not ask “how can Candidate 01 be made different?”;
+- build from product truth + owner direction + Design Studio foundations + assets + platform/accessibility constraints only.
 
-- Generative imagery is not UI implementation evidence in this phase.
-- A render must originate from candidate code.
-- No candidate number is promoted merely because code exists.
-- A code branch without a successful render is UNRENDERED.
-- A render without critique is INCOMPLETE.
-- Candidate storage requires explicit analysis of successes, failures, and product/specialist fidelity.
-- Candidate alternatives must be materially independent explorations, not cosmetic mutations of the prior candidate.
+## Required sequence
 
-## Current Candidate 02 exploration
+`restore point -> isolated code concept -> implementation completion -> code render/golden -> independent specialist reviews -> contradiction resolution -> coordinator synthesis -> owner-review eligibility -> owner review -> optional comparison with sealed Candidate 01`
 
-Branch:
-`design/home-candidate-02-code-20260920`
+## Independent specialist review requirement
 
-Approach:
-Index Folio — an asymmetric left index column paired with right-side operational content, deliberately distinct from Candidate 01's full-width vertical section grammar.
+The actual completed render must be reviewed independently by the relevant specialists:
+- Typography / Type Design;
+- Color;
+- Layout / Spatial;
+- Interaction;
+- Web/runtime where applicable;
+- Content Design.
 
-Current status:
-**UNRENDERED / NOT YET CANDIDATE 02**
+A coordinator may summarize those opinions only after they exist.
 
-GitHub Actions currently creates the design-preview run but terminates before any job step begins, so no Flutter golden artifact exists yet. This runtime fact must not be represented as a design or test PASS.
+A coordinator applying old specialist principles to a render is **not** equivalent to post-render specialist review.
 
-## Review dimensions after a successful render
+## Owner visibility gate
 
-1. Asset fidelity.
-2. Product semantics and canonical copy.
-3. Type roles and operational geometry.
-4. Color hierarchy and state salience.
-5. Spatial rhythm/density.
-6. Interaction affordance/state truth.
-7. Content truth.
-8. Runtime/render defects.
-9. Distinctness from prior candidates.
-10. Owner aesthetic judgement.
+Do not present a candidate to the owner merely because:
+- code exists;
+- a render exists;
+- a coordinator critique exists.
 
-Only after this review may the exploration be stored as Candidate 02.
+Owner review eligibility requires:
+1. implementation is sufficiently complete for the concept;
+2. code-origin render evidence exists;
+3. independent post-render specialist reviews exist;
+4. material conflicts are resolved or explicitly OPEN;
+5. coordinator synthesis confirms the candidate is coherent enough to review.
+
+Only then is the candidate shown to the owner.
+
+## Rejection handling
+
+If the owner rejects a candidate:
+- remove it from the active comparison set;
+- keep implementation/history only as archival evidence if useful;
+- do not reuse it as a starting point, intermediate step or inspiration source.
+
+## Current candidate roles
+
+### Candidate 01
+**SEALED COMPARISON ARTIFACT**
+- retained;
+- not baseline;
+- not preferred direction;
+- not generation input;
+- reopened only after a new candidate passes the complete pre-owner gate.
+
+### Candidate 02
+**REJECTED / DISCARDED**
+- not active candidate;
+- not generation input;
+- not comparison input.
+
+## Evidence correction
+
+The previous `HOME_CANDIDATE_02_POST_RENDER_REVIEW_20260920.md` was a coordinator synthesis against existing specialist criteria. It was not independent specialist post-render review and therefore was insufficient for owner-review promotion.
