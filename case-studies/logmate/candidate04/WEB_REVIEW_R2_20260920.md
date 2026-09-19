@@ -1,27 +1,41 @@
-# Candidate 04 — Web / Runtime Review R2
+# Candidate 04 — Web / Runtime Review R2 — 2026-09-20
 
-Status: PASS FOR OWNER AESTHETIC REVIEW ONLY / RUNTIME PASS PROHIBITED
+Status: **PASS FOR OWNER AESTHETIC REVIEW ONLY / RUNTIME PASS PROHIBITED**
 
-Evidence:
-- corrected Flutter implementation c696e5a6d473949f1a9c7f8c88c31dceb7cb7030
-- GitHub Actions run 35474977405 failed before runner steps
-- deterministic 390x844 V2 review render
+Evidence reviewed:
+- corrected visual-only Flutter implementation `d6d46d014b10ea6ff905991a95e9b586450bc5a5`
+- GitHub Actions run `35475783670`
+- corrected deterministic dark/light renders
 
 No prior Home candidate was consulted.
 
-- Candidate is implemented in Flutter source.
-- Review render is deterministic code-mirror evidence, not generative imagery.
-- Visual system relies on ordinary text/rules/layout rather than effects likely to diverge strongly across native/PWA.
+## Runtime evidence
 
-Not passed:
+GitHub Actions again creates the preview job but terminates before any runner step begins:
+- job has zero executed steps;
+- no Flutter analyze/test/golden artifact exists.
+
+Therefore no runtime/native/PWA PASS is claimed.
+
+## Static transfer
+
+The visual identity is based on:
+- flat tonal surfaces;
+- ordinary rules/borders;
+- typography;
+- standard icons;
+- no blur, texture, 3D or platform-specific material effect.
+
+The concept is therefore suitable for static owner aesthetic review without implying runtime equivalence.
+
+## Production blockers remain
+
 - Flutter analyze/test/golden;
-- served primary engine;
-- independent browser engine;
-- PWA/native transfer;
-- actual resolved fonts/fallback;
-- enlarged/text-spacing;
+- served browser / independent engine;
+- PWA/native device;
+- resolved-font fallback;
+- narrow/enlarged/text-spacing;
 - forced colors/reduced motion;
-- route/history;
-- physical device.
+- route/focus behavior.
 
-Verdict: PASS FOR OWNER AESTHETIC REVIEW ONLY. Production/runtime promotion remains blocked.
+Verdict: **PASS FOR OWNER AESTHETIC REVIEW ONLY.**
