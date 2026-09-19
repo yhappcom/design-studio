@@ -1,7 +1,7 @@
 # LogMate Home Candidate 02 — Cross-Specialist Post-Render Review
 
 Date: 2026-09-20
-Status: **SAVE AS COMPARISON CANDIDATE / FLUTTER GOLDEN PENDING**
+Status: **INVALIDATED FOR PROMOTION / OWNER-REJECTED CANDIDATE 02**
 
 Implementation:
 - base: `f992d62a98193629d19346a022a64deef824570c`
@@ -71,3 +71,16 @@ Web/runtime:
 Candidate 02 is eligible to remain in the comparison set.
 
 It is not a winner, not a final baseline, and not the Masterpiece.
+
+
+## Process correction — 2026-09-20
+
+This document did **not** contain independent post-render reviews from the individual Type/Color/Layout/Interaction/Web/Content specialists.
+
+It was a coordinator-generated synthesis that applied already-existing specialist principles to Candidate 02.
+
+Owner correction:
+- that is not sufficient for candidate promotion;
+- Candidate 02 is rejected/discarded;
+- future candidates must complete independent specialist post-render review before they are shown to the owner;
+- Candidate 01 is sealed during future generation and may be used only for later comparison after a new candidate passes the complete specialist gate.
