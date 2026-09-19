@@ -1,26 +1,31 @@
-# Candidate 04 — Interaction Review R2
+# Candidate 04 — Interaction Review R2 — 2026-09-20
 
-Status: PASS FOR OWNER AESTHETIC REVIEW / RUNTIME AUTHORITY OPEN
+Status: **PASS FOR OWNER AESTHETIC REVIEW / RUNTIME AUTHORITY OPEN**
 
-Evidence:
-- corrected Flutter implementation c696e5a6d473949f1a9c7f8c88c31dceb7cb7030
-- 390x844 deterministic V2 render
+Evidence reviewed:
+- corrected visual-only Flutter implementation `d6d46d014b10ea6ff905991a95e9b586450bc5a5`
+- corrected deterministic renders
+- current Interaction constraints
 
 No prior Home candidate was consulted.
 
-- Search uses a 44px interaction shell.
-- Add flight and View logbook use equal 44px primary-action regions.
-- View all / Details use semantic interactive controls with minimum 44px target.
-- Activity periods each use a full 44px selection target.
-- Selection uses weight + boundary + accent rather than color only.
-- No unsupported Search result/autocomplete behavior is invented.
-- No app-wide bottom navigation is inferred.
+## Recheck
 
-OPEN:
-- actual route wiring and Back restoration;
+- Add Flight / View Logbook remain equal 44px task controls.
+- Search uses a 44px interaction shell and explicit focus border.
+- Settings and month controls use 44px-class targets.
+- Activity period controls use equal 44px targets.
+- Activity selected state combines tonal surface + weight + bottom rule/accent.
+- View all / Details are semantic interactive controls.
+- No unimplemented Search-result behavior is invented.
+
+## Remaining OPEN
+
+- real route wiring;
 - focus/IME;
-- runtime hit testing;
-- accessibility tree/AT;
-- SEARCH-001 authority.
+- route restoration;
+- semantics tree;
+- assistive technology;
+- actual runtime target verification.
 
-Verdict: PASS FOR OWNER AESTHETIC REVIEW.
+Verdict: **PASS FOR OWNER AESTHETIC REVIEW.**
