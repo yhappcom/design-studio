@@ -16,7 +16,7 @@ Disposition vocabulary:
 |---|---|---|---|---|
 | CR01 | Historical T017/T018/T020 preference for proportional operational identifiers vs current View Logbook mono body contract. | Authority / evidence-level | Current owner/canonical product contract wins. Historical studies remain useful for geometry/fallback warnings but no longer govern View Logbook Date/Flight/DEP/ARR/body typography. | **RESOLVED / historical role SUPERSEDED** |
 | CR02 | T072 says mixed identifiers should not be solved by blanket mono vs owner decision that repeated Flight identifiers use mono. | Scope | T072 correctly rejects **blanket app-wide mono**. Current product uses a **specific operational-data mono role**, not blanket mono. Flight also retains semantic zoning. | **SCOPED / RESOLVED** |
-| CR03 | Home snapshot lists mono only for Date and DEP/ARR, while owner now confirms Flight mono as well. | Document conflict | Owner clarification on 2026-09-19 supersedes the older snapshot typography detail for future identity work. Structural snapshot remains useful for IA, not this typography detail. | **RESOLVED — docs update required** |
+| CR03 | Home snapshot lists mono only for Date and DEP/ARR, while owner now confirms Flight mono as well. | Document conflict | Owner clarification on 2026-09-19 supersedes the older snapshot typography detail for future identity work. Structural snapshot remains useful for IA, not this typography detail. LogMate restart branch `b52bb43c...` updates the UI contract/restart/foundation accordingly. | **RESOLVED — docs updated** |
 | CR04 | View Logbook generic `fontFamily: 'monospace'` can vary by platform vs need for exact premium/stable rendering. | Evidence-level | Design intent = mono; production technique = exact registered mature mono family with explicit weights/fallback. Generic family is prototype-only. | **OPEN IMPLEMENTATION / BLOCKER for production type contract** |
 | CR05 | Mono Flight characters can be equal width but short/long whole identifiers still shift if centered. | Geometry | Keep carrier zone + gap + number/suffix zone fixed starts. Mono solves internal glyph advance variance; zoning solves variable-length semantic start positions. | **RESOLVED** |
 | CR06 | Equal per-character layout cells stabilize origins but produced unacceptable spacing. | Aesthetic/function | Fixed-cell experiment rejected. Do not restore. Use actual mono role + semantic zones. | **RESOLVED / REJECTED** |
@@ -105,3 +105,10 @@ Next allowed phase under the synthesis gate:
 `Integration Principles -> Design Corridor -> Operational Geometry Contract -> Signature Code Study`.
 
 The next phase must consume this register rather than reopening resolved historical alternatives without new evidence.
+
+
+## Reconciliation completion note
+
+The owner clarification for repeated Flight identifiers was propagated to the LogMate visual-identity restart branch at commit `b52bb43cb87632ca5000760e2c95a5fc8581c7a7`.
+
+This closes the documentation conflict identified by CR03. The remaining high-risk items H1–H5 are explicit implementation/runtime/cross-surface evidence gaps, not hidden contradictions.
