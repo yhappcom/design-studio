@@ -1,6 +1,6 @@
 # Web Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / W102 SERVED IMPORT-MAPPING PROVENANCE + INVALIDATION**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / W103 LOGMATE SYNTHESIS RUNTIME PROMOTION GATE**
 Governance sync: 2026-09-19
 Primary path: `research/web/`
 
@@ -8,15 +8,15 @@ Primary path: `research/web/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-W102 extends W101 before normalization: raw header/sample, mapping-rule/version, proposed target, provenance class, user resolution and unit transform are captured separately from normalized/validated/duplicate/preview/transaction state. Remapping must invalidate all dependent downstream artifacts; syntactic CSV validity is not aviation semantic validity.
+W103 responds to the newer mandatory LogMate synthesis gate and makes actual product transfer the next Web priority: semantic rule → implemented surface → production build → served primary engine → independent engine → 200%/text-spacing → light/night/forced-colors → real route/network/font state → physical device when relevant. Home/static coherence alone cannot promote a brand/design code.
 
 ## Active queue
-1. Execute I077–I089/W090–W102 once required product paths exist, preserving I063–I088 invariants.
-2. Run production Web build → served primary engine → independent engine with identical mapping/import fixture IDs; replicate each executable family twice.
-3. Add mapping-rule/version and downstream invalidation provenance, focus identity, 200% reflow, light/night/forced-colors and L093 geometry.
-4. Keep persistence/offline/sync dormant until implemented; physical mobile/iPad file-picker behavior remains separate evidence.
-5. Keep Lighthouse/DevTools/CI synthetic LAB; only provenance-bearing aggregate/RUM may support field LCP/INP/CLS.
-6. Keep screen-reader, physical-device/input and representative-human UX evidence OPEN.
+1. Execute W103 cross-surface matrix on Home, View Logbook, Activity Detail, Add Flight and Customize/import review as implementations become available.
+2. Use shared fixtures with I090/L094, C103, CD109 and mature-fallback Type; replicate executable families twice.
+3. Preserve W090–W102 runtime/provenance invariants, especially import mapping invalidation and stable semantic identity.
+4. Add independent engine, reduced motion, 200%/text-spacing, light/night/forced-colors and physical mobile/iPad evidence where applicable.
+5. Keep Lighthouse/DevTools/CI synthetic LAB; only provenance-bearing representative RUM/aggregate may support field LCP/INP/CLS.
+6. Keep screen-reader, physical-device/input and representative-human UX evidence OPEN until actually observed.
 
 ## Evidence boundary
-No cross-browser/Safari/Firefox, non-drag reorder, I089 mapping runtime, persisted import, screen-reader, physical-device, field Core Web Vitals, full WCAG conformance or human UX PASS is claimed.
+No W103 runtime execution, Stage 3 PASS, independent-browser/Safari/Firefox PASS, physical-device PASS, field Core Web Vitals, full WCAG conformance, screen-reader or human UX PASS is claimed.
