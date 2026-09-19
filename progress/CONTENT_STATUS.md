@@ -1,6 +1,6 @@
 # Content Design / UX Writing Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / CD119 COMPLETE-SYSTEM CLOSURE COMPRESSION**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / CD120 SEMANTIC ACCEPTANCE ORACLE**
 Governance sync: 2026-09-20
 Primary path: `research/content/`
 
@@ -8,13 +8,13 @@ Primary path: `research/content/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-CD119 consolidates forms, onboarding, state/recovery, navigation, retrieval/search, tone and source/localization boundaries into one complete content-system fixture. The remaining gap is proving semantic continuity across workflows, not adding another wording family.
+CD120 converts the CD119 complete-system fixture into falsifiers for object/state/action/consequence/persistence/recovery truth. Wording must not collapse pending/failure/unknown, local/synced, zero-result/error or offline/save-failure distinctions.
 
 ## Active queue
-1. Execute one shared corpus across onboarding/previous total, Add Flight validation+commit, ledger/search retrieval, import ambiguity/review, Customize reorder and offline/retry/recovery.
-2. Verify object/field identity, actual state, action scope, material consequence, persistence truth and recovery in visible and accessibility payloads.
-3. Keep product-authored LogMate UI English-only; treat user/source Unicode and locale-sensitive numeric/date rendering as separate stress inputs.
-4. Keep `precise / quiet / operational / non-theatrical` provisional; do not delete semantic jobs for concision or geometry.
+1. Apply CD120 to the shared onboarding/Add Flight/search/import/reorder/offline corpus in actual runtime.
+2. Compare visible and accessibility payloads against the same authoritative state.
+3. Keep product-authored UI English-only; source/user Unicode and locale-sensitive date/numeric rendering remain stress inputs.
+4. Keep `precise / quiet / operational / non-theatrical` provisional.
 5. Keep linguistic review, AT comprehension and representative-pilot evidence OPEN.
 
 ## Evidence boundary
