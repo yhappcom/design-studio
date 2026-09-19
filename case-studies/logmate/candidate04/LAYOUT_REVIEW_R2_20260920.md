@@ -1,24 +1,37 @@
-# Candidate 04 — Layout / Spatial Review R2
+# Candidate 04 — Layout / Spatial Review R2 — 2026-09-20
 
-Status: PASS FOR OWNER AESTHETIC REVIEW / RESPONSIVE STRESS OPEN
+Status: **PASS FOR OWNER AESTHETIC REVIEW / RESPONSIVE OPEN**
 
-Evidence:
-- corrected Flutter implementation c696e5a6d473949f1a9c7f8c88c31dceb7cb7030
-- 390x844 deterministic V2 render
+Evidence reviewed:
+- corrected Candidate 04 visual-only implementation and renders
+- current Layout constraints
 
 No prior Home candidate was consulted.
 
-- Route journal remains the dominant spatial field and gives the concept a clear independent thesis.
-- Current Period, Activity and Totals operate as compact support bands rather than equal-weight cards.
-- All three Recent rows share stable metadata and route geometry.
-- The complete reference view fits naturally without forced bottom navigation or artificial empty zones.
-- Block Time identity was added without destabilizing the compact Current band.
-- Equal primary-action treatment removes unsupported emphasis.
+## Frozen-structure verification
 
-OPEN:
-- narrow viewport;
+PASS.
+
+The concept preserves the same macro sequence and product placement:
+`Header -> Actions -> Search -> Current Period -> Recent -> Activity -> Totals`
+
+The design distinction is carried by:
+- square low-radius action/search surfaces;
+- graphite/paper luminance structure;
+- uppercase editorial labels;
+- fine rules;
+- tighter tonal hierarchy;
+- restrained section spacing.
+
+No information family has been promoted, demoted, merged, moved or replaced to manufacture novelty.
+
+Recent operational axes remain stable across rows.
+
+## Remaining OPEN
+
+- narrow width;
 - enlarged text;
-- actual font fallback;
-- tablet/landscape recomposition.
+- fallback-font metrics;
+- tablet/landscape adaptation.
 
-Verdict: PASS FOR OWNER AESTHETIC REVIEW.
+Verdict: **PASS FOR OWNER AESTHETIC REVIEW.**
