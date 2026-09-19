@@ -1,113 +1,134 @@
 # LogMate Home Candidate 04 — Coordinator Gate — 2026-09-20
 
-Status: **OWNER-REVIEW ELIGIBLE / STATIC CONCEPT ONLY / RUNTIME OPEN**
+Status: **OWNER-REVIEW ELIGIBLE / VISUAL-ONLY CONCEPT / RUNTIME OPEN**
+
+## Scope check
+
+Candidate 04 was rebuilt after the owner clarified that the current task is visual-design concept exploration, not data or macro-layout redesign.
+
+Frozen across this candidate:
+- Home information families;
+- Home order;
+- canonical data fixtures;
+- product semantics;
+- action/destination set;
+- operational comparison geometry.
+
+Canonical sequence preserved:
+`Header -> Actions -> Search -> Current Period -> Recent -> Activity -> Totals`
+
+The earlier Route Journal branch is excluded from this candidate's lineage.
 
 ## Isolation
 
 Generation inputs:
-- structural restore point `f992d62a98193629d19346a022a64deef824570c`;
-- canonical `MASTER.md`, `ui-contract.md`, DateFormats and current product fixtures;
-- owner-wide directions;
+- restore point `f992d62a98193629d19346a022a64deef824570c`;
+- canonical LogMate product contracts;
 - current assets;
-- Design Studio Integration Principles / Design Corridor / Operational Geometry Contract / Signature Code Study.
+- owner-wide visual direction;
+- Design Studio foundation principles and current specialist criteria.
 
 Excluded:
-- Candidate 01 render/rationale/composition;
-- rejected Candidate 02 and Candidate 03 render/rationale/composition;
-- Round-1 A/B/C visual geometry.
+- sealed Candidate 01;
+- rejected Candidate 02;
+- rejected Candidate 03;
+- rejected Round-1 concepts;
+- contaminated Route Journal Candidate 04 branch.
 
-Result: **ISOLATION PASS**.
+Isolation result: **PASS**.
 
-## Implementation / render provenance
+## Implementation
 
-Flutter branch:
-`design/home-candidate-04-code-20260920`
+Branch:
+`design/home-candidate-04-visual-only-20260920`
 
-Initial implementation:
-`ca5f95ba32d499db4b41a8800400aaef20f5341f`
+Corrected Flutter implementation:
+`d6d46d014b10ea6ff905991a95e9b586450bc5a5`
 
-Corrected implementation:
-`c696e5a6d473949f1a9c7f8c88c31dceb7cb7030`
+Primary source:
+`design/prototype/logmate_visual_preview/lib/home_candidate_04_visual.dart`
 
-Canonical-literal test update:
-`80100bc0d58ecec15748823a9bbf8b331c9d0068`
+Concept:
+**Graphite Editorial**
 
-GitHub Actions run:
-`35474977405`
+Visual-only variables:
+- dark-first graphite atmosphere with a light paper counterpart;
+- low-radius square action/search surfaces;
+- uppercase editorial section and micro labels;
+- flat tonal depth instead of card shadow;
+- fine rules;
+- bounded operational mono;
+- proportional tabular summary numerics;
+- appearance-calibrated mint accent.
 
-The Actions run failed before runner steps began. No Flutter analyze/test/golden PASS is claimed.
+## Render evidence
 
-A deterministic 390x844 review render was produced by mirroring the implemented geometry/tokens into a static render harness. It is static visual evidence only.
+Deterministic 390×844 dark/light review renders were generated from the same tokens, spacing, content and geometry as the Flutter implementation.
 
-## Candidate thesis
+GitHub Actions run `35475783670` again failed before any runner step executed. The job contains zero executed steps.
 
-**Route Journal**
+Therefore:
+- no Flutter analyze PASS;
+- no Flutter contract-test PASS;
+- no Flutter golden PASS;
+- no runtime/native/PWA PASS.
 
-Home gives the most visual weight to the user's recent flight routes rather than to dashboard containers or aggregate tiles.
+Static aesthetic review remains valid as code-origin concept evidence only.
 
-Hierarchy:
-1. identity;
-2. Search;
-3. equal Add flight / View logbook primary actions;
-4. compact Current Period / Block Time band;
-5. Recent route journal as the main operational field;
-6. Activity horizontal analysis band;
-7. Totals horizontal summary band.
+## R1 specialist blockers
 
-Key expression:
-- DEP → ARR is the dominant repeated object;
-- Date / Flight / Block remain quieter metadata;
-- operational mono stays bounded to repeated flight data;
-- summary metrics remain proportional tabular;
-- no card stack;
-- no bottom navigation;
-- no aviation decoration;
-- no invented product copy.
+Type / Layout / Interaction / Content passed the visual concept path.
 
-## R1 specialist blockers and corrections
+Color raised two blockers:
+1. light mint text contrast;
+2. tertiary text/placeholder contrast in both appearances.
 
-R1 blockers:
-1. Current Period did not visibly identify Block Time.
-2. Add flight received unsupported brand-priority over View logbook.
-3. draft literals used Recent Flights / Add Flight / View Logbook instead of current canonical Recent / Add flight / View logbook.
+Additional code inspection found and corrected:
+- unsupported intermediate Flutter font-weight values;
+- target sizing for Settings/month controls;
+- redundant Block Time labeling.
 
-Corrections:
-- explicit Block Time label added;
-- primary actions equalized to neutral visual hierarchy;
-- canonical literals restored.
+## R2 specialist gate
 
-## Independent R2 specialist results
+- Type: **PASS FOR OWNER AESTHETIC REVIEW**
+- Color: **PASS FOR OWNER AESTHETIC REVIEW**
+- Layout / Spatial: **PASS FOR OWNER AESTHETIC REVIEW**
+- Interaction: **PASS FOR OWNER AESTHETIC REVIEW**
+- Content: **PASS FOR OWNER AESTHETIC REVIEW**
+- Web / Runtime: **PASS FOR OWNER AESTHETIC REVIEW ONLY / RUNTIME PASS PROHIBITED**
 
-- Type: PASS FOR OWNER AESTHETIC REVIEW.
-- Color: PASS FOR OWNER AESTHETIC REVIEW.
-- Layout / Spatial: PASS FOR OWNER AESTHETIC REVIEW.
-- Interaction: PASS FOR OWNER AESTHETIC REVIEW.
-- Content: PASS FOR OWNER AESTHETIC REVIEW.
-- Web / Runtime: PASS FOR OWNER AESTHETIC REVIEW ONLY / RUNTIME PASS PROHIBITED.
+No R2 specialist has an unresolved CHANGES REQUIRED blocker for static owner review.
 
-No remaining `CHANGES REQUIRED` blocker exists for static owner review.
+## Contrast corrections
+
+Appearance-specific calibration:
+- dark accent `#00A693` on `#11120F` ≈ 6.15:1;
+- light accent `#007C70` on `#F3F1EC` ≈ 4.52:1;
+- dark tertiary `#80827B` on `#11120F` ≈ 4.83:1;
+- light tertiary `#6B6E67` on `#F3F1EC` ≈ 4.59:1.
+
+These are static concept checks, not full accessibility conformance claims.
 
 ## Remaining OPEN
 
-Not blockers for static aesthetic review:
-- exact production type families/fallback;
-- actual Flutter golden/runtime;
+- production font families/fallback;
+- Flutter/native/PWA runtime;
 - narrow/enlarged/text-spacing;
-- coded dark/night/forced colors;
-- route/focus/SEARCH-001 runtime;
-- accessibility tree/AT;
-- physical device/PWA/browser transfer;
-- representative-pilot usability and brand perception.
+- forced-colors/reduced-motion;
+- route/focus/Search behavior;
+- physical-device/glare/night;
+- representative-pilot usability and aesthetic preference.
 
 ## Verdict
 
 **OWNER-REVIEW ELIGIBLE.**
 
-This does not mean:
+This means the concept has completed the pre-owner visual gate.
+
+It does not mean:
 - preferred direction;
-- production baseline;
+- final baseline;
+- production palette;
 - production-ready UI;
 - Masterpiece;
-- superiority over sealed Candidate 01.
-
-Candidate 01 remains sealed until after Candidate 04 owner review.
+- superiority to any sealed comparison candidate.
