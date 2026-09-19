@@ -55,11 +55,12 @@ Disposition vocabulary:
 | CR39 | Glare/night-readability ambitions vs static Light/Dark screenshots. | Evidence-level | Static screenshots are not physical environment evidence. Device/glare/night validation remains later gate. | **OPEN validation** |
 | CR40 | Old Round-1 concept C “least objectionable” vs clean restart. | Anchoring/process | C is not selected, preferred or a starting point. No rails/divisions from C inherit authority. | **RESOLVED / prohibited anchoring** |
 | CR41 | Latest Type/Layout/Content synthesis uses EN/KO/localization stress language vs canonical LogMate English-only UI. | Authority / scope | Product authority wins: LogMate-authored UI copy is English-only. EN/KO references remain general stress methodology; for this product, use English UI plus Unicode/source-data stress and numeric date locale ordering where applicable. | **SCOPED / RESOLVED** |
-| CR42 | Canonical Activity labels `Last 7/28/90 days` vs Home snapshot `7/28/90 days`. | Product copy / candidate shorthand | MASTER, ui-contract and D-009 confirm `Last 7 days / Last 28 days / Last 90 days / Custom`. Snapshot strings are current visual shorthand/candidate evidence only and cannot rewrite the canonical literals. | **RESOLVED** |
-| CR43 | Home snapshot has no bottom navigation vs whole-app NAV-001 remains OPEN. | IA scope | `no bottom navigation implied by this candidate` applies only to the Home candidate. Sidebar/bottom-tab/push-route architecture remains undecided at product level. | **SCOPED / OPEN PRODUCT DECISION** |
+| CR42 | Historical canonical wording `Last 7/28/90 days` vs current Home labels without `Last`. | Owner clarification / copy detail | Owner clarification on 2026-09-19 keeps the current `7 days / 28 days / 90 days / Custom` realization for concept work. The 7/28/90/Custom period semantics remain fixed; a shared `Last` prefix may be reconsidered later as a detail. | **RESOLVED FOR CURRENT CONCEPT / PREFIX DETAIL OPEN** |
+| CR43 | Historical Home candidate had no bottom navigation; owner now prefers bottom navigation in the next Home concept while whole-app NAV-001 remains OPEN. | IA scope / owner exploration direction | Next Home concept should include a bottom-navigation region as an exploration default because space permits it. Do not infer final destinations, persistence, or whole-app navigation architecture from that composition choice. | **SCOPED / HOME DIRECTION SET; NAV-001 OPEN** |
 | CR44 | Visual white-canvas restart vs risk of resetting confirmed product/interaction/semantic contracts. | Reset scope | Reset only visual authorship: aesthetic, type pairing/scale, spacing/surface language, control shapes, visual composition, signature, motion, palette/density expression where not canonically fixed. Preserve confirmed semantics, IA/interaction boundaries, View Logbook contracts, Add Flight semantics, Activity semantics, Search boundaries, English-only and accessibility/platform requirements. | **RESOLVED / SCOPE LOCKED** |
 | CR45 | Home structural baseline vs restart reopening `section composition`. | Scope | Preserve product information families and confirmed relationships/placements; do not treat the current candidate's exact visual composition as final. Recomposition is allowed only inside canonical product/interaction constraints. | **SCOPED / RESOLVED** |
-| CR46 | `progress/STATUS.md` 2026-09-16 aggregate maturity prose vs 2026-09-19 specialist status files and studies. | Evidence provenance / documentation freshness | `AGENTS.md` assigns each domain's canonical status to its specialist status file. For this synthesis use the 2026-09-19 specialist status and underlying T072/C103/I090/L094/W103/CD109 evidence; the older aggregate snapshot remains coordinator history until separately refreshed. | **RESOLVED FOR THIS CASE STUDY / GLOBAL STATUS REFRESH SEPARATE** |
+| CR46 | `progress/STATUS.md` 2026-09-16 aggregate maturity prose vs 2026-09-19 specialist status files and studies. | Evidence provenance / documentation freshness | `AGENTS.md` assigns each domain's canonical status to its specialist status file. Current Integration-Principle inputs are T073/C104/I091/L095/W104/CD110; predecessor synthesis remains supporting evidence. The older aggregate snapshot remains coordinator history until separately refreshed. | **RESOLVED FOR THIS CASE STUDY / GLOBAL STATUS REFRESH SEPARATE** |
+| CR47 | English-only product-authored UI vs Remark accepting any language. | Scope | No contradiction: English-only governs LogMate-authored interface copy. Remark is user/source free text and must remain Unicode/script-safe, proportional/fallback-capable, and must not be normalized to English for visual consistency. | **SCOPED / RESOLVED** |
 
 ## High-risk unresolved items
 
@@ -86,8 +87,8 @@ Static/Chromium proof is insufficient for final native/PWA typography and state 
 **Required:** W103 promotion ladder.
 
 ### H6 — Whole-app navigation architecture
-The current Home candidate does not establish the app's global navigation model.  
-**Required:** keep NAV-001 OPEN; any future app-wide navigation design code must wait for the product decision.
+The owner now prefers a bottom-navigation region in the next Home concept, so Home exploration is no longer blocked on whether bottom navigation may appear. Whole-app navigation semantics still remain OPEN.  
+**Required:** keep NAV-001 OPEN for destinations/persistence/app-wide architecture; do not let that OPEN state prevent the preferred Home bottom-nav composition from being explored.
 
 ### H7 — Home Search interaction structure
 The Search shell exists, but Home suggestion/autocomplete/result-entry behavior remains undecided and is not inherited from Add Flight airport lookup.  
@@ -108,9 +109,10 @@ The Search shell exists, but Home suggestion/autocomplete/result-entry behavior 
 11. Custom LogMate font is not a current dependency.
 12. Historical Round-1 visuals and fixed-character-cell experiments remain rejected.
 13. Product-authored UI remains English-only; locale affects numeric date presentation, not UI translation.
-14. Activity quick-period canonical literals remain `Last 7 days / Last 28 days / Last 90 days / Custom`.
+14. Activity period semantics remain 7 / 28 / 90 days + Custom; current concept labels may omit `Last`, and a shared prefix is a later detail.
 15. Visual reset does not reset confirmed View Logbook/Add Flight/Activity/Search/IA semantics or accessibility/platform contracts.
-16. Home's absence of bottom navigation is not an app-wide navigation decision; NAV-001 remains OPEN.
+16. The next Home concept should explore bottom navigation as owner-preferred composition, while NAV-001 remains OPEN for final app-wide navigation semantics.
+17. English-only governs product-authored UI; Remark/source/user text may contain arbitrary language/script and must remain Unicode-safe.
 
 ## Gate result
 
