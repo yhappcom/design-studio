@@ -79,3 +79,26 @@ If the owner rejects a candidate:
 ## Evidence correction
 
 The previous `HOME_CANDIDATE_02_POST_RENDER_REVIEW_20260920.md` was a coordinator synthesis against existing specialist criteria. It was not independent specialist post-render review and therefore was insufficient for owner-review promotion.
+
+
+## Visual-concept-only freeze
+
+Current owner direction: the next LogMate Home candidates are **visual identity concepts on a frozen product structure**, not layout/data alternatives.
+
+Hold constant across candidates:
+- same Home information families and order;
+- same data fixtures;
+- same product semantics;
+- same destination/action set;
+- same operational comparison geometry.
+
+Variation must come from:
+- type character/role expression;
+- color atmosphere;
+- surface/rule/boundary language;
+- control and icon treatment;
+- visual density/spacing finish;
+- brand-accent behavior;
+- state/motion expression.
+
+A candidate that achieves distinctness mainly by reorganizing the Home, changing section priority, moving actions, or changing the data model is out of scope for this phase and must be rejected before owner review.
