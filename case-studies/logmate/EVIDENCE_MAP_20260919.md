@@ -1,6 +1,6 @@
 # LogMate Design Evidence Map — 2026-09-19
 
-Status: **SYNTHESIS GATE — EVIDENCE MAP COMPLETE FOR CURRENT VISUAL-IDENTITY WORK**  
+Status: **SYNTHESIS GATE — FINAL FULL AUDIT COMPLETE FOR CURRENT VISUAL-IDENTITY WORK**  
 Companion: `CONTRADICTION_REGISTER_20260919.md`  
 Gate: `DESIGN_SYNTHESIS_GATE_20260919.md`
 
@@ -106,6 +106,11 @@ Repository: `yhappcom/logmate`
 - Flutter official custom-font and `TextStyle.fontFamily` documentation: exact family names/assets are the reliable custom-font path; fallback is ordered and platform fallback may occur.
 - W3C WCAG 2.2 current guidance: Reflow, Non-text Contrast, Focus, Target Size, Dragging Movements remain applicable by scope.
 
+### Audit provenance note
+- `AGENTS.md` assigns canonical specialist status to `TYPE_STATUS.md`, `COLOR_STATUS.md`, `LAYOUT_STATUS.md`, `WEB_STATUS.md`, and `CONTENT_STATUS.md`.
+- Those specialist status files are synchronized to 2026-09-19 and identify T072 / C103 / I090+L094 / W103 / CD109 as the current LogMate synthesis inputs.
+- `progress/STATUS.md` remains coordinator-synced to 2026-09-16 and contains older maturity summaries. For this case study, dated specialist status plus the underlying study is used for current specialist maturity; stale aggregate lines are not allowed to downgrade or overwrite newer specialist evidence.
+
 ## 1. Evidence authority order
 
 For the current project synthesis:
@@ -127,7 +132,7 @@ A historical specialist recommendation cannot silently override a later owner-co
 | ID | Finding | Evidence class | Primary source(s) | Scope / implication | Maturity |
 |---|---|---|---|---|---|
 | E01 | Professional/domain meaning must not be invented or collapsed for visual convenience. | CANONICAL PRODUCT | LogMate MASTER; CD081/CD109 | Visual design cannot merge Block/Actual/Inst/IFR etc. or shorten away distinct semantics. | CONFIRMED |
-| E02 | Home information families and semantic order are frozen as structural baseline, not final visual design. | CANONICAL PRODUCT / OWNER | Home snapshot; visual restart | New identity work may redesign appearance but not silently alter product structure. | CONFIRMED |
+| E02 | Home product semantics, information families and confirmed IA/interaction relationships are preserved as structural baseline; the current candidate's visual composition is not the final visual baseline. | CANONICAL PRODUCT / OWNER | Home snapshot; visual restart; ui-contract | New identity work may re-author composition/appearance where the restart reopens the visual layer, but may not silently change confirmed product structure or behavior. | CONFIRMED / SCOPED |
 | E03 | Home Current Period metric identity is Block Time. | CANONICAL PRODUCT / OWNER | MASTER; ui-contract | Visual hierarchy may change; semantic identity may not. | CONFIRMED |
 | E04 | View Logbook Standard uses Date / Type / Reg / Flight / DEP / ARR / Block / Night / Inst / Remark. | CANONICAL PRODUCT | ui-contract | Dense-ledger stress corpus is fixed enough for synthesis. | CONFIRMED |
 | E05 | View Logbook ledger body uses regular monospace/code at w400; Date, Flight, DEP/ARR, Block/Night/Inst are included. | CANONICAL PRODUCT | ui-contract §View Logbook ledger typography | Historical proportional-identifier recommendations cannot override this role. | CONFIRMED |
@@ -148,7 +153,7 @@ A historical specialist recommendation cannot silently override a later owner-co
 | E20 | 200%/enlarged-text failure cannot be repaired by shrinking text, negative tracking or forcing a condensed/mono aesthetic. | TYPE + LAYOUT | T018/T020/T044; L094 | Recompose, expand or change presentation; exact large-text ledger strategy remains to validate. | SUPPORTED / IMPLEMENTATION OPEN |
 | E21 | Required professional strings are protected; fit pressure is not permission to rename or abbreviate arbitrarily. | CONTENT + TYPE | CD081/CD109; T044/T072 | Geometry adapts before semantics are damaged. | SUPPORTED |
 | E22 | Abbreviations are acceptable only when established, unambiguous and governed. | CONTENT | CD109 | Compact ledger headers may be short; ad-hoc shortening is rejected. | SUPPORTED |
-| E23 | User/source evidence and professional identifiers must not be translated/rewritten merely for UI localization. | CANONICAL / CONTENT | ui-contract; CD108/CD109 | User data and imported source labels retain identity; interface around them localizes by contract. | CONFIRMED |
+| E23 | User/source evidence and professional identifiers must not be translated/rewritten for visual convenience. | CANONICAL / CONTENT | MASTER Language/Locale; ui-contract; CD108/CD109 | Source/user identifiers preserve their original evidence. Product-authored LogMate UI remains English-only; numeric date locale ordering is a separate presentation contract. | CONFIRMED |
 | E24 | Current product date contract is numeric/locale-ordered; textual mock dates such as `Sep 02` are not canonical date evidence. | CANONICAL PRODUCT | ui-contract date locale section | New visual fixtures must use DateFormats contract rather than historical mock wording. | CONFIRMED |
 | E25 | Whitespace is structural, not synonymous with low density. Dense aligned data can be calm. | LAYOUT / HUMAN-FACTORS SYNTHESIS | L002; L005 | Premium restraint must not force unnecessary sparsity. | SUPPORTED |
 | E26 | Density has multiple causes: geometry, grouping, color salience, feature competition and semantic complexity. | LAYOUT/COLOR | L002/L005/C007 | Diagnose before adding whitespace or removing data. | SUPPORTED |
@@ -176,6 +181,17 @@ A historical specialist recommendation cannot silently override a later owner-co
 | E48 | The frozen Round-1 A/B/C concepts are rejected and cannot seed the next visual direction. | OWNER | visual restart | No rail/serif/ruled-search inheritance by default. | CONFIRMED |
 | E49 | Equal per-character fixed-cell experiment is rejected because of artificial letter/number spacing. | OWNER / RENDERED REVIEW | D019 history | Do not restore character-cell approach to solve identifier jitter. | CONFIRMED REJECTED |
 | E50 | Whole-string Flight centering is rejected; internal Flight zoning remains. | OWNER / PRODUCT | D019; ui-contract | Prevents short/long flight strings from moving the semantic start points. | CONFIRMED |
+| E51 | LogMate product-authored UI is English-only. Device language does not translate UI copy; locale affects numeric date ordering/presentation only. | CANONICAL PRODUCT | MASTER §8; ui-contract Language/Locale; D-007 | Future visual fixtures and content studies must not introduce Korean or other translated product labels as canonical LogMate UI. | CONFIRMED |
+| E52 | Home Activity quick-period canonical literals are `Last 7 days`, `Last 28 days`, `Last 90 days`, `Custom`. | CANONICAL PRODUCT | MASTER UI/Navigation; ui-contract; D-009 | `7 days / 28 days / 90 days` in the Home snapshot is current-candidate shorthand, not authority to rewrite the product label contract. | CONFIRMED |
+| E53 | Whole-app navigation architecture remains NAV-001 OPEN. | CANONICAL PRODUCT OPEN | MASTER §7 / OPEN decisions | The current Home candidate containing no bottom navigation does not decide sidebar vs bottom tabs vs push-route architecture for the product. | OPEN — DO NOT INFER |
+| E54 | The 2026-09-19 blank-canvas restart is a **visual-layer reset**, not a product reset. | OWNER / CANONICAL SCOPE | visual restart; MASTER; ui-contract | Preserve confirmed View Logbook semantics/geometry, Flight semantics, Add Flight semantics, Activity semantics, Search boundaries, English-only policy and accessibility/platform contracts while re-authoring visual expression. | CONFIRMED |
+| E55 | View Logbook retains confirmed dense-ledger geometry: normal 36px header/body/total rhythm; LEFT/START anchoring; compact semantic widths summed rather than stretched; sticky header; header/body/totals share semantic column boundaries and horizontal offset; horizontal scroll is used when semantic width exceeds available content width. | CANONICAL PRODUCT | MASTER View Logbook; ui-contract View Logbook | Visual identity may restyle the ledger but cannot silently erase these confirmed geometry contracts. Large-text/native adaptation remains separately OPEN. | CONFIRMED NORMAL-PRESENTATION CONTRACT |
+| E56 | Add Flight's current stock card/Material visual treatment is superseded, but confirmed entry semantics and task-specific interactions remain product authority. | CANONICAL PRODUCT / VISUAL RESET | MASTER implementation matrix; ui-contract Add flight entry UI shell | Visual redesign may replace styling/composition without inventing new field semantics, automatic calculations, airport-search behavior or save semantics. | CONFIRMED / VISUAL TREATMENT OPEN |
+| E57 | Home Search and Add Flight airport lookup are separate contracts. Home suggestion/autocomplete/result structure remains SEARCH-001 OPEN; Add Flight airport lookup has confirmed task-specific offline behavior. | CANONICAL PRODUCT | MASTER; search-interaction-spec; ui-contract | Visual identity work must not use Add Flight autocomplete as evidence that Home Search autocomplete/suggestions are confirmed. | CONFIRMED BOUNDARY / SEARCH-001 OPEN |
+| E58 | The latest Content synthesis voice (`precise`, `quiet`, `operational`, `non-theatrical`, consequence-explicit, recovery-forward) is a PROJECT-SPECIFIC CANDIDATE, not approved production copy. | CONTENT SYNTHESIS | CD109 | It may inform later Integration Principles but cannot override canonical terminology/state truth or be treated as owner-approved voice. | CANDIDATE / NOT PASS |
+| E59 | T072/L094/CD109 EN/KO or localization stress references are specialist stress methodology, not LogMate product-language authority. | EVIDENCE-SCOPE RECONCILIATION | T072; L094; CD109; MASTER §8; ui-contract | For LogMate UI fixtures use English product copy, canonical numeric date locale formats, and Unicode/source-data stress where source/user evidence requires it. | RESOLVED SCOPE |
+| E60 | The Home snapshot's `no bottom navigation implied by this candidate` is surface-candidate evidence only. | CURRENT CANDIDATE / PRODUCT OPEN | Home snapshot; MASTER NAV-001 | It may describe the current Home candidate but cannot be promoted to app-wide IA. | SCOPED |
+| E61 | Current specialist synthesis authority is T072 / C103 / I090+L094 / W103 / CD109 as recorded by the 2026-09-19 specialist status files. | STUDIO GOVERNANCE / EVIDENCE PROVENANCE | AGENTS; specialist status files | Older global-status maturity prose and earlier specialist studies remain history unless independently still applicable; they do not outrank later owner/canonical product decisions. | CONFIRMED PROVENANCE |
 
 ---
 
@@ -191,11 +207,16 @@ The evidence supports the following **inputs**, not yet the final Design Corrido
 - Responsive identity: preserve relationships/axes, not identical coordinates.
 - Color: neutral operational field first; accent/state roles separated.
 - Interaction: consequence/focus/recovery salience outranks brand calm.
-- Content: semantic truth and established professional terminology outrank fit.
+- Content: semantic truth and established professional terminology outrank fit; product-authored UI is English-only.
+- Date presentation: numeric locale ordering uses the canonical `DateFormats` contract; language localization is not implied.
+- Activity: canonical quick-period labels are `Last 7 days / Last 28 days / Last 90 days / Custom`.
+- Navigation: current Home has no bottom nav, but whole-app navigation architecture remains NAV-001 OPEN.
+- Visual reset: re-author the visual layer while preserving confirmed semantics, IA/interaction contracts and dense-ledger geometry.
+- Add Flight/Search: confirmed Add Flight semantics survive restyling; Home Search suggestion behavior remains SEARCH-001 OPEN and separate from airport lookup.
 - Identity: repeatable, restrained, cross-surface rules; no luxury or aviation decoration shortcut.
 - Evidence: no cross-surface brand code promoted from static Home alone.
 
-## 4. Remaining evidence gaps before the three requested artifacts can be promoted
+## 4. Remaining evidence gaps and scoped OPEN product decisions
 
 1. Exact production mono family for Flutter/iOS/Android/PWA.
 2. Native/runtime measurement of the mono Flight zoning and long identifier corpus.
@@ -204,5 +225,7 @@ The evidence supports the following **inputs**, not yet the final Design Corrido
 5. Forced-colors and independent-engine transfer for web/PWA.
 6. Physical-device glare/night review.
 7. Representative-pilot scanning/workload/comprehension evidence when app implementation is ready.
+8. NAV-001 — whole-app navigation architecture; do not infer it from the Home candidate.
+9. SEARCH-001 — Home Search suggestion/autocomplete/result-entry behavior; do not infer it from Add Flight lookup.
 
-These gaps do not block creation of Design Corridor/Geometry/Signature studies as **candidate contracts**, but they block claiming production or human PASS.
+These gaps do not block creation of Integration Principles and later Design Corridor/Geometry/Signature studies as **candidate contracts** where their scope is unaffected. They do block production/human PASS claims and block any rule that would silently decide NAV-001, SEARCH-001, or the other listed OPEN implementation questions.

@@ -1,6 +1,6 @@
 # LogMate Design Contradiction Register — 2026-09-19
 
-Status: **SYNTHESIS GATE — CURRENT MATERIAL CONTRADICTIONS AUDITED**  
+Status: **SYNTHESIS GATE — FINAL FULL AUDIT OF CURRENT MATERIAL CONTRADICTIONS COMPLETE**  
 Evidence base: `EVIDENCE_MAP_20260919.md`
 
 Disposition vocabulary:
@@ -54,6 +54,12 @@ Disposition vocabulary:
 | CR38 | Premium perception/trust claim vs no representative-pilot evidence. | Evidence-level | Owner review can select direction; do not claim representative premium/trust/usability until appropriate human evidence exists. | **RESOLVED evidence boundary** |
 | CR39 | Glare/night-readability ambitions vs static Light/Dark screenshots. | Evidence-level | Static screenshots are not physical environment evidence. Device/glare/night validation remains later gate. | **OPEN validation** |
 | CR40 | Old Round-1 concept C “least objectionable” vs clean restart. | Anchoring/process | C is not selected, preferred or a starting point. No rails/divisions from C inherit authority. | **RESOLVED / prohibited anchoring** |
+| CR41 | Latest Type/Layout/Content synthesis uses EN/KO/localization stress language vs canonical LogMate English-only UI. | Authority / scope | Product authority wins: LogMate-authored UI copy is English-only. EN/KO references remain general stress methodology; for this product, use English UI plus Unicode/source-data stress and numeric date locale ordering where applicable. | **SCOPED / RESOLVED** |
+| CR42 | Canonical Activity labels `Last 7/28/90 days` vs Home snapshot `7/28/90 days`. | Product copy / candidate shorthand | MASTER, ui-contract and D-009 confirm `Last 7 days / Last 28 days / Last 90 days / Custom`. Snapshot strings are current visual shorthand/candidate evidence only and cannot rewrite the canonical literals. | **RESOLVED** |
+| CR43 | Home snapshot has no bottom navigation vs whole-app NAV-001 remains OPEN. | IA scope | `no bottom navigation implied by this candidate` applies only to the Home candidate. Sidebar/bottom-tab/push-route architecture remains undecided at product level. | **SCOPED / OPEN PRODUCT DECISION** |
+| CR44 | Visual white-canvas restart vs risk of resetting confirmed product/interaction/semantic contracts. | Reset scope | Reset only visual authorship: aesthetic, type pairing/scale, spacing/surface language, control shapes, visual composition, signature, motion, palette/density expression where not canonically fixed. Preserve confirmed semantics, IA/interaction boundaries, View Logbook contracts, Add Flight semantics, Activity semantics, Search boundaries, English-only and accessibility/platform requirements. | **RESOLVED / SCOPE LOCKED** |
+| CR45 | Home structural baseline vs restart reopening `section composition`. | Scope | Preserve product information families and confirmed relationships/placements; do not treat the current candidate's exact visual composition as final. Recomposition is allowed only inside canonical product/interaction constraints. | **SCOPED / RESOLVED** |
+| CR46 | `progress/STATUS.md` 2026-09-16 aggregate maturity prose vs 2026-09-19 specialist status files and studies. | Evidence provenance / documentation freshness | `AGENTS.md` assigns each domain's canonical status to its specialist status file. For this synthesis use the 2026-09-19 specialist status and underlying T072/C103/I090/L094/W103/CD109 evidence; the older aggregate snapshot remains coordinator history until separately refreshed. | **RESOLVED FOR THIS CASE STUDY / GLOBAL STATUS REFRESH SEPARATE** |
 
 ## High-risk unresolved items
 
@@ -79,6 +85,14 @@ No candidate signature code exists yet.
 Static/Chromium proof is insufficient for final native/PWA typography and state claims.  
 **Required:** W103 promotion ladder.
 
+### H6 — Whole-app navigation architecture
+The current Home candidate does not establish the app's global navigation model.  
+**Required:** keep NAV-001 OPEN; any future app-wide navigation design code must wait for the product decision.
+
+### H7 — Home Search interaction structure
+The Search shell exists, but Home suggestion/autocomplete/result-entry behavior remains undecided and is not inherited from Add Flight airport lookup.  
+**Required:** keep SEARCH-001 OPEN; visual work may style the confirmed shell but must not invent the interaction contract.
+
 ## Resolved synthesis rules that may feed the next phase
 
 1. Product/domain truth outranks visual fit.
@@ -93,16 +107,22 @@ Static/Chromium proof is insufficient for final native/PWA typography and state 
 10. Design codes must transfer by rule across major surfaces.
 11. Custom LogMate font is not a current dependency.
 12. Historical Round-1 visuals and fixed-character-cell experiments remain rejected.
+13. Product-authored UI remains English-only; locale affects numeric date presentation, not UI translation.
+14. Activity quick-period canonical literals remain `Last 7 days / Last 28 days / Last 90 days / Custom`.
+15. Visual reset does not reset confirmed View Logbook/Add Flight/Activity/Search/IA semantics or accessibility/platform contracts.
+16. Home's absence of bottom navigation is not an app-wide navigation decision; NAV-001 remains OPEN.
 
 ## Gate result
 
-**Evidence Map: COMPLETE for current synthesis scope.**  
-**Contradiction Register: COMPLETE for currently known material contradictions.**
+**Evidence Map: FINAL FULL AUDIT COMPLETE for current synthesis scope.**  
+**Contradiction Register: FINAL FULL AUDIT COMPLETE for currently known material contradictions.**
 
-This does **not** mean every implementation question is closed. It means unresolved questions are now explicit and no currently known material cross-domain contradiction is hidden inside the next design phase.
+This does **not** mean every implementation or product question is closed. H1–H7 and the canonical OPEN decisions remain explicit. It means the currently known material cross-domain conflicts are either resolved/scoped or declared OPEN rather than hidden inside the next design phase.
 
 Next allowed phase under the synthesis gate:
 `Integration Principles -> Design Corridor -> Operational Geometry Contract -> Signature Code Study`.
+
+Integration Principles may begin, but no principle may silently decide NAV-001, SEARCH-001, exact production mono selection, large-text ledger adaptation, or other explicitly OPEN product/runtime items.
 
 The next phase must consume this register rather than reopening resolved historical alternatives without new evidence.
 
