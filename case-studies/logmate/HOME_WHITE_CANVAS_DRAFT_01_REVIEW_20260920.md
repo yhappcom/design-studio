@@ -162,3 +162,18 @@ These values are presentation fixtures from current implementation evidence; the
 PASS FOR STATIC DRAFT RENDERING.
 
 The draft may be visually evaluated after rendering, but any perceived premium/clarity judgement remains owner review, not representative-pilot evidence.
+
+## Post-render candidate record
+
+Owner direction: preserve the rendered result as **Home Candidate 01** for later comparison, together with the composition rationale.
+
+Canonical candidate rationale is stored in LogMate:
+`design/visual_identity/candidates/HOME_CANDIDATE_01_20260920.md`
+
+Candidate 01 remains:
+- a comparison candidate;
+- not the final Home baseline;
+- not the Masterpiece;
+- not production type/palette/runtime evidence.
+
+The rationale explicitly records why the concept uses a compact header, equal primary actions, restrained Search, current→recent→activity→cumulative information flow, ledger-like Recent Flights, sparse brand accent, no repeated cards, and no bottom navigation.
