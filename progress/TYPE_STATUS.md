@@ -1,6 +1,6 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE + T085 FLUTTER SCALING TRANSFER**
+Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE + T086 CANDIDATE 05 RUNTIME TRANSFER**
 Governance sync: 2026-09-20
 Primary path: `research/type/`
 
@@ -8,13 +8,13 @@ Primary path: `research/type/`
 Stage 1 **PASS**; Stage 2 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-T085 converts owner-review-eligible Candidate 03 into a Flutter Type transfer plan: actual `TextScaler`/nonlinear scaling, resolved font/fallback, canonical role corpus and geometry failure conditions. Static 390×844 fit may not be preserved by disabling/clamping ordinary text scaling, negative tracking, glyph narrowing, semantic shortening or premature kerning.
+T086 transfers owner-review-eligible Candidate 05 `Ivory Instrument` into a runtime Type gate: proportional product UI, bounded operational mono and proportional tabular figures must survive actual Flutter `TextScaler`, resolved-font/fallback and adaptive geometry. The 390×844 static fit may not be rescued by semantic shortening, negative tracking, glyph narrowing, scaling suppression or provisional custom metrics.
 
 ## Active queue
 1. Continue T021 bounded drawing repair only in a complete-source environment; widths/sidebearings frozen, kerning OFF.
 2. After drawing PASS, run general-spacing evidence before residual kerning.
-3. Execute T085 on Candidate 03 at baseline/max platform scaling/fallback using actual resolved-font evidence.
-4. Resolve exact production mono/fallback only from mature fonts.
+3. Execute T086 on exact Candidate 05 runtime at baseline/max platform scaling and forced mature fallback with resolved-font evidence.
+4. Resolve exact production proportional/mono/fallback only from mature fonts.
 
 ## Evidence boundary
-No T021 closure, spacing PASS, kerning entry, production custom font/mono, scaled Candidate 03 runtime, AT or human PASS is claimed.
+No T021 closure, spacing PASS, kerning entry, production custom font/mono, Candidate 05 runtime, AT or human PASS is claimed.
