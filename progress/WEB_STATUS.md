@@ -1,6 +1,6 @@
 # Web Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 3 PRACTICE / W117 CANDIDATE 05 PRODUCTION PROMOTION PACKET**
+Operating state: **ACTIVE — STAGE 3 PRACTICE / W118 CANDIDATE 07 PRODUCTION TRANSFER PACKET**
 Governance sync: 2026-09-20
 Primary path: `research/web/`
 
@@ -8,12 +8,12 @@ Primary path: `research/web/`
 Stage 1 **PASS**; Stage 2 **PASS**; Stage 3 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-W117 replaces generic Candidate 03 promotion with the current Candidate 05 production packet. Candidate 05 is owner-review eligible only; its recorded Actions run terminated before runner steps, so analyze/test/golden/runtime remain OPEN. Promotion now requires exact-source runner evidence, primary native REPLICATION ×2, scaling/fallback/accessibility stress, second-platform transfer, served Flutter Web semantics/browser transfer where applicable, independent browser and physical-device/PWA evidence.
+W118 promotes current Candidate 07 `Linebook` from deterministic 390×844 light/dark code-origin renders to a production evidence ladder. Project evidence identifies exact Flutter source commit but explicitly leaves analyze/golden/device/browser, route/focus/AT, narrow/enlarged text and accessibility-mode transfer OPEN. The lightweight harness glyph substitution is excluded from product UI evidence.
 
 ## Active queue
-1. Obtain successful runner-based analyze/relevant widget-golden-accessibility results for exact Candidate 05 source.
+1. Obtain successful runner-based analyze/relevant widget-golden-accessibility results for exact Candidate 07 source.
 2. Execute primary native runtime twice with TextScaler/resolved-font/SafeArea/semantics/focus/route provenance.
-3. Transfer to second native platform and Flutter Web/independent browser where product scope applies.
+3. Transfer to second native platform and served Flutter Web/independent browser where product scope applies.
 4. Keep Lighthouse/DevTools/CI/synthetic LAB; field LCP/INP/CLS require provenance-bearing representative RUM/aggregate.
 5. Keep screen-reader and representative-human UX evidence OPEN.
 
