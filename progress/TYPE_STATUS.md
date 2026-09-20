@@ -1,6 +1,6 @@
 # Typography / Type Design Specialist Status
 
-Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE + T089 EXECUTABLE STRESS FIXTURE**
+Operating state: **ACTIVE — STAGE 2 PRACTICE / T021 DRAWING GATE + T090 PRE-RUNTIME STOP RULE**
 Governance sync: 2026-09-20
 Primary path: `research/type/`
 
@@ -8,12 +8,12 @@ Primary path: `research/type/`
 Stage 1 **PASS**; Stage 2 **PRACTICE / NOT PASSED**.
 
 ## Latest evidence
-T089 converts T088 cross-concept invariants into a shared Candidate 05/07 stress corpus: actual resolved font/fallback, maximum supported platform text scaling, narrow width and long operational strings are captured without forcing identical typography recipes. Geometry repair through scaling suppression, negative tracking, glyph narrowing, semantic shortening or premature kerning is a failure.
+T090 finds Candidate 05/07 pre-runtime type specification saturated after T089. Further candidate-specific fit notes are blocked unless runtime/source, material corpus, contradiction or T021 gate state changes. Remaining high-value evidence is T021 bounded drawing, post-drawing general spacing, and actual resolved-font/TextScaler runtime evidence.
 
 ## Active queue
 1. Continue T021 bounded drawing repair only in a complete-source environment; widths/sidebearings frozen, kerning OFF.
 2. After drawing PASS, run general-spacing evidence before residual kerning.
-3. When exact runtimes exist, execute T089 on both candidates with same-build replication and resolved-font evidence.
+3. When exact runtimes exist, execute T089 with same-build replication and resolved-font evidence.
 4. Hand reflow/fit contradictions to Layout/Content rather than repairing immature drawing with spacing.
 
 ## Evidence boundary
