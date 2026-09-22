@@ -12,26 +12,15 @@ Purpose: portfolio-format whole-product visual design proposals derived from the
 
 ## Portfolio completion gate
 
-A candidate is **not complete** merely because its design rationale or textual portfolio is finished.
-
-Every candidate must include, at minimum, visible representative visual mockups for:
-1. Home
-2. Add Flight
-3. View Logbook
-
-The mockups must be sufficiently rendered to judge actual composition, hierarchy, typography treatment, spacing/density, surface/rule language, control treatment, and color/state strategy. A text table, ASCII wireframe, composition description, or prose-only diagram does **not** satisfy this gate.
-
-Mockups may be concept renders rather than executable-product screenshots, but they must be clearly labeled **CONCEPT / PROPOSAL** and must not be represented as runtime/device evidence.
-
-Before user delivery, the final portfolio PDF must embed these visual mockups at useful review size. The PDF itself must be visually inspected after rendering. If mockups are missing, broken, illegible, clipped, or too small to evaluate, the candidate remains **INCOMPLETE** and must be repaired before advancing to the next candidate.
+A candidate is not complete merely because its design rationale or textual portfolio is finished. Every candidate must include visible representative visual mockups for Home, Add Flight and View Logbook. Each screen must show Mobile Light, Mobile Dark, Tablet/EFB Light and Tablet/EFB Dark: 12 environment-specific expressions per candidate. Tablet must be an adaptive recomposition, not a magnified phone. Mockups must be clearly labeled CONCEPT / PROPOSAL and are not runtime/device evidence. Final PDFs must embed the visuals at reviewable size and be visually inspected after rendering.
 
 ## Candidates
 
 | # | Candidate | Canonical source | Status | PDF |
 |---|---|---|---|---|
-| 01 | Flight Strip Atlas | `CANDIDATE_01_FLIGHT_STRIP_ATLAS.md` | **INCOMPLETE - visual mockups missing from delivered PDF; repair before Candidate 02** | first PDF rejected as portfolio evidence; replacement required |
-| 02 | - | - | BLOCKED UNTIL 01 REPAIR | - |
-| 03 | - | - | PENDING | - |
+| 01 | Flight Strip Atlas | `CANDIDATE_01_FLIGHT_STRIP_ATLAS.md` | manual repair/delivery handled in current user session; index reconciliation still required | replacement visual PDF handled in chat |
+| 02 | Horizon Deck | `CANDIDATE_02_HORIZON_DECK.md` | STATIC PORTFOLIO COMPLETE - 12 environment mockups visually inspected | `LogMate_Candidate_02_Horizon_Deck_KR.pdf` generated as chat artifact; source commit `1477c39a38350ca88a4e1150e5d399c60177874c` |
+| 03 | - | - | NEXT | - |
 | 04 | - | - | PENDING | - |
 | 05 | - | - | PENDING | - |
 | 06 | - | - | PENDING | - |
@@ -42,4 +31,4 @@ Before user delivery, the final portfolio PDF must embed these visual mockups at
 
 ## Candidate diversity rule
 
-A new number requires a materially different visual/design thesis. Palette, font, radius, or spacing changes alone do not qualify. Later candidates should challenge Candidate 01's record-strip/datum hypothesis rather than treating it as the template.
+A new number requires a materially different visual/design thesis. Palette, font, radius, or spacing changes alone do not qualify. Later candidates must challenge earlier candidates rather than treating them as templates.
