@@ -26,8 +26,8 @@ A candidate is not complete merely because its design rationale or textual portf
 | 06 | Timeline Stack | `CANDIDATE_06_TIMELINE_STACK.md` | STATIC PORTFOLIO COMPLETE - 12 environment mockups visually inspected | `LogMate_Candidate_06_Timeline_Stack_KR.pdf` generated as chat artifact; source commit `67c1e49e32506371e2714c39bb4911ce78408de2` |
 | 07 | Folio Ledger | `CANDIDATE_07_FOLIO_LEDGER.md` | STATIC PORTFOLIO COMPLETE - 12 environment mockups visually inspected | `LogMate_Candidate_07_Folio_Ledger_KR.pdf` generated as chat artifact; source commit `cc7b9a53ff16db9daaddd852ae5b780c021fb82e` |
 | 08 | Compass Quiet | `CANDIDATE_08_COMPASS_QUIET.md` | STATIC PORTFOLIO COMPLETE - 12 environment mockups visually inspected | `LogMate_Candidate_08_Compass_Quiet_KR.pdf` generated as chat artifact; source commit `93c56590dd82c3950abb5a2c2acb01fdcc3cfdf1` |
-| 09 | - | - | NEXT | - |
-| 10 | - | - | PENDING | - |
+| 09 | SkyPanel | `CANDIDATE_09_SKYPANEL.md` | STATIC PORTFOLIO COMPLETE - 12 environment mockups visually inspected | `LogMate_Candidate_09_SkyPanel_KR.pdf` generated as chat artifact; source commit `07f8d1b19ea063ce5cf5397e4afb02300dc0e6da` |
+| 10 | - | - | NEXT | - |
 
 ## Candidate diversity rule
 
