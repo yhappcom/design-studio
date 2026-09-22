@@ -23,8 +23,8 @@ A candidate is not complete merely because its design rationale or textual portf
 | 03 | Skyline Focus | `CANDIDATE_03_SKYLINE_FOCUS.md` | STATIC PORTFOLIO COMPLETE - 12 environment mockups visually inspected | `LogMate_Candidate_03_Skyline_Focus_KR.pdf` generated as chat artifact; source commit `07ac877cd563a3e7c0e1d28528f9a8e3087b89eb` |
 | 04 | Compass Flow | `CANDIDATE_04_COMPASS_FLOW.md` | STATIC PORTFOLIO COMPLETE - 12 environment mockups visually inspected | `LogMate_Candidate_04_Compass_Flow_KR.pdf` generated as chat artifact; source commit `90712ef48a14fc04faa4f9249daa0d9715947982` |
 | 05 | Waypoint Grid | `CANDIDATE_05_WAYPOINT_GRID.md` | STATIC PORTFOLIO COMPLETE - 12 environment mockups visually inspected | `LogMate_Candidate_05_Waypoint_Grid_KR.pdf` generated as chat artifact; source commit `f69e3df6eccaca50562df94f8f8187175096624a` |
-| 06 | - | - | NEXT | - |
-| 07 | - | - | PENDING | - |
+| 06 | Timeline Stack | `CANDIDATE_06_TIMELINE_STACK.md` | STATIC PORTFOLIO COMPLETE - 12 environment mockups visually inspected | `LogMate_Candidate_06_Timeline_Stack_KR.pdf` generated as chat artifact; source commit `67c1e49e32506371e2714c39bb4911ce78408de2` |
+| 07 | - | - | NEXT | - |
 | 08 | - | - | PENDING | - |
 | 09 | - | - | PENDING | - |
 | 10 | - | - | PENDING | - |
