@@ -27,7 +27,13 @@ A candidate is not complete merely because its design rationale or textual portf
 | 07 | Folio Ledger | `CANDIDATE_07_FOLIO_LEDGER.md` | STATIC PORTFOLIO COMPLETE - 12 environment mockups visually inspected | `LogMate_Candidate_07_Folio_Ledger_KR.pdf` generated as chat artifact; source commit `cc7b9a53ff16db9daaddd852ae5b780c021fb82e` |
 | 08 | Compass Quiet | `CANDIDATE_08_COMPASS_QUIET.md` | STATIC PORTFOLIO COMPLETE - 12 environment mockups visually inspected | `LogMate_Candidate_08_Compass_Quiet_KR.pdf` generated as chat artifact; source commit `93c56590dd82c3950abb5a2c2acb01fdcc3cfdf1` |
 | 09 | SkyPanel | `CANDIDATE_09_SKYPANEL.md` | STATIC PORTFOLIO COMPLETE - 12 environment mockups visually inspected | `LogMate_Candidate_09_SkyPanel_KR.pdf` generated as chat artifact; source commit `07f8d1b19ea063ce5cf5397e4afb02300dc0e6da` |
-| 10 | - | - | NEXT | - |
+| 10 | Field Deck | `CANDIDATE_10_FIELD_DECK.md` | STATIC PORTFOLIO COMPLETE - 12 environment mockups visually inspected | `LogMate_Candidate_10_Field_Deck_KR.pdf` generated as chat artifact; source commit `faf86829dea219c2e7813a0e7074881cd94e7cac` |
+
+## Series state
+
+Candidates 02–10 are complete under the static portfolio gate. Candidate 01 remains a separately handled manual repair/delivery item and still requires canonical index reconciliation if its final source artifact is to be normalized in this workspace.
+
+No candidate is runtime/device/AT/FIELD/human validation evidence.
 
 ## Candidate diversity rule
 
