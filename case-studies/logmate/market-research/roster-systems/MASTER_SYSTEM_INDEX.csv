@@ -2,7 +2,7 @@ system_id,vendor,product,crew_interface,priority,status,airline_count_confirmed,
 crewconnex,PDC,FlightCrew,CrewConnex,1,ACTIVE,19,3034,4303,P2,"CSV;HTML;PDF-capability","baseline established","acquire multiple actual P1 samples and airline variations"
 aims-ecrew,AIMS,AIMS,eCREW,2,QUEUED,,,,P3,"CSV;HTML/HTM","initial leads","acquire public raw sample and map fields"
 navblue,NAVBLUE,N-Ops & Crew / RAIDO,"N-OC / N-Crew",3,QUEUED,,,,P2,"ICS;calendar subscription;PDF","initial leads","acquire actual ICS/PDF samples and airline deployments"
-netline,Lufthansa Systems,NetLine Crew,"Crewlink / Crew apps",4,QUEUED,,,,P1,"PDF","strong sample lead","retrieve/validate scrambled sample and map fields"
+netline,Lufthansa Systems,NetLine Crew,"Crewlink / Crew apps",4,ACTIVE,,,,P1,"PDF;web/native roster;iCalendar via third-party parser","P1 raw scrambled PDF verified; multiple independent current parsers confirm structured NetLine PDF ingestion and core flight/duty fields","extract exact labels/text layer from P1 sample; then compare a second airline-specific NetLine PDF for layout/timezone variation"
 cae-crew-access,CAE,Crew Management,Crew Access,5,QUEUED,,,,P3,"TBD","initial lead","identify export formats and public samples"
 flica,CAE,FLICA,FLICA,6,QUEUED,,,,P3,"ICS","initial lead","obtain actual sample and airline cohort"
 ibs-iflight,IBS Software,iFlight,"crew self-service",7,QUEUED,,,,P4,"TBD","deployment evidence exists","identify crew export formats and sample data"
