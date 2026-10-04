@@ -1,0 +1,3 @@
+snapshot_date,system_id,airline,country_region,evidence_grade,evidence_date,pilot_observed,pilot_band_low,pilot_band_high,fleet_total,fleet_active,source_url,notes
+2026-10-04,crewconnex,Jeju Air,South Korea,A2,2026,,620,720,44,42,https://www.safelogweb.com/FAQ/default.aspx,"detailed source ledger in existing CrewConnex folder"
+2026-10-04,crewconnex,Air Seoul,South Korea,A1,2026,,90,135,6,6,https://apps.apple.com/me/app/crewline-for-crew/id6749387638,"fresh CrewConnex-specific integration evidence"
