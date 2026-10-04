@@ -1,0 +1,6 @@
+sample_id,system_id,format,sample_grade,airline,public_raw_file,anonymized,source_url,status,notes
+lead-netline-pdf-001,netline,PDF,P1,,yes,yes,https://rosterbuster.zendesk.com/hc/en-us/articles/206092491-Netline-Crewlink,TO_VERIFY,"reported scrambled sample roster PDF"
+lead-aims-csv-001,aims-ecrew,CSV,P3,,no,unknown,https://support.crewlounge.aero/support/solutions/articles/24000033768-aims-ecrew-download-your-roster-logbook,LEAD,"documents CSV roster/logbook export path"
+lead-aims-html-001,aims-ecrew,HTML/HTM,P3,,no,unknown,https://support.crewlounge.aero/support/solutions/articles/24000033768-aims-ecrew-download-your-roster-logbook,LEAD,"documents HTM fallback/export path"
+lead-navblue-ics-001,navblue,ICS,P2,,no,unknown,https://n-raido.support.navblue.aero/support/solutions/articles/35000253213-downloading-your-calendar,LEAD,"official calendar download/subscription documentation"
+lead-flica-ics-001,flica,ICS,P3,Frontier Airlines,no,unknown,https://trackmyfa.com/setup/FFT/,LEAD,"documents FLICA V2 Calendar ICS export"
