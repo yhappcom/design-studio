@@ -2,5 +2,5 @@ system_id,format,date,duty_type,flight_number,departure,arrival,std,sta,checkin,
 crewconnex,CSV/HTML,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,"baseline formats known; detailed field corpus pending"
 aims-ecrew,CSV,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,"export path known; raw sample needed"
 navblue,ICS,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,"official roster/calendar behavior documented; sample needed"
-netline,PDF,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,"public scrambled sample lead to verify"
+netline,PDF,OPEN,OBSERVED,OBSERVED,OBSERVED,OBSERVED,OBSERVED,OBSERVED,OBSERVED,OBSERVED,OBSERVED,OBSERVED,OPEN,OPEN,OBSERVED,OPEN,OBSERVED,OPEN,OPEN,OBSERVED,OPEN,"P1 scrambled sample verified; independent NetLine PDF parser evidence explicitly confirms flight number, sectors, departure/arrival times, check-in/out, block hours, layovers and duty types; other NetLine apps confirm training/days off/standby classes; timezone behavior may vary by portal/PDF setting"
 flica,ICS,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,OPEN,"ICS export path known; sample needed"
