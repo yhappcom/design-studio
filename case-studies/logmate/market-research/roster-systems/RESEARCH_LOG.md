@@ -28,3 +28,12 @@
 - Two focused searches found no lawful public raw FLICA V2 Calendar ICS artifact. P1 remains open; do not infer VEVENT properties.
 - Parser impact: FLICA remains P3, but V2 Calendar ICS is corroborated across two airlines plus a current downstream importer.
 - Next target: CAE Crew Access export formats/public samples.
+
+## 2026-10-05 08:00 KST — AccelAero aeroLINE CREW
+
+- Official aeroLINE CREW App Store release notes verify a user-controlled Electronic Logbook export/download path in PDF and XLS (v5.0, 2025-04-17), with Total Duty Hours, Total Flying Hours and Grand Total statistics.
+- Official v5.0.1 notes expose aircraft type + registration, ICAO/IATA airport-code switching, duty/flying-hour displays and checkout timing tied to portal duty start/end; these are field-structure evidence, not assumed exact export headers.
+- Official aeroLINE CREW product brochure documents REST API and Google Calendar integration and states approximately 6,000 crew are planned or tracked through the system; because brochure observation date/customer distribution are not established, this is recorded as scale context rather than current pilot TAM.
+- Two focused searches found no lawful public raw Electronic Logbook PDF/XLS. P1 remains open; private portal access was not attempted.
+- Updated MASTER_SYSTEM_INDEX.csv, PARSER_SAMPLE_INDEX.csv and FIELD_COVERAGE_MATRIX.csv. Parser impact: AccelAero enters at P2 because the vendor-controlled app documentation explicitly verifies offline PDF/XLS exports.
+- Next target: SkyCrew / CyberJet public raw roster/export sample or official export-format evidence.
