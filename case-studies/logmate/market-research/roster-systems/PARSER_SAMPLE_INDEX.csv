@@ -1,5 +1,5 @@
 sample_id,system_id,format,sample_grade,airline,public_raw_file,anonymized,source_url,status,notes
-lead-netline-pdf-001,netline,PDF,P1,,yes,yes,https://rosterbuster.zendesk.com/hc/en-us/articles/206092491-Netline-Crewlink,TO_VERIFY,"reported scrambled sample roster PDF"
+netline-pdf-001,netline,PDF,P1,,yes,yes,https://rosterbuster.zendesk.com/hc/en-us/article_attachments/203492105,VERIFIED,"CAE/RosterBuster public attachment CL_PDF.pdf; 700 KB; one-page scrambled sample explicitly stated to be the supported CrewLink format"
 lead-aims-csv-001,aims-ecrew,CSV,P3,,no,unknown,https://support.crewlounge.aero/support/solutions/articles/24000033768-aims-ecrew-download-your-roster-logbook,LEAD,"documents CSV roster/logbook export path"
 lead-aims-html-001,aims-ecrew,HTML/HTM,P3,,no,unknown,https://support.crewlounge.aero/support/solutions/articles/24000033768-aims-ecrew-download-your-roster-logbook,LEAD,"documents HTM fallback/export path"
 lead-navblue-ics-001,navblue,ICS,P2,,no,unknown,https://n-raido.support.navblue.aero/support/solutions/articles/35000253213-downloading-your-calendar,LEAD,"official calendar download/subscription documentation"
