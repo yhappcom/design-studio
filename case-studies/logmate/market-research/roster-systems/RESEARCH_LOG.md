@@ -37,3 +37,15 @@
 - Two focused searches found no lawful public raw Electronic Logbook PDF/XLS. P1 remains open; private portal access was not attempted.
 - Updated MASTER_SYSTEM_INDEX.csv, PARSER_SAMPLE_INDEX.csv and FIELD_COVERAGE_MATRIX.csv. Parser impact: AccelAero enters at P2 because the vendor-controlled app documentation explicitly verifies offline PDF/XLS exports.
 - Next target: SkyCrew / CyberJet public raw roster/export sample or official export-format evidence.
+
+
+## 2026-10-05 09:00 KST — CyberJet Skycrew / JetSched
+
+- Current CyberJet documentation verifies Skycrew crew planning with flight/ground/rest activities, training, schedule communication and activity statements; JetSched Crew Access communicates rosters/changes and aggregated hours to crew.
+- Safelog/Dauntless importer documentation verifies two distinct offline XLS inputs: Cyberjet Skycrew Flight Log (.XLS) and Cyberjet Jetsched Schedule (.XLS). This establishes P3 parser evidence and requires separate format-family handling until raw samples prove compatibility.
+- Safelog identifies Air Côte d’Ivoire specifically with Cyberjet Skycrew and Wamos Air with Cyberjet Jetsched; deployment remains B pending primary/current airline corroboration.
+- CAE/RosterBuster independently lists SkyCrew (CyberJet) as an enterprise roster integration.
+- Two focused raw-sample searches found no lawful public Skycrew Flight Log XLS or JetSched Schedule XLS. P1 remains open; no authenticated/private portal access attempted.
+- Repository index writes were attempted but blocked by connector safety checks; canonical index synchronization remains pending.
+- Parser impact: CyberJet reaches P3 evidence with two concrete XLS parser inputs; exact headers/field mappings remain blocked on P1.
+- Next target: TUI Opsman public raw roster/export sample or official export-format evidence.
