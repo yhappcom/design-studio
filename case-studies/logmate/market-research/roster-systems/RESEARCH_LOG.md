@@ -70,3 +70,14 @@
 - Attempted MASTER_SYSTEM_INDEX.csv synchronization after fresh fetch, but GitHub write safety checks blocked that write. This log append records the increment; retry master-index synchronization on a later fresh fetch.
 - Parser impact: CrewConnex remains public grade P2. Implementation should retain fail-closed profile detection and must not collapse the two 2026-08 artifacts into one profile until detector fingerprints match.
 - Next target: obtain privacy-safe text-layer/header/page-structure fingerprints for the two 2026-08 PDFs first, then compare 2018/2019/2020-2026 generations.
+
+
+## 2026-10-07 16:00 KST — CrewConnex parser/matcher authority separation
+
+- Re-read current LogMate MASTER, import contract, CrewConnex parser contract, roster-system plan/indexes before analysis; LogMate remained read-only.
+- Current CrewConnex contract already establishes the strongest paired-corpus facts available without copying private rows: 2026-06~08 PDF BLH and company Excel `bt` agree in aggregate, while some corresponding legs differ in date; 2026-08 TSV/PDF also show roster-revision differences in time, BLH, registration, crew, or overall pairing.
+- These observations do not authorize date correction, BLH overwrite, or automatic attachment. They instead require source-specific provenance and review when CrewConnex evidence conflicts with the existing operational record.
+- Parser/matcher boundary is now explicit: ParserProfile may detect/validate/extract a supported roster layout into staging evidence; exact record identity and confidence thresholds remain owned by the general import contract and are still OPEN. Parser success must not be used as match confidence.
+- Regression implication: paired-corpus tests need at least (a) aggregate-BLH-equal + leg-date-different, (b) same-period roster revision with changed BLH/registration/crew/pairing, and (c) unsupported/required-anchor-loss zero-candidate cases. All fixtures committed to CI must be redacted/synthetic.
+- No new public raw CrewConnex sample was found or required for this cycle; public sample grade remains P2.
+- Next target: define the minimum privacy-safe CrewConnex ParserProfile fixture manifest (multi-month, multi-page, two-month boundary, continuation, rollover, crew change, unknown code, revision conflict, unsupported layout) and map each case to pass/review/fail-closed without defining the still-open automatic-match threshold.
