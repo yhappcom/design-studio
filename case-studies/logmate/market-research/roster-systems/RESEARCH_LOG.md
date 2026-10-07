@@ -81,3 +81,14 @@
 - Regression implication: paired-corpus tests need at least (a) aggregate-BLH-equal + leg-date-different, (b) same-period roster revision with changed BLH/registration/crew/pairing, and (c) unsupported/required-anchor-loss zero-candidate cases. All fixtures committed to CI must be redacted/synthetic.
 - No new public raw CrewConnex sample was found or required for this cycle; public sample grade remains P2.
 - Next target: define the minimum privacy-safe CrewConnex ParserProfile fixture manifest (multi-month, multi-page, two-month boundary, continuation, rollover, crew change, unknown code, revision conflict, unsupported layout) and map each case to pass/review/fail-closed without defining the still-open automatic-match threshold.
+
+
+## 2026-10-07 19:00 KST — CrewConnex saved-web artifact version fingerprint
+
+- Re-read current LogMate MASTER, import contract, CrewConnex parser contract, research plan/indexes before analysis; LogMate remained read-only.
+- Existing corpus contains a saved CrewConnex ASP.NET login artifact alongside the roster PDFs. Its static asset query strings consistently expose `ver22.03.01.000.000` across jQuery/bootstrap/FloatThead/dateFns/moment/daterangepicker/Spinner/Global/Validators/PilotsLog assets.
+- The same artifact references separate print, screen, custom-bootstrap, hide-navbar and mobile stylesheets. This is direct corpus evidence that the captured CrewConnex web generation had distinct presentation surfaces; it does not prove that PDF column/layout structure is identical across those surfaces.
+- The artifact identifies CrewConnex and PDC branding and contains airline-specific logo/background configuration. Those branding URLs are not parser anchors and must not be required by a generic ParserProfile.
+- Privacy boundary: no login values, employee identifiers, roster rows or credentials were copied into Design Studio. Only non-identifying version/presentation/configuration metadata was retained.
+- Parser impact: `22.03.01.000.000` is a useful provenance/version fingerprint candidate, but not sufficient alone for `profileId/profileVersion` assignment. Detector acceptance still requires roster-structure anchors. Synthetic regression should include same semantic roster under print/mobile/presentation variation and assert that airline branding/configuration is ignored.
+- Next target: determine whether any privacy-safe metadata/text representation in the existing 2026 PDFs exposes a CrewConnex generation/version marker or print-surface fingerprint that can be correlated with `22.03.01.000.000`; otherwise move to paired BLH/date/revision evidence without repeating binary extraction.
