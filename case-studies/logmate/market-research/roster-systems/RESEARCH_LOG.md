@@ -58,3 +58,15 @@
 - Existing current parser contract already records TSV detector anchors, continuation-leg behavior, repeated-crew markers, rollover notation, non-flight filtering, and roster-revision variation. Internal reference evidence is not public P1 and does not raise the public sample grade above P2.
 - Parser implication: next highest-information gap is privacy-safe detector/profile-generation comparison across the existing historical PDF/TSV corpus, not another generic sample search.
 - Next target: compare only non-identifying headers/layout/page-continuation fingerprints across historical and focused 2026 CrewConnex samples to determine immutable ParserProfile boundaries.
+
+
+## 2026-10-07 10:00 KST — CrewConnex same-period PDF artifact fingerprint
+
+- Re-read current LogMate authority/import/CrewConnex contracts and roster-system plan/indexes before analysis; LogMate remained read-only.
+- Privacy-safe repository metadata confirms seven distinct CrewConnex PDF reference artifacts: 2018, 2019, compiled 2020-2026, focused 2026-06, focused 2026-07, and two distinct 2026-08 artifacts.
+- The two 2026-08 artifacts are not duplicates: the print sample is blob 29ac040595089188a8353e98f41ba27f92b8650b (552,417 bytes), while the separately named roster PDF is blob 8e7fec30f98458c770053bd7739e60869a87e33b (39,612 bytes). Same-period provenance therefore cannot be treated as proof of one byte/layout generation path; detector/profile equivalence must be demonstrated from privacy-safe text-layer/header/page fingerprints before sharing one ParserProfile.
+- The 2020-2026 artifact is a separate 31,201,015-byte blob and must be treated as a corpus container/reference artifact, not evidence that one immutable layout remained stable across 2020-2026.
+- Binary PDF text-layer extraction is not available through the current GitHub connector, so no header/layout equivalence claim was made and no private roster rows were copied.
+- Attempted MASTER_SYSTEM_INDEX.csv synchronization after fresh fetch, but GitHub write safety checks blocked that write. This log append records the increment; retry master-index synchronization on a later fresh fetch.
+- Parser impact: CrewConnex remains public grade P2. Implementation should retain fail-closed profile detection and must not collapse the two 2026-08 artifacts into one profile until detector fingerprints match.
+- Next target: obtain privacy-safe text-layer/header/page-structure fingerprints for the two 2026-08 PDFs first, then compare 2018/2019/2020-2026 generations.
