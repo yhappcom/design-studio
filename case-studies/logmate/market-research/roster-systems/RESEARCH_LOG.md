@@ -49,3 +49,12 @@
 - Repository index writes were attempted but blocked by connector safety checks; canonical index synchronization remains pending.
 - Parser impact: CyberJet reaches P3 evidence with two concrete XLS parser inputs; exact headers/field mappings remain blocked on P1.
 - Next target: TUI Opsman public raw roster/export sample or official export-format evidence.
+
+## 2026-10-07 09:00 KST — CrewConnex corpus inventory
+
+- Re-read the current LogMate product/import/CrewConnex contracts before research; CrewConnex remains existing-record-only enrichment/cross-check evidence.
+- Read-only corpus inventory confirms roster PDF references across 2018-2026 and paired company flight-history workbook references across 2018-2026; no private raw rows were copied into Design Studio.
+- Anti-duplication: the two differently named 2026 flight-history workbook entries resolve to the same repository blob and must count as one artifact, not two independent samples.
+- Existing current parser contract already records TSV detector anchors, continuation-leg behavior, repeated-crew markers, rollover notation, non-flight filtering, and roster-revision variation. Internal reference evidence is not public P1 and does not raise the public sample grade above P2.
+- Parser implication: next highest-information gap is privacy-safe detector/profile-generation comparison across the existing historical PDF/TSV corpus, not another generic sample search.
+- Next target: compare only non-identifying headers/layout/page-continuation fingerprints across historical and focused 2026 CrewConnex samples to determine immutable ParserProfile boundaries.
