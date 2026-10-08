@@ -101,3 +101,12 @@
 - No verified repeated full table header on page 2; incomplete subset-font decoding prevents exact immutable header anchor acceptance. Source page/row locators and validated antecedent linkage remain required; unknown page/section transitions fail closed.
 - The separate one-page August BLK PDF remains a distinct unverified profile; no BLK=BLH inference. Internal corpus does not upgrade public P2 grade.
 - GitHub safety checks blocked canonical write; next target: synthetic two-page Skia continuation + page-2 summary boundary source-locator oracle.
+
+
+## 2026-10-08 13:56 KST — CrewConnex real Skia tagged-row boundary evidence
+
+- Re-read LogMate authority/import/CrewConnex contracts, relevant domain evidence, and Design Studio plan/indexes. Inspected the three existing private 2026-06/07/08 printer PDFs **read-only** through their PDF object/tag structure; no private content was transferred to Design Studio.
+- New evidence: all three contain a tagged primary `/Table` with `/TR`/`/TD` leaves carrying page-local MCIDs. Primary tagged row totals are June 41 (p1 35/p2 6), July 45 (39/6), August 43 (34/9). Exact physical-page transition row pairs are 35→36, 39→40, 34→35 respectively; **no tagged TR spans two pages**. July/August additionally have separate two-cell tagged tables on page 2 (7/5 rows), not yet semantically classified. MCIDs restart on page 2.
+- Parser impact: `pageIndex + tableOrdinal + taggedRowOrdinal` can serve as a per-file source locator for these Skia samples, with MCID/geometry as cross-check only. Tagged adjacency does **not** prove same-duty continuation; `Sum` and section boundaries must independently block antecedent reuse. The current `SourceEvidence` is record-bound, so detached staging must precede matching. No FlightRecord creation, no code/PIC/SIC/date inference.
+- Corrected stale June `Sum` absence wording in geometry note. Public sample grade P2 unchanged; actual semantic row/antecedent verification and production PDF detector remain OPEN.
+- Next: align tagged-row/page locators with redacted geometry and `Sum` boundaries to validate page-2 staging eligibility without exposing actual crew/roster data.
