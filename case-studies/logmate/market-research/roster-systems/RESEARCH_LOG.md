@@ -131,3 +131,10 @@
 ## 2026-10-09 06:01 KST — PDC relative-day verification
 
 Existing 26-candidate PDC sample: 52/52 source-local/base time comparisons remain exact after +1 day markers are applied, including one base-only departure +1. No direct vendor definition or non-UTC+09 sample after two focused searches. Production OPEN; public P2 unchanged. Next: cross-format August pairs versus company operational records. No private roster copied.
+
+## 2026-10-09 06:55 KST — CrewConnex paired August company comparison
+
+- In-memory read-only comparison of August Skia/PDC PDF and 2026 company workbook: eight both-undated shared flight/route pairs, of which six have matching month/day antecedents, one differs, and one is blocked by non-flight rows. Skia date is yearless; PDC date is ddMMMyy.
+- Six provisional same-day pairs: five unique cross-format flight/route keys, one repeated Skia key; BLH vs Blk Hrs raw strings agree in two, differ in four. Company workbook: 159 rows in 2026, three in August. One of the six has an exact company date/normalized-flight/route candidate; five have none, so no parser-failure inference.
+- Skia geometry extractor recognized 42 Activity-bearing row bands against 43 tagged primary rows; complete row accounting remains OPEN. All provisional pairs remain review-only; public P2, production OPEN, no FlightRecord creation. No identifying roster data stored.
+- Next: classify the Skia tagged row missing from Activity-band extraction and validate its effect on antecedent boundaries.
