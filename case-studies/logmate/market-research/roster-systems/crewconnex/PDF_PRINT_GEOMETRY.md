@@ -9,3 +9,7 @@ Next: synthetic two-page continuation fixture with no repeated header, page-2 su
 ## 2026-10-08 10:00 KST — synthetic continuation regression checkpoint
 
 Four wholly synthetic, two-page text-layer PDF fixtures were generated and checked: no-header page-2 continuation, page-2 period-total barrier, shifted column grid, and orphan continuation. Expected detached observations: 2, 2, 0, 0 respectively; no FlightRecords or record-bound SourceEvidence before matching. The summary barrier makes the following blank-date leg review-only; the shifted grid is document-level unsupported layout. These ReportLab fixtures are NOT Skia artifacts and do NOT validate the real CrewConnex detector. Page-2 actual header/reading order remains OPEN. GitHub writes of detailed JSON/Markdown fixture oracles were blocked by connector safety checks; retry fresh-fetch next run.
+
+## Real Skia comparison — 2026-10-08 10:56 KST
+
+The June/July/August printer PDFs have first-page header bands but no repeated header on page 2. July and August page 2 contain a `Sum` section; June page 2 does not. The `From` header X coordinate is 363.05/357.02/357.02 across the three months. Header geometry therefore varies, and exact ToUnicode label decoding still requires independent validation. This is structural evidence, not a production parser PASS.
