@@ -110,3 +110,11 @@
 - Parser impact: `pageIndex + tableOrdinal + taggedRowOrdinal` can serve as a per-file source locator for these Skia samples, with MCID/geometry as cross-check only. Tagged adjacency does **not** prove same-duty continuation; `Sum` and section boundaries must independently block antecedent reuse. The current `SourceEvidence` is record-bound, so detached staging must precede matching. No FlightRecord creation, no code/PIC/SIC/date inference.
 - Corrected stale June `Sum` absence wording in geometry note. Public sample grade P2 unchanged; actual semantic row/antecedent verification and production PDF detector remain OPEN.
 - Next: align tagged-row/page locators with redacted geometry and `Sum` boundaries to validate page-2 staging eligibility without exposing actual crew/roster data.
+
+
+## 2026-10-08 16:57 KST — CrewConnex real Skia tagged Sum boundary
+
+- Re-read current LogMate authority, import/CrewConnex contracts, relevant FlightRecord/evidence/crew domain code, and Design Studio plan/indexes/queue/log. LogMate remained read-only.
+- Read-only in-memory ToUnicode/DEFLATE/ParentTree analysis of private 2026-06/07/08 printer PDFs confirms page-2 primary table ends at MCID 256/240/310 and separate `Sum` NonStruct marker follows at MCID 257/241/311. Page-2 primary TR counts are 6/6/9; July/August have post-Sum auxiliary tables with 7/5 TR, June none. No private roster rows or identifiers retained.
+- Critical correction: prior synthetic tagged fixture models Sum as a primary TR, unlike actual Skia output. It is a negative/synthetic logic test only, not a real-layout detector oracle. Select primary table and separately tagged summary boundary; exclude later auxiliary tables. MCIDs are sample-local checks, not profile constants.
+- Public P2 unchanged; production detector, duty/leg antecedent and DATA-001 reconciliation remain OPEN. Next: classify last page-1 and first page-2 primary rows via privacy-safe paired-corpus metadata to validate continuation decisions.
