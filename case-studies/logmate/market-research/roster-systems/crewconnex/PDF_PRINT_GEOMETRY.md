@@ -49,3 +49,8 @@ Privacy-safe read-only cross-check of the existing August PDC Pdf Generator sour
 Interpretation: (L) is strongly supported as station-local civil time; (B) is strongly supported as UTC+09 base-reference time in THIS source document. This is an observed source-specific inference, not proof of a universal PDC convention or the crew member's exact home-base airport. Airline/base configuration and DST/date-aware conversion must be independently validated for any other profile. Preserve all four source clock cells and any +1 day marker, plus IANA airport-zone provenance; do not silently change canonical operational date or FlightRecord values. CrewConnex remains existing-record-only; public parser sample grade P2 and production parser OPEN.
 
 Timezone references: https://www.timeanddate.com/time/zone/south-korea/incheon ; https://www.timeanddate.com/time/zone/indonesia/denpasar ; https://www.timeanddate.com/time/zone/usa/saipan ; https://www.timeanddate.com/time/zone/%408531735 ; https://www.timeanddate.com/time/zone/china/tsingtao ; https://www.timeanddate.com/time/zone/%401704245 . No roster rows, private names, identifiers or exact routes copied.
+
+
+## 2026-10-09 06:01 KST — day-aware +1 check
+
+The same August PDC sample has 52/52 station/base endpoint clock checks consistent after applying each source-cell +1 day marker. Four candidate rows contain +1; three mark both arrival cells, and one also marks only the base departure cell. This supports source-relative day-offset preservation, not operational-date correction. No new public P1 sample, non-UTC+09 CrewConnex base fixture or direct PDC acronym definition. Keep separate profile and DST/base-setting negative tests. Public P2; production OPEN.
