@@ -13,3 +13,16 @@ Four wholly synthetic, two-page text-layer PDF fixtures were generated and check
 ## Real Skia comparison — 2026-10-08 10:56 KST
 
 The June/July/August printer PDFs have first-page header bands but no repeated header on page 2. July and August page 2 contain a `Sum` section; June page 2 does not. The `From` header X coordinate is 363.05/357.02/357.02 across the three months. Header geometry therefore varies, and exact ToUnicode label decoding still requires independent validation. This is structural evidence, not a production parser PASS.
+
+## 2026-10-08 20:03 KST — producer and export-time fingerprint
+
+Read-only PDF metadata audit (no crew or flight-row content):
+
+| 2026 artifact | Producer | PDF CreationDate | Pages | StructTreeRoot / MCID | ToUnicode refs |
+|---|---|---|---:|---|---:|
+| June printer PDF | Skia/PDF m151 | 2026-08-27 22:50:08 UTC | 2 | yes / yes | 16 |
+| July printer PDF | Skia/PDF m151 | 2026-08-27 22:48:59 UTC | 2 | yes / yes | 17 |
+| August printer PDF | Skia/PDF m151 | 2026-08-09 04:48:38 UTC | 2 | yes / yes | 17 |
+| Separate August PDF | PDC Pdf Generator 1.0 | 2026-09-28 15:49:07 (timezone unspecified) | 1 | no / no | 0 |
+
+Skia page MediaBox: about 594.96 x 841.92; separate PDC generator page: 598 x 842. PDC generator Creator is PDC Crew. Absence of ToUnicode references does not establish image-only content. CreationDate is generation metadata, **not** roster effective date, source revision ID, or operational date. Month order is not PDF-generation order. The two August outputs must remain separate fail-closed ParserProfile candidates until their headers/field semantics are independently verified. BLK is not automatically BLH. The June page-2 Sum-absence claim in the older section above is superseded by the independently verified presence of Sum in all three Skia printer PDFs.
