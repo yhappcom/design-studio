@@ -54,3 +54,9 @@ Timezone references: https://www.timeanddate.com/time/zone/south-korea/incheon ;
 ## 2026-10-09 06:01 KST — day-aware +1 check
 
 The same August PDC sample has 52/52 station/base endpoint clock checks consistent after applying each source-cell +1 day marker. Four candidate rows contain +1; three mark both arrival cells, and one also marks only the base departure cell. This supports source-relative day-offset preservation, not operational-date correction. No new public P1 sample, non-UTC+09 CrewConnex base fixture or direct PDC acronym definition. Keep separate profile and DST/base-setting negative tests. Public P2; production OPEN.
+
+## 2026-10-09 — paired August Skia/PDC/company antecedent gate
+
+Existing Skia/PDC PDF comparison gives 18 flight+route candidate pairs, eight with both dates omitted. Independent date-aware antecedent tracing (Skia weekday/day/month without year; PDC ddMMMyy) yields six matching month/day, one differing, one blocked by non-flight rows. Within the six provisional matches, five flight+route keys are unique and one repeats in Skia; raw BLH versus Blk Hrs strings agree in two, differ in four. Company 2026 workbook has 159 records, three in August; only one of the six has an exact company date/normalized-flight/route candidate. The other five are unrepresented, not parser errors. No automatic source merge or date correction is authorized.
+
+The Skia text-band extractor sees 42 Activity-bearing bands while the PDF has 43 tagged primary rows; production acceptance requires full tagged-row and section boundary reconciliation. Add synthetic negative fixtures for yearless vs dated token, non-flight barrier, repeated flight/route, absent company counterpart, BLH conflict and missing Activity-bearing row. Public P2; production OPEN. Only aggregate observations retained.
