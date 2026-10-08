@@ -138,3 +138,11 @@ Existing 26-candidate PDC sample: 52/52 source-local/base time comparisons remai
 - Six provisional same-day pairs: five unique cross-format flight/route keys, one repeated Skia key; BLH vs Blk Hrs raw strings agree in two, differ in four. Company workbook: 159 rows in 2026, three in August. One of the six has an exact company date/normalized-flight/route candidate; five have none, so no parser-failure inference.
 - Skia geometry extractor recognized 42 Activity-bearing row bands against 43 tagged primary rows; complete row accounting remains OPEN. All provisional pairs remain review-only; public P2, production OPEN, no FlightRecord creation. No identifying roster data stored.
 - Next: classify the Skia tagged row missing from Activity-band extraction and validate its effect on antecedent boundaries.
+
+
+## 2026-10-09 08:00 KST — CrewConnex August Skia tagged-row baseline reconciliation
+
+- Read-only in-memory Skia PDF audit: 43/43 primary tagged TR map to text baselines. Page 1: one header plus 33 body TR; page 2: nine body TR. This reconciles the previous 43 tagged rows versus 42 body text bands without a missing row.
+- Of 42 body TR, 25 span multiple text baselines (22 page 1, three page 2); 11 have no x=18 first-column text (all page 1). First page-2 body row contains 31 TD but 50 MCID leaves over six text baselines. Treat multiline cell content as one tagged row; do not auto-inherit omitted date/pairing.
+- Last primary page-2 row MCID 310 precedes independent Sum MCID 311; exclude post-Sum auxiliary table. Sample-specific geometry is not a universal detector. Semantic Date/Activity/crew cell alignment, June/July equivalent and page-edge duty lineage remain OPEN. Public P2 and production OPEN, existing-record-only; no personal data stored.
+- GitHub safety-check blocked index and geometry writes; fresh-fetch retry next cycle. Next CrewConnex target: verify semantic Activity/date/crew cell ownership for multiline/blank-first-column rows and page-edge antecedent using the existing paired corpus.
