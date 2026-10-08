@@ -92,3 +92,12 @@
 - Privacy boundary: no login values, employee identifiers, roster rows or credentials were copied into Design Studio. Only non-identifying version/presentation/configuration metadata was retained.
 - Parser impact: `22.03.01.000.000` is a useful provenance/version fingerprint candidate, but not sufficient alone for `profileId/profileVersion` assignment. Detector acceptance still requires roster-structure anchors. Synthetic regression should include same semantic roster under print/mobile/presentation variation and assert that airline branding/configuration is ignored.
 - Next target: determine whether any privacy-safe metadata/text representation in the existing 2026 PDFs exposes a CrewConnex generation/version marker or print-surface fingerprint that can be correlated with `22.03.01.000.000`; otherwise move to paired BLH/date/revision evidence without repeating binary extraction.
+
+
+## 2026-10-08 09:04 KST — CrewConnex Skia PDF pagination fingerprint
+
+- Re-read LogMate authority and Design Studio plan/indexes; inspected only non-identifying metadata and PDF text-layer geometry from three private 2026-06/07/08 printer-PDF references.
+- All three PDFs use Skia/PDF m151, 2 portrait pages, ToUnicode text layers. Page 2 starts near document-space y=1682-1684, and shares the page-1 x-column grid; this supports vertical continuation of one logical table rather than a new document or horizontal tile.
+- No verified repeated full table header on page 2; incomplete subset-font decoding prevents exact immutable header anchor acceptance. Source page/row locators and validated antecedent linkage remain required; unknown page/section transitions fail closed.
+- The separate one-page August BLK PDF remains a distinct unverified profile; no BLK=BLH inference. Internal corpus does not upgrade public P2 grade.
+- GitHub safety checks blocked canonical write; next target: synthetic two-page Skia continuation + page-2 summary boundary source-locator oracle.
