@@ -118,3 +118,11 @@
 - Read-only in-memory ToUnicode/DEFLATE/ParentTree analysis of private 2026-06/07/08 printer PDFs confirms page-2 primary table ends at MCID 256/240/310 and separate `Sum` NonStruct marker follows at MCID 257/241/311. Page-2 primary TR counts are 6/6/9; July/August have post-Sum auxiliary tables with 7/5 TR, June none. No private roster rows or identifiers retained.
 - Critical correction: prior synthetic tagged fixture models Sum as a primary TR, unlike actual Skia output. It is a negative/synthetic logic test only, not a real-layout detector oracle. Select primary table and separately tagged summary boundary; exclude later auxiliary tables. MCIDs are sample-local checks, not profile constants.
 - Public P2 unchanged; production detector, duty/leg antecedent and DATA-001 reconciliation remain OPEN. Next: classify last page-1 and first page-2 primary rows via privacy-safe paired-corpus metadata to validate continuation decisions.
+
+
+## 2026-10-09 — CrewConnex PDC PDF (L)/(B) airport-timezone cross-check
+
+- On the existing private August PDC-generator PDF, compared 26 numeric-activity candidate rows at departure and arrival against independently published 2026 station time zones and a UTC+09:00 base hypothesis. **52/52** local-minus-base clock offsets match the corresponding airport-minus-UTC+09 offset; **0 mismatches**. Endpoint offset distribution: zero 42, -60 min six, -120 min two, +60 min two. Four candidates explicitly have a +1 notation.
+- Evidence upgrades the *source-specific* (L)=station Local, (B)=Base reference UTC+09 hypothesis from uninterpreted to strongly corroborated. It does **not** establish a universal CrewConnex/PDC acronym contract, individual crew home-base airport, operational-date correction, or equivalent BLH/Blk Hrs semantics. Preserve raw STD/STA(L/B), +1, source locator and date-sensitive IANA offsets; unsupported settings/DST fail closed.
+- No identifiable roster rows or crew IDs retained; LogMate read-only. CrewConnex existing-record-only enrichment persists. Public parser corpus grade P2, production parser OPEN.
+- Geometry note updated; next target: verify a non-UTC+09 CrewConnex base setting or explicit vendor/airline documentation for (L)/(B), with redacted synthetic DST/base-change negative cases.
