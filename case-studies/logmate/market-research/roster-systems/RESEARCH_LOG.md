@@ -126,3 +126,8 @@
 - Evidence upgrades the *source-specific* (L)=station Local, (B)=Base reference UTC+09 hypothesis from uninterpreted to strongly corroborated. It does **not** establish a universal CrewConnex/PDC acronym contract, individual crew home-base airport, operational-date correction, or equivalent BLH/Blk Hrs semantics. Preserve raw STD/STA(L/B), +1, source locator and date-sensitive IANA offsets; unsupported settings/DST fail closed.
 - No identifiable roster rows or crew IDs retained; LogMate read-only. CrewConnex existing-record-only enrichment persists. Public parser corpus grade P2, production parser OPEN.
 - Geometry note updated; next target: verify a non-UTC+09 CrewConnex base setting or explicit vendor/airline documentation for (L)/(B), with redacted synthetic DST/base-change negative cases.
+
+
+## 2026-10-09 06:01 KST — PDC relative-day verification
+
+Existing 26-candidate PDC sample: 52/52 source-local/base time comparisons remain exact after +1 day markers are applied, including one base-only departure +1. No direct vendor definition or non-UTC+09 sample after two focused searches. Production OPEN; public P2 unchanged. Next: cross-format August pairs versus company operational records. No private roster copied.
