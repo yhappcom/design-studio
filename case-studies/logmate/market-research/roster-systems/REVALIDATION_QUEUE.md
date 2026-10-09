@@ -31,3 +31,6 @@ June numeric pipe triplets: 7/7 previous dated numeric Activity with explicit cr
 
 
 2026-10-09 16:55 KST — CrewConnex: seven numeric continuation candidates have no decoded Roster/DC text in current or preceding row; one lacks preceding Pairing. Next: verify antecedent barrier. Research/index sync pending after blocked writes.
+
+
+2026-10-09 22:03 KST - CrewConnex publication/revision gate: Existing mobile UI screenshots display an explicit calendar year and a two-month roster period, while Notifications shows acknowledged changes with affected dates. No stable roster revision ID or publication timestamp is visible. The login/profile software-version label and saved-web asset version are NOT roster revisions. Treat yearless printer-PDF dates as unresolved without independently validated context. FIELD_COVERAGE_MATRIX publication_version should be OPEN, not OBSERVED. Next: determine whether the printable PDF header or export workflow carries a stable revision/publication token; otherwise require fingerprinted source snapshot plus manual review. Previous index/log synchronization blocked by GitHub safety checks; retry after fresh fetch.
