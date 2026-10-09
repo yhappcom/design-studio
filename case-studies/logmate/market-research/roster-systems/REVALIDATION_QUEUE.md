@@ -43,3 +43,8 @@ Vendor follow-up: indexed PDC System Monitor PDF describes before/after roster c
 ## 2026-10-10 05:03 KST — CrewConnex July CC-fragment follow-up
 
 July Skia 1,240/1,240 body TD map uniquely to 30 X anchors across 44 primary body rows; core crew columns 25/26/28 are present in all rows. Raw leaf counts differ in 12 rows due to 1–2 extra CC fragments at existing Y baselines; grouped unique baseline sets align 44/44. This does not validate participant count/identity or same-duty inheritance. Next: determine whether CC duplicate-baseline fragments are same-line subdivisions or distinct semantic tokens and encode lossless grouping/ambiguous negative fixtures. P2 / production OPEN / existing-record-only.
+
+
+## 2026-10-10 — CrewConnex CC mixed-origin follow-up
+
+July CC content stream: 13 duplicate page/Y baselines with same X and MCID combine a three-glyph Type3 text block and a one-character ASCII text block; ASCII is not `|`. This refines the previous 12 affected-row count (different unit). Treat same-origin mixed text as ambiguous, not additional crew or a repeat marker. Next: synthetic same-MCID mixed-script versus literal-pipe negative oracle and source-locator gate. P2; production OPEN. Other index/log writes require fresh-fetch retry.
