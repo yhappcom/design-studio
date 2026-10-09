@@ -23,3 +23,8 @@
 
 17. CrewConnex June missing-Pos leaf gate (2026-10-09): eight nonnumeric-Activity body rows omit Pos. but retain text-bearing Emp.# and CC. Seven have one paired leaf; page-2 first body row has 24 paired leaves with matching baselines and no Pos. TD. This is not 24 validated participants. Next: validate sentinel/blank semantics against the existing TSV and require synthetic negative fixture with zero automatic crew/FlightRecord creation. Index/geometry synchronization retry required after fresh-fetch.
 18. CrewConnex June pipe antecedent: 16 aligned triplets split into seven numeric-Activity candidates (adjacent dated numeric predecessor, one predecessor Pairing absent) and nine nonnumeric-Activity rows (explicit Date). Verify same-duty/crew consistency and negative fixtures; no blanket reuse. Synchronization of research log, geometry and indexes requires fresh-fetch retry after GitHub safety-check blocks.
+
+
+## 2026-10-09 16:01 KST — CrewConnex repeat-lineage open gate
+
+June numeric pipe triplets: 7/7 previous dated numeric Activity with explicit crew values; preceding Pairing present 6/7, omitted 1/7. Current Date/Pairing omitted; From/To/BLH populated. Same-duty link unverified. Next: independent Pairing/Roster/DC and section-barrier audit of seven; missing-predecessor-Pairing synthetic fail-closed fixture. Retry any unsynchronized indexes after fresh fetch.
