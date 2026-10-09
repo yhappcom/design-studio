@@ -28,3 +28,6 @@
 ## 2026-10-09 16:01 KST — CrewConnex repeat-lineage open gate
 
 June numeric pipe triplets: 7/7 previous dated numeric Activity with explicit crew values; preceding Pairing present 6/7, omitted 1/7. Current Date/Pairing omitted; From/To/BLH populated. Same-duty link unverified. Next: independent Pairing/Roster/DC and section-barrier audit of seven; missing-predecessor-Pairing synthetic fail-closed fixture. Retry any unsynchronized indexes after fresh fetch.
+
+
+2026-10-09 16:55 KST — CrewConnex: seven numeric continuation candidates have no decoded Roster/DC text in current or preceding row; one lacks preceding Pairing. Next: verify antecedent barrier. Research/index sync pending after blocked writes.
