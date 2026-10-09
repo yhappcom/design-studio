@@ -146,3 +146,10 @@ Existing 26-candidate PDC sample: 52/52 source-local/base time comparisons remai
 - Of 42 body TR, 25 span multiple text baselines (22 page 1, three page 2); 11 have no x=18 first-column text (all page 1). First page-2 body row contains 31 TD but 50 MCID leaves over six text baselines. Treat multiline cell content as one tagged row; do not auto-inherit omitted date/pairing.
 - Last primary page-2 row MCID 310 precedes independent Sum MCID 311; exclude post-Sum auxiliary table. Sample-specific geometry is not a universal detector. Semantic Date/Activity/crew cell alignment, June/July equivalent and page-edge duty lineage remain OPEN. Public P2 and production OPEN, existing-record-only; no personal data stored.
 - GitHub safety-check blocked index and geometry writes; fresh-fetch retry next cycle. Next CrewConnex target: verify semantic Activity/date/crew cell ownership for multiline/blank-first-column rows and page-edge antecedent using the existing paired corpus.
+
+## 2026-10-09 10:00 KST — CrewConnex Skia TD ownership and crew-baseline verification
+
+- Existing August Skia printer PDF, read-only structural analysis: **1,234/1,234** body TD cells in **42 primary TR** map exactly to the 31 header X anchors. **68 omitted TD** belong only to Date (11), Pairing (25), AC/Hotel (17), TL List (8), Qualification (7). Fixed tag ordinal is invalid; X-grid ownership is verified for this artifact.
+- Core crew columns 25/26/28: equal leaf counts **and ordered Y baselines 42/42**; 15 rows multiline (1/2/6/7-leaf counts: 27/2/9/4 rows). Optional TL List/Qualification differ; their leaves must not be zipped blindly. Page edge: last p1 row omits Pairing/AC-Hotel (29 TD; one core leaf), first p2 row has 31 TD (six core leaves). No duty/date inheritance or crew semantic equivalence established.
+- Private data not copied. ParserProfile requires anchored TD ownership, baseline validation, explicit optional/missing cell handling, `Sum` barrier, provenance and fail-closed staging. CrewConnex remains existing-record-only. Public P2; production OPEN.
+- Next target: **June/July Skia** cross-month grid and core crew-baseline replication.
