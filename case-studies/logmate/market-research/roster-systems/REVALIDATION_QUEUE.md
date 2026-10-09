@@ -39,3 +39,7 @@ Vendor follow-up: indexed PDC System Monitor PDF describes before/after roster c
 
 
 2026-10-09 23:01 KST — CrewConnex export identity / report-family gate: four existing Skia/PDC PDFs inspected at byte-level; PDF Info exposes generator/title/timestamps but no roster publication/revision ID; no XMP packets. This is metadata-only, NOT a decoded page-header absence claim. Official PDC lists distinct Roster, Day Schedule PDF and Master Schedule PDF surfaces. Require explicit report-family detector and publication token search in decoded page header/export UI; reject unknown report PDFs, never infer revision from CreationDate. A publicly indexed roster with apparent identifying crew data was rejected as DO NOT ACQUIRE; no source content retained. Next: inspect printed header/period and export UI, then define no-token fingerprinted-snapshot review policy.
+
+## 2026-10-10 05:03 KST — CrewConnex July CC-fragment follow-up
+
+July Skia 1,240/1,240 body TD map uniquely to 30 X anchors across 44 primary body rows; core crew columns 25/26/28 are present in all rows. Raw leaf counts differ in 12 rows due to 1–2 extra CC fragments at existing Y baselines; grouped unique baseline sets align 44/44. This does not validate participant count/identity or same-duty inheritance. Next: determine whether CC duplicate-baseline fragments are same-line subdivisions or distinct semantic tokens and encode lossless grouping/ambiguous negative fixtures. P2 / production OPEN / existing-record-only.
