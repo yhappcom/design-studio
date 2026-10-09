@@ -48,3 +48,7 @@ July Skia 1,240/1,240 body TD map uniquely to 30 X anchors across 44 primary bod
 ## 2026-10-10 — CrewConnex CC mixed-origin follow-up
 
 July CC content stream: 13 duplicate page/Y baselines with same X and MCID combine a three-glyph Type3 text block and a one-character ASCII text block; ASCII is not `|`. This refines the previous 12 affected-row count (different unit). Treat same-origin mixed text as ambiguous, not additional crew or a repeat marker. Next: synthetic same-MCID mixed-script versus literal-pipe negative oracle and source-locator gate. P2; production OPEN. Other index/log writes require fresh-fetch retry.
+
+## 2026-10-10 07:02 KST — CrewConnex CC synthetic oracle execution
+
+C1–C9 and three additional synthetic provenance negatives executed: 12/12 PASS in standalone Python, zero participant/FlightRecord creation. This is NOT production parser PASS. OPEN: GitHub source upload, real Skia detector validation, calibrated Y/X tolerances, Type3+ASCII same-origin semantic interpretation, and multi-month fixture integration. Next target: July CC font/ToUnicode text-object ordinal + tagged cell provenance without exporting private tokens.
