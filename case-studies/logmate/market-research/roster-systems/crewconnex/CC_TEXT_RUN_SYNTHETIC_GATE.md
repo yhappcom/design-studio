@@ -23,3 +23,17 @@ The read-only July Skia PDF CC column has 130 text objects but only 117 distinct
 Required provenance for detached staging: file fingerprint, generator/profileId/profileVersion, page, primary tagged TR/TD, MCID, source baseline, X grid, text-object ordinal, glyph-run ordinal, font/ToUnicode decode state and unmodified raw token. Never copy actual private roster text into research or CI. If two sources differ in crew snapshot while BLH is equal, preserve both and require explicit reconciliation. No CrewConnex input creates a FlightRecord.
 
 Acceptance: a future redacted/synthetic executable oracle must demonstrate C1–C9 plus multi-page/unknown-layout regressions; this fixture matrix itself is NOT an implementation test PASS. Public sample grade P2 remains unchanged.
+
+
+## 2026-10-10 15:01 KST — C13–C16 executed synthetic multi-baseline gate
+
+C13–C16 wholly synthetic multi-baseline oracle: 15/15 PASS. Two/three independent CC baselines at 14 or 28 synthetic units stage separate unlinked display candidates; missing/shifted/duplicate Emp./Pos. baselines, wrong page, non-CC mixed objects, shifted CC grid, split MCID, swapped font order and near-overlap fail closed. Distinct MCIDs BETWEEN baselines are permitted; Type3/Type0 fragments WITHIN a baseline must share tagged TD+MCID. All cases: 0 participants, 0 snapshot attachments, 0 FlightRecords. Synthetic epsilon=0.05 and CC X=824.5 are not production-calibrated; no actual Skia detector or LogMate CI was run. P2/public and production OPEN; existing-record-only.
+
+| Case | Structural condition | Detached decision |
+| --- | --- | --- |
+| C13 | Same tagged CC TD, two/three distinct Y baselines, gap 14 synthetic units | Stage 2/3 **separate** display candidates; no identity or attachment |
+| C14 | Same TD, two baselines, gap 28 | Stage 2 separate candidates, never concatenate baselines |
+| C15 | Emp./CC/Pos. cardinality, Y, page or row disagreement | REVIEW; zero participant/snapshot creation |
+| C16 | Mixed-font fragments in non-CC column, CC X-grid drift, or absent CC | Ignore non-CC as crew; unsupported/review for invalid CC |
+
+Additional negative checks: MCID split within one baseline, glyph order swap, duplicate/overlapping baselines. Crucial distinction: **MCID equality is required within one mixed-origin baseline pair, not between separate baselines of the same TD**. Page-local MCIDs may differ per baseline. The executable research oracle ran 15 tests locally; its synthetic tolerances and generator assumptions are **not** production ParserProfile rules. Existing C1–C9 fixture contract remains in force. Next: validate Emp.#/CC/Pos. baseline cardinality and source-tag ownership for real June/August multi-baseline TD cells without storing personal data.
