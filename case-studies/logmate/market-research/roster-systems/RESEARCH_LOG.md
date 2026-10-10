@@ -174,3 +174,11 @@ Existing 26-candidate PDC sample: 52/52 source-local/base time comparisons remai
 - June: 7 mixed CC baseline pairs in 6 tagged TD cells, **all six cells have six total Y-baselines**. August: 12 mixed pairs in 8 tagged TD cells, five with six total baselines and three with seven; two cells on page 2. Across all 14 affected rows, complete Emp.#/CC/Pos. distinct baseline sets align 14/14; their tagged TDs remain distinct, and 19/19 mixed fragment pairs share a page-local MCID.
 - Adjacent full CC baselines differ by 14–15 source units; previously reported 28-unit spacing between mixed-only pairs skips intervening non-mixed baselines. Do not infer a blank crew line, participant identity/count, operating status or automatic attachment from MCID/baseline alignment.
 - Existing C13–C16 synthetic tests do not cover real six/seven-line density. Add C17/C18 positive/negative synthetic coverage and verify source-to-FlightRecord matching separately. Public grade P2 unchanged; production parser OPEN; CrewConnex existing-record-only crew snapshot/BLH evidence. Next: C17/C18 executable six/seven-line alignment and missing-middle-line negative gate.
+
+
+## 2026-10-11 00:58 KST — CrewConnex C21 synthetic candidate/barrier gate
+
+- Re-read LogMate authority/import/CrewConnex contracts and current FlightRecord/SourceEvidence code/tests; reviewed Design Studio plan, indexes, queue, log and existing private-corpus metadata. LogMate read-only; no private data copied.
+- Executed wholly synthetic C21 numeric-Activity and Pairing/date-lineage oracle: **30/30 PASS** after fixing an initial negative-index bug in the research harness (not LogMate). ASCII 3/4-digit syntax is candidate-only; 2/5-digit, alphanumeric, Unicode digit and suffix are unsupported/review. Pairing does not bridge nonnumeric/Remark/section/page/source barriers or establish operational date. No date/crew/Pairing inheritance; 0 FlightRecords, 0 snapshot attachments, 0 BLH overwrites.
+- Existing August PDC corpus count (8 three-digit + 18 four-digit candidates) is reused, not re-verified in this run. No real PDF detector or LogMate CI was run. Public P2 / production OPEN.
+- Next: independent content-band/header-boundary validation of the eight three-digit PDC Activity candidates, then profile-specific detector acceptance.
