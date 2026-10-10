@@ -52,3 +52,7 @@ July CC content stream: 13 duplicate page/Y baselines with same X and MCID combi
 ## 2026-10-10 07:02 KST — CrewConnex CC synthetic oracle execution
 
 C1–C9 and three additional synthetic provenance negatives executed: 12/12 PASS in standalone Python, zero participant/FlightRecord creation. This is NOT production parser PASS. OPEN: GitHub source upload, real Skia detector validation, calibrated Y/X tolerances, Type3+ASCII same-origin semantic interpretation, and multi-month fixture integration. Next target: July CC font/ToUnicode text-object ordinal + tagged cell provenance without exporting private tokens.
+
+## 2026-10-11 03:00 KST — PDC nonnumeric negative-detector gate
+
+Read-only August PDC 49-band source: 22 nonnumeric Activity bands (18 route, six Pairing, all four clock fields, zero Blk Hrs) plus one remark-only; four nonnumeric arrival clocks fail strict HHMM range and additional rows carry +3/-1 offsets. Next: synthetic C22 detector negative fixtures and report-family/section boundary acceptance; no automatic FlightRecord or crew attachment. Public P2; production OPEN. Prior sync debt still pending.
