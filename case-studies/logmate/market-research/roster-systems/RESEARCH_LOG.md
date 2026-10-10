@@ -160,3 +160,10 @@ Existing 26-candidate PDC sample: 52/52 source-local/base time comparisons remai
 - Independently decompressed both page content streams and all 17 referenced ToUnicode CMaps (13 Type3, four Type0). Parsed bfchar and bfrange, then audited all 1,921 hex Tj operations (page 1: 1,522; page 2: 399), totaling 5,664 source glyph codes (4,314 / 1,350). All 5,664 resolve through their active font's CMap; unmapped codes 0, malformed-width tokens 0, duplicate CMap keys 0, invalid UTF-16 destinations 0. No CMap array-ranges were present. This closes the prior limited-decoder four-code concern at the whole-document coverage level, not as a one-to-one code reconciliation.
 - Code-space coverage does not establish human-readable glyph correctness, Unicode normalization, or CC mixed Type3/Menlo text-object semantic assembly. Preserve raw glyph-run order, font/MCID/TD provenance and fail closed on ambiguous crew associations. Internal source does not upgrade public P2; production parser remains OPEN and existing-record-only.
 - Next CrewConnex target: privacy-safe Unicode-category and text-object-order validation for the 13 July mixed Type3/Menlo CC baselines in 12 tagged TD cells.
+
+## 2026-10-10 13:56 KST — CrewConnex June/August CC Unicode and TD multi-baseline
+
+- Read-only existing Skia PDFs: June 7/7, August 12/12 CC Type3+Menlo pairs map to Hangul syllables ×3 + uppercase Latin ×1, with 0 unmapped targeted glyphs. Same page-local MCID and tagged TD ownership 7/7 and 12/12. No private text/identifiers retained.
+- June 7 pairs in 6 TD (five single, one double baseline; gap 28); August 12 pairs in 8 TD (four single, four double; gaps 14/14/14/28 document-text units). One tagged TD can contain multiple distinct rendered-token candidates; this does not prove participant identity/count.
+- Parser: preserve per-glyph font/order, per-baseline and TD/MCID provenance; require Emp.# and Pos. alignment before enrichment. No FlightRecord creation, no code/credit/date inference. Public P2; production OPEN.
+- Next: run privacy-safe synthetic C13–C16 multi-baseline/column-alignment gate; reconcile indexes after fresh fetch if blocked.
