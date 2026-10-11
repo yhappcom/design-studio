@@ -188,3 +188,10 @@ Existing 26-candidate PDC sample: 52/52 source-local/base time comparisons remai
 - Re-read LogMate authority/import/CrewConnex contracts and FlightRecord/SourceEvidence/CrewParticipant/LocalDate code; Design Studio plan, indexes, queue and log. Existing private UI references inspected read-only, no personal data copied.
 - IMG_1908/1909 show the same `1 Aug 2026–30 Sep 2026` roster period and horizontally scrolled `Start/Finish(L/B)` plus `BH` columns. IMG_1918 shows WebCal/WebCals/HTTPS calendar link options, not a public raw ICS. Four existing Skia/PDC PDF Info titles were checked: none contain a four-digit year. A UI period year is NOT evidence of a specific PDF's operational year absent a same-export link.
 - CrewConnex remains existing-record-only crew snapshot/BLH evidence; public P2 and production OPEN. No FlightRecord, date, crew or block-time changes. Next: same-export printed-header year/period or provenance-token verification; absent evidence, detached review only.
+
+
+## 2026-10-11 21:58 KST — CrewConnex C34 omitted-cell placeholder synthetic gate
+
+- Re-read LogMate authority/import/CrewConnex contracts and FlightRecord/CrewParticipant/SourceEvidence code/tests; Design Studio plan, indexes, queue, log and existing June/July Skia C33 geometry evidence. GitHub private binary fetch failed with UnicodeDecodeError; no new raw PDF decode or public sample acquired.
+- Ran standalone synthetic C34 oracle **42/42 PASS** (39 classification cases, 3 distinct-cell-state checks). Absent TD, present blank, literal sentinel and literal value remain separate; June 24-leaf/no-Pos page-edge negative and July complete-page-edge detached review both pass. Zero FlightRecords, snapshots, BLH overwrites or inferred crew. Not a production parser or LogMate CI PASS.
+- Public P2, production OPEN. Next CrewConnex target: real June/July Pos./Emp.#/CC decoded lexical-state counts and page-edge provenance, aggregate-only.
