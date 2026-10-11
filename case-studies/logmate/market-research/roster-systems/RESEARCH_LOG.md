@@ -182,3 +182,9 @@ Existing 26-candidate PDC sample: 52/52 source-local/base time comparisons remai
 - Executed wholly synthetic C21 numeric-Activity and Pairing/date-lineage oracle: **30/30 PASS** after fixing an initial negative-index bug in the research harness (not LogMate). ASCII 3/4-digit syntax is candidate-only; 2/5-digit, alphanumeric, Unicode digit and suffix are unsupported/review. Pairing does not bridge nonnumeric/Remark/section/page/source barriers or establish operational date. No date/crew/Pairing inheritance; 0 FlightRecords, 0 snapshot attachments, 0 BLH overwrites.
 - Existing August PDC corpus count (8 three-digit + 18 four-digit candidates) is reused, not re-verified in this run. No real PDF detector or LogMate CI was run. Public P2 / production OPEN.
 - Next: independent content-band/header-boundary validation of the eight three-digit PDC Activity candidates, then profile-specific detector acceptance.
+
+## 2026-10-11 17:03 KST — CrewConnex UI-year / cross-surface provenance gate
+
+- Re-read LogMate authority/import/CrewConnex contracts and FlightRecord/SourceEvidence/CrewParticipant/LocalDate code; Design Studio plan, indexes, queue and log. Existing private UI references inspected read-only, no personal data copied.
+- IMG_1908/1909 show the same `1 Aug 2026–30 Sep 2026` roster period and horizontally scrolled `Start/Finish(L/B)` plus `BH` columns. IMG_1918 shows WebCal/WebCals/HTTPS calendar link options, not a public raw ICS. Four existing Skia/PDC PDF Info titles were checked: none contain a four-digit year. A UI period year is NOT evidence of a specific PDF's operational year absent a same-export link.
+- CrewConnex remains existing-record-only crew snapshot/BLH evidence; public P2 and production OPEN. No FlightRecord, date, crew or block-time changes. Next: same-export printed-header year/period or provenance-token verification; absent evidence, detached review only.
