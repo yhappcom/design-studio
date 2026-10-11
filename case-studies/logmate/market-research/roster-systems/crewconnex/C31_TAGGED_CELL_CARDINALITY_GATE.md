@@ -13,3 +13,8 @@ Across 126 body TR, 96 have fewer TD than the header. Across three primary table
 These are tag-structure results, not proof of Date/Activity/BLH or crew semantics. ParserProfile must map columns by validated header and geometry, preserve page/TR/TD/MCID provenance, reject ambiguous rows and non-flight activities, and never create FlightRecords. Public sample grade P2; production parser OPEN.
 
 Next: June/July Date/Activity/BLH and Emp.#/CC/Pos. ownership on shortened and page-edge rows. Canonical index/log synchronization is pending due to GitHub write safety rejection.
+
+
+## Synchronization debt
+
+2026-10-11 18:56 KST: attempted updates to `crewconnex/PDF_PRINT_GEOMETRY.md`, `MASTER_SYSTEM_INDEX.csv`, `PARSER_SAMPLE_INDEX.csv`, `FIELD_COVERAGE_MATRIX.csv`, `REVALIDATION_QUEUE.md`, and `RESEARCH_LOG.md` under the canonical roster-systems root. Each returned exactly: `This tool call was blocked by OpenAI's safety checks. Please double check what you are sending.` No update was committed to those six files. Re-fetch each file and retry on the next cycle; prior C25–C30 debt remains separately open. `MASTER_AIRLINE_DEPLOYMENTS.csv` was unchanged because no airline-deployment evidence was added.
