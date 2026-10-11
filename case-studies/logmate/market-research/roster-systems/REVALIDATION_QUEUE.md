@@ -64,3 +64,7 @@ Two focused lawful public searches found no verifiable CrewConnex printer-PDF `R
 ## 2026-10-11 20:00 KST — C32 CrewConnex tagged-header ownership
 
 All 3,870 primary TD cells across three existing Skia PDFs carry empty Headers and unit spans; no primary TH/Scope. Auxiliary TH exists in July/August. The 96/126 shortened body rows cannot be aligned to primary header by TD ordinal. Next: June/July physical grid ownership and absent-vs-blank TD, especially page-2 first row. Public P2 / production OPEN. Synchronize C31 and indexes after fresh-fetch if blocked.
+
+## 2026-10-11 23:56 KST — CrewConnex August crew-column verification
+
+Real August Skia: 42/42 rows have Emp.#, CC, Pos. TDs and aligned rendered baselines; 1,234/1,234 body TDs uniquely map to 31 header anchors. All three columns have 17 pipe and four whitespace-only lines; Pos. also five hyphen lines. Page-2 first row has six aligned non-placeholder lines per column. No crew inference. Next: synthetic missing/shifted Pos., mixed-font, placeholder, and page-edge negative gate. Public P2; production OPEN.
