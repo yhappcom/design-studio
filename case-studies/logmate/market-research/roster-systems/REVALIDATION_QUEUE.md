@@ -68,3 +68,5 @@ All 3,870 primary TD cells across three existing Skia PDFs carry empty Headers a
 ## 2026-10-11 23:56 KST — CrewConnex August crew-column verification
 
 Real August Skia: 42/42 rows have Emp.#, CC, Pos. TDs and aligned rendered baselines; 1,234/1,234 body TDs uniquely map to 31 header anchors. All three columns have 17 pipe and four whitespace-only lines; Pos. also five hyphen lines. Page-2 first row has six aligned non-placeholder lines per column. No crew inference. Next: synthetic missing/shifted Pos., mixed-font, placeholder, and page-edge negative gate. Public P2; production OPEN.
+
+19. CrewConnex C39 (2026-10-12): Of 34 omitted-Date TD rows across June/July/August, 27 have ASCII 3/4-digit Activity (7/10/10), seven are nonnumeric (3/3/1). Numeric predecessors: 22 dated numeric, four undated numeric, one nonnumeric; zero cross-page, zero Pairing TD, 27 BLH text. Verify section/Remark/Sum barriers and full-date evidence; never infer date or crew from adjacency. Public P2; production OPEN. Retry prior index synchronization.
