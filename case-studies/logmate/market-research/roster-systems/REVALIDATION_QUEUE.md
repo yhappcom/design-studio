@@ -74,3 +74,11 @@ Real August Skia: 42/42 rows have Emp.#, CC, Pos. TDs and aligned rendered basel
 20. CrewConnex C44 (2026-10-12): actual August Skia page-1 row13 has omitted Date/Pairing after dated nonnumeric row12; rows19→20→21 form a three-row omitted-Date/Pairing numeric chain after dated row18. Company 2026 workbook has 159 data records; target rows 13/19/20/21 have flight+route partial-key hits 0/0/0/1, with no independently validated full-date match. Detached review only; public P2, production OPEN. Next: audit other 18 August numeric rows by company partial-key cardinality and independent date evidence. Synchronize C44 and indexes after fresh-fetch if blocked.
 
 21. CrewConnex C45 (2026-10-12): Read-only August Skia/company XLSX 18-row follow-up, excluding C44 rows 13/19/20/21. Company flight+route candidate multiplicity 0:5, 1:3, 2:6, 3:4; 12 explicit yearless dates, six omitted; two month/day overlaps only if PDF year is assumed 2026. Tagged 42 primary body rows separated from five post-Sum auxiliary TR. Public P2, production OPEN. Next: independently verify same-export year/period or record explicit absence, then date-aware one-to-one review. No auto binding.
+
+
+## 2026-10-17 C164 — CrewConnex semantic-namespace and local-acquisition review
+
+- The 19-operator migration queue item is stale: current deployment index has 20 CrewConnex rows, with pilot bounds on 19; master index count was updated by commit 41f76f8. Do not claim all 20 are current direct A1.
+- CrewConnex BLH and PDC Blk Hrs are distinct raw roster observations, not canonical Block values; equality in paired company samples is cross-check evidence only. Existing scalar SourceEvidence cannot hold detached or withheld crew snapshots. Need evidence-only store/transaction without fake Flight mutation.
+- Public P2 roster-schema classification remains under audit. RosterBuster weekly HTML/frame-source and Safelog CSV/HTML are P3 third-party format leads, not P1 samples or approved LogMate credential/hosted-upload flows.
+- Same-export Skia operational year/crew antecedent/publication order and real UID-owned Sembast approval remain OPEN. C164 synthetic oracle is not production PASS.
