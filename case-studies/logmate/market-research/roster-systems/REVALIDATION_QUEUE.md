@@ -95,3 +95,7 @@ Product-code audit confirms record/field-bound scalar SourceEvidence and append-
 - Original nine company XLSX files independently verified: 1530 rows; 1520 supported 7C; full-date composite duplicates 0; yearless collisions 7 groups/14 rows. 2026 company June/July/August 18/22/3 is not Skia year/revision proof.
 - Correct 2025 null states: instTme missing 2, ntTme missing 0. Two ntTme cells use non-H:MM numeric representation; prior C238 reversed-null assertion is superseded. 2019 instTme>at one and 2025 ntTme>bt two need manual source-semantic review, not silent correction.
 - Current deployment index already has 20 CrewConnex entries; old 19-row migration task is stale. Production parser OPEN. Outstanding: Skia year, crew continuation, publication and real UID-owned Sembast source-only transaction acceptance.
+
+## 2026-10-20 C245 — PDC nonflight detector and source-type gate
+
+Actual one-page PDC PDF: 49 body bands = 26 numeric-Activity candidates + 22 nonnumeric + 1 blank; route+four-clocks alone falsely accepts 18 nonnumeric rows. Of 13 undated numeric candidates, 7 directly follow a dated numeric row, 4 are chained, 1 follows nonflight and 1 follows blank Activity; none authorizes date inheritance. The misnamed internal .aspx is login HTML, not a roster/PDF sample. No public P1 or actual Dart/Sembast PASS. Revalidate source year and crew lineage, then test owner-UID evidence-only atomic persistence. Earlier 2025 Excel reversed-null assertion is superseded: instTme missing 2, ntTme missing 0.
