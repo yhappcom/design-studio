@@ -1,0 +1,137 @@
+{
+  "id": "C284",
+  "date": "2026-10-22",
+  "status": "RESEARCH_ONLY_PRODUCTION_OPEN",
+  "boundaries": {
+    "product": "yhappcom/logmate READ_ONLY",
+    "research": "yhappcom/design-studio",
+    "privacy": "No private source rows, names, employee IDs, flight numbers, route values or crew contents copied"
+  },
+  "realPrivateSourceRevalidation": {
+    "method": "Read-only original GitHub binary base64; independent RFC1951 zlib DEFLATE + Adler32, per-content-stream Tj/MCID operator census. Not semantic ToUnicode row mapping.",
+    "skia": [
+      {
+        "month": "2026-06",
+        "gitBlob": "e96bf5a76764984aa7f28285c975a24fd471117e",
+        "bytes": 541788,
+        "verifiedFlateStreams": 131,
+        "adlerFailures": 0,
+        "Tj": 1824,
+        "MCID": 1568,
+        "contentStreamsWithTj": 2
+      },
+      {
+        "month": "2026-07",
+        "gitBlob": "d306cad81d2a57123ac9950ed734a9216340466c",
+        "bytes": 556535,
+        "verifiedFlateStreams": 137,
+        "adlerFailures": 0,
+        "Tj": 1921,
+        "MCID": 1592,
+        "contentStreamsWithTj": 2
+      },
+      {
+        "month": "2026-08",
+        "gitBlob": "29ac040595089188a8353e98f41ba27f92b8650b",
+        "bytes": 552417,
+        "verifiedFlateStreams": 138,
+        "adlerFailures": 0,
+        "Tj": 1872,
+        "MCID": 1577,
+        "contentStreamsWithTj": 2
+      }
+    ],
+    "totals": {
+      "verifiedFlateStreams": 406,
+      "adlerFailures": 0,
+      "Tj": 5617,
+      "MCID": 4737
+    },
+    "decoderFailureMode": "Exactly one PDF stream-separator byte follows each compressed payload. Naively trimming all CR/LF removes a legitimate checksum byte in three source streams (one July, two August), producing false Adler failures; determine payload length or locate exact checksum, never rstrip binary bytes."
+  },
+  "realSourceDerivedManifestCrossCheck": {
+    "source": "C194_THREE_MONTH_FIELD_LOCATOR_MANIFEST.csv, blob 625c4e4367d12189f96cf4ee85cd1f3bae71e035",
+    "kind": "real-original-PDF-derived metadata, not newly decoded semantic rows",
+    "candidates": {
+      "june": 18,
+      "july": 22,
+      "august": 22,
+      "total": 62
+    },
+    "fiveFieldRelativeTdOffsets": {
+      "from": 3,
+      "to": 7,
+      "BLH": 13,
+      "ACReg": 15,
+      "verified": 62,
+      "failed": 0
+    },
+    "bodyTdMinusActivityTd": {
+      "june": {
+        "value": 26,
+        "rows": 18
+      },
+      "july": {
+        "value": 22,
+        "rows": 22
+      },
+      "august": {
+        "value": 23,
+        "rows": 22
+      }
+    },
+    "activityTdVariants": {
+      "td6": 27,
+      "td7": 5,
+      "td8": 30
+    },
+    "augustUncurated": {
+      "total": 19,
+      "td6": 9,
+      "td7": 1,
+      "td8": 9,
+      "page2": 2
+    },
+    "allOperationalYears": "UNVERIFIED",
+    "interpretation": "Monthly tail-width invariants are diagnostic layout fingerprints, not portable detectors, validated Date text, crew continuity, or evidence of year."
+  },
+  "companyAndPdcPriorEvidence": {
+    "company2026Rows": 159,
+    "companyObservedEnd": "2026-08-02",
+    "uncuratedAugustFlightRoutePartialKeyMultiplicity": {
+      "zero": 8,
+      "one": 4,
+      "two": 5,
+      "three": 2
+    },
+    "BLHCompanyBtEqualityFor11PartialHits": 0,
+    "realCompanyRejoinThisCycle": false,
+    "pdcOriginalRejoinThisCycle": false
+  },
+  "directCurrentCodeReview": {
+    "sourceEvidenceHistoryNotice": "Current scalar requiresUserNotice compares normalized values; changed fingerprint/locator with unchanged normalized value can be notice=false. Existing unit test explicitly covers new fingerprint with no notice.",
+    "crewSnapshot": "CrewParticipant requires name; no detached crew-snapshot receipt identity.",
+    "storage": "No verified CrewConnex evidence-only Sembast API; no Dart runtime test in this cycle."
+  },
+  "parserProfileDelta": {
+    "version": "research-2.1-C284",
+    "detector": "Separate Skia tagged printer and PDC 14-column report family; validate exact anchors, primary Table/TR/TD/MCID, page-local provenance, nonflight/Sum boundaries, row-local source state, and binary stream length; unknown layouts fail closed.",
+    "sourceStage": "Source SHA256, profile, physical locator, raw labels and explicit missing/blank/unknown; yearless/omitted dates, publication and crew antecedent unverified => detached review.",
+    "matching": "Only unique verified active UID-owned existing Flight with independent full date+7C-specific flight+route, owner review, FlightRevision/EvidenceHead CAS and immutable receipt.",
+    "revision": "Changed source/crew with same BLH is distinct reviewable snapshot; do not use scalar SourceEvidenceHistory notice as roster revision detector.",
+    "prohibited": "No standalone FlightRecord creation, canonical Block overwrite, inferred date/PIC/SIC/PF/PM/duty/deadhead or silent snapshot replacement."
+  },
+  "readiness": {
+    "publicSampleGrade": "P2",
+    "productionParser": "OPEN",
+    "realDartSembastTests": "NOT_EXECUTED",
+    "yearAndPublication": "UNVERIFIED",
+    "dateAware19RowOwnerMatching": "NOT_EXECUTED",
+    "syntheticPassNotPromotion": true
+  },
+  "syncDebt": [
+    "C265 contains superseded wrong 2025 empty-cell counts; correct ntTme=2,instTme=0,toCnt=5,ldCnt=4 from C280",
+    "Research log and prior index/profile updates remain to synchronize where changes are material"
+  ],
+  "nextIntegratedTarget": "Authenticate source-bound Skia year/publication and 27 undated row crew/section antecedents, then date-aware adjudicate 19 August uncurated vs company/PDC and run authorized UID-owned evidence-only Sembast CAS/replay/deletion/restore acceptance."
+}
