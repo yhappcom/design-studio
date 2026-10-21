@@ -1,0 +1,272 @@
+{
+  "schema": "logmate.research.crewconnex.parser-profile.v1",
+  "profileId": "crewconnex.pdc-generator.crew-roster-report",
+  "profileVersion": "research-1.0.0",
+  "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+  "verifiedScope": "One private August 2026 PDC Pdf Generator PDF; structural and clock arithmetic evidence only; no public P1 sample",
+  "admission": {
+    "sourceType": "PDF",
+    "generatorFamily": "PDC Pdf Generator 1.0, PDC A/S",
+    "creatorObserved": "PDC Crew",
+    "metadataTitleObserved": "PDC Report",
+    "printedReportKind": "Crew Roster Report",
+    "headerExact": [
+      "Date",
+      "Pairing",
+      "DC",
+      "C/I (L)",
+      "C/O (L)",
+      "Activity",
+      "From",
+      "STD (L)",
+      "STD (B)",
+      "To",
+      "STA (L)",
+      "STA (B)",
+      "AC/Hotel",
+      "Blk Hrs"
+    ],
+    "mustValidate": [
+      "PDF syntax and readable text layer",
+      "printed report kind AND exact ordered headers",
+      "single primary body grid with validated column ownership",
+      "Period range and date anchors independently",
+      "nonflight and blank Activity barriers",
+      "raw clock syntax and explicit day-offset tokens",
+      "source fingerprint and physical field locator"
+    ],
+    "reject": [
+      "unknown generator or report kind",
+      "missing or reordered required header",
+      "unsupported page/column layout",
+      "truncated or shifted body grid",
+      "ambiguous period/century",
+      "unknown activity shape",
+      "after-body/footer row",
+      "unverified source-stage binding"
+    ],
+    "metadataNeverAuthoritativeFor": [
+      "operational date",
+      "roster publication/revision",
+      "crew identity",
+      "flight-record ownership"
+    ]
+  },
+  "sampleFingerprint": {
+    "pdfVersion": "1.4",
+    "pagesObserved": 1,
+    "textObjects": 495,
+    "headerBaselineY": 647,
+    "headerX": [
+      75,
+      109,
+      143,
+      162,
+      186,
+      210,
+      244,
+      268,
+      292,
+      316,
+      340,
+      364,
+      388,
+      492
+    ],
+    "bodyBaselines": 49,
+    "bodyBaselineRangeY": [
+      206,
+      638
+    ],
+    "bodyDateTextX": 81,
+    "bodyActivityTextX": 210,
+    "bodyBlockRightAlignedTextX": 511,
+    "printedPeriod": "01Aug26 - 31Aug26",
+    "printedPeriodDuplicateDrawCount": 2,
+    "printedHeadingDrawCount": 3,
+    "dateAnchorCount": 31,
+    "numericActivityCandidates": 26,
+    "numericCandidatesWithOwnDate": 13,
+    "numericCandidatesMissingOwnDate": 13,
+    "nonnumericActivityBands": 22,
+    "blankActivityBands": 1,
+    "nonnumericBandsWithFourClockCells": 22,
+    "nonnumericBandsWithRouteAndFourClockCells": 18,
+    "numericCandidatesWithBlock": 26,
+    "baseElapsedEqualsPrintedBlock": 26,
+    "localElapsedEqualsPrintedBlock": 16,
+    "localDiscrepantRows": 10,
+    "sumAbsLocalDurationDifferencesMinutes": 720,
+    "signedLocalDurationDifferenceMinutes": 0,
+    "explicitPlusOneRows": 4,
+    "explicitPlusOneBaseDepartureCells": 1,
+    "explicitPlusOneBaseArrivalCells": 4,
+    "explicitPlusOneLocalArrivalCells": 4
+  },
+  "fieldMap": {
+    "Date": {
+      "sourceColumn": 0,
+      "state": "own cell only; missing is unresolved",
+      "type": "DDMonYY",
+      "yearAuthority": "requires independently validated profile-specific century and period"
+    },
+    "Pairing": {
+      "sourceColumn": 1,
+      "state": "raw only; no duty identity or forward fill"
+    },
+    "DC": {
+      "sourceColumn": 2,
+      "state": "raw only; no PIC/SIC/PF/PM"
+    },
+    "CheckInLocal": {
+      "sourceColumn": 3,
+      "state": "raw only; not duty semantics"
+    },
+    "CheckOutLocal": {
+      "sourceColumn": 4,
+      "state": "raw only; not duty semantics"
+    },
+    "Activity": {
+      "sourceColumn": 5,
+      "state": "3/4-digit candidate only; preserve raw code; never sufficient to create FlightRecord"
+    },
+    "From": {
+      "sourceColumn": 6,
+      "state": "raw airport code"
+    },
+    "StdLocal": {
+      "sourceColumn": 7,
+      "state": "raw HHMM and explicit offset"
+    },
+    "StdBase": {
+      "sourceColumn": 8,
+      "state": "raw HHMM and explicit offset"
+    },
+    "To": {
+      "sourceColumn": 9,
+      "state": "raw airport code"
+    },
+    "StaLocal": {
+      "sourceColumn": 10,
+      "state": "raw HHMM and explicit offset"
+    },
+    "StaBase": {
+      "sourceColumn": 11,
+      "state": "raw HHMM and explicit offset"
+    },
+    "AircraftOrHotel": {
+      "sourceColumn": 12,
+      "state": "raw mixed semantic; never assume registration"
+    },
+    "PrintedBlockHours": {
+      "sourceColumn": 13,
+      "state": "raw Blk Hrs, minute-parseable; not canonical Block or Skia BLH"
+    }
+  },
+  "extraction": {
+    "unit": "one printed body baseline, not one crew/duty/flight",
+    "geometry": "observed coordinates are sample fingerprint, not portable tolerances",
+    "columnMapping": "validated grid regions; right-aligned Blk Hrs body text x=511 despite header x=492",
+    "sourceLocator": [
+      "rawSourceSHA256",
+      "profileId",
+      "profileVersion",
+      "page1Based",
+      "bodyBandOrdinal",
+      "columnIndex",
+      "textObjectOrdinal",
+      "boundingCoordinates"
+    ],
+    "keepRaw": [
+      "label",
+      "clock",
+      "dayOffset",
+      "activityCode",
+      "sourceCellPresence",
+      "sourceCellBlankness"
+    ],
+    "dateContinuation": "NEVER_AUTOMATIC",
+    "crewSnapshot": "NOT_PROVIDED_IN_THIS_14_COLUMN_EXPORT",
+    "publication": "UNKNOWN; print timestamp and PDF CreationDate are output-generation metadata only"
+  },
+  "validation": {
+    "classificationOrder": [
+      "exclude footer/notes/blank and nonnumeric activity",
+      "validate numeric candidate's From/To and four clocks and printed Block",
+      "validate explicit date or stage as unresolved",
+      "only then compare to existing owner Flight after explicit review"
+    ],
+    "baseElapsedCheck": "(STA_B with explicit +day) - (STD_B with explicit +day) == printed Blk Hrs; sample 26/26; validation only",
+    "localElapsedCheck": "do not reject merely because station-local elapsed differs from printed Blk Hrs; sample 16/26 equal",
+    "dateRollover": "preserve +1 per clock cell; never infer missing Date or canonical operational date",
+    "noImplicitNormalization": [
+      "PIC/SIC",
+      "PF/PM",
+      "operating/deadhead",
+      "time zone",
+      "company Block equivalence",
+      "date correction",
+      "cross-generator revision order"
+    ],
+    "unsupported": "fail closed with review reason and no FlightRecord or crew creation"
+  },
+  "reconciliation": {
+    "sourceCandidate": "detached evidence only",
+    "existingRecordOnly": true,
+    "matching": "verified UID-owned active Flight; unique full date+approved carrier-specific flight+route; compare source and company independently",
+    "zeroOrMultipleMatches": "review, no attachment",
+    "approval": "bind exact verified source-stage digest, UID, Flight ID, expected FlightRevision, expected EvidenceHead, source locator and receipt",
+    "write": "separate atomic evidence-only store/receipt; no canonical Flight revision, Block, aggregate, outbox or data-generation change",
+    "revisions": "append snapshots; no silent overwrite; changed crew or same value with new fingerprint remains distinct observation",
+    "backupRestore": "quarantine imported stages/approvals/receipts; never trust backup checksum as authority"
+  },
+  "evidence": {
+    "actual": "Independent binary-safe decode of one private PDC PDF and 495 text objects; exact header, 49 bands, 26/22/1 classification and 26/26 base clock arithmetic",
+    "synthetic": "Research contract negative fixtures only; not Flutter or Sembast",
+    "blocked": "2018/2019/2020-2026 historical PDFs return empty base64 payload at GitHub connector size limit; no original-byte interpretation",
+    "notExecuted": [
+      "company XLSX value-level rejoin in this cycle",
+      "real Skia same-export year and crew antecedent certification",
+      "Dart/Sembast evidence-only API and transaction acceptance"
+    ],
+    "publicSampleGrade": "P2",
+    "productionReady": false
+  },
+  "acceptanceScenarios": [
+    {
+      "id": "kind-and-grid",
+      "input": "wrong printed report kind or shifted header",
+      "expected": "UNSUPPORTED_LAYOUT"
+    },
+    {
+      "id": "nonflight-clock",
+      "input": "nonnumeric Activity with From/To and four clocks",
+      "expected": "NONFLIGHT_EXCLUDED"
+    },
+    {
+      "id": "date-gap",
+      "input": "numeric Activity with omitted Date after numeric or nonflight band",
+      "expected": "DETACHED_REVIEW"
+    },
+    {
+      "id": "source-offset",
+      "input": "explicit +1 on departure or arrival cell",
+      "expected": "PRESERVE_RAW_OFFSET_NO_DATE_INHERITANCE"
+    },
+    {
+      "id": "owner-match",
+      "input": "zero or multiple verified active UID Flight matches",
+      "expected": "NO_ATTACHMENT_REVIEW"
+    },
+    {
+      "id": "replay",
+      "input": "same receipt ID with changed fingerprint/locator/crew",
+      "expected": "RECEIPT_COLLISION"
+    },
+    {
+      "id": "restore",
+      "input": "backup-origin approval without trusted source-stage revalidation",
+      "expected": "QUARANTINE"
+    }
+  ]
+}
