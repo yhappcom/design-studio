@@ -1,0 +1,53 @@
+{
+  "id": "C277",
+  "date": "2026-10-22",
+  "status": "RESEARCH_ONLY",
+  "source": "read-only LogMate company XLSX OOXML",
+  "sourceYear": 2025,
+  "sourceGitBlob": "d053b2ae18007fd31bcdbff32ffc1ea74ab67f83",
+  "verifiedHeaderColumns": {
+    "P": "ntTme",
+    "Q": "instTme",
+    "R": "toCnt",
+    "S": "ldCnt"
+  },
+  "actualCellState": {
+    "ntTme": {
+      "presentEmpty": 2,
+      "nonEmpty": 215
+    },
+    "instTme": {
+      "presentEmpty": 0,
+      "nonEmpty": 217
+    },
+    "toCnt": {
+      "presentEmpty": 5
+    },
+    "ldCnt": {
+      "presentEmpty": 4
+    }
+  },
+  "previousYear2024": {
+    "ldCntPresentEmpty": 1
+  },
+  "allNineYears": {
+    "rows": 1530,
+    "columnsPerWorkbook": 19,
+    "fullDateRawFlightRouteDuplicateKeys": 0,
+    "presentEmptyRelevantCells": 12
+  },
+  "company2026": {
+    "june": 18,
+    "july": 22,
+    "august": 3,
+    "latestObservedDate": "2026-08-02"
+  },
+  "contradiction": "C243 and C265 C260 note reversed ntTme and instTme; original C113/C181/C182 agrees with this direct revalidation",
+  "syntheticCellStateOracle": {
+    "passed": 8,
+    "total": 8
+  },
+  "publicSampleGrade": "P2",
+  "productionReady": false,
+  "implementationDecision": "Header-keyed OOXML mapping; preserve physically present empty cells; never default missing Night to Day or map it to Instrument; existing-record-only CrewConnex evidence"
+}
