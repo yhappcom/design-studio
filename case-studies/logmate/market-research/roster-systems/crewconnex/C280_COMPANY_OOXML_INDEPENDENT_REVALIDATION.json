@@ -1,0 +1,57 @@
+{
+  "id": "C280",
+  "date": "2026-10-22",
+  "status": "RESEARCH_ONLY",
+  "source": "read-only original company flightHistory 2018-2026 XLSX, independent ZIP central-directory/DEFLATE/XML and header-addressed cell parse",
+  "years": 9,
+  "rows": 1530,
+  "headersPerYear": 19,
+  "annualRows": [
+    58,
+    318,
+    88,
+    172,
+    158,
+    184,
+    176,
+    217,
+    159
+  ],
+  "year2025": {
+    "presentEmpty": {
+      "ntTme": 2,
+      "instTme": 0,
+      "toCnt": 5,
+      "ldCnt": 4
+    },
+    "nightNonDurationValues": 0,
+    "instrumentNonDurationValues": 0
+  },
+  "year2024": {
+    "ldCntPresentEmpty": 1
+  },
+  "allYears": {
+    "nightGreaterThanBlock": 0,
+    "actualGreaterThanBlock": 0,
+    "instrumentGreaterThanActual": 1,
+    "instrumentGreaterThanActualYear": 2019,
+    "blockDurationParseFailures": 0,
+    "actualDurationParseFailures": 0
+  },
+  "year2026": {
+    "june": 18,
+    "july": 22,
+    "august": 3,
+    "lastObservedDate": "2026-08-02"
+  },
+  "supersedes": [
+    "C243 and C260 2025 Night/Instrument and T/O/L/D reversed empty-cell counts",
+    "C265 C260 correction line",
+    "REVALIDATION_QUEUE C243/C245 empty-cell claims"
+  ],
+  "sourcePrivacy": "Only aggregate counts, field labels and source years; no personal data or source files",
+  "parserPolicy": "Preserve present-empty vs absent vs explicit zero and dash; do not infer Day/Night, duty semantics, PIC/SIC, Block equivalence, or CrewConnex FlightRecord creation",
+  "crewconnexPublicSampleGrade": "P2",
+  "productionParserReady": false,
+  "realDartSembastTests": "NOT_EXECUTED"
+}
