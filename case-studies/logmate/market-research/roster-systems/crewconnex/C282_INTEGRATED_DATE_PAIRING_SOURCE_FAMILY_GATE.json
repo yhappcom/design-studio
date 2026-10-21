@@ -1,0 +1,59 @@
+{
+  "id": "C282",
+  "date": "2026-10-22",
+  "status": "RESEARCH_ONLY_PRODUCTION_OPEN",
+  "evidence": {
+    "pdc": "Existing private original 39,612-byte PDF independently decoded in transient memory; 49 physical bands, 26 numeric, 22 nonnumeric, 1 Activity-text-absent auxiliary; no raw content retained.",
+    "skia": "Existing privacy-safe C194 real-PDF-derived 62-row manifest independently recomputed; not a new Skia PDF decode.",
+    "company": "Prior C280 original-OOXML 2026 horizon ends Aug 2; no fresh XLSX value rejoin this cycle.",
+    "runtime": "Current LogMate SourceEvidenceHistory/LogbookRepository and tests read-only; no evidence-only persistence API or Dart run."
+  },
+  "pdc": {
+    "numericDatePairTextPresence": {
+      "both": 13,
+      "dateOnly": 0,
+      "pairOnly": 3,
+      "neither": 10
+    },
+    "nonnumericDatePairTextPresence": {
+      "both": 3,
+      "dateOnly": 15,
+      "pairOnly": 3,
+      "neither": 1
+    },
+    "numericActivityLength": {
+      "threeDigits": 8,
+      "fourDigits": 18
+    },
+    "nonnumericWithFourClocks": 22,
+    "nonnumericWithRouteAndFourClocks": 18,
+    "auxiliaryActivityTextAbsentButOtherCellPresent": 1
+  },
+  "skia": {
+    "numericDatePairStates": {
+      "both": 30,
+      "dateOnly": 5,
+      "pairOnly": 0,
+      "neither": 27
+    },
+    "undatedAdjacentPriorNumeric": 26,
+    "undatedAfterInterveningPhysicalRows": 1,
+    "threeConsecutiveUndatedRuns": 2,
+    "operationalYearVerified": 0,
+    "uncuratedAugust": 19
+  },
+  "decisions": [
+    "Different immutable Skia/PDC detector and field-presence semantics; a Pairing text object is not authenticated duty/crew identity.",
+    "Classify every physical row independently; nonflight with route/clocks and Activity-absent auxiliary must not become flight evidence.",
+    "Never inherit Date/Pairing from adjacency, and never auto-create FlightRecord or overwrite Block.",
+    "Source-stage admission requires year/date authority and unique active UID-owned Flight; source-only CAS/receipt/backup/restore remain unimplemented."
+  ],
+  "validation": {
+    "realSourceDerivedChecks": 11,
+    "syntheticPolicyNegatives": 5,
+    "failed": 0,
+    "productionPass": false
+  },
+  "publicSampleGrade": "P2",
+  "next": "Authenticate Skia same-export year/publication and 27 undated antecedents, adjudicate 19 uncurated August against company/PDC, then run authorized UID-owned Sembast evidence-only acceptance."
+}
