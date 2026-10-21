@@ -1,0 +1,29 @@
+{
+  "id": "C276",
+  "date": "2026-10-21",
+  "status": "RESEARCH_ONLY",
+  "source": "LogMate archived review generator + original 2026 company workbook",
+  "generator_is_pdf_parser": false,
+  "selected_rows": 43,
+  "by_month": {
+    "06": 18,
+    "07": 22,
+    "08": 3
+  },
+  "company_rows": 159,
+  "manual_keys": 43,
+  "selected_distinct_keys": 43,
+  "duplicate_selected_keys": 0,
+  "missing_manual_keys": 0,
+  "roster_minus_company_date_days": {
+    "0": 37,
+    "1": 6
+  },
+  "selection_date_min": "20260601",
+  "selection_date_max": "20260802",
+  "selection_key_includes_date": false,
+  "synthetic_negative_tests_passed": 7,
+  "production_parser_ready": false,
+  "public_sample_grade": "P2",
+  "note": "Selected manual-transcription cohort is not parser accuracy; 19 additional August PDF candidates remain outside Preview. No UID-owned evidence acceptance."
+}
