@@ -1,0 +1,88 @@
+{
+  "id": "C295",
+  "date": "2026-10-22",
+  "status": "RESEARCH_ONLY_PRODUCTION_OPEN",
+  "scope": "Three private Skia printer PDFs read-only via LogMate GitHub; only structural/nonidentifying metadata retained.",
+  "method": "Independent binary-base64 object parsing; /Pages object /StructParents, /StructTreeRoot /ParentTree /Nums array indexing, /Pg + /K page-local MCID, and recursive /P ancestry; cross-check C294 decoded page-2 Sum MCIDs and C194 primary TR counts.",
+  "pages": {
+    "page1PdfObject": 2,
+    "page2PdfObject": 21,
+    "structParents": [
+      0,
+      1
+    ]
+  },
+  "sourceDerived": [
+    {
+      "month": "06",
+      "sumMCID": 257,
+      "page1SameMCIDLeaf": 519,
+      "page2SumLeaf": 2965,
+      "page2ParentArray": 2986,
+      "page2MCIDsVerified": 265,
+      "primaryTableObj": 30,
+      "primaryLeafRange": [
+        2,
+        256
+      ],
+      "primaryRowsIncludingHeader": 41,
+      "postSumNonTableMCIDs": 8,
+      "postSumAuxiliaryTableRows": 0,
+      "postSumAuxiliaryLeafRange": null
+    },
+    {
+      "month": "07",
+      "sumMCID": 241,
+      "page1SameMCIDLeaf": 500,
+      "page2SumLeaf": 2893,
+      "page2ParentArray": 3021,
+      "page2MCIDsVerified": 285,
+      "primaryTableObj": 31,
+      "primaryLeafRange": [
+        2,
+        240
+      ],
+      "primaryRowsIncludingHeader": 45,
+      "postSumNonTableMCIDs": 30,
+      "postSumAuxiliaryTableRows": 7,
+      "postSumAuxiliaryLeafRange": [
+        272,
+        285
+      ]
+    },
+    {
+      "month": "08",
+      "sumMCID": 311,
+      "page1SameMCIDLeaf": 597,
+      "page2SumLeaf": 2877,
+      "page2ParentArray": 2990,
+      "page2MCIDsVerified": 349,
+      "primaryTableObj": 31,
+      "primaryLeafRange": [
+        2,
+        310
+      ],
+      "primaryRowsIncludingHeader": 43,
+      "postSumNonTableMCIDs": 28,
+      "postSumAuxiliaryTableRows": 5,
+      "postSumAuxiliaryLeafRange": [
+        340,
+        349
+      ]
+    }
+  ],
+  "verification": "899/899 page-2 MCID 1..N mappings agree with /Pg=21 and /K=MCID; no duplicate leaf refs; index 0 of each parent array references primary Table rather than a page-2 MCID leaf. All three page-2 Sum leaves are under NonStruct, not primary Table; same numeric MCID also exists on page1 under Table/TD.",
+  "note": "postSumNonTableMCIDs counts include Sum itself? NO: counts only strictly greater than Sum, while the Sum MCID is a separate NonTable leaf. Page-2 non-table total also includes page-start MCID 1.",
+  "priorCohort": "C194 62 Skia numeric candidates; 43 curated Preview-linked, 19 August not curated. C196 27 without own Date (9 of 19 August uncurated); source year/Publication/crew antecedents unverified. C280 company 2026 coverage ends Aug 2; 19 uncurated August partial flight+route hits 0:8/1:4/2:5/3:2, no owner-ledger identity.",
+  "parserProfileDelta": "research-2.8-C295: Resolve (source SHA, physical page, StructParents, MCID) via ParentTree to exact StructElem; require primary Table→TR→TD ancestry and header/grid validation for candidate admission. Treat Sum as independently decoded non-Table section barrier. Exclude subsequent auxiliary Table/TR/TD branches even when they look tabular. Reject cross-page MCID-only joins and index-0-as-leaf errors. Keep Date/year/crew/revision/UID authority separate.",
+  "validation": {
+    "realOriginal": "PASS 3 PDFs, 899/899 page-2 MCID leaf associations, 3/3 Sum outside primary Table",
+    "synthetic": "NOT_PRODUCTION_PARSER",
+    "dartSembast": "NOT_EXECUTED",
+    "publicGrade": "P2",
+    "production": "OPEN"
+  },
+  "privacy": "No raw PDF, roster text, employee IDs, crew, flight numbers, routes, registration or personal content stored.",
+  "syncDebt": "C265 2025 present-empty correction pending: ntTme=2 instTme=0 toCnt=5 ldCnt=4. Prior research log/queue/geometry sync incomplete.",
+  "next": "Authenticate Skia same-export year/Publication and 27 undated crew antecedents, resolve August 19 against date-aware PDC/company and owner-UID Flight; execute evidence-only Sembast lifecycle acceptance in authorized implementation environment."
+}
