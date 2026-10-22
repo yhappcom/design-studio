@@ -1,0 +1,54 @@
+{
+  "id": "C293",
+  "date": "2026-10-22",
+  "status": "RESEARCH_ONLY_PRODUCTION_OPEN",
+  "realOriginalBinaryChecks": {
+    "skia": [
+      {
+        "month": "06",
+        "flateDecoded": 131,
+        "bt": 1604,
+        "tj": 1824,
+        "TJ": 0,
+        "mcid": 1568
+      },
+      {
+        "month": "07",
+        "flateDecoded": 137,
+        "bt": 1690,
+        "tj": 1921,
+        "TJ": 0,
+        "mcid": 1592
+      },
+      {
+        "month": "08",
+        "flateDecoded": 138,
+        "bt": 1654,
+        "tj": 1872,
+        "TJ": 0,
+        "mcid": 1577
+      }
+    ],
+    "pdc": {
+      "pages": 1,
+      "plainTextStreams": 1,
+      "bt": 495,
+      "tj": 495,
+      "TJ": 0,
+      "mcid": 0,
+      "structTree": false
+    }
+  },
+  "newContract": "Tagged Skia and untagged PDC require separate immutable locator variants. Skia uses source SHA/page/Table/TR/TD/MCID/leaf; PDC uses source SHA/page/content object/band/text ordinal/column anchor. Never invent MCIDs for PDC.",
+  "sum": "June standalone literal Sum miss not explained by TJ arrays; cross-BT/ToUnicode tagged Sum boundary still unverified",
+  "priorEvidence": "C194 62 Skia numeric candidates, 27 own-Date absent, 43 curated and 19 uncurated; C280 company 2026 horizon ends Aug 2; no new row-level join in C293",
+  "correction": "C277/C280 2025 present-empty ntTme=2 instTme=0 toCnt=5 ldCnt=4; C265 contrary text stale",
+  "readiness": {
+    "publicGrade": "P2",
+    "production": "OPEN",
+    "dartSembast": "NOT_EXECUTED",
+    "yearPublicationCrew": "UNVERIFIED"
+  },
+  "privacy": "No raw private content retained",
+  "next": "Reconstruct Skia page-2 Sum across BT/Tj/MCID and 27 missing-Date crew antecedents; date-aware match August 19; execute authorized source-only Sembast acceptance."
+}
