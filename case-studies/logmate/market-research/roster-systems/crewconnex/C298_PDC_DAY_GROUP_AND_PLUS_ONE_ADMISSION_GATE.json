@@ -1,0 +1,49 @@
+{
+  "id": "C298",
+  "date": "2026-10-22",
+  "status": "RESEARCH_ONLY",
+  "realPrivatePdc": {
+    "textObjects": 495,
+    "bodyBands": 49,
+    "explicitDateAnchors": 31,
+    "uniqueSequentialCalendarDates": 31,
+    "numericCandidates": 26,
+    "ownDate": 13,
+    "missingOwnDate": 13,
+    "calendarGroupsWithFlights": 15,
+    "nonflightOnlyCalendarGroups": 16,
+    "flightCountPerGroup": {
+      "1": 8,
+      "2": 5,
+      "4": 2
+    },
+    "mixedFlightNonflightGroups": 6,
+    "undatedCandidatesUnderFlightAnchors": 11,
+    "undatedCandidatesUnderNonflightAnchors": 2,
+    "nonflightAnchorBands": [
+      12,
+      46
+    ],
+    "undatedNonflightAnchoredFlightBands": [
+      14,
+      47
+    ],
+    "numericRowsWithPlusOne": 4,
+    "undatedRowsWithPlusOne": 2,
+    "undatedPlusOneBands": [
+      14,
+      47
+    ],
+    "validFourClockSets": 26,
+    "baseElapsedEqualsPrintedBlock": 26,
+    "localElapsedEqualsPrintedBlock": 16
+  },
+  "contract": "Calendar day anchor is a physical group locator, not proof of an undated leg's operational date. Two undated plus-one legs follow nonflight date anchors. Never infer crew/duty continuation, date correction or FlightRecord creation; retain GROUP_DATE_HINT_ONLY and detached review.",
+  "companyCrossCheck": "C297 actual company/PDC: 2 own-dated full-key company candidates, 11 own-dated without match, 13 undated ineligible for full-key join; company August 2026 ends Aug 2. These are historical source comparisons, not UID-owned Flight bindings.",
+  "sourceEvidence": "Original PDC bytes fetched read-only from LogMate; no raw rows or identifiers retained. Existing Skia C194 62 candidates, 27 missing own Date, 19 uncurated August remain prior evidence, not freshly re-decoded.",
+  "synthetic": "8/8 PASS in standalone Python policy oracle, NOT production parser or Sembast.",
+  "publicSearch": "Two focused public searches: no lawful anonymized raw sample or authoritative group-date rule. Official PDC site confirms configurable PDF reporting only.",
+  "publicGrade": "P2",
+  "productionParser": "OPEN",
+  "next": "Independently certify group-date semantics with a lawful sample/manual, Skia year/crew, then UID-owned evidence-only transaction acceptance."
+}
