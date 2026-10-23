@@ -1,7 +1,7 @@
 {
   "schema": "logmate.research.crewconnex.parser-profile.v1",
   "profileId": "crewconnex.pdc-generator.crew-roster-report",
-  "profileVersion": "research-1.3.0-C327",
+  "profileVersion": "research-1.4.0-C328",
   "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
   "verifiedScope": "One private August 2026 PDC Pdf Generator PDF; structural and clock arithmetic evidence only; no public P1 sample",
   "admission": {
@@ -140,7 +140,16 @@
     "c327NonnumericInvalidHourStaBaseCells": 4,
     "c327NonnumericNonHHMMStdLocalCells": 1,
     "c327NumericStrictBaseElapsedMatchesPrintedBlock": 26,
-    "c327NumericStrictLocalElapsedMatchesPrintedBlock": 16
+    "c327NumericStrictLocalElapsedMatchesPrintedBlock": 16,
+    "c328NumericOwnDate": 13,
+    "c328NumericOwnDateAug01To02": 2,
+    "c328NumericOwnDateAug03To31": 11,
+    "c328NumericOmittedDate": 13,
+    "c328UniqueNumericFlightRouteKeysWithinPdf": 26,
+    "c328NumericPairingNonempty": 16,
+    "c328NumericDcNonempty": 0,
+    "c328PdcBlockHMM": 26,
+    "c328CompanyBtHHMMInPartialPairs": 32
   },
   "fieldMap": {
     "Date": {
@@ -249,7 +258,8 @@
     ],
     "unsupported": "fail closed with review reason and no FlightRecord or crew creation",
     "strictClockLexicalGateC327": "Only a verified numeric Activity with required route, four strict-valid HHMM(+1) clocks and actual printed Blk Hrs may reach detached flight-candidate staging. Range check hour<24/minute<60; preserve per-cell +1. Nonflight must be excluded before strict clock validation: 22/22 nonnumeric bands have four clock-position text objects but only 17/22 have four valid clocks, and two nonnumeric route+valid-base intervals are plausible 65/237 minutes. Never synthesize Block from nonflight elapsed clocks.",
-    "timeArithmeticScopeC327": "Numeric base elapsed equals printed Block 26/26, local equals only 16/26 in this private original; equality is layout-specific validation not semantic Block equivalence, operational proof or timezone authority."
+    "timeArithmeticScopeC327": "Numeric base elapsed equals printed Block 26/26, local equals only 16/26 in this private original; equality is layout-specific validation not semantic Block equivalence, operational proof or timezone authority.",
+    "durationNormalizationC328": "For this validated PDC report family, accept strict H:MM and HH:MM as duration lexemes with 00–59 minutes; preserve original raw string, compare typed minutes only. Do not apply +1 clock-day suffix to Blk Hrs, infer Block from nonflight clocks, or equate printed Blk Hrs to canonical company Block. Exact two date-qualified company candidates are 2/2 minute-equal but 0/2 raw-string equal due to width."
   },
   "reconciliation": {
     "sourceCandidate": "detached evidence only",
@@ -262,11 +272,10 @@
     "backupRestore": "quarantine imported stages/approvals/receipts; never trust backup checksum as authority"
   },
   "evidence": {
-    "actual": "Independent binary-safe decode of one private PDC PDF and 495 text objects; exact header, 49 bands, 26/22/1 classification and 26/26 base clock arithmetic; C326 independent original PDC 49-band read-only grid decode: 13 undated numeric rows split by immediately preceding band 11 numeric/1 nonnumeric/1 blank; 18 nonnumeric bands with route+four clocks and zero with printed Block; 26 numeric with all route/four clocks/Block. Separate current product source and synthetic legacy-v16 LBK fixture digest verified in memory. C327 fresh original one-page PDC coordinate/text audit: numeric strict four-clock valid 26/26 and base elapsed=printed Block 26/26; nonnumeric 22 four clock-position objects but only 17 four strict HHMM valid, 18 route+positive strict base elapsed, two route+plausible elapsed (65/237 min), zero printed Block. Four nonnumeric have invalid-hour STA(L/B) pairs and one more has non-HHMM STD(L). No private row values copied.",
-    "synthetic": "Research contract negative fixtures only; not Flutter or Sembast; C326 6 synthetic classifier + 4 owner-admission policy assertions PASS (not Dart/Sembast). C327 independent research admission 17/17 and HHMM(+1) grammar 15/15 PASS; NOT Flutter/Dart/Sembast.",
+    "actual": "Independent binary-safe decode of one private PDC PDF and 495 text objects; exact header, 49 bands, 26/22/1 classification and 26/26 base clock arithmetic; C326 independent original PDC 49-band read-only grid decode: 13 undated numeric rows split by immediately preceding band 11 numeric/1 nonnumeric/1 blank; 18 nonnumeric bands with route+four clocks and zero with printed Block; 26 numeric with all route/four clocks/Block. Separate current product source and synthetic legacy-v16 LBK fixture digest verified in memory. C327 fresh original one-page PDC coordinate/text audit: numeric strict four-clock valid 26/26 and base elapsed=printed Block 26/26; nonnumeric 22 four clock-position objects but only 17 four strict HHMM valid, 18 route+positive strict base elapsed, two route+plausible elapsed (65/237 min), zero printed Block. Four nonnumeric have invalid-hour STA(L/B) pairs and one more has non-HHMM STD(L). No private row values copied. C328 independent original PDC/company-2026 XLSX rejoin: 26 numeric PDC rows; 13 own-Date (2 Aug 01-02, 11 Aug 03-31), 13 undated. Company 159 records, only 3 August through day 02. Flight+route-only cardinality 0:8/1:8/2:6/3:4 (32 partial pairs), two conditional same-date+flight+route matches, both minute-equal despite H:MM vs HH:MM raw-width mismatch. Four partial pairs minute-equal, only two are exact-date candidates. No private rows copied.",
+    "synthetic": "Research contract negative fixtures only; not Flutter or Sembast; C326 6 synthetic classifier + 4 owner-admission policy assertions PASS (not Dart/Sembast). C327 independent research admission 17/17 and HHMM(+1) grammar 15/15 PASS; NOT Flutter/Dart/Sembast. C328 16 duration lexical + 7 admission research-oracle PASS (23/23), not Dart/Sembast.",
     "blocked": "2018/2019/2020-2026 historical PDFs return empty base64 payload at GitHub connector size limit; no original-byte interpretation",
     "notExecuted": [
-      "company XLSX value-level rejoin in this cycle",
       "real Skia same-export year and crew antecedent certification",
       "Dart/Sembast evidence-only API and transaction acceptance",
       "current Dart/Sembast legacy-v16 backup restore runtime and future CrewConnex evidence-only transaction"
@@ -329,6 +338,21 @@
       "id": "c327-valid-numeric-no-owner",
       "input": "numeric Activity with 26/26-like base Block equality but unknown year or owner",
       "expected": "DETACHED_REVIEW_NO_ATTACHMENT"
+    },
+    {
+      "id": "c328-duration-width",
+      "input": "PDC Blk Hrs H:MM vs company bt HH:MM for one exact-date candidate",
+      "expected": "RAW_PRESERVED_MINUTE_EQUAL_CANDIDATE_ONLY"
+    },
+    {
+      "id": "c328-partial-equal-not-match",
+      "input": "same normalized flight+route and minute-equal Block but no certified own Date or UID",
+      "expected": "DETACHED_REVIEW_NO_RECORD_BINDING"
+    },
+    {
+      "id": "c328-company-coverage",
+      "input": "PDC own-Date Aug 03-31, company last observed Aug 02; or PDC own-Date absent",
+      "expected": "OUTSIDE_OBSERVED_DATE_SUPPORT_OR_DATE_UNVERIFIED_NOT_UNOPERATED"
     }
   ],
   "publicationAndRevisionGate": {
@@ -359,5 +383,33 @@
     "actualDartTestExecutedThisRun": false,
     "actualCrewEvidenceStorePresent": false,
     "productionDecision": "Previous C321 conditional warning that v16 backups would be rejected by an unchanged v17 strict validator is superseded by CURRENT code's explicit v1/capability16/30-store import path, in-transaction v17 migration and fixture test. This is source/fixture verification, not runtime acceptance. Future CrewConnex evidence capability and LBK version remain unapproved; do not reuse v17 or assume v2's fixed 37-store registry will automatically accept a new store."
+  },
+  "crossSourceC328": {
+    "evidenceScope": "one private PDC August PDF + private 2026 company XLSX, original-byte independent rejoin; conditional YY26-to-2026 only",
+    "companyRows": 159,
+    "companyAugustObservedRows": 3,
+    "companyAugustObservedLastDay": 2,
+    "pdcNumericCandidates": 26,
+    "pdcOwnDate": 13,
+    "pdcOwnDateWithinObservedAugustDays": 2,
+    "pdcOwnDateAfterObservedAugustDays": 11,
+    "pdcDateAbsent": 13,
+    "partialFlightRouteCompanyCardinality": {
+      "0": 8,
+      "1": 8,
+      "2": 6,
+      "3": 4
+    },
+    "partialCandidatePairs": 32,
+    "partialPairsMinuteEqual": 4,
+    "partialPairsMinuteDifferent": 28,
+    "conditionalExactDateFlightRouteCompanyMatches": 2,
+    "exactDateMinuteEqual": 2,
+    "exactDateRawStringEqual": 0,
+    "exactDateMultipleMatches": 0,
+    "ownerUidMatchesVerified": 0,
+    "centuryApproved": false,
+    "sourceRevisionApproved": false,
+    "interpretation": "Only candidate-level source comparison, not FlightRecord binding or semantic Block equivalence; out-of-observed-date support is not operational nonmatch."
   }
 }
