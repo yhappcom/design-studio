@@ -1,7 +1,7 @@
 {
   "schema": "logmate.research.crewconnex.parser-profile.v1",
   "profileId": "crewconnex.pdc-generator.crew-roster-report",
-  "profileVersion": "research-1.4.0-C328",
+  "profileVersion": "research-1.5.0-C329",
   "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
   "verifiedScope": "One private August 2026 PDC Pdf Generator PDF; structural and clock arithmetic evidence only; no public P1 sample",
   "admission": {
@@ -57,7 +57,8 @@
       "The 49 body-band ordinal is a physical locator only; blank band #13 and nonnumeric bands are continuation barriers, not duty/crew semantics.",
       "A numeric candidate with a printed Blk Hrs cell remains detached until source century/publication, exact owner match and explicit approval are independently validated.",
       "An explicit +1 clock offset is not a flight classifier or missing Date authority: original PDF has +1 in 2 own-dated numeric, 2 undated numeric and 4 nonnumeric bands."
-    ]
+    ],
+    "additionalRealCorpusGateC329": "C/I/C/O raw cell presence never establishes flight/duty/date; 15 numeric+1 nonflight C/I, 14 numeric+2 nonflight C/O; require numeric Activity+printed Block and preserve own-Date-absent barrier states."
   },
   "sampleFingerprint": {
     "pdfVersion": "1.4",
@@ -264,7 +265,8 @@
     "strictClockLexicalGateC327": "Only a verified numeric Activity with required route, four strict-valid HHMM(+1) clocks and actual printed Blk Hrs may reach detached flight-candidate staging. Range check hour<24/minute<60; preserve per-cell +1. Nonflight must be excluded before strict clock validation: 22/22 nonnumeric bands have four clock-position text objects but only 17/22 have four valid clocks, and two nonnumeric route+valid-base intervals are plausible 65/237 minutes. Never synthesize Block from nonflight elapsed clocks.",
     "timeArithmeticScopeC327": "Numeric base elapsed equals printed Block 26/26, local equals only 16/26 in this private original; equality is layout-specific validation not semantic Block equivalence, operational proof or timezone authority.",
     "durationNormalizationC328": "For this validated PDC report family, accept strict H:MM and HH:MM as duration lexemes with 00–59 minutes; preserve original raw string, compare typed minutes only. Do not apply +1 clock-day suffix to Blk Hrs, infer Block from nonflight clocks, or equate printed Blk Hrs to canonical company Block. Exact two date-qualified company candidates are 2/2 minute-equal but 0/2 raw-string equal due to width.",
-    "pairingPresenceC328": "All 13 own-Date numeric rows have Pairing text, but 3 of 13 undated numeric rows also have Pairing; 6 nonnumeric Activity rows also have Pairing. Pairing presence is neither an own-Date surrogate nor a flight classifier, and its absence does not authorize forward-fill. Keep own-Date cell presence and Activity classification separate."
+    "pairingPresenceC328": "All 13 own-Date numeric rows have Pairing text, but 3 of 13 undated numeric rows also have Pairing; 6 nonnumeric Activity rows also have Pairing. Pairing presence is neither an own-Date surrogate nor a flight classifier, and its absence does not authorize forward-fill. Keep own-Date cell presence and Activity classification separate.",
+    "checkInOutAndRolloverC329": "Per-cell raw +1: four numeric STA(L/B)+1 and C/O(L)+1, one numeric STD(B)+1; four nonflight STA(L/B)+1. Never assume arrival-only, flight-only or day correction. Two own-Date-absent numeric C/I+C/O+1 cases follow respectively blank and nonflight immediate predecessors; do not forward-fill across either."
   },
   "reconciliation": {
     "sourceCandidate": "detached evidence only",
@@ -358,6 +360,26 @@
       "id": "c328-company-coverage",
       "input": "PDC own-Date Aug 03-31, company last observed Aug 02; or PDC own-Date absent",
       "expected": "OUTSIDE_OBSERVED_DATE_SUPPORT_OR_DATE_UNVERIFIED_NOT_UNOPERATED"
+    },
+    {
+      "id": "c329-undated-after-blank-plus-one-ci-co",
+      "input": "numeric Activity and printed Block, own Date absent, immediately previous blank, C/I and C/O present, per-cell +1",
+      "expected": "DATE_UNVERIFIED_DETACHED; no duty/crew/date forward-fill"
+    },
+    {
+      "id": "c329-undated-after-nonflight-plus-one-ci-co",
+      "input": "numeric Activity and printed Block, own Date absent, previous nonflight with Date, C/I and C/O present, per-cell +1",
+      "expected": "DATE_UNVERIFIED_DETACHED; nonflight barrier not a continuation authority"
+    },
+    {
+      "id": "c329-nonflight-with-ci-co",
+      "input": "nonnumeric Activity with C/I or C/O and clocks but no printed Block",
+      "expected": "NONFLIGHT_EXCLUDED; never synthesize Block"
+    },
+    {
+      "id": "c329-departure-base-plus-one",
+      "input": "numeric candidate STD(B) carries +1 independently of STA(L/B) +1",
+      "expected": "PRESERVE_PER_CELL_RAW_OFFSET; no automatic date correction"
     }
   ],
   "publicationAndRevisionGate": {
@@ -416,5 +438,49 @@
     "centuryApproved": false,
     "sourceRevisionApproved": false,
     "interpretation": "Only candidate-level source comparison, not FlightRecord binding or semantic Block equivalence; out-of-observed-date support is not operational nonmatch."
+  },
+  "crossFamilyC329": {
+    "verifiedAt": "2026-10-24 04:58 KST",
+    "pdcBlob": "8e7fec30f98458c770053bd7739e60869a87e33b",
+    "actualPdcTextObjects": 495,
+    "actualPdcBodyBands": 49,
+    "numericCandidates": 26,
+    "nonflightBands": 22,
+    "blankBands": 1,
+    "ciBands": {
+      "numeric": 15,
+      "nonflight": 1
+    },
+    "coBands": {
+      "numeric": 14,
+      "nonflight": 2
+    },
+    "plusOneBands": {
+      "numeric": 4,
+      "nonflight": 4
+    },
+    "numericDepartureBasePlusOne": 1,
+    "undatedNumericWithCiCoPlusOneAfterBlank": 1,
+    "undatedNumericWithCiCoPlusOneAfterNonflight": 1,
+    "sourceStructuralAssertionsPassed": 10,
+    "sourceStructuralAssertionsTotal": 10,
+    "syntheticResearchPolicyPassed": 10,
+    "syntheticResearchPolicyTotal": 10,
+    "skiaManifestOnly": {
+      "rows": 62,
+      "uniqueFieldLocators": 310,
+      "curatedLinks": 43,
+      "augustNonPreview": 19,
+      "unverifiedYear": 62
+    },
+    "notVerified": [
+      "same-export century/publication",
+      "crew name/continuation",
+      "owner UID Flight match",
+      "Dart/Sembast transaction",
+      "source-complete August company coverage"
+    ],
+    "publicSampleGrade": "P2",
+    "productionParser": "OPEN"
   }
 }
