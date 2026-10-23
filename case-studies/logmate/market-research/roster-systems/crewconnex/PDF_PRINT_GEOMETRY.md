@@ -12,7 +12,7 @@ Four wholly synthetic, two-page text-layer PDF fixtures were generated and check
 
 ## Real Skia comparison — 2026-10-08 10:56 KST
 
-The June/July/August printer PDFs have first-page header bands but no repeated header on page 2. July and August page 2 contain a `Sum` section; June page 2 does not. The `From` header X coordinate is 363.05/357.02/357.02 across the three months. Header geometry therefore varies, and exact ToUnicode label decoding still requires independent validation. This is structural evidence, not a production parser PASS.
+The June/July/August printer PDFs have first-page header bands but no repeated header on page 2. **CORRECTED by later original-PDF ParentTree evidence C295:** all three page-2 outputs contain `Sum` as a non-primary-Table leaf; the earlier June `Sum`-absence statement is superseded. The `From` header X coordinate is 363.05/357.02/357.02 across the three months. Header geometry therefore varies, and exact ToUnicode label decoding still requires independent validation. This is structural evidence, not a production parser PASS.
 
 ## 2026-10-08 20:03 KST — producer and export-time fingerprint
 
