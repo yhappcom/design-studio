@@ -1,7 +1,7 @@
 {
   "id": "C315",
   "date": "2026-10-23",
-  "status": "RESEARCH_ONLY_PRODUCTION_OPEN",
+  "status": "SUPERSEDED_BY_C316_TYPED_MCR_CORRECTION_RESEARCH_ONLY",
   "source": "Read-only original three Skia PDFs; C194 locator manifest; privacy-safe structural counts only",
   "months": [
     {
@@ -42,9 +42,21 @@
     "crewColumnsPresent": 62,
     "crewCellPipeRows": 26
   },
-  "decision": "C194 TR ordinal excludes zero-TD structural page-break TR, but includes nonflight rows. Raw /K index misaddresses six page-2 candidates. Preserve both ordinal bases and validate source/page/TD/MCID. No date/crew inference.",
+  "decision": "SUPERSEDED: the purported empty structural TR was an inline page-2 /Type /MCR. Typed primary TR traversal matches all C194 locators without row deletion. Preserve old rawTR fields as historical mislabels only.",
   "synthetic": "12/12 Python miniature-table tests; not Dart/Sembast",
   "publicGrade": "P2",
   "productionReady": false,
-  "syncDebt": "C200/C265 2025 corrections blocked; correct C277/C280 counts ntTme=2 instTme=0 toCnt=5 ldCnt=4"
+  "syncDebt": "C200/C265 2025 corrections blocked; correct C277/C280 counts ntTme=2 instTme=0 toCnt=5 ldCnt=4",
+  "correction": {
+    "verified": "2026-10-23 C316 original-PDF typed /K inspection",
+    "rawTR_is_mixed_K_child_count_not_TR": "42/46/44",
+    "actualPrimaryTR": "41/45/43",
+    "emptyPrimaryTR": "0/0/0",
+    "page2DirectMCR": "1/1/1",
+    "auxiliaryTR": "0/7/5",
+    "trOnlyOrdinalMatches": "62/62",
+    "fiveFieldLocatorMatches": "310/310",
+    "consequence": "Do not implement an empty-TR normalizer; traverse only primary /S /TR typed children, excluding direct /Type /MCR, integer MCID and auxiliary Tables. Historical rawOrdinalMatches=56/62 counted mixed children, not genuine TR objects.",
+    "source": "C316 original source audit; local unsynced bundle"
+  }
 }
