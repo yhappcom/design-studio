@@ -1,7 +1,7 @@
 {
   "schema": "logmate.research.crewconnex.parser-profile.v1",
   "profileId": "crewconnex.pdc-generator.crew-roster-report",
-  "profileVersion": "research-1.0.0",
+  "profileVersion": "research-1.1.0-C320",
   "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
   "verifiedScope": "One private August 2026 PDC Pdf Generator PDF; structural and clock arithmetic evidence only; no public P1 sample",
   "admission": {
@@ -268,5 +268,15 @@
       "input": "backup-origin approval without trusted source-stage revalidation",
       "expected": "QUARANTINE"
     }
-  ]
+  ],
+  "publicationAndRevisionGate": {
+    "sourcePeriod": "printed same-report 01Aug26–31Aug26, subject to validated report-family/period parsing",
+    "publicationRevisionToken": "NOT_OBSERVED_IN_VERIFIED_PDF",
+    "externalPdcNotifications": "current official PDC app/backend capability, NOT source-bound to this PDF",
+    "sourceCaptureTime": "not revision order authority",
+    "samePrintedBlockNewFingerprintOrCrew": "new detached snapshot observation and explicit review; no scalar SourceEvidenceHistory notice substitution",
+    "missingCrewColumns": "CREW_NOT_PROVIDED, not deletion",
+    "ownerWrite": "future UID-owned existing Flight only, exact FlightRevision and EvidenceHead CAS plus immutable receipt; no Flight/Block/outbox mutation",
+    "runtimeStatus": "NOT_TESTED; current LogMate capability 16 and LBK v1/30-store registry contain no CrewConnex evidence-only stores"
+  }
 }
