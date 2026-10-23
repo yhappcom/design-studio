@@ -1,7 +1,7 @@
 {
   "schema": "logmate.research.crewconnex.parser-profile.v1",
   "profileId": "crewconnex.pdc-generator.crew-roster-report",
-  "profileVersion": "research-1.5.0-C329",
+  "profileVersion": "research-1.6.0-C330",
   "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
   "verifiedScope": "One private August 2026 PDC Pdf Generator PDF; structural and clock arithmetic evidence only; no public P1 sample",
   "admission": {
@@ -266,7 +266,49 @@
     "timeArithmeticScopeC327": "Numeric base elapsed equals printed Block 26/26, local equals only 16/26 in this private original; equality is layout-specific validation not semantic Block equivalence, operational proof or timezone authority.",
     "durationNormalizationC328": "For this validated PDC report family, accept strict H:MM and HH:MM as duration lexemes with 00–59 minutes; preserve original raw string, compare typed minutes only. Do not apply +1 clock-day suffix to Blk Hrs, infer Block from nonflight clocks, or equate printed Blk Hrs to canonical company Block. Exact two date-qualified company candidates are 2/2 minute-equal but 0/2 raw-string equal due to width.",
     "pairingPresenceC328": "All 13 own-Date numeric rows have Pairing text, but 3 of 13 undated numeric rows also have Pairing; 6 nonnumeric Activity rows also have Pairing. Pairing presence is neither an own-Date surrogate nor a flight classifier, and its absence does not authorize forward-fill. Keep own-Date cell presence and Activity classification separate.",
-    "checkInOutAndRolloverC329": "Per-cell raw +1: four numeric STA(L/B)+1 and C/O(L)+1, one numeric STD(B)+1; four nonflight STA(L/B)+1. Never assume arrival-only, flight-only or day correction. Two own-Date-absent numeric C/I+C/O+1 cases follow respectively blank and nonflight immediate predecessors; do not forward-fill across either."
+    "checkInOutAndRolloverC329": "Per-cell raw +1: four numeric STA(L/B)+1 and C/O(L)+1, one numeric STD(B)+1; four nonflight STA(L/B)+1. Never assume arrival-only, flight-only or day correction. Two own-Date-absent numeric C/I+C/O+1 cases follow respectively blank and nonflight immediate predecessors; do not forward-fill across either.",
+    "clockOffsetAndDayArithmeticC330": {
+      "source": "original private PDC 2026-08 PDF, SHA blob 8e7fec30f98458c770053bd7739e60869a87e33b; independent 495 BT/Tj decode",
+      "numericCandidateCount": 26,
+      "strictValidNumericClockCells": 104,
+      "baseElapsedVsPrintedBlockMinutes": {
+        "equal": 26,
+        "different": 0
+      },
+      "localElapsedMinusPrintedBlockMinutes": {
+        "0": 16,
+        "60": 4,
+        "120": 1,
+        "-120": 1,
+        "-60": 4
+      },
+      "naiveBaseArrivalPlusOneButDeparturePlusOneIgnored": {
+        "equal": 25,
+        "falseOvercount24Hours": 1,
+        "physicalBandOrdinal": 14,
+        "ownDatePresent": false
+      },
+      "numericWithArrivalPlusOne": 4,
+      "numericWithDepartureBasePlusOne": 1,
+      "airportOffsetConsistency": {
+        "numericEndpointPairs": 52,
+        "distinctAirportCodes": 13,
+        "inconsistentAirportCodes": 0,
+        "offsetGroupsMinutesModulo1440": {
+          "0": 8,
+          "60": 1,
+          "1320": 1,
+          "1380": 3
+        },
+        "nonnumericValidRouteEndpointPairs": 34,
+        "nonnumericDistinctAirportCodes": 6,
+        "nonnumericSharedWithNumeric": 6,
+        "nonflightOnlyAirportCodes": 0,
+        "sharedAirportOffsetConflicts": 0,
+        "nonflightWithinAirportOffsetConflicts": 0
+      },
+      "interpretation": "Source-relative local/base clock offset consistency is a lexical/cross-cell check, not authoritative timezone or operation-day correction; validate each +1 per cell and subtract both base endpoints, never arrival-only +1 or local elapsed as Block. Nonflight route/clocks remain excluded even with consistent airport offsets."
+    }
   },
   "reconciliation": {
     "sourceCandidate": "detached evidence only",
@@ -482,5 +524,37 @@
     ],
     "publicSampleGrade": "P2",
     "productionParser": "OPEN"
+  },
+  "crossFamilyPhysicalC330": {
+    "evidence": "independent reaggregation of existing C194 original-PDF-derived privacy-safe manifest, not fresh Skia PDF decode",
+    "manifestBlob": "625c4e4367d12189f96cf4ee85cd1f3bae71e035",
+    "skiaNumeric": 62,
+    "uniqueFiveFieldPageMcids": 310,
+    "relativeTdOffsets": [
+      "Activity→From +3",
+      "From→To +4",
+      "To→BLH +6",
+      "BLH→ACReg +2"
+    ],
+    "unexpectedRelativeTdOffsetCount": 0,
+    "perMonthPhysicalTdCountAndActivityIndex": {
+      "06": {
+        "34/8": 9,
+        "32/6": 7,
+        "33/7": 2
+      },
+      "07": {
+        "30/8": 10,
+        "28/6": 10,
+        "29/7": 2
+      },
+      "08": {
+        "31/8": 11,
+        "29/6": 10,
+        "30/7": 1
+      }
+    },
+    "dateOrCrewSemanticInheritanceAuthorized": false,
+    "sourceCenturyOrPublicationAuthenticated": false
   }
 }
