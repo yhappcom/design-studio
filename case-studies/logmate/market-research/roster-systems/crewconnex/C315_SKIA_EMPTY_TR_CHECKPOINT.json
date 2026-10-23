@@ -1,0 +1,50 @@
+{
+  "id": "C315",
+  "date": "2026-10-23",
+  "status": "RESEARCH_ONLY_PRODUCTION_OPEN",
+  "source": "Read-only original three Skia PDFs; C194 locator manifest; privacy-safe structural counts only",
+  "months": [
+    {
+      "month": "06",
+      "rawTR": 42,
+      "nonemptyTR": 41,
+      "emptyRawTR": 36,
+      "candidates": 18,
+      "rawOrdinalMatches": 16,
+      "nonemptyOrdinalMatches": 18
+    },
+    {
+      "month": "07",
+      "rawTR": 46,
+      "nonemptyTR": 45,
+      "emptyRawTR": 40,
+      "candidates": 22,
+      "rawOrdinalMatches": 20,
+      "nonemptyOrdinalMatches": 22
+    },
+    {
+      "month": "08",
+      "rawTR": 44,
+      "nonemptyTR": 43,
+      "emptyRawTR": 35,
+      "candidates": 22,
+      "rawOrdinalMatches": 20,
+      "nonemptyOrdinalMatches": 22
+    }
+  ],
+  "realOriginal": {
+    "flateStreams": 406,
+    "textOps": 5617,
+    "mcidBlocks": 4737,
+    "unmappedGlyphs": 0,
+    "allFiveFieldLocatorsVerified": 310,
+    "rawOrdinalFieldMatches": 280,
+    "crewColumnsPresent": 62,
+    "crewCellPipeRows": 26
+  },
+  "decision": "C194 TR ordinal excludes zero-TD structural page-break TR, but includes nonflight rows. Raw /K index misaddresses six page-2 candidates. Preserve both ordinal bases and validate source/page/TD/MCID. No date/crew inference.",
+  "synthetic": "12/12 Python miniature-table tests; not Dart/Sembast",
+  "publicGrade": "P2",
+  "productionReady": false,
+  "syncDebt": "C200/C265 2025 corrections blocked; correct C277/C280 counts ntTme=2 instTme=0 toCnt=5 ldCnt=4"
+}
