@@ -1,7 +1,7 @@
 {
   "schema": "logmate.research.crewconnex.parser-profile.v1",
   "profileId": "crewconnex.pdc-generator.crew-roster-report",
-  "profileVersion": "research-1.2.0-C326",
+  "profileVersion": "research-1.3.0-C327",
   "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
   "verifiedScope": "One private August 2026 PDC Pdf Generator PDF; structural and clock arithmetic evidence only; no public P1 sample",
   "admission": {
@@ -124,7 +124,23 @@
     "numericCandidatesMissingRequiredRouteClocksOrBlock": 0,
     "numericExplicitPlusOneWithOwnDate": 2,
     "numericExplicitPlusOneWithOmittedDate": 2,
-    "nonnumericBandsWithExplicitPlusOne": 4
+    "nonnumericBandsWithExplicitPlusOne": 4,
+    "c327StrictFourClockValidNumeric": 26,
+    "c327StrictFourClockValidNonnumeric": 17,
+    "c327NonnumericClockPositionTextObjects": 22,
+    "c327NonnumericRouteAndFourClockPositionTextObjects": 18,
+    "c327NonnumericStrictValidBaseClockPositive": 18,
+    "c327NonnumericRouteAndStrictValidBaseClockPositive": 18,
+    "c327NonnumericRouteAndBaseElapsed45To720Minutes": 2,
+    "c327NonnumericStrictValidStdLocal": 21,
+    "c327NonnumericStrictValidStdBase": 22,
+    "c327NonnumericStrictValidStaLocal": 18,
+    "c327NonnumericStrictValidStaBase": 18,
+    "c327NonnumericInvalidHourStaLocalCells": 4,
+    "c327NonnumericInvalidHourStaBaseCells": 4,
+    "c327NonnumericNonHHMMStdLocalCells": 1,
+    "c327NumericStrictBaseElapsedMatchesPrintedBlock": 26,
+    "c327NumericStrictLocalElapsedMatchesPrintedBlock": 16
   },
   "fieldMap": {
     "Date": {
@@ -231,7 +247,9 @@
       "date correction",
       "cross-generator revision order"
     ],
-    "unsupported": "fail closed with review reason and no FlightRecord or crew creation"
+    "unsupported": "fail closed with review reason and no FlightRecord or crew creation",
+    "strictClockLexicalGateC327": "Only a verified numeric Activity with required route, four strict-valid HHMM(+1) clocks and actual printed Blk Hrs may reach detached flight-candidate staging. Range check hour<24/minute<60; preserve per-cell +1. Nonflight must be excluded before strict clock validation: 22/22 nonnumeric bands have four clock-position text objects but only 17/22 have four valid clocks, and two nonnumeric route+valid-base intervals are plausible 65/237 minutes. Never synthesize Block from nonflight elapsed clocks.",
+    "timeArithmeticScopeC327": "Numeric base elapsed equals printed Block 26/26, local equals only 16/26 in this private original; equality is layout-specific validation not semantic Block equivalence, operational proof or timezone authority."
   },
   "reconciliation": {
     "sourceCandidate": "detached evidence only",
@@ -244,8 +262,8 @@
     "backupRestore": "quarantine imported stages/approvals/receipts; never trust backup checksum as authority"
   },
   "evidence": {
-    "actual": "Independent binary-safe decode of one private PDC PDF and 495 text objects; exact header, 49 bands, 26/22/1 classification and 26/26 base clock arithmetic; C326 independent original PDC 49-band read-only grid decode: 13 undated numeric rows split by immediately preceding band 11 numeric/1 nonnumeric/1 blank; 18 nonnumeric bands with route+four clocks and zero with printed Block; 26 numeric with all route/four clocks/Block. Separate current product source and synthetic legacy-v16 LBK fixture digest verified in memory.",
-    "synthetic": "Research contract negative fixtures only; not Flutter or Sembast; C326 6 synthetic classifier + 4 owner-admission policy assertions PASS (not Dart/Sembast).",
+    "actual": "Independent binary-safe decode of one private PDC PDF and 495 text objects; exact header, 49 bands, 26/22/1 classification and 26/26 base clock arithmetic; C326 independent original PDC 49-band read-only grid decode: 13 undated numeric rows split by immediately preceding band 11 numeric/1 nonnumeric/1 blank; 18 nonnumeric bands with route+four clocks and zero with printed Block; 26 numeric with all route/four clocks/Block. Separate current product source and synthetic legacy-v16 LBK fixture digest verified in memory. C327 fresh original one-page PDC coordinate/text audit: numeric strict four-clock valid 26/26 and base elapsed=printed Block 26/26; nonnumeric 22 four clock-position objects but only 17 four strict HHMM valid, 18 route+positive strict base elapsed, two route+plausible elapsed (65/237 min), zero printed Block. Four nonnumeric have invalid-hour STA(L/B) pairs and one more has non-HHMM STD(L). No private row values copied.",
+    "synthetic": "Research contract negative fixtures only; not Flutter or Sembast; C326 6 synthetic classifier + 4 owner-admission policy assertions PASS (not Dart/Sembast). C327 independent research admission 17/17 and HHMM(+1) grammar 15/15 PASS; NOT Flutter/Dart/Sembast.",
     "blocked": "2018/2019/2020-2026 historical PDFs return empty base64 payload at GitHub connector size limit; no original-byte interpretation",
     "notExecuted": [
       "company XLSX value-level rejoin in this cycle",
@@ -291,6 +309,26 @@
       "id": "restore",
       "input": "backup-origin approval without trusted source-stage revalidation",
       "expected": "QUARANTINE"
+    },
+    {
+      "id": "c327-plausible-nonflight",
+      "input": "nonnumeric Activity, valid route and four strict clocks, positive base elapsed 65 or 237 minutes, no printed Block",
+      "expected": "NONFLIGHT_EXCLUDED_NO_BLOCK_INFERENCE"
+    },
+    {
+      "id": "c327-invalid-nonflight-clock",
+      "input": "nonnumeric Activity with four text-position cells but invalid-hour arrival tokens",
+      "expected": "NONFLIGHT_EXCLUDED_BEFORE_CLOCK_VALIDATION"
+    },
+    {
+      "id": "c327-invalid-numeric-clock",
+      "input": "numeric Activity with out-of-range HHMM or unsupported day suffix",
+      "expected": "DETACHED_REVIEW_INVALID_CLOCK"
+    },
+    {
+      "id": "c327-valid-numeric-no-owner",
+      "input": "numeric Activity with 26/26-like base Block equality but unknown year or owner",
+      "expected": "DETACHED_REVIEW_NO_ATTACHMENT"
     }
   ],
   "publicationAndRevisionGate": {
