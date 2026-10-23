@@ -149,7 +149,11 @@
     "c328NumericPairingNonempty": 16,
     "c328NumericDcNonempty": 0,
     "c328PdcBlockHMM": 26,
-    "c328CompanyBtHHMMInPartialPairs": 32
+    "c328CompanyBtHHMMInPartialPairs": 32,
+    "c328OwnDatedNumericWithPairing": 13,
+    "c328UndatedNumericWithPairing": 3,
+    "c328UndatedNumericWithoutPairing": 10,
+    "c328NonnumericWithPairing": 6
   },
   "fieldMap": {
     "Date": {
@@ -259,7 +263,8 @@
     "unsupported": "fail closed with review reason and no FlightRecord or crew creation",
     "strictClockLexicalGateC327": "Only a verified numeric Activity with required route, four strict-valid HHMM(+1) clocks and actual printed Blk Hrs may reach detached flight-candidate staging. Range check hour<24/minute<60; preserve per-cell +1. Nonflight must be excluded before strict clock validation: 22/22 nonnumeric bands have four clock-position text objects but only 17/22 have four valid clocks, and two nonnumeric route+valid-base intervals are plausible 65/237 minutes. Never synthesize Block from nonflight elapsed clocks.",
     "timeArithmeticScopeC327": "Numeric base elapsed equals printed Block 26/26, local equals only 16/26 in this private original; equality is layout-specific validation not semantic Block equivalence, operational proof or timezone authority.",
-    "durationNormalizationC328": "For this validated PDC report family, accept strict H:MM and HH:MM as duration lexemes with 00–59 minutes; preserve original raw string, compare typed minutes only. Do not apply +1 clock-day suffix to Blk Hrs, infer Block from nonflight clocks, or equate printed Blk Hrs to canonical company Block. Exact two date-qualified company candidates are 2/2 minute-equal but 0/2 raw-string equal due to width."
+    "durationNormalizationC328": "For this validated PDC report family, accept strict H:MM and HH:MM as duration lexemes with 00–59 minutes; preserve original raw string, compare typed minutes only. Do not apply +1 clock-day suffix to Blk Hrs, infer Block from nonflight clocks, or equate printed Blk Hrs to canonical company Block. Exact two date-qualified company candidates are 2/2 minute-equal but 0/2 raw-string equal due to width.",
+    "pairingPresenceC328": "All 13 own-Date numeric rows have Pairing text, but 3 of 13 undated numeric rows also have Pairing; 6 nonnumeric Activity rows also have Pairing. Pairing presence is neither an own-Date surrogate nor a flight classifier, and its absence does not authorize forward-fill. Keep own-Date cell presence and Activity classification separate."
   },
   "reconciliation": {
     "sourceCandidate": "detached evidence only",
@@ -272,7 +277,7 @@
     "backupRestore": "quarantine imported stages/approvals/receipts; never trust backup checksum as authority"
   },
   "evidence": {
-    "actual": "Independent binary-safe decode of one private PDC PDF and 495 text objects; exact header, 49 bands, 26/22/1 classification and 26/26 base clock arithmetic; C326 independent original PDC 49-band read-only grid decode: 13 undated numeric rows split by immediately preceding band 11 numeric/1 nonnumeric/1 blank; 18 nonnumeric bands with route+four clocks and zero with printed Block; 26 numeric with all route/four clocks/Block. Separate current product source and synthetic legacy-v16 LBK fixture digest verified in memory. C327 fresh original one-page PDC coordinate/text audit: numeric strict four-clock valid 26/26 and base elapsed=printed Block 26/26; nonnumeric 22 four clock-position objects but only 17 four strict HHMM valid, 18 route+positive strict base elapsed, two route+plausible elapsed (65/237 min), zero printed Block. Four nonnumeric have invalid-hour STA(L/B) pairs and one more has non-HHMM STD(L). No private row values copied. C328 independent original PDC/company-2026 XLSX rejoin: 26 numeric PDC rows; 13 own-Date (2 Aug 01-02, 11 Aug 03-31), 13 undated. Company 159 records, only 3 August through day 02. Flight+route-only cardinality 0:8/1:8/2:6/3:4 (32 partial pairs), two conditional same-date+flight+route matches, both minute-equal despite H:MM vs HH:MM raw-width mismatch. Four partial pairs minute-equal, only two are exact-date candidates. No private rows copied.",
+    "actual": "Independent binary-safe decode of one private PDC PDF and 495 text objects; exact header, 49 bands, 26/22/1 classification and 26/26 base clock arithmetic; C326 independent original PDC 49-band read-only grid decode: 13 undated numeric rows split by immediately preceding band 11 numeric/1 nonnumeric/1 blank; 18 nonnumeric bands with route+four clocks and zero with printed Block; 26 numeric with all route/four clocks/Block. Separate current product source and synthetic legacy-v16 LBK fixture digest verified in memory. C327 fresh original one-page PDC coordinate/text audit: numeric strict four-clock valid 26/26 and base elapsed=printed Block 26/26; nonnumeric 22 four clock-position objects but only 17 four strict HHMM valid, 18 route+positive strict base elapsed, two route+plausible elapsed (65/237 min), zero printed Block. Four nonnumeric have invalid-hour STA(L/B) pairs and one more has non-HHMM STD(L). No private row values copied. C328 independent original PDC/company-2026 XLSX rejoin: 26 numeric PDC rows; 13 own-Date (2 Aug 01-02, 11 Aug 03-31), 13 undated. Company 159 records, only 3 August through day 02. Flight+route-only cardinality 0:8/1:8/2:6/3:4 (32 partial pairs), two conditional same-date+flight+route matches, both minute-equal despite H:MM vs HH:MM raw-width mismatch. Four partial pairs minute-equal, only two are exact-date candidates. No private rows copied. C328 same-run PDC Pairing cross-tab: numeric own-Date+Pairing 13, numeric omitted-Date+Pairing 3, numeric omitted-Date without Pairing 10; nonnumeric Pairing 6. Do not infer date/duty from Pairing.",
     "synthetic": "Research contract negative fixtures only; not Flutter or Sembast; C326 6 synthetic classifier + 4 owner-admission policy assertions PASS (not Dart/Sembast). C327 independent research admission 17/17 and HHMM(+1) grammar 15/15 PASS; NOT Flutter/Dart/Sembast. C328 16 duration lexical + 7 admission research-oracle PASS (23/23), not Dart/Sembast.",
     "blocked": "2018/2019/2020-2026 historical PDFs return empty base64 payload at GitHub connector size limit; no original-byte interpretation",
     "notExecuted": [
