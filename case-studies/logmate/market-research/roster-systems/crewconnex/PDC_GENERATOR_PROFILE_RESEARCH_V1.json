@@ -55,7 +55,8 @@
       "A four-clock route-bearing nonnumeric Activity is NOT a flight candidate (18 actual bands); classify activity before clock/route validation.",
       "An omitted Date in a numeric candidate is unresolved even when immediately preceded by a numeric band (11), a nonnumeric band (1), or a blank band (1).",
       "The 49 body-band ordinal is a physical locator only; blank band #13 and nonnumeric bands are continuation barriers, not duty/crew semantics.",
-      "A numeric candidate with a printed Blk Hrs cell remains detached until source century/publication, exact owner match and explicit approval are independently validated."
+      "A numeric candidate with a printed Blk Hrs cell remains detached until source century/publication, exact owner match and explicit approval are independently validated.",
+      "An explicit +1 clock offset is not a flight classifier or missing Date authority: original PDF has +1 in 2 own-dated numeric, 2 undated numeric and 4 nonnumeric bands."
     ]
   },
   "sampleFingerprint": {
@@ -120,7 +121,10 @@
     },
     "numericMissingDateNearestEarlierPrintedDateBandNonnumeric": 2,
     "nonnumericBandsWithPrintedBlock": 0,
-    "numericCandidatesMissingRequiredRouteClocksOrBlock": 0
+    "numericCandidatesMissingRequiredRouteClocksOrBlock": 0,
+    "numericExplicitPlusOneWithOwnDate": 2,
+    "numericExplicitPlusOneWithOmittedDate": 2,
+    "nonnumericBandsWithExplicitPlusOne": 4
   },
   "fieldMap": {
     "Date": {
