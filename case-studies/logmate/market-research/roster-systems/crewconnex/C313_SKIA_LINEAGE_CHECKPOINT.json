@@ -1,0 +1,68 @@
+{
+  "id": "C313",
+  "date": "2026-10-23",
+  "status": "RESEARCH_ONLY_PRODUCTION_OPEN",
+  "scope": "Independent reaggregation of previously committed C194 real-PDF-derived privacy-safe manifest plus C295 verified original-PDF Sum mapping; no fresh private PDF/XLSX byte decode, crew data, UID-owned record match or Dart/Sembast run",
+  "manifestBlob": "625c4e4367d12189f96cf4ee85cd1f3bae71e035",
+  "perMonth": {
+    "june": {
+      "numeric": 18,
+      "ownDate": 11,
+      "missingOwnDate": 7,
+      "curated": 18,
+      "page2Numeric": 2,
+      "page2Undated": 1
+    },
+    "july": {
+      "numeric": 22,
+      "ownDate": 12,
+      "missingOwnDate": 10,
+      "curated": 22,
+      "page2Numeric": 2,
+      "page2Undated": 0
+    },
+    "august": {
+      "numeric": 22,
+      "ownDate": 12,
+      "missingOwnDate": 10,
+      "curated": 3,
+      "notCurated": 19,
+      "page2Numeric": 2,
+      "page2Undated": 0
+    }
+  },
+  "undatedPredecessor": {
+    "immediateDatedNumeric": 22,
+    "immediateUndatedNumeric": 4,
+    "interveningPhysicalRow": 1
+  },
+  "undatedRunLengths": {
+    "single": 21,
+    "triple": 2
+  },
+  "selectedFieldLocators": 310,
+  "uniqueSourcePageMCID": 310,
+  "page2SelectedFieldsBeforeVerifiedSum": 30,
+  "page2SelectedFieldsAtOrAfterSum": 0,
+  "syntheticMutationsRejected": [
+    "post-Sum locator",
+    "invalid relative TD",
+    "duplicate physical row"
+  ],
+  "sourceBoundary": "No date/crew inheritance from adjacency, page continuation, Pairing or printed period; no FlightRecord creation or Block overwrite; existing UID-owned Flight only after verified full date and explicit review",
+  "priorAugustCompanyPartialCardinality": {
+    "zero": 8,
+    "one": 4,
+    "two": 5,
+    "three": 2
+  },
+  "publicSampleGrade": "P2",
+  "productionParserReady": false,
+  "open": [
+    "same-export Skia operational century/date",
+    "crew/section antecedents",
+    "August 19 date-aware company/PDC/UID-owner matching",
+    "actual Sembast evidence-only CAS/receipt/rollback/backup"
+  ],
+  "syncDebt": "C265/C200 wrong 2025 blank-cell counts. C277/C280 correct ntTme=2 instTme=0 toCnt=5 ldCnt=4. Both update_file attempts blocked by OpenAI safety checks."
+}
