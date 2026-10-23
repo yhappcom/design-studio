@@ -79,3 +79,22 @@ Independently re-read the committed C194 62-row locator manifest: 62 unique phys
 An independent file-backed SQLite synthetic-only contract oracle passed 12 connected scenario groups, including 500 deterministic state transitions, real SQLite dual-connection stale-head fencing, injected rollback, UID isolation, alias/identity collisions, historical receipt replay and no ordinary outbox/Block mutation. This is NOT Dart/Sembast, UID-ledger, production parser or multi-device Sync acceptance. Public sample grade P2 and production parser OPEN unchanged.
 
 Next integrated gate: obtain source-bound Skia operational year/publication and actual owner-ledger alias cardinality, then run an authorized Dart/Sembast evidence-only v16 migration, alias-safe dual CAS, receipt replay, account deletion and .lbk restore suite. LogMate remains read-only.
+
+## 2026-10-23 C317 — Original Skia candidate crew-cell topology and nonflight-barrier exception
+
+**Direct private original-PDF structural audit, not a semantic crew certification.** Read-only GitHub base64 fetches of the three original 2026-06/07/08 Skia PDFs matched C316's Git blobs (June `e96bf5a7`, July `d306cad8`, August `29ac0405`). An independent typed Table → TR → TD → NonStruct `/K` traversal, excluding the direct page-2 MCR, re-resolved **62/62** C194 numeric candidates and **310/310** selected Activity/From/To/BLH/ACReg MCID locators without error. Primary TR counts are **41/45/43**, not C315's mixed-child counts; C315 is now explicitly marked superseded. The original source's text-layer crew values were **not independently re-decoded in C317**; own-Date classifications rely on C194 TD shapes cross-validated against C196's original text audit.
+
+For these 62 candidates, the header-to-body TD shortening is exactly the omitted-leading-cell shift: `bodyTDCount = headerTDCount - (8 - activityTD_1based)` (62/62). Only after this source-specific shift were Emp.# / CC / Pos. tagged-cell **leaf counts** inspected. Counts are structural MCID leaves, **not persons or identities**:
+
+| Source | Own-Date present: crew leaves | Own-Date absent: crew leaves |
+| --- | --- | --- |
+| June, 18 candidates | 11 rows at 6/6/6 | 7 rows at 1/1/1 |
+| July, 22 candidates | 11 rows at 6/6/6, 1 at 7/7/7 | 10 rows at 1/1/1 |
+| August, 22 candidates | 8 rows at 6/6/6, 4 at 7/7/7 | **9 rows at 1/1/1, 1 row at 6/6/6** |
+| **All 62** | **35 rows multi-leaf** | **26 rows single-leaf; 1 multi-leaf exception** |
+
+**Material exception:** August **primary TR #14 (body row #13, page 1)** has no own Date/Pairing (Activity TD #6), yet all three crew columns have six MCID leaves. It is outside the curated 43-row Preview. C44's earlier original-text audit identifies the immediately preceding body row #12 as a nonnumeric-Activity barrier. Therefore neither date nor crew may be carried across this boundary, and **missing Date cannot be equated to a repeated-crew sentinel**. The 26 single-leaf rows may correlate with prior pipe-marker observations, but the present structural test does not establish literal text or semantic equivalence row by row.
+
+**ParserProfile research decision:** preserve independent `ownDateState`, `crewCellStructureState`, `crewRawTextState`, `antecedentBarrierState`, `sourceYearState`, `sourceRevisionState` and `ownerMatchState`. The one exceptional row is a required real-corpus negative admission gate: `UNDATED + MULTI_LEAF_CREW + NONFLIGHT_PREDECESSOR → DETACHED_REVIEW`. Do not count MCID leaves as participants, infer crew inheritance, create a FlightRecord, or overwrite Block. Even an independently verified unique owner Flight match requires explicit user approval and a future atomic evidence-only receipt/CAS implementation. Six synthetic negative policy groups passed in a standalone Python oracle; **no Dart/Sembast parser or transaction ran**. Public P2 and Production OPEN remain unchanged.
+
+**Adjacent checks and limits:** Reconfirmed C194's 43 curated / 19 other August partition and C316's typed-MCR correction. Prior C194 company 2026 partial-key counts for the 19 other August rows remain 0:8 / 1:4 / 2:5 / 3:2; they were not rejoined at raw-value level in C317. The full source-bound operational year, explicit crew text/line alignment, roster publication/revision, UID-owned Flight identity and production evidence-only storage remain unverified.
