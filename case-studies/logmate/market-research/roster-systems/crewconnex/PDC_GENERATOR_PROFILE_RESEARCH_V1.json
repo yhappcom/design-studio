@@ -1,7 +1,7 @@
 {
   "schema": "logmate.research.crewconnex.parser-profile.v1",
   "profileId": "crewconnex.pdc-generator.crew-roster-report",
-  "profileVersion": "research-1.1.0-C320",
+  "profileVersion": "research-1.2.0-C326",
   "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
   "verifiedScope": "One private August 2026 PDC Pdf Generator PDF; structural and clock arithmetic evidence only; no public P1 sample",
   "admission": {
@@ -50,6 +50,12 @@
       "roster publication/revision",
       "crew identity",
       "flight-record ownership"
+    ],
+    "additionalRealCorpusGateC326": [
+      "A four-clock route-bearing nonnumeric Activity is NOT a flight candidate (18 actual bands); classify activity before clock/route validation.",
+      "An omitted Date in a numeric candidate is unresolved even when immediately preceded by a numeric band (11), a nonnumeric band (1), or a blank band (1).",
+      "The 49 body-band ordinal is a physical locator only; blank band #13 and nonnumeric bands are continuation barriers, not duty/crew semantics.",
+      "A numeric candidate with a printed Blk Hrs cell remains detached until source century/publication, exact owner match and explicit approval are independently validated."
     ]
   },
   "sampleFingerprint": {
@@ -101,7 +107,20 @@
     "explicitPlusOneRows": 4,
     "explicitPlusOneBaseDepartureCells": 1,
     "explicitPlusOneBaseArrivalCells": 4,
-    "explicitPlusOneLocalArrivalCells": 4
+    "explicitPlusOneLocalArrivalCells": 4,
+    "numericMissingDateImmediatePriorBand": {
+      "numeric": 11,
+      "nonnumeric": 1,
+      "blank": 1
+    },
+    "numericMissingDateDistanceFromNearestEarlierPrintedDateBand": {
+      "1": 8,
+      "2": 3,
+      "3": 2
+    },
+    "numericMissingDateNearestEarlierPrintedDateBandNonnumeric": 2,
+    "nonnumericBandsWithPrintedBlock": 0,
+    "numericCandidatesMissingRequiredRouteClocksOrBlock": 0
   },
   "fieldMap": {
     "Date": {
@@ -221,13 +240,14 @@
     "backupRestore": "quarantine imported stages/approvals/receipts; never trust backup checksum as authority"
   },
   "evidence": {
-    "actual": "Independent binary-safe decode of one private PDC PDF and 495 text objects; exact header, 49 bands, 26/22/1 classification and 26/26 base clock arithmetic",
-    "synthetic": "Research contract negative fixtures only; not Flutter or Sembast",
+    "actual": "Independent binary-safe decode of one private PDC PDF and 495 text objects; exact header, 49 bands, 26/22/1 classification and 26/26 base clock arithmetic; C326 independent original PDC 49-band read-only grid decode: 13 undated numeric rows split by immediately preceding band 11 numeric/1 nonnumeric/1 blank; 18 nonnumeric bands with route+four clocks and zero with printed Block; 26 numeric with all route/four clocks/Block. Separate current product source and synthetic legacy-v16 LBK fixture digest verified in memory.",
+    "synthetic": "Research contract negative fixtures only; not Flutter or Sembast; C326 6 synthetic classifier + 4 owner-admission policy assertions PASS (not Dart/Sembast).",
     "blocked": "2018/2019/2020-2026 historical PDFs return empty base64 payload at GitHub connector size limit; no original-byte interpretation",
     "notExecuted": [
       "company XLSX value-level rejoin in this cycle",
       "real Skia same-export year and crew antecedent certification",
-      "Dart/Sembast evidence-only API and transaction acceptance"
+      "Dart/Sembast evidence-only API and transaction acceptance",
+      "current Dart/Sembast legacy-v16 backup restore runtime and future CrewConnex evidence-only transaction"
     ],
     "publicSampleGrade": "P2",
     "productionReady": false
@@ -278,5 +298,24 @@
     "missingCrewColumns": "CREW_NOT_PROVIDED, not deletion",
     "ownerWrite": "future UID-owned existing Flight only, exact FlightRevision and EvidenceHead CAS plus immutable receipt; no Flight/Block/outbox mutation",
     "runtimeStatus": "NOT_TESTED; current LogMate capability 16 and LBK v1/30-store registry contain no CrewConnex evidence-only stores"
+  },
+  "currentProductCodeAuditC326": {
+    "checkedAt": "2026-10-24 KST",
+    "productRepository": "yhappcom/logmate READ_ONLY",
+    "capabilityCodecBlob": "f82b49da619e2fc861edf133eb9e66b195017a03",
+    "sembastRepositoryBlob": "eee08f931d267f213aa4f21359018600c6099f1c",
+    "backupCodecBlob": "711f784534bc686a4d8edd6617ac4d1ac362e0a7",
+    "currentCapability": 17,
+    "capability17Purpose": "existing Sync persistence; not CrewConnex evidence",
+    "backupFormatCurrentExport": 2,
+    "backupFormatV1LegacyImport": true,
+    "legacyV16StoreRegistryCount": 30,
+    "currentV17BackupStoreRegistryCount": 37,
+    "legacyV16BackupFixtureBlob": "e702040503997f5f6c8cf099314c5607537d864c",
+    "legacyFixtureDigestRecomputedAndMatched": true,
+    "legacyV16RestoreSourceAndTestPresent": true,
+    "actualDartTestExecutedThisRun": false,
+    "actualCrewEvidenceStorePresent": false,
+    "productionDecision": "Previous C321 conditional warning that v16 backups would be rejected by an unchanged v17 strict validator is superseded by CURRENT code's explicit v1/capability16/30-store import path, in-transaction v17 migration and fixture test. This is source/fixture verification, not runtime acceptance. Future CrewConnex evidence capability and LBK version remain unapproved; do not reuse v17 or assume v2's fixed 37-store registry will automatically accept a new store."
   }
 }
