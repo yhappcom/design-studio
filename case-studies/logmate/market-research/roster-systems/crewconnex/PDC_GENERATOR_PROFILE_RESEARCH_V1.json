@@ -297,7 +297,7 @@
     "samePrintedBlockNewFingerprintOrCrew": "new detached snapshot observation and explicit review; no scalar SourceEvidenceHistory notice substitution",
     "missingCrewColumns": "CREW_NOT_PROVIDED, not deletion",
     "ownerWrite": "future UID-owned existing Flight only, exact FlightRevision and EvidenceHead CAS plus immutable receipt; no Flight/Block/outbox mutation",
-    "runtimeStatus": "NOT_TESTED; current LogMate capability 16 and LBK v1/30-store registry contain no CrewConnex evidence-only stores"
+    "runtimeStatus": "NOT_TESTED; current read-only LogMate source capability 17 (Sync persistence), LBK export v2/37-store registry with explicit legacy v16/v1/30-store restore path. Neither current registry includes CrewConnex evidence-only stores. Source/fixture check only, not runtime acceptance."
   },
   "currentProductCodeAuditC326": {
     "checkedAt": "2026-10-24 KST",
