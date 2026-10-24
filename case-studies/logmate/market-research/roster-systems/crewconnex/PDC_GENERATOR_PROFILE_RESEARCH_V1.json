@@ -930,5 +930,59 @@
     "productionParser": "OPEN",
     "actualDartOrSembastRun": false,
     "next": "Authorized second PDC/Skia paired export with documented airline time-mode and source-bound year/Publication, independently mapped crew name and actual UID-owned Flight/evidence-only lifecycle acceptance."
+  },
+  "pdcSubjectPrivacyAndBlankActivityC353": {
+    "id": "C353",
+    "checkedAt": "2026-10-25 05:03 KST",
+    "researchContract": "crewconnex-pdc-report-subject-blank-activity-privacy-gate-1.0-C353",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "actualOriginalScope": {
+      "logmateReadOnlyMainHead": "4101ec7380796300f68fa60dbc7e5b6061f00080",
+      "pdcPrivateGitBlob": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "pdfBytes": 39612,
+      "contentStreamUncompressedBytes": 33542,
+      "completeBT_TjTextObjects": 495,
+      "orderedHeaderObjects": 14,
+      "primaryBodyTextObjects": 473,
+      "nonBodyNonHeaderObjects": 8,
+      "bodyBands": 49,
+      "bodyObjectsAtUnrecognizedColumnX": 0,
+      "escapedParenthesisTextObjects": 7,
+      "escapedParenthesisTextObjectsOutsideBody": 7,
+      "sourceHeaderCrewmemberLabels": 1,
+      "sourceHeaderCrewmemberWithEscapedParenthesis": 1,
+      "perLegCrewmemberLabels": 0
+    },
+    "sourceDerivedClassByColumnPresence": {
+      "numericActivityBands": 26,
+      "nonnumericActivityBands": 22,
+      "blankActivityBands": 1,
+      "numericWithPrintedBlock": 26,
+      "nonnumericWithPrintedBlock": 0,
+      "blankWithPrintedBlock": 0,
+      "numericWithACHotel": 26,
+      "nonnumericWithACHotel": 6,
+      "blankWithACHotel": 1,
+      "numericWithOwnDate": 13,
+      "nonnumericWithOwnDate": 18,
+      "blankWithOwnDate": 0
+    },
+    "authorityAndPrivacy": "The original report prints one person-identifying Crewmember header, but has no per-leg crew columns. It is a report subject, NOT a CrewParticipant.name roster snapshot, authenticated UID, Flight ownership, verified operating crew, or Publication token. Never copy raw subject/name/employee ID to Design Studio; treat it as sensitive transient source context only, with no automatic binding. AC/Hotel appears in six nonflight and one blank-Activity band; neither column occupancy nor clock presence proves a flight. Preserve source-state missing vs blank. Escape-aware PDF literal string handling must not accidentally log header PII.",
+    "realSourceStructuralCheck": "495=14 headers+473 body text objects+8 other header/footer objects; all 473 body text objects map to the observed 14 column X anchors; one blank Activity body band still contains AC/Hotel text. Source is one private PDC-generator PDF only; not public P1, not cross-airline profile validation.",
+    "adversarialInMemory": "Seven structural mutations against in-memory source-derived rows (add printed Block to nonflight and blank-Activity AC/Hotel bands; remove Block, From, Activity or corrupt B clock on numeric band) all failed numeric candidate staging. Synthetic mutations are NOT edited real PDFs, actual Dart/Sembast tests or production PASS.",
+    "currentCodeReadOnlyAudit": "At LogMate main 4101ec7, CrewParticipant requires name; SourceEvidence requires existing record+field; LogbookRepository exposes no CrewConnex evidence-only transaction. Sembast v17 LBK export registry has 37 stores, while terminal deletion explicitly drops 29 (local replica and seven Sync stores not explicitly dropped). This known C342 lifecycle gap was rechecked, not runtime exploited; evidence-only Observation/Head/Receipt stores must be covered by wipe, backup, restore, UID isolation and CAS/replay tests.",
+    "companyAndCrossFamily": "No fresh company XLSX or Skia raw rejoin in C353; C352 conditional 2/13 own-dated PDC company joins and C350 Skia/Preview comparisons remain prior evidence, not independent new matches. August company coverage ends Aug02 and 19 uncurated Skia/13 undated PDC remain detached.",
+    "publicSearch": "After original corpus inspection, two focused public search passes did not find lawful anonymized raw PDC Crew Roster Report or official printed Crewmember/AC-Hotel schema. Official vendor page confirms configurable roster/PDF capabilities only; no new P1, no new deployment.",
+    "acceptanceDelta": [
+      "Recognize one sensitive report-subject header as source context without promoting to UID/crew snapshot or storing raw PII in public research.",
+      "Require source-scoped complete PDF operator/literal-string extraction; keep escaped header text out of logs.",
+      "Classify Activity before clocks, AC/Hotel or Block; blank Activity with AC/Hotel is a negative candidate, even if another field is populated.",
+      "Retain PDC crewSnapshot=NOT_PROVIDED and raw AC/Hotel mixed semantics; no auto FlightRecord or participant creation, Block overwrite, inferred duty or date.",
+      "Evidence-only binding remains gated on independently verified UID-owned active Flight, exact FlightRevision+EvidenceHead CAS, explicit approval, idempotent receipt, restore/wipe/account isolation."
+    ],
+    "publicSampleGrade": "P2",
+    "productionParser": "OPEN",
+    "actualDartOrSembastRun": false,
+    "next": "Acquire authorized second independently generated same-export PDC/Skia pair with verified report-subject/crew mapping, source-bound four-digit period/Publication, airline time-mode and date-complete active UID-owned Flight; execute approved file-backed evidence-only CAS/Receipt/rollback/wipe."
   }
 }
