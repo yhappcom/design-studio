@@ -727,7 +727,16 @@
       "ACHotelEqualsCompanyFltAcNo": 0,
       "printedBlockEqualsCompanyBtInMinutes": 2,
       "interpretation": "RAW_AC_HOTEL_AIRCRAFT_TYPE_CANDIDATE_REVIEW_ONLY; NOT VERIFIED REGISTRATION OR UNIVERSAL AIRCRAFT TYPE",
-      "otherNumericRowsFullDateCompanyJoinNotCertified": 24
+      "otherNumericRowsFullDateCompanyJoinNotCertified": 24,
+      "company2026DistinctAcType": 2,
+      "allNumericPdcCodesInCompanyAcTypeSet": 26,
+      "flightRouteOnlyPartialCandidatePairs": 32,
+      "partialPairsAcTypeEqual": 31,
+      "partialPairsRegistrationEqual": 0,
+      "partialPairsBlockMinuteEqual": 4,
+      "partialPairsAcTypeAndBlockEqual": 4,
+      "partialPairsAcTypeAndBlockEqualButOwnDateNotEqual": 2,
+      "identityDecision": "TYPE_AND_BLOCK_NOT_UNIQUE_IDENTITY; MUST REQUIRE INDEPENDENT_DATE_AND_OWNER_UID_AND_REVIEW"
     },
     "matching": {
       "flightRouteCompanyMultiplicity": {
