@@ -849,5 +849,86 @@
     "productionParser": "OPEN",
     "actualDartOrSembastRun": false,
     "next": "Obtain authorized second independently generated PDC/Skia paired export plus airline time-mode configuration and source-bound Publication/year; test clock invariant and revision adjudication against actual UID-owned existing Flights."
+  },
+  "pdcExternalClockAndTextTriangulationC352": {
+    "id": "C352",
+    "checkedAt": "2026-10-25 04:00 KST",
+    "researchContract": "crewconnex-pdc-clock-extraction-crosssource-research-1.1-C352",
+    "status": "RESEARCH_ONLY_NO_PRODUCTION_PROFILE_PROMOTION",
+    "sources": [
+      "Read-only private PDC-generator August PDF: 39612 bytes, 1 page, 495 BT/Tj text objects and 49 body bands; no raw values copied",
+      "Read-only private company flightHistory_2026.xlsx: 19812 bytes, 159 data rows, OOXML ZIP/DEFLATE/sharedStrings decoded independently; no personal data copied",
+      "IANA timezone rules: public tzdb 2026e consulted; independent 2026-08-15 offset calculations used local system zoneinfo tzdb 2025b with transient manually mapped IATA-to-IANA zones"
+    ],
+    "pdfTextCompleteness": {
+      "actualBTTextObjects": 495,
+      "naiveOnlyBareBT_XY_Td_TjObjects": 476,
+      "naiveMissedTextObjects": 19,
+      "missedOutsidePrimaryBody": 18,
+      "missedFirstBodyOwnDate": 1,
+      "naiveNumericOwnDateCount": 12,
+      "completeNumericOwnDateCount": 13,
+      "completeNumericOwnDateAbsent": 13,
+      "finding": "Optional BT font selection/color operations precede Td/Tj; bare-BT pattern drops first body Date and 18 other text objects. Decode complete BT...ET text state before table/header/date classification."
+    },
+    "timezoneCorroboration": {
+      "observedReportMonth": "Aug26, century conditionally interpreted as 2026 only for timezone comparison",
+      "distinctAirportCodesInNumericEndpoints": 13,
+      "numericEndpointPairs": 52,
+      "numericEndpointZoneHypothesisMatches": 52,
+      "nonflightStrictValidRouteEndpointPairs": 35,
+      "nonflightEndpointZoneHypothesisMatches": 35,
+      "nonflightRowsWithTwoStrictValidRouteEndpoints": 17,
+      "nonflightRowsWithOnlyOneStrictValidRouteEndpoint": 1,
+      "nonflightInvalidRouteEndpointPairs": 1,
+      "totalStrictValidEndpointPairs": 87,
+      "totalZoneHypothesisMatches": 87,
+      "inferredReferenceClockOffsetMinutesFromUtc": 540,
+      "airportLocalMinusReferenceOffsetCodeCounts": {
+        "0": 8,
+        "60": 1,
+        "-60": 3,
+        "-120": 1
+      },
+      "airportOffsetsInconsistentAcrossNumericEndpoints": 0,
+      "alternativeReferenceUtcPlus8NumericMatches": 0,
+      "alternativeReferenceUtcPlus10NumericMatches": 0,
+      "crossZoneNumericLegs": 10,
+      "swappedDepartureArrivalAirportExpectedZoneMismatches": 20,
+      "swappedExpectedZoneTotalNumericEndpoints": 52,
+      "removeAllPlusOneMarkersStillZoneMatches": 52,
+      "removeAllPlusOneMarkersExactBaseElapsedMatchesPrintedBlock": 23,
+      "preservePlusOneExactBaseElapsedMatchesPrintedBlock": 26,
+      "limitation": "Geographic UTC+09 clock-reference hypothesis is strongly corroborated in one private export but is not a PDC-defined (B) field dictionary, approved timezone conversion, operational UTC authority, or a portable airline configuration. Nonflight passes zone check too."
+    },
+    "companyCrossCheck": {
+      "companyRows": 159,
+      "numericPdcRows": 26,
+      "pdcOwnDated": 13,
+      "pdcOwnDateMissing": 13,
+      "conditionalFullDateNormalized7cFlightRouteCandidates": {
+        "zero": 11,
+        "one": 2,
+        "many": 0
+      },
+      "conditionalUniquePairs": 2,
+      "companyFltTimePlus540EqualsPdcStdBase": 2,
+      "companyBtMinuteEqualsPdcPrintedBlock": 2,
+      "companyAtMinuteEqualsPdcPrintedBlock": 0,
+      "limitation": "Two conditional YY26->2026 source-to-source matches only. Company fltTime is recorded Ramp Out in import contract, PDC STD(B) is a roster clock; +9h equality does NOT certify actual-vs-scheduled equality, timezone definition, flight completion, canonical UTC, or owner UID binding."
+    },
+    "parserProfileDelta": [
+      "Treat complete PDF BT/ET text-state parsing, font switches and optional color operators as a structural requirement; never classify missing Date/header from a regex that drops valid text operators.",
+      "Validate raw per-cell +day offsets and strict absolute B elapsed versus printed Blk Hrs independently from optional airport/IANA timezone diagnostics; modulo-day timezone consistency cannot detect lost rollover markers.",
+      "Classify nonnumeric activity before clocks or geography; 35/35 valid nonflight endpoints fit the same clock hypothesis but must produce zero flight/crew evidence.",
+      "Preserve company fltTime, PDC STD(B), PDC printed Blk Hrs, company bt and company at as distinct source semantics; +540 minute transform is review-only and not an automatic UTC/Ramp Out or Block mapping.",
+      "Retain unknown year/Publication, 13 missing PDC own Dates, unknown crew names and active UID Flight cardinality as independent detached review gates; zero FlightRecord creation, Block/date overwrite, PIC/SIC/PF/PM/duty inference.",
+      "No production ParserProfile version change or actual Dart/Sembast acceptance claimed."
+    ],
+    "priorCorpusIntegration": "C351 26/26 exact B elapsed and 16/26 L elapsed; C344 two conditional company Block comparisons; C196 nine conditional Skia/PDC pairs (six equal/three differing) remain separate and are not revision proof. No fresh Skia decode or actual owner ledger was available this cycle.",
+    "publicSampleGrade": "P2",
+    "productionParser": "OPEN",
+    "actualDartOrSembastRun": false,
+    "next": "Authorized second PDC/Skia paired export with documented airline time-mode and source-bound year/Publication, independently mapped crew name and actual UID-owned Flight/evidence-only lifecycle acceptance."
   }
 }
