@@ -180,7 +180,10 @@
     "c328OwnDatedNumericWithPairing": 13,
     "c328UndatedNumericWithPairing": 3,
     "c328UndatedNumericWithoutPairing": 10,
-    "c328NonnumericWithPairing": 6
+    "c328NonnumericWithPairing": 6,
+    "explicitPlusOneRowsScopeC354": "NUMERIC_ACTIVITY_ONLY; legacy count 4 is not all report rows",
+    "explicitPlusOneNonnumericActivityRowsC354": 4,
+    "explicitPlusOneNumericPlusNonnumericRowsC354": 8
   },
   "fieldMap": {
     "Date": {
@@ -984,5 +987,61 @@
     "productionParser": "OPEN",
     "actualDartOrSembastRun": false,
     "next": "Acquire authorized second independently generated same-export PDC/Skia pair with verified report-subject/crew mapping, source-bound four-digit period/Publication, airline time-mode and date-complete active UID-owned Flight; execute approved file-backed evidence-only CAS/Receipt/rollback/wipe."
+  },
+  "c354IntegratedCapabilityAndProvenanceAudit": {
+    "id": "C354",
+    "checkedAt": "2026-10-25 05:56 KST",
+    "status": "RESEARCH_ONLY_NO_PRODUCTION_PROMOTION",
+    "evidenceScope": "Fresh privacy-safe C194 62-row locator manifest and this PDC profile; read-only LogMate current contracts, SourceEvidence/History/CrewParticipant and test; nine company and one Preview original XLSX ZIP central directories. No new private PDF text extraction or worksheet cell decode.",
+    "sourceFamilyObservationCounts": {
+      "skiaNumeric": 62,
+      "pdcNumeric": 26,
+      "combinedObservationsNotUniqueFlights": 88,
+      "skiaOwnDate": 35,
+      "pdcOwnDate": 13,
+      "combinedOwnDate": 48,
+      "skiaOwnDateMissing": 27,
+      "pdcOwnDateMissing": 13,
+      "combinedOwnDateMissing": 40,
+      "pdcNonnumericActivity": 22,
+      "pdcBlankActivity": 1
+    },
+    "provenanceChecks": {
+      "skiaMonthlyCounts": [
+        18,
+        22,
+        22
+      ],
+      "previewValueLinks": 43,
+      "uncuratedAugust": 19,
+      "sourcePageMcidFieldLocatorsUnique": 310,
+      "sourceYearAuthenticated": 0,
+      "activeUidFlightRecordMatchesAuthenticated": 0
+    },
+    "dayOffsetScopeCorrection": "Historical sampleFingerprint.explicitPlusOneRows=4 counts NUMERIC Activity bands only. Four separate NONNUMERIC Activity bands also carry +1. At least eight numeric+nonnumeric source bands contain +1; no authority to treat the old four as the document-wide total. Preserve per-cell day offsets, exclude nonflight first.",
+    "sourceXlsxZipPreflight": {
+      "companyWorkbooks": 9,
+      "companyWorksheetEntriesEach": 1,
+      "companySharedStringsPartEach": true,
+      "previewWorkbookCount": 1,
+      "previewWorksheetEntries": 5,
+      "previewSharedStringsPart": false,
+      "externalLinksPartDetected": 0,
+      "macroPartDetected": 0,
+      "maxObservedEntryExpansionRatioApprox": 10.05,
+      "scope": "ZIP central directory only, not worksheet semantic parsing; no universal security threshold inferred"
+    },
+    "capabilityBoundary": {
+      "skia": "BLH and raw Emp#/CC/Pos triplets; no verified name or inherited crew",
+      "pdc": "Printed Blk Hrs and report subject only; no per-leg crew column",
+      "scalarEvidence": "SourceEvidence is record+field bound; SourceEvidenceHistory normalized-equal notice is not crew revision authority",
+      "all": "Existing-record-only; source-key comparison, year/Publication, active UID Flight match, review, FlightRevision and EvidenceHead CAS must be separate"
+    },
+    "existingCrossFamilyComparison": "Earlier nine provisional Skia/PDC same-month/day+flight+route pairs: six minute-equal, three differ (+1/+8/+16 minutes); not redecoded this run and not proof of same Flight or revision order.",
+    "researchOracle": "Seven connected synthetic-policy groups passed, including 62 manifest-shaped Skia observations, 26 abstract PDC numeric candidates and 23 abstract PDC nonflight/blank bands. No actual Dart/Sembast or modified PDF run.",
+    "publicEvidence": "Two focused 2026-10-25 searches: official PDC FlightCrew documents configurable local/UTC/base dialogs and CrewConnex downloadable formats, but no printed (B) definition, subject-to-crew dictionary or lawful anonymous raw P1.",
+    "publicSampleGrade": "P2",
+    "productionParser": "OPEN",
+    "next": "Independent authorized same-export PDC/Skia with source-bound year/Publication, time-mode and crew-name legend, plus date-complete active UID-owned Flights for evidence-only file-backed CAS/receipt/rollback/backup/wipe."
   }
 }
