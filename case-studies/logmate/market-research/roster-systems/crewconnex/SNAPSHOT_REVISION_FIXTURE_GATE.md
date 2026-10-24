@@ -275,6 +275,8 @@ Seven independent **synthetic** coverage/revision policy cases PASS, but no actu
 **Adjacent restore-validator gate:** Current `_validateLbkContainer` authenticates manifest UID/registry/digest but does not inspect per-row prior UID; `_readAccountDeletionState` only decodes the completed receipt, and `_validateRestoredLbkReferences` checks canonical references/aggregate. A contaminated *source* backup is therefore not semantically proven clean by digest PASS. Add explicit source export and restored destination recursive UID_A exclusion; do not confuse this with restore's destination Sync-store drops. Static source audit only.
 
 
+> **C341 correction (2026-10-24): The C339 claim that 12 company OOXML cells are physically ABSENT is RETRACTED. All 1,530 rows contain P/Q/R/S cell elements; 12 are PRESENT_EMPTY. See the C341 addendum below.**
+
 ## 2026-10-24 C339 — Cross-source cell-presence gate (research addendum, not a new CrewConnex profile)
 
 Fresh raw nine-workbook company OOXML audit resolves a contradictory earlier 2025 missingness claim: 2025 physically **absent** cells are `instTme=2`, `toCnt=4`, `ldCnt=5`, `ntTme=0`; 2024 `ldCnt=1`. Twelve absent cells in eight distinct company source rows; all 1,530 full Gregorian dates and `bt` lexical formats valid, zero exact normalized company-key duplicates and 11 adjacent-day same-flight+route pairs. This is original company-source validation, not a new Skia/PDC PDF read, CrewConnex field mapping, UID match or runtime PASS.
@@ -285,3 +287,7 @@ Fresh raw nine-workbook company OOXML audit resolves a contradictory earlier 202
 ## 2026-10-24 C340 — Cross-module source-capability acceptance (no parser version increment)
 
 PDC primary feature documentation (checked 2026-10-24) separates CrewConnex roster download from **Pilot Log data entry** (off-block, takeoff, landing, block-on, PF/PM allocation), FlightOps generated Flight Log/Post Flight Report, and configurable FlightCrew Gantt crew-name display. Neither Pilot Log export format nor printed Skia Emp.#/CC/Pos.→name mapping is authenticated. The observed Skia and PDC-generator roster PDF profiles must never ingest Pilot Log/FlightOps report families or manufacture operational event clocks/PFPM from STD/STA/BLH. `CrewParticipant.name` is mandatory; raw employee code is not a name. Source-bound century/Publication, same-UID existing Flight match, exact revision and approved EvidenceOnly CAS/Receipt/rollback/backup/wipe remain OPEN. Reaggregated existing C194 manifest 62/310 and PDC JSON 26 numeric/13 own-Date absent; 14 synthetic classifier cases PASS, not product tests. See C112 C340 for the full source-authority matrix. Public P2 / Production OPEN.
+
+
+### C341 source-field state correction (not a CrewConnex detector change)
+All nine original company workbooks independently redecoded; 1,530/1,530 rows have physical P/Q/R/S cell nodes. Twelve PRESENT_EMPTY, zero ABSENT: 2025 P ntTme=2/Q instTme=0/R toCnt=5/S ldCnt=4; 2024 S ldCnt=1. The C339 absent-cell claim is retracted. Shared-string-empty and self-closing cells both map to PRESENT_EMPTY while preserving original representation in provenance. The ABSENT_CELL test branch remains necessary for future inputs but was not observed here. Eight synthetic state checks PASS, not Dart; no CrewConnex PDF or UID acceptance. Source details: C265 C341. Public P2/Production OPEN.
