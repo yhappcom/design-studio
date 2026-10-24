@@ -616,5 +616,54 @@
     "actualDartOrSembastTestsExecuted": false,
     "publicSampleGrade": "P2",
     "productionParser": "OPEN"
+  },
+  "pdcDirectTextStreamAuditC343": {
+    "checkedAt": "2026-10-24 KST",
+    "scope": "Direct read-only base64 decode of one private PDC-generator August PDF byte payload and uncompressed PDF BT/Tj text operators; no personal contents copied",
+    "sourceGitBlobSha1": "8e7fec30f98458c770053bd7739e60869a87e33b",
+    "sourceBytes": 39612,
+    "pdfPages": 1,
+    "decodedTextOperators": 495,
+    "unparsedTextOperators": 0,
+    "exactOrderedHeaderCount": 14,
+    "headerY": 647,
+    "bodyBaselineCount": 49,
+    "bodyBaselineMinY": 206,
+    "bodyBaselineMaxY": 638,
+    "bodyBaselineStepPoints": 9,
+    "numericActivityBands": 26,
+    "numericBandsWithPrintedBlock": 26,
+    "nonnumericActivityBands": 22,
+    "nonnumericBandsWithPrintedBlock": 0,
+    "blankActivityBands": 1,
+    "footerBelowBodyTextObjects": 1,
+    "footerSingleDigitPageOrdinal": "1",
+    "sumSubtotalTotalTextLabelsObserved": 0,
+    "periodRangeDraws": 2,
+    "reportHeadingDraws": 3,
+    "sourcePublicationRevisionIdentifier": "NOT_AUTHENTICATED",
+    "decision": "The verified one-page PDC Crew Roster Report has a page-ordinal footer, not a printed Sum/Total. Do not apply Skia Sum checksum or summary barrier as a mandatory PDC anchor. Validate per-family report heading, 14 ordered headers, band continuity, numeric Activity+actual printed Blk Hrs, footer/page integrity and source locator; unknown/shifted/truncated layouts fail closed. Exact 49 rows, 9pt spacing, single page and absence of Sum are observed fingerprints, NOT universal future PDC rules.",
+    "syntheticMutationGate": {
+      "scope": "Eight source-derived structural metadata scenarios in standalone JS; NOT real PDF mutation, production parser or Dart/Sembast",
+      "passed": 8,
+      "total": 8,
+      "cases": [
+        "baseline structure",
+        "header swap",
+        "wrong report family",
+        "missing numeric printed Block",
+        "nonflight with printed Block",
+        "unexpected extra page for this sample",
+        "missing body band for this sample",
+        "unexpected Sum for this sample"
+      ]
+    },
+    "unchanged": [
+      "P2 public grade",
+      "no name-bearing crew fields",
+      "YY26 century and Publication unverified",
+      "no active UID-owned Flight match",
+      "Production Parser OPEN"
+    ]
   }
 }
