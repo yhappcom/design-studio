@@ -1029,7 +1029,26 @@
       "externalLinksPartDetected": 0,
       "macroPartDetected": 0,
       "maxObservedEntryExpansionRatioApprox": 10.05,
-      "scope": "ZIP central directory only, not worksheet semantic parsing; no universal security threshold inferred"
+      "scope": "All ten ZIP central directories; additionally raw-DEFLATE worksheet XML lexical tags in company 2026 and all five Preview sheets. No private cell values interpreted or security guarantee.",
+      "directXmlTagAudit": {
+        "company2026Sheet1": {
+          "rowsIncludingHeader": 160,
+          "cellElements": 3040,
+          "sharedStringIndexCells": 2881,
+          "inlineStringCells": 0
+        },
+        "previewSheet4": {
+          "rowsIncludingHeader": 44,
+          "cellElements": 1188,
+          "inlineStringCells": 930,
+          "sharedStringIndexCells": 0
+        },
+        "previewAllFiveSheets": {
+          "inlineStringCells": 2276,
+          "sharedStringIndexCells": 0
+        },
+        "parserContract": "A generic XLSX/Preview reader must support both shared-string indices and inlineStr cells; do not treat absent sharedStrings.xml as an empty workbook."
+      }
     },
     "capabilityBoundary": {
       "skia": "BLH and raw Emp#/CC/Pos triplets; no verified name or inherited crew",
