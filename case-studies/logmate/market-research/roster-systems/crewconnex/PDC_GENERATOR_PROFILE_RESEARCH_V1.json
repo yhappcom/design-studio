@@ -582,5 +582,39 @@
     },
     "dateOrCrewSemanticInheritanceAuthorized": false,
     "sourceCenturyOrPublicationAuthenticated": false
+  },
+  "officialSourceAuthorityC340": {
+    "checkedAt": "2026-10-24",
+    "officialSource": "https://www.pdc.com/airline-solution/features-and-functionalities/",
+    "sourceAuthorityVersion": "crewconnex-source-authority-research-1.1-C340",
+    "crewconnexPilotLogEntryFieldsDocumented": [
+      "off-block",
+      "takeoff",
+      "landing",
+      "block-on",
+      "PF/PM allocation",
+      "approach type",
+      "passenger count",
+      "fuel"
+    ],
+    "crewconnexPilotLogExportSchema": "NOT_VERIFIED",
+    "flightOpsGeneratedReports": [
+      "Flight Log",
+      "Post Flight Report"
+    ],
+    "flightOpsGeneratedReportSchema": "NOT_VERIFIED",
+    "flightCrewGanttCrewNameDisplay": "CONFIGURABLE_GANTT_ONLY_NOT_PRINTED_EMP_CC_POS_NAME_MAPPING",
+    "rosterPdfAdmission": "UNCHANGED_TWO_FAMILIES_ONLY",
+    "prohibitedInferences": [
+      "roster STD/STA => actual offblock/takeoff/landing/blockon",
+      "roster BLH => canonical Block or actual event clock",
+      "roster crew raw code => name/PFPM",
+      "vendor Pilot Log entry capability => PDF export"
+    ],
+    "sourceEvidenceScope": "primary vendor feature documentation plus existing private source-derived manifests; no new PDF raw extraction",
+    "syntheticPolicyCases": 14,
+    "actualDartOrSembastTestsExecuted": false,
+    "publicSampleGrade": "P2",
+    "productionParser": "OPEN"
   }
 }
