@@ -4,6 +4,32 @@
   "profileVersion": "research-1.6.0-C330",
   "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
   "verifiedScope": "One private August 2026 PDC Pdf Generator PDF; structural and clock arithmetic evidence only; no public P1 sample",
+  "vendorFeatureBoundaryC334": {
+    "sourceCheckedAt": "2026-10-24",
+    "officialSource": "https://www.pdc.com/airline-solution/crewconnex/",
+    "officialFlightCrewSource": "https://www.pdc.com/airline-solution/flightcrew/",
+    "verifiedProductFeatures": [
+      "Roster",
+      "Day Schedule",
+      "Master Schedule",
+      "Experience",
+      "Qualifications",
+      "Accounts",
+      "Pilots Log"
+    ],
+    "officialPdfExportExplicitFor": [
+      "Day Schedule",
+      "Master Schedule",
+      "Experience",
+      "Qualifications",
+      "Accounts"
+    ],
+    "pilotsLogPdfExport": "NOT_VERIFIED",
+    "pilotsLogPrintedSchema": "NOT_VERIFIED",
+    "admission": "The verified 14-column Crew Roster Report only; never fall back from other PDC/CrewConnex PDF features or claim Pilots Log operational authority",
+    "otherReportFamilies": "UNSUPPORTED_INPUT_ZERO_FLIGHT_CREATION_ZERO_EVIDENCE_ATTACHMENT",
+    "productionApproval": false
+  },
   "admission": {
     "sourceType": "PDF",
     "generatorFamily": "PDC Pdf Generator 1.0, PDC A/S",
