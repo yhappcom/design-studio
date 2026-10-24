@@ -768,5 +768,86 @@
       "productionParser": "OPEN"
     },
     "next": "Authenticate Skia source-bound century/Publication/crew names and Aug 03–31 owner UID Flight; validate PDC AC/Hotel against second lawful report variant and approved evidence-only runtime gate."
+  },
+  "pdcClockArithmeticAndMetadataC351": {
+    "id": "C351",
+    "checkedAt": "2026-10-25 02:58 KST",
+    "researchContract": "crewconnex-pdc-clock-coherence-research-1.0-C351",
+    "status": "RESEARCH_ONLY_NO_PRODUCTION_PROFILE_PROMOTION",
+    "source": "LogMate private PDC August Crew Roster Report read-only original PDF blob 8e7fec30f98458c770053bd7739e60869a87e33b; metadata cross-checked with three private Skia PDF blobs",
+    "originalPdc": {
+      "bytes": 39612,
+      "pages": 1,
+      "bodyBands": 49,
+      "numericFlightCandidates": 26,
+      "nonnumericActivityBands": 22,
+      "blankActivityBands": 1,
+      "datedNumeric": 13,
+      "undatedNumeric": 13,
+      "orderedHeaders": 14,
+      "strictValidFourClocksNumeric": 26,
+      "strictValidPrintedBlockNumeric": 26,
+      "printedBlockEqualsStaBMinusStdBWithExplicitDayOffsets": 26,
+      "equalityAmongOwnDatedNumeric": 13,
+      "equalityAmongOwnUndatedNumeric": 13,
+      "printedBlockEqualsStaLMinusStdLWithExplicitDayOffsets": 16,
+      "localMinusPrintedBlockMinutes": {
+        "0": 16,
+        "60": 4,
+        "120": 1,
+        "-120": 1,
+        "-60": 4
+      },
+      "localBaseOffsetDiffersBetweenDepartureAndArrival": 10,
+      "explicitDayOffsetNumericRows": 4,
+      "omitPrintedDayOffsetsBaseClockEquality": 23,
+      "nonflightWithFourPrintedClockPositionCells": 22,
+      "nonflightWithValidBaseClockPair": 18,
+      "nonflightWithPrintedBlock": 0,
+      "secondIndependentArithmeticImplementation": "Date.UTC day-offset comparison 26/26 base, 16/26 local; separate from integer-minute parser",
+      "metadataCreationDate": "D:20260928154907",
+      "metadataCreationTimezone": "UNSPECIFIED",
+      "printedReportStamp": "28-09-2026 1549",
+      "printedStampMatchesMetadataMinute": true,
+      "reportPeriod": "01Aug26 - 31Aug26",
+      "publicationRevisionIdentity": "NOT_AUTHENTICATED"
+    },
+    "crossGeneratorMetadata": {
+      "skiaJuneCreationUtc": "2026-08-27 22:50:08Z",
+      "skiaJulyCreationUtc": "2026-08-27 22:48:59Z",
+      "skiaAugustCreationUtc": "2026-08-09 04:48:38Z",
+      "pdcAugustCreationNoZone": "2026-09-28 15:49:07",
+      "decision": "PDF CreationDate/printed generation stamp is export time evidence only, not publication/revision or operational date authority. Cross-family creation ordering cannot silently select a roster revision."
+    },
+    "adversarialResearchChecks": {
+      "scope": "Source-derived JS re-evaluation, not mutated PDF or Dart/Sembast execution",
+      "baseClockExact": 26,
+      "substituteLocalClockExact": 16,
+      "stripDayOffsetsExact": 23,
+      "changeEveryPrintedBlockByOneMinuteExact": 0,
+      "invalidBaseDepartureClockExact": 0,
+      "appendUnknownArrivalSuffixExact": 0,
+      "omitBaseArrivalClockExact": 0,
+      "shiftBaseArrivalClockPlus60Exact": 0
+    },
+    "publicCorroboration": {
+      "officialVendor": "https://www.pdc.com/airline-solution/features-and-functionalities/",
+      "verified": "FlightCrew user dialogs configurable local, UTC, or base time; not a definition of this PDF's (B) column nor proof of actual Block semantics",
+      "twoFocusedSearchPasses": "No public raw anonymized PDC report, exact (L)/(B) printed column dictionary, or export-level Publication/Revision field found"
+    },
+    "parserProfileDelta": [
+      "Preserve both L and B raw clocks, explicit +/-day suffix, raw Blk Hrs, and source/page/row locators independently.",
+      "For this observed report only, strict base elapsed vs printed Blk Hrs equality is a source-internal consistency signal, NOT an independent operational Block check or universal rejection rule.",
+      "Never use local-clock subtraction as BLH normalization; ten real rows differ by +/-60/120 minutes.",
+      "A missing Date remains missing even if base-clock arithmetic matches (13/13 undated).",
+      "Nonflight activity is classified before clock checks; 22 nonflight rows print four clock positions and no Blk Hrs.",
+      "Clock mismatch, malformed HHMM, unknown offset, missing required column or unknown layout must fail closed to detached review/unsupported variant without creating FlightRecord or overwriting Block.",
+      "No inferred century, Publication, crew name, PIC/SIC, PF/PM, operating/deadhead, or owner UID; only explicit review after verified owner-owned existing Flight and future evidence-only dual CAS/receipt."
+    ],
+    "existingCrossSourceEvidence": "C344 original company2026 two conditional explicit-date full-key matches with minute-equal bt; C196 nine Skia/PDC conditional same-month candidate pairs include six equal and three differing BLH/Blk Hrs (+1/+8/+16). Not re-executed here; no revision inference.",
+    "publicSampleGrade": "P2",
+    "productionParser": "OPEN",
+    "actualDartOrSembastRun": false,
+    "next": "Obtain authorized second independently generated PDC/Skia paired export plus airline time-mode configuration and source-bound Publication/year; test clock invariant and revision adjudication against actual UID-owned existing Flights."
   }
 }
