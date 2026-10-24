@@ -233,3 +233,32 @@ Current company-field state in the earlier C335 coverage paragraph above is now 
 
 **C344 same-run adjacent original-source discriminator audit (new, no identity promotion).** Re-decoded the same original PDC PDF and company 2026 workbook independently to test whether the provisional `AC/Hotel`→`acType` correspondence actually disambiguates records. The company workbook has **two distinct `acType` values**, and **all 26/26** numeric PDC `AC/Hotel` raw codes belong to that company type set. Across **32** flight+route-only PDC→company candidate pairs, **31/32** agree on aircraft type, **0/32** agree on aircraft registration, **4/32** have minute-equal printed Block, and **4/32** agree on both type and Block. Crucially, **two of those four type+Block-equal pairs are NOT own-date-equal** under conditional YY26→2026; only the other two are independently own-dated full-key candidates. Therefore aircraft type—even combined with equal Block—is **not** a safe substitute for verified operational date, source publication, UID-owned Flight identity or explicit review. This is direct private source-to-source computation, not a synthetic match or production parser. No private raw code/row is persisted.
 
+
+## 2026-10-24 C346 — Original nine-year company corpus: cross-year false identity under missing roster year (read-only)
+
+**Scope/method:** Re-read current LogMate AGENTS/MASTER/import/CrewConnex and SourceEvidence/History/CrewParticipant code/test, Design Studio plan/index/queue/log/C194/Snapshot. Independently fetched all nine original private `flightHistory_2018.xlsx`–`flightHistory_2026.xlsx` from LogMate **read-only** and decoded base64 ZIP/DEFLATE/OOXML in transient analysis memory. Only `fltDat`, `fltNo`, `stFr`, `stTo`, `bt`, `at`, `ntTme`, `instTme`, `acType` were selected for comparisons. No crew names, staff IDs, actual flight numbers/routes, registrations, original rows or files were transferred to Design Studio. Approved 7C numeric-suffix normalization only; durations parsed to integer minutes, source Excel dates compared as original day serials. This is **real original company-source** evidence, not a fresh Skia/PDC PDF decode, actual UID FlightRecord join, Dart execution or product parser PASS.
+
+| Original company-only adversarial projection | Independently observed |
+| --- | ---: |
+| XLSX files / rows | 9 / 1,530 |
+| Approved 7C-normalizable rows / unsupported | 1,520 / 10 |
+| Distinct `flight+route` keys after dropping date/year | 521 |
+| Keys occurring more than once / rows on those keys | 299 / 1,298 |
+| Maximum rows sharing one date-free key | 14 |
+| Exact `day+7C flight+route` duplicate groups | 0 |
+| Adjacent-day same-flight+route pairs / same `bt` within those pairs | 11 / 0 |
+| 2026 supported rows / rows with ≥1 matching **2018–2025** date-free key | 158 / 99 |
+| 2026 rows with historical same key in ≥2 distinct years | 49 |
+| 2026→historical date-free candidate pairs | 395 |
+| 2026 rows with ≥1 historical same-key **and same minute `bt`** | 20 |
+| 2026 rows with ≥1 historical same-key, same minute `bt` **and same `acType`** | **9** |
+
+**Material counterexample:** even `flight+route+minute Block+aircraft type` has real historical cross-year collisions. These are **company-to-company** comparisons only, not proven Skia/PDC-to-company matches. Therefore no yearless/omitted-Date CrewConnex candidate can be attached merely because flight, route, BLH, or aircraft type agree. A unique full-date company key is only a company row identity candidate; it does not prove the private roster's source century/Publication, current UID-owned Flight identity, or crew snapshot authority. The existing `-1/0/+1` matching window remains review-only, never an operational-date correction.
+
+**Additional independent source consistency (not cross-source equivalence):** all 1,530 company `bt` and `at` values parse as H:MM/HH:MM and `bt > at` in this corpus. Of 1,528 parseable Night and Instrument values, none exceeds company Block, while **one** Instrument value exceeds company Actual. This is a review signal, **not** a defect determination or permission to alter imported fields. Empty company cells must follow C341 PRESENT_EMPTY correction, not retracted C339 ABSENT claim.
+
+**Integrated roster/locator recheck (existing privacy-safe manifest only):** C194 has 62 Skia numeric candidates and 310 selected physical locators, all source-scoped and year UNVERIFIED; 27 rows have omitted own Date (TD6), of which 26 are immediately after another numeric candidate and **one August TR14** is separated by a nonflight TR. There are 19 August rows outside curated Preview, with 10 own-Date rows outside the observed company-2026 August 01–02 coverage and nine without own Date. This reaggregates prior real-source-derived metadata; no fresh PDF text/crew decoding or active UID ledger join occurred.
+
+**ParserProfile decision, research-only `crewconnex-match-admission-research-2.31-C346`:** (1) keep original source SHA256+family/profile+page/TR/TD/MCID and raw date/BLH/AC label; (2) require independent source-bound full century/period and publication/revision authority, no filename/CreationDate/weekday guess; (3) only full date+approved carrier-specific flight+route may filter existing UID-owned Flight candidates; (4) treat `NO_CANDIDATE`, `MULTIPLE_CANDIDATES`, `ONE_UNVERIFIED_CANDIDATE`, `SOURCE_DATE_UNVERIFIED`, `UNSUPPORTED_LAYOUT` as detached nonmutating review states; (5) require exact active Flight ID, verified unlocked UID, FlightRevision/EvidenceHead CAS, explicit review and idempotent source Receipt before any future evidence-only attach; (6) never use aircraft type, minute BLH/Block equality, adjacent numeric rows, pipe-only crew, or historical uniqueness as identity/crew/date proof; never create a FlightRecord, overwrite Block or infer PF/PM/PIC/SIC/duty. Run real source-collision regression using privacy-safe synthetic substitutions; actual Dart/Sembast remains unexecuted.
+
+**Checkpoint:** New material company-side ambiguity evidence and prior Skia physical antecedent exception are reconciled. Further same-export Skia year/Publication/name/crew authority and August UID Flight match cannot be certified from this company workbook or manifest; no lawful P1 source acquired, public P2/Production OPEN. No new airline/deployment/format evidence.
