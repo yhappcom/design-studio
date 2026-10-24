@@ -174,3 +174,22 @@ Skia `ModDate` equals `CreationDate` in all three originals; PDC has no `ModDate
 ## 2026-10-24 C336 — Source/owner cardinality must precede scalar evidence notice
 
 Fresh-read LogMate `SourceEvidenceHistory` and its committed tests: two normalized-equal Block observations can append without user notice despite changed raw formatting or source fingerprint. That behavior is scoped to scalar field reconciliation, **not** a CrewConnex roster revision/crew snapshot receipt. Existing C194 62-row/310-field manifest was independently reaggregated: nine TD/Activity signatures, no selected-field offset or MCID-order violations; 19 August Skia observations outside Preview remain unbound to a UID-owned Flight. C335 company 1,530-row/±1-day cardinality and 8/02 company coverage are unchanged. A unique company candidate, equal BLH, or source-file change cannot substitute for authenticated century/publication, actual owner Flight one-to-one match, crew identity or independent EvidenceHead CAS. Synthetic 13/13 checks are not Dart/production acceptance.
+
+
+## 2026-10-24 C339 — Nine-year source-byte missingness and Gregorian-key reconciliation
+
+**Direct independent original-source check (new execution).** Re-fetched nine private LogMate company `reference/source-materials/import-source/flightHistory_2018.xlsx`–`flightHistory_2026.xlsx` in read-only base64. Decoded OOXML ZIP/DEFLATE, shared-string indices, worksheet row/cell presence, full Gregorian dates, source `bt` lexical format and approved 7C-only normalized date+flight+route keys. No private roster/flight contents or employee identifiers persisted. Per-year row counts **58/318/88/172/158/184/176/217/159 = 1,530**, all 1,530 valid Gregorian `YYYYMMDD` and all `bt` cells lexically `H:MM/HH:MM`; zero duplicate exact normalized date+flight+route keys. Eleven same-flight+route adjacent-day company-source pairs independently reproduced: 2020 four, 2022 one, 2024 two, 2025 four, 2026 zero. These are potential ±1 matching collisions, not actual duplicate flights or CrewConnex mismatch proof.
+
+| Company source | Absent `ntTme` | Absent `instTme` | Absent `toCnt` | Absent `ldCnt` | Scope |
+| --- | ---: | ---: | ---: | ---: | --- |
+| 2018–2023 | 0 | 0 | 0 | 0 | Six original workbooks |
+| 2024 | 0 | 0 | 0 | 1 | Worksheet row 177 |
+| 2025 | 0 | **2** | **4** | **5** | Q rows 22/23; R 14/16/18/20; S 14/15/16/18/20 |
+| 2026 | 0 | 0 | 0 | 0 | 159 original rows, Jan–Aug |
+| **Total** | **0** | **2** | **4** | **6** | **12 absent cells in eight distinct source rows** |
+
+2025 physical cells with no `<c>` node must not be described as present-but-empty. C265's prior C277/C280-based statement (`ntTme=2, instTme=0, toCnt=5, ldCnt=4`) is contradicted by the freshly decoded 2025 source and explicitly superseded. Distinguish missing, present empty, explicit zero and literal dash; 2025 has **156 explicit zero `ntTme`**, 139 literal `-` in `toCnt`, and 138 literal `-` in `ldCnt`. These are distinct values, not imputations. Full semantic date validation is new relative to the earlier lexical-only date audit; it does not authenticate CrewConnex's two-digit printed century or roster Publication.
+
+**Cross-source admission impact:** company `bt` is not Skia BLH/PDC Blk Hrs semantic equivalence; a complete unique company source key still cannot bind an active Firebase-UID-owned FlightRecord. Existing Skia 62 candidates (43 Preview/19 uncurated August), PDC 26 numeric (13 without own Date), company 2026 Aug coverage through Aug 02, and source-century/name/Publication gaps are unchanged. No new CrewConnex PDF parsing, actual UID join, Dart/Sembast execution or public P1 sample. Public P2 capability only; Production Parser **OPEN**. Two focused lawful public CrewConnex raw/name-mapping searches returned no verified P1/name legend; PDC System Monitor PDF preview remains 404 and is not accepted as source PDF evidence.
+
+**Adjacent question completed in this run:** checked all nine workbook cell-presence maps, explicit zero/dash categories, 2024–2025 exceptional row ordinals, Gregorian validity, 7C key uniqueness, adjacent-day collision counts and the 2026 source-coverage boundary. Remaining CrewConnex semantic/UID blockers cannot be resolved by company workbook quality alone.
