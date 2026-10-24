@@ -665,5 +665,99 @@
       "no active UID-owned Flight match",
       "Production Parser OPEN"
     ]
+  },
+  "pdcColumnCoverageAndCompanyTypeC344": {
+    "id": "C344",
+    "date": "2026-10-24 20:00 KST",
+    "status": "RESEARCH_ONLY_NO_PROFILE_VERSION_PROMOTION",
+    "sourceScope": {
+      "pdcPrivatePdfGitBlobSha1": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "pdfBytes": 39612,
+      "decodedPdfTextOperators": 495,
+      "bodyBands": 49,
+      "company2026Rows": 159,
+      "companyApproved7CNumeric": 158,
+      "companyUnsupportedCarrier": 1,
+      "privateContentCopied": false
+    },
+    "body": {
+      "numericActivity": 26,
+      "nonnumericActivity": 22,
+      "blankActivity": 1,
+      "numericColumnPresence": {
+        "Date": 13,
+        "Pairing": 16,
+        "DC": 0,
+        "C/I (L)": 15,
+        "C/O (L)": 14,
+        "Activity": 26,
+        "From": 26,
+        "STD (L)": 26,
+        "STD (B)": 26,
+        "To": 26,
+        "STA (L)": 26,
+        "STA (B)": 26,
+        "AC/Hotel": 26,
+        "Blk Hrs": 26
+      },
+      "nonnumericRoutePairs": 18,
+      "nonnumericFourClockPositionCells": 22,
+      "nonnumericPrintedBlock": 0,
+      "blankActivityWithACHotelAreaContent": 1,
+      "withinPdcNumericUniqueFlightRouteKeys": 26,
+      "headerBodyXOffset": {
+        "Date": {
+          "header": 75,
+          "body": 81
+        },
+        "Blk Hrs": {
+          "header": 492,
+          "body": 511
+        }
+      }
+    },
+    "aircraftCandidate": {
+      "numericACHotelRawValues": 26,
+      "distinctRawValues": 2,
+      "threeCharDigitLetterDigit": 15,
+      "threeCharAllDigit": 11,
+      "registrationShapedRawValues": 0,
+      "conditionalYY26To2026UniqueFullKeyCompanyJoins": 2,
+      "ACHotelEqualsCompanyAcType": 2,
+      "ACHotelEqualsCompanyFltAcNo": 0,
+      "printedBlockEqualsCompanyBtInMinutes": 2,
+      "interpretation": "RAW_AC_HOTEL_AIRCRAFT_TYPE_CANDIDATE_REVIEW_ONLY; NOT VERIFIED REGISTRATION OR UNIVERSAL AIRCRAFT TYPE",
+      "otherNumericRowsFullDateCompanyJoinNotCertified": 24
+    },
+    "matching": {
+      "flightRouteCompanyMultiplicity": {
+        "0": 8,
+        "1": 8,
+        "2": 6,
+        "3": 4
+      },
+      "pdcOwnDateNumeric": 13,
+      "ownDateUniqueConditionalFullKeyCompanyJoins": 2,
+      "ownDateBeyondObservedCompanyAugust2": 11,
+      "missingOwnDate": 13,
+      "uidOwnedFlightJoins": 0
+    },
+    "semanticBoundaries": [
+      "Crewmember report subject is not per-leg CrewParticipant.name",
+      "DC/Pairing/C-I/C-O are optional, no inheritance",
+      "nonflight route/clocks are not flights",
+      "printed report generation time is not roster Publication or revision",
+      "no automatic YY26 century/date correction",
+      "no canonical Block or registration assignment",
+      "no standalone FlightRecord"
+    ],
+    "validation": {
+      "actualOriginal": "PDC PDF 49 body bands plus company 2026 OOXML direct in-memory decode",
+      "researchOracle": "14/14 standalone JS source-derived structural checks, five synthetic row mutations; NOT Dart/parser/Sembast",
+      "publicSearch": "Two focused passes found no official AC/Hotel label definition or anonymized P1",
+      "publicGrade": "P2",
+      "productionParser": "OPEN"
+    },
+    "next": "Authenticate Skia source-bound century/Publication/crew names and Aug 03–31 owner UID Flight; validate PDC AC/Hotel against second lawful report variant and approved evidence-only runtime gate."
   }
 }
