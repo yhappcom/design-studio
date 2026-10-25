@@ -1162,5 +1162,51 @@
     "verification": "11/11 direct source/code assertions; 12/12 synthetic admission; 7/7 synthetic identity/reparse; NO Dart/Sembast or new private PDF decode",
     "publicPdfGrade": "P5",
     "productionReady": false
+  },
+  "carrierAttributionGateC361": {
+    "researchContract": "crewconnex-pdc-carrier-attribution-research-1.0-C361",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "source": "Original private PDC August PDF independently decoded in transient memory 2026-10-25; no private values retained",
+    "observed": {
+      "pdfBytes": 39612,
+      "textObjects": 495,
+      "headers": 14,
+      "bodyBands": 49,
+      "numericActivity": 26,
+      "threeDigitActivity": 8,
+      "fourDigitActivity": 18,
+      "numericActivityWithPrintedCarrierPrefix": 0,
+      "headerWithCarrierField": false,
+      "ownDate": 13,
+      "omittedOwnDate": 13,
+      "distinctNumericActivity": 26,
+      "distinctRoute": 23,
+      "routeDuplicateGroups": 2,
+      "rowsInRouteDuplicateGroups": 5,
+      "distinctPrintedBlock": 25,
+      "printedBlockDuplicatePairs": 1,
+      "distinctAcHotelRaw": 2,
+      "nonflightOrBlank": 23,
+      "nonflightWithPrintedBlock": 0
+    },
+    "requiredStates": [
+      "rawActivityDigits",
+      "sourceCarrierState=NOT_PRINTED_IN_OBSERVED_GRID",
+      "carrierAttributionProvenance=UNVERIFIED",
+      "ownDateState",
+      "operationalYearState",
+      "physicalSourceKey",
+      "interpretationKey",
+      "publicationState",
+      "uidFlightCardinality",
+      "approvalState"
+    ],
+    "productAuthority": "LogMate import-contract 7C rule is company fltNo only; CarrierDesignator is manual-only and never evidence for imported data. No automatic carrier prefix for PDC bare Activity.",
+    "crossSource": "Prior 2 conditional own-Date PDC/company 7C joins not independent carrier/UID proof; no fresh XLSX value join C361.",
+    "collisionSafety": "One-PDF numeric Activity 26 unique is not a reusable key; route 23 distinct, Blk Hrs 25 distinct, AC/Hotel two variants. No surrogate matching or flown-status inference.",
+    "admission": "Detached review only until source-authorized carrier+date/year+active same-UID Flight cardinality=1+approval and separately approved Publication policy and dual-CAS/Receipt/lifecycle.",
+    "syntheticResearch": "10 policy variants passed; hypothetical all-other-authorities state 13 own-Date candidates before Publication/UID CAS gates. Not Dart/Sembast.",
+    "publicEvidence": "Two focused searches: no official 14-column carrier mapping or anonymous raw PDF schema; official back-office carrier colour is not report-carrier proof. PDF P5/weekly HTML P3.",
+    "productionReady": false
   }
 }
