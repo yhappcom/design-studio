@@ -2061,5 +2061,83 @@
       "weeklyHtml": "P3",
       "productionParser": "OPEN"
     }
+  },
+  "c379HeaderGridPhysicalLocatorGate": {
+    "id": "C379",
+    "contract": "crewconnex-pdc-header-grid-and-cross-family-source-locator-1.0-C379",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "sourceScope": {
+      "pdcGitBlob": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "pdcBytes": 39612,
+      "skiaManifestGitBlob": "625c4e4367d12189f96cf4ee85cd1f3bae71e035",
+      "skiaManifestRows": 62,
+      "skiaManifestSelectedFields": 310,
+      "newCompanyJoin": false
+    },
+    "actualGeometry": {
+      "pdfTextObjects": 495,
+      "headerFilledRectangles": 14,
+      "headerTexts": 14,
+      "bodyTextObjects": 473,
+      "bodyRows": 49,
+      "bodyRowPitchPoints": 9,
+      "headerRectangleY": 645.1,
+      "headerTextY": 647,
+      "bodyBaselineTop": 638,
+      "bodyBaselineBottom": 206,
+      "nonBodyNonHeaderObjects": 8,
+      "allBodyCellsMapInsideHeaderIntervals": true,
+      "bodyRowColumnCollisions": 0,
+      "globalTextOriginDuplicatesOutsideBody": 2,
+      "headerTextXExactMatchBodyCells": 416,
+      "headerTextXExactMissBodyCells": 57,
+      "headerTextXTolerance5MissBodyCells": 57,
+      "dateHeaderX": 75,
+      "dateBodyX": 81,
+      "blockHeaderX": 492,
+      "blockBodyX": 511,
+      "columnOccupancy": [
+        31,
+        22,
+        1,
+        16,
+        16,
+        48,
+        44,
+        48,
+        48,
+        44,
+        48,
+        48,
+        33,
+        26
+      ],
+      "numericActivityWithPrintedBlock": 26,
+      "nonnumericActivityWithoutPrintedBlock": 22,
+      "blankActivityRows": 1
+    },
+    "decisions": [
+      "For this exact PDC family variant use validated ordered header rectangle x-intervals, not exact header text x, to assign body column ordinals.",
+      "Only header cells have filled rectangles; derive body row baselines from independently validated text geometry and reject unsupported reflow rather than assuming all exports use 49 rows/9pt.",
+      "Permit global title/header overprint but reject duplicate body row+column positions and off-grid cells.",
+      "PDC locator: sourceSHA256+family+page+bodyRowOrdinal+columnOrdinal+textOperatorOrdinal; Skia locator: sourceSHA256+family+page+primaryTR+TD+MCID.",
+      "Pin immutable runtime profile digest to staging/approval/receipt; do not reuse mutable research profileVersion as authority.",
+      "Detached existing-Flight-only evidence, never new FlightRecord, automatic date inheritance, role inference, or canonical Block overwrite."
+    ],
+    "validation": {
+      "directOriginalAndManifestStructuralAssertions": "21/21 RESEARCH_JS",
+      "syntheticNegativeMutationClasses": "5/5 RESEARCH_JS",
+      "freshIndependentPdcDecoders": 1,
+      "dartSembast": "NOT_RUN",
+      "sameUidFlight": "NOT_AVAILABLE",
+      "publicExactSchemaSearch": "TWO_FOCUSED_PASSES_NO_AUTHENTICATED_P1_OR_OFFICIAL_14_COLUMN_SCHEMA",
+      "identifiableRoster": "DO_NOT_ACQUIRE"
+    },
+    "evidenceGrades": {
+      "publicPdcPdf": "P5",
+      "weeklyHtml": "P3",
+      "productionParser": "OPEN"
+    }
   }
+
 }
