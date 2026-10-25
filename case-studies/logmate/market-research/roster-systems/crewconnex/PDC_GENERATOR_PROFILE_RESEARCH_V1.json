@@ -1357,5 +1357,55 @@
       "active same-UID Flight and transactional Evidence CAS/Receipt/backup/wipe"
     ],
     "productionReady": false
+  },
+  "c367ProductAuthorityAndLifecycleGate": {
+    "id": "C367",
+    "researchContract": "crewconnex-existing-record-owner-lifecycle-1.0-C367",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "verifiedSources": [
+      "LogMate MASTER.md existing actual only and no roster planning",
+      "LogMate import and CrewConnex parser contracts",
+      "LogMate current sembast_logbook_repository.dart blob d7e4efd4f6dc85220a2f67ca8af956e8abf01aeb",
+      "Design Studio existing original-source-verified Skia/PDC/company counts (not new binary decode)"
+    ],
+    "sourceAccess": "Original private PDC blob GitHub fetch UnicodeDecodeError; no new private PDF/XLSX binary decode or UID Flight matching",
+    "staticCodeFindings": {
+      "syncAwareLbkStores": 37,
+      "terminalWipeDroppedStores": 29,
+      "undroppedSyncStores": 7,
+      "undroppedLocalReplica": true,
+      "freshInitializerKeepsExistingSyncState": true,
+      "ownerRebindRewritesSyncOwnerUidOnly": true,
+      "backupIncludesSyncStores": true,
+      "realCrossOwnerLeakProven": false
+    },
+    "productAuthorityConflict": {
+      "master": "CrewConnex existing actual FlightRecord only; roster planning V1 OUT OF SCOPE",
+      "commonField": "line 139 future schedule prefill conflicts/ambiguous",
+      "admission": "MASTER WINS; NO FUTURE FLIGHT CREATION; product owner reconciliation OPEN",
+      "sync": "Internal UTC LWW does not apply to external CrewConnex Import"
+    },
+    "safeAdmission": [
+      "known generator/report family and field layout",
+      "numeric Activity with required printed time evidence; exclude nonflight before clocks",
+      "preserve own-Date missing and Pairing raw-only; no inheritance",
+      "source-authorized carrier and four-digit operational year",
+      "leg-scoped name map only for CrewParticipant; BLH/PDC kind separated",
+      "one active matching same-UID actual Flight; explicit owner review",
+      "physical source locator + stage digest + immutable parser interpretation identity",
+      "approved Publication-unknown policy before attachment (not universal layout failure)",
+      "atomic EvidenceHead/FlightRevision CAS + immutable receipt + replay/rollback",
+      "full UID-A terminal wipe/UID-B reopen/backup/restore isolation; never mutate canonical Flight/Block or Sync outbox"
+    ],
+    "researchChecks": {
+      "sourceStatic": "14/14",
+      "syntheticAdmission": "12/12",
+      "dartSembast": "NOT_EXECUTED",
+      "realUidFlight": "NOT_AVAILABLE"
+    },
+    "publicSampleGrade": "P5",
+    "weeklyHtmlGrade": "P3",
+    "productionReady": false,
+    "next": "Authorized same-export carrier/year/Publication/leg crew plus real active UID Flight and file-backed evidence-only dual-CAS/Receipt/UID-wipe acceptance"
   }
 }
