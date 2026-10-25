@@ -1407,5 +1407,65 @@
     "weeklyHtmlGrade": "P3",
     "productionReady": false,
     "next": "Authorized same-export carrier/year/Publication/leg crew plus real active UID Flight and file-backed evidence-only dual-CAS/Receipt/UID-wipe acceptance"
+  },
+  "c368OriginalPdcClockMarkerGate": {
+    "id": "C368",
+    "contract": "crewconnex-pdc-clock-marker-structural-admission-1.0-C368",
+    "status": "RESEARCH_ONLY",
+    "source": "Fresh original private August PDC PDF, read-only GitHub base64 blob 8e7fec30f98458c770053bd7739e60869a87e33b; privacy-safe aggregates only",
+    "actual": {
+      "pdfBytes": 39612,
+      "textObjects": 495,
+      "bodyObjects": 473,
+      "independentBodyAgreement": "473/473",
+      "headerColumns": 14,
+      "bodyBands": 49,
+      "numericFlightLikeWithBlock": 26,
+      "otherWithoutBlock": 23,
+      "numericOwnDate": 13,
+      "numericDateOmitted": 13,
+      "numericFourClocksValid": 26,
+      "baseElapsedEqualsPrintedBlock": 26,
+      "localElapsedEqualsPrintedBlock": 16,
+      "localMinusBaseDeltaPairsMinutes": {
+        "0/0": 16,
+        "0/-60": 3,
+        "-60/0": 3,
+        "0/-120": 1,
+        "-120/0": 1,
+        "0/+60": 1,
+        "+60/0": 1
+      },
+      "distinctAirportCodes": 13,
+      "airportOffsetContradictionsWithinThisFile": 0,
+      "datedNumericCiOnly": 7,
+      "datedNumericCiCo": 6,
+      "undatedNumericCoOnly": 6,
+      "undatedNumericCiCo": 2,
+      "undatedNumericNeither": 5,
+      "nonflightFourClockBands": 22,
+      "nonflightInvalidStrictHhmmBands": 4,
+      "nonflightAcHotel": 7,
+      "nonflightCiOrCo": 2,
+      "nonflightPrintedBlock": 0,
+      "headerBodyDateX": "75/81",
+      "headerBodyBlockX": "492/511",
+      "daySuffixCellCounts": {
+        "plus1": 21,
+        "minus1": 1,
+        "plus3": 2
+      }
+    },
+    "decision": "Use calibrated immutable 14-column map and fail closed on unknown layout; classify activity before flight-clock validation; C/I C/O AC/Hotel Date Pairing and four clocks cannot infer flight, date, crew or duty. Do not infer timezone, UTC, source year, carrier, publication or Block equivalence from 26/26 base arithmetic or one-file airport consistency. No FlightRecord creation.",
+    "validation": {
+      "actual": "Original PDF directly decoded; 495/495 text objects and 473/473 independent body agreement",
+      "synthetic": "16/16 research-only policy oracle, not Dart/Sembast",
+      "uidLedger": "NOT_TESTED",
+      "companyJoin": "C365 prior original 1530 company/89 date-free/8 Block-equal/2 conditional own-Date pairs reused, not re-run"
+    },
+    "public": "Two focused passes: official vendor PDF/report capability, no official 14-column C/I/C/O dictionary or lawful anonymized P1 raw",
+    "publicPdfGrade": "P5",
+    "weeklyHtmlGrade": "P3",
+    "productionReady": false
   }
 }
