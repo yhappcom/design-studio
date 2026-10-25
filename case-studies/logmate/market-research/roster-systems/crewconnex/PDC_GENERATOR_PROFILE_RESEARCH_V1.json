@@ -1994,5 +1994,72 @@
       "weeklyHtml": "P3",
       "productionParser": "OPEN"
     }
+  },
+  "c378ImmutableProfileAndMultiPageGate": {
+    "id": "C378",
+    "contract": "crewconnex-skia-pdc-complete-page-and-immutable-profile-digest-1.0-C378",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "sourceScope": {
+      "skiaPdfBytes": [
+        541788,
+        556535,
+        552417
+      ],
+      "skiaPagesEach": 2,
+      "skiaTaggedFlateToUnicode": true,
+      "manifestRows": 62,
+      "manifestSelectedFields": 310,
+      "skiaPage2Rows": 6,
+      "skiaPage2Curated": 4,
+      "skiaPage2Uncurated": 2,
+      "pdcPdfBytes": 39612,
+      "pdcPages": 1,
+      "pdcTextObjects": 495
+    },
+    "locatorAblation": {
+      "fullSourcePageTrTdUnique": 310,
+      "fullSourcePageTrTdCollisionAffected": 0,
+      "pageMcidWithoutSourceUnique": 286,
+      "pageMcidWithoutSourceCollisionAffected": 47,
+      "sourcePageTdWithoutTrUnique": 66,
+      "sourcePageTdWithoutTrCollisionAffected": 282,
+      "page1OnlyMissingRows": 6,
+      "page1OnlyMissingFields": 30
+    },
+    "historicalResearchDossierIdentity": {
+      "oldGitCommit": "7adf8f14be5036aabaab02cbf33eb6e50a7f045d",
+      "oldGitBlob": "feba4ce5dd04ea25d64e842dc1e3a99358c854d3",
+      "oldUtf8Chars": 25579,
+      "newGitCommit": "243804f3aaf8178d06b39f0944c15c6f117f5c5a",
+      "newGitBlob": "1666fde141b6ac536f637dbb570464dabeaac015",
+      "newUtf8Chars": 94300,
+      "legacyResearchProfileVersion": "research-1.6.0-C330",
+      "sameProfileIdAndVersion": true,
+      "addedJsonPaths": 25,
+      "changedJsonPaths": 1,
+      "publicGradeChange": "P2_TO_P5",
+      "interpretation": "Mutable research dossier; never use legacy research profileVersion as immutable runtime parser authority"
+    },
+    "productionProfileIdentity": {
+      "immutableProductionProfileVersion": "NOT_ASSIGNED",
+      "immutableCanonicalProfileContentDigest": "NOT_ASSIGNED",
+      "requiredFutureGate": "Freeze canonical content digest per generator family/profileId/profileVersion; trusted stage/approval/receipt must pin digest and source SHA-256; same-version/different-digest must fail closed; changed profile requires new explicit review",
+      "noStandaloneFlightRecord": true
+    },
+    "validation": {
+      "originalSkiaContainer": "THREE_PRIVATE_PDF_BINARY_READ_ONLY",
+      "manifest": "C194_REAL_SOURCE_DERIVED_MANIFEST_RECOMPUTED",
+      "pdc": "ORIGINAL_PDF_ONE_PAGE_TEXT_OBJECT_RECHECK",
+      "sourceStaticAssertions": "11/11 RESEARCH_JS",
+      "syntheticPolicyChecks": "5/5 RESEARCH_JS",
+      "dartSembast": "NOT_RUN",
+      "ownerUidFlight": "NOT_AVAILABLE",
+      "newCompanyJoin": false
+    },
+    "evidenceGrades": {
+      "publicPdcPdf": "P5",
+      "weeklyHtml": "P3",
+      "productionParser": "OPEN"
+    }
   }
 }
