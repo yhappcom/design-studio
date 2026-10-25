@@ -1147,5 +1147,20 @@
       32,
       24
     ]
+  },
+  "c360PublicationPolicyAuthorityGate": {
+    "checkedAt": "2026-10-25 12:03 KST",
+    "authority": "LogMate MASTER.md external inbound review and §12, import-contract.md, crewconnex-parser-plan.md",
+    "finding": "No explicit universal export Publication ID prerequisite in current product contracts; C359 universal attachment requirement is stricter research-only, pending owner policy decision.",
+    "physicalObservationKey": "source raw-byte SHA-256 + report family + typed page/table/row/cell locator + raw cell digest (Git blob SHA-1 is distinct)",
+    "interpretationKey": "physical key + immutable ParserProfile ID/version + interpretation digest; same bytes reparsed under new version is not a roster revision",
+    "publicationIdentity": "VERIFIED token or explicit NOT_PROVIDED/UNVERIFIED; never infer from PDF CreationDate, UI change/ack time or new file SHA",
+    "detachedObservation": "Validated source layout may be classified detached without publication; no Flight attachment, owner claim, or canonical mutation",
+    "unknownPublicationAttachment": "HOLD_POLICY_PUBLICATION pending owner approval; not automatically UNSUPPORTED_LAYOUT or accepted",
+    "attachmentAlwaysRequires": "independently verified operational date/year, one active same-UID existing Flight, explicit review, immutable stage digest, dual FlightRevision/EvidenceHead CAS, receipt, replay/rollback and backup/wipe parity",
+    "actualSourceScope": "C194 62 Skia observations/310 selected locators from three source SHA-256; 62 year-unverified; PDC 26 numeric/13 own-Date missing from existing real-source profile; no fresh PDF decode",
+    "verification": "11/11 direct source/code assertions; 12/12 synthetic admission; 7/7 synthetic identity/reparse; NO Dart/Sembast or new private PDF decode",
+    "publicPdfGrade": "P5",
+    "productionReady": false
   }
 }
