@@ -1208,5 +1208,61 @@
     "syntheticResearch": "10 policy variants passed; hypothetical all-other-authorities state 13 own-Date candidates before Publication/UID CAS gates. Not Dart/Sembast.",
     "publicEvidence": "Two focused searches: no official 14-column carrier mapping or anonymous raw PDF schema; official back-office carrier colour is not report-carrier proof. PDF P5/weekly HTML P3.",
     "productionReady": false
+  },
+  "crossSourceNineYearKeyAblationC365": {
+    "contract": "crewconnex-pdc-company-nine-year-candidate-isolation-1.0-C365",
+    "evidence": "Direct read-only original private August PDC PDF and nine original company 2018-2026 XLSX, no raw values exported",
+    "pdf": {
+      "bytes": 39612,
+      "bodyBands": 49,
+      "numericWithPrintedBlock": 26,
+      "otherWithoutPrintedBlock": 23,
+      "numericOwnDate": 13,
+      "numericOmittedDate": 13,
+      "strictRegexCapturedTextObjects": 481,
+      "previousKnownTextObjects": 495
+    },
+    "company": {
+      "records": 1530,
+      "company7CNumericSupported": 1520,
+      "observed2026Through": "2026-08-02"
+    },
+    "assumptions": [
+      "PDC carrier not printed: comparing bare numeric Activity to company 7C suffix is hypothetical only",
+      "PDC YY26 to 2026 is unverified century assumption",
+      "Company match is not an active same-UID FlightRecord match"
+    ],
+    "dateFreeNineYears": {
+      "candidatePairs": 89,
+      "pdcRowsZero": 2,
+      "one": 6,
+      "multiple": 18,
+      "maxPerRow": 9
+    },
+    "dateFree2026AnyMonth": {
+      "candidatePairs": 32,
+      "pdcRowsZero": 8,
+      "one": 8,
+      "multiple": 10
+    },
+    "dateFreeObservedAugust2026": {
+      "candidatePairs": 3,
+      "pdcRowsZero": 23,
+      "one": 3,
+      "ownDateAmongThree": 2,
+      "omittedOwnDateAmongThree": 1
+    },
+    "strictOwnDateUnderAssumedCentury": {
+      "rowsAssessed": 13,
+      "oneCompanyCandidate": 2,
+      "zeroCompanyCandidate": 11,
+      "printedBlockEqualsCompanyBt": 2,
+      "printedBlockDiffers": 0
+    },
+    "disposition": "All remain detached; no date inference, carrier attribution, Publication, crew, UID Flight or canonical Block equivalence. Company coverage absence is not flight nonexistence.",
+    "runtime": "No Dart/Sembast or active UID ledger tests",
+    "publicPdfGrade": "P5",
+    "weeklyHtmlGrade": "P3",
+    "productionReady": false
   }
 }
