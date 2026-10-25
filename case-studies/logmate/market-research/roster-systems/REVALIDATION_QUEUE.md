@@ -434,3 +434,11 @@ Actual one-page PDC PDF: 49 body bands = 26 numeric-Activity candidates + 22 non
 - OPEN: independently authorized same-export carrier/year/Publication/leg-scoped crew, Publication-unknown owner policy, active same-UID Flight, dual CAS/Receipt/replay/rollback/backup/terminal wipe. ONE next target: authenticate the two conditional and one undated cases against same-export+UID ledger, then run file-backed evidence-only lifecycle acceptance.
 
 - **C365 same-run independent adversarial extension:** Re-decoded all ten original binaries independently. Of 89 nine-year date-free numeric+route pairs, eight still match exact PDC Block=company bt (20 PDC rows zero, four one, **two ambiguous with two matches each**). All three observed-August pairs have equal Block, including the own-Date-missing HOLD. Exact Block does not rescue date-free identity. Two strict own-Date pairs remain conditional, not UID/Publication authority.
+
+
+## C366 (2026-10-25 KST) — CLOSED actual PDC Pairing-key ablation; OPEN authoritative field semantics and UID acceptance
+
+- Re-fetched private PDC PDF read-only. Independent BT/ET and line-oriented extraction agree 481/481 non-header objects (14 header objects separate). Original 49 body bands: 26 numeric+Block, 22 nonnumeric, one blank; 31 Date anchors.
+- Printed Pairing 22 rows / nine distinct values; five raw groups span multiple own Date values, four mix numeric/nonflight, four are noncontiguous. Three own-Date-omitted numeric rows have Pairing and ten do not. Pairing cannot supply date, unique duty/flight identity, crew or revision; retain raw label and locator.
+- Public official product search x2 did not produce a Pairing field dictionary or P1 raw export; PDF P5, weekly HTML P3. Standalone synthetic 11/11, no Dart/Sembast or owner-UID Flight.
+- OPEN: source-authorized operator/four-digit year/Publication/leg crew and Pairing legend, Publication-unknown owner policy, active same-UID Flight, evidence-only dual-CAS/Receipt/replay/rollback/backup/terminal wipe. ONE next integrated target: authorized same-export source/owner binding with file-backed evidence-only acceptance.

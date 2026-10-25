@@ -1285,5 +1285,77 @@
       "safety": "Block equality does not establish carrier, date, UID identity, publication or BLH equivalence; omitted Date remains HOLD",
       "runtime": "Real original source ablation only; no Dart/Sembast"
     }
+  },
+  "pairingKeyAblationC366": {
+    "contract": "crewconnex-pdc-pairing-raw-only-1.0-C366",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "source": "Original private August PDC-generator PDF read-only; only privacy-safe aggregates persisted",
+    "originalPdfBytes": 39612,
+    "independentExtractors": {
+      "btEtTextObjects": 495,
+      "lineOrientedObjects": 481,
+      "headerObjectsNotCapturedByLineParser": 14,
+      "nonHeaderObjectAgreement": "481/481",
+      "bodyBands": 49,
+      "headerColumns": 14
+    },
+    "actualCorpus": {
+      "numericWithPrintedBlock": 26,
+      "nonnumeric": 22,
+      "blankActivity": 1,
+      "printedDateAnchors": 31,
+      "pairingPopulatedRows": 22,
+      "distinctRawPairingValues": 9,
+      "pairingGroupSizeMultiset": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        7
+      ],
+      "pairingNumericRows": 16,
+      "pairingNonflightRows": 6,
+      "pairingGroupsWithMultipleDistinctOwnDates": 5,
+      "pairingGroupsMixedNumericNonflight": 4,
+      "pairingGroupsPhysicallyNoncontiguous": 4,
+      "numericOwnDatePresentWithPairing": 13,
+      "numericOwnDateOmittedWithPairing": 3,
+      "numericOwnDateOmittedWithoutPairing": 10,
+      "undatedPairedRowsImmediatelyPrecededBySamePrintedPairing": 0,
+      "undatedPairedRowsInGroupsWithMultipleOwnDates": 2,
+      "undatedPairedRowsInGroupsContainingNonflight": 2
+    },
+    "extractionMapDelta": "Pairing column index 1 is RAW_LABEL_ONLY; capture original printed state and source locator; no inferred duty/crew/flight identity or date inheritance.",
+    "safeFailure": [
+      "No automatic date fill from Pairing even if the same raw value has one own-dated row.",
+      "Repeated Pairing spans multiple dates and may include nonflight: no Pairing-based deduplication or UID Flight attachment.",
+      "Missing Pairing is NOT_PRINTED, not absence of a duty or flight.",
+      "Do not promote Pairing differences to roster Publication/revision chronology.",
+      "No company Excel Pairing field mapping is approved.",
+      "Classify numeric Activity+printed Block first, preserve nonflight/blank and unsupported layout barriers."
+    ],
+    "tests": {
+      "realSource": "Original private PDC 495 objects; 481/481 non-header independent extraction agreement",
+      "syntheticResearch": "11/11 admission policy cases PASS; not Dart/Sembast",
+      "runtime": "NOT_EXECUTED"
+    },
+    "publicEvidence": {
+      "twoFocusedPasses": "No official PDC Pairing PDF data dictionary or lawful anonymized raw 14-column file located",
+      "officialProduct": "https://www.pdc.com/airline-solution/crewconnex/",
+      "pdfGrade": "P5",
+      "weeklyHtmlGrade": "P3"
+    },
+    "unresolved": [
+      "source-authorized Pairing semantics",
+      "operator and four-digit year",
+      "Publication-unknown owner policy",
+      "leg-scoped name authority",
+      "active same-UID Flight and transactional Evidence CAS/Receipt/backup/wipe"
+    ],
+    "productionReady": false
   }
 }
