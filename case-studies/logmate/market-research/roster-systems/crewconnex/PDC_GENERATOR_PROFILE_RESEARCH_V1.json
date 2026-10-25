@@ -1921,5 +1921,78 @@
       "productionReady": false
     },
     "next": "Authenticate same-export carrier/four-digit year/Publication-or-approved-unknown/leg crew and active UID-owned Flight, then file-backed evidence-only CAS/Receipt/replay/rollback/backup/wipe acceptance."
+  },
+  "c377NineYearTypeBlockDiscriminatorGate": {
+    "id": "C377",
+    "contract": "crewconnex-pdc-nine-year-aircraft-code-block-ablation-1.0-C377",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "source": {
+      "pdcPrivateGitBlob": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "pdcBytes": 39612,
+      "pdcTextObjects": 495,
+      "pdcNumeric": 26,
+      "pdcNonflight": 22,
+      "pdcBlank": 1,
+      "companyYears": "2018-2026",
+      "companyRows": 1530,
+      "companySupported7CNumeric": 1520,
+      "sourcePrivacy": "No raw private values, employee IDs or flight identifiers copied"
+    },
+    "reproducedBaseline": {
+      "dateFreePairsAllYears": 89,
+      "year2026Pairs": 32,
+      "priorYearPairs": 57,
+      "pdcRowsZero": 2,
+      "one": 6,
+      "multiple": 18,
+      "minuteBlockEqualPairs": 8
+    },
+    "newYearPartition": {
+      "2018": 2,
+      "2019": 20,
+      "2020": 3,
+      "2021": 2,
+      "2022": 6,
+      "2023": 3,
+      "2024": 1,
+      "2025": 20,
+      "2026": 32
+    },
+    "newRawAircraftCodeBlockAblation": {
+      "hypotheticalOnly": true,
+      "sourceLabel": "AC/Hotel",
+      "companyField": "acType",
+      "allCandidatePairs": 7,
+      "year2019": 2,
+      "year2025": 1,
+      "year2026": 4,
+      "pdcRowsZero": 21,
+      "one": 3,
+      "multiple": 2,
+      "pdcRowsWithHistoricalPairs": 2,
+      "historicalCandidatePairs": 3,
+      "uniqueMatchedPdcRowsWithoutOwnDate": 1,
+      "conditionalOwnDateAssumed2026Matches": 2,
+      "semanticAircraftTypeEquivalence": "UNVERIFIED"
+    },
+    "parserProfileDelta": [
+      "Do not promote PDC mixed AC/Hotel to aircraft type or registration without source-authorized field mapping.",
+      "Never treat numeric Activity+route+printed Block+raw AC/Hotel equality as sufficient for automatic match, even if one company candidate remains.",
+      "Keep yearless historical collisions, missing own Date and company coverage horizon as separate review reasons.",
+      "Require independently verified same-export carrier/four-digit operational year/Publication-or-approved-unknown/leg crew and active same-UID Flight with explicit approval and evidence-only CAS/Receipt."
+    ],
+    "validation": {
+      "realOriginalSources": "One fresh in-memory PDF and nine OOXML workbooks, corroborated C328/C365",
+      "arithmeticConsistencyAssertions": "7/7 research JS",
+      "syntheticPolicyCases": "6/6 research JS",
+      "dartSembast": "NOT_RUN",
+      "ownerFlight": "NOT_AVAILABLE",
+      "publicSearch": "Two focused passes, no lawful anonymized exact-layout P1/schema; identifiable roster excluded"
+    },
+    "grades": {
+      "publicPdf": "P5",
+      "weeklyHtml": "P3",
+      "productionParser": "OPEN"
+    }
   }
 }
