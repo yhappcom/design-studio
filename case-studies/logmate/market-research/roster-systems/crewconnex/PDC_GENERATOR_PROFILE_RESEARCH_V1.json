@@ -1701,5 +1701,164 @@
       "productionReady": false
     },
     "next": "Certified same-export carrier/four-digit year/Publication-or-approved-unknown/leg crew and active UID Flight, then file-backed evidence-only dual CAS/Receipt/replay/rollback/backup/wipe."
+  },
+  "c375PdcFullBodyPresenceAndAdmissionGate": {
+    "researchContract": "crewconnex-pdc-body-column-occupancy-and-detached-admission-1.0-C375",
+    "date": "2026-10-26",
+    "evidenceScope": "Direct read-only one private 39612-byte August PDC Pdf Generator PDF, Git blob 8e7fec30f98458c770053bd7739e60869a87e33b; not a public P1 file; no identifying values copied.",
+    "independentValidation": "Two different in-memory source parsers (BT/ET text-object scan and independent Td/Tj coordinate scan) agree on all 473 body cells; 495 BT/ET total; 473 unique page+bodyBandOrdinal+columnIndex physical locators, zero duplicates or unassigned X coordinates.",
+    "body": {
+      "pageCount": 1,
+      "bodyBands": 49,
+      "columns": 14,
+      "potentialBodyCells": 686,
+      "presentBodyCells": 473,
+      "absentBodyCells": 213,
+      "numericActivityWithPrintedBlock": 26,
+      "nonnumericActivity": 22,
+      "blankActivity": 1
+    },
+    "columnOrder": [
+      "Date",
+      "Pairing",
+      "DC",
+      "C/I (L)",
+      "C/O (L)",
+      "Activity",
+      "From",
+      "STD (L)",
+      "STD (B)",
+      "To",
+      "STA (L)",
+      "STA (B)",
+      "AC/Hotel",
+      "Blk Hrs"
+    ],
+    "bodyTextX": [
+      81,
+      109,
+      143,
+      162,
+      186,
+      210,
+      244,
+      268,
+      292,
+      316,
+      340,
+      364,
+      388,
+      511
+    ],
+    "presentCellsByClass": {
+      "numeric26": [
+        13,
+        16,
+        0,
+        15,
+        14,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "nonnumeric22": [
+        18,
+        6,
+        1,
+        1,
+        2,
+        22,
+        18,
+        22,
+        22,
+        18,
+        22,
+        22,
+        6,
+        0
+      ],
+      "blank1": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    "sourceDerivedFindings": [
+      "Of 31 printed own-Date cells, 18 occur in nonnumeric Activity bands and only 13 in numeric candidates. Day anchors are not proof of a flight, duty, year or date inheritance.",
+      "DC is absent from all 26 numeric candidates and occurs once on a nonflight band. Requiring a DC body cell would reject every observed numeric candidate; no duty/operating semantics may be inferred.",
+      "Pairing (16/26), C/I (15/26), C/O (14/26), and Date (13/26) are sparse among numeric candidates; missing optional cells are not by themselves a malformed PDF.",
+      "All 26 numeric candidates have printed Activity, From, STD(L/B), To, STA(L/B), AC/Hotel and Blk Hrs; eight structural flight gates Activity+route(2)+four clocks+printed Block hold 26/26, before lexical/duration validation and detached review.",
+      "All 22 nonnumeric activities have four clock-position cells, 18 have From/To, none has printed Blk Hrs. The one blank Activity band contains only AC/Hotel, so AC/Hotel cannot classify a flight.",
+      "One-page fixed X occupancy is an observed layout fingerprint only; do not generalize coordinates, row count, field presence or numeric activity grammar to other airline/generator/month profiles."
+    ],
+    "syntheticNegativeAdmissions": [
+      {
+        "case": "remove printed Block",
+        "detachedFlightCandidate": false
+      },
+      {
+        "case": "remove From",
+        "detachedFlightCandidate": false
+      },
+      {
+        "case": "replace numeric Activity with nonflight",
+        "detachedFlightCandidate": false
+      },
+      {
+        "case": "blank Activity with AC/Hotel only",
+        "detachedFlightCandidate": false
+      },
+      {
+        "case": "unrecognized five-digit Activity",
+        "detachedFlightCandidate": false
+      }
+    ],
+    "implementationContract": {
+      "detector": "PDC Pdf Generator family AND exact ordered 14 headers AND calibrated physical grid; unknown/reordered layout must fail closed.",
+      "requiredNumericBodyCells": [
+        "Activity",
+        "From",
+        "STD (L)",
+        "STD (B)",
+        "To",
+        "STA (L)",
+        "STA (B)",
+        "Blk Hrs"
+      ],
+      "optionalSparseBodyCells": [
+        "Date",
+        "Pairing",
+        "DC",
+        "C/I (L)",
+        "C/O (L)",
+        "AC/Hotel"
+      ],
+      "handling": "First exclude nonnumeric/blank/footer, then validate required numeric cells, strict clock and duration lexemes, source-scoped physical locators and original source provenance. An absent own Date remains detached/held, never inherited. Do not attach, create FlightRecord, overwrite Block, infer crew, PIC/SIC, PF/PM, carrier, timezone, Publication or revision.",
+      "sourceLocator": "source SHA-256 (to be calculated in implementation) + immutable ParserProfile + page + band ordinal + column + text-object ordinal; Git blob SHA is source reference, not a substitute for raw-source SHA-256."
+    },
+    "crossChecks": "C194 Skia 62 source-derived candidate rows/310 field locators and C365 nine-year company 1530 source records reused as prior evidence only; no new Skia/company raw-byte decode or new actual UID Flight match this cycle.",
+    "validation": "Real-original physical occupancy and independent text-coordinate parity; five synthetic policy negatives separately. No Dart/Sembast execution or production parser.",
+    "evidenceGrades": {
+      "publicPdf": "P5",
+      "weeklyHtml": "P3",
+      "productionParser": "OPEN"
+    }
   }
 }
