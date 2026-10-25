@@ -2138,6 +2138,44 @@
       "weeklyHtml": "P3",
       "productionParser": "OPEN"
     }
+  },
+  "c380FontAdvanceAndRevisionAdmission": {
+    "contractId": "crewconnex-pdc-font-advance-and-revision-admission-1.0-C380",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "source": "one original private PDC-generator PDF, 39612 bytes, Git blob 8e7fec30f98458c770053bd7739e60869a87e33b",
+    "extractionMethod": "original PDF Type1 /Widths + 495 BT/Td/Tj operations, font state and C379 validated header rectangles; no private values retained",
+    "originalFontFacts": {
+      "headerCells": 14,
+      "headerFont": "Helvetica-Bold F5 6pt",
+      "bodyCells": 473,
+      "bodyFont": "Helvetica F2 6pt",
+      "missingWidthCodes": 0,
+      "bodyTextAdvanceWithinOwnHeaderRectangle": 473,
+      "bodyTextAdvanceOutside": 0,
+      "headerTextAdvanceWithinOwnRectangle": 14,
+      "headerNominalMinRightMarginPt": 0.004,
+      "headerNearZeroMarginCount": 2,
+      "bodyMinRightMarginPt": 1.324,
+      "bodyRightMarginUnder2PtCount": 80,
+      "bodyRowPitchPt": 9,
+      "bodyHelveticaDescriptorVerticalEnvelopePt": 6.936,
+      "bodyNominalInterrowEnvelopeGapPt": 2.064,
+      "unsupportedTextTransformsObserved": 0
+    },
+    "syntheticSensitivityOnly": {
+      "bodyAdvanceOrXShiftPlus1_5PtCrossing": 26,
+      "bodyAdvanceOrXShiftPlus2PtCrossing": 80,
+      "bodyFontSize7PtAtUnchangedStartsCrossing": 80,
+      "originalCrossing": 0
+    },
+    "semanticAndCodeBoundary": "Font and advance widths do not classify flights. Header glyph advance may approach column edge by 0.004pt; never use strict rounded glyph-width clipping as header detector. Current scalar SourceEvidenceHistory normalized-value notice is not a source revision/receipt gate; provenance changes and immutable profile digest require independent approval. No same-export carrier/year/Publication/crew or UID authority.",
+    "validation": {
+      "originalPdf": "FONT_WIDTH_AND_CELL_ADVANCE_STATIC_VERIFIED",
+      "synthetic": "PERTURBATION_ONLY_NOT_REAL_EXPORT",
+      "dartSembast": "NOT_EXECUTED",
+      "publicPdfGrade": "P5",
+      "weeklyHtmlGrade": "P3",
+      "productionParser": "OPEN"
+    }
   }
-
 }
