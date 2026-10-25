@@ -1467,5 +1467,94 @@
     "publicPdfGrade": "P5",
     "weeklyHtmlGrade": "P3",
     "productionReady": false
+  },
+  "c369PdfGenerationVsPublicationGate": {
+    "id": "C369",
+    "contract": "crewconnex-pdf-generation-vs-publication-1.0-C369",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "originalPrivatePdfScope": "Four original PDF binaries read-only: June/July/August Skia and August PDC; no private raw content persisted",
+    "generators": [
+      {
+        "family": "Skia/PDF m151",
+        "reportPeriod": "2026-06",
+        "infoCreationDate": "2026-08-27T22:50:08+00:00",
+        "infoModDate": "same",
+        "creationCalendarDaysRelativeToPeriodEnd": 58
+      },
+      {
+        "family": "Skia/PDF m151",
+        "reportPeriod": "2026-07",
+        "infoCreationDate": "2026-08-27T22:48:59+00:00",
+        "infoModDate": "same",
+        "creationCalendarDaysRelativeToPeriodEnd": 27
+      },
+      {
+        "family": "Skia/PDF m151",
+        "reportPeriod": "2026-08",
+        "infoCreationDate": "2026-08-09T04:48:38+00:00",
+        "infoModDate": "same",
+        "creationCalendarDaysRelativeToPeriodEnd": -22
+      },
+      {
+        "family": "PDC Pdf Generator 1.0",
+        "reportPeriod": "2026-08",
+        "infoCreationDateRaw": "D:20260928154907",
+        "zoneStatus": "UNSPECIFIED",
+        "infoModDate": "NOT_PRESENT",
+        "creationCalendarDaysRelativeToPeriodEnd": 28,
+        "printedGenerationMinuteAgreesWithInfo": true
+      }
+    ],
+    "pdcDirectOriginal": {
+      "pdfTextObjects": 495,
+      "bodyTextObjects": 473,
+      "bodyBands": 49,
+      "numericWithBlock": 26,
+      "numericOwnDate": 13,
+      "numericDateOmitted": 13,
+      "nonnumeric": 22,
+      "blank": 1,
+      "signedDaySuffixCells": 24,
+      "plusOneCells": 21,
+      "minusOneCells": 1,
+      "plusThreeCells": 2,
+      "affectedBands": 10,
+      "numericAffectedBands": 4,
+      "nonnumericAffectedBands": 6,
+      "nonflightMinusOne": "STD local cell",
+      "nonflightPlusThree": "STA local and base cells"
+    },
+    "proposedExtraction": {
+      "infoCreationDate": "optional raw diagnostic, not roster Publication",
+      "infoModDate": "optional raw diagnostic; preserve absence",
+      "zoneStatus": [
+        "EXPLICIT_OFFSET",
+        "UNSPECIFIED",
+        "INVALID",
+        "NOT_PRESENT"
+      ],
+      "sourceFingerprint": "immutable independent identity",
+      "generatorFamily": "separate Skia/PDC observation kinds",
+      "signedDaySuffix": "raw per clock cell with physical locator, never date inheritance"
+    },
+    "neverInfer": [
+      "roster Publication or revision chronology from PDF Info CreationDate/ModDate",
+      "operational year/date from report generation timestamp",
+      "UTC for timezone-unspecified PDC timestamp",
+      "flight identity or crew continuation from +1/-1/+3 day suffixes",
+      "same export from same month across different generators",
+      "canonical Block/Flight Time from PDC printed Block"
+    ],
+    "gate": "Existing actual same-UID Flight only; source-authorized carrier/year/leg crew/Publication-or-owner-approved-unknown-policy and explicit review plus evidence-only dual CAS/Receipt/replay/rollback/backup/wipe; never standalone FlightRecord",
+    "validation": {
+      "realOriginalSourceAssertions": "16/16",
+      "synthetic": "NOT_RUN",
+      "dartSembast": "NOT_RUN",
+      "actualUidFlight": "NOT_AVAILABLE",
+      "companyCrossCheck": "C365 prior source verified, not re-run"
+    },
+    "publicPdfGrade": "P5",
+    "weeklyHtmlGrade": "P3",
+    "productionReady": false
   }
 }
