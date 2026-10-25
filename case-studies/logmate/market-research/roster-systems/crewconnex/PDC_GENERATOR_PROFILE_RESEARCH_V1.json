@@ -1115,5 +1115,37 @@
       "complete active same-UID FlightRecord candidate scope",
       "approved evidence-only CAS/Receipt/replay/rollback/backup/wipe runtime"
     ]
+  },
+  "uiSkiaPdcCrossSurfaceC358": {
+    "checkedAt": "2026-10-25 10:09 KST",
+    "status": "RESEARCH_ONLY_NO_PROFILE_VERSION_PROMOTION",
+    "privateSources": "One original dated CrewConnex UI duty/crew detail, one original UI before-after revision view, August Skia printer PDF, August PDC-generator PDF; all read-only and not same-export certified",
+    "pdcBodyBands": 49,
+    "pdcNumericCandidates": 26,
+    "uiPdcLegsCompared": 2,
+    "uiPdcFlightRouteLocalClockBlockMatches": 2,
+    "uiMinusPdcBlockFlightTimeDifferencesMinutes": [
+      32,
+      24
+    ],
+    "pdcOwnDateFirstLeg": true,
+    "pdcOwnDateSecondLeg": false,
+    "skiaFirstLegUiNameBearingEmployeeSetSize": 6,
+    "skiaFirstLegEmployeeSetExactMatchCount": 6,
+    "skiaFirstLegEmployeeSetUnmatchedCount": 0,
+    "skiaPdfContainsNames": false,
+    "uiCrewSnapshotScope": "UI duty-level Crew All; not proven per-leg or PDF-embedded",
+    "revisionObserved": "Nonflight standby replaced by check-in, flight and check-out; adjacent-day category also changes",
+    "revisionChangeVsAckClockMinutes": 1,
+    "publicationId": "UNVERIFIED",
+    "sameExportRevision": "UNVERIFIED",
+    "ownerUidFlightRecord": "UNVERIFIED",
+    "autoCrewParticipant": "BLOCKED",
+    "autoFlightRecord": "FORBIDDEN",
+    "independentResearchJsAdversarialChecks": "8/8 PASS, synthetic only",
+    "dartSembast": "NOT_EXECUTED",
+    "publicPdfSampleGrade": "P5",
+    "productionParser": "OPEN",
+    "privacy": "No names, employee IDs, personal roster strings, private URLs, credentials or raw private screenshots stored in Design Studio"
   }
 }
