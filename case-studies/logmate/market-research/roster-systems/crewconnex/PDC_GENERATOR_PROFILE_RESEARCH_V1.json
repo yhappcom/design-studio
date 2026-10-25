@@ -1263,6 +1263,27 @@
     "runtime": "No Dart/Sembast or active UID ledger tests",
     "publicPdfGrade": "P5",
     "weeklyHtmlGrade": "P3",
-    "productionReady": false
+    "productionReady": false,
+    "independentOriginalSourceBlockAblation": {
+      "repeat": "Second independent decode of all ten original private binaries reproduced 26 PDC, 1530 company, 89 nine-year date-free, 3 observed-Aug and 2 strict own-Date pairs",
+      "nineYearDateFreeNumericRouteAndExactBlock": {
+        "candidatePairs": 8,
+        "pdcRowsZero": 20,
+        "one": 4,
+        "multiple": 2,
+        "multipleCandidateCountEach": 2
+      },
+      "observedAugust2026NumericRouteAndExactBlock": {
+        "candidatePairs": 3,
+        "ownDate": 2,
+        "omittedOwnDateHold": 1
+      },
+      "strictOwnDateNumericRouteBlock": {
+        "conditionalPairs": 2,
+        "allBlockEqual": true
+      },
+      "safety": "Block equality does not establish carrier, date, UID identity, publication or BLH equivalence; omitted Date remains HOLD",
+      "runtime": "Real original source ablation only; no Dart/Sembast"
+    }
   }
 }
