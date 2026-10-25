@@ -1556,5 +1556,77 @@
     "publicPdfGrade": "P5",
     "weeklyHtmlGrade": "P3",
     "productionReady": false
+  },
+  "c370LiteralStringAndFamilyDispatchGate": {
+    "id": "C370",
+    "contract": "crewconnex-pdc-literal-string-and-family-dispatch-1.0-C370",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "originalPrivateBinaryScope": {
+      "skiaJuneBytes": 541788,
+      "skiaJulyBytes": 556535,
+      "skiaAugustBytes": 552417,
+      "pdcAugustBytes": 39612,
+      "skiaPages": [
+        2,
+        2,
+        2
+      ],
+      "pdcPages": 1,
+      "skiaFlateReferences": [
+        131,
+        137,
+        138
+      ],
+      "skiaToUnicodeReferences": [
+        16,
+        17,
+        17
+      ],
+      "pdcFlateReferences": 0,
+      "pdcToUnicodeReferences": 0,
+      "scope": "Direct binary-envelope audit; not fresh Skia body decode; no raw private data copied"
+    },
+    "pdcOriginalLiteralLexing": {
+      "textObjects": 495,
+      "escapeAwareRegexDecoded": 495,
+      "independentDepthParserDecoded": 495,
+      "independentParity": true,
+      "naiveUnescapedRegexDecoded": 488,
+      "escapedParenthesisTokens": 7,
+      "escapedColumnHeaderTokens": 6,
+      "escapedPrivateSubjectTokens": 1,
+      "headerCells": 14,
+      "orderedHeaderMatches": 14,
+      "naiveHeaderMatches": 8,
+      "bodyEscapedTokens": 0,
+      "bodyTextObjects": 473,
+      "bodyBands": 49,
+      "bodyBaselineStepPoints": 9,
+      "blankActivityOneCellBands": 1,
+      "footerTextObjects": 1,
+      "preTableObjects": 7,
+      "numericWithBlock": 26,
+      "numericOwnDate": 13,
+      "numericMissingDate": 13,
+      "nonflightOrBlankBands": 23,
+      "nonNumericWithBlock": 0
+    },
+    "proposedParserContract": [
+      "Detect PDF generator/text representation before family-specific extraction; Skia requires decompression, per-file ToUnicode and tagged primary-table/MCID traversal; PDC uses validated literal-string lexer and fixed 14-header/grid profile.",
+      "PDC literal-string lexer must correctly handle escaped parentheses and reject unbalanced or unsupported content; preserve exact raw source token and separately decoded label, text-object ordinal, coordinates, body band and source fingerprint.",
+      "Require 14/14 ordered decoded header labels and family-specific footer/body barrier; six escaped PDC headers must not disappear under naive regex.",
+      "Blank one-cell band and 23 nonflight/blank bands never create FlightRecord or crew; no Date/Pairing/clock/Block-based identity inheritance.",
+      "Unknown page/operator/font/layout must fail closed; source year, carrier, Publication, crew and UID authority remain independent."
+    ],
+    "validation": {
+      "realOriginalBinaryAndPdcText": "Four original PDFs envelope inspected, PDC 495/495 independent literal decoder parity",
+      "synthetic": "10/10 research-only mutation assertions",
+      "dartSembast": "NOT_RUN",
+      "company": "C365 previous real-source comparison reused, not re-run",
+      "activeUidFlight": "NOT_AVAILABLE"
+    },
+    "publicPdfGrade": "P5",
+    "weeklyHtmlGrade": "P3",
+    "productionReady": false
   }
 }
