@@ -1860,5 +1860,66 @@
       "weeklyHtml": "P3",
       "productionParser": "OPEN"
     }
+  },
+  "c376PdcCalendarGroupGate": {
+    "id": "C376",
+    "contract": "crewconnex-pdc-calendar-group-multiplicity-and-no-date-inheritance-1.0-C376",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "scope": "One private 39612-byte August PDC PDF read-only; no raw roster/crew identifiers copied",
+    "source": {
+      "gitBlobSha1": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "textObjects": 495,
+      "bodyCells": 473,
+      "bodyBands": 49,
+      "numericCandidates": 26,
+      "nonnumeric": 22,
+      "blank": 1
+    },
+    "printedDate": {
+      "ownDateAnchors": 31,
+      "distinctAscendingDays": 31,
+      "monthCount": 1,
+      "rawYearDigits": 2,
+      "sourceCentury": "UNVERIFIED",
+      "publication": "UNVERIFIED"
+    },
+    "displayGroup": {
+      "zeroNumericGroups": 16,
+      "oneNumericGroups": 8,
+      "twoNumericGroups": 5,
+      "fourNumericGroups": 2,
+      "multiNumericGroups": 7,
+      "numericWithinMultiGroups": 18,
+      "mixedNumericNonnumericGroups": 6,
+      "numericWithinMixedGroups": 11,
+      "undatedNumericAfterNonflight": 2,
+      "groupsWithBlankBarrier": 1,
+      "numericOwnDate": 13,
+      "numericOmittedDate": 13,
+      "undatedNumericNoPairing": 10
+    },
+    "parserProfileDelta": [
+      "Separate ownDateRaw from displayDayGroupOrdinal; group ordinal is diagnostic adjacency, not date/duty/crew identity.",
+      "Never create one Flight per day anchor or merge multiple numeric candidates in a day group.",
+      "No nearest-prior-Date, Pairing or C/I-C/O inheritance, especially across nonflight, blank or page boundaries.",
+      "Only numeric Activity with printed Block, route and four approved clocks can be a detached candidate; no FlightRecord create/update.",
+      "Require independent four-digit source year/carrier/Publication-or-approved-unknown policy, leg crew authority, active same-UID Flight, explicit review, dual CAS and Receipt for future attachment.",
+      "Unknown month length/header/print family requires validated profile or safe stop; no 31-day hardcode."
+    ],
+    "validation": {
+      "originalSourceAssertions": "13/13 research JS",
+      "syntheticClassifierMutations": "8/8 research JS only",
+      "dartSembast": "NOT_RUN",
+      "activeUidFlight": "NOT_AVAILABLE",
+      "newCompanyJoin": false,
+      "skiaSourceReused": "62/310 prior evidence only",
+      "companySourceReused": "1530 rows/two conditional PDC own-Date pairs prior evidence only"
+    },
+    "evidence": {
+      "publicPdf": "P5",
+      "weeklyHtml": "P3",
+      "productionReady": false
+    },
+    "next": "Authenticate same-export carrier/four-digit year/Publication-or-approved-unknown/leg crew and active UID-owned Flight, then file-backed evidence-only CAS/Receipt/replay/rollback/backup/wipe acceptance."
   }
 }
