@@ -358,7 +358,7 @@
       "Dart/Sembast evidence-only API and transaction acceptance",
       "current Dart/Sembast legacy-v16 backup restore runtime and future CrewConnex evidence-only transaction"
     ],
-    "publicSampleGrade": "P2",
+    "publicSampleGrade": "P5",
     "productionReady": false
   },
   "acceptanceScenarios": [
@@ -1062,5 +1062,58 @@
     "publicSampleGrade": "P2",
     "productionParser": "OPEN",
     "next": "Independent authorized same-export PDC/Skia with source-bound year/Publication, time-mode and crew-name legend, plus date-complete active UID-owned Flights for evidence-only file-backed CAS/receipt/rollback/backup/wipe."
+  },
+  "publicGradeRevalidationC357": {
+    "checkedAt": "2026-10-25 09:02 KST",
+    "authority": "RESEARCH_PLAN_20261004.md parser-corpus P1–P5 definitions and C356 source-grade decision",
+    "currentPdcPdfPublicSampleGrade": "P5",
+    "currentSkiaPdfPublicSampleGrade": "P5",
+    "overallCrewConnexBestPublicGrade": "P3 (weekly HTML third-party instructions only; not PDF)",
+    "privateCorpusGrade": "PRIVATE_ORIGINAL_STRUCTURAL_EVIDENCE_NOT_PUBLIC_P1",
+    "supersession": "Current evidence.publicSampleGrade=P5 supersedes historical P2 entries in C329-C354 research snapshots; retain those entries as dated audit history, not current parser authority.",
+    "verifiedSkiaSourceOnly": {
+      "pdfCount": 3,
+      "pageContentStreams": 6,
+      "sourceScopedSelectedFieldMcids": 310,
+      "selectedMcidsPresent": 310,
+      "actualTextSpansByMonth": [
+        6,
+        5,
+        5
+      ],
+      "actualTextSpansTotal": 16,
+      "selectedFieldActualTextOverlaps": 0,
+      "page1McidCounts": [
+        1301,
+        1305,
+        1226
+      ],
+      "page2McidCounts": [
+        265,
+        285,
+        349
+      ],
+      "totalPageLocalMcidInstances": 4731,
+      "totalTjTextRuns": 5617,
+      "deflateDecodeFailures": 0,
+      "sourceBlobIdentityMatchedC194Manifest": 3,
+      "sourceScope": "Three private Skia 2026-06/07/08 PDFs; original binary directly decoded, selected Activity/From/To/BLH/ACReg only"
+    },
+    "verifiedPdcSourceOnly": {
+      "onePrivatePdcPdf": true,
+      "btOperators": 495,
+      "tjOperators": 495,
+      "actualTextSpans": 0,
+      "structTree": false
+    },
+    "parserImplication": "Nested /Span /ActualText BDC/EMC exists in Skia and may truncate naive first-EMC regex; parse balanced marked-content stack and keep per-file ToUnicode. All 16 observed spans are outside the 310 selected five-field locators; no conclusion about Date/crew or future layouts. PDC uses distinct untagged text operator extraction.",
+    "researchOnlyChecks": "12/12 metadata/grammar assertions; synthetic nesting mutation is not edited-PDF or Dart/Sembast acceptance",
+    "productionParser": "OPEN",
+    "blockers": [
+      "independently certified operational century/year and publication/revision",
+      "verified crew-name/continuation mapping",
+      "complete active same-UID FlightRecord candidate scope",
+      "approved evidence-only CAS/Receipt/replay/rollback/backup/wipe runtime"
+    ]
   }
 }

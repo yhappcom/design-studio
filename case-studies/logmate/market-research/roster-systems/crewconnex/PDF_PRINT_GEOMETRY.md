@@ -115,3 +115,18 @@ Independently decoded eXIf DateTimeOriginal of **all 17** existing private CrewC
 Independent recomputation of original-PDF-verified C194 metadata (NOT new PDF byte decoding): 62 Skia numeric candidates, nine (TD count, Activity TD) shapes across June/July/August; Activity-relative From/To/BLH/ACReg TD offsets +3/+7/+13/+15 in 62/62; per-month trailing TD widths 26/22/23. Fixed month-specific modal TD index would accept only 30/62 and exclude 32/62; TD counts 29 and 30 are shared by July/August (23 observations). Page-2 has six numeric candidates and C295 proves Sum is outside primary Table, with July/August auxiliary tables 7/5 rows. These diagnostics are sample-bounded, not a universal parser profile.
 
 A source-agnostic (page,primary TR) key aliases 44/62 physical rows in 20 groups and collapses 62 to 38 (24 observations lost); (page,TR,ActivityTD) still aliases 20 rows in 10 groups. Source-scoped (SHA256,page,primary TR) is unique 62/62. At selected-field level, (page,MCID) aliases 47/310 refs in 23 groups (24 lost); (SHA256,page,MCID) unique 310/310. Keep source/report family, typed page/Table/TR/TD/MCID locator, payload digest and explicit missing Date state; do not use positional/MCID-only dedup or assume inherited crew. PDC untagged 14-column report is a separate profile. Research-only mutation controls and code/test audit, no Dart/Sembast, no authenticated UID Flight, P2/Production OPEN. See C112 C355.
+
+## 2026-10-25 09:02 KST — C357 marked-content stream boundary (real source)
+
+Independent read-only original-byte Skia page-stream decompression, source blobs matching C194 3/3:
+
+| Month | Page-1 NonStruct MCIDs | Page-2 NonStruct MCIDs | Page-1/2 Tj runs | Nested ActualText spans |
+| --- | ---: | ---: | ---: | ---: |
+| 2026-06 | 1301 | 265 | 1492 / 332 | 6 / 0 |
+| 2026-07 | 1305 | 285 | 1522 / 399 | 5 / 0 |
+| 2026-08 | 1226 | 349 | 1431 / 441 | 5 / 0 |
+| **Total** | **3832** | **899** | **5617 total** | **16** |
+
+All 310/310 C194 selected five-field MCIDs exist in their source-scoped page streams; **zero** selected Activity/From/To/BLH/ACReg MCIDs contain an observed nested ActualText span. The remaining Date, crew and ancillary cells are NOT covered by this non-overlap result. Do not promote MCID counts to flights or participants.
+
+**Implementation regression contract:** parse balanced nested `BDC`/`EMC` instead of first-`EMC` regex; per-file font ToUnicode; source-SHA/page/typed-locator; fail closed on missing/duplicate marked-content ownership and unknown glyph; never use `ActualText` to create a phantom column. Source has 16 real nested spans; malformed nesting, missing font map and duplicate MCID negatives remain synthetic until tested against an actual Dart PDF parser. PDC original 495 BT/Tj objects, zero ActualText, no StructTreeRoot: a distinct 14-column family, not a Skia fallback. Public PDF grade current P5; private source geometry not public P1. Production OPEN.
