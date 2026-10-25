@@ -1628,5 +1628,78 @@
     "publicPdfGrade": "P5",
     "weeklyHtmlGrade": "P3",
     "productionReady": false
+  },
+  "c374CrossSignalAndClockGrammarGate": {
+    "id": "C374",
+    "contract": "crewconnex-pdc-cross-signal-and-offset-lexeme-1.0-C374",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "originalPdc": {
+      "privateGitBlobSha1": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "bytes": 39612,
+      "dualExtractorParity": "495/495",
+      "bodyObjects": 473,
+      "bands": 49,
+      "numericWithPrintedBlock": 26,
+      "nonnumeric": 22,
+      "blank": 1,
+      "numericOwnDateMissing": 13,
+      "undatedNumericWithPairOrCIOrCO": 10,
+      "undatedNumericWithCIAndCO": 2,
+      "undatedNumericWithPairCIAndCO": 1,
+      "nonflightOwnDateRouteFourValidClocksAnySigned": 14,
+      "nonflightOwnDateRouteFourValidClocksPlusOneOnly": 12,
+      "nonflightPairRouteFourValidClocksAnySigned": 6,
+      "nonflightCIorCORouteFourValidClocksAnySigned": 2,
+      "nonflightPairAndCIorCO": 1
+    },
+    "nonflightClockGrammar": {
+      "mutuallyExclusiveClasses": {
+        "plain": 12,
+        "plusOne": 4,
+        "minusOne": 1,
+        "plusThree": 1,
+        "invalidHourArrival": 4
+      },
+      "fourClockValidPlusOneOnly": 16,
+      "fourClockValidPlusOrMinusOne": 17,
+      "fourClockValidAnySigned": 18,
+      "correction": "C327 17/22 strict includes -1, excludes +3, and is not HHMM(+1)-only",
+      "numericPlusOneOnlyValid": 26,
+      "numericBaseElapsedEqualsPrintedBlock": 26,
+      "numericLocalElapsedEqualsPrintedBlock": 16,
+      "numericMinusOnePlusThreeObserved": 0
+    },
+    "crossFamilyScope": {
+      "skiaManifestBlobSha1": "625c4e4367d12189f96cf4ee85cd1f3bae71e035",
+      "skiaCandidates": 62,
+      "skiaFieldLocators": 310,
+      "skiaCurated": 43,
+      "skiaUncuratedAugust": 19,
+      "skiaOwnDateMissing": 27,
+      "skiaOperationalYearsVerified": 0,
+      "combinedObservations": 88,
+      "combinedOwnDateMissing": 40,
+      "actualUniqueFlights": "NOT_VERIFIED",
+      "companyRowsPreviouslyVerified": 1530,
+      "conditionalPdcFullDatePairsPreviouslyVerified": 2,
+      "newCompanyJoin": false
+    },
+    "profileDelta": [
+      "Nonflight classification before clock validation, including clock-invalid nonflight.",
+      "Numeric Activity and actual printed Block and route and approved four clocks only detached candidate.",
+      "Keep raw signed clock lexeme separate from approved numeric +1 grammar and from date/timezone semantics.",
+      "No Date/Pairing/C-I/C-O/crew inheritance or PDC no-crew deletion.",
+      "Unknown numeric -1/+3 or layout/operator/header variant held unsupported pending evidence; never FlightRecord create or Block overwrite."
+    ],
+    "verification": {
+      "realSourceAssertions": 19,
+      "syntheticNegativeCases": 5,
+      "syntheticAdmitted": 0,
+      "dartSembast": "NOT_EXECUTED",
+      "publicPdfGrade": "P5",
+      "weeklyHtmlGrade": "P3",
+      "productionReady": false
+    },
+    "next": "Certified same-export carrier/four-digit year/Publication-or-approved-unknown/leg crew and active UID Flight, then file-backed evidence-only dual CAS/Receipt/replay/rollback/backup/wipe."
   }
 }
