@@ -2971,5 +2971,86 @@
       "production": "OPEN"
     },
     "next": "Authorized complete August 03–31 company or active same-UID Flight coverage plus source-bound year and Publication/revision for two C392 triples; then approved file-backed evidence-only acceptance."
+  },
+  "c400CompanyMonthSupportAndSkiaFiveStateGate": {
+    "id": "C400",
+    "checkedAt": "2026-10-27 04:04 KST",
+    "status": "RESEARCH_ONLY_NOT_APPROVED",
+    "contract": "crewconnex-nine-year-observed-month-support-and-five-state-admission-1.0-C400",
+    "sourceScope": "Original private 2018-2026 company OOXML independently re-decoded for aggregate fltDat date support; existing original-PDF-verified 62-row C194 manifest and C348/C350/C392 source comparisons revalidated; no new Skia/PDC original PDF decode, UID Flight or Dart",
+    "companyObservedCoverage": {
+      "annualRows2018To2026": [
+        58,
+        318,
+        88,
+        172,
+        158,
+        184,
+        176,
+        217,
+        159
+      ],
+      "observedMonthsByYear": [
+        3,
+        12,
+        5,
+        11,
+        9,
+        12,
+        12,
+        12,
+        8
+      ],
+      "monthYearBinsWithAtLeastOneRow": 84,
+      "monthYearBinsWithZeroRows": 24,
+      "zeroBinsDoNotProveMissingFlights": true,
+      "parsedDates": "1530/1530",
+      "year2026MonthlyJanToAug": [
+        28,
+        24,
+        16,
+        18,
+        30,
+        18,
+        22,
+        3
+      ],
+      "year2026LastObservedDate": "2026-08-02",
+      "sourceYearDoesNotCertifyRosterYear": true
+    },
+    "skiaFiveExclusiveClasses": {
+      "total": 62,
+      "curatedOwnDateSameCompanyComparison": 19,
+      "curatedOwnDatePlusOneConflict": 6,
+      "curatedOwnDateAbsentWithManualPreviewDate": 18,
+      "uncuratedAugustOwnDateAfterCompanyObservedSupport": 10,
+      "uncuratedAugustOwnDateAbsent": 9,
+      "yearAuthority": "UNVERIFIED_ALL_62",
+      "uidFlightBindings": 0,
+      "companyDateSupportIsNotCompleteness": true
+    },
+    "crossFamily": {
+      "pdcNumericObservationsSeparate": 26,
+      "pdcOwnDateAbsent": 13,
+      "conditionalThreeWayMatchesC392": 2,
+      "notUniqueFlights": true,
+      "noCrewNameColumnInPdc": true
+    },
+    "researchOnlyDecision": "Separate source own-Date, manual Preview date, year authority, observed reference coverage, date conflicts, Publication disposition, UID ownership and generator-specific raw Block evidence; never auto-inherit, shift, create, attach or overwrite. Five-state counts are source observations not production admission.",
+    "verification": {
+      "realCompanyOoxmlDateParse": "1530/1530",
+      "manifestAndCrossDocument": "15/15 JS",
+      "syntheticPolicy": "9/9 JS",
+      "newPdfDecode": "NOT_RUN",
+      "dartSembast": "NOT_RUN",
+      "publicPdf": "P5",
+      "weeklyHtml": "P3",
+      "production": "OPEN"
+    },
+    "workApproval": {
+      "W016": "NOT_STARTED_UNASSIGNED",
+      "W017": "NOT_STARTED_INSUFFICIENT_EVIDENCE_UNASSIGNED"
+    },
+    "next": "Source-authorized same-export year and leg Publication/revision disposition, complete Aug 03-31 reference and active same-UID Flight for C392 conditional triples; then approved immutable-profile native-file evidence-only lifecycle."
   }
 }
