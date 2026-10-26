@@ -2417,5 +2417,61 @@
     "publicPdfGrade": "P5",
     "weeklyHtmlGrade": "P3",
     "productionReady": false
+  },
+  "c387CrossFamilyEvidenceKindAndPublicationPolicy": {
+    "id": "C387",
+    "checkedAt": "2026-10-26 15:00 KST",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "contract": "crewconnex-cross-family-evidence-kind-and-publication-policy-1.0-C387",
+    "actualSourceDerived": {
+      "skiaNumeric": 62,
+      "skiaOwnDate": 35,
+      "skiaMissingDate": 27,
+      "skiaCurated": 43,
+      "skiaUncurated": 19,
+      "skiaPage2": 6,
+      "pdcNumeric": 26,
+      "pdcOwnDate": 13,
+      "pdcMissingDate": 13,
+      "pdcNonflight": 22,
+      "pdcBlank": 1,
+      "combinedObservations": 88,
+      "combinedOwnDate": 48,
+      "combinedMissingDate": 40,
+      "distinctFlightIdentity": "UNVERIFIED",
+      "approvedUidAttachments": 0
+    },
+    "uiProvenance": "Original read-only two-month roster UI and separate change/ack screenshot are NOT certified same-export PDF publication or per-leg source-year authority.",
+    "evidenceKinds": [
+      "SkiaRawCrewSnapshot: raw crew triplets/pipe, no automatic name or per-leg continuation",
+      "SkiaBLHDiagnostic: raw BLH without crew-name prerequisite or Block equivalence",
+      "PdcPrintedBlockDiagnostic: raw Blk Hrs/L-B clocks, no crew fields and never CrewParticipant"
+    ],
+    "publicationPolicy": {
+      "productAuthority": "No universal printed Publication-ID prerequisite explicitly approved in current LogMate MASTER/import/CrewConnex specs",
+      "unknownAttachment": "HOLD_POLICY_PUBLICATION_PENDING_OWNER_DECISION",
+      "detachedStage": "ALLOWED_ONLY_AFTER_VERIFIED_LAYOUT_AND_SOURCE_VALIDATION",
+      "unknownLayout": "UNSUPPORTED_LAYOUT_DISTINCT_FROM_PUBLICATION_HOLD",
+      "noInferenceFrom": [
+        "PDF CreationDate",
+        "UI change time",
+        "UI acknowledgement time",
+        "Git blob SHA",
+        "profile reparse"
+      ]
+    },
+    "admission": "Validate source bytes, exact family, all pages/section/Sum, raw locators and nonflight; stage detached by evidence kind. Only after independent date/year/carrier, one active same-UID existing Flight, explicit review, approved Publication disposition, immutable runtime profile digest and future evidence-only dual CAS/Receipt may an attachment be considered. No standalone FlightRecord or silent canonical mutation.",
+    "verification": {
+      "sourceDerivedStaticAssertions": "8/8",
+      "abstractSyntheticPolicy": "11/11",
+      "dartSembast": "NOT_RUN",
+      "newPdfDecode": false,
+      "newCompanyJoin": false,
+      "publicPdfGrade": "P5",
+      "weeklyHtmlGrade": "P3",
+      "productionParser": "OPEN"
+    },
+    "access": "2018/2019 historical PDF fetch_file(base64) empty; original UI inspected only in ephemeral read-only view; no private raw data persisted.",
+    "historicalIndexDebt": "Current sample/field indexes contain C194 references, but exact 2026-10-09 blocked-write intended annotations remain unverified; no unsupported sync-closure claim."
   }
 }
