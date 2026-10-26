@@ -2884,7 +2884,8 @@
       "minimumNotExactlyDateComparable": 16,
       "maximumPotentiallyDateEligible": 3,
       "yearHypothesis": "2026 UNVERIFIED",
-      "noCompanyMatchDoesNotProveNoFlight": true
+      "noCompanyMatchDoesNotProveNoFlight": true,
+      "supersededBy": "C399; 16/19 and max-three are stale; do not use for admission"
     },
     "crossSourceContext": {
       "skiaAugustNumeric": 22,
@@ -2922,5 +2923,53 @@
       "productionParser": "OPEN"
     },
     "next": "Source-authorized four-digit year, leg-scoped Publication or approved unknown handling, active same-UID Flight and complete disputed August company coverage; then approved file-backed evidence-only lifecycle."
+  },
+  "c399CoverageCorrectionGate": {
+    "id": "C399",
+    "checkedAt": "2026-10-27 03:00 KST",
+    "status": "RESEARCH_ONLY_CORRECTION_NOT_PRODUCTION",
+    "supersedes": "C398 companyCoverageBound minimumNotExactlyDateComparable=16 and maximumPotentiallyDateEligible=3 only; preserves PDF Info chronology",
+    "evidenceBasis": {
+      "priorOriginalSkia": "C325 direct 12/12 August Date-cell ToUnicode; 10 non-Preview own Date Aug03–31",
+      "priorOriginalCompany": "C325 independent company 2026 OOXML: Aug01 x2 / Aug02 x1",
+      "currentManifest": "C194 62 rows; August 22=curated 3 (2 own/1 absent)+uncurated 19 (10 own/9 absent)",
+      "newOriginalBytesDecoded": false,
+      "yearAuthenticated": false
+    },
+    "correctedCompanyCoverageBound": {
+      "companyObservedAugustLast": "2026-08-02",
+      "uncuratedAugust": 19,
+      "uncuratedOwnDateOutsideObservedSupport": 10,
+      "uncuratedOwnDateAbsent": 9,
+      "conditionallyExactOwnDateCompanyDateEligible": 0,
+      "conditionalYear": "2026 HYPOTHESIS UNVERIFIED",
+      "referenceCompleteness": "UNKNOWN",
+      "notProofOfNoOperation": true
+    },
+    "physicalUndatedRisk": {
+      "nineUndatedPage1": 9,
+      "pipeSingleleaf": 8,
+      "pipeDepth1": 6,
+      "pipeDepth2": 1,
+      "pipeDepth3": 1,
+      "directMultileafAfterNonflight": 1,
+      "automaticDateCrewInheritance": false
+    },
+    "admissionStates": [
+      "SOURCE_DATE_ABSENT",
+      "REFERENCE_COVERAGE_OUTSIDE_CONDITIONAL_YEAR",
+      "YEAR_UNVERIFIED",
+      "UID_MATCH_UNVERIFIED"
+    ],
+    "verification": {
+      "crossDocumentManifestAssertions": "13/13 JS",
+      "abstractNegativeStateScenarios": "7/7 JS",
+      "newOriginalPdfOrXlsxDecode": "NOT_RUN",
+      "dartSembast": "NOT_RUN",
+      "publicPdf": "P5",
+      "weeklyHtml": "P3",
+      "production": "OPEN"
+    },
+    "next": "Authorized complete August 03–31 company or active same-UID Flight coverage plus source-bound year and Publication/revision for two C392 triples; then approved file-backed evidence-only acceptance."
   }
 }
