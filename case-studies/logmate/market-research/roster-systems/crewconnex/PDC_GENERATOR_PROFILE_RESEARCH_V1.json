@@ -2263,5 +2263,72 @@
     "publicPdfGrade": "P5",
     "weeklyHtmlGrade": "P3",
     "productionReady": false
+  },
+  "c382PdcCompanyClockAndOoxmlCrcGate": {
+    "id": "C382",
+    "contract": "crewconnex-pdc-company-clock-and-ooxml-crc-admission-1.0-C382",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "realCorpus": {
+      "pdcPdfBytes": 39612,
+      "pdcBodyCells": 473,
+      "pdcNumericCandidates": 26,
+      "companyWorkbookYears": "2018-2026",
+      "companyRows": 1530,
+      "companyRowsByYear": [
+        58,
+        318,
+        88,
+        172,
+        158,
+        184,
+        176,
+        217,
+        159
+      ],
+      "uniqueXlsxPackagesIncludingPreview": 10,
+      "zipEntriesCrcPass": 103,
+      "zipEntriesCrcFail": 0,
+      "formulaAuditScope": "NINE_COMPANY_SHEET1_PLUS_PREVIEW_SHEET1_ONLY",
+      "formulaElementsObserved": 0,
+      "externalTargetRelationshipTagsObserved": 0
+    },
+    "pairAblation": {
+      "dateFreeFlightRoutePairs": 89,
+      "blockEqualPairs": 8,
+      "rawAcHotelEqualsAcTypeAndBlockPairs": 7,
+      "rawCompanyFltTimeMinusPdcStdLocalModuloDayMinutes": {
+        "y2026": [
+          -540,
+          -540,
+          -540,
+          -514
+        ],
+        "y2025": [
+          -152
+        ],
+        "y2019": [
+          -340,
+          -336
+        ]
+      },
+      "y2026OutlierStdBaseDeltaMinutes": -574,
+      "notVerifiedSameFlight": true,
+      "notTimezoneProof": true,
+      "notActualScheduleEquivalence": true
+    },
+    "syntheticPolicy": {
+      "cases": 6,
+      "passed": 6,
+      "scope": "RESEARCH_JS_ONLY"
+    },
+    "unresolved": [
+      "same-export carrier/four-digit year/Publication/leg crew",
+      "source clock semantics and offset authority",
+      "actual same-UID Flight",
+      "immutable runtime profile digest and evidence-only Dart/Sembast CAS/Receipt/backup/wipe"
+    ],
+    "publicPdfGrade": "P5",
+    "weeklyHtmlGrade": "P3",
+    "productionReady": false
   }
 }
