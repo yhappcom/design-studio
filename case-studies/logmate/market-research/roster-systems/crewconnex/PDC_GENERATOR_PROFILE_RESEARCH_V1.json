@@ -2833,5 +2833,94 @@
       "production": "OPEN"
     },
     "profileVersionNote": "This is a mutable research dossier section, not an immutable runtime ParserProfile or product approval."
+  },
+  "c398CaptureChronologyAndCoverageGate": {
+    "id": "C398",
+    "checkedAt": "2026-10-27 02:01 KST",
+    "status": "RESEARCH_ONLY_NOT_PRODUCT_APPROVED",
+    "contract": "crewconnex-cross-export-capture-skew-and-coverage-1.0-C398",
+    "actualOriginalSourceMetadata": [
+      {
+        "family": "Skia",
+        "reportMonth": "2026-06",
+        "gitBlob": "e96bf5a76764984aa7f28285c975a24fd471117e",
+        "creationRaw": "D:20260827225008+00'00'"
+      },
+      {
+        "family": "Skia",
+        "reportMonth": "2026-07",
+        "gitBlob": "d306cad81d2a57123ac9950ed734a9216340466c",
+        "creationRaw": "D:20260827224859+00'00'"
+      },
+      {
+        "family": "Skia",
+        "reportMonth": "2026-08",
+        "gitBlob": "29ac040595089188a8353e98f41ba27f92b8650b",
+        "creationRaw": "D:20260809044838+00'00'"
+      },
+      {
+        "family": "PDC Pdf Generator 1.0",
+        "reportMonth": "2026-08",
+        "gitBlob": "8e7fec30f98458c770053bd7739e60869a87e33b",
+        "creationRaw": "D:20260928154907",
+        "creationZone": "UNSPECIFIED"
+      }
+    ],
+    "chronologyFacts": {
+      "julyCreatedBeforeJuneSeconds": 69,
+      "augustSkiaCreatedBeforeJuneJulyCalendarDays": 18,
+      "augustPdcAfterAugustSkiaCalendarDays": 50,
+      "elapsedHoursNotAuthoritative": true,
+      "publicationOrder": "UNVERIFIED",
+      "sameExport": "UNVERIFIED"
+    },
+    "companyCoverageBound": {
+      "company2026AugustRecords": 3,
+      "lastCompanySourceDate": "2026-08-02",
+      "augustSkiaUncurated": 19,
+      "uncuratedOwnDate": 10,
+      "uncuratedMissingOwnDate": 9,
+      "uncuratedOwnDateAfterSkiaAug09FromPriorOriginalC350": 7,
+      "minimumNotExactlyDateComparable": 16,
+      "maximumPotentiallyDateEligible": 3,
+      "yearHypothesis": "2026 UNVERIFIED",
+      "noCompanyMatchDoesNotProveNoFlight": true
+    },
+    "crossSourceContext": {
+      "skiaAugustNumeric": 22,
+      "pdcAugustNumeric": 26,
+      "pdcOriginalTextObjects": 495,
+      "pdcBodyBands": 49,
+      "previousC392ConditionalThreeWayMatches": 2,
+      "sourceIdentityAuthenticated": false
+    },
+    "proposedParserProfileDelta": [
+      "Keep raw PDF Info CreationDate and its timezone-presence state distinct from roster Publication/revision authority and report period.",
+      "Never sort same-month or different-month PDF exports by creation metadata to silently pick a newer roster, crew snapshot, Block, or FlightRecord.",
+      "Preserve source-family+raw SHA+physical locator and independent field Date presence; no Date, Pairing, crew, timezone or operational-year inheritance.",
+      "Company reference coverage must be independently bounded before treating a candidate as unmatched; SOURCE_DATE_ABSENT and REFERENCE_COVERAGE_OUTSIDE are separate from zero FlightRecord matches.",
+      "Keep both cross-export observations and review conflict after approved active same-UID Flight association, immutable runtime profile and evidence-only revision lifecycle.",
+      "Existing-record-only; no FlightRecord creation, canonical Block overwrite, PIC/SIC/PF/PM, operating/deadhead or crew identity inference."
+    ],
+    "verification": {
+      "actualPrivatePdfInfoRead": "4/4",
+      "pdcOriginalTextAndBandAudit": "495/49",
+      "skiaManifestRows": "62/62",
+      "uncuratedAugustPartition": "19=10+9",
+      "c350FutureDateSeven": "PRIOR_ORIGINAL_SOURCE_VERIFIED_REUSED",
+      "companyAugustCutoff": "PRIOR_ORIGINAL_XLSX_VERIFIED_REUSED",
+      "syntheticPolicy": "8/8 RESEARCH_JS_ONLY",
+      "newSkiaGlyphDecode": false,
+      "newCompanyRowJoin": false,
+      "dartSembast": "NOT_RUN",
+      "activeUidFlight": "NOT_AVAILABLE",
+      "publicExactLayout": "TWO_SEARCH_PASSES_NO_LAWFUL_ANONYMOUS_P1_OR_OFFICIAL_P2"
+    },
+    "evidenceGrades": {
+      "publicPdf": "P5",
+      "weeklyHtml": "P3",
+      "productionParser": "OPEN"
+    },
+    "next": "Source-authorized four-digit year, leg-scoped Publication or approved unknown handling, active same-UID Flight and complete disputed August company coverage; then approved file-backed evidence-only lifecycle."
   }
 }
