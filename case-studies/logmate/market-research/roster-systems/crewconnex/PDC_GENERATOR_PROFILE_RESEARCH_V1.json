@@ -2623,5 +2623,72 @@
       "active same-UID existing Flight and approved evidence-only association schema",
       "real file-backed Dart/Sembast stage/review/commit/replay/conflict/rollback/backup/wipe and UID isolation"
     ]
+  },
+  "c394ImmutableProfileSourcePinningGate": {
+    "id": "C394",
+    "researchContract": "crewconnex-original-byte-profile-and-extraction-revision-pinning-1.0-C394",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "observedAt": "2026-10-26 22 KST",
+    "originalPrivatePdfByteAttestation": {
+      "skiaMonthSha256": {
+        "June": "669d02040ed2e55731ce42fad5980f29559304510432f3c75985fcf72ebff032",
+        "July": "767f820561de14622d517fd8f67ab674e05085c706333ecdc6673ef090206dd5",
+        "August": "04b946d755d45ecd21204c69a054aebfe92d36e8223cd3b20c25eebb6b3de68d"
+      },
+      "skiaManifestMatches": 3,
+      "skiaGitBlobMatches": 3,
+      "pdcRawSha256": "20eef86f33bcd4e3f477fe851081d5b7afc5747623df3adcb395af253467db93",
+      "pdcGitBlobSha1": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "pdcBytes": 39612,
+      "pdcPdfVersion": "1.4",
+      "pdcBT": 495,
+      "pdcET": 495,
+      "pdcLiteralTj": 495,
+      "pdcExpectedHeadersMatched": 14,
+      "pdcExpectedHeadersTotal": 14,
+      "privacy": "Ephemeral read-only raw bytes; no private values or original files persisted"
+    },
+    "historicalProfileCollision": {
+      "baselineCommit": "2ed6d0e2e1859b7a2079e643a5b38343a53bebbc",
+      "baselineBlob": "feba4ce5dd04ea25d64e842dc1e3a99358c854d3",
+      "baselineBytes": 25579,
+      "baselineTopLevelKeys": 18,
+      "preC394Blob": "152092a835e5e09e8adf3fd2d0d1422481584267",
+      "preC394Bytes": 119402,
+      "preC394TopLevelKeys": 49,
+      "addedResearchEvidenceSections": 31,
+      "profileVersionBoth": "research-1.6.0-C330",
+      "coreAdmissionFieldMapExtractionUnchanged": true,
+      "publicSampleGradeBefore": "P2",
+      "publicSampleGradeAfter": "P5",
+      "interpretation": "Mutable research dossier identity and public grade changed under same version; no demonstrated production parser semantic drift"
+    },
+    "historicalManifestCollision": {
+      "baselineCommit": "1b9b3bad0e35d7e1204dfea62fd91be5377d51b5",
+      "baselineBlob": "625c4e4367d12189f96cf4ee85cd1f3bae71e035",
+      "preC394Blob": "9a2d403cfb559144ea9b1882d308683dc9999fa9",
+      "baselineColumns": 19,
+      "preC394Columns": 36,
+      "addedColumns": 17,
+      "rowsBefore": 62,
+      "rowsAfter": 62,
+      "originalCellsPreserved": 1178,
+      "sourcePdfHashesUnchanged": true,
+      "verifiedTypedLeafLocators": 1116
+    },
+    "researchOnlyDecision": "Freeze minimal approved runtime ParserProfile canonical bytes and content SHA-256 separately from evolving dossier; pin locator schema, source raw SHA-256, report family, typed locator and evidence kind; owner/Flight association and user notice require separate W-016/017 approval.",
+    "validations": {
+      "jsHistoricalBlobManifestChecks": "14/14 PASS",
+      "realOriginalPdfBytes": "4 source PDFs re-fetched and fingerprinted",
+      "pdcLiteralHeader": "14/14 PASS",
+      "freshSkiaGlyphDecode": false,
+      "freshCompanyRowJoin": false,
+      "dartSembast": "NOT_RUN",
+      "activeUidFlight": "NOT_AVAILABLE",
+      "sameExportYearPublication": "NOT_CERTIFIED"
+    },
+    "publicPdfGrade": "P5",
+    "weeklyHtmlGrade": "P3",
+    "productionReady": false
   }
 }
