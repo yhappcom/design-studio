@@ -2536,5 +2536,92 @@
       "productionParser": "OPEN"
     },
     "historicalIndexDebt": "C194 references exist but exact old blocked-write intent not certified; no no-op CSV writes"
+  },
+  "c392AugustOriginalThreeWayGate": {
+    "id": "C392",
+    "checkedAt": "2026-10-26 20:04 KST",
+    "status": "RESEARCH_ONLY_NOT_PRODUCT_APPROVED",
+    "contract": "crewconnex-august-original-three-way-date-kind-gate-1.0-C392",
+    "sourceGitBlobs": {
+      "skia": "29ac040595089188a8353e98f41ba27f92b8650b",
+      "pdc": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "company2026": "a716dc090b1692320d819b3c8e1f5aa3095b4c7f"
+    },
+    "actualOriginal": {
+      "skiaNumeric": 22,
+      "skiaOwnDate": 12,
+      "skiaMissingDate": 10,
+      "pdcNumeric": 26,
+      "pdcOwnDate": 13,
+      "pdcMissingDate": 13,
+      "pdcNonNumericActivity": 22,
+      "pdcBlankActivity": 1,
+      "company2026Rows": 159,
+      "companyAugustRows": 3,
+      "companyLastDate": "2026-08-02",
+      "skiaCompanyCardinality": {
+        "zero": 8,
+        "one": 4,
+        "many": 10,
+        "pairs": 28,
+        "ownDateConditional2026": 2,
+        "ownDateBlockEqual": 2
+      },
+      "uncuratedSkiaCompany": {
+        "rows": 19,
+        "zero": 8,
+        "one": 4,
+        "many": 7,
+        "ownDateConditional2026": 0
+      },
+      "pdcCompanyCardinality": {
+        "zero": 8,
+        "one": 8,
+        "many": 10,
+        "pairs": 32,
+        "ownDateConditional2026": 2,
+        "ownDateBlockEqual": 2
+      },
+      "skiaPdcCardinality": {
+        "zero": 4,
+        "one": 18,
+        "many": 0,
+        "pairs": 18,
+        "bothOwnDate": 10,
+        "ownDateAgree": 9,
+        "ownDateConflict": 1,
+        "ownDateAgreeBlockEqual": 6,
+        "ownDateAgreeBlockDifferent": 3,
+        "skiaMinusPdcMinutes": [
+          1,
+          8,
+          16
+        ],
+        "uncuratedOwnDateAgree": 7
+      },
+      "threeWayOwnDateConditional2026": 2,
+      "threeWayAllPrintedDurationsEqual": 2,
+      "threeWayAllCurated": true,
+      "certifiedSameExport": 0,
+      "certifiedFourDigitSkiaYear": 0,
+      "activeUidFlightBinding": 0
+    },
+    "decision": "Detached source-kind observations and 0/1/many matching only. Printed own Date and source-year are separate; never inherit missing Date, infer crew, auto-correct one explicit cross-family date disagreement, equate BLH/printed Block/company bt, or create FlightRecord. Source-specific physical locator + immutable digest and owner-approved evidence-only receipt/transaction remain required for future persistence. Unknown Publication is a pending policy hold, not a universally approved requirement.",
+    "verification": {
+      "real": "ORIGINAL_SKIA_PDC_PDF_AND_COMPANY_XLSX_INDEPENDENT_DECODE",
+      "skiaToUnicodeUnmapped": 0,
+      "syntheticAbstractRouting": "10/10_RESEARCH_JS_ONLY",
+      "dartSembast": "NOT_RUN",
+      "publicPdf": "P5",
+      "weeklyHtml": "P3",
+      "productionParser": "OPEN",
+      "publicSample": "NO_LAWFUL_PRIVACY_SAFE_P1_P2",
+      "privateIdentifiersPersisted": false
+    },
+    "blockers": [
+      "independent same-export four-digit operational year and leg Publication-or-owner-approved-unknown policy",
+      "active same-UID existing Flight and approved evidence-only association schema",
+      "real file-backed Dart/Sembast stage/review/commit/replay/conflict/rollback/backup/wipe and UID isolation"
+    ]
   }
 }
