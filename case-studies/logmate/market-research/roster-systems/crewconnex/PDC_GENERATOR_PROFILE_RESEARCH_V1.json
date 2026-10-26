@@ -2177,5 +2177,91 @@
       "weeklyHtmlGrade": "P3",
       "productionParser": "OPEN"
     }
+  },
+  "c381CrossFamilyContainerAndWorkbookAdmission": {
+    "researchContract": "crewconnex-cross-family-container-and-companion-OOXML-admission-1.0-C381",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION",
+    "logmateReadOnlyHead": "4101ec7380796300f68fa60dbc7e5b6061f00080",
+    "actualPdfContainer": {
+      "skiaBytes": [
+        541788,
+        556535,
+        552417
+      ],
+      "skiaPages": [
+        2,
+        2,
+        2
+      ],
+      "skiaInUseXrefEntries": [
+        3125,
+        3170,
+        3140
+      ],
+      "pdcBytes": 39612,
+      "pdcPages": 1,
+      "pdcInUseXrefEntries": 18,
+      "totalXrefOffsetsChecked": 9453,
+      "invalidXrefOffsets": 0,
+      "eachSingleStartxrefAndEof": true,
+      "observedIncrementalPrevChains": 0,
+      "exactActiveDictionaryNameTokensObserved": 0,
+      "limitation": "LEXICAL_AND_CLASSIC_XREF_INTEGRITY_ONLY; not PDF security or semantic authenticity; do not hardcode these counts for all layouts"
+    },
+    "companionCompanyOoXml": {
+      "independentCompanyWorkbooks": 9,
+      "curatedPreviewWorkbooks": 1,
+      "uniquePackages": 10,
+      "centralDirectoryEntries": 103,
+      "invalidLocalHeaderOffsets": 0,
+      "companySheetCountEach": 1,
+      "previewSheetCount": 5,
+      "observedExternalLinkVbaOrTraversalEntry": 0,
+      "company2026AliasSameGitBlob": true,
+      "limitation": "PACKAGE_ONLY; no CRC/inflation, cell-level rejoin, or owner-ledger verification"
+    },
+    "crossSourceLineage": {
+      "skiaManifestRows": 62,
+      "selectedPhysicalLocators": 310,
+      "sourceGitBlobMatchAllThreeMonths": true,
+      "operationalYearVerifiedRows": 0,
+      "loginAspxHtmlNotPdf": true
+    },
+    "syntheticResearchOracle": {
+      "originalPdcPass": true,
+      "mutatedNegativeScenariosRejected": 11,
+      "scenarios": [
+        "header",
+        "truncation",
+        "duplicate EOF",
+        "active name",
+        "encrypt name",
+        "startxref offset",
+        "trailer size",
+        "xref entry offset",
+        "second startxref",
+        "trailing junk",
+        "xref section count"
+      ],
+      "runtime": "IN_MEMORY_JS_ONLY_NOT_DART_OR_SEMBAST"
+    },
+    "admissionPolicy": [
+      "byte MIME and login HTML rejection",
+      "bounded standards-compliant PDF parser, no active action/network execution",
+      "family-specific complete-page table/summary validation",
+      "source SHA256 plus immutable production profile-content digest and physical locator",
+      "nonflight exclusion and no implicit date/crew/Pairing inheritance",
+      "unique reviewed active same-UID existing Flight match, revision/receipt/lifecycle fences",
+      "unknown/malformed input zero attachment and zero FlightRecord create"
+    ],
+    "unresolved": [
+      "authenticated same-export carrier/century/Publication/leg crew",
+      "real same-UID owner Flight and CAS",
+      "actual Dart/Sembast parser/repository/backup/wipe tests",
+      "public lawful anonymized P1 or official exact-layout P2"
+    ],
+    "publicPdfGrade": "P5",
+    "weeklyHtmlGrade": "P3",
+    "productionReady": false
   }
 }
