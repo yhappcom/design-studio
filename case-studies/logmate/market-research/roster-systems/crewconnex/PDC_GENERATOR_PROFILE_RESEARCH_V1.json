@@ -3108,5 +3108,101 @@
       "ownerUidBinding": "NOT_VERIFIED",
       "production": "OPEN"
     }
+  },
+  "scalarStreamIdentityAndReplayC402": {
+    "researchContract": "crewconnex-scalar-stream-identity-replay-and-snapshot-boundary-1.0-C402",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "logmateReadOnlyHead": "26d2d7cf2c20c55026c6f84b838dcb6442f7a3f1",
+    "originalDerivedSkiaManifest": {
+      "sourceSha256Count": 3,
+      "rows": 62,
+      "months": {
+        "June": 18,
+        "July": 22,
+        "August": 22
+      },
+      "uniqueFiveCoreFieldLocators": 310,
+      "ownDatePresent": 35,
+      "ownDateAbsent": 27,
+      "manualPreviewReferences": 43,
+      "crewCellShapes": {
+        "multiLeafSix": 31,
+        "multiLeafSeven": 5,
+        "singleLeafOne": 26
+      },
+      "newOriginalPdfDecode": false
+    },
+    "separatePdcEvidence": {
+      "numericObservations": 26,
+      "ownDateAbsent": 13,
+      "conditionalThreeWayC392": 2,
+      "printedDurationDifferencesAmongNineDateAgreeSkiaPdcPairsMinutes": [
+        1,
+        8,
+        16
+      ],
+      "notVerifiedSameExportOrUid": true
+    },
+    "currentScalarDomain": {
+      "valueEqualityIncludes": [
+        "sourceFileFingerprint",
+        "sourceLocator",
+        "parserProfileId",
+        "parserProfileVersion",
+        "reviewReason"
+      ],
+      "historyStreamKeyOnly": [
+        "record",
+        "field",
+        "sourceSystemId"
+      ],
+      "historyUnconditionallyAppendsIncludingExactReplay": true,
+      "requiresUserNoticeIgnoresProvenanceOnlyWhenNormalizedEqual": true,
+      "profileContentDigest": "ABSENT",
+      "crewSnapshot": "ABSENT",
+      "durableReceipt": "ABSENT",
+      "crewParticipantRequiresVerifiedName": true,
+      "notAProvenCrewConnexRuntimeDefect": true
+    },
+    "proposedImmutableEvidenceIdentity": [
+      "sourceSha256",
+      "reportFamily",
+      "approvedParserProfileContentSha256",
+      "typedLocatorSchemaVersion",
+      "typedSourceFieldLocator",
+      "evidenceKind"
+    ],
+    "proposedSeparateAssociationIdentity": [
+      "verifiedOwnerUid",
+      "activeFlightRecordId",
+      "flightRevision",
+      "evidenceHeadRevision",
+      "reviewedSourceLegBinding",
+      "certifiedFourDigitOperationalYear",
+      "legPublicationDisposition"
+    ],
+    "proposedIdempotencyAndRevisionRules": [
+      "identical replay must not append duplicate durable receipt",
+      "same normalized scalar with different source/provenance must remain independently reviewable",
+      "Skia BLH and PDC Blk Hrs never share canonical Block or a scalar stream by assumption",
+      "PDC crew not provided must not delete Skia crew",
+      "source-only evidence update must not mutate FlightRecord or generic Flight Sync outbox",
+      "dual CAS/atomic rollback/backup/restore/wipe/UID isolation require separate product approval"
+    ],
+    "validation": {
+      "currentDartSourceStatic": "15/15 PASS",
+      "abstractSyntheticDecisionModel": "9/9 PASS",
+      "newOriginalPdfOrXlsxDecode": "NOT_RUN",
+      "actualDartSembast": "NOT_RUN",
+      "activeUidOwnerBinding": "NOT_VERIFIED",
+      "publicPdf": "P5",
+      "weeklyHtml": "P3",
+      "production": "OPEN"
+    },
+    "workApproval": {
+      "W016": "NOT_STARTED_UNASSIGNED",
+      "W017": "NOT_STARTED_INSUFFICIENT_EVIDENCE_UNASSIGNED"
+    },
+    "next": "Obtain source-authorized same-export operational year, leg Publication/revision disposition, complete Aug03-31 owner/reference coverage and active same-UID Flight for C392 conditional triples; then approved file-backed evidence-only replay/CAS/rollback/backup/wipe."
   }
 }
