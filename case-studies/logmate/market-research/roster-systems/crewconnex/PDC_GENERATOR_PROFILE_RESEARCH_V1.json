@@ -2690,5 +2690,73 @@
     "publicPdfGrade": "P5",
     "weeklyHtmlGrade": "P3",
     "productionReady": false
+  },
+  "c395StructuralVsAssociationGate": {
+    "status": "RESEARCH_ONLY_NOT_PRODUCT_APPROVED",
+    "checkedAtKST": "2026-10-26 23:04",
+    "sourceScope": "Independently recomputed C194 original-PDF-derived 36-column manifest and PDC previously original-verified sampleFingerprint; no new private binary decode",
+    "ambiguity": {
+      "currentAdmissionReject": [
+        "ambiguous period/century",
+        "unverified source-stage binding"
+      ],
+      "conflictingExistingRules": [
+        "fieldMap.Date.state: own cell only; missing is unresolved",
+        "validation.classificationOrder: validate explicit date or stage as unresolved"
+      ],
+      "finding": "Separate document structural unsupported from detached row unresolved and later owner-association HOLD; no production runtime defect proven"
+    },
+    "observed": {
+      "skiaNumeric": 62,
+      "skiaOwnDateDirectCrew": 35,
+      "skiaOmittedDatePipeCrew": 26,
+      "skiaOmittedDateDirectCrew": 1,
+      "skiaVerifiedOperationalYears": 0,
+      "pdcNumeric": 26,
+      "pdcOwnDateTwoDigitYear": 13,
+      "pdcOmittedDate": 13,
+      "pdcCrewColumns": 0,
+      "combinedObservationsNotUniqueFlights": 88,
+      "ownDateObserved": 48,
+      "ownDateMissing": 40,
+      "pdcExcludedNonnumeric": 22,
+      "pdcExcludedBlank": 1,
+      "authenticatedUidAttachments": 0
+    },
+    "proposedStages": {
+      "documentUnsupported": [
+        "unrecognized report family/ordered headers",
+        "unreadable PDF/text layer",
+        "invalid primary grid/column/page/locator"
+      ],
+      "detachedCandidate": [
+        "validated numeric Activity+route+four clocks+printed Block",
+        "omitted own Date => DETACHED_DATE_UNRESOLVED",
+        "unverified century => DETACHED_YEAR_UNVERIFIED",
+        "Skia pipe-only crew => DETACHED_CREW_UNRESOLVED",
+        "nonflight/blank/Sum/notes => EXCLUDED"
+      ],
+      "ownerPolicyHold": [
+        "carrier/four-digit date not authenticated",
+        "zero or ambiguous active same-UID existing Flight",
+        "unapproved source association or unknown-Publication disposition",
+        "cross-source date/Block or parser-interpretation conflict"
+      ],
+      "forbidden": [
+        "standalone FlightRecord creation",
+        "automatic date/crew inheritance",
+        "PDC no-crew deletes Skia crew",
+        "BLH equals company bt",
+        "silent user-value overwrite"
+      ]
+    },
+    "validation": {
+      "sourceDerived": "62+26 and 48/40 partition; no original-byte reread",
+      "synthetic": "18/18 JS policy oracle PASS; NOT Dart/Sembast or real parser",
+      "production": "OPEN"
+    },
+    "evidenceGrade": "P5_PDF_P3_WEEKLY_HTML_UNCHANGED",
+    "ownerAuthority": "W-016/W-017 UNASSIGNED",
+    "next": "Same-export four-digit source year/leg plus active same-UID Flight; owner association/Publication policy; immutable minimal profile and file-backed evidence-only lifecycle."
   }
 }
