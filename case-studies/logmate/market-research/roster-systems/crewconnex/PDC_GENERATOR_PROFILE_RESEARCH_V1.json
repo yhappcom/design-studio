@@ -2330,5 +2330,92 @@
     "publicPdfGrade": "P5",
     "weeklyHtmlGrade": "P3",
     "productionReady": false
+  },
+  "c384CompanyInternalCollisionAndOwnerAdmission": {
+    "id": "C384",
+    "contract": "crewconnex-company-collision-ablation-1.0-C384",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "realCorpus": {
+      "companyYears": "2018-2026",
+      "originalCompanyWorkbooks": 9,
+      "companyRows": 1530,
+      "normalized7cSupportedRows": 1520,
+      "unsupportedFlightIdentifierRows": 10,
+      "keyCollisionAblation": [
+        {
+          "key": "companySourceDate+normalized7CFlight+route",
+          "distinctKeys": 1520,
+          "collidingGroups": 0,
+          "collidingRows": 0,
+          "maxGroup": 1,
+          "crossYearGroups": 0
+        },
+        {
+          "key": "normalized7CFlight+route",
+          "distinctKeys": 521,
+          "collidingGroups": 299,
+          "collidingRows": 1298,
+          "maxGroup": 14,
+          "crossYearGroups": 230
+        },
+        {
+          "key": "normalized7CFlight+route+sourceBt",
+          "distinctKeys": 1395,
+          "collidingGroups": 110,
+          "collidingRows": 235,
+          "maxGroup": 4,
+          "crossYearGroups": 85
+        },
+        {
+          "key": "normalized7CFlight+route+sourceBt+rawAcType",
+          "distinctKeys": 1438,
+          "collidingGroups": 73,
+          "collidingRows": 155,
+          "maxGroup": 4,
+          "crossYearGroups": 50
+        },
+        {
+          "key": "normalized7CFlight+route+sourceBt+rawFltTime",
+          "distinctKeys": 1515,
+          "collidingGroups": 5,
+          "collidingRows": 10,
+          "maxGroup": 2,
+          "crossYearGroups": 3
+        }
+      ],
+      "sourceDateWindowOneDaySameFlightRoutePairs": 11,
+      "oneDayPairControls": {
+        "sameRawAcType": 11,
+        "sameRawBt": 0,
+        "sameRawFltTime": 0,
+        "sameRegistration": 4
+      },
+      "company2026Rows": 159,
+      "company2026Supported7cRows": 158,
+      "latestObserved2026Date": "2026-08-02",
+      "company2026AugustSupported7cRows": 3,
+      "scope": "COMPANY_INTERNAL_KEY_CARDINALITY_ONLY_NOT_PDC_MATCH_NOT_OWNER_LEDGER"
+    },
+    "syntheticPolicy": {
+      "passed": 5,
+      "total": 5,
+      "runtime": "RESEARCH_JS_ABSTRACT_ONLY_NOT_DART"
+    },
+    "parserAdmissionDelta": [
+      "preserve zero/one/multiple company candidate cardinality without source-date inheritance",
+      "do not accept company-internal unique date+flight+route as CrewConnex same-export or active UID Flight proof",
+      "no date-free automatic match even when raw Block/aircraft/clock match",
+      "require verified four-digit source year/report family/immutable profile digest/physical locator and approved revision policy",
+      "only reviewed existing same-UID active Flight evidence-only attachment with revision and EvidenceHead CAS/Receipt",
+      "Skia BLH, PDC STD/printed Block and company bt/fltTime retain independent source semantics"
+    ],
+    "blockers": [
+      "certified same-export carrier/year/Publication/leg crew",
+      "active same-UID Flight identity",
+      "real Dart/Sembast evidence-only CAS/Receipt/replay/rollback/backup/wipe"
+    ],
+    "publicPdfGrade": "P5",
+    "weeklyHtmlGrade": "P3",
+    "productionReady": false
   }
 }
