@@ -2473,5 +2473,68 @@
     },
     "access": "2018/2019 historical PDF fetch_file(base64) empty; original UI inspected only in ephemeral read-only view; no private raw data persisted.",
     "historicalIndexDebt": "Current sample/field indexes contain C194 references, but exact 2026-10-09 blocked-write intended annotations remain unverified; no unsupported sync-closure claim."
+  },
+  "c388SourceClassifierAndWorkAuthority": {
+    "id": "C388",
+    "date": "2026-10-26 16 KST",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "actualOriginalScope": {
+      "pdcGitBlob": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "pdcBytes": 39612,
+      "pdcTextObjects": 495,
+      "pdcBodyBands": 49,
+      "pdcBodyCells": 473,
+      "pdcNumeric": 26,
+      "pdcNonnumeric": 22,
+      "pdcBlank": 1,
+      "naiveRouteFourClockPositive": 44,
+      "naiveNonflightFalsePositive": 18,
+      "naiveFalsePositiveFraction": "18/44",
+      "strictNumericAndPrintedBlockCandidates": 26,
+      "numericMissingOwnDate": 13,
+      "numericMissingPairing": 10,
+      "numericMissingCheckIn": 11,
+      "numericMissingCheckOut": 12,
+      "numericMissingDC": 26,
+      "company2026GitBlob": "a716dc090b1692320d819b3c8e1f5aa3095b4c7f",
+      "company2026Rows": 159,
+      "company2026Supported7C": 158,
+      "company2026AugustRows": 3,
+      "companyLastObservedDate": "2026-08-02",
+      "newCrossSourceJoin": false
+    },
+    "workAuthority": {
+      "w016": "NOT_STARTED_CONDITIONAL_APPROVAL_UNASSIGNED",
+      "w017": "NOT_STARTED_INSUFFICIENT_EVIDENCE_APPROVAL_UNASSIGNED",
+      "import1aReady": "SOURCE_NEUTRAL_BOUNDARY_DESIGN_AND_TEST_ONLY",
+      "evidenceHeadReceiptDualCAS": "UNAPPROVED_RESEARCH_DESIGN_NOT_MASTER_POLICY",
+      "publicationIdUniversalRequirement": "NOT_APPROVED",
+      "unknownPublication": "RESEARCH_POLICY_HOLD_NOT_UNSUPPORTED_LAYOUT"
+    },
+    "currentCode": {
+      "sourceEvidenceHistory": "SCALAR_NOTICE_ONLY_NOT_CREW_REVISION_RECEIPT",
+      "flightEntrySaveReceipt": "DRAFT_FINALIZATION_ONLY",
+      "syncReceipt": "SYNC_TRUST_ONLY",
+      "backupRegistry": "30_CORE_PLUS_7_SYNC_STORES_NO_CREW_EVIDENCE_STORE",
+      "ledgerMutationPlan": "RECORD_OR_STRUCTURE_REQUIRED_NO_EVIDENCE_ONLY_PLAN"
+    },
+    "proposedNotApproved": [
+      "Validated exact-family full-page source and nonflight exclusion -> detached evidence-kind staging",
+      "Owner-approved source association/unknown-Publication disposition and independently verified same-UID active existing Flight before any evidence-only attachment",
+      "Separate immutable profile digest, source locator, source-family crew isolation, idempotent evidence receipt, rollback/backup/wipe and Sync treatment require DATA-001/W-016 decision",
+      "Never create FlightRecord, infer crew name/role, inherit Date, silently overwrite Block or clear Skia crew from PDC no-crew evidence"
+    ],
+    "validation": {
+      "actualSource": "ONE_ORIGINAL_PDC_PDF_AND_ORIGINAL_COMPANY_2026_XLSX_DECODED",
+      "syntheticClassifier": "6/6_RESEARCH_JS_ONLY",
+      "syntheticRouting": "16/16_RESEARCH_JS_ONLY",
+      "dartSembast": "NOT_RUN",
+      "sameUidFlight": "NOT_AVAILABLE",
+      "publicExactLayout": "TWO_FOCUSED_SEARCH_PASSES_NO_P1_OR_P2",
+      "publicPdf": "P5",
+      "weeklyHtml": "P3",
+      "productionParser": "OPEN"
+    },
+    "historicalIndexDebt": "C194 references exist but exact old blocked-write intent not certified; no no-op CSV writes"
   }
 }
