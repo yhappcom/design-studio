@@ -3052,5 +3052,61 @@
       "W017": "NOT_STARTED_INSUFFICIENT_EVIDENCE_UNASSIGNED"
     },
     "next": "Source-authorized same-export year and leg Publication/revision disposition, complete Aug 03-31 reference and active same-UID Flight for C392 conditional triples; then approved immutable-profile native-file evidence-only lifecycle."
+  },
+  "corpusByteAdmissionAndLifecycleParityC401": {
+    "researchContract": "crewconnex-corpus-byte-admission-and-lifecycle-parity-1.0-C401",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "sourceScope": {
+      "small2026PdfMagicVerified": 4,
+      "uniqueOoxmlMagicVerified": 10,
+      "duplicate2026CompanyAliasPaths": 1,
+      "misleadingAspxIsHtmlLoginNotRosterExport": 1,
+      "largeHistoricalPdfByteAccessBlocked": 3,
+      "publicRawPdfSampleGrade": "P5",
+      "weeklyHtmlGrade": "P3"
+    },
+    "admissionSequence": [
+      "LOCAL_BYTES_AND_CONTAINER_MAGIC",
+      "PDF_REPORT_FAMILY_EXACT_HEADER_AND_LAYOUT",
+      "NONFLIGHT_AND_SUM_EXCLUSION",
+      "DETACHED_SOURCE_KIND_AND_TYPED_LOCATOR",
+      "SOURCE_YEAR_PUBLICATION_UID_OWNER_POLICY",
+      "EXPLICIT_REVIEW_ONLY_PENDING_APPROVED_EVIDENCE_LIFECYCLE"
+    ],
+    "neverInfer": [
+      "PDF creation timestamp as Publication",
+      "Skia source year from calendar or company file",
+      "crew identity from Emp.# / CC / Pos. without verified mapping",
+      "same BLH and PDC Block as same source kind",
+      "a login HTML form as PDF sample",
+      "a connector no-byte response as an unsupported roster layout"
+    ],
+    "currentCodeStatic": {
+      "backupBaseStores": 30,
+      "backupSyncAdditionalStores": 7,
+      "explicitWipeStores": 29,
+      "syncStoresNotExplicitlyWiped": 7,
+      "localReplicaNotExplicitlyWiped": true,
+      "crewEvidenceReceiptStore": "ABSENT",
+      "immutableProfileContentDigest": "ABSENT",
+      "scalarHistoryFingerprintOnlyNotice": "FALSE",
+      "ownerApproval": "UNASSIGNED"
+    },
+    "requiredFutureAcceptance": [
+      "versioned evidence and receipt store registered in backup/restore and deletion/wipe",
+      "same-UID owner lock and active FlightRevision plus evidence-head CAS",
+      "idempotent receipt and no generic Flight mutation/outbox",
+      "same BLH changed crew, changed profile interpretation and fingerprint-only review",
+      "file-backed rollback/reopen/backup/restore/delete/UID-isolation",
+      "real multi-month PDF and PDC fixtures; synthetic checks alone never approve"
+    ],
+    "verification": {
+      "sourceMagic": "ACTUAL_PRIVATE_SOURCE_BYTES_TYPE_ONLY",
+      "codeParity": "12/12 STATIC_SOURCE_CHECKS",
+      "syntheticRouting": "11/11 ABSTRACT_JS",
+      "dartSembast": "NOT_RUN",
+      "ownerUidBinding": "NOT_VERIFIED",
+      "production": "OPEN"
+    }
   }
 }
