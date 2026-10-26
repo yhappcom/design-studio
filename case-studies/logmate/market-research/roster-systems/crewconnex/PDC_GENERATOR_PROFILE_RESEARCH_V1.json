@@ -2758,5 +2758,80 @@
     "evidenceGrade": "P5_PDF_P3_WEEKLY_HTML_UNCHANGED",
     "ownerAuthority": "W-016/W-017 UNASSIGNED",
     "next": "Same-export four-digit source year/leg plus active same-UID Flight; owner association/Publication policy; immutable minimal profile and file-backed evidence-only lifecycle."
+  },
+  "c397NineYearCalendarKeyAndBlockDateGate": {
+    "id": "C397",
+    "contract": "crewconnex-nine-year-calendar-key-and-block-date-ablation-1.0-C397",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "sourceScope": "Original private PDC August PDF BT/Tj and all nine company 2018-2026 OOXML files re-decoded in ephemeral connector memory via base64; Skia C194 manifest cross-checked, not re-decoded; no private raw values copied",
+    "company": {
+      "rows": 1530,
+      "supported7cNumeric": 1520,
+      "fullDateFlightRoute": {
+        "distinct": 1520,
+        "collisionGroups": 0
+      },
+      "monthDayFlightRoute": {
+        "distinct": 1513,
+        "crossYearCollisionGroups": 7,
+        "rowsInCollisions": 14,
+        "allCrossYear": true,
+        "noneIncludes2026": true,
+        "rawBtEqualPairs": 1,
+        "rawAtEqualPairs": 2,
+        "rawAcTypeEqualPairs": 3,
+        "rawFltTimeEqualPairs": 1
+      },
+      "dateFreeFlightRoute": {
+        "distinct": 521,
+        "collisionGroups": 299,
+        "rowsInCollisions": 1298
+      }
+    },
+    "pdcJoin": {
+      "numeric": 26,
+      "ownDate": 13,
+      "missingOwnDate": 13,
+      "bodyBands": 49,
+      "nonnumeric": 22,
+      "blank": 1,
+      "nineYearDateFreeCandidatePairs": 89,
+      "cardinality": {
+        "zero": 2,
+        "one": 6,
+        "multiple": 18
+      },
+      "ownDatePartialPairs": 43,
+      "ownDateMonthDayEqual": 2,
+      "ownDateMonthDayDifferent": 41,
+      "missingOwnDatePartialPairs": 46,
+      "minuteBlockEqualPartialPairs": 8,
+      "blockEqualPartition": {
+        "ownDateConditional2026Agree": 2,
+        "ownDateDifferent": 2,
+        "ownDateAbsent": 4
+      },
+      "sameExportOrUidBinding": 0
+    },
+    "implementationResearchDecision": [
+      "Four-digit year and own-Date are independent gates; year-removed cross-year company collisions prove date-year ablation is unsafe.",
+      "Block equality cannot repair absent/conflicting date, establish carrier, or attach to active UID Flight.",
+      "Preserve Skia BLH, PDC printed Block and company bt as distinct source evidence.",
+      "Separate structural unsupported, detached candidate and owner-association HOLD; explicit user review before any approved evidence-only commit.",
+      "Do not create FlightRecord, inherit crew/date, infer PIC/SIC/PF/PM/operating/deadhead or overwrite user current values."
+    ],
+    "validation": {
+      "originalSourceAggregateAssertions": "8/8",
+      "syntheticStagePolicyClasses": "7/7",
+      "dartSembast": "NOT_RUN",
+      "actualOwnerUid": "NOT_AVAILABLE",
+      "publicSearch": "Two focused exact-layout passes: no lawful anonymous public P1/P2"
+    },
+    "grades": {
+      "publicPdf": "P5",
+      "weeklyHtml": "P3",
+      "production": "OPEN"
+    },
+    "profileVersionNote": "This is a mutable research dossier section, not an immutable runtime ParserProfile or product approval."
   }
 }
