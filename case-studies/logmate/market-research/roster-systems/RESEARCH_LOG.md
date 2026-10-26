@@ -823,3 +823,10 @@ Re-read current LogMate AGENTS/MASTER/import/CrewConnex specs, crew ownership an
 - Static domain test confirms same normalized scalar can suppress provenance-only notice; raw crew revision needs separate evidence lifecycle. Nine source-derived manifest assertions and five abstract synthetic routing examples are **not** production parser/Dart/Sembast tests. Official PDC pages are report-family capability evidence only; two focused public searches found no lawful anonymous exact-format P1/P2. LogMate unchanged.
 - **ONE next target:** authorized original Skia 3-month Date/Pairing/Emp#/CC/Pos. per-cell/leaf locator and Sum/continuation extraction, paired with authenticated same-export year/leg and existing UID-owned Flight for evidence-only lifecycle acceptance; no inference or standalone Flight creation.
 
+
+## 2026-10-26 18:08 KST — C390 integrated source locator and continuation gate
+- **Original read-only:** LogMate AGENTS/MASTER/import/CrewConnex/domain/test; three original Skia PDFs; Design Studio plan/indexes/queue/log/C194/PDC and old sync debt. No raw private values copied.
+- **Actual source-byte object topology:** 62/62 TR and 310/310 old selected MCIDs verified; 35 Date +30 Pairing +186 crew TD, 806 new MCID leaves, 1116/1116 combined unique/parent-owned. Crew 31 six-leaf, five seven-leaf, 26 single-leaf; 247 leaves/crew column. Six page2 candidates, all three primary page2 MCR MCID0; July/August auxiliary 7/5 TR. Page text/Y/Sum not freshly decoded.
+- **Continuation:** 26 singleleaf chain depths 22/2/2; all same-page numeric ancestry, two ultimate anchors without Pairing. One undated August multileaf after nonflight. No crew/date inference. Seven abstract synthetic JS routing checks PASS only; no Dart/Sembast.
+- **Saved contract:** C194 manifest extended in place, indexes/queue/log synchronized without grade uplift; PDF P5 HTML P3 Production OPEN. Two public exact-format searches no P1/P2. W-016/017 and owner/Publication/UID remain OPEN; C194 old sync-debt remainder unverifiable.
+- **Next:** decoded original per-leaf text/Y/Sum and same-export year/UID evidence, then approved file-backed evidence-only lifecycle.
