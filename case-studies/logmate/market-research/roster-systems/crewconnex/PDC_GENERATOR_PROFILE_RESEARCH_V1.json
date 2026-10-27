@@ -3949,7 +3949,7 @@
       "nonnumericNonStrictClockBands": 6,
       "nonnumericNonStrictBreakdown": {
         "invalidHourBothArrivalColumns": 4,
-        "nonClockStdLocal": 1,
+        "validHHMMMinus1StdLocal": 1,
         "validHHMMPlus3BothArrivalColumns": 1
       },
       "sourceNonflightClockValidation": "DO_NOT_REQUIRE_HHMM_IN_NONFLIGHT_EXCLUSION",
@@ -3957,19 +3957,32 @@
       "nonnumericFourStrictValidClockLexemesAnyPositiveDayOffset": 17,
       "nonnumericNonStrictClockBandsWithPlus1Only": 6,
       "nonnumericNonStrictClockBandsWithAnyDayOffset": 5,
-      "nonnumericPlus3ClockMarkerBands": 1
+      "nonnumericPlus3ClockMarkerBands": 1,
+      "nonnumericFourStrictValidClockLexemesSignedDayOffset": 18,
+      "nonnumericNonStrictClockBandsWithSignedDayOffset": 4,
+      "nonnumericMinus1ClockMarkerBands": 1,
+      "clockPositionSuffixCells": {
+        "numericPlus1": 9,
+        "numericPlus3": 0,
+        "numericMinus1": 0,
+        "nonflightPlus1": 8,
+        "nonflightPlus3": 2,
+        "nonflightMinus1": 1
+      }
     },
     "correctionToPriorResearch": {
       "priorC327NonnumericFourStrictValid": 17,
       "c423Plus1Only": 16,
       "c423AnyExplicitDayOffset": 17,
       "discrepancy": "RESOLVED_BY_ONE_NONFLIGHT_PLUS3_DAY_MARKER",
-      "sourceScope": "NONFLIGHT_ONLY; NO_NUMERIC_PLUS3",
+      "sourceScope": "Nonflight has +3 and -1; numeric candidates only +1 among observed suffixes.",
       "priorC422SyntheticBlank": "EMPTY_ACTIVITY_CELL",
       "actualBlank": "NO_ACTIVITY_GLYPH_SINGLE_AC_HOTEL_GLYPH",
       "priorC422SyntheticNonflight": "ALL_22_CLOCKS_VALID",
       "actual": "17_OF_22_CLOCK_LEXICALLY_VALID_WITH_PLUS_N; 16_WITH_PLUS1_ONLY",
-      "interpretation": "Preserve +3 as raw nonflight clock-position text; do not infer flight date, operational rollover or Block from nonflight."
+      "interpretation": "C327 17/22 is reproduced under +N lexical grammar; 18/22 under signed ±N. Both are lexical checks only; never infer date or Block from nonflight.",
+      "c423SignedOffset": 18,
+      "nonflightDayOffsetMarkers": "+1,+3,-1"
     },
     "adversarial": {
       "actualPrivateSourceGeometryBasedNegativeMutationsRejected": 13,
@@ -3990,7 +4003,7 @@
       ],
       "allFailDocumentNoPartialCandidate": true,
       "sourceBaselineAccepted": true,
-      "syntheticOracleRemoteGroups": "69/69_PASS",
+      "syntheticOracleRemoteGroups": "70/70_PASS",
       "syntheticScript": "crewconnex/C418_SYNTHETIC_REPORT_ORACLE.mjs",
       "syntheticGlyphsAreInvented": true,
       "actualPdfParserInLogMate": "NOT_IMPLEMENTED",
@@ -4001,7 +4014,7 @@
     "noBlockOverwrite": true,
     "noCrewInference": true,
     "open": [
-      "Verify whether other authorized PDC versions emit +N beyond +1 on numeric flight candidates; current original has +3 only on nonflight.",
+      "Verify other authorized PDC versions and whether numeric-leg clocks can carry signed or multi-day offsets; current numeric original only shows +1.",
       "Source-certified operational year and Publication/revision",
       "August outside-Preview eight edges with Aug03-31 company and active same-UID Flight",
       "Owner W-016/W-017 and file-backed acceptance",
