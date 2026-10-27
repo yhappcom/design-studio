@@ -4157,5 +4157,53 @@
       "Public exact-layout PDF P5; weekly HTML P3; production OPEN"
     ],
     "next": "Authorized source-year/Publication/carrier/subject and Aug03–31 company + active same-UID Flight for eight Skia/PDC August outside-Preview edges; approved evidence-only lifecycle."
+  },
+  "c427PhysicalEnvelopeAudit": {
+    "profileContractDelta": "pdc-generator-14col-physical-envelope-v1.04-C427",
+    "status": "RESEARCH_PROPOSAL_NOT_OWNER_APPROVED",
+    "sourceScope": "One read-only private 2026-08 PDC PDF only; not vendor-wide",
+    "sourceGitBlobSha1": "8e7fec30f98458c770053bd7739e60869a87e33b",
+    "actualOriginalEvidence": {
+      "bytes": 39612,
+      "pdfVersion": "1.4",
+      "numberedIndirectObjects": 18,
+      "xrefEntriesIncludingFree": 19,
+      "xrefByteOffset": 39171,
+      "pages": 1,
+      "catalogObject": 18,
+      "pagesObject": 2,
+      "pageObject": 17,
+      "contentsObject": 16,
+      "resourcesObject": 15,
+      "infoObject": 1,
+      "declaredContentStreamBytes": 33542,
+      "mediaBox": [
+        0,
+        0,
+        598,
+        842
+      ],
+      "xrefAndLengthConsistent": true
+    },
+    "adversarial": {
+      "originalAcceptedByIndependentPhysicalAudit": true,
+      "legacyResearchTextScannerWrongAcceptsOnCorruptMutations": 11,
+      "independentPhysicalAuditRejects": 11,
+      "mutationsAreInvalidByteEditedPdfsNotRealLayouts": true,
+      "syntheticEnvelopeBaselinePass": true,
+      "syntheticEnvelopeMutationsRejected": 11,
+      "fullSavedNodeModuleRunThisCycle": false
+    },
+    "executable": "crewconnex/C426_PDC_NATIVE_PDF_TEXT_ADMISSION.mjs",
+    "implementationBoundary": [
+      "Resolve active Catalog→Pages→Page→Contents using a standards-compliant PDF parser before text admission",
+      "Validate xref, stream length, page geometry, unsupported encodings and full source locators",
+      "No hardcoded original object IDs or exact byte counts as cross-version production rules",
+      "Unknown/inconsistent document => zero candidates and no existing FlightRecord mutation",
+      "Keep carrier, certified four-digit operational year, Publication/revision, subject-to-UID, active same-UID Flight and review as separate gates",
+      "PDC per-leg crew NOT_PROVIDED; no Block equivalence, inferred duty or standalone FlightRecord"
+    ],
+    "readiness": "PRODUCTION_OPEN",
+    "next": "Authorized full Aug03–31 company + source-certified year/carrier/subject/Publication and active same-UID Flight for eight Skia/PDC edges; approved file-backed evidence-only lifecycle"
   }
 }
