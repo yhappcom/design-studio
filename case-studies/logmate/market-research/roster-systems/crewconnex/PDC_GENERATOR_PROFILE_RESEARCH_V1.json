@@ -3704,5 +3704,84 @@
     "publicPdf": "P5",
     "weeklyHtml": "P3",
     "historicalC194SyncDebt": "OPEN"
+  },
+  "c421IndependentPdcInterleavingAndOracleFidelity": {
+    "id": "C421",
+    "checkedAt": "2026-10-28 00:55 KST",
+    "status": "RESEARCH_ONLY_NOT_PRODUCT_APPROVED",
+    "source": {
+      "logmateReadOnlyHead": "d3bc214fe9b4b7bf84702f898b4e6993a4127e2f",
+      "privatePdcGitBlob": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "originalPdfBytesIndependentlyDecodedThisRun": true,
+      "privateRawValuesPersisted": false,
+      "exactRowSequencePersisted": false
+    },
+    "independentOriginalByteAudit": {
+      "pdfVersion": "1.4",
+      "pages": 1,
+      "uncompressedTextObjects": 495,
+      "bodyBands": 49,
+      "bandSpacingPoints": 9,
+      "bodyYRange": [
+        206,
+        638
+      ],
+      "activityTextX": 210,
+      "blockRightAlignedTextX": 511,
+      "headerColumns": 14,
+      "pdfLiteralEscapedHeaderLabels": 6,
+      "headersMatchedBeforePdfLiteralUnescape": 8,
+      "headersMatchedAfterPdfLiteralUnescape": 14,
+      "numericFlightCandidates": 26,
+      "nonnumericActivities": 22,
+      "blankActivityBands": 1,
+      "flightNonflightBlankTransitions": 23,
+      "nonflightBandsInterposedBetweenFlightCandidates": 22,
+      "flightCandidatesAfterFirstNonflight": 23,
+      "blankOccursWithinBody": true,
+      "lastBodyBandNumeric": true,
+      "numericWithOwnDate": 13,
+      "numericWithoutOwnDate": 13,
+      "nonflightWithOwnDate": 18,
+      "nonflightWithRouteAndFourClocks": 18,
+      "nonflightWithFourClocks": 22,
+      "numericWithPrintedBlock": 26,
+      "nonnumericWithPrintedBlock": 0,
+      "baseClockElapsedEqualsPrintedBlock": 26,
+      "localClockElapsedEqualsPrintedBlock": 16,
+      "explicitPlusOneClockTokens": 17
+    },
+    "priorSyntheticFixtureDefect": {
+      "numericThenNonflightThenTerminalBlank": true,
+      "kindTransitions": 2,
+      "nonflightInterposedBetweenFlights": 0,
+      "realOriginalContradiction": true,
+      "existingGreenTestsWereInsufficient": true
+    },
+    "correctedSyntheticFixture": {
+      "order": "INVENTED_INTERLEAVING_NOT_EXACT_PRIVATE_ROW_ORDER",
+      "kindTransitions": 23,
+      "midbodyBlank": true,
+      "nonflightDateAndClockDistractors": true,
+      "nonflightRouteAndClockDistractors": true,
+      "fullSyntheticChecks": "51/51 PASS",
+      "newConnectedChecks": 4,
+      "priorIndexBasedAssumptionsReplaced": true
+    },
+    "interpretation": "Full-document detector must classify actual Activity and printed Block by source coordinates, accept interleaved nonflight and midbody blank without truncating later numeric candidates, and PDF-unescape header literals before ordered-header comparison. No automatic date/crew inheritance or current Block mutation.",
+    "limits": {
+      "rawPdfDetector": "NOT_IMPLEMENTED",
+      "skiaRealTextDecodeThisRun": false,
+      "companyXlsxDecodeThisRun": false,
+      "yearPublicationSameExport": "OPEN",
+      "uidOwnedFlight": "OPEN",
+      "W016W017": "NOT_STARTED_UNASSIGNED",
+      "dartSembast": "NOT_RUN",
+      "publicPdfGrade": "P5",
+      "weeklyHtmlGrade": "P3",
+      "production": "OPEN",
+      "historicalC194SyncDebt": "OPEN"
+    },
+    "publicAcquisition": "Two targeted 2026-10-28 searches for exact PDC generator/header raw public PDF returned no lawful P1/P2 raw sample; preexisting third-party CrewConnex CSV/HTML instructions only."
   }
 }
