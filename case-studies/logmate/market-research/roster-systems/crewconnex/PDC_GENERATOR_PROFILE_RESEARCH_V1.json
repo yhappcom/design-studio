@@ -3449,5 +3449,107 @@
     "publicSample": "P5",
     "weeklyHtml": "P3",
     "production": "OPEN"
+  },
+  "c410FourReportDateAdmissionAndPdcColumnOwnership": {
+    "id": "C410",
+    "checkedAt": "2026-10-27 14 KST",
+    "status": "RESEARCH_ONLY_NOT_PRODUCT_APPROVED",
+    "researchContract": "crewconnex-four-report-own-date-document-atomic-and-pdc-column-ownership-1.0-C410",
+    "sources": {
+      "skia": "C194 62-row privacy-safe manifest derived from original PDFs; independently recomputed, not newly decoded",
+      "pdc": "DIRECT original 39,612-byte untagged PDF Git blob 8e7fec30f98458c770053bd7739e60869a87e33b",
+      "company": "prior original 2026 workbook Aug02 observed cutoff reused; not newly decoded",
+      "product": "LogMate main 6180fd80 read-only current spec, domain code, test and W-016/W-017"
+    },
+    "reportDateAdmission": [
+      {
+        "family": "Skia",
+        "month": "2026-06",
+        "numeric": 18,
+        "ownDate": 11,
+        "missingOwnDate": 7,
+        "curated": 18,
+        "curatedMissingOwnDate": 7
+      },
+      {
+        "family": "Skia",
+        "month": "2026-07",
+        "numeric": 22,
+        "ownDate": 12,
+        "missingOwnDate": 10,
+        "curated": 22,
+        "curatedMissingOwnDate": 10
+      },
+      {
+        "family": "Skia",
+        "month": "2026-08",
+        "numeric": 22,
+        "ownDate": 12,
+        "missingOwnDate": 10,
+        "curated": 3,
+        "curatedMissingOwnDate": 1
+      },
+      {
+        "family": "PDC",
+        "month": "2026-08",
+        "numeric": 26,
+        "ownDate": 13,
+        "missingOwnDate": 13,
+        "curated": null,
+        "curatedMissingOwnDate": null
+      }
+    ],
+    "totals": {
+      "numericObservations": 88,
+      "ownDate": 48,
+      "missingOwnDate": 40,
+      "knownReportsWithMissingOwnDate": 4,
+      "knownReports": 4,
+      "curatedSkia": 43,
+      "curatedMissingOwnDate": 18,
+      "certifiedActiveUidEvidenceAttachments": 0
+    },
+    "originalPdcColumnOwnership": {
+      "bodyBands": 49,
+      "activityBodyX": 210,
+      "printedBlockHeaderX": 492,
+      "printedBlockBodyX": 511,
+      "numericActivity": 26,
+      "nonNumeric": 23,
+      "numericActivityWithBlock": 26,
+      "nonNumericWithBlock": 0,
+      "numericActivityWithFourClocks": 26,
+      "nonNumericWithFourClocks": 22,
+      "wrongLeftNumericColumns": [
+        162,
+        186
+      ],
+      "wrongLeftScanSelected": 23,
+      "wrongLeftScanTrueNumeric": 21,
+      "wrongLeftScanFalseNonflight": 2,
+      "wrongLeftScanMissedTrueNumeric": 5,
+      "distinctWithinReportFlightRoutePartialKeys": 26
+    },
+    "productConflict": {
+      "canonical": "duty Date required; missing required field => fail closed",
+      "strictDocumentAtomicConsequence": "IF every numeric row must have independently verified Date, all four current reports are HOLD",
+      "proposedIncompleteRowDetachedReview": "OPEN_OWNER_W016_W017_NOT_APPROVED",
+      "authenticatedContinuationProfile": "NOT_VERIFIED",
+      "yearPublicationAndUid": "NOT_VERIFIED",
+      "noStandaloneFlight": true,
+      "noPartialEvidenceCommit": true,
+      "noSilentDateCrewOrBlockInference": true
+    },
+    "validation": {
+      "pdcOriginal": "DIRECT_REAL_PRIVATE_SOURCE_EPHEMERAL",
+      "skia": "PRIOR_REAL_SOURCE_DERIVED_MANIFEST_RECOMPUTED",
+      "actualDartSembast": "NOT_RUN",
+      "realUidMatch": "NOT_VERIFIED",
+      "publicPdf": "P5",
+      "weeklyHtml": "P3",
+      "production": "OPEN"
+    },
+    "publicSearch": "Two focused current blank-Date/continuation searches yielded vendor PDF capability only, no exact official rule or lawful anonymous raw sample.",
+    "next": "Authorized same-export year/Publication and active same-UID Flight plus Aug03–31 reference for eight dual-own-dated outside-Preview August observations; owner W-016/017 incomplete-row admission decision and file-backed evidence-only lifecycle."
   }
 }
