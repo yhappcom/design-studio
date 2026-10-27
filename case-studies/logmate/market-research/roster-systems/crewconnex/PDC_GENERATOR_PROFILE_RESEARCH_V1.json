@@ -3783,5 +3783,66 @@
       "historicalC194SyncDebt": "OPEN"
     },
     "publicAcquisition": "Two targeted 2026-10-28 searches for exact PDC generator/header raw public PDF returned no lawful P1/P2 raw sample; preexisting third-party CrewConnex CSV/HTML instructions only."
+  },
+  "c422IndependentSyntheticColumnClassifier": {
+    "id": "C422",
+    "checkedAt": "2026-10-28 02 KST",
+    "status": "RESEARCH_ONLY_NOT_PRODUCT_APPROVED",
+    "sourceEvidence": {
+      "pdcOriginal": "C421_PRIOR_DIRECT_ORIGINAL_REUSED_NOT_REDECODED",
+      "bodyBands": 49,
+      "numeric": 26,
+      "nonflight": 22,
+      "blank": 1,
+      "interleavingTransitions": 23,
+      "headerColumns": 14,
+      "activityX": 210,
+      "printedBlockX": 511,
+      "privateRawCopied": false
+    },
+    "syntheticImplementation": {
+      "script": "crewconnex/C418_SYNTHETIC_REPORT_ORACLE.mjs",
+      "classifier": "scanPdcCellGrid",
+      "input": "INVENTED_LOGICAL_COLUMN_CELLS_NOT_RAW_PDF",
+      "preclassifiedKindConsumed": false,
+      "sourceBackedPhysicalX": [
+        210,
+        511
+      ],
+      "otherColumnX": "SYNTHETIC_UNVERIFIED",
+      "baseline": {
+        "detachedNumeric": 26,
+        "excludedNonflight": 22,
+        "blank": 1,
+        "missingOwnDateNumeric": 13
+      },
+      "legacyFalseAccepts": {
+        "malformedExcludedNonflightOwnDate": 1,
+        "malformedExcludedNonflightClock": 1
+      },
+      "legacyFalseAcceptsCorrected": true,
+      "finalGroupedSyntheticPass": "63/63",
+      "dartSembast": "NOT_RUN"
+    },
+    "failClosedContractResearchOnly": [
+      "Unknown header/family or wrong report period",
+      "Numeric Activity without valid printed Block or four clocks",
+      "Nonnumeric Activity with printed Block",
+      "Activity/Block column drift, duplicate cells, hidden blank content, truncation",
+      "Malformed present Date or clocks including excluded nonflight",
+      "No partial candidates after document failure",
+      "No kind-label trust, automatic Date/crew inheritance, BLH=Block, FlightRecord creation or canonical overwrite"
+    ],
+    "remaining": [
+      "Independent real PDF glyph-to-14-column extraction",
+      "Source-certified four-digit operational year and leg Publication/revision",
+      "Aug03-31 company and active same-UID Flight for eight outside-Preview edges",
+      "Owner W-016/W-017 missing-Date and evidence persistence approval",
+      "Actual Dart/Sembast file-backed import lifecycle",
+      "Historical C194 sync debt"
+    ],
+    "publicPdf": "P5",
+    "weeklyHtml": "P3",
+    "production": "OPEN"
   }
 }
