@@ -3945,8 +3945,8 @@
       "baseElapsedEqualsPrintedBlock": 26,
       "localElapsedEqualsPrintedBlock": 16,
       "nonnumericFourClockPositionObjects": 22,
-      "nonnumericFourStrictValidClockLexemes": 16,
-      "nonnumericNonStrictClockBands": 6,
+      "nonnumericFourStrictValidClockLexemes": 18,
+      "nonnumericNonStrictClockBands": 4,
       "nonnumericNonStrictBreakdown": {
         "invalidHourBothArrivalColumns": 4,
         "validHHMMMinus1StdLocal": 1,
@@ -3968,7 +3968,8 @@
         "nonflightPlus1": 8,
         "nonflightPlus3": 2,
         "nonflightMinus1": 1
-      }
+      },
+      "strictClockLexicalDefinition": "HHMM with valid hour/minute and optional signed integer day offset; source original numeric suffixes only +1; nonflight includes +3 and -1"
     },
     "correctionToPriorResearch": {
       "priorC327NonnumericFourStrictValid": 17,
