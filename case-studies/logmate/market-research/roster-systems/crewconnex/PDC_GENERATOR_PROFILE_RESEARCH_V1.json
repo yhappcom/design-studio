@@ -279,6 +279,18 @@
       "only then compare to existing owner Flight after explicit review"
     ],
     "baseElapsedCheck": "(STA_B with explicit +day) - (STD_B with explicit +day) == printed Blk Hrs; sample 26/26; validation only",
+    "c429SourceInternalArithmeticResearch": {
+      "status": "RESEARCH_ONLY_NOT_APPROVED",
+      "priorOriginalObservation": "26/26 PDC numeric candidates: STD(B) to STA(B) with explicit +1 equals printed Blk Hrs; not re-decoded in C429",
+      "newScannerRule": "After four strict numeric-candidate clock cells, require positive base elapsed minutes equal printed Blk Hrs; reject whole document with zero staged candidates on contradiction",
+      "localClockBoundary": "Local clocks may differ from printed base elapsed: prior original 16/26 equal; do not reject valid local/base discrepancy",
+      "syntheticExecution": "C429 research JS 29/29 text and 25/25 strict-envelope groups PASS; not actual original re-run, Dart or Sembast",
+      "remainingFailOpen": [
+        "Opaque full-page paint before footer text can hide extracted glyphs; scanner does not render",
+        "One-letter route cell passes nonempty check; real source-wide route grammar has not been independently certified"
+      ],
+      "authenticityBoundary": "Co-mutating printed base clocks and Blk Hrs can satisfy arithmetic; this does not certify source truth, operational Block, year, Publication, carrier, UID or revision"
+    },
     "localElapsedCheck": "do not reject merely because station-local elapsed differs from printed Blk Hrs; sample 16/26 equal",
     "dateRollover": "preserve +1 per clock cell; never infer missing Date or canonical operational date",
     "noImplicitNormalization": [
