@@ -130,7 +130,12 @@ function validatePdcPhysicalEnvelope(raw){
  if(!/trailer\r?\n<<\s*\/Size 19\s*\/Root 18 0 R\s*\/Info 1 0 R\s*>>/.test(raw.slice(offset)))return fail("TRAILER_GRAPH");
  if(!has(1,/\/Producer\s*\(PDC Pdf Generator 1\.0, PDC A\/S\)/)||!has(1,/\/Creator\s*\(PDC Crew\)/)||!has(1,/\/Title\s*\(PDC Report\)/))return fail("INFO_AUTHORITY");
  const ob=by.get(16),length=+(ob.match(/\/Length\s+(\d+)/)||[])[1],p=ob.indexOf("stream\n")+7,e=ob.indexOf("\nendstream",p);
+ if(!/^\s*<<\s*\/Type\s*\/Page\s*\/Parent\s+2 0 R\s*\/Resources\s+15 0 R\s*\/Contents\s+16 0 R\s*>>\s*$/.test(by.get(17)))return fail("UNSUPPORTED_PAGE_DICTIONARY");
+ if(!/^\s*<<\s*\/Length\s+\d+\s*>>\s*stream\n/.test(ob))return fail("UNSUPPORTED_CONTENT_DICTIONARY");
  if(!length||p<7||e<0||e-p!==length)return fail("STREAM_LENGTH");
+ const content=ob.slice(p,e);
+ if(/\b(?:cm|Tr|Tm)\b/.test(content))return fail("UNSUPPORTED_CONTENT_TRANSFORM_OR_RENDER_MODE");
+ if(!content.trimEnd().endsWith("ET"))return fail("TRAILING_NON_TEXT_AFTER_LAST_ET");
  if((raw.match(/\bstream\r?\n/g)||[]).length!==1||/\/Filter\s*\/FlateDecode|\/Encrypt\b/.test(raw))return fail("UNSUPPORTED_STREAM");
  return {ok:true,objects:18,pages:1,contentObject:16};
 }
@@ -181,12 +186,45 @@ function inspectPdcPdfStrict(base64){
  return inspectPdcPdfTextLayer(base64);
 }
 
+
+function repackPdcSyntheticPdf(doc, edit) {
+ const matches=[...doc.matchAll(/(?:^|\n)(\d+) 0 obj\n([\s\S]*?)\nendobj(?=\n)/g)];
+ if(matches.length!==18)throw Error("SYNTHETIC_OBJECT_CENSUS");
+ const objects=Object.fromEntries(matches.map(m=>[+m[1],m[2]]));
+ edit(objects);
+ let result="%PDF-1.4\n",offsets=[0];
+ for(let i=1;i<=18;i++){offsets[i]=result.length;result+=i+" 0 obj\n"+objects[i]+"\nendobj\n";}
+ const xref=result.length;result+="xref\n0 19\n0000000000 65535 f\n";
+ for(let i=1;i<=18;i++)result+=String(offsets[i]).padStart(10,"0")+" 00000 n\n";
+ return result+"trailer\n<< /Size 19 /Root 18 0 R /Info 1 0 R >>\nstartxref\n"+xref+"\n%%EOF\n";
+}
+function pdcVisualAndDictionaryMutations(doc) {
+ const editStream=(o,edit)=>{
+  o[16]=edit(o[16]);
+  o[16]=o[16].replace(/\/Length \d+/, "/Length "+o[16].split("stream\n")[1].split("\nendstream")[0].length);
+ };
+ return [
+ ["page rotation",o=>{o[17]=o[17].replace("/Contents","/Rotate 180 /Contents");}],
+ ["page crop",o=>{o[17]=o[17].replace("/Contents","/CropBox [0 0 100 100] /Contents");}],
+ ["unhandled stream filter",o=>{o[16]=o[16].replace("/Length","/Filter /ASCIIHexDecode /Length");}],
+ ["content transformation matrix",o=>editStream(o,s=>s.replace("stream\n","stream\nq 0.5 0 0 0.5 0 0 cm\n").replace("\nendstream","\nQ\nendstream"))],
+ ["duplicate Contents key",o=>{o[17]=o[17].replace("/Contents 16 0 R","/Contents 16 0 R /Contents 16 0 R");}],
+ ["page annotation overlay",o=>{o[17]=o[17].replace("/Contents","/Annots [3 0 R] /Contents");}],
+ ["invisible text rendering",o=>editStream(o,s=>s.replace("stream\n","stream\n3 Tr\n"))],
+ ["opaque overlay after final text",o=>editStream(o,s=>s.replace("\nendstream","\n0 0 0 rg 0 0 598 842 re f\nendstream"))]
+ ].map(([name,edit])=>[name,repackPdcSyntheticPdf(doc,edit)]);
+}
+
 function runPdcEnvelopeTests(){
  const full=wrapPdcSyntheticTextMock(syntheticFixture()),base=inspectPdcPdfStrict(toBase64(full));
  const tests=[{name:"xref-consistent synthetic PDF baseline",pass:base.status==="OBSERVED_FAMILY_DETACHED_HOLD",reason:base.reason||""}];
  for(const [name,mutant] of pdcEnvelopeMutations(full)){
   const r=inspectPdcPdfStrict(toBase64(mutant));
   tests.push({name,pass:mutant!==full&&r.status==="FAIL_DOCUMENT"&&r.reason.startsWith("PHYSICAL_"),reason:r.reason||""});
+ }
+ for(const [name,mutant] of pdcVisualAndDictionaryMutations(full)){
+  const r=inspectPdcPdfStrict(toBase64(mutant));
+  tests.push({name,pass:r.status==="FAIL_DOCUMENT"&&r.reason.startsWith("PHYSICAL_"),reason:r.reason||""});
  }
  return {passed:tests.filter(x=>x.pass).length,failed:tests.filter(x=>!x.pass).length,tests,baseline:base.status};
 }
