@@ -3635,5 +3635,74 @@
       "weeklyHtmlGrade": "P3"
     },
     "next": "Authorized eight outside-Preview dual-own-dated pair edges with same-export year/Publication and post-Aug02 company/active same-UID Flight, prioritize two repeated-key edges and three duration differences; approved file-backed evidence-only lifecycle acceptance."
+  },
+  "c414CuratedPreviewVariantCoverage": {
+    "id": "C414",
+    "status": "RESEARCH_ONLY_NOT_PRODUCT_APPROVED",
+    "observedAt": "2026-10-27 17:55 KST",
+    "researchContract": "crewconnex-curated-preview-variant-coverage-and-fail-closed-fixture-strata-1.0-C414",
+    "source": {
+      "manifestBlob": "9a2d403cfb559144ea9b1882d308683dc9999fa9",
+      "realPdfDerived": true,
+      "newPdfXlsxDecode": false,
+      "logmateReadOnlyHead": "d3bc214fe9b4b7bf84702f898b4e6993a4127e2f"
+    },
+    "all": {
+      "numeric": 62,
+      "sixDirect": 31,
+      "sevenDirect": 5,
+      "pipe": 26,
+      "page2": 6,
+      "directUndated": 1,
+      "ownDate": 35
+    },
+    "curated": {
+      "numeric": 43,
+      "sixDirect": 23,
+      "sevenDirect": 2,
+      "pipe": 18,
+      "page2": 4,
+      "directUndated": 0,
+      "ownDate": 25
+    },
+    "outside": {
+      "numeric": 19,
+      "month": "August",
+      "sixDirect": 8,
+      "sevenDirect": 3,
+      "pipe": 8,
+      "page2": 2,
+      "directUndated": 1,
+      "ownDate": 10
+    },
+    "sevenLeafPipeAnchor": {
+      "total": 2,
+      "curated": 1,
+      "outside": 1
+    },
+    "deepPipe": {
+      "total": 4,
+      "curated": 2,
+      "outside": 2
+    },
+    "decision": "Curated manual Preview cannot be used as complete parser regression golden; separate privacy-safe structural fixture coverage from certified active same-UID Flight association and evidence-only persistence acceptance.",
+    "validation": {
+      "realDerived": "12/12 PASS",
+      "syntheticPolicy": "17/17 PASS",
+      "dartSembast": "NOT_RUN",
+      "uidOwner": "NOT_VERIFIED",
+      "production": "OPEN"
+    },
+    "safety": [
+      "no standalone FlightRecord",
+      "no date or crew inheritance",
+      "no name from employee ID",
+      "no BLH/Block equivalence",
+      "unknown layout fail closed",
+      "missing Date W-016/017 approval required"
+    ],
+    "publicPdf": "P5",
+    "weeklyHtml": "P3",
+    "historicalC194SyncDebt": "OPEN"
   }
 }
