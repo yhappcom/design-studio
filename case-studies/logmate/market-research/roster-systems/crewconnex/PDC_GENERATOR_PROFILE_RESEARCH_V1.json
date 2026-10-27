@@ -3204,5 +3204,100 @@
       "W017": "NOT_STARTED_INSUFFICIENT_EVIDENCE_UNASSIGNED"
     },
     "next": "Obtain source-authorized same-export operational year, leg Publication/revision disposition, complete Aug03-31 owner/reference coverage and active same-UID Flight for C392 conditional triples; then approved file-backed evidence-only replay/CAS/rollback/backup/wipe."
+  },
+  "pdcDayGroupAdmissionC407": {
+    "researchContract": "crewconnex-pdc-day-group-own-date-and-coverage-gate-1.0-C407",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "originalPrivatePdc": {
+      "gitBlobSha1": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "byteLength": 39612,
+      "textOperators": 495,
+      "headers": 14,
+      "bodyTextObjects": 473,
+      "bodyBands": 49,
+      "printedDayAnchorsConsecutiveDDMonYY": 31,
+      "numericCandidates": 26,
+      "nonnumeric": 22,
+      "blankActivity": 1,
+      "numericOwnDatePresent": 13,
+      "numericOwnDateAbsent": 13,
+      "flightBearingDayGroups": 15,
+      "groupsWithUndatedNumeric": 9,
+      "undatedNumericGroupsAlsoWithNonflight": 5,
+      "undatedNumericAfterNonflightWithinGroup": 2,
+      "undatedNumericNearestOwnDateOnNonflight": 2,
+      "undatedNumericImmediatelyPrecededBy": {
+        "numeric": 11,
+        "nonflight": 1,
+        "blank": 1
+      },
+      "undatedOptionalFieldPresent": {
+        "pairing": 3,
+        "checkInLocal": 2,
+        "checkOutLocal": 8,
+        "any": 10,
+        "none": 3
+      },
+      "baseElapsedEqualsPrintedBlock": 26,
+      "localElapsedEqualsPrintedBlock": 16,
+      "localMinusPrintedBlockDifferenceMinutes": {
+        "60": 4,
+        "120": 1,
+        "-60": 4,
+        "-120": 1
+      },
+      "periodYearDigits": 2,
+      "explicitFourDigitYearCertified": false,
+      "legPublicationCertified": false
+    },
+    "companyCoverageConditional": {
+      "company2026LastObserved": "2026-08-02",
+      "companyAugustObservedRows": 3,
+      "pdcPrintedGroupDay1to2": {
+        "numeric": 3,
+        "ownDate": 2,
+        "missingOwnDate": 1
+      },
+      "pdcPrintedGroupDay3to31": {
+        "numeric": 23,
+        "ownDate": 11,
+        "missingOwnDate": 12
+      },
+      "dayGroupIsNotRowOwnedDate": true,
+      "afterObservedCutoffIsNotVerifiedUnmatched": true,
+      "threeWayC392ConditionalCountUnchanged": 2,
+      "skiaAugOutsidePreviewUnchanged": 19
+    },
+    "proposedFieldStates": [
+      "sourceOwnDate",
+      "printedDayGroupContextOnly",
+      "sourceYearAuthority",
+      "publicationDisposition",
+      "referenceObservedThrough",
+      "referenceCoverageState",
+      "activeOwnerUidFlightMatch",
+      "typedSourceLocator",
+      "sourceFamilyRawLabel"
+    ],
+    "safeFailure": [
+      "HOLD_SOURCE_DATE_ABSENT",
+      "HOLD_REFERENCE_OUTSIDE_OBSERVED_SUPPORT",
+      "HOLD_UNVERIFIED_YEAR_PUBLICATION_UID",
+      "HOLD_DOCUMENT_UNSUPPORTED_OR_TRUNCATED",
+      "NEVER_AUTO_CREATE_FLIGHT_OR_INHERIT_DATE_CREW_OR_BLOCK"
+    ],
+    "validation": {
+      "originalPdcByteAndTextObjects": "DIRECT_REAL_PRIVATE_SOURCE",
+      "sourceDayGrouping": "DIRECT_REAL_PRIVATE_SOURCE",
+      "companyObservedCutoff": "PRIOR_ORIGINAL_XLSX_VERIFIED_REUSED",
+      "skiaCrossFamily": "PRIOR_ORIGINAL_PDF_DERIVED_REUSED",
+      "syntheticStructuralOracle": "8/8 ABSTRACT_JS (one baseline, seven negatives)",
+      "dartSembast": "NOT_RUN",
+      "ownerUidBinding": "NOT_VERIFIED",
+      "publicPdf": "P5",
+      "weeklyHtml": "P3",
+      "production": "OPEN"
+    },
+    "next": "Source-authorized same-export four-digit operational year, leg Publication/revision and active UID-owned Flight with complete post-Aug02 reference; then owner-approved native-file evidence-only lifecycle."
   }
 }
