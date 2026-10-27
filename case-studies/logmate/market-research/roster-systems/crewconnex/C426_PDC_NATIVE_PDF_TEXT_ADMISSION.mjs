@@ -108,3 +108,87 @@ function runSyntheticTests(){
 }
 export {inspectPdcPdfTextLayer,syntheticFixture,runSyntheticTests};
 if(typeof process!=="undefined"&&process.argv&&process.argv[1]&&process.argv[1].endsWith("C426_PDC_NATIVE_PDF_TEXT_ADMISSION.mjs")){const r=runSyntheticTests();console.log(JSON.stringify(r,null,2));if(r.failed)process.exitCode=1;}
+
+// C427: observed PDC PDF physical-envelope gate (research only).
+// The prior C426 text scanner does not resolve xref, Catalog, Page, Contents or /Length.
+// Strict wrapper rejects detached/hidden streams and corrupt PDF graphs before text admission.
+// Exact one-source object layout; production MUST use a standards-compliant PDF parser.
+function validatePdcPhysicalEnvelope(raw){
+ const fail=reason=>({ok:false,reason});
+ if(typeof raw!=="string"||!raw.startsWith("%PDF-1.4")||raw.length>200000)return fail("PDF_HEADER_OR_SIZE");
+ if((raw.match(/%%EOF/g)||[]).length!==1||(raw.match(/(?:^|\r?\n)xref\r?\n/g)||[]).length!==1)return fail("INCREMENTAL_OR_XREF_COUNT");
+ const st=[...raw.matchAll(/startxref\s+(\d+)/g)];if(st.length!==1)return fail("STARTXREF_COUNT");
+ const offset=+st[0][1];if(raw.slice(offset,offset+5)!=="xref\n")return fail("XREF_OFFSET");
+ const x=raw.slice(offset).match(/^xref\r?\n0 19\r?\n((?:\d{10} \d{5} [nf]\r?\n){19})trailer\r?\n/);if(!x)return fail("XREF_FORMAT");
+ const entries=x[1].trim().split(/\r?\n/);if(entries.length!==19||!/^\d{10} 65535 f$/.test(entries[0]))return fail("XREF_COUNT");
+ const objects=[...raw.matchAll(/(?:^|\r?\n)(\d+) 0 obj\b([\s\S]*?)\bendobj/g)],by=new Map(objects.map(a=>[+a[1],a[2]]));
+ if(objects.length!==18||by.size!==18)return fail("OBJECT_CENSUS");
+ for(let id=1;id<=18;id++){const e=entries[id].match(/^(\d{10}) 00000 n$/);if(!e||!raw.slice(+e[1]).startsWith(id+" 0 obj"))return fail("XREF_ENTRY_"+id)}
+ const has=(id,re)=>re.test(by.get(id)||"");
+ if(!has(18,/\/Type\s*\/Catalog\b/)||!has(18,/\/Pages\s+2 0 R\b/)||!has(2,/\/Type\s*\/Pages\b/)||!has(2,/\/Kids\s*\[17 0 R\]/)||!has(2,/\/Count\s+1\b/)||!has(17,/\/Type\s*\/Page\b/)||!has(17,/\/Parent\s+2 0 R\b/)||!has(17,/\/Contents\s+16 0 R\b/)||!has(17,/\/Resources\s+15 0 R\b/))return fail("PAGE_GRAPH");
+ if(!has(2,/\/MediaBox\s*\[0 0 598 842\]/))return fail("MEDIA_BOX");
+ if(!/trailer\r?\n<<\s*\/Size 19\s*\/Root 18 0 R\s*\/Info 1 0 R\s*>>/.test(raw.slice(offset)))return fail("TRAILER_GRAPH");
+ if(!has(1,/\/Producer\s*\(PDC Pdf Generator 1\.0, PDC A\/S\)/)||!has(1,/\/Creator\s*\(PDC Crew\)/)||!has(1,/\/Title\s*\(PDC Report\)/))return fail("INFO_AUTHORITY");
+ const ob=by.get(16),length=+(ob.match(/\/Length\s+(\d+)/)||[])[1],p=ob.indexOf("stream\n")+7,e=ob.indexOf("\nendstream",p);
+ if(!length||p<7||e<0||e-p!==length)return fail("STREAM_LENGTH");
+ if((raw.match(/\bstream\r?\n/g)||[]).length!==1||/\/Filter\s*\/FlateDecode|\/Encrypt\b/.test(raw))return fail("UNSUPPORTED_STREAM");
+ return {ok:true,objects:18,pages:1,contentObject:16};
+}
+
+function wrapPdcSyntheticTextMock(mock){
+ const start=mock.indexOf("stream\n"),end=mock.indexOf("\nendstream",start+7);
+ if(start<0||end<0)throw Error("SYNTHETIC_MOCK_STREAM_MISSING");
+ const payload=mock.slice(start+7,end),objects=[];
+ objects[1]="<< /Producer (PDC Pdf Generator 1.0, PDC A/S) /Creator (PDC Crew) /Title (PDC Report) >>";
+ objects[2]="<< /Type /Pages /Kids [17 0 R] /Count 1 /MediaBox [0 0 598 842] >>";
+ for(let id=3;id<=14;id++)objects[id]="<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>";
+ objects[15]="<< /ProcSet [/PDF /Text] >>";
+ objects[16]="<< /Length "+payload.length+" >>\nstream\n"+payload+"\nendstream";
+ objects[17]="<< /Type /Page /Parent 2 0 R /Resources 15 0 R /Contents 16 0 R >>";
+ objects[18]="<< /Type /Catalog /Pages 2 0 R >>";
+ let doc="%PDF-1.4\n",offsets=[0];
+ for(let id=1;id<=18;id++){offsets[id]=doc.length;doc+=id+" 0 obj\n"+objects[id]+"\nendobj\n"}
+ const startxref=doc.length;doc+="xref\n0 19\n0000000000 65535 f\n";
+ for(let id=1;id<=18;id++)doc+=String(offsets[id]).padStart(10,"0")+" 00000 n\n";
+ doc+="trailer\n<< /Size 19 /Root 18 0 R /Info 1 0 R >>\nstartxref\n"+startxref+"\n%%EOF\n";
+ return doc;
+}
+
+function pdcEnvelopeMutations(s){
+ const x=s.match(/\/Length (\d+)/),len=x?+x[1]:0;
+ const ref=s.match(/startxref\n(\d+)/),start=ref?+ref[1]:0;
+ const block=s.match(/xref\n0 19\n((?:.*\n){19})/),lines=block?block[1].trim().split("\n"):[];
+ const before=lines[16]||"";
+ const changed=before.replace(/^\d{10}/,v=>String(+v+1).padStart(10,"0"));
+ return [
+ ["page content pointer",s.replace("/Contents 16 0 R","/Contents 15 0 R")],
+ ["catalog Pages pointer",s.replace("/Pages 2 0 R","/Pages 3 0 R")],
+ ["Pages Kids pointer",s.replace("/Kids [17 0 R]","/Kids [15 0 R]")],
+ ["Page Parent pointer",s.replace("/Parent 2 0 R","/Parent 3 0 R")],
+ ["declared stream length",s.replace("/Length "+len,"/Length "+(len-1))],
+ ["trailer Root pointer",s.replace("/Root 18 0 R","/Root 17 0 R")],
+ ["page count",s.replace("/Count 1","/Count 2")],
+ ["trailer Info pointer",s.replace("/Info 1 0 R","/Info 2 0 R")],
+ ["xref object16 offset",s.replace(before,changed)],
+ ["startxref offset",s.replace("startxref\n"+start,"startxref\n"+(start+1))],
+ ["MediaBox clips text",s.replace("/MediaBox [0 0 598 842]","/MediaBox [0 0 100 100]")]
+ ];
+}
+
+function inspectPdcPdfStrict(base64){
+ const raw=fromBase64(base64),envelope=validatePdcPhysicalEnvelope(raw);
+ if(!envelope.ok)return {status:"FAIL_DOCUMENT",reason:"PHYSICAL_"+envelope.reason,candidates:0,createsFlight:false,ownerBound:false,publicationCertified:false};
+ return inspectPdcPdfTextLayer(base64);
+}
+
+function runPdcEnvelopeTests(){
+ const full=wrapPdcSyntheticTextMock(syntheticFixture()),base=inspectPdcPdfStrict(toBase64(full));
+ const tests=[{name:"xref-consistent synthetic PDF baseline",pass:base.status==="OBSERVED_FAMILY_DETACHED_HOLD",reason:base.reason||""}];
+ for(const [name,mutant] of pdcEnvelopeMutations(full)){
+  const r=inspectPdcPdfStrict(toBase64(mutant));
+  tests.push({name,pass:mutant!==full&&r.status==="FAIL_DOCUMENT"&&r.reason.startsWith("PHYSICAL_"),reason:r.reason||""});
+ }
+ return {passed:tests.filter(x=>x.pass).length,failed:tests.filter(x=>!x.pass).length,tests,baseline:base.status};
+}
+export {validatePdcPhysicalEnvelope,wrapPdcSyntheticTextMock,pdcEnvelopeMutations,inspectPdcPdfStrict,runPdcEnvelopeTests};
+if(typeof process!=="undefined"&&process.argv&&process.argv[1]&&process.argv[1].endsWith("C426_PDC_NATIVE_PDF_TEXT_ADMISSION.mjs")){const r=runPdcEnvelopeTests();console.log(JSON.stringify(r,null,2));if(r.failed)process.exitCode=1;}
