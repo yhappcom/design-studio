@@ -3551,5 +3551,89 @@
     },
     "publicSearch": "Two focused current blank-Date/continuation searches yielded vendor PDF capability only, no exact official rule or lawful anonymous raw sample.",
     "next": "Authorized same-export year/Publication and active same-UID Flight plus Aug03–31 reference for eight dual-own-dated outside-Preview August observations; owner W-016/017 incomplete-row admission decision and file-backed evidence-only lifecycle."
+  },
+  "c412DirectAugustCrossGeneratorAllocation": {
+    "id": "C412",
+    "checkedAt": "2026-10-27 16 KST",
+    "status": "RESEARCH_ONLY_NOT_PRODUCT_APPROVED",
+    "sourceScope": {
+      "skiaOriginalPdfGitBlob": "29ac040595089188a8353e98f41ba27f92b8650b",
+      "pdcOriginalPdfGitBlob": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "c194LocatorManifestGitBlob": "9a2d403cfb559144ea9b1882d308683dc9999fa9",
+      "method": "Skia original Flate/F9 ToUnicode tagged MCID plus PDC original BT/Tj x/y body bands; ephemeral read-only; privacy-safe aggregate only"
+    },
+    "skiaAugust": {
+      "numericObservations": 22,
+      "curated": 3,
+      "outsidePreview": 19,
+      "ownDate": 12,
+      "distinctFlightSuffixRouteKeys": 20,
+      "repeatedKeyRows": 4
+    },
+    "pdcAugust": {
+      "numericObservations": 26,
+      "ownDate": 13,
+      "distinctFlightSuffixRouteKeys": 26,
+      "bodyBands": 49,
+      "textObjects": 495
+    },
+    "crossGenerator": {
+      "sharedPartialKeys": 16,
+      "pairEdges": 18,
+      "skiaRepeatedPartialKeysInShared": 2,
+      "pdcRepeatedPartialKeysInShared": 0,
+      "bothOwnDateAgree": 9,
+      "bothOwnDateDiscordance": 1,
+      "missingDualOwnDate": 8,
+      "curatedPairEdges": 3,
+      "curatedDualOwnDateAgree": 2,
+      "curatedDualOwnDateDurationEqual": 2,
+      "outsidePreviewPairEdges": 15,
+      "outsidePreviewNoPdcKey": 4,
+      "outsideDualOwnDateAgree": 7,
+      "outsideDualOwnDateDiscordance": 1,
+      "outsideMissingDualOwnDate": 7,
+      "outsideAgreeDurationEqual": 4,
+      "outsideAgreeDurationDifferent": 3,
+      "outsideAgreeSkiaMinusPdcMinutes": [
+        1,
+        8,
+        16
+      ],
+      "outsideDualOwnDateSkiaRepeatedPartialKey": 2,
+      "outsideRepeatedDateAgree": 1,
+      "outsideRepeatedDateDiscordance": 1,
+      "pairedRawSkiaAcRegAndPdcAcHotelPresent": 18,
+      "pairedRawAcStringExactEqual": 0
+    },
+    "semanticLimits": [
+      "Partial-key edge is not certified same operated flight",
+      "Printed own-Date agreement is not authenticated four-digit operational year",
+      "Date discordance on repeated Skia key is not a date-correction instruction",
+      "Skia BLH and PDC printed Blk Hrs are distinct raw evidence kinds, not canonical Block",
+      "PDC AC/Hotel is not verified as registration",
+      "PDC has no per-leg crew snapshot",
+      "No silent date/crew inheritance, PIC/SIC/PF/PM, operating/deadhead, FlightRecord creation or current-value overwrite"
+    ],
+    "requiredAdmission": [
+      "Immutable report-family detector and whole-body nonflight/notes/Sum exclusion",
+      "Physical locator plus source digest and profile-content digest",
+      "Independent source-own Date and certified operational year",
+      "Leg Publication/revision or explicitly approved unknown-revision disposition",
+      "Unique active same-UID existing FlightRecord plus user review",
+      "Owner W-016/017 missing-Date policy approval",
+      "File-backed durable receipt, CAS, replay/conflict, rollback, backup/restore/wipe and UID isolation"
+    ],
+    "validation": {
+      "actualOriginalSkiaAndPdcDecoded": true,
+      "actualSourceDerivedManifestCrossCheck": true,
+      "syntheticJsPolicyConsistencyAssertions": "6/6",
+      "actualDartSembast": "NOT_RUN",
+      "activeUidOwnerFlight": "NOT_VERIFIED",
+      "production": "OPEN",
+      "publicPdfGrade": "P5",
+      "weeklyHtmlGrade": "P3"
+    },
+    "next": "Authorized eight outside-Preview dual-own-dated pair edges with same-export year/Publication and post-Aug02 company/active same-UID Flight, prioritize two repeated-key edges and three duration differences; approved file-backed evidence-only lifecycle acceptance."
   }
 }
