@@ -1,5 +1,7 @@
 # C200 CrewConnex report-scope and persistence research checkpoint
 
+**Current classification clarification (C410, 2026-10-27):** Public exact-layout CrewConnex printer PDF remains **P5** (no lawful anonymous raw sample or authoritative exact-layout manual); weekly HTML export instructions remain **P3**. Older sections referring to a generic public PDF **P2** are historical research-stage labels and **must not be used as a current exact-layout P2 claim**. The master system index's best P3 is format-wide, not public printer-PDF P3. Private LogMate PDFs are real internal corpus but not public P1.
+
 Date: 2026-10-18 KST. Research only; LogMate read-only. No personal or source rows copied.
 
 ## Verified primary-vendor export scope
