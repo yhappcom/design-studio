@@ -4025,5 +4025,70 @@
     "weeklyHtmlGrade": "P3",
     "production": "OPEN",
     "historicalC194SyncDebt": "OPEN"
+  },
+  "c424PdcNumericActivityWidthAndOwnerAuthority": {
+    "id": "C424",
+    "checkedAt": "2026-10-28 04 KST",
+    "status": "RESEARCH_ONLY_NOT_PRODUCT_APPROVED",
+    "evidence": {
+      "realOriginalSource": "PRIOR_DIRECT_PRIVATE_PDC_DECODE_C361_REUSED_NOT_NEW_BYTES",
+      "pdcNumeric": 26,
+      "threeDigit": 8,
+      "fourDigit": 18,
+      "distinctNumeric": 26,
+      "printedCarrierPrefix": 0,
+      "headerCarrierField": false,
+      "perLegCrew": "NOT_PRESENT",
+      "newOriginalPdfXlsxDecode": false
+    },
+    "preFixOracle": {
+      "syntheticAllNumericActivityFourDigitAndRepeated": true,
+      "invalidNumericWidthCases": [
+        "1",
+        "12",
+        "12345"
+      ],
+      "threeClassifierPaths": [
+        "labeled",
+        "cell-grid",
+        "glyph-grid"
+      ],
+      "falseAccepts": 9,
+      "total": 9,
+      "actualParser": "NOT_RUN"
+    },
+    "correctedResearchOracle": {
+      "inventedUniqueNumericActivities": 26,
+      "threeDigit": 8,
+      "fourDigit": 18,
+      "invalidNumericWidthDocumentFail": true,
+      "numericLookingNonflightWithoutBlockFail": true,
+      "carrierAndReportSubjectIndependentHold": true,
+      "missingOwnDateStillHold": true,
+      "groupedSyntheticPass": 75,
+      "groupedSyntheticFail": 0
+    },
+    "crossFamilySafety": {
+      "outsidePreviewDualOwnDateEdges": 8,
+      "agree": 7,
+      "discordant": 1,
+      "agreePrintedDurationMismatch": 3,
+      "repeatedPartialKeyEdges": 2,
+      "sourceYearPublicationCarrierSubjectUid": "UNVERIFIED",
+      "companyAugustAfterAug02": "NOT_AVAILABLE",
+      "matchOrAutoOverwrite": "PROHIBITED"
+    },
+    "limitations": [
+      "3/4-digit grammar verified for one original PDC generator only; not Skia or other PDC versions",
+      "Source report subject binding and carrier proof are independent of Firebase UID; no PDC per-leg crew",
+      "Synthetic glyph scan accepts caller-supplied period and does not independently extract title/period PDF objects",
+      "No actual production PDF parser, Dart/Sembast or file-backed lifecycle executed",
+      "W-016/W-017 not approved; no proposed receipt/CAS schema adopted",
+      "Historical C194 sync debt OPEN"
+    ],
+    "publicPdfGrade": "P5",
+    "weeklyHtmlGrade": "P3",
+    "production": "OPEN",
+    "next": "Obtain source-authorized same-export carrier, four-digit operational year, report-subject binding and Publication/revision disposition with complete Aug03-31 company and active same-UID Flight for eight outside-Preview August edges; then owner-approved real-file evidence-only lifecycle."
   }
 }
