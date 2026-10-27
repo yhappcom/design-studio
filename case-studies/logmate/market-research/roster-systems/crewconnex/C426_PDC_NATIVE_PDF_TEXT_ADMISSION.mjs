@@ -248,7 +248,10 @@ function runPdcEnvelopeTests(){
  ]){const r=inspectPdcPdfStrict(toBase64(editContent(find,replacement,extra)));tests.push({name,pass:r.status===expected,reason:r.reason||""});}
  const overlay=editContent("BT 559 43 Td (1) Tj ET","0 0 0 rg 0 0 598 842 re f\nBT 559 43 Td (1) Tj ET",false);
  const knownVisualFailOpen=inspectPdcPdfStrict(toBase64(overlay)).status==="OBSERVED_FAMILY_DETACHED_HOLD";
- return {passed:tests.filter(x=>x.pass).length,failed:tests.filter(x=>!x.pass).length,tests,baseline:base.status,knownVisualFailOpen};
+ // No verified universal airport-code grammar: report a gap rather than silently claiming validation.
+ const invalidRoute=editContent("244 638 Td (AAA)","244 638 Td (X)",false);
+ const knownRouteShapeFailOpen=inspectPdcPdfStrict(toBase64(invalidRoute)).status==="OBSERVED_FAMILY_DETACHED_HOLD";
+ return {passed:tests.filter(x=>x.pass).length,failed:tests.filter(x=>!x.pass).length,tests,baseline:base.status,knownVisualFailOpen,knownRouteShapeFailOpen};
 }
 export {validatePdcPhysicalEnvelope,wrapPdcSyntheticTextMock,pdcEnvelopeMutations,inspectPdcPdfStrict,runPdcEnvelopeTests};
 if(typeof process!=="undefined"&&process.argv&&process.argv[1]&&process.argv[1].endsWith("C426_PDC_NATIVE_PDF_TEXT_ADMISSION.mjs")){const r=runPdcEnvelopeTests();console.log(JSON.stringify(r,null,2));if(r.failed)process.exitCode=1;}
