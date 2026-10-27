@@ -3299,5 +3299,97 @@
       "production": "OPEN"
     },
     "next": "Source-authorized same-export four-digit operational year, leg Publication/revision and active UID-owned Flight with complete post-Aug02 reference; then owner-approved native-file evidence-only lifecycle."
+  },
+  "c408AugustUncuratedDualOwnDateEvidenceLadder": {
+    "id": "C408",
+    "checkedAt": "2026-10-27 12 KST",
+    "status": "RESEARCH_ONLY_NOT_PRODUCT_APPROVED",
+    "researchContract": "crewconnex-august-uncurated-dual-date-and-duration-bounds-1.0-C408",
+    "evidenceScope": {
+      "originalAugustSkiaPdcCompany": "PRIOR_DIRECT_REAL_SOURCE_C392_REUSED_NOT_REDECODED",
+      "skiaManifest": "CURRENT_PRIVACY_SAFE_C194_36_COLUMN_MANIFEST_RECOMPUTED",
+      "currentLogMate": "READ_ONLY_SOURCE_STATIC",
+      "publicManual": "UNVERIFIED_THIRD_PARTY_REPOST_CONTEXT_ONLY_NOT_EXACT_PDF_P2",
+      "newOriginalPdfOrXlsxDecode": false,
+      "activeSameUidFlightBinding": false
+    },
+    "skiaAugust": {
+      "numericObservations": 22,
+      "curated": 3,
+      "curatedOwnDate": 2,
+      "curatedOwnDateAbsent": 1,
+      "outsideCurated": 19,
+      "outsideOwnDate": 10,
+      "outsideOwnDateAbsent": 9,
+      "outsideCuratedDisjointTriage": {
+        "bothOwnDatesAgree": 7,
+        "bothOwnDatesConflict": 1,
+        "skiaOwnDatePdcOwnDateNotIndependentlyComparable": 2,
+        "skiaOwnDateAbsent": 9
+      },
+      "conflictOutsideCuratedDerivedFromTwoCuratedConditionalThreeWay": true,
+      "ownDateOutsideCuratedAfterCompanyObservedCutoff": 10,
+      "companyObservedThrough": "2026-08-02",
+      "operationalYearAuthority": "UNVERIFIED",
+      "publicationAndSameExport": "UNVERIFIED"
+    },
+    "crossFamily": {
+      "skiaPdcUniquePartialKeyPairs": 18,
+      "bothOwnDatePairs": 10,
+      "sameOwnDatePairs": 9,
+      "conflictingOwnDatePairs": 1,
+      "sameOwnDateOutsideCurated": 7,
+      "sameOwnDateCurated": 2,
+      "sameOwnDatePrintedDurationEqualTotal": 6,
+      "sameOwnDatePrintedDurationDifferentTotal": 3,
+      "printedDurationDifferentMinuteDeltasSkiaMinusPdc": [
+        1,
+        8,
+        16
+      ],
+      "outsideCuratedPrintedDurationDifferentLowerBound": 1,
+      "outsideCuratedPrintedDurationDifferentUpperBound": 3,
+      "outsideCuratedPrintedDurationEqualLowerBound": 4,
+      "outsideCuratedPrintedDurationEqualUpperBound": 6,
+      "feasibleCuratedVsOutsideDurationMismatchAllocations": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "individualMismatchIdentity": "NOT_DETERMINED_FROM_PRIVACY_SAFE_AGGREGATES",
+      "semanticBlockEquivalence": false
+    },
+    "proposedResearchOnlyCohorts": [
+      "DUAL_OWN_DATE_AGREE",
+      "DUAL_OWN_DATE_CONFLICT",
+      "SKIA_OWN_DATE_PDC_DATE_UNVERIFIED",
+      "SKIA_OWN_DATE_ABSENT"
+    ],
+    "publicContext": {
+      "primaryVendor": "https://www.pdc.com/airline-solution/crewconnex/",
+      "secondaryUnverifiedMirror": "https://docshare.wps.com/document/pdc-crewconnex-app-user-guide/292534/",
+      "guidePublishedControlPeriodIsNotExportPublicationToken": true,
+      "airlineConfiguredTimeDisplayNotCertifiedPdfClockSemantics": true,
+      "exactPublicRawSample": "P5",
+      "weeklyHtml": "P3"
+    },
+    "validation": {
+      "actualSourceDerivedManifestPredicates": "9/9_JS",
+      "boundedDiscrepancyAllocation": "EXHAUSTIVE_3_FEASIBLE_ALLOCATIONS_JS",
+      "newOriginalByteDecode": "NOT_RUN",
+      "actualDartSembast": "NOT_RUN",
+      "activeOwnerUidFlight": "NOT_VERIFIED",
+      "production": "OPEN"
+    },
+    "next": "Authorized same-export four-digit operational year, leg Publication/revision and active same-UID existing Flight plus Aug03–31 reference for eight dual-own-dated outside-Preview candidates (one date conflict, seven date agreements, one-to-three duration disagreements), then owner-approved evidence-only native-file acceptance."
   }
 }
