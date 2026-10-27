@@ -4090,5 +4090,72 @@
     "weeklyHtmlGrade": "P3",
     "production": "OPEN",
     "next": "Obtain source-authorized same-export carrier, four-digit operational year, report-subject binding and Publication/revision disposition with complete Aug03-31 company and active same-UID Flight for eight outside-Preview August edges; then owner-approved real-file evidence-only lifecycle."
+  },
+  "c426SourceNativeTextAdmission": {
+    "id": "C426",
+    "checkedAt": "2026-10-28 05:55 KST",
+    "status": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
+    "source": {
+      "repository": "yhappcom/logmate READ_ONLY",
+      "privateOriginalGitBlob": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "bytes": 39612,
+      "onePage": true,
+      "uncompressedTextStream": true,
+      "rawPersonalDataPersisted": false
+    },
+    "nativeDetector": {
+      "script": "crewconnex/C426_PDC_NATIVE_PDF_TEXT_ADMISSION.mjs",
+      "sourceInput": "original PDF base64 read in-memory only",
+      "sourceGlyphs": 495,
+      "headerGlyphs": 14,
+      "bodyGlyphs": 473,
+      "bodyBands": 49,
+      "printedHeadingDraws": 3,
+      "printedPeriodDraws": 2,
+      "printedSubjectLabelPresent": true,
+      "printedSubjectBoundToUid": false,
+      "printedPeriodYearSuffix": "26",
+      "certifiedFourDigitOperationalYear": false,
+      "printTimestampNotPublication": true,
+      "activityNumeric": 26,
+      "activityNonnumeric": 22,
+      "auxiliaryOnly": 1,
+      "ownDateNumeric": 13,
+      "missingOwnDateNumeric": 13,
+      "ownDateNonnumeric": 18,
+      "activityWidth3": 8,
+      "activityWidth4": 18,
+      "allRequiredColumnCountsMatch": true,
+      "sourceDisposition": "OBSERVED_FAMILY_DETACHED_HOLD"
+    },
+    "tests": {
+      "syntheticTextStreamFixturesPass": 22,
+      "syntheticFail": 0,
+      "actualOriginalSourceAdmissionPass": true,
+      "actualOriginalSourceMutationsPass": 9,
+      "actualOriginalSourceMutationsFail": 0,
+      "actualMutationKinds": [
+        "title spoof",
+        "duplicated period disagreement",
+        "subject label missing",
+        "header x drift",
+        "body x drift",
+        "PDF CreationDate changed but remains HOLD",
+        "printed generation stamp changed but remains HOLD",
+        "hidden off-grid text",
+        "extra page"
+      ],
+      "note": "Synthetic fixture is a text-stream mock, not a standards-compliant PDF. Actual input was independently parsed in research V8, not LogMate Dart/Sembast."
+    },
+    "limits": [
+      "Exact 2026-08 PDC generator 14-column one-page fingerprint only; other months/versions/compressed/Skia fail closed",
+      "Printed YY26 is not certified four-digit operational year or Publication",
+      "Printed Crewmember label does not prove Firebase UID ownership",
+      "No per-leg CrewParticipant, no standalone FlightRecord or Block overwrite",
+      "C418 synthetic oracle still uses caller-supplied period; C426 is a separate source-native research detector",
+      "No W-016/W-017 approval or actual file-backed persistence",
+      "Public exact-layout PDF P5; weekly HTML P3; production OPEN"
+    ],
+    "next": "Authorized source-year/Publication/carrier/subject and Aug03–31 company + active same-UID Flight for eight Skia/PDC August outside-Preview edges; approved evidence-only lifecycle."
   }
 }
