@@ -42,6 +42,9 @@ function inspectPdcPdfTextLayer(base64){
  }
  if(rows.size!==49||BX.some((x,i)=>xc[x]!==BC[i]))return fail("BODY_GRID_CENSUS");
  let numeric=0,nonflight=0,aux=0,ownDateNumeric=0,ownDateNonflight=0,threeDigit=0,fourDigit=0;const seen=new Set();
+  // Research-only source-internal arithmetic, not operational Block/date authority.
+  const clockMin=v=>{const m=/^([01]\d|2[0-3])([0-5]\d)(\+1)?$/.exec(v||"");return m?+m[1]*60+(+m[2])+(m[3]?1440:0):null;};
+  const blockMin=v=>{const m=/^(\d{1,2}):([0-5]\d)$/.exec(v||"");return m?+m[1]*60+(+m[2]):null;};
  for(let i=0;i<49;i++){
   const r=rows.get(i);if(!r)return fail("MISSING_BODY_BAND");
   const activity=r.get(210),date=r.get(81),block=r.get(511);
@@ -54,6 +57,8 @@ function inspectPdcPdfTextLayer(base64){
    if(block===undefined||!/^\d{1,2}:[0-5]\d$/.test(block))return fail("INVALID_PRINTED_BLOCK");
    if(!r.get(244)||!r.get(316))return fail("MISSING_NUMERIC_ROUTE");
    for(const x of [268,292,340,364])if(!/^(?:[01]\d|2[0-3])[0-5]\d(?:\+1)?$/.test(r.get(x)||""))return fail("INVALID_NUMERIC_CLOCK");
+   const baseElapsed=clockMin(r.get(364))-clockMin(r.get(292));
+   if(baseElapsed<=0||baseElapsed!==blockMin(block))return fail("PRINTED_BASE_CLOCK_BLOCK_CONTRADICTION");
   }else{nonflight++;if(block!==undefined)return fail("NONFLIGHT_WITH_BLOCK");if(date!==undefined)ownDateNonflight++;}
  }
  if(numeric!==26||nonflight!==22||aux!==1||ownDateNumeric!==13||ownDateNonflight!==18||threeDigit!==8||fourDigit!==18)return fail("SOURCE_FAMILY_COUNTS");
@@ -102,7 +107,14 @@ function runSyntheticTests(){
  check("extra page",s=>s.replace("endobj","endobj\n4 0 obj << /Type /Page >> endobj"),bad);
  check("Flate unsupported",s=>s.replace("/Length 1","/Filter /FlateDecode /Length 1"),bad);
  check("duplicate Activity glyph",s=>s.replace("endstream","BT 210 638 Td (999) Tj ET\nendstream"),bad);
- check("raw +1 no date correction",s=>s.replace("364 638 Td (1030)","364 638 Td (1030+1)"),good);
+ check("base Block mismatch",s=>s.replace("511 638 Td (1:30)","511 638 Td (9:30)"),bad);
+ check("base departure shift",s=>s.replace("292 638 Td (0900)","292 638 Td (0800)"),bad);
+ check("base arrival shift",s=>s.replace("364 638 Td (1030)","364 638 Td (1130)"),bad);
+ check("base departure +1 shift",s=>s.replace("292 638 Td (0900)","292 638 Td (0900+1)"),bad);
+ check("local clock difference allowed",s=>s.replace("268 638 Td (0900)","268 638 Td (1500)"),good);
+ check("joint clock and Block change remains detached",s=>s.replace("364 638 Td (1030)","364 638 Td (1130)").replace("511 638 Td (1:30)","511 638 Td (2:30)"),good);
+ check("paired base +1 offsets",s=>s.replace("292 638 Td (0900)","292 638 Td (0900+1)").replace("364 638 Td (1030)","364 638 Td (1030+1)"),good);
+ check("unpaired STA +1 contradicts Block",s=>s.replace("364 638 Td (1030)","364 638 Td (1030+1)"),bad);
  const r=scan(base);tests.push({name:"detached owner/revision gate",pass:r.status===good&&r.candidates===26&&r.nonflight===22&&r.aux===1&&!r.createsFlight&&!r.reportSubjectBoundToUid&&!r.publicationRevisionCertified,reason:""});
  return {passed:tests.filter(x=>x.pass).length,failed:tests.filter(x=>!x.pass).length,tests,summary:r};
 }
@@ -226,7 +238,17 @@ function runPdcEnvelopeTests(){
   const r=inspectPdcPdfStrict(toBase64(mutant));
   tests.push({name,pass:r.status==="FAIL_DOCUMENT"&&r.reason.startsWith("PHYSICAL_"),reason:r.reason||""});
  }
- return {passed:tests.filter(x=>x.pass).length,failed:tests.filter(x=>!x.pass).length,tests,baseline:base.status};
+ const editContent=(find,replacement,extra)=>repackPdcSyntheticPdf(full,o=>{let c=o[16].replace(find,replacement);if(extra)c=c.replace("511 638 Td (1:30)","511 638 Td (2:30)");o[16]=c.replace(/\/Length \d+/,"/Length "+c.split("stream\n")[1].split("\nendstream")[0].length);});
+ for(const [name,find,replacement,expected,extra] of [
+  ["strict base Block mismatch","511 638 Td (1:30)","511 638 Td (9:30)","FAIL_DOCUMENT",false],
+  ["strict base STD shift","292 638 Td (0900)","292 638 Td (0800)","FAIL_DOCUMENT",false],
+  ["strict base STA shift","364 638 Td (1030)","364 638 Td (1130)","FAIL_DOCUMENT",false],
+  ["strict local difference","268 638 Td (0900)","268 638 Td (1500)","OBSERVED_FAMILY_DETACHED_HOLD",false],
+  ["strict jointly altered source remains detached","364 638 Td (1030)","364 638 Td (1130)","OBSERVED_FAMILY_DETACHED_HOLD",true]
+ ]){const r=inspectPdcPdfStrict(toBase64(editContent(find,replacement,extra)));tests.push({name,pass:r.status===expected,reason:r.reason||""});}
+ const overlay=editContent("BT 559 43 Td (1) Tj ET","0 0 0 rg 0 0 598 842 re f\nBT 559 43 Td (1) Tj ET",false);
+ const knownVisualFailOpen=inspectPdcPdfStrict(toBase64(overlay)).status==="OBSERVED_FAMILY_DETACHED_HOLD";
+ return {passed:tests.filter(x=>x.pass).length,failed:tests.filter(x=>!x.pass).length,tests,baseline:base.status,knownVisualFailOpen};
 }
 export {validatePdcPhysicalEnvelope,wrapPdcSyntheticTextMock,pdcEnvelopeMutations,inspectPdcPdfStrict,runPdcEnvelopeTests};
 if(typeof process!=="undefined"&&process.argv&&process.argv[1]&&process.argv[1].endsWith("C426_PDC_NATIVE_PDF_TEXT_ADMISSION.mjs")){const r=runPdcEnvelopeTests();console.log(JSON.stringify(r,null,2));if(r.failed)process.exitCode=1;}
