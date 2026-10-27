@@ -3391,5 +3391,63 @@
       "production": "OPEN"
     },
     "next": "Authorized same-export four-digit operational year, leg Publication/revision and active same-UID existing Flight plus Aug03–31 reference for eight dual-own-dated outside-Preview candidates (one date conflict, seven date agreements, one-to-three duration disagreements), then owner-approved evidence-only native-file acceptance."
+  },
+  "c409KnownLayoutDateAdmissionAndCrewAnchorGraph": {
+    "date": "2026-10-27",
+    "status": "RESEARCH_ONLY_NOT_APPROVED",
+    "logmateReadOnlyHead": "6180fd80c1b084bd4347534c0770fe425f707768",
+    "source": "C194_THREE_MONTH_FIELD_LOCATOR_MANIFEST.csv original-PDF-derived; prior PDC original audit",
+    "skia": {
+      "numeric": 62,
+      "ownDatePresent": 35,
+      "ownDateAbsent": 27,
+      "pipeFollowers": 26,
+      "undatedDirectCrewCell": 1,
+      "physicalAnchorGroups": 22,
+      "anchorFollowerMultiplicity": {
+        "1": 20,
+        "3": 2
+      },
+      "chainDepthCounts": {
+        "1": 22,
+        "2": 2,
+        "3": 2
+      },
+      "page2Numeric": 6,
+      "page2Pipe": 1,
+      "semanticCrewInheritanceVerified": false
+    },
+    "pdc": {
+      "numeric": 26,
+      "ownDateAbsent": 13,
+      "perLegCrew": "NOT_PROVIDED"
+    },
+    "combined": {
+      "numericObservations": 88,
+      "ownDateAbsent": 40,
+      "ownDateAbsentPercent": 45.45,
+      "notUniqueOperatedFlights": true
+    },
+    "canonicalConflict": {
+      "productSpec": "crewconnex-parser-plan.md required duty Date + fail-closed required-field failure",
+      "researchProposal": "recognized layout but row-owned Date absent => detached review",
+      "decision": "OPEN_OWNER_W016_W017",
+      "doNotSilentlyOverride": true
+    },
+    "proposedStages": [
+      "validated known report family or whole-batch unsupported HOLD",
+      "recognized incomplete row => detached review only if product owner approves",
+      "certified year, Publication, active UID Flight and explicit user review before evidence-only commit"
+    ],
+    "tests": {
+      "sourceDerivedManifestAssertions": "8/8",
+      "syntheticStageTruthTable": "16/16",
+      "newOriginalPdfOrXlsxDecode": "NOT_RUN",
+      "dartSembastCrewConnex": "NOT_RUN"
+    },
+    "runtimeEvidenceBoundary": "W-019 26 PASS at older LogMate 7caaee9 including two backup tests; NOT CrewConnex receipt/UID/replay/wipe acceptance",
+    "publicSample": "P5",
+    "weeklyHtml": "P3",
+    "production": "OPEN"
   }
 }
