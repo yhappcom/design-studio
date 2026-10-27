@@ -1,5 +1,5 @@
 // C418/C419 privacy-safe synthetic CrewConnex report-family oracle; research only, NOT production parser.
-// C419 closes synthetic-oracle fail-open mutants. C420 repairs lexical divergence; C421 repairs PDC flight/nonflight/blank ordering fixture bias; NOT raw-PDF parsing.
+// C419 closes synthetic-oracle fail-open mutants. C420 repairs lexical divergence; C421 repairs PDC interleaving; C422 adds independent synthetic column classification; NOT raw-PDF parsing.
 // Run: node C418_SYNTHETIC_REPORT_ORACLE.mjs (Node 18+). No dependencies, network, or private source cells.
 // 62 physical-shape metadata observations originate from C194 private-PDF-derived redacted manifest.
 // All activity, route, duration, crew, date strings in generated rows are invented synthetic values.
@@ -27,6 +27,51 @@ function validSkiaDate(t,month){if(typeof t!=="string")return false;const m=/^(?
 function validPdcDate(t,period){if(typeof t!=="string"||period!=="01Aug26 - 31Aug26")return false;const m=/^(0[1-9]|[12]\d|3[01])Aug26$/.exec(t);return !!m;};
 function scanSkia(doc,expectedCount,expectedNumeric){if(doc.family!=="SKIA"||doc.profile!=="skia-synthetic-v1"||!/^SYN-SKIA-\d\d$/.test(doc.source))return {status:"FAIL_DOCUMENT",reason:"UNKNOWN_FAMILY_OR_PROFILE",candidates:[]};if(doc.body.length!==expectedCount||doc.aux.length!==1||doc.aux[0].kind!=="SUM"||doc.aux[0].page!==2)return {status:"FAIL_DOCUMENT",reason:"BODY_OR_SUM_INCOMPLETE",candidates:[]};let seen=new Set(),seenField=new Set(),staged=[];for(let i=0;i<doc.body.length;i++){const r=doc.body[i];const loc=doc.source+"/"+r.page+"/"+r.tr;if(r.tr!==i+2||![1,2].includes(r.page)||seen.has(loc))return {status:"FAIL_DOCUMENT",reason:"LOCATOR",candidates:[]};seen.add(loc);if(r.kind==="EXCLUDED_OTHER"){if(/^\d+$/.test(String(r.activity))||r.route!==null||r.blh!==null)return {status:"FAIL_DOCUMENT",reason:"EXCLUDED_ROW_NOT_SAFE",candidates:[]};continue;}if(r.kind!=="NUMERIC"||!/^\d+$/.test(r.activity)||!r.route||r.route.length!==2||minutes(r.blh)===null||r.profile!==doc.profile||r.source!==doc.source||!r.td||!r.activityTd||!Number.isInteger(r.activityMcid))return {status:"FAIL_DOCUMENT",reason:"NUMERIC_FIELDS",candidates:[]};if(r.ownDate!==null&&!validSkiaDate(r.ownDate,doc.month))return {status:"FAIL_DOCUMENT",reason:"OWN_DATE_LEXICAL",candidates:[]};const counts=[r.crew?.emp?.length,r.crew?.cc?.length,r.crew?.pos?.length];if(!counts.every(n=>n===counts[0])||![1,6,7].includes(counts[0])||(counts[0]===1&&!["emp","cc","pos"].every(k=>r.crew[k][0]==="|")))return {status:"FAIL_DOCUMENT",reason:"CREW_SHAPE",candidates:[]};if(counts[0]>1&&["emp","cc","pos"].some(k=>r.crew[k].includes("|")))return {status:"FAIL_DOCUMENT",reason:"MIXED_PIPE_TRIPLET",candidates:[]};if(counts[0]===1){const anchor=doc.body.find(x=>x.tr===r.anchorTr);if(!anchor||anchor.page!==r.page||anchor.tr>=r.tr||anchor.kind!=="NUMERIC"||anchor.crew?.emp?.length<6||!anchor.ownDate||r.chainDepth!==r.tr-anchor.tr||doc.body.some(x=>x.tr>anchor.tr&&x.tr<r.tr&&x.kind!=="NUMERIC"))return {status:"FAIL_DOCUMENT",reason:"PIPE_PHYSICAL_LINEAGE",candidates:[]};}if(r.fieldTd?.length!==5||r.fieldMcid?.length!==5||r.fieldTd[0]!==r.activityTd||r.fieldMcid[0]!==r.activityMcid||r.fieldTd.some((x,j)=>x-r.activityTd!==[0,3,7,13,15][j])||new Set(r.fieldMcid).size!==5)return {status:'FAIL_DOCUMENT',reason:'FIELD_LOCATOR_SHAPE',candidates:[]};for(const mc of r.fieldMcid){const fk=doc.source+'/'+r.page+'/'+mc;if(seenField.has(fk))return {status:'FAIL_DOCUMENT',reason:'FIELD_LOCATOR_ALIAS',candidates:[]};seenField.add(fk);}staged.push({locator:loc,rawCode:r.rawCode,crewKind:counts[0]===1?"PIPE":"RAW_UNNAMED",ownDate:!!r.ownDate,year:r.year,disposition:"HOLD_REVIEW_ONLY",createsFlight:false,overwritesBlock:false});}if(staged.length!==expectedNumeric)return {status:"FAIL_DOCUMENT",reason:"NUMERIC_COUNT",candidates:[]};return {status:"DETACHED_ONLY",candidates:staged};};
 function scanPdc(doc){if(doc.family!=="PDC"||doc.profile!=="pdc-synthetic-v1"||doc.columns!==14||doc.source!=="SYN-PDC-08"||JSON.stringify(doc.headers)!==JSON.stringify(PDC_HEADERS)||doc.period!=="01Aug26 - 31Aug26")return {status:"FAIL_DOCUMENT",reason:"UNKNOWN_FAMILY_OR_COLUMNS",candidates:[]};if(doc.body.length!==49)return {status:"FAIL_DOCUMENT",reason:"BODY_INCOMPLETE",candidates:[]};let staged=[];for(let i=0;i<49;i++){const r=doc.body[i];if(r.band!==i+1)return {status:"FAIL_DOCUMENT",reason:"BAND_LOCATOR",candidates:[]};if(r.kind==="BLANK"){if(r.activity!==""||(r.block!==undefined&&r.block!==null))return {status:"FAIL_DOCUMENT",reason:"BLANK_BAND_NOT_EMPTY",candidates:[]};continue;}if(r.kind==="NONFLIGHT"){if(/^\d+$/.test(String(r.activity))||r.block!==null||r.activityX!==210)return {status:"FAIL_DOCUMENT",reason:"NONFLIGHT_ACTIVITY_OWNERSHIP",candidates:[]};continue;}if(r.kind!=="NUMERIC"||r.activityX!==210||r.blockX!==511||!/^\d+$/.test(r.activity)||r.route?.length!==2||r.clocks?.length!==4||minutes(r.block)===null)return {status:"FAIL_DOCUMENT",reason:"NUMERIC_FIELDS",candidates:[]};if(r.ownDate!==null&&!validPdcDate(r.ownDate,doc.period))return {status:"FAIL_DOCUMENT",reason:"OWN_DATE_LEXICAL",candidates:[]};const times=r.clocks.map(clock);if(times.some(x=>x===null)||times[3]-times[1]!==minutes(r.block))return {status:"FAIL_DOCUMENT",reason:"CLOCK_OR_PRINTED_BLOCK",candidates:[]};staged.push({locator:doc.source+"/band/"+r.band,rawCode:r.rawCode,crewKind:"NOT_PROVIDED",ownDate:!!r.ownDate,disposition:"HOLD_REVIEW_ONLY",createsFlight:false,overwritesBlock:false});}if(staged.length!==26)return {status:"FAIL_DOCUMENT",reason:"NUMERIC_COUNT",candidates:[]};return {status:"DETACHED_ONLY",candidates:staged};};
+
+// C422 synthetic 14-column cell-grid oracle, independent of preclassified kind.
+// Only Activity x=210 and Blk Hrs x=511 are source-backed. Other column
+// positions and every cell value are invented, NOT a real PDF text-layer parser.
+function pdcCellGrid(doc){
+ return {family:doc.family,source:doc.source,headers:doc.headers.slice(),period:doc.period,
+ body:doc.body.map(r=>{const cells=[];
+  if(r.activity!==undefined)cells.push({col:5,x:r.activityX??210,text:r.activity});
+  if(r.block!=null)cells.push({col:13,x:r.blockX??511,text:r.block});
+  if(r.ownDate!=null)cells.push({col:0,text:r.ownDate});
+  if(r.route)cells.push({col:6,text:r.route[0]},{col:9,text:r.route[1]});
+  if(r.clocks)for(let i=0;i<4;i++)cells.push({col:[7,8,10,11][i],text:r.clocks[i]});
+  if(r.miscNumeric)cells.push({col:3,x:r.miscNumericX,text:r.miscNumeric});
+  return {band:r.band,cells};})};
+}
+function scanPdcCellGrid(doc){
+ const fail=reason=>({status:"FAIL_DOCUMENT",reason,candidates:[]});
+ if(doc.family!=="PDC"||doc.source!=="SYN-PDC-08"||doc.period!=="01Aug26 - 31Aug26"||JSON.stringify(doc.headers)!==JSON.stringify(PDC_HEADERS))return fail("UNSUPPORTED");
+ if(!Array.isArray(doc.body)||doc.body.length!==49)return fail("BODY");
+ let staged=[],nf=0,blank=0;
+ for(let i=0;i<49;i++){
+  const b=doc.body[i];if(b.band!==i+1||!Array.isArray(b.cells))return fail("BAND");
+  const cols=new Map();
+  for(const c of b.cells){if(!Number.isInteger(c.col)||c.col<0||c.col>=14||typeof c.text!=="string"||cols.has(c.col))return fail("CELL_COLLISION");
+   if(c.col===5&&c.x!==210||c.col===13&&c.x!==511)return fail("X_DRIFT");
+   cols.set(c.col,c.text);}
+  const act=cols.get(5),blk=cols.get(13),date=cols.get(0);
+  if(act===undefined)return fail("MISSING_ACTIVITY");
+  if(date!==undefined&&!validPdcDate(date,doc.period))return fail("DATE");
+  const clocks=[7,8,10,11].map(k=>cols.get(k)),nClock=clocks.filter(v=>v!==undefined).length;
+  const routes=[cols.has(6),cols.has(9)];
+  if(act===""){if(cols.size!==1)return fail("BLANK_WITH_CELLS");blank++;continue;}
+  if(/^\d+$/.test(act)){
+   if(blk===undefined||minutes(blk)===null||routes.some(v=>!v)||nClock!==4)return fail("FLIGHT_FIELDS");
+   const t=clocks.map(clock);if(t.some(v=>v===null)||t[3]-t[1]!==minutes(blk))return fail("FLIGHT_CLOCK");
+   staged.push({locator:doc.source+"/band/"+b.band,ownDate:date!==undefined,rawActivity:act,rawPrintedBlock:blk,crewKind:"NOT_PROVIDED",disposition:"HOLD_REVIEW_ONLY",createsFlight:false,overwritesBlock:false});
+  }else{
+   if(blk!==undefined||nClock!==4||routes[0]!==routes[1])return fail("NONFLIGHT_FIELDS");
+   if(clocks.some(v=>clock(v)===null))return fail("NONFLIGHT_CLOCK");
+   nf++;
+  }
+ }
+ if(staged.length!==26||nf!==22||blank!==1)return fail("PROFILE_COUNTS");
+ return {status:"DETACHED_ONLY",candidates:staged,nonflight:nf,blank};
+}
 function admissionGate(c,ctx){if(!c.ownDate)return "HOLD_MISSING_OWN_DATE";if(!ctx.yearCertified)return "HOLD_UNVERIFIED_YEAR";if(!ctx.publicationDispositionApproved)return "HOLD_PUBLICATION_POLICY";if(!ctx.ownerUidVerified||!ctx.activeExistingFlight)return "HOLD_NO_OWNER_FLIGHT";if(ctx.matchCount!==1)return "HOLD_AMBIGUOUS_MATCH";if(ctx.canonicalOverwriteRequested||ctx.createRequested)return "REJECT_MUTATION";return "REVIEW_ONLY_NOT_COMMIT";};
 function testSuite(meta){const docs=syntheticSkia(meta),pdc=syntheticPdc();let checks=[];function test(name,fn){try{fn();checks.push({name,result:"PASS"});}catch(e){checks.push({name,result:"FAIL",error:String(e)});}}const clone=x=>JSON.parse(JSON.stringify(x));const totals=[40,44,42],counts=[18,22,22];
 test("real-derived shape census 62, month and witness locators",()=>{assert(meta.length===62,"62");assert(["06","07","08"].every((m,i)=>meta.filter(x=>x.m===m).length===counts[i]),"monthly");assert(witnesses.length===12&&new Set(witnesses).size===12,"witness unique");assert(witnesses.every(k=>meta.some(x=>`${x.m}/${x.p}/${x.t}`===k)),"witness exists");});
@@ -81,6 +126,17 @@ test("C421 PDC source-derived interleaving aggregates on deliberately invented b
 test("C421 PDC numeric after interposed nonflight and blank survives staging",()=>{const b=pdc.body;assert(b.findIndex(x=>x.kind==="BLANK")<b.map(x=>x.kind).lastIndexOf("NUMERIC"),"blank midbody");assert(scanPdc(pdc).candidates.length===26,"later flight retained");});
 test("C421 PDC nonflight with own Date, route and four clocks stays excluded",()=>{const b=pdc.body.find(x=>x.kind==="NONFLIGHT"&&x.ownDate&&x.route&&x.clocks.length===4);assert(!!b&&b.block===null,"source-like distractor");assert(scanPdc(pdc).candidates.every(x=>x.locator!==pdc.source+"/band/"+b.band),"no nonflight staging");});
 test("C421 PDC synthetic fixture nonterminal blank and terminal numeric",()=>{const b=pdc.body;assert(b.at(-1).kind==="NUMERIC"&&b.findIndex(x=>x.kind==="BLANK")>0,"nonterminal blank");});
+
+ test("C422 column-only census 26/22/1, no kind input or Flight creation",()=>{const g=pdcCellGrid(pdc),r=scanPdcCellGrid(g);assert(g.body.every(b=>!("kind" in b)),"no kind");assert(r.status==="DETACHED_ONLY"&&r.candidates.length===26&&r.nonflight===22&&r.blank===1,"counts");assert(r.candidates.every(c=>!c.createsFlight&&!c.overwritesBlock&&c.crewKind==="NOT_PROVIDED"),"safe");});
+ test("C422 relabeled kind cannot change independently derived candidates",()=>{const d=clone(pdc);d.body.forEach(b=>b.kind="UNTRUSTED");assert(scanPdcCellGrid(pdcCellGrid(d)).status==="DETACHED_ONLY","independent");});
+ test("C422 interleaved nonflight with clocks/routes and x162 numeric decoy excluded",()=>{const g=pdcCellGrid(pdc),r=scanPdcCellGrid(g);assert(g.body.some(b=>b.cells.some(c=>c.col===3&&c.text==="9999")),"decoy");assert(r.candidates.length===26&&r.candidates.every(c=>g.body[Number(c.locator.split("/").at(-1))-1].cells.find(v=>v.col===5).text!=="OFF"),"excluded");});
+ test("C422 numeric without Block or nonflight with Block fail document-atomically",()=>{for(const mutate of [g=>g.body[0].cells=g.body[0].cells.filter(c=>c.col!==13),g=>g.body.find(b=>b.cells.find(c=>c.col===5)?.text==="OFF").cells.push({col:13,x:511,text:"1:20"})]){const g=pdcCellGrid(pdc);mutate(g);const r=scanPdcCellGrid(g);assert(r.status==="FAIL_DOCUMENT"&&r.candidates.length===0,"atomic");}});
+ test("C422 Activity/Block x drift and duplicated Activity cell rejected",()=>{for(const mutate of [g=>g.body[0].cells.find(c=>c.col===5).x=162,g=>g.body[0].cells.find(c=>c.col===13).x=492,g=>g.body[0].cells.push({col:5,x:210,text:"2000"})]){const g=pdcCellGrid(pdc);mutate(g);assert(scanPdcCellGrid(g).status==="FAIL_DOCUMENT","column");}});
+ test("C422 midbody blank with hidden clock fails; later numeric survives baseline",()=>{const g=pdcCellGrid(pdc),b=g.body.find(b=>b.cells.find(c=>c.col===5)?.text==="");assert(g.body.at(-1).cells.find(c=>c.col===5).text==="2000","later numeric");b.cells.push({col:7,text:"0900"});assert(scanPdcCellGrid(g).status==="FAIL_DOCUMENT","blank");});
+ test("C422 nonflight Date and four-clock lexical errors fail, not silently excluded",()=>{for(const mutate of [g=>g.body.find(b=>b.cells.find(c=>c.col===5)?.text==="OFF"&&b.cells.some(c=>c.col===0)).cells.find(c=>c.col===0).text="32Aug26",g=>g.body.find(b=>b.cells.find(c=>c.col===5)?.text==="OFF").cells.find(c=>c.col===7).text="25:99"]){const g=pdcCellGrid(pdc);mutate(g);assert(scanPdcCellGrid(g).status==="FAIL_DOCUMENT","nonflight lexical");}});
+ test("C422 unsupported headers/period, truncation and absent Activity fail",()=>{for(const mutate of [g=>[g.headers[5],g.headers[6]]=[g.headers[6],g.headers[5]],g=>g.period="01Sep26 - 30Sep26",g=>g.body.pop(),g=>g.body[0].cells=g.body[0].cells.filter(c=>c.col!==5)]){const g=pdcCellGrid(pdc);mutate(g);assert(scanPdcCellGrid(g).status==="FAIL_DOCUMENT","unsupported");}});
+ test("C422 own-Date absent remains HOLD; unknown nonflight code not reinterpreted",()=>{const g=pdcCellGrid(pdc),r=scanPdcCellGrid(g);assert(r.candidates.filter(c=>!c.ownDate).length===13,"undated");g.body.find(b=>b.cells.find(c=>c.col===5)?.text==="OFF").cells.find(c=>c.col===5).text="UNKNOWN_RAW";assert(scanPdcCellGrid(g).status==="DETACHED_ONLY","unknown excluded");});
+ test("C422 +1 clock preserved without date/crew inference or canonical mutation",()=>{const g=pdcCellGrid(pdc),r=scanPdcCellGrid(g);assert(g.body.some(b=>b.cells.some(c=>c.col===11&&c.text==="0050+1")),"+1");assert(r.candidates.every(c=>c.disposition==="HOLD_REVIEW_ONLY"&&!c.createsFlight&&!c.overwritesBlock),"hold");});
 return checks;};
 const results = testSuite(metadata);
 const summary = {passed:results.filter(x=>x.result==='PASS').length,failed:results.filter(x=>x.result==='FAIL').length,results};
