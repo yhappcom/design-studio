@@ -4375,5 +4375,61 @@
     "publicExactLayoutPdfGrade": "P5",
     "weeklyHtmlGrade": "P3",
     "productionReadiness": "OPEN"
+  },
+  "c438InlineTextAndHeaderPaintAdmission": {
+    "id": "C438",
+    "observedAt": "2026-10-28 18 KST",
+    "status": "RESEARCH_ONLY_NOT_APPROVED",
+    "researchProfileDelta": "pdc-generator-14col-inline-BT-paint-and-header-visibility-v1.07-C438",
+    "sourceScope": {
+      "privatePdcOriginalGitBlobSha1": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "bytes": 39612,
+      "btObjects": 495,
+      "inlineBlackHeaderTextObjects": 14,
+      "otherTextObjectsWithoutInlinePaint": 481,
+      "headerGrayFillRectangles": 14,
+      "gridStrokes": 876,
+      "notPublicP1": true
+    },
+    "newFailureModes": {
+      "beforeFix": [
+        "Real-original-derived numeric Activity BT with white 1 1 1 rg was still admitted as 26 detached candidates.",
+        "Real-original-derived header gray fill changed to black under black header text was still admitted."
+      ],
+      "visualEffectQualification": "PDF operator-level predicted invisibility/low contrast only; NO raster render, user-visible pixel or accessibility validation.",
+      "afterFix": [
+        "Pinned observed BT lexical operator grammar; only original black inline rg at 14 header anchors.",
+        "Pinned original gray header fill color, rectangle geometry and order; reject altered/moved fills.",
+        "Reject unsupported inline BT paint, additional text operators, and source-family variants rather than accepting invisible candidate cells."
+      ]
+    },
+    "verification": {
+      "unchangedOriginal": "OBSERVED_FAMILY_DETACHED_HOLD",
+      "syntheticText": {
+        "passed": 31,
+        "total": 31
+      },
+      "syntheticEnvelope": {
+        "passed": 35,
+        "total": 35
+      },
+      "originalDerived": {
+        "passed": 13,
+        "total": 13,
+        "originalAndRepacked": 2,
+        "syntheticMutants": 11
+      },
+      "runtime": "Connector V8; no Dart, Sembast or production PDF parser",
+      "privateRawValuesPersisted": false
+    },
+    "limits": [
+      "Exact one known PDC generator/report/page layout only; no generalized PDF renderer or text visibility assurance.",
+      "Skia tagged/Flate layout requires separate detector.",
+      "Four-digit operational year/carrier/report subject/Publication/Revision/active same-UID Flight still unverified.",
+      "W-016/W-017 evidence-only schema and file-backed lifecycle not approved or executed."
+    ],
+    "publicExactLayoutPdfGrade": "P5",
+    "weeklyHtmlGrade": "P3",
+    "productionReadiness": "OPEN"
   }
 }

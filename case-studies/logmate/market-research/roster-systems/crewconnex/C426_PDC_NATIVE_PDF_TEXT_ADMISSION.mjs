@@ -153,11 +153,34 @@ function validatePdcPhysicalEnvelope(raw){
  // Original: 1 stroke setup, 14 header fills, 876 grid strokes; synthetic: none.
  const outside=content.replace(/\bBT\b[\s\S]*?\bET\b/g,"");
  const graphics=outside.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+ // C438 observed-family gate: PDF graphics operators may appear INSIDE BT/ET.
+ // The original contains 14 inline black header fills and none on numeric body text.
+ // Synthetic fixtures have no graphics and no inline header fills.
+ const btObjects=[...content.matchAll(/\bBT\b([\s\S]*?)\bET\b/g)];
+ if(btObjects.length!==495)return fail("BT_OBJECT_CENSUS");
+ let blackHeaderFills=0;
+ const btGrammar=/^\s*(?:\/F\d+\s+\d+(?:\.\d+)?\s+Tf\s+)?(\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)\s+Td\s+(?:(0\s+0\s+0\s+rg)\s+)?\((?:\\.|[^\\)])*\)\s+Tj\s*$/;
+ for(const bt of btObjects){
+  const m=bt[1].match(btGrammar);
+  if(!m)return fail("UNSUPPORTED_BT_OPERATOR");
+  const x=+m[1],y=+m[2],inlineBlack=m[3]!==undefined;
+  if(inlineBlack){
+   if(y!==647||![75,109,143,162,186,210,244,268,292,316,340,364,388,492].includes(x))return fail("UNEXPECTED_BT_INLINE_FILL");
+   blackHeaderFills++;
+  }else if(graphics.length&&y===647)return fail("MISSING_HEADER_INLINE_FILL");
+ }
+ if(graphics.length&&blackHeaderFills!==14)return fail("HEADER_INLINE_FILL_CENSUS");
+ if(!graphics.length&&blackHeaderFills!==0)return fail("SYNTHETIC_INLINE_FILL_MISMATCH");
  const num="-?\\d+(?:\\.\\d+)?";
  const fill=new RegExp("^("+num+"\\s+){3}rg\\s+("+num+"\\s+){4}re\\s+f$");
  const stroke=new RegExp("^("+num+"\\s+){2}m\\s+("+num+"\\s+){2}l\\s+S$");
  if(graphics.length){
   if(graphics.length!==891)return fail("UNSUPPORTED_PAINT_CENSUS");
+  // C438: a dark or moved header rectangle can make extracted black text unreadable.
+  // Pinned observed-generator geometry; NOT a general PDF rendering algorithm.
+  const expectedHeaderFills=["0.75 0.75 0.75 rg 73.1 645.1 33.8 8.8 re f","0.75 0.75 0.75 rg 107.1 645.1 33.8 8.8 re f","0.75 0.75 0.75 rg 141.1 645.1 18.8 8.8 re f","0.75 0.75 0.75 rg 160.1 645.1 23.8 8.8 re f","0.75 0.75 0.75 rg 184.1 645.1 23.8 8.8 re f","0.75 0.75 0.75 rg 208.1 645.1 33.8 8.8 re f","0.75 0.75 0.75 rg 242.1 645.1 23.8 8.8 re f","0.75 0.75 0.75 rg 266.1 645.1 23.8 8.8 re f","0.75 0.75 0.75 rg 290.1 645.1 23.8 8.8 re f","0.75 0.75 0.75 rg 314.1 645.1 23.8 8.8 re f","0.75 0.75 0.75 rg 338.1 645.1 23.8 8.8 re f","0.75 0.75 0.75 rg 362.1 645.1 23.8 8.8 re f","0.75 0.75 0.75 rg 386.1 645.1 103.8 8.8 re f","0.75 0.75 0.75 rg 490.1 645.1 33.8 8.8 re f"];
+  const observedHeaderFills=graphics.filter(s=>fill.test(s));
+  if(observedHeaderFills.length!==14||expectedHeaderFills.some((s,i)=>observedHeaderFills[i]!==s))return fail("HEADER_FILL_GEOMETRY_OR_COLOR");
   let a=0,b=0,c=0;
   for(const line of graphics){
    if(line==="0 0 0 RG 0.10 w [] 0 d")a++;
@@ -290,6 +313,16 @@ function runPdcEnvelopeTests(){
   const mutant=repackPdcSyntheticPdf(full,o=>{o[16]=o[16].replace(needle,value);o[16]=o[16].replace(/\/Length \d+/,"/Length "+o[16].split("stream\n")[1].split("\nendstream")[0].length);});
   const r=inspectPdcPdfStrict(toBase64(mutant));tests.push({name,pass:r.status==="FAIL_DOCUMENT",reason:r.reason||""});
  }
+ const inlinePaintCases=[
+  ["white numeric Activity inside BT", "BT 210 638 Td (100) Tj ET", "BT 210 638 Td 1 1 1 rg (100) Tj ET"],
+  ["black numeric Activity inside BT (unobserved)", "BT 210 638 Td (100) Tj ET", "BT 210 638 Td 0 0 0 rg (100) Tj ET"],
+  ["white header inside BT", "BT 75 647 Td (Date) Tj ET", "BT 75 647 Td 1 1 1 rg (Date) Tj ET"],
+  ["extra text operator inside BT", "BT 210 638 Td (100) Tj ET", "BT 210 638 Td (100) Tj (100) Tj ET"]
+ ];
+ for(const [name,find,replacement] of inlinePaintCases){
+  const r=inspectPdcPdfStrict(toBase64(editContent(find,replacement,false)));
+  tests.push({name:"C438 "+name,pass:r.status==="FAIL_DOCUMENT"&&r.reason.startsWith("PHYSICAL_"),reason:r.reason||""});
+ }
  const painted=repackPdcSyntheticPdf(full,o=>{o[16]=o[16].replace("BT 559 43 Td (1) Tj ET","0 0 0 RG 100 w 0 0 m 598 842 l S\nBT 559 43 Td (1) Tj ET");o[16]=o[16].replace(/\/Length \d+/,"/Length "+o[16].split("stream\n")[1].split("\nendstream")[0].length);});
  const paintedResult=inspectPdcPdfStrict(toBase64(painted));tests.push({name:"opaque thick stroke unsupported",pass:paintedResult.status==="FAIL_DOCUMENT",reason:paintedResult.reason||""});
  return {passed:tests.filter(x=>x.pass).length,failed:tests.filter(x=>!x.pass).length,tests,baseline:base.status,knownVisualFailOpen,knownRouteShapeFailOpen};
@@ -325,7 +358,12 @@ function runPdcOriginalReadOnlyAdversarial(base64){
   ["replace original header fill with full-page opaque cover",s=>s.replace(/0\.75 0\.75 0\.75 rg [^\n]+ re f/,"0 0 0 rg 0 0 598 842 re f")],
   ["shorten original From token",s=>s.replace(/(BT 244 \d+(?:\.\d+)? Td [^\n]*?\()[A-Z]{3}(\) Tj ET)/,"$1X$2")],
   ["change original stroke setup to thick",s=>s.replace("0.10 w","100 w")],
-  ["insert original full-page overlay before footer",s=>s.replace(/BT 559 43 Td/,"0 0 0 rg 0 0 598 842 re f\nBT 559 43 Td")]
+  ["insert original full-page overlay before footer",s=>s.replace(/BT 559 43 Td/,"0 0 0 rg 0 0 598 842 re f\nBT 559 43 Td")],
+  ["C438 white numeric Activity inside BT",s=>s.replace(/(BT 210 \d+(?:\.\d+)? Td )(?=\()/,"$1 1 1 1 rg ")],
+  ["C438 black numeric Activity inside BT",s=>s.replace(/(BT 210 \d+(?:\.\d+)? Td )(?=\()/,"$1 0 0 0 rg ")],
+  ["C438 white header text inside BT",s=>s.replace("75 647 Td 0 0 0 rg","75 647 Td 1 1 1 rg")],
+  ["C438 black header rectangle under black text",s=>s.replace("0.75 0.75 0.75 rg 208.1 645.1 33.8 8.8 re f","0 0 0 rg 208.1 645.1 33.8 8.8 re f")],
+  ["C438 moved header rectangle",s=>s.replace("0.75 0.75 0.75 rg 208.1 645.1 33.8 8.8 re f","0.75 0.75 0.75 rg 208.1 636.1 33.8 8.8 re f")]
  ];
  for(const [name,edit] of cases){
   let changed=false;
