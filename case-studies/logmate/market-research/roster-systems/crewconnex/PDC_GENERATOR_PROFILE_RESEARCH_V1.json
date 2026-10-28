@@ -4431,5 +4431,50 @@
     "publicExactLayoutPdfGrade": "P5",
     "weeklyHtmlGrade": "P3",
     "productionReadiness": "OPEN"
+  },
+  "c439FontResourceAndPageTreeAdmission": {
+    "id": "C439",
+    "observedAt": "2026-10-28 19 KST",
+    "status": "RESEARCH_ONLY_NOT_APPROVED",
+    "researchProfileDelta": "pdc-generator-14col-critical-object-graph-fail-closed-v1.08-C439",
+    "sourceScope": {
+      "privatePdcOriginalGitBlobSha1": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "bytes": 39612,
+      "observedPdfVersion": "1.4",
+      "singlePage": true,
+      "contentStreamObject": 16,
+      "criticalObjectFingerprints": "SHA-256 of 15 privacy-safe object bodies: 2..15 and 18; original bytes/crew text not copied",
+      "publicRawSample": false
+    },
+    "preFixOriginalDerivedCounterexamples": [
+      "Removing the referenced F2 font from page resources was accepted as 26 detached candidates.",
+      "Mapping F2 to an absent object 99 was accepted despite unresolved font resource.",
+      "Changing referenced F2 BaseFont Helvetica to Symbol was accepted with unchanged extracted Tj text.",
+      "Changing an F2 glyph width to zero was accepted with unchanged extracted Tj text.",
+      "Adding inherited Pages CropBox [0 0 10 10] was accepted despite potential clipping.",
+      "Adding inherited Pages Rotate 90 was accepted with unchanged extracted text.",
+      "Adding inherited Pages UserUnit 100 was accepted with unchanged extracted text.",
+      "Adding a synthetic Catalog OpenAction JavaScript dictionary was accepted; no script was executed."
+    ],
+    "afterFix": "For the one observed PDC generator family, SHA-256-pin privacy-safe page tree/catalog and font/resource object bodies (2..15,18), fail closed on any altered object before text candidate admission. Separate genuine generator variants need independently verified ParserProfile.",
+    "validation": {
+      "sha256KnownVectors": "empty and abc PASS",
+      "syntheticText": "31/31 PASS",
+      "syntheticEnvelope": "35/35 PASS",
+      "originalDerived": "21/21 PASS (2 unchanged/repacked original + 19 synthetic mutants)",
+      "newMutants": "8/8 rejected",
+      "runtime": "Connector V8 execution of research script; NOT Dart/Sembast or actual rendered PDF",
+      "noPrivateRawPersisted": true
+    },
+    "limitations": [
+      "SHA-256 object fingerprint is observed-family equality, not PDF authenticity or provenance signature.",
+      "Original source has no authenticated four-digit operational year, carrier, subject, Publication/Revision, or same-UID Flight linkage.",
+      "No raster render, PDF viewer, malware scanner, or production security validation performed.",
+      "Other valid PDF generator versions may fail closed; do not silently broaden the accepted layout.",
+      "W-016/W-017 evidence-only persistence and lifecycle approval remain OPEN."
+    ],
+    "publicExactLayoutPdfGrade": "P5",
+    "weeklyHtmlGrade": "P3",
+    "productionReadiness": "OPEN"
   }
 }
