@@ -4618,5 +4618,95 @@
     "weeklyHtmlGrade": "P3",
     "productionReadiness": "OPEN",
     "next": "Independent real Skia 2026-06/07/08 page2 Sum/continuation/ToUnicode-raster cross-check; certified eight August owner links remain HOLD."
+  },
+  "c449FontRunAdmission": {
+    "id": "C449",
+    "observedAt": "2026-10-29 05 KST",
+    "status": "RESEARCH_ONLY_NOT_APPROVED",
+    "originalPrivatePdc": {
+      "gitBlobSha1": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "bytes": 39612,
+      "sourceFamily": "single-page PDC 14-column August YY26",
+      "textObjects": 495,
+      "fontTransitions": 6,
+      "observedRuns": [
+        {
+          "ordinal": 1,
+          "font": "F2",
+          "size": 6,
+          "x": 36,
+          "y": 801
+        },
+        {
+          "ordinal": 3,
+          "font": "F2",
+          "size": 18,
+          "x": 219,
+          "y": 744
+        },
+        {
+          "ordinal": 5,
+          "font": "F2",
+          "size": 9,
+          "x": 39,
+          "y": 702
+        },
+        {
+          "ordinal": 6,
+          "font": "F2",
+          "size": 12,
+          "x": 225,
+          "y": 688
+        },
+        {
+          "ordinal": 8,
+          "font": "F5",
+          "size": 6,
+          "x": 75,
+          "y": 647
+        },
+        {
+          "ordinal": 22,
+          "font": "F2",
+          "size": 6,
+          "x": 81,
+          "y": 638
+        }
+      ]
+    },
+    "actualOriginalDerivedAdversarial": {
+      "before": "6/6 modified font-run PDFs accepted as 26 detached candidates",
+      "mutations": [
+        "unknown F99",
+        "zero font size",
+        "near-zero font size",
+        "substituted available F5",
+        "header F5 to F2",
+        "extra body font transition"
+      ],
+      "after": "6/6 rejected by PHYSICAL_FONT_RUN_PROFILE or PHYSICAL_UNEXPECTED_FONT_RUN",
+      "originalUnmodified": "26 DETACHED_HOLD",
+      "sourceTextAndFontObjectBodiesUnchanged": true,
+      "actualRaster": false
+    },
+    "executedResearchRegression": {
+      "C426TextSynthetic": "31/31 PASS",
+      "C426EnvelopeSynthetic": "35/35 PASS",
+      "C426OriginalDerived": "30/30 PASS (2 unchanged/repacked, 2 repeated-Activity, 26 adversarial)",
+      "C418Synthetic": "75/75 PASS",
+      "actualDartSembast": false
+    },
+    "implementationDelta": "For this one observed PDC PDF generator, require ordered source-verified font resource and font-size transitions by text-object ordinal/position in addition to pinned font objects and paint geometry. An unreferenced, zero/tiny, substituted or extra Tf must fail closed. Different legitimate generator versions need separate verified immutable ParserProfile; do not treat pinned hashes as authenticity.",
+    "readiness": {
+      "publicExactLayoutPdf": "P5",
+      "weeklyHtml": "P3",
+      "production": "OPEN",
+      "sourceYearPublicationOwnerUid": "UNVERIFIED",
+      "augustEightCrossFamilyLinks": "DETACHED_HOLD",
+      "W016": "CONDITIONAL_NOT_STARTED",
+      "W017": "INSUFFICIENT_EVIDENCE_NOT_STARTED",
+      "C194SyncDebt": "OPEN"
+    },
+    "privacy": "No original PDF content, identifiers, crew text, flight numbers or raw rows copied into Design Studio."
   }
 }

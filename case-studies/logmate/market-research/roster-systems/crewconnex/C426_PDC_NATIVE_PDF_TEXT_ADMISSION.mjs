@@ -164,11 +164,23 @@ function validatePdcPhysicalEnvelope(raw){
  const btObjects=[...content.matchAll(/\bBT\b([\s\S]*?)\bET\b/g)];
  if(btObjects.length!==495)return fail("BT_OBJECT_CENSUS");
  let blackHeaderFills=0;
- const btGrammar=/^\s*(?:\/F\d+\s+\d+(?:\.\d+)?\s+Tf\s+)?(\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)\s+Td\s+(?:(0\s+0\s+0\s+rg)\s+)?\((?:\\.|[^\\)])*\)\s+Tj\s*$/;
- for(const bt of btObjects){
+ const btGrammar=/^\s*(?:\/(F\d+)\s+(\d+(?:\.\d+)?)\s+Tf\s+)?(\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)\s+Td\s+(?:(0\s+0\s+0\s+rg)\s+)?\((?:\\.|[^\\)])*\)\s+Tj\s*$/;
+ // C449: observed six font transitions; pinned font objects do not prove
+ // which resource/size each text object selected. Synthetic mocks omit Tf.
+ const observedFontRuns=[
+  [1,"F2",6,36,801],[3,"F2",18,219,744],[5,"F2",9,39,702],
+  [6,"F2",12,225,688],[8,"F5",6,75,647],[22,"F2",6,81,638]
+ ];
+ for(const [i,bt] of btObjects.entries()){
   const m=bt[1].match(btGrammar);
   if(!m)return fail("UNSUPPORTED_BT_OPERATOR");
-  const x=+m[1],y=+m[2],inlineBlack=m[3]!==undefined;
+  const x=+m[3],y=+m[4],inlineBlack=m[5]!==undefined;
+  if(graphics.length){
+   const expected=observedFontRuns.find(a=>a[0]===i+1);
+   if(expected){
+    if(m[1]!==expected[1]||+m[2]!==expected[2]||x!==expected[3]||y!==expected[4])return fail("FONT_RUN_PROFILE");
+   }else if(m[1]!==undefined)return fail("UNEXPECTED_FONT_RUN");
+  }
   if(inlineBlack){
    if(y!==647||![75,109,143,162,186,210,244,268,292,316,340,364,388,492].includes(x))return fail("UNEXPECTED_BT_INLINE_FILL");
    blackHeaderFills++;
@@ -365,6 +377,16 @@ function runPdcOriginalReadOnlyAdversarial(base64){
   tests.push({name:"C437 original-derived repeated "+width+"-digit Activity held",pass:changed&&r.status==="OBSERVED_FAMILY_DETACHED_HOLD",reason:r.reason||""});
  }
 
+  // C449: six actual-original-derived font-selection adversaries; original
+  // text values and font objects unchanged, no private values persisted.
+  const fontRunCases=[
+   ["C449 unknown font resource",s=>s.replace("/F2 6 Tf","/F99 6 Tf")],
+   ["C449 zero font size",s=>s.replace("/F2 6 Tf","/F2 0 Tf")],
+   ["C449 near-zero font size",s=>s.replace("/F2 6 Tf","/F2 0.01 Tf")],
+   ["C449 substituted available font",s=>s.replace("/F2 6 Tf","/F5 6 Tf")],
+   ["C449 header font substitution",s=>s.replace("/F5 6 Tf","/F2 6 Tf")],
+   ["C449 unexpected body font transition",s=>s.replace("BT 210 638 Td","BT /F2 6 Tf 210 638 Td")]
+  ];
   // C441: three original-derived adversarial stroke mutants; no private text retained.
   const c441StrokeLine=/^-?\d+(?:\.\d+)?\s+-?\d+(?:\.\d+)?\s+m\s+-?\d+(?:\.\d+)?\s+-?\d+(?:\.\d+)?\s+l\s+S$/;
   const c441MutateStrokes=(stream,kind)=>{
@@ -383,6 +405,7 @@ function runPdcOriginalReadOnlyAdversarial(base64){
     return lines.join("\n");
   };
  const cases=[
+  ...fontRunCases,
   ["replace original header fill with full-page opaque cover",s=>s.replace(/0\.75 0\.75 0\.75 rg [^\n]+ re f/,"0 0 0 rg 0 0 598 842 re f")],
   ["shorten original From token",s=>s.replace(/(BT 244 \d+(?:\.\d+)? Td [^\n]*?\()[A-Z]{3}(\) Tj ET)/,"$1X$2")],
   ["change original stroke setup to thick",s=>s.replace("0.10 w","100 w")],
