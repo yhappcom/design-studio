@@ -41,7 +41,7 @@ function inspectPdcPdfTextLayer(base64){
   rows.get(k).set(g.x,g.text);xc[g.x]++;
  }
  if(rows.size!==49||BX.some((x,i)=>xc[x]!==BC[i]))return fail("BODY_GRID_CENSUS");
- let numeric=0,nonflight=0,aux=0,ownDateNumeric=0,ownDateNonflight=0,threeDigit=0,fourDigit=0;const seen=new Set();
+ let numeric=0,nonflight=0,aux=0,ownDateNumeric=0,ownDateNonflight=0,threeDigit=0,fourDigit=0;
   // Research-only source-internal arithmetic, not operational Block/date authority.
   const clockMin=v=>{const m=/^([01]\d|2[0-3])([0-5]\d)(\+1)?$/.exec(v||"");return m?+m[1]*60+(+m[2])+(m[3]?1440:0):null;};
   const blockMin=v=>{const m=/^(\d{1,2}):([0-5]\d)$/.exec(v||"");return m?+m[1]*60+(+m[2]):null;};
@@ -52,7 +52,7 @@ function inspectPdcPdfTextLayer(base64){
   if(activity===undefined){aux++;if(r.size!==1||!r.has(388))return fail("UNSUPPORTED_AUX_BAND");continue;}
   if(/^\d+$/.test(activity)&&!/^\d{3,4}$/.test(activity))return fail("UNSUPPORTED_NUMERIC_ACTIVITY_WIDTH");
   if(/^\d{3,4}$/.test(activity)){
-   numeric++;if(seen.has(activity))return fail("DUPLICATE_NUMERIC_ACTIVITY");seen.add(activity);
+   numeric++; // Activity is a raw label, not a unique physical row key.
    if(activity.length===3)threeDigit++;else fourDigit++;if(date!==undefined)ownDateNumeric++;
    if(block===undefined||!/^\d{1,2}:[0-5]\d$/.test(block))return fail("INVALID_PRINTED_BLOCK");
    if(!r.get(244)||!r.get(316))return fail("MISSING_NUMERIC_ROUTE");
@@ -108,6 +108,8 @@ function runSyntheticTests(){
  check("extra page",s=>s.replace("endobj","endobj\n4 0 obj << /Type /Page >> endobj"),bad);
  check("Flate unsupported",s=>s.replace("/Length 1","/Filter /FlateDecode /Length 1"),bad);
  check("duplicate Activity glyph",s=>s.replace("endstream","BT 210 638 Td (999) Tj ET\nendstream"),bad);
+  check("C437 repeated Activity on separate dated bands remains detached",s=>s.replace("210 620 Td (101)","210 620 Td (100)"),good);
+  check("C437 repeated Activity plus same own-Date still detached, not merged",s=>s.replace("210 620 Td (101)","210 620 Td (100)").replace("81 620 Td (02Aug26)","81 620 Td (01Aug26)"),good);
  check("base Block mismatch",s=>s.replace("511 638 Td (1:30)","511 638 Td (9:30)"),bad);
  check("base departure shift",s=>s.replace("292 638 Td (0900)","292 638 Td (0800)"),bad);
  check("base arrival shift",s=>s.replace("364 638 Td (1030)","364 638 Td (1130)"),bad);
@@ -302,6 +304,23 @@ function runPdcOriginalReadOnlyAdversarial(base64){
  const repacked=repackPdcSyntheticPdf(raw,()=>{}),repackedResult=inspectPdcPdfStrict(toBase64(repacked));
  const tests=[{name:"unchanged original detached",pass:baseline.status==="OBSERVED_FAMILY_DETACHED_HOLD",reason:baseline.reason||""},
  {name:"xref-repacked original detached",pass:repackedResult.status==="OBSERVED_FAMILY_DETACHED_HOLD",reason:repackedResult.reason||""}];
+ // C437: original-derived in-memory mutants; no raw Activity or roster values persist.
+ for(const width of [3,4]){
+  let changed=false;
+  const modified=repackPdcSyntheticPdf(raw,o=>{
+   const old=o[16],start=old.indexOf("stream\n")+7,end=old.lastIndexOf("\nendstream");
+   if(start<7||end<start)throw Error("ORIGINAL_STREAM_NOT_FOUND");
+   const content=old.slice(start,end);
+   const rows=[...content.matchAll(/BT 210 (\d+(?:\.\d+)?) Td \((\d{3,4})\) Tj ET/g)].filter(m=>m[2].length===width);
+   if(rows.length<2||rows[0][2]===rows[1][2])throw Error("ACTIVITY_PAIR_UNAVAILABLE");
+   const target=rows[1][0],replacement=target.replace("("+rows[1][2]+")","("+rows[0][2]+")");
+   changed=target!==replacement;
+   const next=content.replace(target,replacement);
+   o[16]=old.slice(0,start).replace(/\/Length \d+/,"/Length "+next.length)+next+old.slice(end);
+  });
+  const r=inspectPdcPdfStrict(toBase64(modified));
+  tests.push({name:"C437 original-derived repeated "+width+"-digit Activity held",pass:changed&&r.status==="OBSERVED_FAMILY_DETACHED_HOLD",reason:r.reason||""});
+ }
  const cases=[
   ["replace original header fill with full-page opaque cover",s=>s.replace(/0\.75 0\.75 0\.75 rg [^\n]+ re f/,"0 0 0 rg 0 0 598 842 re f")],
   ["shorten original From token",s=>s.replace(/(BT 244 \d+(?:\.\d+)? Td [^\n]*?\()[A-Z]{3}(\) Tj ET)/,"$1X$2")],
