@@ -4579,5 +4579,44 @@
     "productionReadiness": "OPEN",
     "productGate": "W-016 CONDITIONAL NOT STARTED; W-017 INSUFFICIENT EVIDENCE NOT STARTED; EvidenceHead/Receipt/dual-CAS unapproved",
     "noPrivateRosterValuesSaved": true
+  },
+  "c442IntegratedVerification": {
+    "id": "C442",
+    "observedAt": "2026-10-28 22 KST",
+    "status": "RESEARCH_ONLY_NO_PRODUCTION_APPROVAL",
+    "source": "one private 2026-08 PDC original, read-only, 39612 bytes",
+    "realOriginalDetachedCandidates": 26,
+    "fullSavedC426": {
+      "textSynthetic": "31/31 PASS",
+      "pdfEnvelopeSynthetic": "35/35 PASS",
+      "originalDerived": "24/24 PASS (1 unchanged original; 1 repacked derivative; 22 synthetic mutants)"
+    },
+    "savedC418Synthetic": "75/75 PASS",
+    "additionalOriginalDerivedMetamorphic": {
+      "validSubjectReplacement": "26 DETACHED; reportSubjectBoundToUid=false",
+      "validPrintStampReplacement": "26 DETACHED; publicationRevisionCertified=false",
+      "emptySubject": "FAIL_DOCUMENT, zero candidates",
+      "malformedPrintStamp": "FAIL_DOCUMENT, zero candidates",
+      "genuineAdditionalExports": 0
+    },
+    "skiaManifestDerived": {
+      "physicalRows": 62,
+      "leafLocators": 1116,
+      "uniquePhysicalRows": 62,
+      "uniqueLeafLocators": 1116,
+      "structuralErrors": 0,
+      "ownDate": 35,
+      "missingOwnDate": 27,
+      "directCrew": 36,
+      "pipeCrew": 26,
+      "page2Numeric": 6
+    },
+    "rasterExecuted": false,
+    "dartSembastExecuted": false,
+    "uidPublicationCertified": false,
+    "publicExactLayoutPdfGrade": "P5",
+    "weeklyHtmlGrade": "P3",
+    "productionReadiness": "OPEN",
+    "next": "Independent real Skia 2026-06/07/08 page2 Sum/continuation/ToUnicode-raster cross-check; certified eight August owner links remain HOLD."
   }
 }
