@@ -4549,5 +4549,35 @@
     "productionReadiness": "OPEN",
     "syncDebt": "C194 historical exact-write unresolved",
     "next": "Certified eight August source/company/active-same-UID Flight + Publication/Revision; approved file-backed evidence-only dual-CAS/replay/backup/wipe."
+  },
+  "c441StrokeGeometry": {
+    "id": "C441",
+    "observedAt": "2026-10-28 21 KST",
+    "status": "RESEARCH_ONLY_NOT_OWNER_APPROVED",
+    "privateOriginalGitBlobSha1": "8e7fec30f98458c770053bd7739e60869a87e33b",
+    "actualOriginalBytes": 39612,
+    "actualTextObjects": 495,
+    "actualGraphicLines": 891,
+    "actualStrokeLines": 876,
+    "actualHeaderFills": 14,
+    "actualStrokeSetupLines": 1,
+    "observedStrokeGeometrySha256": "25a189d61076bba3415bf7d3357caca588a2674ea122d81cdef243f7262f3d5a",
+    "sha256KnownVectors": "empty/abc PASS",
+    "independentSourceDerivedMutants": [
+      "100 post-Activity strokes densified across numeric Activity cell",
+      "one post-Activity grid-stroke coordinate shifted",
+      "two post-Activity stroke paint-order swapped"
+    ],
+    "preFixIndependentWhitelistEquivalent": "3/3 admitted; not full C426 runtime",
+    "postFixIndependentHashOracle": "3/3 rejected, original 1/1 admitted",
+    "savedC426RegressionCasesAdded": 3,
+    "fullC426SuiteRerunThisCycle": false,
+    "actualRasterRender": false,
+    "actualDartSembast": false,
+    "publicExactLayoutPdfGrade": "P5",
+    "weeklyHtmlGrade": "P3",
+    "productionReadiness": "OPEN",
+    "productGate": "W-016 CONDITIONAL NOT STARTED; W-017 INSUFFICIENT EVIDENCE NOT STARTED; EvidenceHead/Receipt/dual-CAS unapproved",
+    "noPrivateRosterValuesSaved": true
   }
 }

@@ -8,6 +8,7 @@ const HX=[75,109,143,162,186,210,244,268,292,316,340,364,388,492],BX=[81,109,143
 // Observed generator only; not a digital signature or general PDF contract.
 function sha256Latin1(s){const k=[0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2],h=[0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];const a=[];for(let i=0;i<s.length;i++)a.push(s.charCodeAt(i)&255);const len=a.length*8;a.push(128);while(a.length%64!==56)a.push(0);for(let i=7;i>=0;i--)a.push(Math.floor(len/2**(8*i))&255);const r=(x,n)=>(x>>>n)|(x<<(32-n));for(let off=0;off<a.length;off+=64){const w=new Array(64);for(let i=0;i<16;i++)w[i]=(a[off+i*4]<<24)|(a[off+i*4+1]<<16)|(a[off+i*4+2]<<8)|a[off+i*4+3];for(let i=16;i<64;i++){const s0=r(w[i-15],7)^r(w[i-15],18)^(w[i-15]>>>3),s1=r(w[i-2],17)^r(w[i-2],19)^(w[i-2]>>>10);w[i]=(w[i-16]+s0+w[i-7]+s1)>>>0;}let [a0,b,c,d,e,f,g,z]=h;for(let i=0;i<64;i++){const s1=r(e,6)^r(e,11)^r(e,25),ch=(e&f)^(~e&g),t1=(z+s1+ch+k[i]+w[i])>>>0,s0=r(a0,2)^r(a0,13)^r(a0,22),maj=(a0&b)^(a0&c)^(b&c),t2=(s0+maj)>>>0;z=g;g=f;f=e;e=(d+t1)>>>0;d=c;c=b;b=a0;a0=(t1+t2)>>>0;}h[0]=(h[0]+a0)>>>0;h[1]=(h[1]+b)>>>0;h[2]=(h[2]+c)>>>0;h[3]=(h[3]+d)>>>0;h[4]=(h[4]+e)>>>0;h[5]=(h[5]+f)>>>0;h[6]=(h[6]+g)>>>0;h[7]=(h[7]+z)>>>0;}return h.map(v=>v.toString(16).padStart(8,"0")).join("");}
 const PDC_CRITICAL_OBJECT_SHA256={"2":"ab51b5db2a9b7803ec80737224b1622397a92560575f301498bf5faef749b219","3":"b21c5c3baaafd865d9074ec18b3a11555be864ac3bbe9dc05e9e593d34f90979","4":"64796a66433420aaf87e0632e0674be7820267a06e7d0f29aa9c6f5f4be28779","5":"4c96dd82c0ecba9e44f762562a8345e87617acaa1674eaeb9aed9433672c92bd","6":"0d1a56a107286b56def5849e235997c6507c14f8892e0693911c1bd563446933","7":"64796a66433420aaf87e0632e0674be7820267a06e7d0f29aa9c6f5f4be28779","8":"64e0f071a8c8ad3408582493f11d36c5b5792a0458b35e8a736dc84706649cdb","9":"2af1415f554484c289e7ba59a5f37190d4428e327d2a2ccc0ee25f1154ef8380","10":"3d49678fc50998938f69cfaa6de86c22127d0adc0b605165c8476111b0a13fcc","11":"d76520299bcf1a6c36d60c3e866c402215413dddc807bf58a43b63a0540eb155","12":"c66f137c564b606aade19d229d2c73b483fb188ac4c5e11d516160ec9f5d2bf2","13":"3d49678fc50998938f69cfaa6de86c22127d0adc0b605165c8476111b0a13fcc","14":"b184a77e6a91bd5d516580631f2158befaf386371f4f12088b43e3b9ab11c779","15":"ca1dc12ea0e2749df1da941385bd88e8b3061748a371803014b435770c5e156d","18":"b40cb80bd225137c87da217e00931d94cc063d109e23f565c719062dd0a99768"};
+const PDC_OBSERVED_STROKE_GEOMETRY_SHA256="25a189d61076bba3415bf7d3357caca588a2674ea122d81cdef243f7262f3d5a";
 function fromBase64(s){const A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",v={};for(let i=0;i<64;i++)v[A[i]]=i;let out=[],acc=0,bits=0;for(const c of s){if(c==="=")break;const k=v[c];if(k===undefined)continue;acc=((acc<<6)|k)&0xffffff;bits+=6;if(bits>=8){bits-=8;out.push((acc>>bits)&255)}}return String.fromCharCode(...out);}
 function toBase64(s){const A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",out=[];for(let i=0;i<s.length;i+=3){const n=(s.charCodeAt(i)<<16)|((s.charCodeAt(i+1)||0)<<8)|(s.charCodeAt(i+2)||0);out.push(A[(n>>>18)&63]+A[(n>>>12)&63]+(i+1<s.length?A[(n>>>6)&63]:"=")+(i+2<s.length?A[n&63]:"="));}return out.join("");}
 const unesc=s=>s.replace(/\\([()\\])/g,"$1").replace(/\\n/g,"\n").replace(/\\r/g,"\r").replace(/\\t/g,"\t");
@@ -196,6 +197,8 @@ function validatePdcPhysicalEnvelope(raw){
    else return fail("UNSUPPORTED_PAINT_OPERATOR");
   }
   if(a!==1||b!==14||c!==876)return fail("UNSUPPORTED_PAINT_PROFILE");
+   // C441: exact observed ordered stroke geometry, not a document authenticity signature.
+   if(sha256Latin1(graphics.filter(s=>stroke.test(s)).join("\n"))!==PDC_OBSERVED_STROKE_GEOMETRY_SHA256)return fail("STROKE_GEOMETRY_PROFILE");
   const earlier=[...content.matchAll(/\bBT\b([\s\S]*?)\bET\b/g)].map(m=>{
    const p=m[1].match(/(\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)\s+Td\b/);
    return p?{i:m.index,x:+p[1],y:+p[2]}:null;
@@ -361,6 +364,24 @@ function runPdcOriginalReadOnlyAdversarial(base64){
   const r=inspectPdcPdfStrict(toBase64(modified));
   tests.push({name:"C437 original-derived repeated "+width+"-digit Activity held",pass:changed&&r.status==="OBSERVED_FAMILY_DETACHED_HOLD",reason:r.reason||""});
  }
+
+  // C441: three original-derived adversarial stroke mutants; no private text retained.
+  const c441StrokeLine=/^-?\d+(?:\.\d+)?\s+-?\d+(?:\.\d+)?\s+m\s+-?\d+(?:\.\d+)?\s+-?\d+(?:\.\d+)?\s+l\s+S$/;
+  const c441MutateStrokes=(stream,kind)=>{
+    const lines=stream.split("\n");
+    const first=lines.findIndex(s=>/^BT 210 638 Td \(\d{3,4}\) Tj ET$/.test(s));
+    if(first<0)return stream;
+    const positions=lines.map((s,i)=>i>first&&c441StrokeLine.test(s)?i:-1).filter(i=>i>=0);
+    if(positions.length<100)return stream;
+    if(kind==="dense"){
+      for(let k=0;k<100;k++){const y=(634+k*0.09).toFixed(2);lines[positions[k]]="190 "+y+" m 238 "+y+" l S";}
+    }else if(kind==="shift"){
+      const i=positions[0];lines[i]=lines[i].replace(/^(-?\d+(?:\.\d+)?\s+)(-?\d+(?:\.\d+)?)/,(_,x,y)=>x+(Number(y)+1));
+    }else if(kind==="swap"){
+      const a=positions[0],b=positions[1];[lines[a],lines[b]]=[lines[b],lines[a]];
+    }
+    return lines.join("\n");
+  };
  const cases=[
   ["replace original header fill with full-page opaque cover",s=>s.replace(/0\.75 0\.75 0\.75 rg [^\n]+ re f/,"0 0 0 rg 0 0 598 842 re f")],
   ["shorten original From token",s=>s.replace(/(BT 244 \d+(?:\.\d+)? Td [^\n]*?\()[A-Z]{3}(\) Tj ET)/,"$1X$2")],
@@ -370,7 +391,10 @@ function runPdcOriginalReadOnlyAdversarial(base64){
   ["C438 black numeric Activity inside BT",s=>s.replace(/(BT 210 \d+(?:\.\d+)? Td )(?=\()/,"$1 0 0 0 rg ")],
   ["C438 white header text inside BT",s=>s.replace("75 647 Td 0 0 0 rg","75 647 Td 1 1 1 rg")],
   ["C438 black header rectangle under black text",s=>s.replace("0.75 0.75 0.75 rg 208.1 645.1 33.8 8.8 re f","0 0 0 rg 208.1 645.1 33.8 8.8 re f")],
-  ["C438 moved header rectangle",s=>s.replace("0.75 0.75 0.75 rg 208.1 645.1 33.8 8.8 re f","0.75 0.75 0.75 rg 208.1 636.1 33.8 8.8 re f")]
+  ["C438 moved header rectangle",s=>s.replace("0.75 0.75 0.75 rg 208.1 645.1 33.8 8.8 re f","0.75 0.75 0.75 rg 208.1 636.1 33.8 8.8 re f")],
+   ["C441 dense post-Activity stroke overpaint",s=>c441MutateStrokes(s,"dense")],
+   ["C441 single grid stroke coordinate shift",s=>c441MutateStrokes(s,"shift")],
+   ["C441 grid stroke paint-order swap",s=>c441MutateStrokes(s,"swap")]
  ];
  for(const [name,edit] of cases){
   let changed=false;
