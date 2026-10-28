@@ -4324,5 +4324,56 @@
     "weeklyHtmlGrade": "P3",
     "productionReadiness": "OPEN",
     "next": "Source-certified August year/carrier/subject/Publication plus Aug03-31 company and active same-UID Flight for eight detached cross-family edges; approved evidence-only Dart/Sembast lifecycle."
+  },
+  "c437ActivityDuplicateGuardCorrection": {
+    "id": "C437",
+    "observedAt": "2026-10-28 17 KST",
+    "status": "RESEARCH_ONLY_NOT_OWNER_APPROVED",
+    "researchProfileDelta": "pdc-generator-14col-physical-row-identity-v1.06-C437",
+    "actualOriginalScope": "Unchanged private 2026-08 PDC 39,612-byte PDF, read-only; 26 distinct numeric Activity values in original, 49 physical bands, 22 nonflight, one auxiliary; no raw private cells saved.",
+    "originalGitBlobSha1": "8e7fec30f98458c770053bd7739e60869a87e33b",
+    "defect": "C426 research sentinel falsely rejected same-width numeric Activity repeated in a different physical band (DUPLICATE_NUMERIC_ACTIVITY). Global Activity uniqueness is not a valid parser invariant.",
+    "correctedResearchSentinel": "Remove global numeric Activity seen-Set; retain physical band/cell uniqueness, report-family grid/header/clock/Block validation and nonflight exclusion. Still always DETACHED_HOLD, no FlightRecord creation or auto-merge.",
+    "independentBefore": {
+      "syntheticDifferentDateDuplicate": "FAIL_DOCUMENT",
+      "syntheticSameDateDuplicate": "FAIL_DOCUMENT"
+    },
+    "verifiedAfter": {
+      "syntheticTextPassed": 31,
+      "syntheticTextFailed": 0,
+      "syntheticEnvelopePassed": 31,
+      "syntheticEnvelopeFailed": 0,
+      "originalDerivedPassed": 8,
+      "originalDerivedFailed": 0,
+      "unchangedOriginal": "OBSERVED_FAMILY_DETACHED_HOLD",
+      "originalDerivedNewPositiveMutants": 2,
+      "mutantsAreSyntheticNotNewRealExports": true,
+      "execution": "Connector V8 evaluator, not Node, Dart, Sembast or production"
+    },
+    "requiredPhysicalIdentity": [
+      "source raw fingerprint",
+      "immutable parser profile identity",
+      "source page index",
+      "physical band or table row locator",
+      "cell-level locator for field evidence"
+    ],
+    "prohibited": [
+      "Treat Activity or Pairing as unique source row key",
+      "Treat same Activity/date/route as same actual FlightRecord",
+      "Infer missing own Date, crew, operational year, carrier, Publication or UID",
+      "Allow duplicated glyph within one physical cell",
+      "Treat source-internal base-clock equality as company Block authority",
+      "Create or overwrite canonical FlightRecord"
+    ],
+    "open": [
+      "Approved immutable ParserProfile and field/revision schema",
+      "Standards-compliant PDF parser and visible-text/render validation",
+      "Source-certified carrier/year/subject/Publication",
+      "Post-Aug02 company data and active same-UID Flight for eight August cross-family edges",
+      "Approved W-016/W-017 actual Dart/Sembast evidence-only lifecycle"
+    ],
+    "publicExactLayoutPdfGrade": "P5",
+    "weeklyHtmlGrade": "P3",
+    "productionReadiness": "OPEN"
   }
 }
