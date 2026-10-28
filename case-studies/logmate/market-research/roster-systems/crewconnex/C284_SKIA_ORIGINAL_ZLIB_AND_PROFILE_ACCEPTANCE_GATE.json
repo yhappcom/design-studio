@@ -342,5 +342,103 @@
     },
     "syncDebt": "C194 historical exact-write debt unresolved; C265 superseded 2025 cell state corrected by C280; no master index changes justified",
     "next": "Obtain authorized same-export four-digit Skia year/subject/Publication and Aug03-31 company/active same-UID Flight records; resolve eight August cross-family detached links with verified nonflight barriers and source revision, then approved evidence-only persistence acceptance."
+  },
+  "c448AdmissionLattice": {
+    "date": "2026-10-29 04 KST",
+    "version": "skia-tagged-printer/research-2.15-C448",
+    "status": "RESEARCH_ONLY_PRODUCTION_OPEN",
+    "evidenceScope": {
+      "source": "Fresh C194 privacy-safe source-derived locator manifest (62 rows, blob 9a2d403cfb559144ea9b1882d308683dc9999fa9); prior original-PDF verification C443/C447, not newly repeated",
+      "originalPdfThisCycle": "Read-only original June Skia PDF: first compressed page content stream independently decoded to 140671 bytes, 733 Tj and 101 BT; F9 ToUnicode reference checked. NOT all-page/full-row semantic/raster verification.",
+      "privateCompanyThisCycle": "2026 company and curated Preview XLSX read-only fetched; exploratory ZIP decoder row census not independently validated and EXCLUDED from evidence. C348/C350/C435 prior verified joins retained as PRIOR.",
+      "public": "Two focused searches; no lawful anonymized exact-layout P1 or official schema P2. Identifying public roster lead not acquired or indexed."
+    },
+    "jointManifestCensus": {
+      "total": 62,
+      "sourcePageTrUnique": 62,
+      "allOperationalYearStatus": "UNVERIFIED",
+      "curated": 43,
+      "uncurated": 19,
+      "ownDate": 35,
+      "missingOwnDate": 27,
+      "directCrewShape": 36,
+      "pipeCrewShape": 26,
+      "pairingPresent": 30,
+      "pairingAbsent": 32,
+      "jointStates": [
+        {
+          "scope": "curated",
+          "ownDate": true,
+          "directCrew": true,
+          "pairing": true,
+          "count": 21
+        },
+        {
+          "scope": "curated",
+          "ownDate": true,
+          "directCrew": true,
+          "pairing": false,
+          "count": 4
+        },
+        {
+          "scope": "curated",
+          "ownDate": false,
+          "directCrew": false,
+          "pairing": false,
+          "count": 18
+        },
+        {
+          "scope": "uncurated",
+          "ownDate": true,
+          "directCrew": true,
+          "pairing": true,
+          "count": 9
+        },
+        {
+          "scope": "uncurated",
+          "ownDate": true,
+          "directCrew": true,
+          "pairing": false,
+          "count": 1
+        },
+        {
+          "scope": "uncurated",
+          "ownDate": false,
+          "directCrew": false,
+          "pairing": false,
+          "count": 8
+        },
+        {
+          "scope": "uncurated",
+          "ownDate": false,
+          "directCrew": true,
+          "pairing": false,
+          "count": 1
+        }
+      ],
+      "priorCuratedDateCompanyPartition": "PRIOR C348/C350: of 43 curated, 19 printed own-Date equal to company date, 6 printed own-Date +1, 18 no own-Date. This cycle did not independently rejoin source bytes.",
+      "sourceSpecificExceptions": "Four curated printed-date/direct-crew rows omit Pairing; one uncurated undated/direct-crew row (August p1 TR14) contradicts Date-absent=>pipe."
+    },
+    "proposedAdmissionContract": {
+      "stages": [
+        "profile+report-family+source-scoped physical locator+whole-body/nonflight/Sum validation",
+        "independently certified source carrier, four-digit operational year, report subject and Publication/revision",
+        "own-Date authority, no inferred missing date or automatic +/-1 correction",
+        "0/1/many active same-UID existing FlightRecord cardinality",
+        "explicit user review and source-only evidence store with approved CAS/receipt/rollback",
+        "crew name verification before structured CrewParticipant; raw Emp#/CC/Pos remain detached"
+      ],
+      "currentOutcome": "62/62 DETACHED_HOLD under current missing source year/Publication/UID and unimplemented W-016/017; zero FlightRecord creation and zero auto-attachment",
+      "sourceOnlyMatchNeverCertifiesOwner": true,
+      "syntheticOracle": "12/12 policy branches PASS in standalone V8; hypothetical approved-store branches are PROPOSED, NOT implemented or owner-approved",
+      "production": "OPEN",
+      "publicPdf": "P5",
+      "weeklyHtml": "P3",
+      "W016": "CONDITIONAL_NOT_STARTED",
+      "W017": "INSUFFICIENT_EVIDENCE_NOT_STARTED"
+    },
+    "unresolved": "Source-certified same-export year/subject/Publication, Aug03-31 company and active UID Flight coverage, verified crew name, production evidence-only persistence, actual full PDF raster. Historical C194 exact-write debt cannot be safely reconstructed.",
+    "adjacentValue": "Completed joint 62-row provenance/Pairing/crew/Date cross-tab, 12 policy adversaries, direct June first-stream check, current LogMate contract/code review and two public acquisition passes. Remaining eight August cross-family edges cannot be promoted without new authenticated data.",
+    "next": "Authenticated same-export 2026 August year/subject/Publication and Aug03-31 company + same-UID Flight evidence to adjudicate eight detached Skia/PDC edges; then approved evidence-only storage lifecycle acceptance."
   }
 }
