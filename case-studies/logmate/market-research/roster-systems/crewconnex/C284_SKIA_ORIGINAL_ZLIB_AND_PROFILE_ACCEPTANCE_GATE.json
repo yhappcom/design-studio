@@ -133,5 +133,76 @@
     "C265 contains superseded wrong 2025 empty-cell counts; correct ntTme=2,instTme=0,toCnt=5,ldCnt=4 from C280",
     "Research log and prior index/profile updates remain to synchronize where changes are material"
   ],
-  "nextIntegratedTarget": "Authenticate source-bound Skia year/publication and 27 undated row crew/section antecedents, then date-aware adjudicate 19 August uncurated vs company/PDC and run authorized UID-owned evidence-only Sembast CAS/replay/deletion/restore acceptance."
+  "nextIntegratedTarget": "Authenticate source-bound Skia year/publication and 27 undated row crew/section antecedents, then date-aware adjudicate 19 August uncurated vs company/PDC and run authorized UID-owned evidence-only Sembast CAS/replay/deletion/restore acceptance.",
+  "c446LineageAdmission": {
+    "date": "2026-10-29 02 KST",
+    "version": "skia-tagged-printer/research-2.13-C446",
+    "status": "RESEARCH_ONLY_NOT_APPROVED",
+    "source": "Existing C194 privacy-safe real-PDF-derived 62-row locator manifest at current Git blob 9a2d403cfb559144ea9b1882d308683dc9999fa9; C443 real-PDF MCID 1116/1116 is prior verification, not re-executed.",
+    "physicalLineage": {
+      "numericRows": 62,
+      "distinctDirectAnchors": 36,
+      "pipeRows": 26,
+      "groupSizes": {
+        "single": 14,
+        "two": 20,
+        "four": 2
+      },
+      "monthGroupSizes": {
+        "06": {
+          "single": 4,
+          "two": 7,
+          "four": 0
+        },
+        "07": {
+          "single": 4,
+          "two": 7,
+          "four": 1
+        },
+        "08": {
+          "single": 6,
+          "two": 6,
+          "four": 1
+        }
+      },
+      "ownDateDirect": 35,
+      "missingDateDirect": 1,
+      "missingDatePipe": 26,
+      "directAnchorsWithoutPairing": 6,
+      "anchorsWithPipeAndWithoutPairing": 2,
+      "pipeAcrossPage": 0,
+      "exception": {
+        "month": "08",
+        "page": 1,
+        "primaryTr": 14,
+        "ownDate": "ABSENT",
+        "crew": "MULTILEAF_6",
+        "pairing": "ABSENT",
+        "curated": false
+      }
+    },
+    "independentManifestChecks": {
+      "unmodifiedRows": 62,
+      "baselineViolations": 0,
+      "adversarialMutationsRejected": 11,
+      "adversarialMutationsTotal": 11,
+      "scope": "V8 synthetic manifest mutations, not PDF reconstruction or Dart tests"
+    },
+    "profileContract": {
+      "detector": "Separate Skia tagged family from PDC; typed primary Table/TR/TD and per-page MCID; validate Sum/nonflight barriers and profile version.",
+      "rowModel": "Independent DateCellState, PairingCellState and CrewCellState; direct-without-Date is a valid observed detached row, not a pipe or safe date inheritance.",
+      "lineage": "Physical same-source same-page anchor+TR chain only; 36 physical groups are not certified duties, crew identities or FlightRecords.",
+      "admission": "Structural linkage is not semantic authorization. Missing Date, year, Publication, owner UID or verified crew name remains DETACHED_REVIEW even when chain shape passes.",
+      "revision": "Preserve source/profile/physical locators and changed snapshots, explicit review, no silent overwrite; W-016/017 not approved.",
+      "unsupported": "Unknown row shape, nonflight/Sum contamination, mismatched leaf cardinality or missing anchor fails closed; zero standalone FlightRecord."
+    },
+    "readiness": {
+      "publicExactPdf": "P5",
+      "weeklyHtml": "P3",
+      "production": "OPEN",
+      "newOriginalPdfDecode": false,
+      "newCompanyOrUidJoin": false,
+      "actualDartSembast": false
+    }
+  }
 }
