@@ -1228,3 +1228,13 @@ Re-read current LogMate AGENTS/MASTER/import/CrewConnex specs, crew ownership an
 - **Confidence:** one-layout research fail-closed improvement only; public PDF P5, weekly HTML P3, Production OPEN; W-016/017 unapproved, eight August edges detached, C194 historical exact-sync debt unresolved.
 - **Adjacent completed:** resource/font integrity + inherited page geometry + Catalog action tested together; further real-year/Publication/UID joins and rendering require independent evidence/runtime.
 - **ONE next:** independently rendered genuine Skia/PDC layout and authenticated August eight-edge owner/Publication/UID join, then approved real-file evidence-only lifecycle.
+
+
+## 2026-10-28 20 KST — C440 CrewConnex source-date/owner-readiness integrated checkpoint
+
+- **Authority/read-only:** LogMate current main `2f78e731` AGENTS/MASTER/import/CrewConnex/domain/repository/tests/W-004 and private corpus inventory first; Design Studio plan/indexes/queue/C194/PDC profile/C426 next. No LogMate write or private raw roster copied.
+- **Actual original PDC independently redecoded:** 39,612 bytes, 495 BT/Tj, 31 printed DDMonYY dates, 26 numeric (13 own Date), 22 nonflight (18 own Date), one auxiliary; first date uses font-state switch, two identical overpainted title/period pairs, 12 year-like four-digit clock cells. CreationDate after printed period is not Publication or source-century proof. C426 already supports these; no new detector defect or PDF render PASS claimed.
+- **Real-derived Skia reaggregation:** C194 62 rows (June18/July22/Aug22), own Date 35/missing 27, full source locator 62/62 unique; combined with PDC 88 observations, 40 missing own Date, **not 88 flights**. No new company Aug03–31/UID/revision joins. Eight edges HOLD.
+- **Product delta:** PR #31 merged at LogMate `2f78e731`: W-004 Draft baseline CAS repair; historical recorded 52 focused/931 full PASS +1 SKIP, no tests rerun here. W-016/017 evidence-only stores remain NOT STARTED; Draft CAS cannot substitute source revision/dual CAS.
+- **Synthetic and public gap:** 20/20 independent JS policy cases (not Dart/Sembast). Two focused public exact-layout searches yielded no anonymous P1 or official P2; identifiable roster result DO NOT ACQUIRE (not opened/indexed). PDF P5/weekly HTML P3; no deployment/field-grade change.
+- **Saved:** C200 dossier, PDC research profile, REVALIDATION_QUEUE, RESEARCH_LOG; four master CSVs intentionally unchanged. C194 historical exact-write sync debt OPEN. **ONE next:** certified eight-edge source/company/UID/Publication reconciliation and approved evidence-only file-backed lifecycle.

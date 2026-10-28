@@ -4476,5 +4476,78 @@
     "publicExactLayoutPdfGrade": "P5",
     "weeklyHtmlGrade": "P3",
     "productionReadiness": "OPEN"
+  },
+  "c440SourceDateAndOwnerReadiness": {
+    "id": "C440",
+    "observedAt": "2026-10-28 20 KST",
+    "status": "RESEARCH_ONLY_NOT_OWNER_APPROVED",
+    "researchProfileDelta": "pdc-generator-14col-source-date-domain-and-duplicate-paint-v1.09-C440",
+    "sourceScope": {
+      "privatePdcGitBlobSha1": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "bytes": 39612,
+      "btTextObjects": 495,
+      "printedDDMonYYCalendarAnchors": 31,
+      "numericActivityBands": 26,
+      "numericOwnDate": 13,
+      "numericMissingOwnDate": 13,
+      "nonflightBands": 22,
+      "nonflightOwnDate": 18,
+      "auxiliaryBands": 1,
+      "firstDayFontSwitch": true,
+      "identicalTitleOverpaintObjects": 2,
+      "identicalPeriodOverpaintObjects": 2,
+      "duplicateBodyTextPositionPairs": 0,
+      "yearLikeHHMMClockCells": 12,
+      "printedYearWidth": 2,
+      "independentlyAuthenticatedOperationalCentury": false,
+      "publicationCertified": false
+    },
+    "skiaManifestCrosscheck": {
+      "sourceObservations": 62,
+      "ownDate": 35,
+      "missingOwnDate": 27,
+      "sourceScopedLocatorsUnique": 62,
+      "sourceLessDuplicateAliases": 24,
+      "combinedSkiaAndPdcObservations": 88,
+      "combinedMissingOwnDate": 40,
+      "theseAreNotAuthenticatedFlights": true
+    },
+    "currentProduct": {
+      "logmateMain": "2f78e7310dfe2c46c1f1cba0583e2abdd269ffdf",
+      "w004Merged": true,
+      "w004PriorRecordedFocusedPass": 52,
+      "w004PriorRecordedFullPass": 931,
+      "w004PriorRecordedFullSkip": 1,
+      "testsRerunThisCycle": false,
+      "w016W017": "NOT_STARTED",
+      "draftCasNotCrewConnexEvidenceCas": true
+    },
+    "validation": {
+      "independentRealPdfByteRecheck": true,
+      "existingC426AlreadyRecognizedDuplicatePeriodAndFirstDate": true,
+      "newC426Fix": false,
+      "syntheticPolicyPass": 20,
+      "syntheticPolicyTotal": 20,
+      "realRasterRender": false,
+      "dartSembastExecuted": false
+    },
+    "requiredContract": [
+      "Keep printed DDMonYY/period and physical own-Date distinct from inferred calendar-group date, company operational date and owner Flight date",
+      "Do not infer four-digit operational year from YY26, PDF CreationDate, print stamp or 19xx/20xx HHMM clocks",
+      "Treat identical duplicated report/period text objects as one observed header after exact physical validation; conflicting duplicates fail closed",
+      "Source fingerprint+report family+page+physical band/cell is source identity, never Activity/Pairing",
+      "Zero/one/many same-UID Flight matching and Publication/Revision review remain separate owner-approved evidence-only gates",
+      "No date/crew forward-fill, PIC/SIC/PFPM/deadhead inference, BLH=Block substitution or FlightRecord creation"
+    ],
+    "publicEvidence": {
+      "exactLayoutPdfGrade": "P5",
+      "weeklyHtmlGrade": "P3",
+      "anonymousRawSampleFound": false,
+      "identifiableRosterResult": "DO_NOT_ACQUIRE_NOT_OPENED_OR_INDEXED",
+      "searchPasses": 2
+    },
+    "productionReadiness": "OPEN",
+    "syncDebt": "C194 historical exact-write unresolved",
+    "next": "Certified eight August source/company/active-same-UID Flight + Publication/Revision; approved file-backed evidence-only dual-CAS/replay/backup/wipe."
   }
 }
