@@ -4217,5 +4217,40 @@
     ],
     "readiness": "PRODUCTION_OPEN",
     "next": "Authorized full Aug03–31 company + source-certified year/carrier/subject/Publication and active same-UID Flight for eight Skia/PDC edges; approved file-backed evidence-only lifecycle"
+  },
+  "c430ObservedPaintAndRouteGate": {
+    "status": "RESEARCH_OBSERVED_FAMILY_ONLY_NOT_APPROVED",
+    "sourceGitBlobSha1": "8e7fec30f98458c770053bd7739e60869a87e33b",
+    "realOriginal": {
+      "contentStreamBytes": 33542,
+      "textObjects": 495,
+      "graphicsInstructionLines": 891,
+      "strokeSetupLines": 1,
+      "filledHeaderRectangles": 14,
+      "gridStrokeLines": 876,
+      "filledRectanglesOverEarlierTextAnchors": 0,
+      "fromTokenUppercaseThree": 44,
+      "toTokenUppercaseThree": 44,
+      "routeBearingNumericBands": 26,
+      "routeBearingNonflightBands": 18
+    },
+    "researchSentinel": {
+      "rejectUnknownPaint": true,
+      "rejectUnrecognizedRouteTokenShape": true,
+      "sourceSpecificNotPortable": true,
+      "realPdfAndRepackedHold": true,
+      "syntheticTextPass": 29,
+      "syntheticEnvelopePass": 31,
+      "realOriginalDerivedPass": 6,
+      "realOriginalDerivedMutations": 4
+    },
+    "limitations": [
+      "Not a PDF renderer; narrow occlusion and graphics grammar cannot certify visual equivalence",
+      "Three uppercase characters do not prove airport identity or semantic validity",
+      "Original mutations are synthetic adversarial, not additional export formats",
+      "No carrier, certified four-digit operational year, Publication/revision, subject-to-UID or active same-UID Flight",
+      "No W-016/017 owner approval, Dart/Sembast transaction or production parser"
+    ],
+    "readiness": "PRODUCTION_OPEN"
   }
 }

@@ -56,10 +56,11 @@ function inspectPdcPdfTextLayer(base64){
    if(activity.length===3)threeDigit++;else fourDigit++;if(date!==undefined)ownDateNumeric++;
    if(block===undefined||!/^\d{1,2}:[0-5]\d$/.test(block))return fail("INVALID_PRINTED_BLOCK");
    if(!r.get(244)||!r.get(316))return fail("MISSING_NUMERIC_ROUTE");
+    if(!/^[A-Z]{3}$/.test(r.get(244))||!/^[A-Z]{3}$/.test(r.get(316)))return fail("INVALID_NUMERIC_ROUTE_SHAPE");
    for(const x of [268,292,340,364])if(!/^(?:[01]\d|2[0-3])[0-5]\d(?:\+1)?$/.test(r.get(x)||""))return fail("INVALID_NUMERIC_CLOCK");
    const baseElapsed=clockMin(r.get(364))-clockMin(r.get(292));
    if(baseElapsed<=0||baseElapsed!==blockMin(block))return fail("PRINTED_BASE_CLOCK_BLOCK_CONTRADICTION");
-  }else{nonflight++;if(block!==undefined)return fail("NONFLIGHT_WITH_BLOCK");if(date!==undefined)ownDateNonflight++;}
+  }else{nonflight++;if(block!==undefined)return fail("NONFLIGHT_WITH_BLOCK");if(date!==undefined)ownDateNonflight++;for(const x of [244,316])if(r.has(x)&&!/^[A-Z]{3}$/.test(r.get(x)))return fail("INVALID_NONFLIGHT_ROUTE_SHAPE");}
  }
  if(numeric!==26||nonflight!==22||aux!==1||ownDateNumeric!==13||ownDateNonflight!==18||threeDigit!==8||fourDigit!==18)return fail("SOURCE_FAMILY_COUNTS");
  return {status:"OBSERVED_FAMILY_DETACHED_HOLD",profile:"pdc-generator-14col-Aug26-single-page-C426",glyphs:495,bodyGlyphs:473,headers:14,bands:49,numeric,nonflight,aux,ownDateNumeric,missingOwnDateNumeric:13,ownDateNonflight,threeDigit,fourDigit,printedYearSuffix:"26",fourDigitOperationalYearCertified:false,printedSubjectLabelPresent:true,reportSubjectBoundToUid:false,printedGenerationStampPresent:true,publicationRevisionCertified:false,candidates:26,createsFlight:false,overwritesBlock:false,crewProvidedPerLeg:false};
@@ -146,6 +147,32 @@ function validatePdcPhysicalEnvelope(raw){
  if(!/^\s*<<\s*\/Length\s+\d+\s*>>\s*stream\n/.test(ob))return fail("UNSUPPORTED_CONTENT_DICTIONARY");
  if(!length||p<7||e<0||e-p!==length)return fail("STREAM_LENGTH");
  const content=ob.slice(p,e);
+ // C430: observed-family graphics whitelist; NOT a renderer or portable profile.
+ // Original: 1 stroke setup, 14 header fills, 876 grid strokes; synthetic: none.
+ const outside=content.replace(/\bBT\b[\s\S]*?\bET\b/g,"");
+ const graphics=outside.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+ const num="-?\\d+(?:\\.\\d+)?";
+ const fill=new RegExp("^("+num+"\\s+){3}rg\\s+("+num+"\\s+){4}re\\s+f$");
+ const stroke=new RegExp("^("+num+"\\s+){2}m\\s+("+num+"\\s+){2}l\\s+S$");
+ if(graphics.length){
+  if(graphics.length!==891)return fail("UNSUPPORTED_PAINT_CENSUS");
+  let a=0,b=0,c=0;
+  for(const line of graphics){
+   if(line==="0 0 0 RG 0.10 w [] 0 d")a++;
+   else if(fill.test(line))b++;
+   else if(stroke.test(line))c++;
+   else return fail("UNSUPPORTED_PAINT_OPERATOR");
+  }
+  if(a!==1||b!==14||c!==876)return fail("UNSUPPORTED_PAINT_PROFILE");
+  const earlier=[...content.matchAll(/\bBT\b([\s\S]*?)\bET\b/g)].map(m=>{
+   const p=m[1].match(/(\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)\s+Td\b/);
+   return p?{i:m.index,x:+p[1],y:+p[2]}:null;
+  }).filter(Boolean);
+  for(const m of content.matchAll(/(-?\d+(?:\.\d+)?)\s+(-?\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)\s+re\s+f\b/g)){
+   const x=+m[1],y=+m[2],w=+m[3],h=+m[4];
+   if(earlier.some(g=>g.i<m.index&&g.x>=x&&g.x<=x+w&&g.y>=y&&g.y<=y+h))return fail("PAINT_COVERS_PRIOR_TEXT_ANCHOR");
+  }
+ }
  if(/\b(?:cm|Tr|Tm)\b/.test(content))return fail("UNSUPPORTED_CONTENT_TRANSFORM_OR_RENDER_MODE");
  if(!content.trimEnd().endsWith("ET"))return fail("TRAILING_NON_TEXT_AFTER_LAST_ET");
  if((raw.match(/\bstream\r?\n/g)||[]).length!==1||/\/Filter\s*\/FlateDecode|\/Encrypt\b/.test(raw))return fail("UNSUPPORTED_STREAM");
@@ -251,7 +278,47 @@ function runPdcEnvelopeTests(){
  // No verified universal airport-code grammar: report a gap rather than silently claiming validation.
  const invalidRoute=editContent("244 638 Td (AAA)","244 638 Td (X)",false);
  const knownRouteShapeFailOpen=inspectPdcPdfStrict(toBase64(invalidRoute)).status==="OBSERVED_FAMILY_DETACHED_HOLD";
+ tests.push({name:"opaque overlay before footer rejected",pass:!knownVisualFailOpen,reason:knownVisualFailOpen?"STILL_FAIL_OPEN":""});
+ tests.push({name:"one-character numeric route rejected",pass:!knownRouteShapeFailOpen,reason:knownRouteShapeFailOpen?"STILL_FAIL_OPEN":""});
+ for(const [name,needle,value] of [
+  ["nonflight short route","244 629 Td (AAA)","244 629 Td (X)"],
+  ["numeric four-letter route","316 638 Td (BBB)","316 638 Td (BBBB)"],
+  ["nonflight lower-case route","316 629 Td (BBB)","316 629 Td (bbb)"]
+ ]){
+  const mutant=repackPdcSyntheticPdf(full,o=>{o[16]=o[16].replace(needle,value);o[16]=o[16].replace(/\/Length \d+/,"/Length "+o[16].split("stream\n")[1].split("\nendstream")[0].length);});
+  const r=inspectPdcPdfStrict(toBase64(mutant));tests.push({name,pass:r.status==="FAIL_DOCUMENT",reason:r.reason||""});
+ }
+ const painted=repackPdcSyntheticPdf(full,o=>{o[16]=o[16].replace("BT 559 43 Td (1) Tj ET","0 0 0 RG 100 w 0 0 m 598 842 l S\nBT 559 43 Td (1) Tj ET");o[16]=o[16].replace(/\/Length \d+/,"/Length "+o[16].split("stream\n")[1].split("\nendstream")[0].length);});
+ const paintedResult=inspectPdcPdfStrict(toBase64(painted));tests.push({name:"opaque thick stroke unsupported",pass:paintedResult.status==="FAIL_DOCUMENT",reason:paintedResult.reason||""});
  return {passed:tests.filter(x=>x.pass).length,failed:tests.filter(x=>!x.pass).length,tests,baseline:base.status,knownVisualFailOpen,knownRouteShapeFailOpen};
 }
 export {validatePdcPhysicalEnvelope,wrapPdcSyntheticTextMock,pdcEnvelopeMutations,inspectPdcPdfStrict,runPdcEnvelopeTests};
 if(typeof process!=="undefined"&&process.argv&&process.argv[1]&&process.argv[1].endsWith("C426_PDC_NATIVE_PDF_TEXT_ADMISSION.mjs")){const r=runPdcEnvelopeTests();console.log(JSON.stringify(r,null,2));if(r.failed)process.exitCode=1;}
+
+
+// C430: caller-supplied private original is never logged, copied or committed.
+function runPdcOriginalReadOnlyAdversarial(base64){
+ const raw=fromBase64(base64),baseline=inspectPdcPdfStrict(base64);
+ const repacked=repackPdcSyntheticPdf(raw,()=>{}),repackedResult=inspectPdcPdfStrict(toBase64(repacked));
+ const tests=[{name:"unchanged original detached",pass:baseline.status==="OBSERVED_FAMILY_DETACHED_HOLD",reason:baseline.reason||""},
+ {name:"xref-repacked original detached",pass:repackedResult.status==="OBSERVED_FAMILY_DETACHED_HOLD",reason:repackedResult.reason||""}];
+ const cases=[
+  ["replace original header fill with full-page opaque cover",s=>s.replace(/0\.75 0\.75 0\.75 rg [^\n]+ re f/,"0 0 0 rg 0 0 598 842 re f")],
+  ["shorten original From token",s=>s.replace(/(BT 244 \d+(?:\.\d+)? Td [^\n]*?\()[A-Z]{3}(\) Tj ET)/,"$1X$2")],
+  ["change original stroke setup to thick",s=>s.replace("0.10 w","100 w")],
+  ["insert original full-page overlay before footer",s=>s.replace(/BT 559 43 Td/,"0 0 0 rg 0 0 598 842 re f\nBT 559 43 Td")]
+ ];
+ for(const [name,edit] of cases){
+  let changed=false;
+  const modified=repackPdcSyntheticPdf(raw,o=>{
+   const old=o[16],start=old.indexOf("stream\n")+7,end=old.lastIndexOf("\nendstream");
+   if(start<7||end<start)throw Error("ORIGINAL_STREAM_NOT_FOUND");
+   const content=old.slice(start,end),next=edit(content);changed=next!==content;
+   o[16]=old.slice(0,start).replace(/\/Length \d+/,"/Length "+next.length)+next+old.slice(end);
+  });
+  const r=inspectPdcPdfStrict(toBase64(modified));
+  tests.push({name,pass:changed&&r.status==="FAIL_DOCUMENT",reason:r.reason||""});
+ }
+ return {passed:tests.filter(t=>t.pass).length,failed:tests.filter(t=>!t.pass).length,tests};
+}
+export {runPdcOriginalReadOnlyAdversarial};
