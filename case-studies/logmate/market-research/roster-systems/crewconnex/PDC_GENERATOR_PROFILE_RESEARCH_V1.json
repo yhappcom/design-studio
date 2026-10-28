@@ -4252,5 +4252,77 @@
       "No W-016/017 owner approval, Dart/Sembast transaction or production parser"
     ],
     "readiness": "PRODUCTION_OPEN"
+  },
+  "c436PairingReuseAndActivityIdentityGate": {
+    "id": "C436",
+    "observedAt": "2026-10-28 15:58 KST",
+    "status": "RESEARCH_ONLY_PROPOSED_NOT_OWNER_APPROVED",
+    "sourceScope": "One existing private 2026-08 PDC-generator 14-column PDF, decoded read-only in transient connector V8; no raw values/identifiers retained.",
+    "sourceGitBlobSha1": "8e7fec30f98458c770053bd7739e60869a87e33b",
+    "realSource": {
+      "physicalBodyBands": 49,
+      "numericActivityCandidates": 26,
+      "nonflightBands": 22,
+      "auxiliaryBands": 1,
+      "numericActivityGloballyRepeatedInThisOriginal": 0,
+      "pairingCellsPresentAcrossAllBodyKinds": 22,
+      "distinctRawPairingLabels": 9,
+      "pairingLabelsWithMultiplePhysicalBands": 6,
+      "physicalBandsWithinRepeatedPairingGroups": 19,
+      "pairingLabelsSharedByNumericAndNonflightKinds": 4,
+      "numericBandsWhosePairingLabelAlsoOccursOnNonflight": 9,
+      "pairingLabelsRepeatedAcrossAtLeastTwoOwnDateValues": 5,
+      "numericOwnDateAndPairingBothPresent": 13,
+      "numericPairingOnlyWithoutOwnDate": 3,
+      "numericNeitherPairingNorOwnDate": 10,
+      "numericRouteDistinctValues": 23,
+      "numericRouteRepeatedGroups": 2,
+      "numericRowsInRepeatedRouteGroups": 5,
+      "numericPairingPlusRouteRepeatedGroups": 1,
+      "numericRowsInRepeatedPairingPlusRouteGroup": 2
+    },
+    "sourceDerivedAdversarial": {
+      "mutations": 2,
+      "mutationTypes": [
+        "3-digit numeric Activity reused on a different explicitly dated row",
+        "4-digit numeric Activity reused on a different explicitly dated row"
+      ],
+      "unchangedBytesPerMutation": true,
+      "unchangedTextObjectCount": 495,
+      "unchangedBodyBandCount": 49,
+      "unchangedNumericBandCount": 26,
+      "unchangedSourceRowLocators": true,
+      "duplicateActivityGroupAfterEachMutation": 1,
+      "strictResearchDetectorCurrentGuard": "seen.has(activity) -> FAIL_DOCUMENT DUPLICATE_NUMERIC_ACTIVITY",
+      "actualSavedModuleExecutionOfMutations": false,
+      "mutantsAreNotRealExportVersions": true
+    },
+    "syntheticPolicyOracle": {
+      "passed": 10,
+      "total": 10,
+      "runtime": "connector V8 only",
+      "dartSembastOrProductionParserPass": false
+    },
+    "proposedProfileDelta": "pdc-generator-14col-row-identity-v1.05-C436",
+    "requiredSeparation": [
+      "PDF/report-family structural admission",
+      "Physical source-row identity: immutable file fingerprint + page + band/cell locator, not Activity or Pairing value",
+      "Raw Activity and Pairing values preserved without uniqueness or duty/crew inference",
+      "Flight-vs-nonflight classification before candidate comparison",
+      "Source date and independently certified four-digit year/carrier/subject/Publication",
+      "0/1/many active same-UID existing FlightRecord candidate cardinality",
+      "Explicit owner review and approved source-only CAS/receipt/revision lifecycle"
+    ],
+    "policy": [
+      "Do not generalize the observed original's 26 unique numeric Activity values into a vendor-wide document-admission invariant.",
+      "A repeated Activity on distinct physical rows must not silently collapse, overwrite or create a FlightRecord; stage separately and hold ambiguous matches.",
+      "Repeated Pairing labels across different dates and nonflight bands do not authenticate crew identity, duty, date inheritance or Publication.",
+      "The current C426 research sentinel is deliberately observed-family-only and is NOT a production detector; removing its guard alone is not production approval.",
+      "PDC PDF has no per-leg crew fields. BLH/Blk Hrs remain raw evidence, not canonical Block."
+    ],
+    "publicExactLayoutPdfGrade": "P5",
+    "weeklyHtmlGrade": "P3",
+    "productionReadiness": "OPEN",
+    "next": "Source-certified August year/carrier/subject/Publication plus Aug03-31 company and active same-UID Flight for eight detached cross-family edges; approved evidence-only Dart/Sembast lifecycle."
   }
 }
