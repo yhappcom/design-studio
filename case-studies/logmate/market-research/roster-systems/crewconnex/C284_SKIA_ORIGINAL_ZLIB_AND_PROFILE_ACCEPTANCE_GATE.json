@@ -204,5 +204,143 @@
       "newCompanyOrUidJoin": false,
       "actualDartSembast": false
     }
+  },
+  "c447OriginalTaggedBodyAudit": {
+    "date": "2026-10-29 03 KST",
+    "version": "skia-tagged-printer/research-2.14-C447",
+    "status": "RESEARCH_ONLY_NOT_APPROVED",
+    "authority": "LogMate main@2f78e731 read-only; Design Studio only writable; existing-record-only crew snapshot/BLH evidence; never create FlightRecord",
+    "source": "Three original private Skia PDFs fetched read-only, Git blobs e96bf5a76764984aa7f28285c975a24fd471117e, d306cad81d2a57123ac9950ed734a9216340466c, 29ac040595089188a8353e98f41ba27f92b8650b; source-derived C194 manifest blob 9a2d403cfb559144ea9b1882d308683dc9999fa9",
+    "method": "Transient V8 base64 decode and independent uncompressed PDF StructTree primary Table/TR/TD/leaf object parent, /Pg, page-local /K MCID checks. Numeric candidate membership reused C194 manifest; no new content-stream decompression, ToUnicode lexical semantics or raster.",
+    "originalStructure": [
+      {
+        "month": "06",
+        "primaryTR": 41,
+        "bodyTR": 40,
+        "numericManifestRows": 18,
+        "otherBodyRows": 22,
+        "primaryTD": 1335,
+        "primaryTaggedLeaves": 1555,
+        "manifestLocatorChecks": 329,
+        "wrongParentOrPage": 0,
+        "duplicatePageMCID": 0,
+        "postSumPrimary": 0,
+        "sumPage2MCID": 257,
+        "widthOverlapOther": 21,
+        "widthAndPermittedCrewShapeOverlapOther": 17
+      },
+      {
+        "month": "07",
+        "primaryTR": 45,
+        "bodyTR": 44,
+        "numericManifestRows": 22,
+        "otherBodyRows": 22,
+        "primaryTD": 1270,
+        "primaryTaggedLeaves": 1543,
+        "manifestLocatorChecks": 381,
+        "wrongParentOrPage": 0,
+        "duplicatePageMCID": 0,
+        "postSumPrimary": 0,
+        "sumPage2MCID": 241,
+        "widthOverlapOther": 10,
+        "widthAndPermittedCrewShapeOverlapOther": 9
+      },
+      {
+        "month": "08",
+        "primaryTR": 43,
+        "bodyTR": 42,
+        "numericManifestRows": 22,
+        "otherBodyRows": 20,
+        "primaryTD": 1265,
+        "primaryTaggedLeaves": 1534,
+        "manifestLocatorChecks": 406,
+        "wrongParentOrPage": 0,
+        "duplicatePageMCID": 0,
+        "postSumPrimary": 0,
+        "sumPage2MCID": 311,
+        "widthOverlapOther": 13,
+        "widthAndPermittedCrewShapeOverlapOther": 12
+      }
+    ],
+    "totals": {
+      "primaryTR": 129,
+      "bodyTR": 126,
+      "numericManifestRows": 62,
+      "otherBodyRows": 64,
+      "primaryTD": 3870,
+      "primaryTaggedLeaves": 4632,
+      "uniquePageMCIDs": 4632,
+      "selectedManifestLocatorsVerifiedAgainstTypedTR": 1116,
+      "selectedManifestLocatorsWrongOrMissing": 0,
+      "wrongParentOrPage": 0,
+      "postSumPrimary": 0,
+      "otherBodyWidthOverlap": 44,
+      "otherBodyWidthAndCrewShapeOverlap": 38
+    },
+    "sourceDerivedBoundary": "Across the three actual PDF structures, 44/64 nonmanifest primary body rows share a candidate TD count; 38/64 also share an admitted numeric-candidate crew-leaf cardinality pattern (1-1-1). These are structural false-admission controls, not an independent semantic nonflight decoder or measured production false-positive rate. TD-width and crew cardinality alone cannot classify a flight.",
+    "augustBarrier": {
+      "source": "original PDF tagged objects + prior C194 candidate labels",
+      "tr12": "numeric own Date, 31 TD, 6-6-6 crew leaves",
+      "tr13": "nonmanifest row, 29 TD, 1-2-2 at numeric-shape candidate crew offsets (not semantically crew)",
+      "tr14": "numeric own Date ABSENT, direct 6-6-6 leaves, 29 TD, Pairing ABSENT",
+      "tr15": "nonmanifest row, 30 TD, 1-1-1 at candidate crew offsets",
+      "conclusion": "TR13 intervenes; do not forward-fill TR12 date or crew to TR14. Numeric-only relative column schema is not valid for nonnumeric rows."
+    },
+    "longChains": [
+      {
+        "month": "07",
+        "page": 1,
+        "TRs": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "crewLeafTriplets": [
+          "6-6-6",
+          "1-1-1",
+          "1-1-1",
+          "1-1-1"
+        ]
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "TRs": [
+          19,
+          20,
+          21,
+          22
+        ],
+        "crewLeafTriplets": [
+          "6-6-6",
+          "1-1-1",
+          "1-1-1",
+          "1-1-1"
+        ]
+      }
+    ],
+    "syntheticVirtualMutations": {
+      "scope": "Four one-factor in-memory structural edits per original: wrong leaf parent, duplicate page MCID, page2 post-Sum MCID, unsupported page; not rebuilt PDFs",
+      "rejected": 12,
+      "total": 12,
+      "baselineOriginals": 3,
+      "baselinePassed": 3
+    },
+    "parserProfileDelta": "Source+report-family+profile+page+typed primary Table/TR/TD+leaf MCID and all-body census; classify Activity/route/printed BLH and nonflight independently of TD width and crew leaf cardinality. Hold batch on unexplained body/section/leaf mismatch. Date, Pairing, crew topology, certified year/Publication, owner UID and source revision are separate gates. Physical chains are not semantic inheritance; unknown or unsupported layout fails closed.",
+    "readiness": {
+      "publicExactPdf": "P5",
+      "weeklyHtml": "P3",
+      "production": "OPEN",
+      "actualOriginalTaggedPdf": true,
+      "actualPdfTextToUnicodeThisCycle": false,
+      "actualRaster": false,
+      "actualCompanyOrUidJoin": false,
+      "actualDartSembast": false,
+      "W016": "CONDITIONAL_NOT_STARTED",
+      "W017": "INSUFFICIENT_EVIDENCE_NOT_STARTED"
+    },
+    "syncDebt": "C194 historical exact-write debt unresolved; C265 superseded 2025 cell state corrected by C280; no master index changes justified",
+    "next": "Obtain authorized same-export four-digit Skia year/subject/Publication and Aug03-31 company/active same-UID Flight records; resolve eight August cross-family detached links with verified nonflight barriers and source revision, then approved evidence-only persistence acceptance."
   }
 }
