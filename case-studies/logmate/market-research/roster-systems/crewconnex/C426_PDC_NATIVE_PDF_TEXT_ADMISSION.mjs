@@ -544,3 +544,106 @@ function runPdcInputBoundaryTests(){
  return {passed:tests.filter(x=>x.pass).length,failed:tests.filter(x=>!x.pass).length,tests};
 }
 export {runPdcInputBoundaryTests};
+
+
+// C473: source-derived Date/Pairing ownership and admission-vs-authority
+// adversaries. Only aggregate counters and synthetic mutation outcomes leave
+// the transient original PDF; no private cell text, crew, flight or route data.
+function inspectPdcTemporalOwnership(base64) {
+ const gate=inspectPdcPdfStrict(base64);
+ if(gate.status!=="OBSERVED_FAMILY_DETACHED_HOLD")
+   return {status:"NOT_ADMITTED",reason:gate.reason||gate.status};
+ const raw=fromBase64(base64);
+ const match=[...raw.matchAll(/\bstream\r?\n([\s\S]*?)\r?\nendstream\b/g)];
+ if(match.length!==1)throw Error("C473_STREAM");
+ const rows=new Map();
+ for(const bt of match[0][1].matchAll(/\bBT\b([\s\S]*?)\bET\b/g)){
+  const p=bt[1].match(/(\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)\s+Td\b/);
+  const t=bt[1].match(/\(((?:\\.|[^\\)])*)\)\s+Tj\b/);
+  if(!p||!t)continue;
+  const x=+p[1],y=+p[2],i=(638-y)/9;
+  if(!Number.isInteger(i)||i<0||i>=49)continue;
+  if(!rows.has(i))rows.set(i,new Map());
+  rows.get(i).set(x,t[1]);
+ }
+ let lastOwnDateKind=null,undatedNumeric=0,undatedWithoutPairing=0,
+   undatedWithPairing=0,undatedAfterNonnumericDate=0,
+   undatedWithBaseDayMarker=0,datedWithBaseDayMarker=0,
+   numericOwnDate=0,nonnumericOwnDate=0,numeric=0,nonnumeric=0,aux=0;
+ const gapFromLastDate={};
+ for(let i=0;i<49;i++){
+  const r=rows.get(i);if(!r)throw Error("C473_MISSING_BAND");
+  const activity=r.get(210);
+  const kind=activity===undefined?"aux":
+    /^\d{3,4}$/.test(activity)?"numeric":"nonnumeric";
+  const ownDate=r.has(81),ownPairing=r.has(109);
+  if(ownDate)lastOwnDateKind=kind;
+  if(kind==="numeric"){
+   numeric++;
+   const marker=[292,364].some(x=>/\+1$/.test(r.get(x)||""));
+   if(ownDate){numericOwnDate++;if(marker)datedWithBaseDayMarker++;}
+   else{
+    undatedNumeric++;
+    if(ownPairing)undatedWithPairing++;else undatedWithoutPairing++;
+    if(lastOwnDateKind==="nonnumeric")undatedAfterNonnumericDate++;
+    if(marker)undatedWithBaseDayMarker++;
+    let gap=0;
+    for(let j=i-1;j>=0;j--){gap++;if(rows.get(j).has(81))break;}
+    gapFromLastDate[gap]=(gapFromLastDate[gap]||0)+1;
+   }
+  }else if(kind==="nonnumeric"){nonnumeric++;if(ownDate)nonnumericOwnDate++;}
+  else aux++;
+ }
+ return {status:"SOURCE_DERIVED_DETACHED_HOLD",numeric,nonnumeric,aux,
+   numericOwnDate,undatedNumeric,undatedWithoutPairing,undatedWithPairing,
+   undatedAfterNonnumericDate,undatedWithBaseDayMarker,
+   datedWithBaseDayMarker,nonnumericOwnDate,gapFromLastDate,
+   certifiedYear:false,certifiedPublication:false,uidBound:false,
+   dateInherited:false,pairingInherited:false,createsFlight:false};
+}
+export {inspectPdcTemporalOwnership};
+
+// The following tests deliberately ACCEPT structurally valid but changed
+// source values only into DETACHED_HOLD, never as identity/revision authority.
+// Invalid Date or missing subject label must fail document admission.
+function runPdcAuthoritySeparationTests(originalBase64){
+ const raw=fromBase64(originalBase64);
+ const expected="OBSERVED_FAMILY_DETACHED_HOLD";
+ const cases=[
+  ["valid own-Date replacement",/BT 81 (\d+(?:\.\d+)?) Td \((\d\d)Aug26\) Tj ET/,
+   (_,y,d)=>"BT 81 "+y+" Td ("+(d==="01"?"02":"01")+"Aug26) Tj ET",expected,null],
+  ["invalid own-Date replacement",/BT 81 (\d+(?:\.\d+)?) Td \((\d\d)Aug26\) Tj ET/,
+   (_,y)=>"BT 81 "+y+" Td (32Aug26) Tj ET","FAIL_DOCUMENT","INVALID_OWN_DATE"],
+  ["unverified Pairing text",/BT 109 (\d+(?:\.\d+)?) Td \((?:\\.|[^\\)])*\) Tj ET/,
+   (_,y)=>"BT 109 "+y+" Td (UNVERIFIED) Tj ET",expected,null],
+  ["same-width numeric Activity",/BT 210 (\d+(?:\.\d+)?) Td \((\d{3,4})\) Tj ET/,
+   (_,y,n)=>"BT 210 "+y+" Td ("+"9".repeat(n.length)+") Tj ET",expected,null],
+  ["different printed subject",/BT \/F2 9 Tf 39 702 Td \((?:\\.|[^\\)])*\) Tj ET/,
+   ()=>"BT /F2 9 Tf 39 702 Td (Crewmember: SYNTHETIC) Tj ET",expected,null],
+  ["missing printed subject label",/BT \/F2 9 Tf 39 702 Td \((?:\\.|[^\\)])*\) Tj ET/,
+   ()=>"BT /F2 9 Tf 39 702 Td (Subject: SYNTHETIC) Tj ET","FAIL_DOCUMENT","MISSING_REPORT_SUBJECT_LABEL"],
+  ["different print stamp",/BT \/F2 6 Tf 36 801 Td \((?:\\.|[^\\)])*\) Tj ET/,
+   ()=>"BT /F2 6 Tf 36 801 Td (01-01-2099 0000) Tj ET",expected,null]
+ ];
+ const tests=[];
+ for(const [name,needle,replacement,status,reason] of cases){
+  let changed=false;
+  const variant=repackPdcSyntheticPdf(raw,objects=>{
+   const obj=objects[16],a=obj.indexOf("stream\n")+7,
+     z=obj.lastIndexOf("\nendstream"),body=obj.slice(a,z);
+   const next=body.replace(needle,(...args)=>{
+    changed=true;return replacement(...args);
+   });
+   objects[16]=obj.slice(0,a).replace(/\/Length \d+/,
+     "/Length "+next.length)+next+obj.slice(z);
+  });
+  const out=inspectPdcPdfStrict(toBase64(variant));
+  tests.push({name,pass:changed&&out.status===status&&
+    (reason===null||out.reason===reason)&&out.candidates===(status===expected?26:0),
+    status:out.status,reason:out.reason||null});
+ }
+ return {passed:tests.filter(t=>t.pass).length,
+   failed:tests.filter(t=>!t.pass).length,tests,
+   productAcceptance:false,identityCertified:false,publicationCertified:false};
+}
+export {runPdcAuthoritySeparationTests};
