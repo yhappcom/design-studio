@@ -716,7 +716,8 @@
       "priorCrew": false,
       "operation": "REVIEW",
       "backupOwner": "SAME",
-      "dateConflict": false
+      "dateConflict": false,
+      "pairing": "PRESENT"
     },
     "precedence": [
       "privacy/backup-owner rejection",
@@ -726,7 +727,8 @@
       "UID/active match cardinality hold",
       "owner/revision/rollback no-commit",
       "crew/source revision review",
-      "no persistence approval"
+      "no persistence approval",
+      "Pairing absence alone is not a rejection when own Date is present"
     ],
     "scenarios": [
       {
@@ -789,7 +791,8 @@
         "id": "own_date_without_pairing",
         "kind": "SYNTHETIC_POLICY_ONLY",
         "changes": {
-          "crew": "PRESENT"
+          "crew": "PRESENT",
+          "pairing": "ABSENT"
         },
         "expected": "REVIEW_ELIGIBLE_NO_PERSISTENCE_APPROVAL"
       },
@@ -937,6 +940,15 @@
           "dateConflict": true
         },
         "expected": "HOLD_DATE"
+      },
+      {
+        "id": "pdc_pair_only_missing_date",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "ownDate": "ABSENT",
+          "pairing": "PRESENT"
+        },
+        "expected": "HOLD_DATE"
       }
     ]
   },
@@ -995,7 +1007,7 @@
   "validations": {
     "sourceDerivedAssertions": 16,
     "sourceDerivedFailed": 0,
-    "syntheticScenarioChecks": 26,
+    "syntheticScenarioChecks": 27,
     "syntheticScenarioFailed": 0
   }
 }
