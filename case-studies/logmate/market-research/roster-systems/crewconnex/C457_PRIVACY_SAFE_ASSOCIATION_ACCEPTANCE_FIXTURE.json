@@ -1,0 +1,1001 @@
+{
+  "id": "C457",
+  "version": "research-fixture-1.0-C457",
+  "created": "2026-10-29 13:00 KST",
+  "status": "RESEARCH_ONLY_NOT_PRODUCT_APPROVAL",
+  "sourcePins": {
+    "logmateMain": "2f78e7310dfe2c46c1f1cba0583e2abdd269ffdf",
+    "manifestGitBlob": "9a2d403cfb559144ea9b1882d308683dc9999fa9",
+    "pdcAggregateGitBlob": "183aebe5160d19d64eb00b01169456a4296b4584",
+    "sourceFamily": "Skia tagged printer June/July/August + PDC generator August"
+  },
+  "privacy": "ONLY source-scoped month/page/TR, field-presence, crew-cell leaf shape and physical anchor; no employee identifiers, names, raw flights, routes, personal clocks or roster payloads",
+  "realSourceDerived": {
+    "kind": "PRIOR_ORIGINAL_PDF_DERIVED_MANIFEST_REVALIDATION_NOT_FRESH_PDF_DECODE",
+    "census": {
+      "skia": 62,
+      "months": {
+        "06": 18,
+        "07": 22,
+        "08": 22
+      },
+      "previewSelected": 43,
+      "unselected": 19,
+      "ownDatePresent": 35,
+      "ownDateAbsent": 27,
+      "pairingPresent": 30,
+      "pairingAbsent": 32,
+      "ownDateWithoutPairing": 5,
+      "pipeOnly": 26,
+      "directSixLeaf": 31,
+      "directSevenLeaf": 5,
+      "pageTwo": 6,
+      "physicalGroups": {
+        "single": 14,
+        "two": 20,
+        "four": 2
+      }
+    },
+    "rows": [
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 4,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 5,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 4,
+        "previewSelected": true
+      },
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 7,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 9,
+        "ownDate": "PRESENT",
+        "pairing": "ABSENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 16,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 17,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 16,
+        "previewSelected": true
+      },
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 19,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 20,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 19,
+        "previewSelected": true
+      },
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 23,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 26,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 28,
+        "ownDate": "PRESENT",
+        "pairing": "ABSENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 29,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 28,
+        "previewSelected": true
+      },
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 32,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 33,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 32,
+        "previewSelected": true
+      },
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 34,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 35,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 34,
+        "previewSelected": true
+      },
+      {
+        "month": "06",
+        "page": 2,
+        "tr": 37,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "06",
+        "page": 2,
+        "tr": 38,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 37,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 5,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 6,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 5,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 8,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 9,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 8,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 10,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 8,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 11,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 8,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 13,
+        "ownDate": "PRESENT",
+        "pairing": "ABSENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 14,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 13,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 18,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 19,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 18,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 20,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 21,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 20,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 22,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 23,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 22,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 26,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 27,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 26,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 29,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_7",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 30,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 29,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 32,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 36,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 2,
+        "tr": 40,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "07",
+        "page": 2,
+        "tr": 42,
+        "ownDate": "PRESENT",
+        "pairing": "ABSENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 2,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 3,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 2,
+        "previewSelected": true
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 4,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_7",
+        "physicalAnchorTr": null,
+        "previewSelected": true
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 6,
+        "ownDate": "PRESENT",
+        "pairing": "ABSENT",
+        "crewShape": "MULTILEAF_7",
+        "physicalAnchorTr": null,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 10,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 11,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 10,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 12,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 14,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 17,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 18,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 17,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 19,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 20,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 19,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 21,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 19,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 22,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 19,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 27,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 28,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 27,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 29,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 30,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 29,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 31,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_7",
+        "physicalAnchorTr": null,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 32,
+        "ownDate": "ABSENT",
+        "pairing": "ABSENT",
+        "crewShape": "SINGLELEAF_1",
+        "physicalAnchorTr": 31,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 2,
+        "tr": 35,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_6",
+        "physicalAnchorTr": null,
+        "previewSelected": false
+      },
+      {
+        "month": "08",
+        "page": 2,
+        "tr": 39,
+        "ownDate": "PRESENT",
+        "pairing": "PRESENT",
+        "crewShape": "MULTILEAF_7",
+        "physicalAnchorTr": null,
+        "previewSelected": false
+      }
+    ],
+    "exceptions": {
+      "undatedDirectCrew": "08/p1/TR14",
+      "ownDateNoPairing": [
+        "06/p1/TR9",
+        "06/p1/TR28",
+        "07/p1/TR13",
+        "07/p2/TR42",
+        "08/p1/TR6"
+      ],
+      "fourLegPhysicalGroups": [
+        [
+          "07/p1/TR8",
+          "07/p1/TR9",
+          "07/p1/TR10",
+          "07/p1/TR11"
+        ],
+        [
+          "08/p1/TR19",
+          "08/p1/TR20",
+          "08/p1/TR21",
+          "08/p1/TR22"
+        ]
+      ]
+    },
+    "pdc": {
+      "numericCandidates": 26,
+      "nonNumericClockBands": 22,
+      "auxiliaryActivityAbsent": 1,
+      "numericDatePairPresence": {
+        "both": 13,
+        "dateOnly": 0,
+        "pairOnly": 3,
+        "neither": 10
+      },
+      "kind": "PRIOR_PRIVATE_ORIGINAL_DERIVED_AGGREGATE_ONLY_NO_26_ROW_FIXTURE"
+    }
+  },
+  "policyModel": {
+    "status": "SYNTHETIC_DECISION_ORACLE_NOT_W016_IMPLEMENTATION",
+    "defaults": {
+      "layout": "SUPPORTED",
+      "complete": true,
+      "activity": "FLIGHT_CANDIDATE",
+      "ownDate": "PRESENT",
+      "year": true,
+      "carrier": true,
+      "subject": true,
+      "publication": true,
+      "uid": "SAME",
+      "activeMatches": 1,
+      "owner": "APPROVED",
+      "privacy": "CLEAN",
+      "recordRevision": "CURRENT",
+      "sourceChange": "NONE",
+      "crew": "PRESENT",
+      "priorCrew": false,
+      "operation": "REVIEW",
+      "backupOwner": "SAME",
+      "dateConflict": false
+    },
+    "precedence": [
+      "privacy/backup-owner rejection",
+      "unknown-layout or incomplete-export rejection",
+      "nonflight exclusion",
+      "row date and source authority hold",
+      "UID/active match cardinality hold",
+      "owner/revision/rollback no-commit",
+      "crew/source revision review",
+      "no persistence approval"
+    ],
+    "scenarios": [
+      {
+        "id": "fully_hypothetical_verified",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {},
+        "expected": "REVIEW_ELIGIBLE_NO_PERSISTENCE_APPROVAL"
+      },
+      {
+        "id": "unsupported_printer_variant",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "layout": "UNKNOWN"
+        },
+        "expected": "REJECT_LAYOUT"
+      },
+      {
+        "id": "truncated_page_two",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "complete": false
+        },
+        "expected": "REJECT_INCOMPLETE_EXPORT"
+      },
+      {
+        "id": "nonflight_with_four_clocks",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "activity": "NONFLIGHT"
+        },
+        "expected": "EXCLUDE_NONFLIGHT"
+      },
+      {
+        "id": "unknown_activity",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "activity": "UNKNOWN"
+        },
+        "expected": "HOLD_ACTIVITY"
+      },
+      {
+        "id": "undated_pipe",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "ownDate": "ABSENT",
+          "crew": "PIPE_ONLY"
+        },
+        "expected": "HOLD_DATE"
+      },
+      {
+        "id": "undated_direct_crew",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "ownDate": "ABSENT",
+          "crew": "PRESENT"
+        },
+        "expected": "HOLD_DATE"
+      },
+      {
+        "id": "own_date_without_pairing",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "crew": "PRESENT"
+        },
+        "expected": "REVIEW_ELIGIBLE_NO_PERSISTENCE_APPROVAL"
+      },
+      {
+        "id": "unverified_four_digit_year",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "year": false
+        },
+        "expected": "HOLD_SOURCE_AUTHORITY"
+      },
+      {
+        "id": "unverified_publication",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "publication": false
+        },
+        "expected": "HOLD_SOURCE_AUTHORITY"
+      },
+      {
+        "id": "no_existing_flight",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "activeMatches": 0
+        },
+        "expected": "HOLD_MATCH_CARDINALITY"
+      },
+      {
+        "id": "two_existing_flights",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "activeMatches": 2
+        },
+        "expected": "HOLD_MATCH_CARDINALITY"
+      },
+      {
+        "id": "wrong_uid",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "uid": "DIFFERENT"
+        },
+        "expected": "HOLD_UID"
+      },
+      {
+        "id": "owner_declined",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "owner": "DECLINED"
+        },
+        "expected": "NO_COMMIT_USER"
+      },
+      {
+        "id": "stale_flight_revision",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "recordRevision": "STALE"
+        },
+        "expected": "NO_COMMIT_CONFLICT"
+      },
+      {
+        "id": "same_blh_different_crew",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "sourceChange": "CREW_CHANGED_SAME_BLH"
+        },
+        "expected": "REVIEW_CREW_REVISION"
+      },
+      {
+        "id": "new_file_same_blh",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "sourceChange": "FINGERPRINT_ONLY"
+        },
+        "expected": "REVIEW_SOURCE_REVISION"
+      },
+      {
+        "id": "parser_profile_reinterpretation",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "sourceChange": "PARSER_REINTERPRET"
+        },
+        "expected": "REVIEW_REINTERPRETATION"
+      },
+      {
+        "id": "pdc_has_no_crew",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "crew": "NOT_PROVIDED",
+          "priorCrew": true
+        },
+        "expected": "PRESERVE_EXISTING_CREW"
+      },
+      {
+        "id": "skia_pdc_duration_disagreement",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "sourceChange": "BLH_DISAGREES"
+        },
+        "expected": "REVIEW_DURATION_CONFLICT"
+      },
+      {
+        "id": "exact_reimport",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "sourceChange": "EXACT_REPLAY"
+        },
+        "expected": "HOLD_DEDUP_MECHANISM"
+      },
+      {
+        "id": "cancel_before_commit",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "operation": "CANCEL"
+        },
+        "expected": "NO_COMMIT_USER"
+      },
+      {
+        "id": "crash_during_commit",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "operation": "CRASH"
+        },
+        "expected": "NO_COMMIT_ROLLBACK_REQUIRED"
+      },
+      {
+        "id": "staff_canary_reaches_durable",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "privacy": "UNSAFE"
+        },
+        "expected": "REJECT_PRIVACY"
+      },
+      {
+        "id": "foreign_uid_backup",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "backupOwner": "FOREIGN"
+        },
+        "expected": "REJECT_FOREIGN_BACKUP"
+      },
+      {
+        "id": "date_plus_one_not_authorized",
+        "kind": "SYNTHETIC_POLICY_ONLY",
+        "changes": {
+          "dateConflict": true
+        },
+        "expected": "HOLD_DATE"
+      }
+    ]
+  },
+  "w016DecisionMatrix": [
+    {
+      "topic": "source observation identity",
+      "confirmed": "Physical locator and source family must remain distinguishable",
+      "open": "Approved stable observation ID, fingerprint semantics, provenance retention"
+    },
+    {
+      "topic": "existing Flight binding",
+      "confirmed": "Only active same-UID existing Flight after explicit owner review; zero or multiple matches HOLD",
+      "open": "Source-association schema and owner-confirmed revision contract"
+    },
+    {
+      "topic": "crew snapshot identity",
+      "confirmed": "No employee-ID/rank storage; PDC missing crew is NOT deletion; raw role codes not PIC/SIC",
+      "open": "Name verification, snapshot ownership and revision equality without staff IDs"
+    },
+    {
+      "topic": "replay/idempotence",
+      "confirmed": "Retry must not duplicate durable effects; SourceEvidenceHistory no-notice is not dedup",
+      "open": "Receipt/key/transaction design is NOT APPROVED"
+    },
+    {
+      "topic": "atomicity",
+      "confirmed": "No partial export commit; no silent canonical Flight/aggregate mutation",
+      "open": "Evidence transaction, CAS/retry, crash recovery and rollback mechanism"
+    },
+    {
+      "topic": "privacy and lifecycle",
+      "confirmed": "No raw roster, staff numbers or derived staff hashes in persistent/backup/Sync/log",
+      "open": "Evidence-store codec/backup/restore/delete/UID isolation/retention"
+    },
+    {
+      "topic": "profile and revision",
+      "confirmed": "Immutable selected source profile needed for W-017; changed fingerprint does not prove crew revision",
+      "open": "Profile selection/Publication authority and interpretation migration"
+    },
+    {
+      "topic": "source-family separation",
+      "confirmed": "Skia BLH and PDC printed Blk Hrs are distinct source observations",
+      "open": "Verified manual mapping, source year/subject/Publication and actual owner Flight linkage"
+    }
+  ],
+  "evidenceLimits": {
+    "newPrivateBinaryDecode": false,
+    "newCompanyXlsxJoin": false,
+    "newUidOwnedFlightJoin": false,
+    "realDartSembast": false,
+    "syntheticOracleIsNotProductionTest": true,
+    "allSkiaRows": "DETACHED_HOLD",
+    "pdcPerRowFixture": "NOT_AVAILABLE",
+    "augustUnselectedCrossFamilyEdges": "HOLD"
+  },
+  "validations": {
+    "sourceDerivedAssertions": 16,
+    "sourceDerivedFailed": 0,
+    "syntheticScenarioChecks": 26,
+    "syntheticScenarioFailed": 0
+  }
+}
