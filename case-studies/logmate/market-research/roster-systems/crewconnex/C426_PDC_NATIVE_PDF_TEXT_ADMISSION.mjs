@@ -468,6 +468,36 @@ function runPdcOriginalReadOnlyAdversarial(base64){
   const r=inspectPdcPdfStrict(toBase64(mutant));
   tests.push({name,pass:changed&&r.status==="FAIL_DOCUMENT"&&r.reason.startsWith("PHYSICAL_UNSUPPORTED_PDC_OBJECT_PROFILE_"),reason:r.reason||""});
  }
+ // C469: real-original-derived nonnumeric Activity mutations (transient only).
+ // Repack xref/stream length so failure is attributable to owned x=210 token,
+ // not malformed PDF structure. No private original cells are logged or saved.
+ for(const [label,expected] of [
+  ["LAYOV","OBSERVED_FAMILY_DETACHED_HOLD"],
+  ["-","OBSERVED_FAMILY_DETACHED_HOLD"],
+  ["UNKNOWN","FAIL_DOCUMENT"],
+  ["123A","FAIL_DOCUMENT"],
+  ["1000A","FAIL_DOCUMENT"]
+ ]){
+  let changed=false;
+  const mutant=repackPdcSyntheticPdf(raw,o=>{
+   const old=o[16],start=old.indexOf("stream\\n")+7,
+    end=old.lastIndexOf("\\nendstream");
+   if(start<7||end<start)throw Error("C469_ORIGINAL_STREAM");
+   const content=old.slice(start,end);
+   const needle=/BT 210 (\\d+(?:\\.\\d+)?) Td \\(OFF\\) Tj ET/;
+   if(!needle.test(content))throw Error("C469_OBSERVED_OFF_ABSENT");
+   const next=content.replace(needle,(_,y)=>
+    "BT 210 "+y+" Td ("+label+") Tj ET");
+   changed=next!==content;
+   o[16]=old.slice(0,start).replace(/\\/Length \\d+/,
+    "/Length "+next.length)+next+old.slice(end);
+  });
+  const result=inspectPdcPdfStrict(toBase64(mutant));
+  tests.push({name:"C469 original-derived Activity token "+label,
+   pass:changed&&result.status===expected&&
+    (expected!=="FAIL_DOCUMENT"||result.reason==="UNKNOWN_NONNUMERIC_ACTIVITY"),
+   reason:result.reason||""});
+ }
  return {passed:tests.filter(t=>t.pass).length,failed:tests.filter(t=>!t.pass).length,tests};
 }
 export {runPdcOriginalReadOnlyAdversarial};
