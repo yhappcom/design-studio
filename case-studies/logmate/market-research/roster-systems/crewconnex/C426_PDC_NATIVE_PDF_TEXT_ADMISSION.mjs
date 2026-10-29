@@ -480,16 +480,16 @@ function runPdcOriginalReadOnlyAdversarial(base64){
  ]){
   let changed=false;
   const mutant=repackPdcSyntheticPdf(raw,o=>{
-   const old=o[16],start=old.indexOf("stream\\n")+7,
-    end=old.lastIndexOf("\\nendstream");
+   const old=o[16],start=old.indexOf("stream\n")+7,
+    end=old.lastIndexOf("\nendstream");
    if(start<7||end<start)throw Error("C469_ORIGINAL_STREAM");
    const content=old.slice(start,end);
-   const needle=/BT 210 (\\d+(?:\\.\\d+)?) Td \\(OFF\\) Tj ET/;
+   const needle=/BT 210 (\d+(?:\.\d+)?) Td \(OFF\) Tj ET/;
    if(!needle.test(content))throw Error("C469_OBSERVED_OFF_ABSENT");
    const next=content.replace(needle,(_,y)=>
     "BT 210 "+y+" Td ("+label+") Tj ET");
    changed=next!==content;
-   o[16]=old.slice(0,start).replace(/\\/Length \\d+/,
+   o[16]=old.slice(0,start).replace(/\/Length \d+/,
     "/Length "+next.length)+next+old.slice(end);
   });
   const result=inspectPdcPdfStrict(toBase64(mutant));
