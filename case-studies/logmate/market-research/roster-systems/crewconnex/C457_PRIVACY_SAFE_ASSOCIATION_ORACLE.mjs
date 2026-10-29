@@ -374,6 +374,117 @@ assert(c460PinnedMcidErrors(c461Duplicate).length > 0,
 assert(c461PinnedCensusErrors(c461Duplicate).length > 0,
   "C461 duplicate must fail pinned census");
 
+
+// C468 pinned source-binding gate: the C457 whole-file Git blob pin protects
+// the fixture on disk, but standalone geometry/MCID/page-census validators
+// did not bind each row's source_raw_sha256 to its Git blob and month.
+// This is a RESEARCH-ONLY fixture-integrity check, not a PDF parser or
+// authorization to persist private source identifiers in product data.
+const c468SourceBindings = new Map();
+for (const r of source) {
+  const git = r.source_git_blob_sha1;
+  const pair = { raw: r.source_raw_sha256, month: r.month };
+  const prior = c468SourceBindings.get(git);
+  if (prior) assert.deepEqual(prior, pair, "pinned source binding");
+  else c468SourceBindings.set(git, pair);
+}
+assert.equal(c468SourceBindings.size, 3, "three distinct source bindings");
+assert.equal(new Set([...c468SourceBindings.values()].map(x => x.raw)).size, 3,
+  "no cross-source SHA256 alias");
+function c468SourceBindingErrors(items) {
+  const errors = [];
+  for (const r of items) {
+    const pin = c468SourceBindings.get(r.source_git_blob_sha1);
+    if (!pin || pin.raw !== r.source_raw_sha256 || pin.month !== r.month)
+      errors.push("source Git blob / raw SHA256 / month mismatch");
+    if (!/^[a-f0-9]{40}$/.test(r.source_git_blob_sha1))
+      errors.push("invalid source Git blob SHA1");
+    if (!/^[a-f0-9]{64}$/.test(r.source_raw_sha256))
+      errors.push("invalid source raw SHA256");
+    if (![1, 2].includes(Number(r.page_1based)))
+      errors.push("unrecognized pinned page");
+    for (const field of ["date", "pairing"]) {
+      const state = r[field + "_cell_state"];
+      const leaves = r[field + "_leaf_mcids_page_local"];
+      if (state === "PRESENT") {
+        if (!/^\d+(?:\|\d+)*$/.test(leaves))
+          errors.push("present optional cell missing MCID: " + field);
+      } else if (state === "ABSENT") {
+        if (leaves !== "")
+          errors.push("absent optional cell has MCID: " + field);
+      } else errors.push("unknown optional cell state: " + field);
+    }
+  }
+  return errors;
+}
+assert.deepEqual(c468SourceBindingErrors(source), [],
+  "C468 original-derived source bindings");
+const c468SourceMutants = [
+  ["one raw SHA256 retag", a => { a[0].source_raw_sha256 = "f".repeat(64); }],
+  ["whole-month raw SHA256 retag", a => {
+    for (const r of a) if (r.month === "06")
+      r.source_raw_sha256 = "f".repeat(64);
+  }],
+  ["cross-source raw SHA256", a => {
+    a[0].source_raw_sha256 = source.find(r => r.month === "07").source_raw_sha256;
+  }],
+  ["one row month retag", a => { a[0].month = "07"; }],
+  ["unsupported page", a => { a[0].page_1based = "3"; }],
+  ["present Date MCID erased", a => {
+    a.find(r => r.date_cell_state === "PRESENT").date_leaf_mcids_page_local = "";
+  }],
+  ["absent Date stray MCID", a => {
+    a.find(r => r.date_cell_state === "ABSENT").date_leaf_mcids_page_local = "999";
+  }],
+  ["present Pairing MCID erased", a => {
+    a.find(r => r.pairing_cell_state === "PRESENT").pairing_leaf_mcids_page_local = "";
+  }],
+  ["absent Pairing stray MCID", a => {
+    a.find(r => r.pairing_cell_state === "ABSENT").pairing_leaf_mcids_page_local = "999";
+  }],
+  ["invalid raw SHA256", a => { a[0].source_raw_sha256 = "invalid"; }],
+  ["known but wrong Git source", a => {
+    a[0].source_git_blob_sha1 = source.find(r => r.month === "07").source_git_blob_sha1;
+  }]
+];
+for (const [label, mutate] of c468SourceMutants) {
+  const copy = source.map(r => ({ ...r }));
+  mutate(copy);
+  assert(c468SourceBindingErrors(copy).length > 0,
+    "C468 source-binding mutant admitted: " + label);
+}
+
+// C468 PDC 14-column *observed* clock lexical grammar. Original private
+// August PDC 49-band census was independently inspected in transient memory:
+// 26 numeric Activity bands, 23 others, 26/26 base elapsed=printed Blk Hrs,
+// and 4 numeric bands with bare +1 marker (not parenthesized).
+// This code uses SYNTHETIC strings only. Nonflight clock-bearing bands must
+// never be admitted by a clock grammar match. No timezone or duty inference.
+function c468PdcRawClock(raw) {
+  const m = /^(\d{2})(\d{2})([+-]\d+)?$/.exec(raw);
+  if (!m || Number(m[1]) > 23 || Number(m[2]) > 59) return null;
+  // Restricted observed family only: +1 on numeric; -1/+3 also observed
+  // on nonnumeric bands. A new marker is an unsupported-layout HOLD.
+  if (m[3] && !["+1", "-1", "+3"].includes(m[3])) return null;
+  return { minute: Number(m[1]) * 60 + Number(m[2]),
+    rawDayMarker: m[3] ?? null };
+}
+const c468ClockCases = [
+  ["2350+1", true], ["0010", true], ["2350(+1)", false],
+  ["2400", false], ["1260", false], ["0100-1", true],
+  ["0010+3", true], ["0100+7", false], ["0100+0", false],
+  ["0100+2", false], ["0100+1", true]
+];
+for (const [raw, expected] of c468ClockCases)
+  assert.equal(c468PdcRawClock(raw) !== null, expected,
+    "C468 synthetic raw-clock lexical " + raw);
+const c468SyntheticStart = c468PdcRawClock("2350");
+const c468SyntheticEnd = c468PdcRawClock("0100+1");
+assert.equal(c468SyntheticEnd.minute + 1440 -
+  c468SyntheticStart.minute, 70, "C468 synthetic day-marker arithmetic");
+assert.equal(c468PdcRawClock("0100(+1)"), null,
+  "C468 no silent parenthesized-marker repair");
+
 console.log(JSON.stringify({
   status: "RESEARCH_ONLY", pinnedManifest: true, skiaPhysicalRows: rows.length,
   pdcNumericAggregate: 26, physicalGroups: [size(1), size(2), size(4)],
@@ -382,6 +493,8 @@ console.log(JSON.stringify({
   c460AllFieldMcids: 1116, c460PriorGateBypassesNowRejected: 6,
   c461PinnedPageNumericCounts: [16, 2, 20, 2, 20, 2],
   c461OmissionAdversaries: 3, c461DuplicateAdversaries: 1,
+  c468SourceBindings: 3, c468SourceMutantsRejected: 11,
+  c468SyntheticClockCases: 11, c468RealPdcRecheck: "49 bands / 26 numeric / 4 bare +1 numeric / 26 base arithmetic matches (separate original inspection)",
   actualPdfDecode: false, uidOwnedDartSembast: false,
   productionReadiness: "OPEN"
 }, null, 2));
