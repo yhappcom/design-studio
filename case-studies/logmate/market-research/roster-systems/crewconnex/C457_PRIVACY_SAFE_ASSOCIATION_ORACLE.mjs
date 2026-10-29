@@ -506,6 +506,107 @@ assert.notEqual("01:25", "1:25", "C468 raw text preserved");
 assert.equal(c468ParsePrintedDuration("01:25"),
   c468ParsePrintedDuration("1:25"), "C468 normalized minute equality");
 
+
+// C471: source-derived PHYSICAL crew-pipe ancestry gate, pinned to the C194
+// privacy-safe three-month locator manifest. NOT participant identity, duty
+// continuation, operational Date inheritance, or production PDF admission.
+// The same-source/same-page anchor and ordinal are physical provenance only.
+function c471PipeAncestryErrors(items) {
+  const errors = [], index = new Map(), groups = new Map();
+  for (const r of items) {
+    const key = [r.source_git_blob_sha1, r.page_1based,
+      r.primary_tr_1based_including_header].join("/");
+    if (index.has(key)) errors.push("duplicate source-scoped TR");
+    index.set(key, r);
+  }
+  for (const r of items) {
+    if (r.crew_leaf_shape !== "SINGLELEAF_1") continue;
+    const anchorKey = [r.source_git_blob_sha1, r.page_1based,
+      r.physical_multileaf_anchor_tr_1based].join("/");
+    const anchor = index.get(anchorKey);
+    if (!anchor || !["MULTILEAF_6", "MULTILEAF_7"].includes(anchor.crew_leaf_shape))
+      errors.push("missing same-source/page multileaf anchor");
+    else if (anchor.date_cell_state !== "PRESENT")
+      errors.push("physical anchor Date absent: HOLD, no inheritance");
+    if (r.date_cell_state !== "ABSENT" ||
+        r.pairing_cell_state !== "ABSENT")
+      errors.push("unexpected own Date/Pairing on pipe");
+    const depth = Number(r.singleleaf_chain_depth);
+    if (!Number.isSafeInteger(depth) || depth < 1 || depth > 3)
+      errors.push("unsupported observed pipe depth");
+    groups.set(anchorKey, [...(groups.get(anchorKey) ?? []), depth]);
+  }
+  for (const [key, depths] of groups) {
+    const ordered = [...depths].sort((a,b) => a-b);
+    if (ordered.some((depth,i) => depth !== i+1))
+      errors.push("noncontiguous/duplicate pipe ordinal: " + key);
+  }
+  return { errors, groups };
+}
+const c471Baseline = c471PipeAncestryErrors(source);
+if (c471Baseline.errors.length) throw Error("C471 pinned baseline rejected");
+const c471GroupSizes = [...c471Baseline.groups.values()]
+  .reduce((out, a) => (out[a.length] = (out[a.length] ?? 0) + 1, out), {});
+if (source.filter(r => r.crew_leaf_shape === "SINGLELEAF_1").length !== 26 ||
+    c471Baseline.groups.size !== 22 ||
+    c471GroupSizes[1] !== 20 || c471GroupSizes[3] !== 2 ||
+    Object.keys(c471GroupSizes).length !== 2)
+  throw Error("C471 pinned chain-group census drift");
+const c471Anchors = [...c471Baseline.groups.keys()].map(key =>
+  source.find(r => [r.source_git_blob_sha1,r.page_1based,
+    r.primary_tr_1based_including_header].join("/") === key));
+if (c471Anchors.some(r => !r || r.date_cell_state !== "PRESENT") ||
+    c471Anchors.filter(r => r.pairing_cell_state === "ABSENT").length !== 2)
+  throw Error("C471 pinned anchor ownership drift");
+const c471DirectUndated = source.filter(r =>
+  r.crew_leaf_shape !== "SINGLELEAF_1" && r.date_cell_state === "ABSENT");
+if (c471DirectUndated.length !== 1 ||
+    c471DirectUndated[0].month !== "08")
+  throw Error("C471 direct-undated detached observation drift");
+const c471Pipe = source.findIndex(r => r.crew_leaf_shape === "SINGLELEAF_1");
+const c471Triple = [...c471Baseline.groups].find(([,depths]) =>
+  depths.length === 3)[0];
+const c471TripleRows = source.map((r,i) =>
+  ({r,i})).filter(({r}) => r.crew_leaf_shape === "SINGLELEAF_1" &&
+    [r.source_git_blob_sha1,r.page_1based,
+     r.physical_multileaf_anchor_tr_1based].join("/") === c471Triple);
+const c471Mutants = [
+  ["orphan anchor", a => { a[c471Pipe].physical_multileaf_anchor_tr_1based = "999"; }],
+  ["self-as-anchor", a => { a[c471Pipe].physical_multileaf_anchor_tr_1based =
+    a[c471Pipe].primary_tr_1based_including_header; }],
+  ["cross-page pipe", a => { a[c471Pipe].page_1based = "3"; }],
+  ["cross-source pipe", a => { a[c471Pipe].source_git_blob_sha1 = "f".repeat(40); }],
+  ["own Date on pipe", a => { a[c471Pipe].date_cell_state = "PRESENT"; }],
+  ["own Pairing on pipe", a => { a[c471Pipe].pairing_cell_state = "PRESENT"; }],
+  ["depth zero", a => { a[c471Pipe].singleleaf_chain_depth = "0"; }],
+  ["depth four", a => { a[c471Pipe].singleleaf_chain_depth = "4"; }],
+  ["duplicate triple depth", a => {
+    a[c471TripleRows[1].i].singleleaf_chain_depth =
+      a[c471TripleRows[0].i].singleleaf_chain_depth;
+  }],
+  ["triple depth gap", a => { a[c471TripleRows[2].i].singleleaf_chain_depth = "5"; }],
+  ["anchor Date removed", a => {
+    const k = c471Triple;
+    const i = a.findIndex(r => [r.source_git_blob_sha1,r.page_1based,
+      r.primary_tr_1based_including_header].join("/") === k);
+    a[i].date_cell_state = "ABSENT";
+  }],
+  ["anchor no longer multileaf", a => {
+    const k = c471Triple;
+    const i = a.findIndex(r => [r.source_git_blob_sha1,r.page_1based,
+      r.primary_tr_1based_including_header].join("/") === k);
+    a[i].crew_leaf_shape = "UNKNOWN";
+  }]
+];
+for (const [label, mutate] of c471Mutants) {
+  const copy = source.map(r => ({...r}));
+  mutate(copy);
+  if (!c471PipeAncestryErrors(copy).errors.length)
+    throw Error("C471 ancestry mutant admitted: " + label);
+}
+// A dated physical anchor is NOT an operational-date or crew authority.
+// Do not forward-fill Date, Pairing, crew identity, role, or BLH on this basis.
+
 console.log(JSON.stringify({
   status: "RESEARCH_ONLY", pinnedManifest: true, skiaPhysicalRows: rows.length,
   pdcNumericAggregate: 26, physicalGroups: [size(1), size(2), size(4)],
