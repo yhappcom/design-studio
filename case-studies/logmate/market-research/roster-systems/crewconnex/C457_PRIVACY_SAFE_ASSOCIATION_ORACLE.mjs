@@ -75,6 +75,108 @@ const allowed = ["crewShape", "month", "ownDate", "page", "pairing",
   "physicalAnchorTr", "previewSelected", "tr"].sort();
 for (const row of rows) assert.deepEqual(Object.keys(row).sort(), allowed);
 
+
+// C459: independent, privacy-safe three-month physical-table geometry admission.
+// This is an OBSERVED layout discriminator, not a month-driven production detector.
+// Future production must select a validated header/profile before applying offsets.
+function geometryErrors(items) {
+  const errors = [];
+  const requireShape = (ok, reason) => { if (!ok) errors.push(reason); };
+  const rowIndex = new Map(), sourceBases = new Map();
+  const scopedMcids = new Set();
+  const offsets = { activity: 6, from: 9, to: 13, blh: 19,
+    acreg: 21, emp: 24, cc: 25, pos: 27 };
+  for (const r of items) {
+    const rowKey = [r.source_git_blob_sha1, r.page_1based,
+      r.primary_tr_1based_including_header].join("/");
+    requireShape(!rowIndex.has(rowKey), "duplicate physical row");
+    rowIndex.set(rowKey, r);
+    const d = r.date_cell_state === "PRESENT" ? 1 : 0;
+    const p = r.pairing_cell_state === "PRESENT" ? 1 : 0;
+    const shift = d + p;
+    const base = Number(r.body_td_count) - shift;
+    requireShape([28, 29, 32].includes(base), "unsupported body width");
+    const prior = sourceBases.get(r.source_git_blob_sha1);
+    requireShape(prior === undefined || prior === base,
+      "inconsistent source-wide layout");
+    sourceBases.set(r.source_git_blob_sha1, base);
+    for (const [field, position] of Object.entries(offsets)) {
+      requireShape(Number(r[field + "_td_1based"]) - shift === position,
+        "column offset " + field);
+      if (["activity", "from", "to", "blh", "acreg"].includes(field)) {
+        const mcid = r[field + "_mcid_page_local"];
+        requireShape(Boolean(mcid), "missing mandatory MCID");
+        const loc = [r.source_git_blob_sha1, r.page_1based, mcid].join("/");
+        requireShape(!scopedMcids.has(loc), "reused source-scoped MCID");
+        scopedMcids.add(loc);
+      }
+    }
+    const leafCount = r.crew_leaf_shape === "SINGLELEAF_1"
+      ? 1 : Number(r.crew_leaf_shape.split("_")[1]);
+    for (const field of ["emp", "cc", "pos"]) {
+      requireShape(r[field + "_leaf_mcids_page_local"].split("|").length
+        === leafCount, "crew triplet cardinality " + field);
+    }
+    if (r.crew_leaf_shape === "SINGLELEAF_1") {
+      requireShape(d === 0 && p === 0, "pipe row own Date/Pairing");
+      requireShape(Number(r.singleleaf_chain_depth) >= 1,
+        "pipe depth");
+    } else {
+      requireShape(Number(r.singleleaf_chain_depth) === 0,
+        "direct depth");
+    }
+  }
+  for (const r of items) {
+    if (r.crew_leaf_shape !== "SINGLELEAF_1") continue;
+    const anchor = rowIndex.get([r.source_git_blob_sha1, r.page_1based,
+      r.physical_multileaf_anchor_tr_1based].join("/"));
+    requireShape(Boolean(anchor), "missing same-source/page anchor");
+    if (!anchor) continue;
+    requireShape(anchor.crew_leaf_shape.startsWith("MULTILEAF_"),
+      "non-direct anchor");
+    requireShape(r.physical_anchor_date_state === anchor.date_cell_state,
+      "anchor Date state mismatch");
+    requireShape(r.physical_anchor_pairing_state === anchor.pairing_cell_state,
+      "anchor Pairing state mismatch");
+    requireShape(Number(r.primary_tr_1based_including_header) -
+      Number(r.physical_multileaf_anchor_tr_1based) ===
+      Number(r.singleleaf_chain_depth), "noncontiguous physical depth");
+    requireShape(Boolean(r.preview_sheet4_row_1based) ===
+      Boolean(anchor.preview_sheet4_row_1based), "preview selection split");
+  }
+  return errors;
+}
+assert.deepEqual(geometryErrors(source), [], "C459 pinned geometry");
+const mutateGeometry = (label, change) => {
+  const copy = source.map(r => ({ ...r }));
+  change(copy);
+  assert(geometryErrors(copy).length > 0, "C459 mutation admitted: " + label);
+};
+const firstPipe = a => a.find(r => r.crew_leaf_shape === "SINGLELEAF_1");
+mutateGeometry("body width", a => { a[0].body_td_count = "35"; });
+mutateGeometry("missing Date with unchanged columns",
+  a => { a[0].date_cell_state = "ABSENT"; });
+mutateGeometry("missing Pairing with unchanged columns",
+  a => { a[0].pairing_cell_state = "ABSENT"; });
+mutateGeometry("From offset",
+  a => { a[0].from_td_1based = "12"; });
+mutateGeometry("Pos offset",
+  a => { a[0].pos_td_1based = "30"; });
+mutateGeometry("crew cardinality",
+  a => { a[0].cc_leaf_mcids_page_local = "131|132"; });
+mutateGeometry("MCID collision",
+  a => { a[0].from_mcid_page_local = a[0].activity_mcid_page_local; });
+mutateGeometry("source swap",
+  a => { a[0].source_git_blob_sha1 = "f".repeat(40); });
+mutateGeometry("cross-page continuation",
+  a => { firstPipe(a).page_1based = "2"; });
+mutateGeometry("chain depth",
+  a => { firstPipe(a).singleleaf_chain_depth = "3"; });
+mutateGeometry("missing anchor",
+  a => { firstPipe(a).physical_multileaf_anchor_tr_1based = "999"; });
+mutateGeometry("direct-to-pipe misclassification",
+  a => { a[0].crew_leaf_shape = "SINGLELEAF_1"; });
+
 function classify(changes) {
   const x = { ...fixture.policyModel.defaults, ...changes };
   if (x.privacy !== "CLEAN") return "REJECT_PRIVACY";
@@ -110,6 +212,7 @@ console.log(JSON.stringify({
   status: "RESEARCH_ONLY", pinnedManifest: true, skiaPhysicalRows: rows.length,
   pdcNumericAggregate: 26, physicalGroups: [size(1), size(2), size(4)],
   syntheticPolicyCases: fixture.policyModel.scenarios.length,
+  c459ObservedLayoutBases: [28, 29, 32], c459GeometryMutantsRejected: 12,
   actualPdfDecode: false, uidOwnedDartSembast: false,
   productionReadiness: "OPEN"
 }, null, 2));
