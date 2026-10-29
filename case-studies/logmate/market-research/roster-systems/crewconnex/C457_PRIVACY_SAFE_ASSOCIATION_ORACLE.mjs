@@ -485,6 +485,27 @@ assert.equal(c468SyntheticEnd.minute + 1440 -
 assert.equal(c468PdcRawClock("0100(+1)"), null,
   "C468 no silent parenthesized-marker repair");
 
+
+// C468 company/PDC minute-normalized duration comparison (SYNTHETIC).
+// In two conditionally matched ORIGINAL PDC↔2026-company observations,
+// raw H:MM text was unequal 0/2 while parsed integer minutes agreed 2/2.
+// This is formatting equivalence only, not source/UID or Block authority.
+function c468ParsePrintedDuration(raw) {
+  const m = /^(\d+):([0-5]\d)$/.exec(raw);
+  return m ? Number(m[1]) * 60 + Number(m[2]) : null;
+}
+const c468DurationCases = [
+  ["01:25", 85], ["1:25", 85], ["00:00", 0],
+  ["1:60", null], ["1:5", null], ["-1:25", null],
+  ["1:25x", null], ["1.25", null]
+];
+for (const [raw, expected] of c468DurationCases)
+  assert.equal(c468ParsePrintedDuration(raw), expected,
+    "C468 synthetic printed-duration " + raw);
+assert.notEqual("01:25", "1:25", "C468 raw text preserved");
+assert.equal(c468ParsePrintedDuration("01:25"),
+  c468ParsePrintedDuration("1:25"), "C468 normalized minute equality");
+
 console.log(JSON.stringify({
   status: "RESEARCH_ONLY", pinnedManifest: true, skiaPhysicalRows: rows.length,
   pdcNumericAggregate: 26, physicalGroups: [size(1), size(2), size(4)],
@@ -494,7 +515,7 @@ console.log(JSON.stringify({
   c461PinnedPageNumericCounts: [16, 2, 20, 2, 20, 2],
   c461OmissionAdversaries: 3, c461DuplicateAdversaries: 1,
   c468SourceBindings: 3, c468SourceMutantsRejected: 11,
-  c468SyntheticClockCases: 11, c468RealPdcRecheck: "49 bands / 26 numeric / 4 bare +1 numeric / 26 base arithmetic matches (separate original inspection)",
+  c468SyntheticClockCases: 11, c468SyntheticDurationCases: 8, c468RealPdcRecheck: "49 bands / 26 numeric / 4 bare +1 numeric / 26 base arithmetic matches (separate original inspection)",
   actualPdfDecode: false, uidOwnedDartSembast: false,
   productionReadiness: "OPEN"
 }, null, 2));
