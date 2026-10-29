@@ -177,6 +177,114 @@ mutateGeometry("missing anchor",
 mutateGeometry("direct-to-pipe misclassification",
   a => { a[0].crew_leaf_shape = "SINGLELEAF_1"; });
 
+
+// C460 pinned all-field MCID regression: source-derived integrity ONLY.
+// These observed page-local patterns are NOT a production ParserProfile detector,
+// PDF version signature, crew identity, flight date, or semantic field mapping.
+const c460PinnedSourceIds = new Set(source.map(r => r.source_git_blob_sha1));
+const c460PinnedBases = new Map(source.map(r => [
+  r.source_git_blob_sha1,
+  Number(r.body_td_count) -
+    Number(r.date_cell_state === "PRESENT") -
+    Number(r.pairing_cell_state === "PRESENT")
+]));
+function c460PinnedMcidErrors(items) {
+  const errors = [];
+  const seen = new Set();
+  const pageRows = new Map();
+  const mcidFields = [
+    "date", "pairing", "activity", "from", "to", "blh", "acreg",
+    "emp", "cc", "pos"
+  ];
+  for (const r of items) {
+    if (!c460PinnedSourceIds.has(r.source_git_blob_sha1))
+      errors.push("unrecognized pinned source");
+    const shift = Number(r.date_cell_state === "PRESENT") +
+      Number(r.pairing_cell_state === "PRESENT");
+    if (Number(r.body_td_count) - shift !==
+        c460PinnedBases.get(r.source_git_blob_sha1))
+      errors.push("pinned source base mismatch");
+    const mcids = mcidFields.flatMap(field =>
+      (r[field + "_mcid_page_local"] ||
+        r[field + "_leaf_mcids_page_local"] || "")
+        .split("|").filter(Boolean).map(Number));
+    if (!mcids.length) errors.push("missing MCIDs");
+    for (const mcid of mcids) {
+      if (!Number.isSafeInteger(mcid) || mcid < 0)
+        errors.push("invalid MCID");
+      const scoped = [r.source_git_blob_sha1, r.page_1based, mcid].join("/");
+      if (seen.has(scoped)) errors.push("duplicate MCID including optional/crew");
+      seen.add(scoped);
+    }
+    if (mcids.some((mcid, i) => i > 0 && mcid <= mcids[i - 1]))
+      errors.push("MCIDs out of row order");
+    const core = ["activity", "from", "to", "blh", "acreg"];
+    const gaps = core.slice(1).map((field, i) =>
+      Number(r[field + "_mcid_page_local"]) -
+      Number(r[core[i] + "_mcid_page_local"]));
+    if (gaps.join("/") !== "3/4/6/2")
+      errors.push("C194-only core MCID gap drift");
+    const pageKey = [r.source_git_blob_sha1, r.page_1based].join("/");
+    if (!pageRows.has(pageKey)) pageRows.set(pageKey, []);
+    pageRows.get(pageKey).push({
+      tr: Number(r.primary_tr_1based_including_header),
+      min: Math.min(...mcids),
+      max: Math.max(...mcids)
+    });
+  }
+  for (const rowsOnPage of pageRows.values()) {
+    rowsOnPage.sort((a, b) => a.tr - b.tr);
+    for (let i = 1; i < rowsOnPage.length; i++)
+      if (rowsOnPage[i].min <= rowsOnPage[i - 1].max)
+        errors.push("MCID page stream out of physical-row order");
+  }
+  return errors;
+}
+assert.deepEqual(c460PinnedMcidErrors(source), [], "C460 pinned MCID integrity");
+const c460Bypasses = [
+  ["crew MCID overlaps Emp", a => {
+    const r = a[0];
+    r.cc_leaf_mcids_page_local = r.cc_leaf_mcids_page_local.replace(
+      /^\d+/, r.emp_leaf_mcids_page_local.split("|")[0]);
+  }],
+  ["Date MCID overlaps Activity", a => {
+    a[0].date_leaf_mcids_page_local = a[0].activity_mcid_page_local;
+  }],
+  ["From MCID inversion", a => {
+    a[0].from_mcid_page_local = "999999";
+  }],
+  ["From MCID gap drift", a => {
+    a[0].from_mcid_page_local =
+      String(Number(a[0].from_mcid_page_local) + 1);
+  }],
+  ["isolated row source retag", a => {
+    const r = a.find(x => x.month === "06" &&
+      x.primary_tr_1based_including_header === "9");
+    assert(r, "pinned isolated row");
+    r.source_git_blob_sha1 = "f".repeat(40);
+  }],
+  ["whole-source retag", a => {
+    for (const r of a) if (r.month === "06")
+      r.source_git_blob_sha1 = "f".repeat(40);
+  }]
+];
+for (const [label, mutate] of c460Bypasses) {
+  const copy = source.map(r => ({ ...r }));
+  mutate(copy);
+  assert.deepEqual(geometryErrors(copy), [],
+    "C460 expected previous C459 gate blind spot: " + label);
+  assert(c460PinnedMcidErrors(copy).length > 0,
+    "C460 pinned gate admitted adversary: " + label);
+}
+// All 62 original-derived observations have 5 core, 3 crew fields and
+// optional Date/Pairing MCIDs: 310 + 3*247 + 35 + 30 = 1116 unique.
+const c460AllMcids = source.flatMap(r => [
+  "date", "pairing", "activity", "from", "to", "blh", "acreg",
+  "emp", "cc", "pos"
+].flatMap(field => (r[field + "_mcid_page_local"] ||
+  r[field + "_leaf_mcids_page_local"] || "").split("|").filter(Boolean)));
+assert.equal(c460AllMcids.length, 1116, "C460 1116 source-derived MCIDs");
+
 function classify(changes) {
   const x = { ...fixture.policyModel.defaults, ...changes };
   if (x.privacy !== "CLEAN") return "REJECT_PRIVACY";
@@ -213,6 +321,7 @@ console.log(JSON.stringify({
   pdcNumericAggregate: 26, physicalGroups: [size(1), size(2), size(4)],
   syntheticPolicyCases: fixture.policyModel.scenarios.length,
   c459ObservedLayoutBases: [28, 29, 32], c459GeometryMutantsRejected: 12,
+  c460AllFieldMcids: 1116, c460PriorGateBypassesNowRejected: 6,
   actualPdfDecode: false, uidOwnedDartSembast: false,
   productionReadiness: "OPEN"
 }, null, 2));
