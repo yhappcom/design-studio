@@ -316,12 +316,72 @@ for (const c of fixture.policyModel.scenarios) {
 }
 assert.equal(new Set(fixture.policyModel.scenarios.map(c => c.id)).size,
   fixture.policyModel.scenarios.length);
+
+// C461 pinned *candidate census* regression. This is NOT PDF completeness:
+// C194 contains selected numeric rows only, not the full primary table,
+// nonflight bands, Sum/footer, or all PDF page/section boundaries.
+// The full C457 oracle already pins all 62 fixture rows; the purpose here is
+// to show that the C460 *local MCID-integrity function by itself* can accept
+// dropped rows/pages. Production must validate a fresh full-document census.
+const c461ExpectedNumericPageCounts = new Map([
+  ["06/1", 16], ["06/2", 2],
+  ["07/1", 20], ["07/2", 2],
+  ["08/1", 20], ["08/2", 2]
+]);
+function c461PinnedCensusErrors(items) {
+  const errors = [];
+  const counts = new Map();
+  const physical = new Set();
+  for (const r of items) {
+    const page = r.month + "/" + r.page_1based;
+    counts.set(page, (counts.get(page) ?? 0) + 1);
+    if (!c461ExpectedNumericPageCounts.has(page))
+      errors.push("unrecognized pinned numeric page");
+    const locator = [r.source_git_blob_sha1, r.page_1based,
+      r.primary_tr_1based_including_header].join("/");
+    if (physical.has(locator)) errors.push("duplicate physical candidate");
+    physical.add(locator);
+  }
+  for (const [page, expected] of c461ExpectedNumericPageCounts)
+    if ((counts.get(page) ?? 0) !== expected)
+      errors.push("missing or extra numeric candidate: " + page);
+  return errors;
+}
+assert.deepEqual(c461PinnedCensusErrors(source), [], "C461 pinned numeric census");
+const c461AugPage2 = source.find(r =>
+  r.month === "08" && r.page_1based === "2" &&
+  r.crew_leaf_shape !== "SINGLELEAF_1");
+assert(c461AugPage2, "C461 pinned August page2 direct candidate");
+const c461RemoveCases = [
+  ["one August page2 direct candidate", a => a.filter(r => r !== c461AugPage2)],
+  ["whole June page2", a => a.filter(r =>
+    !(r.month === "06" && r.page_1based === "2"))],
+  ["whole August page2", a => a.filter(r =>
+    !(r.month === "08" && r.page_1based === "2"))]
+];
+for (const [label, remove] of c461RemoveCases) {
+  const incomplete = remove(source);
+  // Demonstrates insufficiency of the local integrity check, NOT a bypass
+  // of the global fixture's 62-row deep-equality and source pin.
+  assert.deepEqual(c460PinnedMcidErrors(incomplete), [],
+    "C461 expected local MCID gate to miss omission: " + label);
+  assert(c461PinnedCensusErrors(incomplete).length > 0,
+    "C461 pinned numeric census missed omission: " + label);
+}
+const c461Duplicate = [...source, { ...source[0] }];
+assert(c460PinnedMcidErrors(c461Duplicate).length > 0,
+  "C461 duplicate must fail local MCID gate");
+assert(c461PinnedCensusErrors(c461Duplicate).length > 0,
+  "C461 duplicate must fail pinned census");
+
 console.log(JSON.stringify({
   status: "RESEARCH_ONLY", pinnedManifest: true, skiaPhysicalRows: rows.length,
   pdcNumericAggregate: 26, physicalGroups: [size(1), size(2), size(4)],
   syntheticPolicyCases: fixture.policyModel.scenarios.length,
   c459ObservedLayoutBases: [28, 29, 32], c459GeometryMutantsRejected: 12,
   c460AllFieldMcids: 1116, c460PriorGateBypassesNowRejected: 6,
+  c461PinnedPageNumericCounts: [16, 2, 20, 2, 20, 2],
+  c461OmissionAdversaries: 3, c461DuplicateAdversaries: 1,
   actualPdfDecode: false, uidOwnedDartSembast: false,
   productionReadiness: "OPEN"
 }, null, 2));
