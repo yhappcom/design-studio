@@ -1535,9 +1535,9 @@ Re-read current LogMate AGENTS/MASTER/import/CrewConnex specs, crew ownership an
 
 ## C473 — 2026-10-30 05 KST: PDC source temporal ownership × admission/authority separation × Skia August cross-check
 
-**READ FIRST:** LogMate current AGENTS/MASTER/import/CrewConnex specs, W-016/017, SourceEvidence/History, CrewParticipant, FlightRecord and tests; Design Studio plan, master indexes, queue/log, C194/C200/C426/C457 and historical C194 sync debt. LogMate READ ONLY. Private PDC PDF fetched transiently (Git blob \`8e7fec30f98458c770053bd7739e60869a87e33b\`, 39,612 bytes); no source bytes or private cells copied into Studio.
+**READ FIRST:** LogMate current AGENTS/MASTER/import/CrewConnex specs, W-016/017, SourceEvidence/History, CrewParticipant, FlightRecord and tests; Design Studio plan, master indexes, queue/log, C194/C200/C426/C457 and historical C194 sync debt. LogMate READ ONLY. Private PDC PDF fetched transiently (Git blob `8e7fec30f98458c770053bd7739e60869a87e33b`, 39,612 bytes); no source bytes or private cells copied into Studio.
 
-**ACTUAL ORIGINAL:** Saved strict C426 scanner executed on original PDC PDF: 49 bands/26 numeric/22 nonnumeric/one auxiliary, \`OBSERVED_FAMILY_DETACHED_HOLD\`. Among 13 undated numeric, 10 have no own Pairing, 3 have own Pairing, 2 nearest preceding own-Date are nonnumeric, 2 have Base +1 markers; nearest Date-bearing distance 1/2/3=8/3/2. Dated numeric +1=2; nonnumeric own Date=18. This does not authorize Date/Pairing inheritance or timezone/date inference.
+**ACTUAL ORIGINAL:** Saved strict C426 scanner executed on original PDC PDF: 49 bands/26 numeric/22 nonnumeric/one auxiliary, `OBSERVED_FAMILY_DETACHED_HOLD`. Among 13 undated numeric, 10 have no own Pairing, 3 have own Pairing, 2 nearest preceding own-Date are nonnumeric, 2 have Base +1 markers; nearest Date-bearing distance 1/2/3=8/3/2. Dated numeric +1=2; nonnumeric own Date=18. This does not authorize Date/Pairing inheritance or timezone/date inference.
 
 **CROSS-VALIDATION:** Re-read pinned C194 62-row nonidentifying Skia manifest, August 22=12 own Date/10 omitted (9 pipe/1 direct). PDC 26=13 own/13 omitted. August 48 output observations with 23 omitted own Date, not 48 unique Flights or authenticated same-export edges. No new Skia PDF decode or company workbook join; prior 2026 company Aug02 cutoff remains.
 
