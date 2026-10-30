@@ -71,6 +71,15 @@ function inspectPdcPdfTextLayer(base64){
   // Research-only source-internal arithmetic, not operational Block/date authority.
   const clockMin=v=>{const m=/^([01]\d|2[0-3])([0-5]\d)(\+1)?$/.exec(v||"");return m?+m[1]*60+(+m[2])+(m[3]?1440:0):null;};
   const blockMin=v=>{const m=/^(\d{1,2}):([0-5]\d)$/.exec(v||"");return m?+m[1]*60+(+m[2]):null;};
+   // C477: nonnumeric Activity clocks use a distinct observed lexical family.
+   // Printed 2400/-1/+1/+3 are not duty/date/timezone semantics.
+   const plainClock=v=>/^(?:[01]\d|2[0-3])[0-5]\d$/.test(v||"");
+   const nonnumericClock=(x,v)=>{
+    if(plainClock(v))return true;
+    if(x===268)return /^(?:[01]\d|2[0-3])[0-5]\d-1$/.test(v||"");
+    if(x===340||x===364)return v==="2400"||/^(?:[01]\d|2[0-3])[0-5]\d\+(?:1|3)$/.test(v||"");
+    return false;
+   };
  for(let i=0;i<49;i++){
   const r=rows.get(i);if(!r)return fail("MISSING_BODY_BAND");
   const activity=r.get(210),date=r.get(81),block=r.get(511);
@@ -86,7 +95,7 @@ function inspectPdcPdfTextLayer(base64){
    for(const x of [268,292,340,364])if(!/^(?:[01]\d|2[0-3])[0-5]\d(?:\+1)?$/.test(r.get(x)||""))return fail("INVALID_NUMERIC_CLOCK");
    const baseElapsed=clockMin(r.get(364))-clockMin(r.get(292));
    if(baseElapsed<=0||baseElapsed!==blockMin(block))return fail("PRINTED_BASE_CLOCK_BLOCK_CONTRADICTION");
-  }else{nonflight++;if(!C469_OBSERVED_NONNUMERIC_ACTIVITY.has(activity))return fail("UNKNOWN_NONNUMERIC_ACTIVITY");if(block!==undefined)return fail("NONFLIGHT_WITH_BLOCK");if(date!==undefined)ownDateNonflight++;for(const x of [244,316])if(r.has(x)&&!/^[A-Z]{3}$/.test(r.get(x)))return fail("INVALID_NONFLIGHT_ROUTE_SHAPE");}
+  }else{nonflight++;if(!C469_OBSERVED_NONNUMERIC_ACTIVITY.has(activity))return fail("UNKNOWN_NONNUMERIC_ACTIVITY");if(block!==undefined)return fail("NONFLIGHT_WITH_BLOCK");if(date!==undefined)ownDateNonflight++;for(const x of [244,316])if(r.has(x)&&!/^[A-Z]{3}$/.test(r.get(x)))return fail("INVALID_NONFLIGHT_ROUTE_SHAPE");for(const x of [268,292,340,364])if(!nonnumericClock(x,r.get(x)))return fail("INVALID_NONFLIGHT_CLOCK_"+x);for(const x of [162,186])if(r.has(x)&&!plainClock(r.get(x)))return fail("INVALID_NONFLIGHT_CI_CO_CLOCK_"+x);}
  }
  if(numeric!==26||nonflight!==22||aux!==1||ownDateNumeric!==13||ownDateNonflight!==18||threeDigit!==8||fourDigit!==18)return fail("SOURCE_FAMILY_COUNTS");
  return {status:"OBSERVED_FAMILY_DETACHED_HOLD",profile:"pdc-generator-14col-Aug26-single-page-C426",glyphs:495,bodyGlyphs:473,headers:14,bands:49,numeric,nonflight,aux,ownDateNumeric,missingOwnDateNumeric:13,ownDateNonflight,threeDigit,fourDigit,printedYearSuffix:"26",fourDigitOperationalYearCertified:false,printedSubjectLabelPresent:true,reportSubjectBoundToUid:false,printedGenerationStampPresent:true,publicationRevisionCertified:false,candidates:26,createsFlight:false,overwritesBlock:false,crewProvidedPerLeg:false};
@@ -121,6 +130,16 @@ function runSyntheticTests(){
  for(const label of ["UNKNOWN","123A","1000A",""])
   check("C469 unsupported nonnumeric "+(label||"empty"),s=>s.replace("210 629 Td (OFF)","210 629 Td ("+label+")"),bad);
 
+  // C477 source-backed nonnumeric-clock positive/negative controls.
+  check("C477 nonnumeric STD-L malformed",s=>s.replace("268 629 Td (0900)","268 629 Td (BAD)"),bad);
+  check("C477 nonnumeric STD-B malformed",s=>s.replace("292 629 Td (0900)","292 629 Td (9999)"),bad);
+  check("C477 nonnumeric STA-L malformed",s=>s.replace("340 629 Td (1030)","340 629 Td (BAD)"),bad);
+  check("C477 nonnumeric STA-B malformed",s=>s.replace("364 629 Td (1030)","364 629 Td (BAD)"),bad);
+  check("C477 nonnumeric C/O malformed",s=>s.replace("186 629 Td (1100)","186 629 Td (BAD)"),bad);
+  check("C477 nonnumeric STD-L -1 observed",s=>s.replace("268 629 Td (0900)","268 629 Td (0900-1)"),good);
+  check("C477 nonnumeric STA-L 2400 observed",s=>s.replace("340 629 Td (1030)","340 629 Td (2400)"),good);
+  check("C477 nonnumeric STA-B +3 observed",s=>s.replace("364 629 Td (1030)","364 629 Td (1030+3)"),good);
+  check("C477 nonnumeric STD-B +1 unsupported",s=>s.replace("292 629 Td (0900)","292 629 Td (0900+1)"),bad);
  check("wrong report",s=>s.replace("(Crew Roster Report)","(Other Report)"),bad);
  check("period duplicate disagreement",s=>s.replace("Period: 01Aug26 - 31Aug26","Period: 01Sep26 - 30Sep26"),bad);
  check("unsupported period",s=>s.replaceAll("Period: 01Aug26 - 31Aug26","Period: 01Sep26 - 30Sep26"),bad);
