@@ -1589,3 +1589,10 @@ Re-read current LogMate AGENTS/MASTER/import/CrewConnex specs, crew ownership an
 - 9/9 aggregate invariants and 10/10 synthetic policy checks. No rebuilt PDF, Dart/Sembast, company Aug03–31 or UID/Publication. Skia tagged and PDC untagged remain separate; existing-record-only. Public exact PDF P5, weekly HTML P3, Production OPEN, W-016/017 NOT STARTED.
 - Updated existing C284/C200/FIELD_COVERAGE_MATRIX/REVALIDATION_QUEUE/RESEARCH_LOG. No new airline, public sample or TAM; other master indexes no-op. C194 exact-write historical sync debt remains unreconstructable.
 - **ONE NEXT:** certified Activity TD ownership/three unknown rows + redacted full-body ParserProfile regression/PDC negative controls.
+
+## 2026-10-30 12:00 KST — C480 Skia page-two tail-row Activity ownership and original-PDF correction
+- Re-read LogMate main@9cc0cd43 authority/import/CrewConnex/current domain code read-only; Studio plan/indexes/queue/C194/C284/C295/C479. Fresh original private June/Aug Skia PDF Flate + F9 ToUnicode + typed TR/TD/MCID decode; no raw/private values persisted.
+- Corrected C479 June `p1/TR41` to **p2/TR41**. Three prior TD5–TD8 window-only unknowns: June p2 TR41 and August p2 TR42–43; each TD7 nonnumeric 5-char Activity-shaped, TD10/14 route-shaped, TD11/12/15/16 clock-shaped, no H:MM BLH at TD20, zero missing glyphs; before page-2 Sum MCID257/311. Exclude from numeric Flight candidate; June raw code meaning remains unverified.
+- Real-original-derived three-row baseline 0 violations; 13/13 synthetic metadata mutations rejected (not rebuilt PDF/production). July page-2 tail typed structure also checked; no new semantic decode or company/UID join.
+- Updated C284/C200/FIELD_COVERAGE_MATRIX/REVALIDATION_QUEUE/RESEARCH_LOG. System/deployment/sample indexes no-op. Public exact PDF P5, HTML P3, W-016/017 NOT STARTED, Production OPEN; C194 historical sync debt unresolved.
+- **ONE NEXT:** three-month typed Activity/unknown-code and PDC negative-control integrated regression, then authenticated August year/subject/Publication + company/UID linkage.
