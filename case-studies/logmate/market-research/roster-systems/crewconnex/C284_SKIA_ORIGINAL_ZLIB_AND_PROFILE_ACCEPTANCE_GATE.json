@@ -581,5 +581,111 @@
       "W017": "INSUFFICIENT_EVIDENCE_NOT_STARTED"
     },
     "remaining": "Three nonmanifest Activity TD ownerships, eight August Skia/PDC authenticated edges, company Aug03-31, source four-digit year/Publication, owner-approved W016/017 and real Dart/Sembast; C194 exact-write historical sync debt unreconstructable."
+  },
+  "c480TailRowActivityOwnership": {
+    "date": "2026-10-30 12 KST",
+    "version": "skia-tagged-printer/research-2.19-C480",
+    "status": "RESEARCH_ONLY_FRESH_PRIVATE_ORIGINAL_TD7_AND_PAGE2_LEXICAL_VERIFICATION",
+    "sourceAuthority": "LogMate main@9cc0cd432a317d5dfebbe90e318fb219e53e024a READ ONLY; original Skia PDF Git blobs e96bf5a76764984aa7f28285c975a24fd471117e and 29ac040595089188a8353e98f41ba27f92b8650b",
+    "method": "Fresh private original PDF base64 in transient V8 -> independent RFC1951 DEFLATE of page-2 /Contents and F9 ToUnicode -> typed primary Table/TR/TD/NonStruct /K MCID -> token shape classification. No raw source text, flight, route, clock, crew, staff ID or original bytes persisted.",
+    "c479Correction": "Previously marked 'neither' three rows (June TR41, August TR42/TR43) are all actual page TWO, not June p1. /Pg 21 0 R is the second /Page object; do not interpret PDF object number as page number. All three are primary Table rows before page-2 Sum, not post-Sum auxiliary.",
+    "actualRows": [
+      {
+        "month": "06",
+        "page": 2,
+        "primaryTr": 41,
+        "tdCount": 32,
+        "mcidFirst": 225,
+        "mcidLast": 256,
+        "followingSumMcid": 257,
+        "activityTd": 7,
+        "activityToken": "nonnumeric five-character, outside prior limited known-code window",
+        "fromTd": 10,
+        "toTd": 14,
+        "clockTds": [
+          11,
+          12,
+          15,
+          16
+        ],
+        "printedBlhTd": 20,
+        "printedBlhHMM": false,
+        "unmappedF9Glyphs": 0,
+        "flightAdmission": "EXCLUDE_FROM_NUMERIC_FLIGHT_CANDIDATES; RAW_ACTIVITY_MEANING_UNVERIFIED"
+      },
+      {
+        "month": "08",
+        "page": 2,
+        "primaryTr": 42,
+        "tdCount": 29,
+        "mcidFirst": 253,
+        "mcidLast": 281,
+        "followingSumMcid": 311,
+        "activityTd": 7,
+        "activityToken": "nonnumeric five-character observed-code-family",
+        "fromTd": 10,
+        "toTd": 14,
+        "clockTds": [
+          11,
+          12,
+          15,
+          16
+        ],
+        "printedBlhTd": 20,
+        "printedBlhHMM": false,
+        "unmappedF9Glyphs": 0,
+        "flightAdmission": "EXCLUDE_FROM_NUMERIC_FLIGHT_CANDIDATES; RAW_ACTIVITY_MEANING_UNVERIFIED"
+      },
+      {
+        "month": "08",
+        "page": 2,
+        "primaryTr": 43,
+        "tdCount": 29,
+        "mcidFirst": 282,
+        "mcidLast": 310,
+        "followingSumMcid": 311,
+        "activityTd": 7,
+        "activityToken": "nonnumeric five-character observed-code-family",
+        "fromTd": 10,
+        "toTd": 14,
+        "clockTds": [
+          11,
+          12,
+          15,
+          16
+        ],
+        "printedBlhTd": 20,
+        "printedBlhHMM": false,
+        "unmappedF9Glyphs": 0,
+        "flightAdmission": "EXCLUDE_FROM_NUMERIC_FLIGHT_CANDIDATES; RAW_ACTIVITY_MEANING_UNVERIFIED"
+      }
+    ],
+    "independentPageContent": {
+      "junePage2Object": 23,
+      "augustPage2Object": 24,
+      "juneF9CMapObject": 3010,
+      "augustF9CMapObject": 3016,
+      "juneCMapGlyphEntries": 59,
+      "augustCMapGlyphEntries": 67
+    },
+    "evidenceDelta": "C479 three UNKNOWN/HOLD primary-body rows have now been re-decoded and excluded from numeric flight admission on actual PDF evidence: each TD7 nonnumeric, TD10/14 route-shaped, TD11/12/15/16 clock-shaped, no H:MM at expected BLH TD20, complete page-local MCID leaf ancestry and zero unmapped F9 glyphs. Does NOT certify semantic nonflight duty category, Date/Pairing inheritance, person identity or universal column map. C479 64-row window counts remain historical window-only and should not be retroactively redefined.",
+    "adversarial": {
+      "sourceDerivedBaselineRows": 3,
+      "baselineViolations": 0,
+      "syntheticMutationsRejected": 13,
+      "syntheticMutationsTotal": 13,
+      "scenarios": "wrong page/family, missing/post-Sum MCID, wrong TD count, numeric promotion, forged BLH, wrong Activity/route/clock offsets, missing/duplicated row, swapped MCID",
+      "grade": "SYNTHETIC_POLICY_MUTANTS_NOT_REBUILT_PDF"
+    },
+    "readiness": {
+      "productionParser": "OPEN",
+      "publicExactLayoutPDF": "P5",
+      "weeklyHTML": "P3",
+      "W016": "CONDITIONAL_NOT_STARTED",
+      "W017": "INSUFFICIENT_EVIDENCE_NOT_STARTED",
+      "uidPublicationCompanyMatch": "NOT_VERIFIED",
+      "dartSembast": "NOT_EXECUTED"
+    },
+    "nextIntegratedTarget": "Full three-month original typed Activity-column ownership + cross-family PDC negative controls, then authenticated year/subject/Publication/active UID matching for August detached edges; no LogMate write."
   }
 }
