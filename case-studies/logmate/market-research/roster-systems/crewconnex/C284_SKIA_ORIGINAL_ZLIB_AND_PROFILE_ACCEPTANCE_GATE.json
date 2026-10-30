@@ -961,5 +961,108 @@
       "W017": "INSUFFICIENT_EVIDENCE_NOT_STARTED"
     },
     "next": "Complete source-font ToUnicode and typed Activity/BLH ownership on eight physical rows, then authenticated same-UID year/Publication/company Aug03–31 matching and W016 evidence-only lifecycle"
+  },
+  "c483EightRowPerFontLexicalAudit": {
+    "date": "2026-10-30 15 KST",
+    "version": "skia-tagged-printer/research-2.22-C483",
+    "status": "RESEARCH_ONLY_LEXICAL_DECODE_REPRODUCED_AUTHORITY_OPEN",
+    "source": "Fresh read-only original June/July/August Skia private PDFs, pinned blobs e96bf5a7/d306cad8/29ac0405; transient in-memory binary/Flate/ToUnicode, no private row contents retained",
+    "method": "Independent per-original F9 ToUnicode mapping of text operators inside each typed TD /NonStruct MCID; 8 C481/C482 unresolved heuristic rows, all TDs, no staff identifiers or flight/route/clock values persisted",
+    "eightRows": [
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 10,
+        "td": 33,
+        "activityWindow": "SINGLE_CHARACTER_NONNUMERIC",
+        "fourDigitCellsFirst21": 4
+      },
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 25,
+        "td": 32,
+        "activityWindow": "TD7_RAW_CHECKIN_UNINTERPRETED",
+        "fourDigitCellsFirst21": 1
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 34,
+        "td": 29,
+        "activityWindow": "SINGLE_CHARACTER_NONNUMERIC",
+        "fourDigitCellsFirst21": 4
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 35,
+        "td": 28,
+        "activityWindow": "SINGLE_CHARACTER_NONNUMERIC",
+        "fourDigitCellsFirst21": 4
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 7,
+        "td": 30,
+        "activityWindow": "SINGLE_CHARACTER_NONNUMERIC",
+        "fourDigitCellsFirst21": 2
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 15,
+        "td": 30,
+        "activityWindow": "SINGLE_CHARACTER_NONNUMERIC",
+        "fourDigitCellsFirst21": 2
+      },
+      {
+        "month": "08",
+        "page": 2,
+        "tr": 37,
+        "td": 30,
+        "activityWindow": "SINGLE_CHARACTER_NONNUMERIC",
+        "fourDigitCellsFirst21": 2
+      },
+      {
+        "month": "08",
+        "page": 2,
+        "tr": 38,
+        "td": 29,
+        "activityWindow": "SINGLE_CHARACTER_NONNUMERIC",
+        "fourDigitCellsFirst21": 4
+      }
+    ],
+    "totals": {
+      "rows": 8,
+      "tdMcidCells": 241,
+      "unresolvedGlyphLookups": 0,
+      "rawUninterpretedCHECKINRows": 1,
+      "otherSingleCharacterActivityWindowRows": 7,
+      "fourDigitCellsFirst21": 23,
+      "printedHMMInTD19to21": 0,
+      "certifiedDutySemantics": 0,
+      "sourceToActiveUidMatches": 0
+    },
+    "priorCorrection": "C482 separate per-font lexical attempt was inconclusive; this fresh per-PDF F9 ToUnicode decoding resolves glyph lookup for these eight rows. It does NOT certify Activity meaning or binding. C481/C482 eight heuristic rows remain document-atomic HOLD, not a FlightRecord.",
+    "independentSyntheticPolicy": {
+      "baselineRowsNotAdmitted": 8,
+      "adversarialCasesPassed": 6,
+      "adversarialCasesTotal": 6,
+      "scope": "In-memory predicate only: numeric-looking clocks, forged numeric Activity without BLH, forged BLH without numeric Activity, missing owned cell, wrong generator, lexical-valid without owner authority; not rebuilt PDF or Dart/Sembast."
+    },
+    "readiness": {
+      "publicExactPrinterPdf": "P5",
+      "weeklyHtml": "P3",
+      "production": "OPEN",
+      "W016": "CONDITIONAL_NOT_STARTED",
+      "W017": "INSUFFICIENT_EVIDENCE_NOT_STARTED",
+      "companyAugust03to31": "NOT_AVAILABLE",
+      "sourceYearPublicationSubject": "UNVERIFIED",
+      "activeSameUid": "NOT_VERIFIED",
+      "historicalC194SyncDebt": "UNRECONSTRUCTABLE_OPEN"
+    },
+    "next": "Authenticated same-export four-digit year, subject and Publication/revision + company Aug03-31/active same-UID August Skia/PDC adjudication; W-016 evidence-only persistence acceptance remains separate"
   }
 }
