@@ -666,3 +666,62 @@ function runPdcAuthoritySeparationTests(originalBase64){
    productAcceptance:false,identityCertified:false,publicationCertified:false};
 }
 export {runPdcAuthoritySeparationTests};
+
+// C477: actual-source nonnumeric clock lexical regression. The private PDF is
+// supplied only at runtime; no source text or identifying cells are emitted.
+function runPdcNonNumericClockAdversarial(originalBase64){
+ const raw=fromBase64(originalBase64),baseline=inspectPdcPdfStrict(originalBase64);
+ const obj=(raw.match(/16 0 obj([\s\S]*?)endobj/)||[])[1]||"";
+ const st=obj.slice(obj.indexOf("stream\n")+7,obj.indexOf("\nendstream"));
+ const cells=[...st.matchAll(/\bBT\b([\s\S]*?)\bET\b/g)].map(m=>{
+  const p=m[1].match(/(\d+)\s+(\d+)\s+Td\b/),t=m[1].match(/\(((?:\\.|[^\\)])*)\)\s+Tj\b/);
+  return p&&t?{full:m[0],x:+p[1],y:+p[2],raw:t[1]}:null;
+ }).filter(Boolean);
+ const non=cells.filter(x=>x.x===210&&x.y>=206&&x.y<=638&&!/^\d{3,4}$/.test(x.raw));
+ const clockCounts={};
+ for(const x of [268,292,340,364]){
+  const vals=non.map(a=>cells.find(c=>c.x===x&&c.y===a.y)?.raw);
+  clockCounts[x]={present:vals.filter(v=>v!==undefined).length,
+   minus1:vals.filter(v=>v?.endsWith("-1")).length,
+   plus1:vals.filter(v=>v?.endsWith("+1")).length,
+   plus3:vals.filter(v=>v?.endsWith("+3")).length,
+   at2400:vals.filter(v=>v==="2400").length};
+ }
+ const tests=[{name:"real original detached",pass:baseline.status==="OBSERVED_FAMILY_DETACHED_HOLD"},
+ {name:"real nonnumeric clock census",pass:non.length===22&&
+  [268,292,340,364].every(x=>clockCounts[x].present===22)&&
+  clockCounts[268].minus1===1&&clockCounts[292].plus1===0&&
+  clockCounts[340].at2400===4&&clockCounts[364].at2400===4&&
+  clockCounts[340].plus1===4&&clockCounts[340].plus3===1&&
+  clockCounts[364].plus1===4&&clockCounts[364].plus3===1}];
+ function check(name,col,replacement,expected){
+  const a=non.find(g=>cells.some(v=>v.x===col&&v.y===g.y));
+  const target=a&&cells.find(v=>v.x===col&&v.y===a.y);
+  if(!target){tests.push({name,pass:false,reason:"MISSING_SOURCE_CELL"});return;}
+  let changed=false;
+  const modified=repackPdcSyntheticPdf(raw,objects=>{
+   const old=objects[16],start=old.indexOf("stream\n")+7,end=old.lastIndexOf("\nendstream");
+   const body=old.slice(start,end);
+   const newCell=target.full.replace(/\(((?:\\.|[^\\)])*)\)\s+Tj\b/,"("+replacement+") Tj");
+   const next=body.replace(target.full,()=>{changed=true;return newCell});
+   objects[16]=old.slice(0,start).replace(/\/Length \d+/,"/Length "+next.length)+next+old.slice(end);
+  });
+  const result=inspectPdcPdfStrict(toBase64(modified));
+  tests.push({name,pass:changed&&result.status===expected,
+   reason:result.status==="FAIL_DOCUMENT"?result.reason:null});
+ }
+ for(const [name,col,value] of [
+  ["bad nonnumeric STD-L",268,"BAD"],["bad nonnumeric STD-B",292,"9999"],
+  ["bad nonnumeric STA-L",340,"BAD"],["bad nonnumeric STA-B",364,"BAD"],
+  ["bad nonnumeric C/I",162,"BAD"],["bad nonnumeric C/O",186,"BAD"],
+  ["unsupported 2400 at STD-L",268,"2400"],["unsupported +1 at STD-B",292,"0900+1"]])
+  check(name,col,value,"FAIL_DOCUMENT");
+ for(const [name,col,value] of [
+  ["supported -1 at STD-L",268,"0900-1"],
+  ["supported 2400 at STA-L",340,"2400"],
+  ["supported +3 at STA-B",364,"1030+3"]])
+  check(name,col,value,"OBSERVED_FAMILY_DETACHED_HOLD");
+ return {passed:tests.filter(t=>t.pass).length,failed:tests.filter(t=>!t.pass).length,
+  tests,sourceDerivedCounts:clockCounts,productionAcceptance:false};
+}
+export {runPdcNonNumericClockAdversarial};
