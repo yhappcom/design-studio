@@ -687,5 +687,148 @@
       "dartSembast": "NOT_EXECUTED"
     },
     "nextIntegratedTarget": "Full three-month original typed Activity-column ownership + cross-family PDC negative controls, then authenticated year/subject/Publication/active UID matching for August detached edges; no LogMate write."
+  },
+  "c481FullBodyActivityFamilyGate": {
+    "date": "2026-10-30 12:58 KST",
+    "version": "skia-tagged-printer/research-2.20-C481",
+    "status": "RESEARCH_ONLY_NOT_PRODUCT_APPROVED",
+    "authority": "LogMate main@9cc0cd432a317d5dfebbe90e318fb219e53e024a read-only; Design Studio only writable; CrewConnex existing-record-only evidence/enrichment",
+    "method": "Transient private original PDF base64 -> RFC1950/1951 Flate + per-font ToUnicode + typed primary Table/TR/TD/NonStruct/page MCID. Matched known 62 candidate locators to pinned C194 manifest; independently inspected all 64 nonmanifest primary rows with source-relative candidate fields. No raw PDF, flight/route/clock, crew/personnel IDs or private row text persisted.",
+    "originalSourceBlobs": {
+      "skiaJune": "e96bf5a76764984aa7f28285c975a24fd471117e",
+      "skiaJuly": "d306cad81d2a57123ac9950ed734a9216340466c",
+      "skiaAugust": "29ac040595089188a8353e98f41ba27f92b8650b",
+      "pdcAugust": "8e7fec30f98458c770053bd7739e60869a87e33b"
+    },
+    "skia": [
+      {
+        "month": "06",
+        "primaryBody": 40,
+        "knownNumericManifest": 18,
+        "other": 22,
+        "knownCandidatePatternExact": 18,
+        "otherCompleteNumericRouteBLH": 0,
+        "otherUniqueRouteTwoClockHeuristic": 20,
+        "otherHeuristicUnresolved": 2,
+        "heuristicShiftDistribution": {
+          "6": 2,
+          "7": 11,
+          "8": 7
+        },
+        "unresolvedLocators": [
+          {
+            "page": 1,
+            "tr": 10
+          },
+          {
+            "page": 1,
+            "tr": 25
+          }
+        ]
+      },
+      {
+        "month": "07",
+        "primaryBody": 44,
+        "knownNumericManifest": 22,
+        "other": 22,
+        "knownCandidatePatternExact": 22,
+        "otherCompleteNumericRouteBLH": 0,
+        "otherUniqueRouteTwoClockHeuristic": 20,
+        "otherHeuristicUnresolved": 2,
+        "heuristicShiftDistribution": {
+          "6": 3,
+          "7": 9,
+          "8": 8
+        },
+        "unresolvedLocators": [
+          {
+            "page": 1,
+            "tr": 34
+          },
+          {
+            "page": 1,
+            "tr": 35
+          }
+        ]
+      },
+      {
+        "month": "08",
+        "primaryBody": 42,
+        "knownNumericManifest": 22,
+        "other": 20,
+        "knownCandidatePatternExact": 22,
+        "otherCompleteNumericRouteBLH": 0,
+        "otherUniqueRouteTwoClockHeuristic": 16,
+        "otherHeuristicUnresolved": 4,
+        "heuristicShiftDistribution": {
+          "6": 1,
+          "7": 12,
+          "8": 3
+        },
+        "unresolvedLocators": [
+          {
+            "page": 1,
+            "tr": 7
+          },
+          {
+            "page": 1,
+            "tr": 15
+          },
+          {
+            "page": 2,
+            "tr": 37
+          },
+          {
+            "page": 2,
+            "tr": 38
+          }
+        ]
+      }
+    ],
+    "totals": {
+      "primaryBody": 126,
+      "knownNumericManifest": 62,
+      "other": 64,
+      "knownCandidatePatternExact": 62,
+      "knownCandidateMismatch": 0,
+      "otherCompleteNumericRouteBLH": 0,
+      "otherUniqueRouteTwoClockHeuristic": 56,
+      "otherHeuristicUnresolved": 8,
+      "unmappedToUnicodeGlyphs": 0
+    },
+    "observedAdditionalHeuristicRawCodeLabels": [
+      "INST",
+      "OFC",
+      "OV_FE",
+      "TR_GRD"
+    ],
+    "rawCodeCaveat": "These are observed source-relative nonnumeric code-shaped tokens in route/clock-unique rows, not certified duty meanings, aircraft or role mappings, nor a universal airline code dictionary. Eight rows lack unique route+>=2-clock ownership; no Activity semantics or automatic exclusion for those rows.",
+    "crossFamily": {
+      "realOriginalBaselines": 4,
+      "realBaselinePass": 4,
+      "syntheticAnchorMutations": 28,
+      "syntheticRejected": 28,
+      "skiaTaggedFamily": "3/3",
+      "pdcUntaggedFourteenHeaderFamily": "1/1",
+      "testScope": "In-memory source-string anchor mutations; do not preserve PDF xref/length; NOT rebuilt PDFs, product parser or Dart/Sembast."
+    },
+    "contractDelta": {
+      "detector": "Skia typed ParentTree/Table/TR/TD/MCID+Flate and PDC untagged 14-position/495-Tj grid are separate exact research families; PDF literal producer strings alone or generic header keywords are not enough.",
+      "rowGate": "For each typed row, source-relative numeric Activity, route and printed H:MM BLH must be independently owned; missing printed BLH never promoted by nearby numeric-looking tokens. Unresolved Activity ownership is REVIEW/HOLD, not silently skipped. Sum and post-Sum auxiliary excluded by ancestry.",
+      "batchGate": "No partial evidence commit on unknown/unclassified primary row or detector mismatch. Preserve raw labels and source/page/TR/TD/MCID provenance. Physical candidate count is not FlightRecord match accuracy.",
+      "admission": "Existing same-UID active Flight only, owner review, authenticated year/report subject/Publication/revision, durable receipt/CAS. No standalone FlightRecord, date inheritance, crew identity, role, PIC/SIC, PF/PM, Block equivalence or silent overwrite."
+    },
+    "readiness": {
+      "publicExactPrinterPdf": "P5",
+      "weeklyHtml": "P3",
+      "production": "OPEN",
+      "W016": "CONDITIONAL_NOT_STARTED",
+      "W017": "INSUFFICIENT_EVIDENCE_NOT_STARTED",
+      "actualDartSembast": "NOT_RUN",
+      "companyAugust03to31": "UNAVAILABLE",
+      "activeSameUidPublication": "UNVERIFIED",
+      "C194HistoricalSyncDebt": "OPEN_UNRECONSTRUCTABLE"
+    },
+    "nextIntegratedTarget": "Resolve eight noncandidate Activity ownership gaps via original typed header/Date/Pairing/MCID without private values; then certified year/Publication/subject + company Aug03-31/active UID adjudication and W-016 acceptance."
   }
 }
