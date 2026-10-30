@@ -830,5 +830,136 @@
       "C194HistoricalSyncDebt": "OPEN_UNRECONSTRUCTABLE"
     },
     "nextIntegratedTarget": "Resolve eight noncandidate Activity ownership gaps via original typed header/Date/Pairing/MCID without private values; then certified year/Publication/subject + company Aug03-31/active UID adjudication and W-016 acceptance."
+  },
+  "c482EightRowOriginalTaggedPhysicalAudit": {
+    "date": "2026-10-30 14 KST",
+    "version": "skia-tagged-printer/research-2.21-C482",
+    "status": "RESEARCH_ONLY_PHYSICAL_OWNERSHIP_VERIFIED_LEXICAL_ACTIVITY_UNRESOLVED",
+    "source": "Fresh read-only original private Skia June/July/August PDFs at pinned Git blob identities; no raw source contents persisted",
+    "method": "Independent binary base64 read, PDF StructTree primary Table/TR/TD/NonStruct /K and /Pg/MCID ancestry; C194 62-row manifest five-field locator cross-check; 8 C481 unresolved heuristic rows inspected without raw content export",
+    "selectedFieldMcidRecheck": {
+      "verified": 310,
+      "total": 310,
+      "manifestRows": 62,
+      "failures": 0
+    },
+    "eightRows": [
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 10,
+        "tdCount": 33,
+        "leafCount": 33,
+        "firstMcid": 345,
+        "lastMcid": 377,
+        "allTdSingleLeaf": true,
+        "activityWindowTd6to8EachOneLeaf": true,
+        "uniqueContiguousMcid": true
+      },
+      {
+        "month": "06",
+        "page": 1,
+        "tr": 25,
+        "tdCount": 32,
+        "leafCount": 32,
+        "firstMcid": 880,
+        "lastMcid": 911,
+        "allTdSingleLeaf": true,
+        "activityWindowTd6to8EachOneLeaf": true,
+        "uniqueContiguousMcid": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 34,
+        "tdCount": 29,
+        "leafCount": 29,
+        "firstMcid": 1117,
+        "lastMcid": 1145,
+        "allTdSingleLeaf": true,
+        "activityWindowTd6to8EachOneLeaf": true,
+        "uniqueContiguousMcid": true
+      },
+      {
+        "month": "07",
+        "page": 1,
+        "tr": 35,
+        "tdCount": 28,
+        "leafCount": 28,
+        "firstMcid": 1146,
+        "lastMcid": 1173,
+        "allTdSingleLeaf": true,
+        "activityWindowTd6to8EachOneLeaf": true,
+        "uniqueContiguousMcid": true
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 7,
+        "tdCount": 30,
+        "leafCount": 30,
+        "firstMcid": 244,
+        "lastMcid": 273,
+        "allTdSingleLeaf": true,
+        "activityWindowTd6to8EachOneLeaf": true,
+        "uniqueContiguousMcid": true
+      },
+      {
+        "month": "08",
+        "page": 1,
+        "tr": 15,
+        "tdCount": 30,
+        "leafCount": 30,
+        "firstMcid": 541,
+        "lastMcid": 570,
+        "allTdSingleLeaf": true,
+        "activityWindowTd6to8EachOneLeaf": true,
+        "uniqueContiguousMcid": true
+      },
+      {
+        "month": "08",
+        "page": 2,
+        "tr": 37,
+        "tdCount": 30,
+        "leafCount": 30,
+        "firstMcid": 83,
+        "lastMcid": 112,
+        "allTdSingleLeaf": true,
+        "activityWindowTd6to8EachOneLeaf": true,
+        "uniqueContiguousMcid": true
+      },
+      {
+        "month": "08",
+        "page": 2,
+        "tr": 38,
+        "tdCount": 29,
+        "leafCount": 29,
+        "firstMcid": 113,
+        "lastMcid": 141,
+        "allTdSingleLeaf": true,
+        "activityWindowTd6to8EachOneLeaf": true,
+        "uniqueContiguousMcid": true
+      }
+    ],
+    "totals": {
+      "rows": 8,
+      "tdLeaves": 241,
+      "allSingleLeaf": true,
+      "allUniqueContiguous": true,
+      "allActivityWindowTd6to8Present": true,
+      "wrongPageOrMissingTdOrDuplicateMcidOrBrokenContiguitySyntheticRejected": 32,
+      "syntheticTotal": 32
+    },
+    "evidenceInterpretation": "All eight C481 heuristic-unresolved rows have complete typed physical MCID ancestry; missing TD/MCID is NOT their blocker. Route+clock heuristic and Activity lexical/column ownership remain uncertified. MCID completeness alone cannot classify duty or flight; preserve document-atomic HOLD. August p2 TR37/38 are before known page2 Sum MCID311; no private raw text or identities copied.",
+    "adversarialGrade": "32/32 in-memory metadata tamper rejections, NOT rebuilt PDFs, Node/Dart/Sembast or product acceptance",
+    "crossSource": "PDC remains separate untagged 14-column family; company 2026 observed coverage ends Aug02; year/Publication/subject/active UID and August cross-format eight edges unresolved",
+    "readiness": {
+      "publicExactPrinterPdf": "P5",
+      "weeklyHtml": "P3",
+      "production": "OPEN",
+      "W016": "CONDITIONAL_NOT_STARTED",
+      "W017": "INSUFFICIENT_EVIDENCE_NOT_STARTED"
+    },
+    "next": "Complete source-font ToUnicode and typed Activity/BLH ownership on eight physical rows, then authenticated same-UID year/Publication/company Aug03–31 matching and W016 evidence-only lifecycle"
   }
 }
