@@ -80,24 +80,42 @@ function inspectPdcPdfTextLayer(base64){
     if(x===340||x===364)return v==="2400"||/^(?:[01]\d|2[0-3])[0-5]\d\+(?:1|3)$/.test(v||"");
     return false;
    };
+   // C491: source-observed ONE-EXPORT class-column occupancy. Global totals
+   // alone cannot detect a cell moved between numeric and nonnumeric bands.
+   // Not a vendor-wide dictionary, semantic duty map or production profile.
+   const observedKindColumns={
+    numeric:{81:13,109:16,143:0,162:15,186:14,244:26,316:26,388:26,511:26},
+    nonnumeric:{81:18,109:6,143:1,162:1,186:2,244:18,316:18,388:6,511:0},
+    auxiliary:{388:1}
+   };
+   const kindColumns={numeric:{},nonnumeric:{},auxiliary:{}};
+   const trackKind=(kind,r)=>{for(const x of Object.keys(observedKindColumns[kind]))
+    if(r.has(+x))kindColumns[kind][x]=(kindColumns[kind][x]||0)+1;};
  for(let i=0;i<49;i++){
   const r=rows.get(i);if(!r)return fail("MISSING_BODY_BAND");
   const activity=r.get(210),date=r.get(81),block=r.get(511);
   if(date!==undefined&&!/^(?:0[1-9]|[12]\d|3[01])Aug26$/.test(date))return fail("INVALID_OWN_DATE");
-  if(activity===undefined){aux++;if(r.size!==1||!r.has(388))return fail("UNSUPPORTED_AUX_BAND");continue;}
+  if(activity===undefined){aux++;if(r.size!==1||!r.has(388))return fail("UNSUPPORTED_AUX_BAND");trackKind("auxiliary",r);continue;}
   if(/^\d+$/.test(activity)&&!/^\d{3,4}$/.test(activity))return fail("UNSUPPORTED_NUMERIC_ACTIVITY_WIDTH");
   if(/^\d{3,4}$/.test(activity)){
-   numeric++; // Activity is a raw label, not a unique physical row key.
+   numeric++;trackKind("numeric",r); // Activity is a raw label, not a unique physical row key.
    if(activity.length===3)threeDigit++;else fourDigit++;if(date!==undefined)ownDateNumeric++;
    if(block===undefined||!/^\d{1,2}:[0-5]\d$/.test(block))return fail("INVALID_PRINTED_BLOCK");
    if(!r.get(244)||!r.get(316))return fail("MISSING_NUMERIC_ROUTE");
     if(!/^[A-Z]{3}$/.test(r.get(244))||!/^[A-Z]{3}$/.test(r.get(316)))return fail("INVALID_NUMERIC_ROUTE_SHAPE");
    for(const x of [268,292,340,364])if(!/^(?:[01]\d|2[0-3])[0-5]\d(?:\+1)?$/.test(r.get(x)||""))return fail("INVALID_NUMERIC_CLOCK");
+   // C491: optional numeric C/I and C/O must remain valid raw clock forms.
+   // Observed C/O +1 is notation only, NOT certified date/UTC semantics.
+   if(r.has(162)&&!plainClock(r.get(162)))return fail("INVALID_NUMERIC_CI_CLOCK");
+   if(r.has(186)&&!/^(?:[01]\d|2[0-3])[0-5]\d(?:\+1)?$/.test(r.get(186)))return fail("INVALID_NUMERIC_CO_CLOCK");
    const baseElapsed=clockMin(r.get(364))-clockMin(r.get(292));
    if(baseElapsed<=0||baseElapsed!==blockMin(block))return fail("PRINTED_BASE_CLOCK_BLOCK_CONTRADICTION");
-  }else{nonflight++;if(!C469_OBSERVED_NONNUMERIC_ACTIVITY.has(activity))return fail("UNKNOWN_NONNUMERIC_ACTIVITY");if(block!==undefined)return fail("NONFLIGHT_WITH_BLOCK");if(date!==undefined)ownDateNonflight++;for(const x of [244,316])if(r.has(x)&&!/^[A-Z]{3}$/.test(r.get(x)))return fail("INVALID_NONFLIGHT_ROUTE_SHAPE");for(const x of [268,292,340,364])if(!nonnumericClock(x,r.get(x)))return fail("INVALID_NONFLIGHT_CLOCK_"+x);for(const x of [162,186])if(r.has(x)&&!plainClock(r.get(x)))return fail("INVALID_NONFLIGHT_CI_CO_CLOCK_"+x);}
+  }else{nonflight++;trackKind("nonnumeric",r);if(!C469_OBSERVED_NONNUMERIC_ACTIVITY.has(activity))return fail("UNKNOWN_NONNUMERIC_ACTIVITY");if(block!==undefined)return fail("NONFLIGHT_WITH_BLOCK");if(date!==undefined)ownDateNonflight++;for(const x of [244,316])if(r.has(x)&&!/^[A-Z]{3}$/.test(r.get(x)))return fail("INVALID_NONFLIGHT_ROUTE_SHAPE");for(const x of [268,292,340,364])if(!nonnumericClock(x,r.get(x)))return fail("INVALID_NONFLIGHT_CLOCK_"+x);for(const x of [162,186])if(r.has(x)&&!plainClock(r.get(x)))return fail("INVALID_NONFLIGHT_CI_CO_CLOCK_"+x);}
  }
  if(numeric!==26||nonflight!==22||aux!==1||ownDateNumeric!==13||ownDateNonflight!==18||threeDigit!==8||fourDigit!==18)return fail("SOURCE_FAMILY_COUNTS");
+  for(const [kind,expected] of Object.entries(observedKindColumns))
+   for(const [col,n] of Object.entries(expected))
+    if((kindColumns[kind][col]||0)!==n)return fail("CLASS_COLUMN_OWNERSHIP_CENSUS");
  return {status:"OBSERVED_FAMILY_DETACHED_HOLD",profile:"pdc-generator-14col-Aug26-single-page-C426",glyphs:495,bodyGlyphs:473,headers:14,bands:49,numeric,nonflight,aux,ownDateNumeric,missingOwnDateNumeric:13,ownDateNonflight,threeDigit,fourDigit,printedYearSuffix:"26",fourDigitOperationalYearCertified:false,printedSubjectLabelPresent:true,reportSubjectBoundToUid:false,printedGenerationStampPresent:true,publicationRevisionCertified:false,candidates:26,createsFlight:false,overwritesBlock:false,crewProvidedPerLeg:false};
 }
 function syntheticFixture(){
@@ -140,7 +158,14 @@ function runSyntheticTests(){
   check("C477 nonnumeric STA-L 2400 observed",s=>s.replace("340 629 Td (1030)","340 629 Td (2400)"),good);
   check("C477 nonnumeric STA-B +3 observed",s=>s.replace("364 629 Td (1030)","364 629 Td (1030+3)"),good);
   check("C477 nonnumeric STD-B +1 unsupported",s=>s.replace("292 629 Td (0900)","292 629 Td (0900+1)"),bad);
- check("wrong report",s=>s.replace("(Crew Roster Report)","(Other Report)"),bad);
+ // C491: numeric optional clock grammar and class-scoped ownership.
+  check("C491 numeric C/I malformed",s=>s.replace("162 638 Td (0900)","162 638 Td (BAD)"),bad);
+  check("C491 numeric C/O malformed",s=>s.replace("186 638 Td (1100)","186 638 Td (BAD)"),bad);
+  check("C491 numeric C/I +1 unsupported",s=>s.replace("162 638 Td (0900)","162 638 Td (0900+1)"),bad);
+  check("C491 numeric C/O +1 observed",s=>s.replace("186 638 Td (1100)","186 638 Td (1100+1)"),good);
+  check("C491 DC nonnumeric-to-numeric",s=>s.replace("143 629 Td (RAW)","143 638 Td (RAW)"),bad);
+  check("C491 C/I numeric-to-nonnumeric",s=>s.replace("162 638 Td (0900)","162 611 Td (0900)"),bad);
+  check("wrong report",s=>s.replace("(Crew Roster Report)","(Other Report)"),bad);
  check("period duplicate disagreement",s=>s.replace("Period: 01Aug26 - 31Aug26","Period: 01Sep26 - 30Sep26"),bad);
  check("unsupported period",s=>s.replaceAll("Period: 01Aug26 - 31Aug26","Period: 01Sep26 - 30Sep26"),bad);
  check("missing subject",s=>s.replace("Crewmember: SYNTHETIC SUBJECT","Subject: SYNTHETIC"),bad);
