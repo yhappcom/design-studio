@@ -620,3 +620,82 @@ console.log(JSON.stringify({
   actualPdfDecode: false, uidOwnedDartSembast: false,
   productionReadiness: "OPEN"
 }, null, 2));
+// C478 pinned Skia three-month whole-document structural census and Sum/auxiliary
+// gate. PRIOR-ORIGINAL-DERIVED METADATA + SYNTHETIC MUTATIONS ONLY.
+// Not new raw-PDF lexical validation, production parser, or UID matching.
+function c478SkiaWholeDocumentGate(items, parentTree, pdcSummary, pinnedRows) {
+ const errors=[],push=(ok,reason)=>{if(!ok)errors.push(reason)};
+ const expected={"06":[40,18,22,0,8,257],"07":[44,22,22,7,30,241],"08":[42,22,20,5,28,311]};
+ const key=r=>[r.month,r.source_raw_sha256,r.page_1based,r.primary_tr_1based_including_header].join("/");
+ const pins=new Map(pinnedRows.map(r=>[key(r),r]));
+ const seen=new Set(),sources=new Set();let pageTwoCount=0,leafChecks=0;
+ push(parentTree.id==="C295","WRONG_PARENTTREE_PROFILE");
+ push(pdcSummary.pdc?.nonnumericWithFourClocks===22&&pdcSummary.pdc?.auxiliaryActivityTextAbsentButOtherCellPresent===1,"CROSS_FAMILY_PDC_BASELINE_CHANGED");
+ push(items.length===62,"CANDIDATE_COUNT_CHANGED");
+ push(parentTree.sourceDerived?.length===3,"MONTH_SOURCE_COUNT");
+ for(const month of ["06","07","08"]){
+  const subset=items.filter(r=>r.month===month),t=parentTree.sourceDerived?.find(x=>x.month===month),e=expected[month];
+  push(!!t,"MISSING_MONTH_PARENTTREE_"+month);if(!t)continue;
+  push(t.primaryRowsIncludingHeader-1===e[0],"PRIMARY_BODY_CENSUS_"+month);
+  push(subset.length===e[1],"SELECTED_CANDIDATE_CENSUS_"+month);
+  push(t.primaryRowsIncludingHeader-1-subset.length===e[2],"RESIDUAL_NONSELECTED_CENSUS_"+month);
+  push(t.postSumAuxiliaryTableRows===e[3]&&t.postSumNonTableMCIDs===e[4],"POST_SUM_CENSUS_"+month);
+  push(t.sumMCID===e[5]&&t.primaryLeafRange[1]+1===t.sumMCID,"SUM_PARENTTREE_BARRIER_"+month);
+  push(t.primaryLeafRange[0]===2,"PRIMARY_LEAF_START_"+month);
+  const ar=t.postSumAuxiliaryLeafRange;
+  push(e[3]===0?ar===null:(Array.isArray(ar)&&ar[0]>t.sumMCID&&ar[1]-ar[0]+1===2*e[3]),"AUXILIARY_AFTER_SUM_"+month);
+  const src=new Set(subset.map(r=>r.source_raw_sha256+"|"+r.source_git_blob_sha1));
+  push(src.size===1,"SOURCE_FINGERPRINT_SPLIT_"+month);
+  if(src.size===1)sources.add([...src][0]);
+  for(const r of subset){
+   const id=key(r);push(!seen.has(id),"DUPLICATE_SOURCE_PAGE_TR");seen.add(id);
+   const pin=pins.get(id);
+   push(!!pin,"UNPINNED_NUMERIC_ROW");
+   if(pin)push(r.activity_mcid_page_local===pin.activity_mcid_page_local&&r.blh_mcid_page_local===pin.blh_mcid_page_local&&r.date_cell_state===pin.date_cell_state&&r.crew_leaf_shape===pin.crew_leaf_shape,"ROW_FIELD_OWNERSHIP_DRIFT");
+   const pg=+r.page_1based,tr=+r.primary_tr_1based_including_header;
+   push((pg===1||pg===2)&&tr>=2&&tr<=t.primaryRowsIncludingHeader,"INVALID_PAGE_TR");
+   push(/^[a-f0-9]{64}$/.test(r.source_raw_sha256||"")&&/^[a-f0-9]{40}$/.test(r.source_git_blob_sha1||""),"INVALID_SOURCE_DIGEST");
+   push(["PRESENT","ABSENT"].includes(r.date_cell_state)&&["PRESENT","ABSENT"].includes(r.pairing_cell_state),"INVALID_PRESENCE_STATE");
+   if(pg===2){
+    pageTwoCount++;
+    const mcids=Object.entries(r).filter(([k])=>k.endsWith("mcid_page_local")||k.endsWith("mcids_page_local")).flatMap(([,v])=>String(v).split("|").filter(Boolean).map(Number));
+    leafChecks+=mcids.length;
+    push(mcids.length>0&&mcids.every(n=>Number.isInteger(n)&&n>0&&n<t.sumMCID),"PAGE2_LEAF_AT_OR_AFTER_SUM");
+   }
+  }
+ }
+ push(sources.size===3,"CROSS_MONTH_SOURCE_ALIAS");
+ push(pageTwoCount===6,"PAGE2_CANDIDATE_CENSUS");
+ push(leafChecks===135,"PAGE2_SELECTED_LEAF_CENSUS");
+ push(pins.size===62&&seen.size===62,"PINNED_NUMERIC_SET_INCOMPLETE");
+ return {errors,summary:{primaryBody:126,numeric:items.length,nonselectedPrimary:126-items.length,auxiliaryRows:12,sumBarriers:3,pageTwoCandidates:pageTwoCount,pageTwoSelectedLeaves:leafChecks,pdcNumeric:Object.values(pdcSummary.pdc.numericDatePairTextPresence).reduce((a,b)=>a+b,0),verifiedNonflightLexical:false,production:false}};
+}
+const c478Parent=JSON.parse(read("C295_SKIA_PARENTTREE_SUM_AND_AUXILIARY_TABLE_GATE.json").toString("utf8"));
+const c478Pdc=JSON.parse(pdcBytes.toString("utf8"));
+const c478Baseline=c478SkiaWholeDocumentGate(source,c478Parent,c478Pdc,source);
+assert.deepEqual(c478Baseline.errors,[]);
+assert.deepEqual(c478Baseline.summary,{primaryBody:126,numeric:62,nonselectedPrimary:64,auxiliaryRows:12,sumBarriers:3,pageTwoCandidates:6,pageTwoSelectedLeaves:135,pdcNumeric:26,verifiedNonflightLexical:false,production:false});
+const c478Clone=()=>source.map(r=>({...r}));
+const c478Tree=()=>JSON.parse(JSON.stringify(c478Parent));
+const c478PdcClone=()=>JSON.parse(JSON.stringify(c478Pdc));
+const c478Mutants=[
+ ["drop candidate",()=>{let a=c478Clone();a.pop();return[a,c478Tree(),c478PdcClone()]}],
+ ["duplicate candidate",()=>{let a=c478Clone();a[1]={...a[0]};return[a,c478Tree(),c478PdcClone()]}],
+ ["balanced noncandidate promotion",()=>{let a=c478Clone();a[0].primary_tr_1based_including_header="3";return[a,c478Tree(),c478PdcClone()]}],
+ ["source fingerprint split",()=>{let a=c478Clone();a[0].source_raw_sha256="a".repeat(64);return[a,c478Tree(),c478PdcClone()]}],
+ ["page three",()=>{let a=c478Clone();a[0].page_1based="3";return[a,c478Tree(),c478PdcClone()]}],
+ ["header-as-row",()=>{let a=c478Clone();a[0].primary_tr_1based_including_header="1";return[a,c478Tree(),c478PdcClone()]}],
+ ["row beyond primary",()=>{let a=c478Clone();a[0].primary_tr_1based_including_header="99";return[a,c478Tree(),c478PdcClone()]}],
+ ["missing Date ownership",()=>{let a=c478Clone();a[0].date_cell_state="ABSENT";return[a,c478Tree(),c478PdcClone()]}],
+ ["wrong Activity MCID",()=>{let a=c478Clone();a[0].activity_mcid_page_local="999";return[a,c478Tree(),c478PdcClone()]}],
+ ["sum reparent to primary",()=>{let t=c478Tree();t.sourceDerived[0].sumMCID=256;return[c478Clone(),t,c478PdcClone()]}],
+ ["aux before sum",()=>{let t=c478Tree();t.sourceDerived[1].postSumAuxiliaryLeafRange=[240,253];return[c478Clone(),t,c478PdcClone()]}],
+ ["aux count drift",()=>{let t=c478Tree();t.sourceDerived[2].postSumAuxiliaryTableRows=4;return[c478Clone(),t,c478PdcClone()]}],
+ ["primary body count drift",()=>{let t=c478Tree();t.sourceDerived[0].primaryRowsIncludingHeader=42;return[c478Clone(),t,c478PdcClone()]}],
+ ["page2 leaf crosses Sum",()=>{let a=c478Clone();a.find(r=>r.page_1based==="2"&&r.month==="06").blh_mcid_page_local="257";return[a,c478Tree(),c478PdcClone()]}],
+ ["page2 leaf missing",()=>{let a=c478Clone();a.find(r=>r.page_1based==="2"&&r.month==="06").blh_mcid_page_local="";return[a,c478Tree(),c478PdcClone()]}],
+ ["PDC family baseline drift",()=>{let q=c478PdcClone();q.pdc.nonnumericWithFourClocks=21;return[c478Clone(),c478Tree(),q]}],
+ ["source month alias",()=>{let a=c478Clone();for(const r of a.filter(x=>x.month==="07")){r.source_raw_sha256=a[0].source_raw_sha256;r.source_git_blob_sha1=a[0].source_git_blob_sha1}return[a,c478Tree(),c478PdcClone()]}]
+];
+for(const [label,make] of c478Mutants){const [a,t,q]=make();assert(c478SkiaWholeDocumentGate(a,t,q,source).errors.length>0,"C478 mutant admitted: "+label);}
+console.log(JSON.stringify({c478:"RESEARCH_ONLY",priorOriginalDerived:true,newPrivatePdfDecode:false,skia:c478Baseline.summary,syntheticMutantsRejected:c478Mutants.length,production:"OPEN"}));
