@@ -4708,5 +4708,113 @@
       "C194SyncDebt": "OPEN"
     },
     "privacy": "No original PDF content, identifiers, crew text, flight numbers or raw rows copied into Design Studio."
+  },
+  "c491OptionalClockAndClassColumnGate": {
+    "id": "C491",
+    "observedAt": "2026-10-30 23 KST",
+    "status": "RESEARCH_ONLY_PINNED_SINGLE_PDC_EXPORT_NOT_PRODUCTION_APPROVAL",
+    "source": {
+      "repo": "yhappcom/logmate READ_ONLY",
+      "path": "reference/source-materials/import-source/Roster - CrewConnex 2026-08.pdf.pdf",
+      "gitBlob": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "sizeBytes": 39612,
+      "reportFamily": "PDC generator 14-column August YY26",
+      "privacy": "Only aggregate counts/grammar/reason codes saved; no original PDF/crew/employee IDs/flight/route/clock values"
+    },
+    "actualSourceClassColumnOccupancy": {
+      "numeric": {
+        "rows": 26,
+        "Date": 13,
+        "Pairing": 16,
+        "DC": 0,
+        "CI": 15,
+        "CO": 14,
+        "From": 26,
+        "To": 26,
+        "ACHotel": 26,
+        "printedBlock": 26
+      },
+      "nonnumeric": {
+        "rows": 22,
+        "Date": 18,
+        "Pairing": 6,
+        "DC": 1,
+        "CI": 1,
+        "CO": 2,
+        "From": 18,
+        "To": 18,
+        "ACHotel": 6,
+        "printedBlock": 0
+      },
+      "auxiliary": {
+        "rows": 1,
+        "ACHotel": 1
+      },
+      "globalColumnTotals": {
+        "Date": 31,
+        "Pairing": 22,
+        "DC": 1,
+        "CI": 16,
+        "CO": 16,
+        "From": 44,
+        "To": 44,
+        "ACHotel": 33,
+        "printedBlock": 26
+      }
+    },
+    "numericOptionalClockGrammar": {
+      "CI": {
+        "present": 15,
+        "plainHHMM": 15,
+        "plusOne": 0,
+        "other": 0
+      },
+      "CO": {
+        "present": 14,
+        "plainHHMM": 10,
+        "plusOne": 4,
+        "other": 0
+      },
+      "coPlusOneWithStaLocalAndBasePlusOne": 4,
+      "coPlusOneWithOwnDate": 2,
+      "coPlusOneWithoutOwnDate": 2,
+      "coPlusOneWithStdBasePlusOne": 1,
+      "caveat": "Correlation is internal source observation, not verified duty/check-out semantics, timezone, UTC, date inheritance, operational year, or Publication."
+    },
+    "researchOracleGapBefore": {
+      "source": "C426_PDC_NATIVE_PDF_TEXT_ADMISSION.mjs before C491",
+      "actualOriginalDerivedMalformedNumericCIandCOMutationsAccepted": 2,
+      "actualOriginalDerivedCrossClassColumnTransfersAccepted": 4,
+      "consequence": "A one-export research detector returned OBSERVED_FAMILY_DETACHED_HOLD for unsupported optional numeric clocks or row-class column ownership changes; NO production parser or FlightRecord existed."
+    },
+    "researchOracleDelta": {
+      "source": "C426_PDC_NATIVE_PDF_TEXT_ADMISSION.mjs",
+      "optionalNumericCI": "when present plain HHMM only in pinned original",
+      "optionalNumericCO": "when present HHMM or HHMM+1 in pinned original",
+      "classScopedOccupancy": "enforce observed numeric/nonnumeric/auxiliary ownership counts in addition to existing global column totals and whole-document structure",
+      "failClosed": "INVALID_NUMERIC_CI_CLOCK, INVALID_NUMERIC_CO_CLOCK or CLASS_COLUMN_OWNERSHIP_CENSUS; zero candidates on unsupported variant",
+      "noNewInference": "Do not map C/I, C/O, DC, AC/Hotel, Pairing or +1 to duty, flight operation, aircraft type, timezone, date or UID; preserve raw labels. New legitimate variants require separately verified immutable profile."
+    },
+    "validation": {
+      "originalUnmodified": "PDC original 26 numeric/22 nonnumeric/one auxiliary, DETACHED_HOLD, 0 FlightRecord creates",
+      "originalDerivedTransientMutants": "9/9 expected: eight unsupported lexical/class-transfer mutants rejected and one supported C/O +1 detached",
+      "savedResearchSyntheticText": "54/54 PASS (six C491 additions included)",
+      "savedResearchSyntheticEnvelope": "35/35 PASS",
+      "existingOriginalDerivedResearch": "35/35 PASS",
+      "existingOriginalDerivedNonnumericClock": "13/13 PASS",
+      "realDartSembast": false,
+      "actualUidFlightJoin": false,
+      "publicationCertified": false,
+      "actualNewIndependentExport": false
+    },
+    "readiness": {
+      "publicExactLayoutPdf": "P5",
+      "weeklyHtml": "P3",
+      "production": "OPEN",
+      "W016": "NOT_STARTED_CONDITIONAL",
+      "W017": "NOT_STARTED_INSUFFICIENT_EVIDENCE",
+      "C194HistoricalSyncDebt": "OPEN"
+    },
+    "next": "Authorized same-export year/subject/Publication and Aug03-31 company/active same-UID Flight for eight Skia/PDC edges; only after separate owner approval W-016 evidence-only lifecycle acceptance."
   }
 }
