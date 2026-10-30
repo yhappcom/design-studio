@@ -1064,5 +1064,80 @@
       "historicalC194SyncDebt": "UNRECONSTRUCTABLE_OPEN"
     },
     "next": "Authenticated same-export four-digit year, subject and Publication/revision + company Aug03-31/active same-UID August Skia/PDC adjudication; W-016 evidence-only persistence acceptance remains separate"
+  },
+  "c487CrossVersionProvenanceAndPdcIdentityAudit": {
+    "date": "2026-10-30 19 KST",
+    "status": "RESEARCH_ONLY_SOURCE_PIN_REPRODUCIBILITY_VERIFIED_PRODUCTION_OPEN",
+    "method": "Fresh read-only current LogMate corpus metadata; historical and current Design Studio C194 Git blobs fetched independently; original 39,612-byte PDC August PDF fetched base64 read-only and decoded transiently. No private raw rows/crew/flight identifiers retained.",
+    "manifestCrossVersion": {
+      "historicalBlob": "625c4e4367d12189f96cf4ee85cd1f3bae71e035",
+      "currentBlob": "9a2d403cfb559144ea9b1882d308683dc9999fa9",
+      "historicalColumns": 19,
+      "currentColumns": 36,
+      "rowsEach": 62,
+      "unchangedHistoricalCells": 1178,
+      "changedHistoricalCells": 0,
+      "addedColumns": 17,
+      "selectedFieldLocators": 310,
+      "uniqueSourcePageMcidLocators": 310,
+      "page2SelectedLocatorsBeforeSum": 30,
+      "sourceBlobs": {
+        "June": "e96bf5a76764984aa7f28285c975a24fd471117e",
+        "July": "d306cad81d2a57123ac9950ed734a9216340466c",
+        "August": "29ac040595089188a8353e98f41ba27f92b8650b"
+      },
+      "page2SumMcid": {
+        "June": 257,
+        "July": 241,
+        "August": 311
+      },
+      "pinCrosswalk": "C313 intentionally pins historical 19-column blob; C457 pins current 36-column blob; both remain valid, and C284 earlier historical reference is not a current-source mismatch. Do not rewrite historical pin or treat a mutable research dossier as immutable W-017 production fixture."
+    },
+    "originalPdcMetadata": {
+      "sourceGitBlob": "8e7fec30f98458c770053bd7739e60869a87e33b",
+      "bytes": 39612,
+      "pdfVersion": "1.4",
+      "pageObjects": 1,
+      "textShowTj": 495,
+      "creationDate": "D:20260928154907",
+      "printedPeriod": "01Aug26 - 31Aug26",
+      "absentInThisPdf": [
+        "/ID",
+        "/ModDate",
+        "/Subject",
+        "/Metadata",
+        "Publication token",
+        "Revision token"
+      ],
+      "authority": "A report title/period and CreationDate, with or without a PDF /ID, cannot authenticate immutable roster Publication, four-digit operational year, report subject/UID, or revision order. Absence is limited to this one PDC export."
+    },
+    "validation": {
+      "realSourceDerivedBaseline": "PASS: 62/62 cross-version row prefix; 1178/1178 old-field cells unchanged; 310/310 unique selected source-page MCIDs; 30/30 page2 before C295 Sum; source Git pins match current LogMate references",
+      "syntheticInMemoryMutationsRejected": 9,
+      "syntheticFamilies": [
+        "old field drift",
+        "source SHA spoof",
+        "duplicate page/TR",
+        "duplicate page-local MCID",
+        "post-Sum locator",
+        "orphan continuation root",
+        "dropped row",
+        "C457 fixture pin mismatch",
+        "C313 historical pin mismatch"
+      ],
+      "realProductTests": false,
+      "realCompanyRejoin": false,
+      "realActiveUidAssociation": false
+    },
+    "currentEvidenceAuthority": {
+      "publicExactPrinterPdf": "P5",
+      "weeklyHtmlInstructions": "P3",
+      "privateSkiaPdc": "INTERNAL_REFERENCE_NOT_PUBLIC_P1",
+      "productionParser": "OPEN",
+      "W016": "CONDITIONAL_NOT_STARTED",
+      "W017": "INSUFFICIENT_EVIDENCE_NOT_STARTED"
+    },
+    "syncDebt": "C194 historical exact failed-write text cannot be reconstructed; verified current manifest and linked historical checkpoint are intact. C265 has explicit later C341 current-authority correction; do not reapply retracted C339 missing-cell claim.",
+    "next": "Obtain authorized redacted same-export August four-digit year/report subject/Publication and Aug03–31 company plus active same-UID Flight; adjudicate eight Skia/PDC edges, then separately approved W-016 evidence-only lifecycle acceptance."
   }
 }
