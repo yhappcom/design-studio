@@ -4816,5 +4816,57 @@
       "C194HistoricalSyncDebt": "OPEN"
     },
     "next": "Authorized same-export year/subject/Publication and Aug03-31 company/active same-UID Flight for eight Skia/PDC edges; only after separate owner approval W-016 evidence-only lifecycle acceptance."
+  },
+  "c492PrintedDayGroupClockPlacementResearch": {
+    "checkpoint": "C492 / 2026-10-30 23:55 KST",
+    "status": "RESEARCH_ONLY_SINGLE_PRIVATE_ORIGINAL_NOT_APPROVED",
+    "source": "LogMate READ-ONLY Roster - CrewConnex 2026-08.pdf.pdf Git blob 8e7fec30f98458c770053bd7739e60869a87e33b; 39612 original bytes, 495 text objects, 49 body bands",
+    "observed": {
+      "printedDayGroups": 31,
+      "groupsWithNumericActivity": 15,
+      "numericGroupSizes": {
+        "1": 8,
+        "2": 5,
+        "4": 2
+      },
+      "numericActivityRows": 26,
+      "nonnumericActivityRows": 22,
+      "auxiliaryBands": 1,
+      "numericCI": 15,
+      "numericCO": 14,
+      "numericBoth": 8,
+      "numericCIOnly": 7,
+      "numericCOOnly": 6,
+      "numericNeither": 5,
+      "firstNumericInGroupHasCI": 15,
+      "laterNumericInGroupHasCI": 0,
+      "lastNumericInGroupHasCO": 14,
+      "earlierNumericInGroupHasCO": 0,
+      "oneMissingNumericCOHasTrailingNonnumericCO": 1,
+      "nonnumericRowsWithCIorCO": 2,
+      "nonnumericCIandCOBeforeNumeric": 1,
+      "nonnumericCOAfterNumeric": 1,
+      "groupsWithNonnumericBeforeNumeric": 2,
+      "groupsWithNonnumericBetweenNumeric": 0,
+      "groupsWithNonnumericAfterNumeric": 4,
+      "firstNumericWithoutOwnDate": 2
+    },
+    "independentAdversarial": {
+      "kind": "TRANSIENT_ORIGINAL_PDF_DERIVED_CELL_RELOCATION_NOT_FULL_PDF_ORACLE",
+      "numericSameClassCIRepositions": 7,
+      "numericSameClassCORepositions": 6,
+      "total": 13,
+      "preserveClassColumnCounts": 13,
+      "validClockLexemes": 13,
+      "violateObservedFirstOrLastPlacement": 13,
+      "independentBoundaryReject": 13,
+      "originalBaselinePass": true,
+      "exceptionPositiveControls": 2,
+      "existingC426ScriptExecuted": false,
+      "dartSembastExecuted": false
+    },
+    "contractDelta": "C491 class-column counts plus lexical grammar are insufficient to prove per-day-group optional clock placement. For this one export only, research detector may additionally compare numeric first-CI/last-CO with an explicit trailing nonnumeric CO exception. Never interpret C/I or C/O as duty, date, FlightRecord, operating status, or revision; do not auto-inherit date/crew, and do not require numeric last-C/O universally.",
+    "unresolved": "No independent second PDC export, no portable group semantics, no full C426 mutated PDF execution, no authenticated year/subject/Publication or same-UID Flight; W-016/017 NOT STARTED; exact-layout public PDF P5 and weekly HTML P3.",
+    "next": "Certified same-export four-digit operational year/report subject/Publication with Aug03–31 company and active same-UID Flight; adjudicate eight Skia/PDC edges before separately approved W-016 evidence-only lifecycle."
   }
 }
