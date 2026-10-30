@@ -440,5 +440,146 @@
     "unresolved": "Source-certified same-export year/subject/Publication, Aug03-31 company and active UID Flight coverage, verified crew name, production evidence-only persistence, actual full PDF raster. Historical C194 exact-write debt cannot be safely reconstructed.",
     "adjacentValue": "Completed joint 62-row provenance/Pairing/crew/Date cross-tab, 12 policy adversaries, direct June first-stream check, current LogMate contract/code review and two public acquisition passes. Remaining eight August cross-family edges cannot be promoted without new authenticated data.",
     "next": "Authenticated same-export 2026 August year/subject/Publication and Aug03-31 company + same-UID Flight evidence to adjudicate eight detached Skia/PDC edges; then approved evidence-only storage lifecycle acceptance."
+  },
+  "c479OriginalWholeBodyLexicalAudit": {
+    "date": "2026-10-30 11 KST",
+    "version": "skia-tagged-printer/research-2.18-C479",
+    "status": "RESEARCH_ONLY_FRESH_PRIVATE_ORIGINAL_PDF_DECODE_NOT_PRODUCT_APPROVAL",
+    "sources": {
+      "repo": "yhappcom/logmate READ_ONLY",
+      "gitBlobs": [
+        "e96bf5a76764984aa7f28285c975a24fd471117e",
+        "d306cad81d2a57123ac9950ed734a9216340466c",
+        "29ac040595089188a8353e98f41ba27f92b8650b"
+      ],
+      "bytes": [
+        541788,
+        556535,
+        552417
+      ],
+      "privacy": "No original bytes, raw rows, staff IDs, crew names, raw flights/routes or personal clocks retained"
+    },
+    "method": "Read-only GitHub base64 -> independent RFC1951 zlib/Flate -> per-font ToUnicode bfchar/bfrange -> page-local MCID/Tj -> typed primary Table/TR/TD -> C194 numeric locator cross-check; inspect TD5..TD8 lexical windows with numeric 3-4 chars, 3-letter route at +3/+7, printed H:MM BLH at +13. Research window is not approved universal Activity mapping.",
+    "realOriginal": {
+      "flateStreams": [
+        131,
+        137,
+        138
+      ],
+      "Tj": [
+        1824,
+        1921,
+        1872
+      ],
+      "MCID": [
+        1568,
+        1592,
+        1577
+      ],
+      "unmappedGlyphs": [
+        0,
+        0,
+        0
+      ],
+      "primaryTRIncludingHeader": [
+        41,
+        45,
+        43
+      ],
+      "primaryBody": [
+        40,
+        44,
+        42
+      ],
+      "numericManifest": [
+        18,
+        22,
+        22
+      ],
+      "otherBody": [
+        22,
+        22,
+        20
+      ],
+      "numericActivityRouteBLHAndMCIDVerified": [
+        18,
+        22,
+        22
+      ],
+      "otherCompleteNumericRouteBLH": [
+        0,
+        0,
+        0
+      ]
+    },
+    "otherLexicalWindow": {
+      "months": [
+        {
+          "month": "06",
+          "other": 22,
+          "knownCode": 15,
+          "numeric": 6,
+          "both": 0,
+          "neither": 1
+        },
+        {
+          "month": "07",
+          "other": 22,
+          "knownCode": 17,
+          "numeric": 7,
+          "both": 2,
+          "neither": 0
+        },
+        {
+          "month": "08",
+          "other": 20,
+          "knownCode": 18,
+          "numeric": 1,
+          "both": 1,
+          "neither": 2
+        }
+      ],
+      "totals": {
+        "other": 64,
+        "knownCode": 50,
+        "numeric": 14,
+        "both": 3,
+        "knownOnly": 47,
+        "numericOnly": 11,
+        "neither": 3,
+        "completeCandidate": 0
+      },
+      "observedWindowCodes": [
+        "OFF",
+        "LAYOV",
+        "RSV_F",
+        "AIR",
+        "SB2MAX",
+        "-"
+      ],
+      "neitherSourceLocators": [
+        "06/p1/TR41",
+        "08/p2/TR42",
+        "08/p2/TR43"
+      ],
+      "caveat": "Code/numeric windows overlap and do not certify Activity-column ownership or all 64 as nonflight. Three neither rows remain UNKNOWN/HOLD."
+    },
+    "synthetic": {
+      "policyCasesPassed": 10,
+      "policyCasesTotal": 10,
+      "monthlyPartitionChecks": 3,
+      "monthlyLexicalUnionChecks": 3,
+      "monthlyStrictGateChecks": 3,
+      "not": "No rebuilt PDFs, Dart/Sembast, UID/Publication, company rejoin, backup/restore or production parser."
+    },
+    "parserProfileDelta": "Require complete physical primary-body census and source-specific typed Activity/route/printed BLH/MCID ownership; unknown/ambiguous row or truncation => document-atomic HOLD, zero partial evidence. Sum/post-Sum auxiliary excluded by ancestry. Skia tagged != PDC untagged. Date/Pairing/crew/year/Publication/active same-UID Flight remain separate; no automatic FlightRecord creation or Block overwrite.",
+    "readiness": {
+      "publicExactPrinterPDF": "P5",
+      "weeklyHTML": "P3",
+      "production": "OPEN",
+      "W016": "CONDITIONAL_NOT_STARTED",
+      "W017": "INSUFFICIENT_EVIDENCE_NOT_STARTED"
+    },
+    "remaining": "Three nonmanifest Activity TD ownerships, eight August Skia/PDC authenticated edges, company Aug03-31, source four-digit year/Publication, owner-approved W016/017 and real Dart/Sembast; C194 exact-write historical sync debt unreconstructable."
   }
 }

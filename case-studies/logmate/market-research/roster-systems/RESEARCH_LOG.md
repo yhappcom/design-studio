@@ -1582,3 +1582,10 @@ Re-read current LogMate AGENTS/MASTER/import/CrewConnex specs, crew ownership an
 - Extended existing C457 JS research oracle. Independent in-memory V8 baseline PASS + 17/17 SYNTHETIC mutations rejected; saved Node runner, real Skia lexical, Dart/Sembast, active UID, Publication and W-016 file lifecycle NOT RUN. Pinned locators are not new-layout classifier proof.
 - No new airline, public sample, field meaning or grade; all four master CSVs no-op. Exact public PDF P5 / HTML P3; W-016/017 NOT STARTED, Production OPEN; C194 sync debt unreconstructable.
 - NEXT ONE: authorized Skia original/redacted full-body rows for 64 nonselected lexical classification plus Sum/aux/continuation/unknown-code and PDC cross-family adversaries; owner-scoped evidence-only acceptance remains separate.
+
+## 2026-10-30 11:00 KST — C479 original Skia 3-month whole-body lexical audit
+- LogMate main@9cc0cd43 read-only authority/import/CrewConnex/code/tests; Design Studio plan/four indexes/queue/log/C194/C284/C295 checked. Fresh original private Skia PDF base64 -> independent Flate/ToUnicode/typed-MCID decode: 406 streams, 5617 Tj, 4737 MCID, zero unmapped glyphs; no personal/raw content retained.
+- Actual 126 primary body=62 prior numeric+64 other; 62/62 selected Activity+route+printed BLH+MCID reverified. Other 64: numeric-looking TD5–TD8 14, complete candidate 0, known-code window 50, overlap 3, neither 3 HOLD. No proof all 64 nonflight or that window is canonical Activity column.
+- 9/9 aggregate invariants and 10/10 synthetic policy checks. No rebuilt PDF, Dart/Sembast, company Aug03–31 or UID/Publication. Skia tagged and PDC untagged remain separate; existing-record-only. Public exact PDF P5, weekly HTML P3, Production OPEN, W-016/017 NOT STARTED.
+- Updated existing C284/C200/FIELD_COVERAGE_MATRIX/REVALIDATION_QUEUE/RESEARCH_LOG. No new airline, public sample or TAM; other master indexes no-op. C194 exact-write historical sync debt remains unreconstructable.
+- **ONE NEXT:** certified Activity TD ownership/three unknown rows + redacted full-body ParserProfile regression/PDC negative controls.
