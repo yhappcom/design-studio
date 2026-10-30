@@ -1139,5 +1139,65 @@
     },
     "syncDebt": "C194 historical exact failed-write text cannot be reconstructed; verified current manifest and linked historical checkpoint are intact. C265 has explicit later C341 current-authority correction; do not reapply retracted C339 missing-cell claim.",
     "next": "Obtain authorized redacted same-export August four-digit year/report subject/Publication and Aug03–31 company plus active same-UID Flight; adjudicate eight Skia/PDC edges, then separately approved W-016 evidence-only lifecycle acceptance."
+  },
+  "c489StructuralAcceptanceAndSourceLocatorGate": {
+    "date": "2026-10-30 21 KST",
+    "status": "RESEARCH_ONLY_METADATA_REAGGREGATION_PRODUCTION_OPEN",
+    "sourceManifestBlob": "9a2d403cfb559144ea9b1882d308683dc9999fa9",
+    "scope": "Existing original-Skia-PDF-derived 62-row C194 manifest, not fresh original PDF decode or Dart/Sembast test",
+    "rows": 62,
+    "directMultileaf": {
+      "total": 36,
+      "sixLeaf": 31,
+      "sevenLeaf": 5,
+      "missingPairing": 6,
+      "missingPairingOwnDate": 5,
+      "missingPairingAndOwnDate": 1
+    },
+    "pipe": {
+      "total": 26,
+      "depth1": 22,
+      "depth2": 2,
+      "depth3": 2,
+      "physicalRootDistanceConsistent": 26
+    },
+    "datePairing": {
+      "both": 30,
+      "dateOnly": 5,
+      "neither": 27
+    },
+    "page2NumericRows": 6,
+    "activityLocatorCollision": {
+      "pageMcidDistinct": 61,
+      "sourcePageMcidDistinct": 62,
+      "collision": [
+        {
+          "month": "07",
+          "page": 2,
+          "tr": 40,
+          "mcid": 9
+        },
+        {
+          "month": "08",
+          "page": 2,
+          "tr": 35,
+          "mcid": 9
+        }
+      ]
+    },
+    "proposedProfile": "skia-tagged-printer/research-2.25-C489",
+    "admission": "Separate family/whole-document, lexical flight+route+BLH, source-scoped typed locator, physical pipe lineage, date/subject/Publication authority, existing same-UID Flight and owner review; fail closed on unsupported; no auto date/crew/Block/FlightRecord",
+    "validation": "Two metadata aggregation passes and 26/26 physical-root distance checks; not fresh PDF decode, not product tests",
+    "readiness": {
+      "publicExactPdf": "P5",
+      "weeklyHtml": "P3",
+      "production": "OPEN",
+      "W016": "NOT_STARTED",
+      "W017": "NOT_STARTED",
+      "sameUid": "UNVERIFIED",
+      "publication": "UNVERIFIED",
+      "historicalC194Debt": "UNRECONSTRUCTABLE"
+    },
+    "next": "Authorized same-export August year/subject/Publication + Aug03–31 company + active UID Flight for eight Skia/PDC edges and separately approved evidence-only lifecycle"
   }
 }
