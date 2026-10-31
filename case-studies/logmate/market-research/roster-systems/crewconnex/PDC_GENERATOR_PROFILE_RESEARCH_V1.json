@@ -4867,6 +4867,40 @@
     },
     "contractDelta": "C491 class-column counts plus lexical grammar are insufficient to prove per-day-group optional clock placement. For this one export only, research detector may additionally compare numeric first-CI/last-CO with an explicit trailing nonnumeric CO exception. Never interpret C/I or C/O as duty, date, FlightRecord, operating status, or revision; do not auto-inherit date/crew, and do not require numeric last-C/O universally.",
     "unresolved": "No independent second PDC export, no portable group semantics, no full C426 mutated PDF execution, no authenticated year/subject/Publication or same-UID Flight; W-016/017 NOT STARTED; exact-layout public PDF P5 and weekly HTML P3.",
-    "next": "Certified same-export four-digit operational year/report subject/Publication with Aug03–31 company and active same-UID Flight; adjudicate eight Skia/PDC edges before separately approved W-016 evidence-only lifecycle."
+    "next": "Certified same-export four-digit operational year/report subject/Publication with Aug03–31 company and active same-UID Flight; adjudicate eight Skia/PDC edges before separately approved W-016 evidence-only lifecycle.",
+    "orderedPrivacySafeGroupShapeFixture": {
+      "checkpoint": "2026-10-31 13 KST; direct independent original PDF read-only decode",
+      "encoding": "F=numeric Activity, N=nonnumeric Activity, I=printed C/I, O=printed C/O; order within each printed-date group; no date, route, flight, crew, identifiers or clocks",
+      "sourceScope": "single private August 2026 PDC generator PDF, 39612 bytes; 495 text cells; 48 Activity-bearing bands, 31 printed-date groups",
+      "numericBearingGroupShapes": [
+        "FI-FO",
+        "FIO-N",
+        "FIO",
+        "FI-FO",
+        "FIO",
+        "N-FIO",
+        "FI-FO",
+        "FI-F-F-FO",
+        "FI-F-F-FO-N",
+        "FI-FO-N",
+        "FI-F-NO",
+        "FIO",
+        "FIO",
+        "NIO-FIO",
+        "FIO"
+      ],
+      "numericBearingGroups": 15,
+      "otherGroups": 16,
+      "independentPositionControls": {
+        "originalPass": true,
+        "withinNumericRelocations": 13,
+        "ciRelocations": 7,
+        "coRelocations": 6,
+        "failClosedByResearchShapeRule": 13,
+        "fullC426OracleExecuted": false,
+        "dartExecuted": false
+      },
+      "authority": "RESEARCH_ONLY; exact ordered group topology is not a universal parser contract; no Date inheritance or crew/UID/Publication evidence"
+    }
   }
 }
