@@ -4902,5 +4902,34 @@
       },
       "authority": "RESEARCH_ONLY; exact ordered group topology is not a universal parser contract; no Date inheritance or crew/UID/Publication evidence"
     }
+  },
+  "c496FixtureCompletenessAudit": {
+    "checkpoint": "2026-10-31 15 KST",
+    "kind": "DERIVED_FROM_STORED_C495_PRIVACY_SAFE_FIXTURE_NOT_NEW_PDF_DECODE",
+    "observedTotals": {
+      "printedGroups": 31,
+      "numericBearingGroups": 15,
+      "nonnumericOnlyGroups": 16,
+      "numericRows": 26,
+      "nonnumericRows": 22
+    },
+    "recomputedFromFifteenStoredShapes": {
+      "numericRows": 26,
+      "numericCI": 15,
+      "numericCO": 14,
+      "nonnumericRowsWithinNumericBearingGroups": 6,
+      "firstNumericCI": 15,
+      "lastNumericCO": 14,
+      "trailingNonnumericCOException": 1
+    },
+    "derivedRemainder": {
+      "nonnumericRowsOutsideFifteenStoredShapes": 16,
+      "nonnumericOnlyGroups": 16,
+      "oneNonnumericRowPerOtherGroup": "ARITHMETICALLY_IMPLIED_IF_ALL_22_NONNUMERIC_ROWS_ACCOUNTED_FOR"
+    },
+    "criticalFixtureGap": "Only the 15 numeric-bearing groups are stored in their mutual order; 16 nonnumeric-only groups lack their original interleaving positions and their I/O flags. Therefore this is NOT a complete ordered 31-group replay fixture and must not be described as one. Cannot infer complete order from group totals.",
+    "validation": "Static independent structural arithmetic only; no original PDF binary execution, no C426 full PDF oracle, no mutated PDF runs, no Dart/Sembast.",
+    "next": "Recover original 31-group ordering and nonnumeric-only group I/O from read-only source; then implement and run C426 full-PDF group placement regression with baseline and 13 source-derived mutants.",
+    "production": "OPEN"
   }
 }
