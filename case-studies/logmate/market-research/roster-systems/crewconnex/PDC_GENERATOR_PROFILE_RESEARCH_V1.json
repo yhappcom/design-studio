@@ -5019,5 +5019,147 @@
     "controls": "Direct original group structure reconstructed, count-checked against C491/C492/C495. No C426 whole-PDF oracle or mutated PDF executed; positional rule remains research-only one-export discriminator.",
     "admission": "RESEARCH_ONLY_NOT_PRODUCTION_APPROVED",
     "next": "Execute actual source PDF and 13 relocated-cell PDF mutants through C426 full-document oracle; validate complete 31-group fixture and nonnumeric-only controls; separately authenticate Publication/year/UID and W016/017."
+  },
+  "c498FullTopologyMutationMatrix": {
+    "checkpoint": "2026-10-31 20:58 KST",
+    "scope": "INDEPENDENT_ABSTRACT_TOPOLOGY_REPLAY_OF_C497_NOT_PDF_MUTATION_OR_C426_EXECUTION",
+    "source": "C497 stored privacy-safe 31-group topology only; no new original binary decoded",
+    "baseline": {
+      "groupCount": 31,
+      "errors": [],
+      "accepted": true
+    },
+    "sameNumericClassRelocations": {
+      "count": 13,
+      "ci": 7,
+      "co": 6,
+      "rejectedByIndependentRule": 13,
+      "matrix": [
+        {
+          "groupOrdinal": 1,
+          "field": "C/I",
+          "sourceBandOrdinalWithinGroup": 1,
+          "targetBandOrdinalWithinGroup": 2,
+          "researchRuleErrors": [
+            "1:CI"
+          ]
+        },
+        {
+          "groupOrdinal": 1,
+          "field": "C/O",
+          "sourceBandOrdinalWithinGroup": 2,
+          "targetBandOrdinalWithinGroup": 1,
+          "researchRuleErrors": [
+            "1:CO"
+          ]
+        },
+        {
+          "groupOrdinal": 7,
+          "field": "C/I",
+          "sourceBandOrdinalWithinGroup": 1,
+          "targetBandOrdinalWithinGroup": 2,
+          "researchRuleErrors": [
+            "7:CI"
+          ]
+        },
+        {
+          "groupOrdinal": 7,
+          "field": "C/O",
+          "sourceBandOrdinalWithinGroup": 2,
+          "targetBandOrdinalWithinGroup": 1,
+          "researchRuleErrors": [
+            "7:CO"
+          ]
+        },
+        {
+          "groupOrdinal": 12,
+          "field": "C/I",
+          "sourceBandOrdinalWithinGroup": 1,
+          "targetBandOrdinalWithinGroup": 2,
+          "researchRuleErrors": [
+            "12:CI"
+          ]
+        },
+        {
+          "groupOrdinal": 12,
+          "field": "C/O",
+          "sourceBandOrdinalWithinGroup": 2,
+          "targetBandOrdinalWithinGroup": 1,
+          "researchRuleErrors": [
+            "12:CO"
+          ]
+        },
+        {
+          "groupOrdinal": 13,
+          "field": "C/I",
+          "sourceBandOrdinalWithinGroup": 1,
+          "targetBandOrdinalWithinGroup": 2,
+          "researchRuleErrors": [
+            "13:CI"
+          ]
+        },
+        {
+          "groupOrdinal": 13,
+          "field": "C/O",
+          "sourceBandOrdinalWithinGroup": 4,
+          "targetBandOrdinalWithinGroup": 1,
+          "researchRuleErrors": [
+            "13:CO"
+          ]
+        },
+        {
+          "groupOrdinal": 18,
+          "field": "C/I",
+          "sourceBandOrdinalWithinGroup": 1,
+          "targetBandOrdinalWithinGroup": 2,
+          "researchRuleErrors": [
+            "18:CI"
+          ]
+        },
+        {
+          "groupOrdinal": 18,
+          "field": "C/O",
+          "sourceBandOrdinalWithinGroup": 4,
+          "targetBandOrdinalWithinGroup": 1,
+          "researchRuleErrors": [
+            "18:CO"
+          ]
+        },
+        {
+          "groupOrdinal": 19,
+          "field": "C/I",
+          "sourceBandOrdinalWithinGroup": 1,
+          "targetBandOrdinalWithinGroup": 2,
+          "researchRuleErrors": [
+            "19:CI"
+          ]
+        },
+        {
+          "groupOrdinal": 19,
+          "field": "C/O",
+          "sourceBandOrdinalWithinGroup": 2,
+          "targetBandOrdinalWithinGroup": 1,
+          "researchRuleErrors": [
+            "19:CO"
+          ]
+        },
+        {
+          "groupOrdinal": 20,
+          "field": "C/I",
+          "sourceBandOrdinalWithinGroup": 1,
+          "targetBandOrdinalWithinGroup": 2,
+          "researchRuleErrors": [
+            "20:CI"
+          ]
+        }
+      ]
+    },
+    "importantException": "Group 20 has last numeric without C/O and a trailing nonnumeric C/O; group 29 has preceding nonnumeric C/I and C/O before a numeric C/I+C/O. Do not require numeric C/O in every group or interpret nonnumeric clocks as flight evidence.",
+    "limitations": [
+      "No original or mutated PDF executed through C426",
+      "No real Dart/Sembast, source year, Publication, active UID-owned record, or production acceptance",
+      "A one-export shape discriminator is not a portable invariant; immutable new profiles need independent source validation"
+    ],
+    "next": "Build C426 source-native whole-PDF original+13 relocation mutation regression, with 31-group census and nonflight exception controls"
   }
 }
