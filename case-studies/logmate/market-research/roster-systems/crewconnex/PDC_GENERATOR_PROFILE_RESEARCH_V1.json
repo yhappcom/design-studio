@@ -5176,5 +5176,18 @@
     "safety": "Do not inherit/backfill operational date for leading undated group, infer YYYY/Publication, or create FlightRecord",
     "status": "RESEARCH_ONLY_NOT_C426_EXECUTION_OR_PRODUCTION",
     "next": "C426 source-native full-PDF original + 13 C498 positional mutations with leading-undated positive control"
+  },
+  "c501DateCensusConflictGate": {
+    "checkpoint": "2026-11-01 10 KST",
+    "evidenceKind": "STATIC_INDEPENDENT_CROSS_CONTRACT_RECONCILIATION_NOT_NEW_PDF_EXECUTION",
+    "sourceScope": "C426 actual JS source + C497/C499 original-derived Studio profile",
+    "c426": "BX Date x81 BC[0]=31; numeric own-Date 13 + nonnumeric own-Date 18 = 31; source-family validator rejects other counts",
+    "c499": "Independent original-text audit reports 30 explicit x81 Date anchors; first two Activity bands undated; 31 structural groups include one leading undated group",
+    "c497": "31-group array is grouped topology, not certified 31 own-Date anchors",
+    "contradiction": "31 C426 Date cells vs 30 C499 original-text anchors; one cell discrepancy unresolved. Do not equate 31 structural groups with 31 printed Date cells.",
+    "legacyFieldCaution": "sampleFingerprint.dateAnchorCount=31 is historical C426/C423 census expectation, NOT independently reconciled with C499. Preserve legacy value for audit until coordinate-level resolution; never silently overwrite it to 30.",
+    "failureContract": "No date propagation to leading undated bands; no source year/Publication/UID certification; no FlightRecord create or overwrite; unknown/unreconciled layout stays DETACHED_HOLD/FAIL_DOCUMENT as appropriate",
+    "verification": "No source PDF binary executed in C426; no C498 PDF mutations executed; no company year/date/UID joins; no Dart/Sembast.",
+    "next": "Reconcile x81 original text objects by y baseline, duplicate paint and Activity ownership; run original and 13 positional PDF mutants in C426 with independent 31-group oracle"
   }
 }
