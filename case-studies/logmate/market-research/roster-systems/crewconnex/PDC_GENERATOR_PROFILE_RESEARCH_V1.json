@@ -5277,5 +5277,25 @@
       "No Dart/Sembast production PASS"
     ],
     "admission": "DETACHED_HOLD_ONLY; no inherited dates, no FlightRecord create/overwrite"
+  },
+  "c504OriginalByteC497ExactOrderReconciliation": {
+    "checkpoint": "2026-11-01 15 KST",
+    "evidenceKind": "INDEPENDENT_REAL_PRIVATE_ORIGINAL_BYTE_GEOMETRY_REPLAY",
+    "sourceBlobSha": "8e7fec30f98458c770053bd7739e60869a87e33b",
+    "sourcePath": "LogMate reference/source-materials/import-source/ (read-only; no raw bytes copied)",
+    "method": "Decoded original 39612-byte PDF base64 transiently, enumerated BT/Tj coordinates; body y=206..638, Date x81, Activity x210, C/I x162, C/O x186; sorted Activity by descending y; began new group only at own Date y; compared full F/N/I/O shape sequence against C497 ordered31GroupShapes",
+    "results": {
+      "nativeTextBlocks": 495,
+      "bodyActivityRows": 48,
+      "ownDateCells": 31,
+      "geometryGroups": 31,
+      "exactOrderedShapeMatches": 31,
+      "shapeMismatches": 0,
+      "orphanLeadingActivityRows": 0
+    },
+    "decision": "C497 full ordered topology matches independent source-native re-extraction exactly 31/31; C499 30-anchor leading-orphan assertion remains retracted. This validates one-source structural fixture only, not date inheritance, same-duty, identity, revision or cross-month portability.",
+    "executionBlocker": "GitHub fetch_blob binary UTF-8 decode error; contents API fetch_file encoding=base64 works. No full C426 executable or source-native 13 mutation PDF execution in this cycle.",
+    "safety": "Never copy original private content into Studio, infer missing Date, create FlightRecord, or overwrite existing records.",
+    "production": "OPEN; no Dart/Sembast/UID/Publication/operational year certification"
   }
 }
