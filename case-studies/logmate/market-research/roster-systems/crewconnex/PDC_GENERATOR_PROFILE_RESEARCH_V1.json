@@ -5244,5 +5244,38 @@
     "decision": "C499 30-Date-anchor count and two-leading-undated claim contradicted by independent native stream re-decode; C426 31-Date occupancy independently corroborated. C497 group count alone not date authority; recompute topology from original source.",
     "scopeLimits": "Raw dates/crew/flight data not persisted; source PDF not executed through C426 here; no mutated PDF, operational year/Publication/UID, company join, or Dart test.",
     "safety": "Existing-record-only DETACHED_HOLD; never auto-inherit omitted dates or create/update FlightRecord."
+  },
+  "c503OriginalByteGroupTopology": {
+    "evidence": "REAL_PRIVATE_ORIGINAL_BYTE_INDEPENDENT_TEXT_LAYER",
+    "sourceBlobSha": "8e7fec30f98458c770053bd7739e60869a87e33b",
+    "scope": "single 2026-08 PDC one-page PDF; native BT/Tj coordinate extraction; no personal values persisted",
+    "activityRows": 48,
+    "ownDateAnchors": 31,
+    "missingOwnDateRows": 17,
+    "groupsStartedOnlyAtOwnDate": 31,
+    "groupsWithMultipleActivityRows": 10,
+    "maxActivityRowsPerGroup": 5,
+    "leadingGroup": {
+      "firstRowOwnDate": true,
+      "secondRowOwnDate": false,
+      "activityRows": 2,
+      "numericRows": 2
+    },
+    "activityClassification": {
+      "numeric": 26,
+      "nonnumeric": 22
+    },
+    "ciOwnCells": 16,
+    "coOwnCells": 16,
+    "orphanLeadingGroups": 0,
+    "interpretation": "A group is a geometry segment beginning at an own-Date row, not a validated duty or operational date for its undated members. The first row has Date; the second is undated. Group C/I and C/O counts are raw occupancy only.",
+    "limits": [
+      "No C426 full validator execution",
+      "No C498 PDF mutation runs",
+      "No year/Publication/UID binding",
+      "No crew/BLH-to-company authority",
+      "No Dart/Sembast production PASS"
+    ],
+    "admission": "DETACHED_HOLD_ONLY; no inherited dates, no FlightRecord create/overwrite"
   }
 }
