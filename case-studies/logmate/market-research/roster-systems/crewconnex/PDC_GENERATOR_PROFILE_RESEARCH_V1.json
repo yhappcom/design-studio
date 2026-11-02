@@ -5297,5 +5297,32 @@
     "executionBlocker": "GitHub fetch_blob binary UTF-8 decode error; contents API fetch_file encoding=base64 works. No full C426 executable or source-native 13 mutation PDF execution in this cycle.",
     "safety": "Never copy original private content into Studio, infer missing Date, create FlightRecord, or overwrite existing records.",
     "production": "OPEN; no Dart/Sembast/UID/Publication/operational year certification"
+  },
+  "c508IndependentExactC498Replay": {
+    "checkpoint": "2026-11-03 07 KST",
+    "scope": "INDEPENDENT_FRESH_REPLAY_OF_STORED_C497_TOPOLOGY_AND_EXACT_C498_MATRIX_NOT_NATIVE_PDF_OR_C426",
+    "sourceProfileBlob": "172cc0e25b71c494e3fe360e37fea77144e6b254",
+    "algorithm": "Split 31 ordered group shapes by '-', identify numeric F bands, require I only on first numeric band and O only on last numeric band; preserve observed nonnumeric I/O at group 20 and 29. Apply each of 13 exact C498 within-numeric-class source-to-target ordinal moves, compare computed reason to pinned reason.",
+    "baseline": {
+      "groups": 31,
+      "accepted": true,
+      "errors": []
+    },
+    "exactC498": {
+      "cases": 13,
+      "ci": 7,
+      "co": 6,
+      "reasonMatched": 13,
+      "unexpectedPass": 0,
+      "unexpectedReason": 0
+    },
+    "positiveExceptions": [
+      "group 20 trailing nonnumeric C/O",
+      "group 29 preceding nonnumeric C/I+C/O"
+    ],
+    "risk": "Existing C426 strict validator has only class-scoped C/I/C/O occupancy, not group-local positional validation; syntheticFixture topology is nonrepresentative. This abstract replay cannot establish native PDF acceptance, render validity, parser safety, UID, Publication, year, Block equivalence, or zero actual DB writes.",
+    "decision": "Keep research-only; implement position validation before native full-PDF acceptance; do not add portable/vendor-wide semantics; fail closed on unknown group shape.",
+    "adjacent": "Company matching remains blocked by owner UID/Publication/year; no new raw public sample or deployment evidence. C194 synchronization debt remains unresolved.",
+    "next": "Co-locate private original binary and C426 research runner; execute original and exact 13 standards-valid PDF mutants with physical envelope, position, nonflight exceptions and zero-write checks."
   }
 }
