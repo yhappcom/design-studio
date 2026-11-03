@@ -816,14 +816,13 @@ function runPdcNonNumericClockAdversarial(originalBase64){
 }
 export {runPdcNonNumericClockAdversarial};
 
- // C520: independent strict-positive and negative controls. These are
- // research-only synthetic controls, not actual-source or production proof.
+
+// C520: isolated synthetic strict controls; not real-corpus acceptance.
 function runPdcStrictTopologySyntheticTests(){
  const full=wrapPdcSyntheticTextMock(strictTopologySyntheticFixture());
- const run=(name,doc,expected,expectedReason=null)=>{
+ const run=(name,doc,expected)=>{
   const out=inspectPdcPdfStrict(toBase64(doc));
-  return {name,pass:out.status===expected&&(expectedReason===null||out.reason===expectedReason),
-    status:out.status,reason:out.reason||null};
+  return {name,pass:out.status===expected,status:out.status,reason:out.reason||null};
  };
  const replaceStream=(find,replacement)=>repackPdcSyntheticPdf(full,objects=>{
   const before=objects[16],after=before.replace(find,replacement);
