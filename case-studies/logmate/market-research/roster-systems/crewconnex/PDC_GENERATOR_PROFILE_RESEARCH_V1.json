@@ -5353,5 +5353,85 @@
     ],
     "decision": "Exact C498 manifest now source-native coordinate-tested (13/13), advancing beyond C508 abstract replay; strict C426 integration and render/physical envelope remains OPEN. Preserve group 20 trailing nonnumeric C/O and group 29 preceding nonnumeric C/I+C/O. CrewConnex existing-record-only DETACHED_HOLD; never infer duty/date/Block/crew authority or create/overwrite FlightRecord.",
     "next": "Wire source-scoped positional guard into C426 strict admission and execute original + exact 13 in the same native physical/paint and independent PDF renderer path; verify no DB writes."
+  },
+  "c511ExhaustiveSameClassPositionCoverage": {
+    "checkpoint": "2026-11-03 18 KST",
+    "evidence": "INDEPENDENT_SYNTHETIC_REPLAY_OF_STORED_C497_TOPOLOGY_ONLY",
+    "baselineGroupCount": 31,
+    "baselineNumericRows": 26,
+    "baselineNonnumericRows": 22,
+    "baselinePositionalErrors": 0,
+    "exhaustiveSameNumericClassSingleCellRelocations": 21,
+    "ciRelocations": 11,
+    "coRelocations": 10,
+    "priorExactC498Cases": 13,
+    "additionalDistinctCases": 8,
+    "additionalCases": [
+      {
+        "group": 13,
+        "field": "CI",
+        "from": 1,
+        "to": 3,
+        "expected": "13:CI"
+      },
+      {
+        "group": 13,
+        "field": "CI",
+        "from": 1,
+        "to": 4,
+        "expected": "13:CI"
+      },
+      {
+        "group": 13,
+        "field": "CO",
+        "from": 4,
+        "to": 2,
+        "expected": "13:CO"
+      },
+      {
+        "group": 13,
+        "field": "CO",
+        "from": 4,
+        "to": 3,
+        "expected": "13:CO"
+      },
+      {
+        "group": 18,
+        "field": "CI",
+        "from": 1,
+        "to": 3,
+        "expected": "18:CI"
+      },
+      {
+        "group": 18,
+        "field": "CI",
+        "from": 1,
+        "to": 4,
+        "expected": "18:CI"
+      },
+      {
+        "group": 18,
+        "field": "CO",
+        "from": 4,
+        "to": 2,
+        "expected": "18:CO"
+      },
+      {
+        "group": 18,
+        "field": "CO",
+        "from": 4,
+        "to": 3,
+        "expected": "18:CO"
+      }
+    ],
+    "expectedGroupFieldRejects": 21,
+    "unexpectedAccepts": 0,
+    "nonflightPositiveExceptions": [
+      "group20 trailing N with C/O",
+      "group29 preceding N with C/I and C/O"
+    ],
+    "scopeLimit": "Source-scoped 31-group abstract topology, not PDF bytes, C426 strict runner, independent PDF render or Dart/Sembast. This expands 13 pinned cases to complete one-cell same-numeric-class relocation enumeration for this single export, not a universal placement rule.",
+    "productionDecision": "OPEN; no new production readiness, field authority, company UID/year/Publication proof or ledger-write evidence.",
+    "next": "Run unchanged source PDF and exact C498 13 plus eight additional synthetic-derived coordinates through integrated strict physical/paint and positional oracle; verify no owner-ledger mutation."
   }
 }
