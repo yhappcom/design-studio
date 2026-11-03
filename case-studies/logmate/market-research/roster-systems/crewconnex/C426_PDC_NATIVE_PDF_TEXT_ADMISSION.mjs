@@ -160,6 +160,48 @@ function syntheticFixture(){
  }
  put(559,43,"1");lines.push("endstream","endobj","trailer << /Root 1 0 R >>","%%EOF");return lines.join("\n");
 }
+
+ // C519: privacy-safe pinned topology fixture constructor. Separate from lexical fixture.
+ // Research-only; exact ONE August export, never a general CrewConnex layout.
+function strictTopologySyntheticFixture(){
+ const shapes=["FI-FO","FIO-N","FIO","N","N","N","FI-FO","FIO","N-FIO","N","N","FI-FO","FI-F-F-FO","N","N","N","N","FI-F-F-FO-N","FI-FO-N","FI-F-NO","N","N","FIO","N","N","N","FIO","N","NIO-FIO","N","FIO"];
+ const activities=shapes.flatMap((shape,g)=>shape.split("-").map((part,i)=>({part,group:g,ownDate:i===0})));
+ if(activities.length!==48)throw Error("C519_SHAPE_COUNT");
+ const lines=["%PDF-1.4","1 0 obj << /Type /Page >> endobj","2 0 obj << /Producer (PDC Pdf Generator 1.0, PDC A/S) /Creator (PDC Crew) /Title (PDC Report) /CreationDate (D:20261028000000) >> endobj","3 0 obj << /Length 1 >> stream"];
+ const put=(x,y,t)=>lines.push("BT "+x+" "+y+" Td ("+esc(t)+") Tj ET");
+ put(36,801,"28-10-2026 0000");put(272,801,"Crew Roster Report");put(219,744,"Crew Roster Report");put(219,744,"Crew Roster Report");
+ put(39,702,"Crewmember: SYNTHETIC SUBJECT");put(225,688,"Period: 01Aug26 - 31Aug26");put(225,688,"Period: 01Aug26 - 31Aug26");
+ HEADERS.forEach((v,i)=>put(HX[i],647,v));
+ let f=0,n=0;
+ for(let i=0,j=0;i<49;i++){
+  const y=638-9*i;
+  if(i===12){put(388,y,"SYNTHETIC AUX");continue;}
+  const a=activities[j++],isF=a.part[0]==="F",k=isF?f++:n++;
+  if(a.ownDate)put(81,y,String(a.group+1).padStart(2,"0")+"Aug26");
+  if(isF){
+   if(k<16)put(109,y,"PAIR");
+   if(a.part.includes("I"))put(162,y,"0900");
+   if(a.part.includes("O"))put(186,y,"1100");
+   put(210,y,k<8?String(100+k):String(1000+k-8));
+   put(244,y,"AAA");put(268,y,"0900");put(292,y,"0900");put(316,y,"BBB");put(340,y,"1030");put(364,y,"1030");put(388,y,"SYN");put(511,y,"1:30");
+  }else{
+   if(k<6)put(109,y,"PAIR");
+   if(k===0)put(143,y,"RAW");
+   if(a.part.includes("I"))put(162,y,"0900");
+   if(a.part.includes("O"))put(186,y,"1100");
+   put(210,y,"OFF");
+   if(k<18)put(244,y,"AAA");
+   put(268,y,"0900");put(292,y,"0900");
+   if(k<18)put(316,y,"BBB");
+   put(340,y,"1030");put(364,y,"1030");
+   if(k<6)put(388,y,"SYN");
+  }
+ }
+ if(f!==26||n!==22)throw Error("C519_CLASS_COUNT");
+ put(559,43,"1");lines.push("endstream","endobj","trailer << /Root 1 0 R >>","%%EOF");
+ return lines.join("\n");
+}
+
 function runSyntheticTests(){
  const base=syntheticFixture(),scan=s=>inspectPdcPdfTextLayer(toBase64(s),{requirePinnedTopology:false}),tests=[];
  const check=(name,mutate,expected)=>{const r=scan(mutate(base));tests.push({name,pass:r.status===expected,reason:r.reason||""});};
