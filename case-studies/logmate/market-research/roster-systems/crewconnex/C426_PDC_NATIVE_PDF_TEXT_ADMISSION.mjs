@@ -34,7 +34,7 @@ function fromBase64(s){
 function toBase64(s){const A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",out=[];for(let i=0;i<s.length;i+=3){const n=(s.charCodeAt(i)<<16)|((s.charCodeAt(i+1)||0)<<8)|(s.charCodeAt(i+2)||0);out.push(A[(n>>>18)&63]+A[(n>>>12)&63]+(i+1<s.length?A[(n>>>6)&63]:"=")+(i+2<s.length?A[n&63]:"="));}return out.join("");}
 const unesc=s=>s.replace(/\\([()\\])/g,"$1").replace(/\\n/g,"\n").replace(/\\r/g,"\r").replace(/\\t/g,"\t");
 const esc=s=>s.replace(/\\/g,"\\\\").replace(/\(/g,"\\(").replace(/\)/g,"\\)");
-function inspectPdcPdfTextLayer(base64){
+function inspectPdcPdfTextLayer(base64,{requirePinnedTopology=true}={}){
  const fail=reason=>({status:"FAIL_DOCUMENT",reason,candidates:0,createsFlight:false,ownerBound:false,publicationCertified:false});
  let raw;try{raw=fromBase64(base64)}catch(e){return fail(e?.message==="BASE64_SIZE_LIMIT"?"INPUT_SIZE_LIMIT":"BAD_BASE64");}
  if(raw.length>200000||!raw.startsWith("%PDF-1.4"))return fail("UNSUPPORTED_PDF");
@@ -116,6 +116,8 @@ function inspectPdcPdfTextLayer(base64){
   for(const [kind,expected] of Object.entries(observedKindColumns))
    for(const [col,n] of Object.entries(expected))
     if((kindColumns[kind][col]||0)!==n)return fail("CLASS_COLUMN_OWNERSHIP_CENSUS");
+ // C515: lexical unit probes may opt out; strict PDF entry ALWAYS requires pinned topology.
+ if(requirePinnedTopology){
  // C513: one-export source-scoped Date-group positional topology guard.
  // Date is an OWN-CELL geometry anchor, never an inherited operational date.
  // This pinned topology is not a vendor-wide rule or duty/crew interpretation.
@@ -135,6 +137,7 @@ function inspectPdcPdfTextLayer(base64){
  for(let g=0;g<expectedGroupShapes.length;g++){
   if(actualGroups[g].join("-")!==expectedGroupShapes[g])
    return fail("DATE_GROUP_POSITION_OR_TOPOLOGY_"+(g+1));
+ }
  }
  return {status:"OBSERVED_FAMILY_DETACHED_HOLD",profile:"pdc-generator-14col-Aug26-single-page-C426",glyphs:495,bodyGlyphs:473,headers:14,bands:49,numeric,nonflight,aux,ownDateNumeric,missingOwnDateNumeric:13,ownDateNonflight,threeDigit,fourDigit,printedYearSuffix:"26",fourDigitOperationalYearCertified:false,printedSubjectLabelPresent:true,reportSubjectBoundToUid:false,printedGenerationStampPresent:true,publicationRevisionCertified:false,candidates:26,createsFlight:false,overwritesBlock:false,crewProvidedPerLeg:false};
 }
@@ -158,7 +161,7 @@ function syntheticFixture(){
  put(559,43,"1");lines.push("endstream","endobj","trailer << /Root 1 0 R >>","%%EOF");return lines.join("\n");
 }
 function runSyntheticTests(){
- const base=syntheticFixture(),scan=s=>inspectPdcPdfTextLayer(toBase64(s)),tests=[];
+ const base=syntheticFixture(),scan=s=>inspectPdcPdfTextLayer(toBase64(s),{requirePinnedTopology:false}),tests=[];
  const check=(name,mutate,expected)=>{const r=scan(mutate(base));tests.push({name,pass:r.status===expected,reason:r.reason||""});};
  const good="OBSERVED_FAMILY_DETACHED_HOLD",bad="FAIL_DOCUMENT";
  check("synthetic baseline",s=>s,good);
