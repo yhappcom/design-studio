@@ -5324,5 +5324,34 @@
     "decision": "Keep research-only; implement position validation before native full-PDF acceptance; do not add portable/vendor-wide semantics; fail closed on unknown group shape.",
     "adjacent": "Company matching remains blocked by owner UID/Publication/year; no new raw public sample or deployment evidence. C194 synchronization debt remains unresolved.",
     "next": "Co-locate private original binary and C426 research runner; execute original and exact 13 standards-valid PDF mutants with physical envelope, position, nonflight exceptions and zero-write checks."
+  },
+  "c509ExactC498OriginalByteNativeCoordinateReplay": {
+    "checkpoint": "2026-11-03 09 KST",
+    "evidence": "REAL_PRIVATE_ORIGINAL_PDF_BYTES_IN_MEMORY_EXACT_C498_COORDINATE_MUTATIONS_INDEPENDENT_REPLAY_NOT_C426_OR_DART",
+    "sourceBlobSha": "8e7fec30f98458c770053bd7739e60869a87e33b",
+    "originalBytes": 39612,
+    "originalTextObjects": 495,
+    "originalGeometryGroups": 31,
+    "originalPositionalErrors": 0,
+    "originalXrefEntriesValid": true,
+    "exactC498": {
+      "cases": 13,
+      "ci": 7,
+      "co": 6,
+      "mutantByteLengthPreserved": 13,
+      "mutantXrefOffsetsValid": 13,
+      "mutantTextObjectCount495": 13,
+      "independentPositionalRejects": 13,
+      "expectedReasonMatches": 13
+    },
+    "method": "Fetched original private PDC PDF via authorized LogMate read-only GitHub base64; decoded in transient JS isolate. Parsed native BT/Tj coordinates and Date/Activity bands. Applied EXACT C498 matrix by relocating C/I or C/O Td y coordinate from source numeric band to target numeric band within same group, preserving 3-digit y width, source text value, total bytes, xref offsets, stream length and glyph census. Independent first/last numeric positional predicate rejects each with exact group/field reason. Mutated bytes never persisted or returned.",
+    "limits": [
+      "PDF xref/object offsets and stream-length were independently checked but mutants were not rendered or executed through C426 strict validator or standards-compliant PDF engine",
+      "No source-value, name, crew identifier, roster content or mutant bytes copied to Studio",
+      "One-export source-scoped topology, not portable vendor-wide rule",
+      "No Dart/Sembast, same UID/year/Publication, authenticated company match or actual zero-DB-write test"
+    ],
+    "decision": "Exact C498 manifest now source-native coordinate-tested (13/13), advancing beyond C508 abstract replay; strict C426 integration and render/physical envelope remains OPEN. Preserve group 20 trailing nonnumeric C/O and group 29 preceding nonnumeric C/I+C/O. CrewConnex existing-record-only DETACHED_HOLD; never infer duty/date/Block/crew authority or create/overwrite FlightRecord.",
+    "next": "Wire source-scoped positional guard into C426 strict admission and execute original + exact 13 in the same native physical/paint and independent PDF renderer path; verify no DB writes."
   }
 }
