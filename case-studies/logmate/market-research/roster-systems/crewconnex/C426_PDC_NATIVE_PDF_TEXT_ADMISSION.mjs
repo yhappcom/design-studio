@@ -116,6 +116,26 @@ function inspectPdcPdfTextLayer(base64){
   for(const [kind,expected] of Object.entries(observedKindColumns))
    for(const [col,n] of Object.entries(expected))
     if((kindColumns[kind][col]||0)!==n)return fail("CLASS_COLUMN_OWNERSHIP_CENSUS");
+ // C513: one-export source-scoped Date-group positional topology guard.
+ // Date is an OWN-CELL geometry anchor, never an inherited operational date.
+ // This pinned topology is not a vendor-wide rule or duty/crew interpretation.
+ const expectedGroupShapes=["FI-FO","FIO-N","FIO","N","N","N","FI-FO","FIO","N-FIO","N","N","FI-FO","FI-F-F-FO","N","N","N","N","FI-F-F-FO-N","FI-FO-N","FI-F-NO","N","N","FIO","N","N","N","FIO","N","NIO-FIO","N","FIO"];
+ const actualGroups=[];let currentGroup=null;
+ for(let i=0;i<49;i++){
+  const r=rows.get(i),activity=r.get(210);
+  if(activity===undefined)continue; // one AC/Hotel-only auxiliary band
+  if(r.has(81)){
+   currentGroup=[];actualGroups.push(currentGroup);
+  }
+  if(!currentGroup)return fail("ORPHAN_ACTIVITY_BEFORE_OWN_DATE");
+  const kind=/^\\d{3,4}$/.test(activity)?"F":"N";
+  currentGroup.push(kind+(r.has(162)?"I":"")+(r.has(186)?"O":""));
+ }
+ if(actualGroups.length!==expectedGroupShapes.length)return fail("DATE_GROUP_COUNT");
+ for(let g=0;g<expectedGroupShapes.length;g++){
+  if(actualGroups[g].join("-")!==expectedGroupShapes[g])
+   return fail("DATE_GROUP_POSITION_OR_TOPOLOGY_"+(g+1));
+ }
  return {status:"OBSERVED_FAMILY_DETACHED_HOLD",profile:"pdc-generator-14col-Aug26-single-page-C426",glyphs:495,bodyGlyphs:473,headers:14,bands:49,numeric,nonflight,aux,ownDateNumeric,missingOwnDateNumeric:13,ownDateNonflight,threeDigit,fourDigit,printedYearSuffix:"26",fourDigitOperationalYearCertified:false,printedSubjectLabelPresent:true,reportSubjectBoundToUid:false,printedGenerationStampPresent:true,publicationRevisionCertified:false,candidates:26,createsFlight:false,overwritesBlock:false,crewProvidedPerLeg:false};
 }
 function syntheticFixture(){
