@@ -815,3 +815,30 @@ function runPdcNonNumericClockAdversarial(originalBase64){
   tests,sourceDerivedCounts:clockCounts,productionAcceptance:false};
 }
 export {runPdcNonNumericClockAdversarial};
+
+ // C520: independent strict-positive and negative controls. These are
+ // research-only synthetic controls, not actual-source or production proof.
+function runPdcStrictTopologySyntheticTests(){
+ const full=wrapPdcSyntheticTextMock(strictTopologySyntheticFixture());
+ const run=(name,doc,expected,expectedReason=null)=>{
+  const out=inspectPdcPdfStrict(toBase64(doc));
+  return {name,pass:out.status===expected&&(expectedReason===null||out.reason===expectedReason),
+    status:out.status,reason:out.reason||null};
+ };
+ const replaceStream=(find,replacement)=>repackPdcSyntheticPdf(full,objects=>{
+  const before=objects[16],after=before.replace(find,replacement);
+  if(after===before)throw Error("C520_MUTATION_ANCHOR_MISSING");
+  objects[16]=after.replace(/\/Length \d+/,
+    "/Length "+after.split("stream\n")[1].split("\nendstream")[0].length);
+ });
+ const tests=[
+  run("31-group strict synthetic baseline",full,"OBSERVED_FAMILY_DETACHED_HOLD"),
+  run("strict missing own-Date",replaceStream("BT 81 638 Td (01Aug26) Tj ET\n",""),"FAIL_DOCUMENT"),
+  run("strict invalid numeric Activity",replaceStream("210 638 Td (100)","210 638 Td (12345)"),"FAIL_DOCUMENT"),
+  run("strict invalid numeric Block",replaceStream("511 638 Td (1:30)","511 638 Td (BAD)"),"FAIL_DOCUMENT"),
+  run("strict invalid physical page count",full.replace("/Count 1","/Count 2"),"FAIL_DOCUMENT")
+ ];
+ return {passed:tests.filter(t=>t.pass).length,failed:tests.filter(t=>!t.pass).length,
+  tests,actualPdfTested:false,productionAcceptance:false,createsFlight:false};
+}
+export {strictTopologySyntheticFixture,runPdcStrictTopologySyntheticTests};
