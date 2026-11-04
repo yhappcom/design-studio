@@ -466,12 +466,13 @@ function runPdcEnvelopeTests(){
  tests.push({name:"opaque overlay before footer rejected",pass:!knownVisualFailOpen,reason:knownVisualFailOpen?"STILL_FAIL_OPEN":""});
  tests.push({name:"one-character numeric route rejected",pass:!knownRouteShapeFailOpen,reason:knownRouteShapeFailOpen?"STILL_FAIL_OPEN":""});
  for(const [name,needle,value] of [
-  ["nonflight short route","244 629 Td (AAA)","244 629 Td (X)"],
+  ["nonflight short route","244 611 Td (AAA)","244 611 Td (X)"],
   ["numeric four-letter route","316 638 Td (BBB)","316 638 Td (BBBB)"],
-  ["nonflight lower-case route","316 629 Td (BBB)","316 629 Td (bbb)"]
+  ["nonflight lower-case route","316 611 Td (BBB)","316 611 Td (bbb)"]
  ]){
-  const mutant=repackPdcSyntheticPdf(full,o=>{o[16]=o[16].replace(needle,value);o[16]=o[16].replace(/\/Length \d+/,"/Length "+o[16].split("stream\n")[1].split("\nendstream")[0].length);});
-  const r=inspectPdcPdfStrict(toBase64(mutant));tests.push({name,pass:r.status==="FAIL_DOCUMENT",reason:r.reason||""});
+  let changed=false;
+  const mutant=repackPdcSyntheticPdf(full,o=>{const before=o[16];o[16]=before.replace(needle,value);changed=o[16]!==before;o[16]=o[16].replace(/\/Length \d+/,"/Length "+o[16].split("stream\n")[1].split("\nendstream")[0].length);});
+  const r=inspectPdcPdfStrict(toBase64(mutant));tests.push({name,pass:changed&&r.status==="FAIL_DOCUMENT",reason:r.reason||""});
  }
  const inlinePaintCases=[
   ["white numeric Activity inside BT", "BT 210 638 Td (100) Tj ET", "BT 210 638 Td 1 1 1 rg (100) Tj ET"],
