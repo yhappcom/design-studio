@@ -753,7 +753,7 @@ function runPdcAuthoritySeparationTests(originalBase64){
    const obj=objects[16],a=obj.indexOf("stream\n")+7,
      z=obj.lastIndexOf("\nendstream"),body=obj.slice(a,z);
    const next=body.replace(needle,(...args)=>{
-    changed=true;return replacement(...args);
+    const value=replacement(...args);changed=changed||value!==args[0];return value;
    });
    objects[16]=obj.slice(0,a).replace(/\/Length \d+/,
      "/Length "+next.length)+next+obj.slice(z);
@@ -805,7 +805,7 @@ function runPdcNonNumericClockAdversarial(originalBase64){
    const old=objects[16],start=old.indexOf("stream\n")+7,end=old.lastIndexOf("\nendstream");
    const body=old.slice(start,end);
    const newCell=target.full.replace(/\(((?:\\.|[^\\)])*)\)\s+Tj\b/,"("+replacement+") Tj");
-   if(newCell===target.full){tests.push({name,pass:false,reason:"C527_CLOCK_MUTATION_SAME_VALUE"});return;}
+   if(newCell===target.full)throw Error("C527_CLOCK_MUTATION_SAME_VALUE:"+name);
     const next=body.replace(target.full,()=>{changed=true;return newCell});
    objects[16]=old.slice(0,start).replace(/\/Length \d+/,"/Length "+next.length)+next+old.slice(end);
   });
