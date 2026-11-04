@@ -130,7 +130,7 @@ function inspectPdcPdfTextLayer(base64,{requirePinnedTopology=true}={}){
    currentGroup=[];actualGroups.push(currentGroup);
   }
   if(!currentGroup)return fail("ORPHAN_ACTIVITY_BEFORE_OWN_DATE");
-  const kind=/^\\d{3,4}$/.test(activity)?"F":"N";
+  const kind=/^\d{3,4}$/.test(activity)?"F":"N";
   currentGroup.push(kind+(r.has(162)?"I":"")+(r.has(186)?"O":""));
  }
  if(actualGroups.length!==expectedGroupShapes.length)return fail("DATE_GROUP_COUNT");
