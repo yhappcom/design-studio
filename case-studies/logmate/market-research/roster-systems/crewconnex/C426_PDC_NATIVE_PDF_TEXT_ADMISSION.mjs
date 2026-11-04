@@ -450,7 +450,7 @@ function runPdcEnvelopeTests(){
   const r=inspectPdcPdfStrict(toBase64(mutant));
   tests.push({name,pass:r.status==="FAIL_DOCUMENT"&&r.reason.startsWith("PHYSICAL_"),reason:r.reason||""});
  }
- const editContent=(find,replacement,extra)=>repackPdcSyntheticPdf(full,o=>{let c=o[16].replace(find,replacement);if(extra)c=c.replace("511 638 Td (1:30)","511 638 Td (2:30)");o[16]=c.replace(/\/Length \d+/,"/Length "+c.split("stream\n")[1].split("\nendstream")[0].length);});
+ const editContent=(find,replacement,extra)=>repackPdcSyntheticPdf(full,o=>{const before=o[16];if(!before.includes(find))throw Error("C524_ENVELOPE_MUTATION_ANCHOR_MISSING");let c=before.replace(find,replacement);if(c===before)throw Error("C524_ENVELOPE_MUTATION_NOOP");if(extra){const second="511 638 Td (1:30)";if(!c.includes(second))throw Error("C524_ENVELOPE_SECOND_ANCHOR_MISSING");c=c.replace(second,"511 638 Td (2:30)");}o[16]=c.replace(/\/Length \d+/,"/Length "+c.split("stream\n")[1].split("\nendstream")[0].length);});
  for(const [name,find,replacement,expected,extra] of [
   ["strict base Block mismatch","511 638 Td (1:30)","511 638 Td (9:30)","FAIL_DOCUMENT",false],
   ["strict base STD shift","292 638 Td (0900)","292 638 Td (0800)","FAIL_DOCUMENT",false],
