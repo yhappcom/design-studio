@@ -631,7 +631,7 @@ export {runPdcOriginalReadOnlyAdversarial};
 // C472: bounded input admission, research-only. Never stage on malformed,
 // over-size, or non-PDC bytes; no original PDF is embedded in these fixtures.
 function runPdcInputBoundaryTests(){
- const good=toBase64(wrapPdcSyntheticTextMock(syntheticFixture()));
+ const good=toBase64(wrapPdcSyntheticTextMock(strictTopologySyntheticFixture()));
  const cases=[
   ["synthetic valid",good,"OBSERVED_FAMILY_DETACHED_HOLD",null],
   ["bad character","AA*A","FAIL_DOCUMENT","BAD_BASE64"],
