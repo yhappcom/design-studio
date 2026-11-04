@@ -439,7 +439,8 @@ function pdcVisualAndDictionaryMutations(doc) {
 }
 
 function runPdcEnvelopeTests(){
- const full=wrapPdcSyntheticTextMock(syntheticFixture()),base=inspectPdcPdfStrict(toBase64(full));
+ // C522: envelope strict baseline must satisfy the pinned 31-group topology.
+ const full=wrapPdcSyntheticTextMock(strictTopologySyntheticFixture()),base=inspectPdcPdfStrict(toBase64(full));
  const tests=[{name:"xref-consistent synthetic PDF baseline",pass:base.status==="OBSERVED_FAMILY_DETACHED_HOLD",reason:base.reason||""}];
  for(const [name,mutant] of pdcEnvelopeMutations(full)){
   const r=inspectPdcPdfStrict(toBase64(mutant));
