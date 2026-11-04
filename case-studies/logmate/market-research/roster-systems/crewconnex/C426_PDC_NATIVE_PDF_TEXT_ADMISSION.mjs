@@ -204,7 +204,7 @@ function strictTopologySyntheticFixture(){
 
 function runSyntheticTests(){
  const base=syntheticFixture(),scan=s=>inspectPdcPdfTextLayer(toBase64(s),{requirePinnedTopology:false}),tests=[];
- const check=(name,mutate,expected)=>{const r=scan(mutate(base));tests.push({name,pass:r.status===expected,reason:r.reason||""});};
+ const check=(name,mutate,expected)=>{const candidate=mutate(base);if(name!=="synthetic baseline"&&candidate===base){tests.push({name,pass:false,reason:"C526_LEXICAL_MUTATION_NOOP"});return;}const r=scan(candidate);tests.push({name,pass:r.status===expected,reason:r.reason||""});};
  const good="OBSERVED_FAMILY_DETACHED_HOLD",bad="FAIL_DOCUMENT";
  check("synthetic baseline",s=>s,good);
  // C469 synthetic observed-label and fail-closed unknown Activity mutations.
@@ -481,7 +481,7 @@ function runPdcEnvelopeTests(){
  ]){
   let changed=false;
   const mutant=repackPdcSyntheticPdf(full,o=>{const before=o[16];o[16]=before.replace(needle,value);changed=o[16]!==before;o[16]=o[16].replace(/\/Length \d+/,"/Length "+o[16].split("stream\n")[1].split("\nendstream")[0].length);});
-  const r=inspectPdcPdfStrict(toBase64(mutant));tests.push({name,pass:changed&&r.status==="FAIL_DOCUMENT",reason:r.reason||""});
+  const r=inspectPdcPdfStrict(toBase64(mutant));tests.push({name,pass:changed&&r.status==="FAIL_DOCUMENT",reason:changed?(r.reason||""):"C526_ROUTE_MUTATION_NOOP"});
  }
  const inlinePaintCases=[
   ["white numeric Activity inside BT", "BT 210 638 Td (100) Tj ET", "BT 210 638 Td 1 1 1 rg (100) Tj ET"],
@@ -493,7 +493,7 @@ function runPdcEnvelopeTests(){
   const r=inspectPdcPdfStrict(toBase64(editContent(find,replacement,false)));
   tests.push({name:"C438 "+name,pass:r.status==="FAIL_DOCUMENT"&&r.reason.startsWith("PHYSICAL_"),reason:r.reason||""});
  }
- const painted=repackPdcSyntheticPdf(full,o=>{o[16]=o[16].replace("BT 559 43 Td (1) Tj ET","0 0 0 RG 100 w 0 0 m 598 842 l S\nBT 559 43 Td (1) Tj ET");o[16]=o[16].replace(/\/Length \d+/,"/Length "+o[16].split("stream\n")[1].split("\nendstream")[0].length);});
+ const painted=repackPdcSyntheticPdf(full,o=>{const before=o[16];o[16]=o[16].replace("BT 559 43 Td (1) Tj ET","0 0 0 RG 100 w 0 0 m 598 842 l S\nBT 559 43 Td (1) Tj ET");if(o[16]===before)throw Error("C526_STROKE_MUTATION_NOOP");o[16]=o[16].replace(/\/Length \d+/,"/Length "+o[16].split("stream\n")[1].split("\nendstream")[0].length);});
  const paintedResult=inspectPdcPdfStrict(toBase64(painted));tests.push({name:"opaque thick stroke unsupported",pass:paintedResult.status==="FAIL_DOCUMENT",reason:paintedResult.reason||""});
  return {passed:tests.filter(x=>x.pass).length,failed:tests.filter(x=>!x.pass).length,tests,baseline:base.status,knownVisualFailOpen,knownRouteShapeFailOpen};
 }
