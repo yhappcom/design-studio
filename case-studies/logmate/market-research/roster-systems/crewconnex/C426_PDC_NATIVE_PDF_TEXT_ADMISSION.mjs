@@ -573,6 +573,7 @@ function runPdcOriginalReadOnlyAdversarial(base64){
    const old=o[16],start=old.indexOf("stream\n")+7,end=old.lastIndexOf("\nendstream");
    if(start<7||end<start)throw Error("ORIGINAL_STREAM_NOT_FOUND");
    const content=old.slice(start,end),next=edit(content);changed=next!==content;
+    if(!changed)throw Error("C527_ORIGINAL_ADVERSARIAL_MUTATION_NOOP:"+name);
    o[16]=old.slice(0,start).replace(/\/Length \d+/,"/Length "+next.length)+next+old.slice(end);
   });
   const r=inspectPdcPdfStrict(toBase64(modified));
@@ -587,7 +588,7 @@ function runPdcOriginalReadOnlyAdversarial(base64){
  ];
  for(const [name,edit] of resourceCases){
   let changed=false;
-  const mutant=repackPdcSyntheticPdf(raw,o=>{const before=JSON.stringify(o);edit(o);changed=JSON.stringify(o)!==before;});
+  const mutant=repackPdcSyntheticPdf(raw,o=>{const before=JSON.stringify(o);edit(o);changed=JSON.stringify(o)!==before;if(!changed)throw Error("C527_ORIGINAL_OBJECT_MUTATION_NOOP:"+name);});
   const r=inspectPdcPdfStrict(toBase64(mutant));
   tests.push({name,pass:changed&&r.status==="FAIL_DOCUMENT"&&r.reason.startsWith("PHYSICAL_UNSUPPORTED_PDC_OBJECT_PROFILE_"),reason:r.reason||""});
  }
@@ -600,7 +601,7 @@ function runPdcOriginalReadOnlyAdversarial(base64){
  ];
  for(const [name,edit] of pageCatalogCases){
   let changed=false;
-  const mutant=repackPdcSyntheticPdf(raw,o=>{const before=JSON.stringify(o);edit(o);changed=JSON.stringify(o)!==before;});
+  const mutant=repackPdcSyntheticPdf(raw,o=>{const before=JSON.stringify(o);edit(o);changed=JSON.stringify(o)!==before;if(!changed)throw Error("C527_ORIGINAL_OBJECT_MUTATION_NOOP:"+name);});
   const r=inspectPdcPdfStrict(toBase64(mutant));
   tests.push({name,pass:changed&&r.status==="FAIL_DOCUMENT"&&r.reason.startsWith("PHYSICAL_UNSUPPORTED_PDC_OBJECT_PROFILE_"),reason:r.reason||""});
  }
@@ -804,7 +805,8 @@ function runPdcNonNumericClockAdversarial(originalBase64){
    const old=objects[16],start=old.indexOf("stream\n")+7,end=old.lastIndexOf("\nendstream");
    const body=old.slice(start,end);
    const newCell=target.full.replace(/\(((?:\\.|[^\\)])*)\)\s+Tj\b/,"("+replacement+") Tj");
-   const next=body.replace(target.full,()=>{changed=true;return newCell});
+   if(newCell===target.full){tests.push({name,pass:false,reason:"C527_CLOCK_MUTATION_SAME_VALUE"});return;}
+    const next=body.replace(target.full,()=>{changed=true;return newCell});
    objects[16]=old.slice(0,start).replace(/\/Length \d+/,"/Length "+next.length)+next+old.slice(end);
   });
   const result=inspectPdcPdfStrict(toBase64(modified));
@@ -846,7 +848,7 @@ function runPdcStrictTopologySyntheticTests(){
   run("strict missing own-Date",replaceStream("BT 81 638 Td (01Aug26) Tj ET\n",""),"FAIL_DOCUMENT"),
   run("strict invalid numeric Activity",replaceStream("210 638 Td (100)","210 638 Td (12345)"),"FAIL_DOCUMENT"),
   run("strict invalid numeric Block",replaceStream("511 638 Td (1:30)","511 638 Td (BAD)"),"FAIL_DOCUMENT"),
-  run("strict invalid physical page count",full.replace("/Count 1","/Count 2"),"FAIL_DOCUMENT")
+  run("strict invalid physical page count",(()=>{const changed=full.replace("/Count 1","/Count 2");if(changed===full)throw Error("C527_STRICT_PAGE_COUNT_MUTATION_NOOP");return changed;})(),"FAIL_DOCUMENT")
  ];
  return {passed:tests.filter(t=>t.pass).length,failed:tests.filter(t=>!t.pass).length,
   tests,actualPdfTested:false,productionAcceptance:false,createsFlight:false};
