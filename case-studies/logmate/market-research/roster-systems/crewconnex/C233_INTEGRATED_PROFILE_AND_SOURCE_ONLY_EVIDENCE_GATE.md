@@ -79,3 +79,19 @@ ParserProfile consequence: one-row-back continuation, single crew leaf, or a Pre
 Adversarial fixture specification (NOT EXECUTED): depth 0/1/2/3 continuation, mixed six/seven/single-leaf crew, both Date/Pairing absent, nonflight-before-undated row, page Sum boundary, conflicting date/revision with same flight+route. Require no inherited operational date or crew identity, zero FlightRecord writes, and fail-closed unknown layouts.
 
 Adjacent-value assessment: completed three-month chain aggregation from the available locator manifest. Further implementation-changing conclusions require independent source PDF decode/render, company workbook matching with authenticated year, Publication/UID, and actual Sembast transactional tests. C194 historical sync debt remains OPEN.
+
+
+## C535 — 2026-11-05 14:00 KST: independent original-byte June/July Skia container admission
+
+Evidence: **fresh read-only base64 fetch and in-memory byte-level audit of TWO private original LogMate PDFs**, not copied to Design Studio. LogMate authority/import/CrewConnex contracts and Studio plan/indexes/queue/log/C233 re-read first. Independent lightweight PDF container checks, **not** decompression, rendered visual proof, semantic row extraction, or parser PASS.
+
+| Original private file | Git blob SHA | Bytes | PDF / pages | Indirect objects / endobj | Flate stream starts | ToUnicode references | Producer | PDF CreationDate (UTC, not roster Publication) |
+| --- | --- | ---: | --- | ---: | ---: | ---: | --- | --- |
+| June 2026 Skia | e96bf5a76764984aa7f28285c975a24fd471117e | 541788 | 1.4 / 2 | 3125 / 3125 | 131 | 16 | Skia/PDF m151 | 2026-08-27 22:50:08 |
+| July 2026 Skia | d306cad81d2a57123ac9950ed734a9216340466c | 556535 | 1.4 / 2 | 3170 / 3170 | 137 | 17 | Skia/PDF m151 | 2026-08-27 22:48:59 |
+
+Both originals have PDF EOF, classic startxref, two /Page dictionaries, /StructTreeRoot references, no observed /Encrypt reference, no /Type /XRef stream, and no /Linearized token. Both use 100% FlateDecode for counted stream starts (131/131 and 137/137). Counts are source-scoped lexical/container checks; they do not establish CRC/decompression validity, object graph integrity, PDF security, text coverage or rendering. No crew content/IDs, roster rows, routes or private text persisted. CreationDate is an export/container timestamp, **not independently verified operational year, roster Publication, owner UID, or source revision authority**. June and July have distinct creation seconds and object/stream/font-map counts; a universal fixed object count would be unsafe. The 200KB C426 PDC research oracle excludes both on size and source family; do not weaken its guard or classify these PDFs as invalid.
+
+**Implementation decision delta:** classify these as a distinct two-page compressed tagged Skia candidate family; next profile detector must validate pages, structural tags, text layer/ToUnicode, table/section anchors and per-page provenance *after standards-compliant decoding*. Preserve absent Date/Pairing and Sum boundaries as detached review. No FlightRecord creation, inferred date/crew/BLH=Block, or silent revision overwrite. No new public P1, deployment, field coverage, company Excel join, C512 replay, independent renderer or Dart/Sembast PASS. Production OPEN; C194 historical index sync debt remains OPEN. Four CSV indexes unchanged (no new grade/field/deployment/sample identity).
+
+Adjacent-value assessment: independently checked PDF page, compression, object, timestamp and encryption/linearization indicators in the same source pass. Decompressed glyph/MCID, Sum/continuation, 2026 company workbook and authenticated UID/Publication evidence require a different decoder/authority gate. Next integrated target: decode/render June+July+August Skia original streams, reconcile 62 source-located candidates against company workbook with explicit ambiguity and source-authority HOLD, then test immutable profile and evidence-only lifecycle.
