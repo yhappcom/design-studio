@@ -63,3 +63,19 @@
 - This creates a material independent next gate: use a standards PDF decoder/renderer for the three large monthly PDFs, compare page count, compression, header/section variants, continuation, Sum and source locators, and then pair privacy-safe normalized candidate counts with 2026 company XLSX. Never weaken C426's source-pinned guards merely to force acceptance. Define a separate immutable profile only after real cross-month layout evidence.
 - C512 21 original-derived mutation files were not identified by filename-level GitHub code search or this directory inventory; that is **not proof of absence in historical logs or another path**. Do not label their replay complete. No C426 execution, PDF rendering, workbook row parsing, UID/Publication verification, or Sembast test occurred in this audit. Production OPEN; C194 historical sync debt OPEN. Four master CSVs unchanged because no new field/deployment/sample grade.
 - Adjacent CrewConnex question resolved now: previous repeated 'C426 location unverified' search blocker is false for current main; the remaining material obstacle is independent cross-family binary analysis, not locating the research script.
+
+
+## C534 — 2026-11-05 12:02 KST: cross-month continuation-chain manifest revalidation
+
+Evidence class: independently aggregated existing privacy-safe C194 locator manifest (62 selected rows); NOT new raw PDF decoding, visual validation, company joins, or production parser PASS. Fresh-read LogMate AGENTS/MASTER/import/CrewConnex contracts and Design Studio plan, four indexes, queue, log and source inventory. No private raw content or employee IDs copied.
+
+- June: 18 selected; Date ABSENT 7; Pairing ABSENT 9; both absent 7. Crew shapes six-leaf 11, single-leaf 7; seven depth-1 chains.
+- July: 22 selected; Date ABSENT 10; Pairing ABSENT 12; both absent 10. Crew shapes six-leaf 11, seven-leaf 1, single-leaf 10. Chain depths: 1=8, 2=1, 3=1.
+- August Skia: 22 selected; Date ABSENT 10; Pairing ABSENT 11; both absent 10. Crew shapes six-leaf 9, seven-leaf 4, single-leaf 9. Chain depths: 1=7, 2=1, 3=1.
+- Combined: all 27 Date-absent candidates are Pairing-absent; 32 Pairing-absent total; 26 single-leaf crew shapes; four chains depth >=2. All 62 carry Preview row locators, NOT 62 certified joins: 43 curated joins and 19 uncurated August candidates are different evidence populations.
+
+ParserProfile consequence: one-row-back continuation, single crew leaf, or a Preview row locator cannot authenticate duty, source date/year, crew identity, revision, or owner UID. Preserve missing-field state and immutable page/TR/TD/MCID locator; detached review only, with no employee-ID persistence or FlightRecord creation. Distinguish Skia tagged-table and 39KB PDC-generator profiles; the C426 200KB oracle limit is not a Skia validity test.
+
+Adversarial fixture specification (NOT EXECUTED): depth 0/1/2/3 continuation, mixed six/seven/single-leaf crew, both Date/Pairing absent, nonflight-before-undated row, page Sum boundary, conflicting date/revision with same flight+route. Require no inherited operational date or crew identity, zero FlightRecord writes, and fail-closed unknown layouts.
+
+Adjacent-value assessment: completed three-month chain aggregation from the available locator manifest. Further implementation-changing conclusions require independent source PDF decode/render, company workbook matching with authenticated year, Publication/UID, and actual Sembast transactional tests. C194 historical sync debt remains OPEN.
