@@ -2040,3 +2040,10 @@ Reaggregated C194 privacy-safe locator manifest: June/July/August selected numer
 ## 2026-11-06 22:00 KST — C543 evidence-only model source audit
 - Re-read LogMate product authority/import/CrewConnex contract and current SourceEvidence, SourceEvidenceHistory, CrewParticipant, Sembast adapter; Studio plan, four indexes, queue/log and C233. Verified scalar field evidence/history lacks detached roster identity, revision CAS/persistence; CrewParticipant requires name. Sembast existing record atomicity is not evidence-only acceptance. Proposed explicit detached observation + dual revision gate and ten fail-closed adversarial scenarios; NO tests executed or new original PDF/XLSX semantic decode.
 - C233 saved at a9fc944a47ea391c8fb38b6003c9f62d156a860b. No LogMate writes. Four indexes unchanged (no public sample/deployment/field-grade change); C194 historical sync debt OPEN; Production OPEN. Next integrated gate: standards-based 3-month Skia/2026 company cell matching and evidence-only zero-write rollback.
+
+
+## 2026-11-06 22:56 KST — C544 nine-workbook OOXML archive admission
+
+- Fresh original base64 for all nine private 2018–2026 company XLSX files, LogMate read-only; independently checked 90 central/local header pairs, bounded compressed payload, nonoverlap, path safety, encryption and declared DEFLATE method. 9/9 containers passed these **limited structural predicates**; no decompression/CRC/cell or PDF cross-match PASS.
+- 2026 declared worksheet XML size 114,404 bytes; total declared uncompressed 143,852 bytes; 2019 largest worksheet declaration 230,250 bytes. Privacy-safe aggregate only; raw contents not persisted.
+- C233 C544 records proposed fail-closed workbook admission gate; no production implementation or public parser-grade upgrade. C194 sync debt remains OPEN. Next: actual DEFLATE/CRC/XML + Skia PDF full-key/BLH/revision matching and evidence-only rollback gate.
