@@ -1,5 +1,12 @@
 # Roster Systems Revalidation Queue
 
+### 2026-11-07 13:xx KST — product authority correction / static source gate
+
+- **Do not silently make Publication an absolute product gate.** C360 and current LogMate MASTER/import/CrewConnex specs do not approve universal vendor Publication-token necessity. Unknown source revision => **HOLD_POLICY_PUBLICATION** until owner approves a safe fingerprint/review policy; no silent roster ordering/overwrite. Four-digit source year and authenticated same-UID active Flight remain separate open requirements. Synthesis wording must be read through this correction.
+- Direct current source review: Sembast _lbkStoreRegistry **30**, _syncLbkStoreRegistry **+7**, backup export **37**. SourceEvidenceHistory notices scalar normalized value rather than full crew/provenance; CrewParticipant requires name. **STATIC ONLY**, no actual source-only store, native CAS/wipe/backup execution or leak claim.
+- Original C512 21 exact PDF mutation strict replay + independent standards render remains **OPEN**. Existing private source PDF is a binary inaccessible through GitHub text fetch; no binary/replay performed in this cycle. Need authorized runtime capable of reading the original read-only; do not substitute synthetic fixtures as real mutants.
+
+
 ## 2026-11-07 — INTEGRATED DECISION GATES (current navigation)
 
 The four canonical **research synthesis/navigation documents** below supersede *stale task priority statements*, not the underlying historical C-number evidence:
