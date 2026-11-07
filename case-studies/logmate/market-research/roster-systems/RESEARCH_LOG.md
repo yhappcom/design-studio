@@ -1,3 +1,9 @@
+## 2026-11-08 06:xx KST — mutable request crew aliases committed synthetic receipt (NEW NEGATIVE)
+
+- Fresh read-only GitHub fetch of LogMate AGENTS, MASTER, import and CrewConnex contracts; source directory metadata; Design Studio plan, four master CSV headers/SHAs, four integrated docs, queue/log and oracle. Research oracle blob `2991497f55ec94aec292d94307f920a06f09c2e2`; current Node v22.16.0. Native raw GitHub download failed DNS (`curl: (6) Could not resolve host: raw.githubusercontent.com`), so exact full committed oracle was not executed; no private binary, independent renderer or native Sembast.
+- Ran local `node - <<'JS' ... JS` assertions on the **verbatim alias-forming assignments** extracted from the research oracle. Post-return mutation of the caller's `crew` array changed returned receipt snapshot and evidence crew without another commit and invalidated deterministic seal. Synthetic extracted-code reproduction PASS (negative finding); NOT exact-source 62-case replay, NOT product evidence. No source data copied.
+- Updated revalidation queue only (commit `9312ef02571668b9d9084be920528ef363daccc4`) with the failure mode and explicit test preconditions. Proposed remedy: deep-copy/freeze request nested values and adversarial tests; no production policy or LogMate code changed. Cross-flight corruption, coordinated reseal, C512 independent PDF original-derived 21, real UID/year authority and Dart/Sembast acceptance remain OPEN. C194 sync debt unchanged; no CSV update.
+
 # Roster Systems Research Log
 
 ## 2026-11-08 00:xx KST — synthetic receipt integrity beyond head-pointer checks (NEGATIVE; independent equivalent logic)
