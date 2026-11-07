@@ -2,6 +2,12 @@
 
 Status: **RESEARCH ONLY / synthesis-proposal 0.1.0 / NOT PRODUCT APPROVED / NOT IMPLEMENTED** (2026-11-07). LogMate Production Parser OPEN. This research document does not replace LogMate MASTER, docs/specs/import-contract.md, or docs/specs/crewconnex-parser-plan.md.
 
+## 2026-11-07 contract-authority correction (current)
+
+**Publication/revision is NOT an owner-approved universal hard prerequisite.** Direct LogMate MASTER/import/CrewConnex spec review and prior C360 distinguish physical source fingerprint, interpretation profile version and publication identity. An absent independently verifiable publication token requires explicit **HOLD_POLICY_PUBLICATION** pending an owner-approved revision/unknown-publication handling policy; it does **not** permit silent revision ordering, and Design Studio cannot independently require a vendor-issued publication token for every future attachment. The source's four-digit operational-year and Firebase UID/active-Flight association remain separately unverified. All downstream shorthand saying “Publication required” must be read as “publication state/policy resolved or held”, not as a newly approved absolute product rule.
+
+**Static source review (not runtime PASS):** LogMate SourceEvidenceHistory.requiresUserNotice compares normalized scalar when both values are resolved; changed roster crew/provenance with same BLH is not reliably signalled. CrewParticipant requires nonempty name, while the PDF Emp.#/CC/Pos. does not verify a name. Sembast current _lbkStoreRegistry has 30 entries; _syncLbkStoreRegistry adds 7, and backup export iterates 37. Any future source-only evidence store needs explicit backup/restore/deletion/owner/Sync treatment. Existing repository has no CrewConnex evidence-only atomic receipt. No new Dart execution occurred.
+
 ## 1. 공통 경계와 단계
 
 CrewConnex PDF/검증된 TSV는 **기존 활성 Firebase UID 소유 FlightRecord**에 대한 crew snapshot 및 BLH 원본 증거·교차 검증 전용이다. 새 FlightRecord, 표준 Block/합계, 운항일, 기록 순서, PIC/SIC, PF/PM, operating/deadhead, 승무원 이름을 자동 생성하거나 교정하지 않는다. 원본 PDF, 사번, 사번 파생 해시, 개인정보는 별도 연구 저장소나 영구 데이터, 백업/Sync/로그에 보관하지 않는다.
