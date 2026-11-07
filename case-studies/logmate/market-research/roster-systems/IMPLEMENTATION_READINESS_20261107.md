@@ -1,5 +1,11 @@
 # CrewConnex implementation readiness & integrated execution gate — 2026-11-07
 
+## 2026-11-07 21:59 KST — synthetic research schema fail-closed patch and isolated Node execution
+
+- The prior 20:58 eight malformed-request COMMIT bypasses motivated a **research-oracle-only** closed-world input gate. Current Studio oracle commit `02b87e7f045a13df519a2516d46be2c6aa87d27a` validates own required keys, exact types, bounded synthetic crew tokens/BLH, no nested objects or unknown keys before any evidence write. Top-level forbidden keys are rejected as SCHEMA rather than treated as optional data. Does not infer real crew identity, date, operating status or Block semantics.
+- **SYNTHETIC execution, not product PASS:** equivalent locally materialized Node v22.16.0 oracle executed 48/48 assertions: legacy 22, cross-flight/receipt 2, new malformed 24 (including all prior eight). Original research model and private PDC PDF/Dart/Sembast were not run. The GitHub-updated file was fetched and SHA verified but not executed verbatim; repository-exact Node run is still OPEN.
+- Distinguish schema rejection in a synthetic model from real parser evidence, owner authorization and durable storage; no G0–G6/O01–O08 implementation gate closed. C512 independent PDF strict+renderer remains BLOCKED_DEPENDENCY; no LogMate write or market-index evidence change.
+
 ## 2026-11-07 20:58 KST — synthetic oracle nested-payload admission bypass (NEW executable negative finding)
 
 - **SYNTHETIC / independent JS reproduction:** evaluated the committed research oracle `apply` logic against eight new synthetic malformed inputs using its same state-transition and JSON-clone behavior. All **8/8 were erroneously COMMIT**, rather than a safe schema/privacy HOLD: missing crew, object instead of crew array, empty crew, missing source, missing BLH, string BLH, nested `crew:[{employee:"synthetic"}]`, and nested `source:{pdf:"synthetic"}`. These are **eight demonstrated unsafe accepts**, NOT eight PASSes. The last two bypass the oracle's top-level `r.employee||r.pdf` privacy filter; missing fields disappear from JSON signature and may be persisted as absent. No private data used.
