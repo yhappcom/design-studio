@@ -1,5 +1,11 @@
 # Roster Systems Research Log
 
+## 2026-11-07 18:57 KST — blocked binary pivot to executable synthetic source-only transaction acceptance precursor
+
+- Fresh read-only LogMate AGENTS/MASTER/import/CrewConnex contract; current domain SourceEvidence, SourceEvidenceHistory, CrewParticipant and tests; repository tree inventory confirmed real PDC August PDF 39,612 bytes (blob `8e7fec30...`), Skia 2026-06/07/08 PDFs and company flightHistory_2018–2026 XLSX. Design Studio plan, four master CSVs, queue/log and four integrated docs checked. Binary access remains unavailable from GitHub UTF-8 connector, so no C512 exact 21 / independent renderer or company XLSX join was executed.
+- **New SYNTHETIC executed work:** independent JavaScript in-memory transaction model exercised 22/22 adversarial state transitions: source-only commit, identical replay, same-BLH changed-crew revision, dual stale CAS, owner/active Flight, missing date/year/subject/locator, 0/2 matches, review, prohibited employee/raw PDF/inference, two simulated staging crashes, and new-owner isolation. Reproducible source stored at `crewconnex/SOURCE_ONLY_TRANSACTION_SYNTHETIC_ORACLE_20261107.cjs`. This is **NOT** native Dart/Sembast, durable atomicity, concurrent CAS, backup/restore or real parser validation; O acceptance remains OPEN.
+- Blocker pivot was meaningful rather than repeating C532/C533/C457. No real source data, identifiers or PDF bytes were copied into Studio. C194 historical sync debt remains OPEN; no master CSV changes justified; LogMate untouched. Next integrated package: approved read-only binary renderer exact C512 + source authority/coverage; if still blocked, authorized real repository test Work for file-backed source-only dual-CAS/receipt/crash/backup lifecycle.
+
 ## 2026-10-04 — baseline
 
 - Opened the broader LogMate roster-system intelligence and parser-corpus research program.
