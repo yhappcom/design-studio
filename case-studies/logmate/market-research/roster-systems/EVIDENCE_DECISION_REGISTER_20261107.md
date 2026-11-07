@@ -1,5 +1,16 @@
 # CrewConnex evidence, decisions and contradiction register — 2026-11-07
 
+## 2026-11-07 16:xx KST — C436/C437 identity-guard supersession audit
+
+**NEW CURRENT-HEAD ADJUDICATION (STATIC, NOT PDF RUNTIME):** Historical queue C436 states that C426 rejected globally duplicated numeric Activity with `DUPLICATE_NUMERIC_ACTIVITY`. The immediately subsequent **C437** queue entry reports removal and re-execution. Fresh direct fetch of the **current C426** source confirms lines 99–115 classify 3/4-digit Activity by **physical row** without a global Activity-value Set, and lines 252–253 explicitly expect repeated Activity on separate dated rows (even with same own-Date) to remain `OBSERVED_FAMILY_DETACHED_HOLD`. Thus **C436's assertion describes the pre-C437 code and is SUPERSEDED**, not a current detector defect. The C437 historical reported PASS counts are not newly re-executed in this audit.
+
+**Product decision:** raw Activity, Pairing, and route are not unique source row IDs. A stable observation locator must bind immutable source fingerprint + page + band/TD/MCID + profile version; same printed date/activity still does **not** identify a same-UID active FlightRecord. Retain independent 0/1/many full-key match and review. A future portable ParserProfile must not reintroduce global Activity uniqueness as an admission guard, and must test repeated numeric Activity with different/same printed Date and repeated Pairing across flight/nonflight. Unknown year, owner, revision and Publication-policy remain HOLD.
+
+**Independent market denominator audit:** Fresh current `MASTER_AIRLINE_DEPLOYMENTS.csv` has 21 CrewConnex rows, A1=5, A2=15, B=1. The 21 rows' pilot planning bands sum **3034–4303**, matching `MASTER_SYSTEM_INDEX.csv` while the latter's confirmed airline count 20 correctly excludes B. The pilot band is an estimate, not observed headcount. No new airline/sample or field mapping evidence; **no CSV edits**. Current LogMate source directory still includes three Skia monthly PDFs, one 39,612-byte PDC August PDF and nine company-year workbooks; direct original PDF/XLSX binary decode and independent renderer remain inaccessible in this execution, so no new real-corpus PASS.
+
+**Evidence grade:** current-source static review + index arithmetic + historical C437 status cross-check only. No new actual PDF, V8 test execution, Dart, Sembast, or production acceptance.
+
+
 **Authority:** EVIDENCE NAVIGATION ONLY. This register distinguishes source data, research tests, interpretations, user-approved LogMate contracts and unclosed implementation gates; it cannot approve product behavior. No private flight/crew data or identifiers are copied here. Main overviews: [research synthesis](RESEARCH_SYNTHESIS_20261107.md), [profile](PARSER_PROFILE_SPEC_20261107.md), [readiness](IMPLEMENTATION_READINESS_20261107.md).
 
 ## 2026-11-07 contract correction — Publication is a policy question
