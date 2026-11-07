@@ -2,6 +2,12 @@
 
 **Authority:** EVIDENCE NAVIGATION ONLY. This register distinguishes source data, research tests, interpretations, user-approved LogMate contracts and unclosed implementation gates; it cannot approve product behavior. No private flight/crew data or identifiers are copied here. Main overviews: [research synthesis](RESEARCH_SYNTHESIS_20261107.md), [profile](PARSER_PROFILE_SPEC_20261107.md), [readiness](IMPLEMENTATION_READINESS_20261107.md).
 
+## 2026-11-07 contract correction — Publication is a policy question
+
+**X11 (new):** The first consolidation inadvertently used absolute “Publication required” wording in ParserProfile/readiness, while LogMate current MASTER, import and CrewConnex specs do not expressly approve a **universal vendor Publication token** as a hard attachment gate. C360 already records this distinction. **Correction:** distinguish (a) raw PDF SHA and source locator, (b) ParserProfile interpretation version, (c) verified Publication/revision if actually present, and (d) an explicit **HOLD_POLICY_PUBLICATION** for unknown revision until an owner-approved safe review/fingerprint policy exists. Do not silently assume newest roster or automatically overwrite crew evidence. Product authority remains LogMate; no policy approval issued here.
+
+**E17 (new; STATIC SOURCE REVIEW, no runtime):** At current LogMate HEAD, `lib/repository/logbook/sembast_logbook_repository.dart` has 30 _lbkStoreRegistry entries plus seven _syncLbkStoreRegistry additions (37 backup-export stores), and export iterates all 37. `source_evidence_history.dart` compares normalized scalar candidates for user notice, not crew/provenance identity; `crew_participant.dart` requires nonempty name. This establishes a **source-only schema and lifecycle coverage requirement**, not a proven leak or Dart CrewConnex acceptance. No original PDF/XLSX binary re-decoded in this correction.
+
 ## 1. Controlled confidence vocabulary
 
 - **P/Market grade:** Use the research-plan's P1–P5 **per format and per sample**, A1/A2/B/R per airline-system deployment; not a probability and not a product PASS.
