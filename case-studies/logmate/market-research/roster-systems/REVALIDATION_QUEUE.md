@@ -1,5 +1,12 @@
 # Roster Systems Revalidation Queue
 
+## 2026-11-07 16:xx KST — C436 historical duplicate-Activity defect is superseded
+
+**Current-head correction:** C436's historical `DUPLICATE_NUMERIC_ACTIVITY` assertion is **pre-C437** and must not be reported as a current C426 bug. Current fetched C426 code counts numeric Activity per physical band without a global uniqueness gate; synthetic checks explicitly admit repeated 3/4-digit Activity across different/same printed own-Date as **DETACHED_HOLD**. C437 separately records prior research test PASS; not rerun now. Add a future family-profile regression for repeated Activity + repeated Pairing with separate source locators and owner-matching ambiguity; never merge on Activity/Pairing or create a FlightRecord.
+
+**Independent index check:** CrewConnex 21 tracked = 5 A1 + 15 A2 + 1 B; pilot planning band arithmetic 3034–4303 matches system index, while 20 is A1/A2 confirmed. No index update justified. Current private original PDF/XLSX binaries still not available for new decode; source directory metadata only. Remain focused on exact C512 21 original-derived PDF mutations with independent PDF renderer **and** same-export source-year/UID/revision/coverage evidence; avoid another stale C436 investigation. CrewConnex production OPEN.
+
+
 ## 2026-11-07 14:56 KST — C426 strict-oracle portability boundary
 
 **Readiness / queue cross-check (not a new PDF execution):** Re-read current LogMate MASTER/import/CrewConnex contract and directly inspected the 2026-06/07/08 private source *directory metadata* (including three Skia PDFs, PDC 39,612-byte August PDF, 2018–2026 company XLSX and preview). GitHub text fetch does not provide the original binary bytes, so no new PDF decode, cross-company join or native test was performed.
