@@ -1,5 +1,10 @@
 # Roster Systems Revalidation Queue
 
+## 2026-11-07 18:xx KST — C457 August 19-row admission split, independent fixture recomputation
+
+Reparsed current privacy-safe C457 manifest: 62 Skia rows (18/22/22); 27 missing own-Date = 26 SINGLELEAF_1 + **one MULTILEAF_6**; all 26 single-leaf physical anchors are backward/same-page. Among **19 August uncurated Preview rows**, **10 own-dated** versus **9 undated (8 single-leaf + 1 six-leaf)**. Hence separate queue cohorts: **A: ten source-own-date** require same-export 4-digit year, company Aug03–31 coverage, active same-UID Flight + review; **B: nine undated** must remain detached until an independent approved date authority exists, irrespective of crew cell shape. Five own-dated rows lack Pairing, so Pairing alone is not mandatory. Recomputed C457 JSON, not new original PDF decode; no PASS promoted. Exact C512 21 original-derived PDF strict+renderer replay remains G1 OPEN; C194 sync debt persists. No CSV change justified.
+
+
 ## 2026-11-07 16:xx KST — C436 historical duplicate-Activity defect is superseded
 
 **Current-head correction:** C436's historical `DUPLICATE_NUMERIC_ACTIVITY` assertion is **pre-C437** and must not be reported as a current C426 bug. Current fetched C426 code counts numeric Activity per physical band without a global uniqueness gate; synthetic checks explicitly admit repeated 3/4-digit Activity across different/same printed own-Date as **DETACHED_HOLD**. C437 separately records prior research test PASS; not rerun now. Add a future family-profile regression for repeated Activity + repeated Pairing with separate source locators and owner-matching ambiguity; never merge on Activity/Pairing or create a FlightRecord.
