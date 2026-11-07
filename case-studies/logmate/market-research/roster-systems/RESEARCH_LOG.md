@@ -1,5 +1,13 @@
 # Roster Systems Research Log
 
+## 2026-11-07 23:00 KST — new synthetic receipt ancestry failure and fail-closed regression
+
+- Fresh read LogMate AGENTS/MASTER/import/CrewConnex contract, Design Studio plan/four CSV indexes/queue/log/four integrated docs and exact research-only oracle blob `87681d2afad0cb582572c76e7dc4a602fdb8f4ac`; private source directory fetch via text GitHub connector failed JSONDecodeError, and independent container GitHub raw download failed DNS `Could not resolve host: raw.githubusercontent.com`. No private PDF/XLSX byte execution or LogMate writes. Current source-only domain/runtime requirements remain unverified in native Dart/Sembast.
+- Executed exact GitHub-fetched oracle with V8-compatible assert shim: **48/48 baseline**. New synthetic corrupt-state probes missing prior receipt / receipt linked to wrong Flight / forged EvidenceHead all **3/3 incorrectly COMMIT**, revealing missing ancestry validation.
+- Patched only Design Studio research-only oracle to check prior seq/head/owner/Flight receipt consistency before new writes; added six corrupt-state adversarial tests. Independent isolated V8 execution of patched source **54/54 PASS** (22 legacy, 2 receipt collision, 24 schema, 6 ancestry). Not Node-native, committed-source replay, product Sembast or real-PDF PASS. GitHub code commit `161100e09a62f303da3eb092b25c1ac04526bb96`.
+- Adjacent checks: schema and receipt collision regressions retained; remaining receipt snapshot/digest binding and durable backup/restore are not proven. No CSV values changed, no production G/O gate closed; C512 original-derived exact 21+independent renderer and C194 sync debt OPEN.
+
+
 ## 2026-11-07 21:59 KST — source-only synthetic schema guard implementation + independent local execution
 
 - Re-read latest LogMate AGENTS/MASTER/import/CrewConnex contracts and private source directory metadata read-only, Design Studio research plan, four indexes, queue/log and four integrated docs; current source-only oracle SHA `3d19e545088b5dd1247cfff98d292bc85dbe8194`. Private binary bytes and native Dart runtime unavailable to GitHub text connector. Did not retry blocked C512 or claim original PDF tests.
