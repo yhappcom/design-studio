@@ -1,3 +1,9 @@
+## 2026-11-08 02:58 KST — exact committed synthetic oracle: coordinated reseal bypass (NEW NEGATIVE)
+
+- **SYNTHETIC executable evidence:** fetched committed `crewconnex/SOURCE_ONLY_TRANSACTION_SYNTHETIC_ORACLE_20261107.cjs` blob `2991497f55ec94aec292d94307f920a06f09c2e2`, executed the exact source in an isolated V8 Function with a Node-assert-compatible adapter; its existing **62/62 self-tests PASS**. No Node CLI, native Sembast, original PDF or independent renderer execution.
+- **New adversarial test, NOT a PASS:** after a valid first synthetic commit, changed the prior receipt's BLH snapshot, recomputed its deterministic `seal(owner,id,seq,previous,snapshot)`, and updated mutable evidence `signature` consistently. The exact committed `apply` returned **COMMIT**, not a tamper HOLD. This coordinated re-sealing bypass is expected from an unkeyed, locally recomputable JSON seal and confirms that 62/62 proves internal consistency only, NOT origin authenticity, append-only durability, or resistance to a local writer that can alter receipt+head together. No product vulnerability claimed.
+- **Decision / gate:** keep cryptographic authenticity / trusted commit root and durable append-only provenance as explicit UNEXECUTED acceptance, separate from structural ancestry checks. A locally generated MAC is insufficient if the same untrusted writer controls its key; owner-approved threat model and trusted anchoring/transaction boundaries are prerequisites. Do not inflate synthetic test counts or claim production G/O closure. Exact C512 original-derived 21 + independent renderer remain BLOCKED_DEPENDENCY; C194 historical sync debt OPEN. No CSV changes justified.
+
 # Roster Systems Revalidation Queue
 
 ## 2026-11-08 01:56 KST — receipt ancestry candidate executed
