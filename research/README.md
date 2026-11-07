@@ -1,5 +1,20 @@
 # Design Studio Research Index
 
+## 최신 통합 연구 길잡이 — 2026-11-07
+
+2026-11-07 coordinator 통합은 기존 연구를 다시 저술하거나 전문분야 PASS를 승격시키지 않습니다. 상세 근거는 아래 canonical domain과 최신 specialist STATUS가 소유합니다.
+
+1. [전체 연구 종합](INTEGRATED_MASTER_SYNTHESIS_20261107.md) — 최신 성숙도, 공통 원칙 및 제품 적용 경계.
+2. [근거/모순/OPEN 등록부](INTEGRATED_EVIDENCE_CONTRADICTION_REGISTER_20261107.md) — 최신 결정과 과거 claim의 충돌·SUPERSEDED·OPEN.
+3. [실행 검증 로드맵](INTEGRATED_EXECUTION_ROADMAP_20261107.md) — exact-build 공동 검증, stop rule, 증거 분류.
+4. [LogMate 제품 적용 지도](../case-studies/logmate/PRODUCT_APPLICATION_EVIDENCE_MAP_20261107.md) — 최신 MASTER 기준 화면별 전이.
+5. [Coordinator 전체 상태](../progress/STATUS.md) — stage snapshot; Stage 3 PASS 없음.
+
+2026-09-21 외부 자문 패키지는 역사적 baseline을 보존하며 현재 전문분야 상태의 대체물이 아닙니다.
+
+---
+
+
 `research/` is the source-grounded evidence layer of Design Studio. Knowledge is organized by **canonical ownership** so specialists can find, reuse, validate, challenge, and extend one another's findings coherently.
 
 Canonical ownership is not a prohibition on cross-domain learning or repeat research. Overlap is allowed when it has analytical value.
