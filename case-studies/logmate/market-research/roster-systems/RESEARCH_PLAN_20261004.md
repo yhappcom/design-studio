@@ -6,6 +6,12 @@ Repository: `yhappcom/design-studio`
 Scope owner: LogMate case-study market / parser research
 Canonical path: `case-studies/logmate/market-research/roster-systems/`
 
+## 2026-11-07 integrated research checkpoint
+
+The owner requested consolidation of accumulated roster intelligence and implementation-decision-oriented substantive hourly cycles. Current navigation is [Research Synthesis](RESEARCH_SYNTHESIS_20261107.md) -> [ParserProfile](PARSER_PROFILE_SPEC_20261107.md) -> [Evidence & Decision Register](EVIDENCE_DECISION_REGISTER_20261107.md) -> [Implementation Readiness](IMPLEMENTATION_READINESS_20261107.md). These are **research navigation documents**, not changes to LogMate product authority. Source C-number reports, manifests, scripts and raw-reference boundaries remain intact.
+
+**Operational interpretation of §3:** hourly scheduling is a trigger for one substantial connected evidence package, **not** a one-file/one-question ceiling. Prioritize closing authentic source-year/subject/Publication, C512 exact source-native renderer tests and actual owner-scoped evidence-only CAS/rollback/lifecycle acceptance; avoid repeating already completed C194/C532 validation or micro-aggregate recalculation. Only update the four index CSVs when actual new airline/sample/field-grade evidence warrants a non-no-op change. The C194 historical sync debt is tracked without speculative backfill. Production CrewConnex Parser remains OPEN.
+
 ## 1. Mission
 
 Build a source-grounded intelligence base that answers two questions for LogMate:
