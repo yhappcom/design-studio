@@ -1,5 +1,13 @@
 # CrewConnex implementation readiness & integrated execution gate — 2026-11-07
 
+## 2026-11-08 01:56 KST — exact committed synthetic receipt-chain hardening (NOT production)
+
+- The current committed oracle at blob `8ef11fba1b1a84c4f542f784da7852e312067eab` was actually executed in an isolated V8 wrapper with Node assert-compatible assertions: **54/54 PASS**. This is exact-source JavaScript logic, not Node CLI, Dart, Sembast or private-PDF testing.
+- Replaced head-only receipt checks in the Design Studio research oracle with full ordinal ancestry validation and versioned deterministic `seal(owner, flight, seq, previous, snapshot)` binding; receipt now includes source, BLH and crew snapshot, predecessor pointer, and closed-world receipt fields. The research seal is JSON equality, **NOT cryptographic authentication**. Orphan/foreign-owner receipt and mutable evidence/signature disagreement fail closed. An existing next-head collision with malformed receipt is classified `RECEIPT_CHAIN` before `RECEIPT_CONFLICT`; valid duplicate-next-head collision remains `RECEIPT_CONFLICT` if reachable.
+- Executed modified exact candidate with the original 54 cases plus **8 new adversarial integrity cases**, **62/62 SYNTHETIC PASS** in V8. The candidate was committed to `crewconnex/SOURCE_ONLY_TRANSACTION_SYNTHETIC_ORACLE_20261107.cjs`; no product code was changed. The original source bytes and exact C512 21 mutations remain blocked by GitHub UTF-8-only file access. No source-year/owner certification, actual file-backed crash durability, independent PDF renderer or native Sembast acceptance. **No G/O production gate closed; CrewConnex OPEN.**
+- Adjacent evaluation: source code and original receipt defect were actionable now; next high-value acceptance is exact committed-code rerun plus deterministic snapshot/ancestor mutation and valid-duplicate collision, then a separately approved file-backed storage/restore acceptance. C194 historical sync debt remains OPEN. No master CSV updates justified.
+
+
 ## 2026-11-08 00:xx KST — synthetic receipt integrity beyond head-pointer checks (NEGATIVE; independent equivalent logic)
 
 - Read latest LogMate AGENTS/MASTER/import/CrewConnex contracts read-only and Studio research plan, four indexes, queue/log, four integrated documents and current synthetic oracle blob `8ef11fba1b1a84c4f542f784da7852e312067eab`. The exact committed Node oracle could not be executed locally: `curl` to raw.githubusercontent.com failed `Could not resolve host`; current GitHub connector returns UTF-8 source but not a local checkout or private PDF/XLSX binary. No original PDF, company join or native Sembast run.
