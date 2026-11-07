@@ -56,11 +56,11 @@ function apply(s,r,crash){
  if(!r.date||!r.year||!r.subject||!r.locator)return reject("AUTH");
  if(r.matches!==1)return reject("MATCH");
  if(!r.approved)return reject("REVIEW");
- const n=clone(s),snapshot={blh:r.blh,crew:r.crew,source:r.source};
+ const n=clone(s),snapshot={blh:r.blh,crew:clone(r.crew),source:r.source};
  if(p?.signature===JSON.stringify(snapshot))return reject("REPLAY");
  const head=r.owner+":"+r.id+":H"+((p?.seq??0)+1);
  if(n.receipts[head])return reject("RECEIPT_CONFLICT");
- n.evidence[r.id]={head,seq:(p?.seq??0)+1,signature:JSON.stringify(snapshot),changedCrew:!!p&&JSON.stringify(p.crew)!==JSON.stringify(r.crew),crew:r.crew};
+ n.evidence[r.id]={head,seq:(p?.seq??0)+1,signature:JSON.stringify(snapshot),changedCrew:!!p&&JSON.stringify(p.crew)!==JSON.stringify(r.crew),crew:clone(r.crew)};
  if(crash==="evidence")return reject("ROLLBACK");
  n.receipts[head]={owner:r.owner,id:r.id,seq:(p?.seq??0)+1,previous:p?.head??null,snapshot,seal:seal(r.owner,r.id,(p?.seq??0)+1,p?.head??null,snapshot)};
  if(crash==="receipt")return reject("ROLLBACK");
@@ -155,4 +155,20 @@ for(const [name,mutate] of integrityCases){
  assert.equal(out.code,"RECEIPT_CHAIN",name);
  assert.equal(out.state,state,name+" no mutation");
 }
-console.log(JSON.stringify({kind:"SYNTHETIC_RESEARCH_ORACLE",legacyCases:cases.length,receiptRegressions:2,negativeSchemaCases:malformed.length,receiptAncestryCases:ancestryCases.length,integrityCases:integrityCases.length,passed:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length,total:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length,production:false}));
+
+// Input/output isolation regression: commit must never retain caller-owned mutable arrays.
+const isolatedRequest=clone(base), isolatedCommit=apply(seed,isolatedRequest);
+assert.equal(isolatedCommit.code,"COMMIT");
+const isolatedSnapshot=clone(isolatedCommit.state.receipts["A:F:H1"].snapshot);
+isolatedRequest.crew[0]="MUTATED";
+assert.deepEqual(isolatedCommit.state.receipts["A:F:H1"].snapshot,isolatedSnapshot,"caller mutation must not change receipt");
+assert.deepEqual(isolatedCommit.state.evidence.F.crew,isolatedSnapshot.crew,"caller mutation must not change evidence");
+// Evidence and receipt must not share a mutable array even inside a committed result.
+isolatedCommit.state.evidence.F.crew[0]="MUTATED";
+assert.deepEqual(isolatedCommit.state.receipts["A:F:H1"].snapshot,isolatedSnapshot,"evidence mutation must not change receipt");
+// Existing state must not be mutated by a later accepted update.
+const oldState=clone(committed), oldCopy=clone(oldState);
+const later=apply(oldState,{...base,head:"A:F:H1",crew:["CC","CA"],source:"S2"});
+assert.equal(later.code,"COMMIT");
+assert.deepEqual(oldState,oldCopy,"prior state remains unchanged");
+console.log(JSON.stringify({kind:"SYNTHETIC_RESEARCH_ORACLE",legacyCases:cases.length,receiptRegressions:2,negativeSchemaCases:malformed.length,receiptAncestryCases:ancestryCases.length,integrityCases:integrityCases.length,isolationCases:3,passed:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+3,total:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+3,production:false}));
