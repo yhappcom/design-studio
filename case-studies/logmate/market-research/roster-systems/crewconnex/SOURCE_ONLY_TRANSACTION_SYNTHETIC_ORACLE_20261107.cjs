@@ -23,6 +23,13 @@ function apply(s,r,crash){
  if(r.owner!==s.owner||!f||f.owner!==r.owner||!f.active)return reject("OWNER");
  if(r.rev!==f.rev)return reject("FLIGHT_CAS");
  if(r.head!==(p?.head??null))return reject("EVIDENCE_CAS");
+ // Existing evidence must point to a real, owner/flight-bound receipt with a coherent sequence.
+ // This is a synthetic invariant only; it does not prove actual durable storage.
+ if(p){
+  if(!Number.isSafeInteger(p.seq)||p.seq<1||p.head!==r.owner+":"+r.id+":H"+p.seq||
+     !plain(s.receipts[p.head])||s.receipts[p.head].owner!==r.owner||
+     s.receipts[p.head].id!==r.id)return reject("RECEIPT_CHAIN");
+ }
  if(!r.date||!r.year||!r.subject||!r.locator)return reject("AUTH");
  if(r.matches!==1)return reject("MATCH");
  if(!r.approved)return reject("REVIEW");
@@ -92,4 +99,20 @@ for(const [name,changes] of malformed){
  assert.equal(result.code,"SCHEMA",name);
  assert.equal(result.state,seed,name+" must not mutate original");
 }
-console.log(JSON.stringify({kind:"SYNTHETIC_RESEARCH_ORACLE",legacyCases:cases.length,receiptRegressions:2,negativeSchemaCases:malformed.length,passed:cases.length+2+malformed.length,total:cases.length+2+malformed.length,production:false}));
+// Previously admitted tampered/missing/forged receipt ancestry; all must fail closed.
+const ancestryCases=[
+ ["missing-receipt",x=>{delete x.receipts["A:F:H1"];}],
+ ["wrong-flight-receipt",x=>{x.receipts["A:F:H1"].id="G";}],
+ ["wrong-owner-receipt",x=>{x.receipts["A:F:H1"].owner="B";}],
+ ["wrong-head-sequence",x=>{x.evidence.F.head="A:F:H999";}],
+ ["negative-sequence",x=>{x.evidence.F.seq=-1;}],
+ ["fractional-sequence",x=>{x.evidence.F.seq=1.5;}]
+];
+for(const [name,mutate] of ancestryCases){
+ const state=clone(committed);mutate(state);
+ const req={...base,head:state.evidence.F.head,crew:["CC","CA"],source:"S2"};
+ const out=apply(state,req);
+ assert.equal(out.code,"RECEIPT_CHAIN",name);
+ assert.equal(out.state,state,name+" no mutation");
+}
+console.log(JSON.stringify({kind:"SYNTHETIC_RESEARCH_ORACLE",legacyCases:cases.length,receiptRegressions:2,negativeSchemaCases:malformed.length,receiptAncestryCases:ancestryCases.length,passed:cases.length+2+malformed.length+ancestryCases.length,total:cases.length+2+malformed.length+ancestryCases.length,production:false}));
