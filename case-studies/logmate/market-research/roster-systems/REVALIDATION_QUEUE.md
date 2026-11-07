@@ -1,5 +1,13 @@
 # Roster Systems Revalidation Queue
 
+### 2026-11-07 14:xx — LBK versioned source-only evidence compatibility
+
+- Current LogMate Sembast source (blob `f2b8b0eb681f5d960532dac5c87b29cf85a459b8`) **STATIC** review: current backup exporter writes ordered exact 37-store registry, capability, owner and digest. `_validateLbkContainer` only recognizes legacy 30-store and sync-aware 37-store formats and requires exact registry count/order/name/key types and capability. Restore is staging-only, resets imported Sync trust and preserves destination replica; no CrewConnex source-only evidence store currently exists.
+- **NEW implementation gate:** a future source-only evidence/receipt store must not be silently appended to the existing backup format registry. Explicitly version `.lbk` container/capability, define whether normalized evidence belongs in backup/Sync under owner-approved policy, preserve old 30/37-store import, and test new-format round-trip, old-format migration, unknown/missing/extra/reordered store rejection, wrong owner, mid-restore rollback, no raw PDF/employee IDs, restored receipt/head consistency, new-UID isolation and restored Sync trust.
+- This is a concrete static compatibility risk / acceptance-contract improvement, **NOT** an observed bug, native test PASS, CrewConnex parser support or new real PDF verification. See [Implementation readiness](IMPLEMENTATION_READINESS_20261107.md#2026-11-07-14xx--backup-format-and-restore-compatibility-gate).
+- Existing C512 exact 21 original-derived PDF replay + independent renderer, source year/owner, company Aug03–31 comparator and C194 historical sync debt remain OPEN; GitHub binary fetch does not supply original private PDF. No LogMate writes or master CSV changes.
+
+
 ### 2026-11-07 13:xx KST — product authority correction / static source gate
 
 - **Do not silently make Publication an absolute product gate.** C360 and current LogMate MASTER/import/CrewConnex specs do not approve universal vendor Publication-token necessity. Unknown source revision => **HOLD_POLICY_PUBLICATION** until owner approves a safe fingerprint/review policy; no silent roster ordering/overwrite. Four-digit source year and authenticated same-UID active Flight remain separate open requirements. Synthesis wording must be read through this correction.
