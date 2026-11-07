@@ -1,5 +1,10 @@
 # Roster Systems Revalidation Queue
 
+## 2026-11-07 20:58 KST — NEW synthetic oracle schema/privacy admission regression (OPEN)
+
+Eight independently executed synthetic malformed inputs to current Studio source-only `apply` all returned COMMIT (unsafe accepts): crew undefined, crew object, crew empty, source undefined, BLH undefined, BLH string, nested employee field in crew, nested pdf field in source. The top-level privacy check misses nested values; JSON signature omits undefined fields. This is a research-oracle defect, NOT a LogMate product bug or eight successful tests. **Next executable action:** closed-world recursive versioned input validation + negative fixture for all eight, then run the full committed Node suite and independent validator; retain absent-crew state without inventing crew names. Product Dart/Sembast acceptance and original PDF renderer remain separate OPEN gates. See IMPLEMENTATION_READINESS_20261107.md. C194 historical sync debt unchanged.
+
+
 ## 2026-11-07 20:xx KST — synthetic oracle cross-flight receipt collision regression (NOT product defect)
 
 - **NEW executable independent synthetic reproduction:** the prior research-only in-memory oracle allocated a globally keyed receipt as `H1` for the first revision of **every** Flight. Sequential synthetic F then G attachment produced `evidence.F.head=H1`, `evidence.G.head=H1`, but only one `receipts.H1` referencing G: F's immutable receipt was overwritten. This violates the model's claimed immutable receipt invariant despite its prior 22/22 per-flight checks. **This is a bug in the Design Studio research oracle, NOT an observed LogMate production defect.**
