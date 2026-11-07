@@ -1,5 +1,14 @@
 # CrewConnex ParserProfile — 통합 연구 규격
 
+## 2026-11-07 C426 oracle-vs-portable-profile separation
+
+**Current C426 is an exact one-original strict oracle, not a reusable ParserProfile detector.** Direct source review of `crewconnex/C426_PDC_NATIVE_PDF_TEXT_ADMISSION.mjs` found hard-coded `Period: 01Aug26 - 31Aug26`, `ddAug26` own-Date, exactly 495 text operators, 49 body bands, 26 numeric/22 nonflight/1 auxiliary, 31 Date-group position shapes, fixed x/y columns, single uncompressed PDF 1.4 page/stream, fixed object/page/xref/graphics counts, font/object SHA and stroke geometry hash. The PDC profile JSON is explicitly `research-1.6.0-C330` scoped to one private August original. These exact-source guards are strong mutation regression assertions but **cannot be production support claims for other periods or valid renderer variants**.
+
+**Versioning requirement for future proposal:** maintain distinct `fixtureOracleId` (C426 pinned one-original) and `familyProfileId/profileVersion` (new validated family semantics). A new period, extra flight row, multi-page output, different font or compressed PDF must be `UNSUPPORTED_LAYOUT` until an independently verified source/profile exists. The future standards PDF parser must validate physical ownership/rendered text and semantic required fields without silently using C426's exact census as a vendor-wide contract. Any permitted variation requires new real samples, not merely relaxed count tests.
+
+**Crew snapshot compatibility:** LogMate `SourceEvidence` is scalar canonical-field evidence and `SourceEvidenceHistory.requiresUserNotice` suppresses raw-only changes when normalized values agree. `CrewParticipant` requires a name and has no staff ID. Therefore no CrewConnex crew snapshot may be encoded as a fake scalar Block field or invented named participant; a separately reviewed source-only snapshot identity/revision/receipt is an OPEN design item. This is source-code static evidence, not a runtime failure.
+
+
 Status: **RESEARCH ONLY / synthesis-proposal 0.1.0 / NOT PRODUCT APPROVED / NOT IMPLEMENTED** (2026-11-07). LogMate Production Parser OPEN. This research document does not replace LogMate MASTER, docs/specs/import-contract.md, or docs/specs/crewconnex-parser-plan.md.
 
 ## 2026-11-07 contract-authority correction (current)
