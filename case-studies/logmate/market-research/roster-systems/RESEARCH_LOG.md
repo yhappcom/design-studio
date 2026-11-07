@@ -1,5 +1,11 @@
 # Roster Systems Research Log
 
+## 2026-11-07 21:59 KST — source-only synthetic schema guard implementation + independent local execution
+
+- Re-read latest LogMate AGENTS/MASTER/import/CrewConnex contracts and private source directory metadata read-only, Design Studio research plan, four indexes, queue/log and four integrated docs; current source-only oracle SHA `3d19e545088b5dd1247cfff98d292bc85dbe8194`. Private binary bytes and native Dart runtime unavailable to GitHub text connector. Did not retry blocked C512 or claim original PDF tests.
+- **New executable SYNTHETIC work:** locally authored equivalent closed-world schema-guarded Node v22.16.0 research model; ran `node /mnt/data/crew_research/oracle.cjs`, observed `{legacyCases:22,receiptRegressions:2,negativeSchemaCases:24,total:48,passed:48,production:false}`. Eight previous malformed COMMIT inputs are now rejected; 16 adjacent type/privacy boundaries tested, plus cross-flight receipt collision and CAS/rollback regressions. Local equivalence does NOT prove exact committed source execution.
+- Updated Studio research oracle at `crewconnex/SOURCE_ONLY_TRANSACTION_SYNTHETIC_ORACLE_20261107.cjs` in commit `02b87e7f045a13df519a2516d46be2c6aa87d27a`, verified readback blob `87681d2afad0cb582572c76e7dc4a602fdb8f4ac`. No LogMate changes, no real private data copied, no master CSV update; C194 historical sync debt still OPEN. Remaining adjacent high-value tests: execute exact committed Node oracle and stronger receipt lineage/restart; authorized file-backed Sembast transaction and PDF independent validation remain external blockers.
+
 ## 2026-11-07 20:xx KST — synthetic oracle cross-flight receipt collision regression (NOT product defect)
 
 - **NEW executable independent synthetic reproduction:** the prior research-only in-memory oracle allocated a globally keyed receipt as `H1` for the first revision of **every** Flight. Sequential synthetic F then G attachment produced `evidence.F.head=H1`, `evidence.G.head=H1`, but only one `receipts.H1` referencing G: F's immutable receipt was overwritten. This violates the model's claimed immutable receipt invariant despite its prior 22/22 per-flight checks. **This is a bug in the Design Studio research oracle, NOT an observed LogMate production defect.**
