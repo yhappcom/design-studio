@@ -1,5 +1,10 @@
 # Roster Systems Revalidation Queue
 
+## 2026-11-08 01:56 KST — receipt ancestry candidate executed
+
+**SYNTHETIC ONLY:** Existing exact-source V8 54/54 reproduced; candidate adds full sequential predecessor, owner/Flight, closed-world snapshot/source/BLH/crew seal and orphan receipt checks, with eight new mutations. Candidate **62/62 PASS** in isolated V8 before commit. `RECEIPT_CHAIN` has priority when existing state is malformed; a well-formed occupied next-key should be `RECEIPT_CONFLICT`. Deterministic JSON seal is not cryptographic and cannot prove external tamper resistance. Actual PDF C512 independent renderer, source-year/UID/Publication, file-backed Dart/Sembast, restart/restore and C194 debt remain OPEN/BLOCKED_DEPENDENCY. No production G/O closure. Re-run exact saved SHA and investigate valid next-key collision reachability; do not count as product acceptance.
+
+
 ## 2026-11-08 00:xx KST — synthetic receipt integrity beyond head-pointer checks (NEGATIVE; independent equivalent logic)
 
 - Read latest LogMate AGENTS/MASTER/import/CrewConnex contracts read-only and Studio research plan, four indexes, queue/log, four integrated documents and current synthetic oracle blob `8ef11fba1b1a84c4f542f784da7852e312067eab`. The exact committed Node oracle could not be executed locally: `curl` to raw.githubusercontent.com failed `Could not resolve host`; current GitHub connector returns UTF-8 source but not a local checkout or private PDF/XLSX binary. No original PDF, company join or native Sembast run.
