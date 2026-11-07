@@ -6,6 +6,7 @@ const base={owner:"A",id:"F",rev:4,head:null,date:true,year:true,subject:true,lo
 // Closed-world, JSON-safe synthetic evidence request. This does NOT authenticate a real source.
 const requestKeys=["owner","id","rev","head","date","year","subject","locator","matches","approved","blh","crew","source"];
 const plain=x=>x!==null&&typeof x==="object"&&!Array.isArray(x)&&Object.getPrototypeOf(x)===Object.prototype;
+const seal=(owner,id,seq,previous,snapshot)=>JSON.stringify({v:1,owner,id,seq,previous,snapshot});
 const token=x=>typeof x==="string"&&x.length>0&&x.length<=64&&/^[A-Za-z0-9:_-]+$/.test(x);
 function validRequest(r){
  if(!plain(r)||Object.keys(r).some(k=>!requestKeys.includes(k))||requestKeys.some(k=>!Object.hasOwn(r,k)))return false;
@@ -29,6 +30,28 @@ function apply(s,r,crash){
   if(!Number.isSafeInteger(p.seq)||p.seq<1||p.head!==r.owner+":"+r.id+":H"+p.seq||
      !plain(s.receipts[p.head])||s.receipts[p.head].owner!==r.owner||
      s.receipts[p.head].id!==r.id)return reject("RECEIPT_CHAIN");
+  // Verify the COMPLETE synthetic ancestry, not only the head. Deterministic seal is NOT cryptographic.
+  let previous=null;
+  for(let i=1;i<=p.seq;i++){
+   const key=r.owner+":"+r.id+":H"+i,receipt=s.receipts[key];
+   if(!plain(receipt)||Object.keys(receipt).sort().join(",")!=="id,owner,previous,seal,seq,snapshot"||
+      receipt.owner!==r.owner||receipt.id!==r.id||receipt.seq!==i||
+      receipt.previous!==previous||!plain(receipt.snapshot)||
+      Object.keys(receipt.snapshot).sort().join(",")!=="blh,crew,source"||
+      !Number.isSafeInteger(receipt.snapshot.blh)||!Array.isArray(receipt.snapshot.crew)||
+      !receipt.snapshot.crew.every(token)||!token(receipt.snapshot.source)||
+      receipt.seal!==seal(r.owner,r.id,i,previous,receipt.snapshot))return reject("RECEIPT_CHAIN");
+   previous=key;
+  }
+  const last=s.receipts[p.head].snapshot;
+  if(p.signature!==JSON.stringify(last)||JSON.stringify(p.crew)!==JSON.stringify(last.crew))return reject("RECEIPT_CHAIN");
+ }
+ // A foreign-owner or orphan receipt is not acceptable in this research state.
+ for(const [key,receipt] of Object.entries(s.receipts)){
+  if(!plain(receipt)||receipt.owner!==s.owner||!s.flights[receipt.id]||
+     receipt.owner!==s.flights[receipt.id].owner||
+     key!==receipt.owner+":"+receipt.id+":H"+receipt.seq||
+     !s.evidence[receipt.id]||receipt.seq>s.evidence[receipt.id].seq)return reject("RECEIPT_CHAIN");
  }
  if(!r.date||!r.year||!r.subject||!r.locator)return reject("AUTH");
  if(r.matches!==1)return reject("MATCH");
@@ -39,7 +62,7 @@ function apply(s,r,crash){
  if(n.receipts[head])return reject("RECEIPT_CONFLICT");
  n.evidence[r.id]={head,seq:(p?.seq??0)+1,signature:JSON.stringify(snapshot),changedCrew:!!p&&JSON.stringify(p.crew)!==JSON.stringify(r.crew),crew:r.crew};
  if(crash==="evidence")return reject("ROLLBACK");
- n.receipts[head]={owner:r.owner,id:r.id};
+ n.receipts[head]={owner:r.owner,id:r.id,seq:(p?.seq??0)+1,previous:p?.head??null,snapshot,seal:seal(r.owner,r.id,(p?.seq??0)+1,p?.head??null,snapshot)};
  if(crash==="receipt")return reject("ROLLBACK");
  assert.deepEqual(n.flights,s.flights,"canonical FlightRecord mutation");
  return{code:"COMMIT",state:n};
@@ -66,13 +89,13 @@ const twoFlights=apply(committed,{...base,id:"G"});
 assert.equal(twoFlights.code,"COMMIT");
 assert.equal(twoFlights.state.evidence.F.head,"A:F:H1");
 assert.equal(twoFlights.state.evidence.G.head,"A:G:H1");
-assert.deepEqual(twoFlights.state.receipts["A:F:H1"],{owner:"A",id:"F"});
-assert.deepEqual(twoFlights.state.receipts["A:G:H1"],{owner:"A",id:"G"});
+assert.equal(twoFlights.state.receipts["A:F:H1"].owner,"A");assert.equal(twoFlights.state.receipts["A:F:H1"].id,"F");
+assert.equal(twoFlights.state.receipts["A:G:H1"].owner,"A");assert.equal(twoFlights.state.receipts["A:G:H1"].id,"G");
 assert.equal(Object.keys(twoFlights.state.receipts).length,2);
 const tampered=clone(committed);
 tampered.receipts["A:F:H2"]={owner:"A",id:"G"};
 const conflict=apply(tampered,{...base,head:"A:F:H1",crew:["CC","CA"],source:"S2"});
-assert.equal(conflict.code,"RECEIPT_CONFLICT");
+assert.equal(conflict.code,"RECEIPT_CHAIN");
 assert.equal(conflict.state,tampered);
 const changed=apply(committed,{...base,head:"A:F:H1",crew:["CC","CA"],source:"S2"});
 assert.equal(changed.state.evidence.F.changedCrew,true);assert.equal(changed.state.flights.F.block,85);
@@ -115,4 +138,21 @@ for(const [name,mutate] of ancestryCases){
  assert.equal(out.code,"RECEIPT_CHAIN",name);
  assert.equal(out.state,state,name+" no mutation");
 }
-console.log(JSON.stringify({kind:"SYNTHETIC_RESEARCH_ORACLE",legacyCases:cases.length,receiptRegressions:2,negativeSchemaCases:malformed.length,receiptAncestryCases:ancestryCases.length,passed:cases.length+2+malformed.length+ancestryCases.length,total:cases.length+2+malformed.length+ancestryCases.length,production:false}));
+// New integrity regressions: source, crew, prior seal, unbound fields, missing ancestry and orphan receipts.
+const integrityCases=[
+ ["prior-seal",x=>{x.receipts["A:F:H1"].seal="forged";}],
+ ["prior-crew",x=>{x.receipts["A:F:H1"].snapshot.crew=["FO"]; }],
+ ["prior-source",x=>{x.receipts["A:F:H1"].snapshot.source="S3";}],
+ ["extra-receipt-field",x=>{x.receipts["A:F:H1"].employee="synthetic";}],
+ ["orphan-foreign-owner",x=>{x.receipts["B:Z:H1"]={owner:"B",id:"Z",seq:1};}],
+ ["head-snapshot",x=>{x.evidence.F.crew=["CA"]; }],
+ ["head-signature",x=>{x.evidence.F.signature="forged";}],
+ ["missing-ancestor",x=>{const next=apply(x,{...base,head:"A:F:H1",crew:["CC","CA"],source:"S2"});assert.equal(next.code,"COMMIT");Object.assign(x,next.state);delete x.receipts["A:F:H1"];}]
+];
+for(const [name,mutate] of integrityCases){
+ const state=clone(committed);mutate(state);
+ const out=apply(state,{...base,head:state.evidence.F.head,crew:["CC","CA"],source:"S3"});
+ assert.equal(out.code,"RECEIPT_CHAIN",name);
+ assert.equal(out.state,state,name+" no mutation");
+}
+console.log(JSON.stringify({kind:"SYNTHETIC_RESEARCH_ORACLE",legacyCases:cases.length,receiptRegressions:2,negativeSchemaCases:malformed.length,receiptAncestryCases:ancestryCases.length,integrityCases:integrityCases.length,passed:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length,total:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length,production:false}));
