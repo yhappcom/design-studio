@@ -1,5 +1,26 @@
 # Roster Systems Revalidation Queue
 
+## 2026-11-07 — INTEGRATED DECISION GATES (current navigation)
+
+The four canonical **research synthesis/navigation documents** below supersede *stale task priority statements*, not the underlying historical C-number evidence:
+- [Research synthesis](RESEARCH_SYNTHESIS_20261107.md)
+- [CrewConnex ParserProfile research specification](PARSER_PROFILE_SPEC_20261107.md)
+- [Evidence & decision register](EVIDENCE_DECISION_REGISTER_20261107.md)
+- [Implementation readiness and executable acceptance matrix](IMPLEMENTATION_READINESS_20261107.md)
+
+**CURRENT PRODUCTION STATE: OPEN.** Work the integrated G0–G6 and O01–O08 gates, not one C-number/micro-question per hourly trigger. In particular:
+1. C532 unchanged real PDC original strict DETACHED_HOLD + 55/55 original-dependent checks are **DONE in JS research oracle**. C533 21 positional mutations are **SYNTHETIC**. C512 **21 exact original-derived PDF mutations** have position-oracle evidence but are **NOT YET rerun through the same C426 strict path with an independent renderer**. Do not conflate or redo first baseline.
+2. Authenticate source operational **four-digit year, report subject/owner UID, Publication/revision**, and a unique *active* same-UID Flight before attachment; validate 2026 company **Aug03–31 coverage** or hold out-of-coverage source rows. Curated Preview and partial flight+route joins are not owner record identity.
+3. Implement/test **source-only** BLH/crew snapshot evidence without canonical Flight writes, dual FlightRevision/EvidenceHead CAS, immutable receipts, idempotent replay, fail/rollback, reopen, delete/restore, new UID and backup/Sync isolation. **No actual native CrewConnex Sembast acceptance PASS exists.**
+4. Retain the **C194 historical index sync debt**; exact missing payload is not reconstructed. Only refresh/apply substantive safe deltas; do not no-op edit all four master CSVs.
+5. Reconciling exact public format grades: 21 tracked airlines vs 20 A1/A2 confirmed, 19 with pilot planning band; no public CrewConnex raw PDF/TSV P1; strongest currently indexed P3 third-party weekly HTML instructions are **not the private PDF profile**. Never upgrade grades by generalizing a private source or a UI guide.
+6. Legacy C499 30-Date interpretation is **SUPERSEDED** by C502/C546 **31 printed Date / 31 groups**. C539 26/32/4 crew leaf distribution is **SUPERSEDED** by C540/C547 26/31/5. Historical C457 location-404 report is **superseded by successful direct fetch** of the JSON file.
+
+**Single next high-value connected target:** exact C512 21 original-derived PDC PDF strict-path+independent-render replay **combined with** authenticated same-export year/subject/revision/coverage assessment; proceed with isolated native evidence-only CAS/receipt/rollback/lifecycle test design/execution where LogMate Work authority and runtime are available. If identity evidence is unavailable, prove fail-closed HOLD and advance other independent G-gates rather than repeat structure census. No private source data in Design Studio.
+
+---
+
+
 ## Active
 
 1. Verify the NetLine/Crewlink scrambled public PDF sample and capture a stable source reference or lawful repository copy if appropriate.
