@@ -1,5 +1,14 @@
 # CrewConnex implementation readiness & integrated execution gate — 2026-11-07
 
+## 2026-11-07 18:57 KST — executable SYNTHETIC source-only transaction oracle (NOT product acceptance)
+
+**New executable research artifact:** [SOURCE_ONLY_TRANSACTION_SYNTHETIC_ORACLE_20261107.cjs](crewconnex/SOURCE_ONLY_TRANSACTION_SYNTHETIC_ORACLE_20261107.cjs). A Node-compatible in-memory state-transition model was exercised in an isolated JavaScript runtime with **22/22 synthetic adversarial cases**: accepted source-only attach, identical reimport replay, same-BLH changed-crew revision, independent stale FlightRevision and EvidenceHead rejection, wrong owner/missing/inactive Flight, missing date/year/subject/locator authority, 0/2 matching candidates, absent review, raw employee ID/PDF and inferred date/role exclusion, simulated crash after evidence/receipt staging, and fresh-owner isolation. Changed crew with unchanged BLH was explicitly checked to preserve canonical Flight.block. This is a research invariant demonstration, **not** a Dart/Sembast test, real atomic transaction, durable receipt, backup/restore test, concurrent interleaving proof, real PDF/XLSX parser or production PASS.
+
+**Model limitations / uncovered acceptance:** Its copy-on-write rejection assumes rollback; it does not test actual disk transaction failure, process kill/reopen, same-time CAS races, receipt durability, immutable revision history beyond latest head, account wipe of real stores, Sync/backup schema, or authenticated Firebase UID. The model intentionally uses fictional IDs and codes only; no raw source data. Future product Work must implement these checks in actual repository transactions and prove zero canonical writes with file-backed storage and failure injection. Product SourceEvidenceHistory normalized-value notice remains a separate scalar; this research model's changedCrew flag is not an implemented notification.
+
+**Blocker pivot:** GitHub tree metadata confirms the original 2026-08 PDC PDF blob 8e7fec30 (39,612 bytes), three Skia monthly PDFs and company 2018–2026 XLSX exist, but GitHub text fetch cannot supply PDF/XLSX binary bytes for C512 exact original-derived 21 + independent renderer. Source authority and Aug03–31 company coverage remain unproven. Do not rerun prior C532 55/55 or C533 synthetic 21 as new work. This cycle instead produced a reproducible, distinctly scoped acceptance precursor; **G/O gates remain OPEN**.
+
+
 ## 2026-11-07 14:56 KST — C426 strict-oracle portability boundary
 
 **New static cross-check (not a new PDF execution):** Re-read current LogMate MASTER/import/CrewConnex contract and directly inspected the 2026-06/07/08 private source *directory metadata* (including three Skia PDFs, PDC 39,612-byte August PDF, 2018–2026 company XLSX and preview). GitHub text fetch does not provide the original binary bytes, so no new PDF decode, cross-company join or native test was performed.
