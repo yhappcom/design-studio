@@ -1,5 +1,12 @@
 # Roster Systems Revalidation Queue
 
+## 2026-11-07 23:00 KST — receipt ancestry corruption admitted by prior synthetic oracle; regression repaired
+
+- **Evidence origin:** exact GitHub fetched synthetic oracle executed in isolated V8 (not Node native, not original PDF). Baseline self-test **48/48 PASS**, but additional corrupted prior-state adversarial probes: missing prior receipt, wrong-Flight prior receipt and forged head **3/3 incorrectly COMMIT**. This is a new test dimension, not a contradiction to earlier 48 passing cases.
+- **Delta:** updated Design Studio research-only oracle to fail `RECEIPT_CHAIN` for absent/wrong owner/wrong Flight receipt and malformed evidence sequence/head. Six new adversarial cases plus 48 previous = **54/54 PASS in independent V8 execution of patched source**; zero original-state mutation on rejection. Node exact committed-file execution and real Dart/Sembast remain UNEXECUTED.
+- **Decision still OPEN:** source-only receipt needs durable snapshot/provenance and prior-head integrity binding, double-CAS and owner-scoped lifecycle acceptance. Research oracle PASS is not a production gate closure. C512 original-derived 21 strict+independent-renderer remains BLOCKED_DEPENDENCY pending authorized binary runtime. C194 historical sync debt remains open without reconstructed payload.
+
+
 ## 2026-11-07 21:59 KST — synthetic schema/privacy guard patched; runtime equivalence limitation
 
 - Prior negative finding: 8/8 malformed synthetic requests incorrectly COMMIT in the old Studio oracle. Current source-only research oracle now has a closed-world, exact-key, JSON-safe request schema gate before any state lookup/write: required typed owner/Flight/revision/head/auth flags/matches/BLH/crew/source; no nested objects, arrays of objects, extra fields, nonfinite numbers or missing fields. Top-level employee/PDF/inferred-role/date keys are rejected as unknown keys. **This is an internal synthetic research model, NOT a production data contract or a real authenticated source.**
