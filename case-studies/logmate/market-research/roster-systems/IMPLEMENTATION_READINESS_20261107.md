@@ -1,5 +1,12 @@
 # CrewConnex implementation readiness & integrated execution gate — 2026-11-07
 
+## 2026-11-07 23:00 KST — executable synthetic receipt-ancestry integrity regression
+
+- **New negative finding, independently executed on exact fetched committed JavaScript in isolated V8:** existing oracle passed its 48/48 self-tests, yet three distinct corrupt prior-state cases all returned `COMMIT`: prior receipt absent, prior receipt points to another Flight, and prior evidence head forged to H999. This is **SYNTHETIC research-model corruption**, not a LogMate product observation.
+- **Research-only fix:** before any new evidence receipt, validate existing EvidenceHead sequence (positive safe integer), owner+Flight+sequence-derived head, and existence/owner/Flight binding of the prior receipt; fail closed with `RECEIPT_CHAIN` and zero state mutation. Added six adversarial ancestry tests (missing, wrong Flight, wrong owner, forged head, negative/fractional sequence). Independently executed patched source in V8: 22 legacy + 2 receipt + 24 malformed schema + 6 ancestry = **54/54 PASS**. This is **not Node.js native**, file-backed Sembast, independent PDF rendering or production PASS. Committed source was not independently re-executed from GitHub after write.
+- **Remaining contract gap:** receipt content currently holds only owner/Flight, not a cryptographically bound immutable snapshot, prior-head digest or transaction receipt chain. The research model cannot establish durable provenance, crash consistency, tamper resistance, or user/Flight authentication. Do not elevate G/O gates. A native file-backed acceptance package must test durable receipt chain, re-open, backup/restore, wrong UID, deleted Flight and atomic zero canonical writes. C512 exact 21 original-derived strict+renderer tests and C194 historical sync debt remain OPEN.
+
+
 ## 2026-11-07 21:59 KST — synthetic research schema fail-closed patch and isolated Node execution
 
 - The prior 20:58 eight malformed-request COMMIT bypasses motivated a **research-oracle-only** closed-world input gate. Current Studio oracle commit `02b87e7f045a13df519a2516d46be2c6aa87d27a` validates own required keys, exact types, bounded synthetic crew tokens/BLH, no nested objects or unknown keys before any evidence write. Top-level forbidden keys are rejected as SCHEMA rather than treated as optional data. Does not infer real crew identity, date, operating status or Block semantics.
