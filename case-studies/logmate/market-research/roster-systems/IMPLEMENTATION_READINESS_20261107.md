@@ -2,6 +2,12 @@
 
 **Current gate: OPEN / NOT IMPLEMENTATION-DECISION-READY / NOT DEPLOYABLE.** This is a Design Studio research handoff; it does not authorize writes to LogMate or new product policy. LogMate [MASTER](https://github.com/yhappcom/logmate/blob/main/MASTER.md), [Import](https://github.com/yhappcom/logmate/blob/main/docs/specs/import-contract.md) and [CrewConnex](https://github.com/yhappcom/logmate/blob/main/docs/specs/crewconnex-parser-plan.md) contracts remain authoritative. Related consolidated files: [synthesis](RESEARCH_SYNTHESIS_20261107.md), [ParserProfile](PARSER_PROFILE_SPEC_20261107.md), [evidence register](EVIDENCE_DECISION_REGISTER_20261107.md).
 
+## 2026-11-07 product-authority correction and static gate proof
+
+**Do not impose a universal Publication-token gate as a product decision.** C360 and current LogMate MASTER/import/CrewConnex contracts do not explicitly approve this as a universal requirement. G2 requires a resolved **source revision policy**: verified Publication when available, otherwise HOLD_POLICY_PUBLICATION until owner explicitly approves an unknown-publication/fingerprint/review policy. Unknown publication never authorizes silent overwrite or date/crew inference. Distinguish this policy decision from the still-unverified source 4-digit year and Firebase UID/active-Flight binding.
+
+**Direct source inspection at current HEAD, static only:** `sembast_logbook_repository.dart` _lbkStoreRegistry contains **30** named stores (lines 239–273), _syncLbkStoreRegistry adds **7** (lines 274–283); exportWholeLedgerBackup iterates all **37** (lines 470–500). SourceEvidenceHistory.requiresUserNotice only checks normalized scalar when both typed candidates exist; equal BLH cannot prove unchanged crew snapshot. CrewParticipant requires nonempty name; PDF raw staff/role codes do not establish it. These are concrete design constraints, **not** a newly executed native deletion/backup leak or runtime test. Require future source-only store to appear in validated store/owner/wipe/backup/restore policy with zero canonical mutation.
+
 ## 1. Completed evidence does NOT imply production readiness
 
 | Dimension | Evidence already recorded | Unresolved gate |
