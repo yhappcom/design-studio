@@ -1,3 +1,9 @@
+## 2026-11-08 11:00 KST — static LBK registry audit + independent synthetic forward-compatibility discriminator
+
+- GitHub connector read-only fetched LogMate AGENTS `622c42d6`, MASTER `5a6fd944`, Import `ac5b8721`, CrewConnex `f4c09f17`, domain SourceEvidence `dd4f6f01`, SourceEvidenceHistory `fb222a52`, CrewParticipant `d5c7e6cf`, Sembast `f2b8b0e`, LBK `711f7845`, Sync persistence `fed4f660`, canonical ledger test `c8993c6d`; source directory metadata via GitHub contents and Studio plan/four CSV indexes/four integrated documents/oracle/revalidation/log. GitHub Studio recent commits checked (HEAD before run `455b6d1d`). Binary source read blocked by connector UTF-8-only binary restriction; no private data transferred.
+- New **STATIC CODE** evidence: current backup registries have no future CrewConnex-specific evidence/head/receipt store; versioned exact registry validation requires an explicit migration/backup contract when such stores are implemented. Distinguish current Sync receipt from prospective CrewConnex receipt. **SYNTHETIC** simplified V8 test: five expected classifications (baseline, extra store, omission, UID mismatch, new version); no Dart runtime or file-backed PASS claimed.
+- No LogMate writes, no source content retained, no master CSV changes. Real PDF C512 original-derived 21 and Dart/Sembast native acceptance remain blocked. New gate closure: none.
+
 ## 2026-11-08 10:00 KST — exact committed CJS cross-Flight regression discriminator
 
 - GitHub connector read-only LogMate AGENTS `622c42d6`, MASTER `5a6fd944`, import `ac5b8721`, CrewConnex `f4c09f17`; Studio plan, queue, log, four integrated documents, and exact oracle blob `e3e0d44addbf`. Additional repository directory metadata and four CSVs were not fully inspected this run; no claim of full preflight coverage.
