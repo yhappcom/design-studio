@@ -1,3 +1,7 @@
+## 2026-11-08 12:56 KST — synthetic manifest crash-boundary experiment
+- Ran local `node /mnt/data/crew_atomic_recovery.cjs` (Node v22.16.0), 9/9 expected outcomes on wholly synthetic temporary files: staged pending, generated-but-unpublished, head-switched interrupted commits, UID rejection, receipt tamper, missing generation, resealed canonical mutation, and restored generation. Distinct from prior 12-case backup lifecycle test. No fsync/kill/power-loss, no native Sembast, no original PDF/XLSX. Research-only, no product approval.
+- Current read-only LogMate AGENTS/MASTER/import/CrewConnex contracts and Studio integrated source/queue/log consulted. GitHub private source directory via fetch_file failed JSONDecodeError; no private bytes read. No real-source, original-derived or C512 execution. C194 debt and all G/O gates OPEN.
+
 ## 2026-11-08 11:00 KST — static LBK registry audit + independent synthetic forward-compatibility discriminator
 
 - GitHub connector read-only fetched LogMate AGENTS `622c42d6`, MASTER `5a6fd944`, Import `ac5b8721`, CrewConnex `f4c09f17`, domain SourceEvidence `dd4f6f01`, SourceEvidenceHistory `fb222a52`, CrewParticipant `d5c7e6cf`, Sembast `f2b8b0e`, LBK `711f7845`, Sync persistence `fed4f660`, canonical ledger test `c8993c6d`; source directory metadata via GitHub contents and Studio plan/four CSV indexes/four integrated documents/oracle/revalidation/log. GitHub Studio recent commits checked (HEAD before run `455b6d1d`). Binary source read blocked by connector UTF-8-only binary restriction; no private data transferred.
