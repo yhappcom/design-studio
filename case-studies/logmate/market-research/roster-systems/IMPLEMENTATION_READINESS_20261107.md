@@ -1,3 +1,9 @@
+## 2026-11-08 11:00 KST — backup/restore versioning is an explicit CrewConnex source-evidence acceptance dependency (STATIC + SYNTHETIC)
+
+- LogMate `sembast_logbook_repository.dart` `f2b8b0e` currently exports LBK v2 with exact `_syncLbkStoreRegistry`, validates version/owner/digest/registry on restore; neither v1 nor v2 registry includes a CrewConnex source-only evidence receipt/head/snapshot store. The existing Sync receipt is not CrewConnex evidence. `SourceEvidence` itself explicitly defers persistence/revisions/Sync; no product evidence-only atomic transaction is thereby proved.
+- Independent simplified V8 version/registry/UID admission test: 5/5 expected synthetic classifications, including an omission scenario that demonstrates why evidence completeness must be a separately tested invariant. No native Dart/Sembast or file-backed execution; not a product bug or PASS.
+- Implementation handoff (not authorization): new evidence store design must specify backup registry version migration, old-backup restore behavior, full evidence receipt/head preservation, owner/new UID/wipe, crash rollback, cross-flight corruption handling, and zero canonical Flight/block/totals writes. Product decision and execution remain OPEN; no G/O closed.
+
 # CrewConnex implementation readiness & integrated execution gate — 2026-11-07
 
 ## 2026-11-08 01:56 KST — exact committed synthetic receipt-chain hardening (NOT production)
