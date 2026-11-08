@@ -1,3 +1,6 @@
+## 2026-11-09 08:05 KST — CrewConnex synthetic ancestor validation
+- Read LogMate AGENTS/MASTER/import/CrewConnex contracts and Studio integrated readiness/decision register; fixed research oracle snapshot bounds for every ancestor (BLH 0..1440, crew 1..20). Executed exact modified candidate source in Code Mode V8 using `new Function` and a minimal Node-assert-compatible adapter: 85/85 synthetic checks, including 8 new malformed head/ancestor receipt checks; no original PDF, independent renderer, Node CLI or Dart/Sembast execution. Research-only commit `53d2bddaac7a73aa0352f711ae645873bbf9f7ee`, blob `0ba5141b3aa216ee9b26a7bea8358b691808fd26` fetched and verified. No product readiness upgrade, no CSV change. C512 and C194 remain open.
+
 ## 2026-11-09 07:07 KST — persisted receipt ancestor synthetic negative
 - Read current LogMate AGENTS/MASTER/import/CrewConnex and Design Studio plan, queue/log, integrated documents and oracle `d6663a314207002de90f8dec5441f44dc9cd889c` via GitHub connector. Independent `python - <<'PY' ... PY` executed in container: five invented cases, baseline and four malformed receipt-snapshot predicates all accepted. Original PDF/XLSX, exact Node and Dart/Sembast NOT EXECUTED. Product repository unchanged. Readiness record committed `737614e6685d09d48077e920023382351ffd0ba0`; four CSVs unchanged. No G/O closed.
 
