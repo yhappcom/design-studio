@@ -1,3 +1,9 @@
+## 2026-11-08 10:00 KST — exact committed CJS cross-Flight regression discriminator
+
+- GitHub connector read-only LogMate AGENTS `622c42d6`, MASTER `5a6fd944`, import `ac5b8721`, CrewConnex `f4c09f17`; Studio plan, queue, log, four integrated documents, and exact oracle blob `e3e0d44addbf`. Additional repository directory metadata and four CSVs were not fully inspected this run; no claim of full preflight coverage.
+- Executed full current CJS source in isolated V8 with Node assert-compatible shim: 152 assertion calls completed. Executed seven additional cross-Flight scenarios: healthy COMMIT, four reachable G corruptions incorrectly COMMIT, orphan and foreign-owner RECEIPT_CHAIN with unchanged state. These are synthetic code outcomes, not native Node, original PDF or production Dart/Sembast acceptance. Details and policy gap in queue entry.
+- No private data moved, no LogMate writes, no master CSV edits. Global-vs-scoped policy, original C512 21, authenticated UID/year/revision and native file-backed lifecycle remain OPEN. C194 debt unchanged.
+
 ## 2026-11-08 09:00 KST — independent synthetic global/scoped reachability audit
 
 - Fresh GitHub connector read of LogMate AGENTS/MASTER/import/CrewConnex contracts (read-only), source-directory metadata, Design Studio research plan, four master CSV header/SHAs, integrated synthesis/profile/decision/readiness, queue/log and exact research oracle blob e3e0d44addbf3ed08725cf274be0a251b70054a2. No private binary decoded or copied. Exact CJS not executed in this run.
