@@ -30,6 +30,12 @@ function apply(s,r,crash){
   if(!Number.isSafeInteger(p.seq)||p.seq<1||p.head!==r.owner+":"+r.id+":H"+p.seq||
      !plain(s.receipts[p.head])||s.receipts[p.head].owner!==r.owner||
      s.receipts[p.head].id!==r.id)return reject("RECEIPT_CHAIN");
+  // Closed-world persisted head: never trust notice fields or caller-controlled extensions.
+  const headKeys=["changedCrew","crew","head","seq","signature"];
+  if(Object.keys(p).sort().join(",")!==headKeys.join(",")||
+     typeof p.changedCrew!=="boolean"||!Array.isArray(p.crew)||
+     p.crew.length<1||p.crew.length>20||!p.crew.every(token)||
+     typeof p.signature!=="string")return reject("RECEIPT_CHAIN");
   // Verify the COMPLETE synthetic ancestry, not only the head. Deterministic seal is NOT cryptographic.
   let previous=null;
   for(let i=1;i<=p.seq;i++){
@@ -44,7 +50,10 @@ function apply(s,r,crash){
    previous=key;
   }
   const last=s.receipts[p.head].snapshot;
-  if(p.signature!==JSON.stringify(last)||JSON.stringify(p.crew)!==JSON.stringify(last.crew))return reject("RECEIPT_CHAIN");
+  const expectedCrewChanged=p.seq===1?false:
+   JSON.stringify(s.receipts[r.owner+":"+r.id+":H"+(p.seq-1)].snapshot.crew)!==JSON.stringify(last.crew);
+  if(p.signature!==JSON.stringify(last)||JSON.stringify(p.crew)!==JSON.stringify(last.crew)||
+     p.changedCrew!==expectedCrewChanged)return reject("RECEIPT_CHAIN");
  }
  // A foreign-owner or orphan receipt is not acceptable in this research state.
  for(const [key,receipt] of Object.entries(s.receipts)){
@@ -156,6 +165,32 @@ for(const [name,mutate] of integrityCases){
  assert.equal(out.state,state,name+" no mutation");
 }
 
+// Persisted-state adversarial regressions (independent of request validation).
+const persistedMutations=[
+ ["forged-changed-crew",x=>{x.evidence.F.changedCrew=true;}],
+ ["nested-changed-crew",x=>{x.evidence.F.changedCrew={flag:false};}],
+ ["staff-id-extension",x=>{x.evidence.F.employee="synthetic";}],
+ ["unexpected-provenance-extension",x=>{x.evidence.F.rawPdf="synthetic";}],
+ ["missing-notice",x=>{delete x.evidence.F.changedCrew;}],
+ ["crew-nested-object",x=>{x.evidence.F.crew=[{employee:"synthetic"}];}],
+ ["crew-empty",x=>{x.evidence.F.crew=[];}],
+ ["signature-type",x=>{x.evidence.F.signature={value:"synthetic"};}]
+];
+for(const [name,mutate] of persistedMutations){
+ const state=clone(committed);mutate(state);
+ const out=apply(state,{...base,head:"A:F:H1",crew:["CC","CA"],source:"S2"});
+ assert.equal(out.code,"RECEIPT_CHAIN",name);
+ assert.equal(out.state,state,name+" zero mutation");
+}
+const second=apply(committed,{...base,head:"A:F:H1",crew:["CC","CA"],source:"S2"});
+assert.equal(second.code,"COMMIT");
+const forgedSecond=clone(second.state);forgedSecond.evidence.F.changedCrew=false;
+assert.equal(apply(forgedSecond,{...base,head:"A:F:H2",crew:["CC","FO"],source:"S3"}).code,"RECEIPT_CHAIN");
+const sameCrew=apply(committed,{...base,head:"A:F:H1",source:"S2"});
+assert.equal(sameCrew.code,"COMMIT");
+assert.equal(sameCrew.state.evidence.F.changedCrew,false);
+assert.equal(apply(sameCrew.state,{...base,head:"A:F:H2",source:"S3"}).code,"COMMIT");
+
 // Input/output isolation regression: commit must never retain caller-owned mutable arrays.
 const isolatedRequest=clone(base), isolatedCommit=apply(seed,isolatedRequest);
 assert.equal(isolatedCommit.code,"COMMIT");
@@ -171,4 +206,4 @@ const oldState=clone(committed), oldCopy=clone(oldState);
 const later=apply(oldState,{...base,head:"A:F:H1",crew:["CC","CA"],source:"S2"});
 assert.equal(later.code,"COMMIT");
 assert.deepEqual(oldState,oldCopy,"prior state remains unchanged");
-console.log(JSON.stringify({kind:"SYNTHETIC_RESEARCH_ORACLE",legacyCases:cases.length,receiptRegressions:2,negativeSchemaCases:malformed.length,receiptAncestryCases:ancestryCases.length,integrityCases:integrityCases.length,isolationCases:3,passed:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+3,total:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+3,production:false}));
+console.log(JSON.stringify({kind:"SYNTHETIC_RESEARCH_ORACLE",legacyCases:cases.length,receiptRegressions:2,negativeSchemaCases:malformed.length,receiptAncestryCases:ancestryCases.length,integrityCases:integrityCases.length,persistedStateCases:persistedMutations.length+4,isolationCases:3,passed:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+persistedMutations.length+4+3,total:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+persistedMutations.length+4+3,production:false}));
