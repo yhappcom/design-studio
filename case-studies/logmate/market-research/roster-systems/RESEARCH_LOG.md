@@ -1,3 +1,9 @@
+## 2026-11-08 09:00 KST — independent synthetic global/scoped reachability audit
+
+- Fresh GitHub connector read of LogMate AGENTS/MASTER/import/CrewConnex contracts (read-only), source-directory metadata, Design Studio research plan, four master CSV header/SHAs, integrated synthesis/profile/decision/readiness, queue/log and exact research oracle blob e3e0d44addbf3ed08725cf274be0a251b70054a2. No private binary decoded or copied. Exact CJS not executed in this run.
+- Executed self-contained JavaScript V8 policy comparison (7 fixtures) and separately corrected owner-wide reachability validator (8 fixtures, 8/8 expected classifications). Naive head-only global scan missed orphan and foreign-owner receipts, while corrected inventory rejected both. Findings are SYNTHETIC and independent comparator only, not committed oracle regression or product proof. Detailed inputs/outcomes in queue entry above.
+- No original-derived C512 PDF mutations, independent renderer, company workbook join, or Dart/Sembast acceptance. No G/O closure, no master CSV update; global vs scoped remains unapproved and C194 sync debt unchanged.
+
 ## 2026-11-08 08:03 KST — cross-Flight receipt corruption matrix, independent V8 validator
 
 - Fresh read-only LogMate AGENTS `622c42d6`, MASTER `5a6fd944`, import `ac5b8721`, CrewConnex `f4c09f17`; private import-source directory metadata and 2018–2026 company XLSX SHAs; Studio plan, four CSV headers/SHAs, queue/log, four integrated documents, recent commits, and research oracle `e3e0d44addbf3ed08725cf274be0a251b70054a2`. No raw private bytes transferred or LogMate writes.
