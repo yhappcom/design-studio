@@ -44,7 +44,7 @@ function apply(s,r,crash){
       receipt.owner!==r.owner||receipt.id!==r.id||receipt.seq!==i||
       receipt.previous!==previous||!plain(receipt.snapshot)||
       Object.keys(receipt.snapshot).sort().join(",")!=="blh,crew,source"||
-      !Number.isSafeInteger(receipt.snapshot.blh)||!Array.isArray(receipt.snapshot.crew)||
+      (!Number.isSafeInteger(receipt.snapshot.blh)||receipt.snapshot.blh<0||receipt.snapshot.blh>1440)||!Array.isArray(receipt.snapshot.crew)||receipt.snapshot.crew.length<1||receipt.snapshot.crew.length>20||
       !receipt.snapshot.crew.every(token)||!token(receipt.snapshot.source)||
       receipt.seal!==seal(r.owner,r.id,i,previous,receipt.snapshot))return reject("RECEIPT_CHAIN");
    previous=key;
@@ -191,6 +191,28 @@ assert.equal(sameCrew.code,"COMMIT");
 assert.equal(sameCrew.state.evidence.F.changedCrew,false);
 assert.equal(apply(sameCrew.state,{...base,head:"A:F:H2",source:"S3"}).code,"COMMIT");
 
+
+// Closed-world ancestor snapshot checks: synthetic malformed receipts must fail closed.
+const malformedAncestorSnapshots=[
+ ["negative-blh",x=>{x.blh=-1;}],["overlimit-blh",x=>{x.blh=1441;}],
+ ["empty-crew",x=>{x.crew=[];}],["overlimit-crew",x=>{x.crew=Array(21).fill("CC");}]
+];
+for(const [name,mutate] of malformedAncestorSnapshots){
+ const state=clone(committed),receipt=state.receipts["A:F:H1"];
+ mutate(receipt.snapshot);receipt.seal=seal("A","F",1,null,receipt.snapshot);
+ state.evidence.F.signature=JSON.stringify(receipt.snapshot);
+ state.evidence.F.crew=clone(receipt.snapshot.crew);
+ const out=apply(state,{...base,head:"A:F:H1",crew:["CC","CA"],source:"S2"});
+ assert.equal(out.code,"RECEIPT_CHAIN",name);
+ assert.equal(out.state,state,name+" zero writes");
+}
+for(const [name,mutate] of malformedAncestorSnapshots){
+ const state=clone(second.state),receipt=state.receipts["A:F:H1"];
+ mutate(receipt.snapshot);receipt.seal=seal("A","F",1,null,receipt.snapshot);
+ const out=apply(state,{...base,head:"A:F:H2",crew:["CC","FO"],source:"S3"});
+ assert.equal(out.code,"RECEIPT_CHAIN","ancestor-"+name);
+ assert.equal(out.state,state,"ancestor-"+name+" zero writes");
+}
 // Input/output isolation regression: commit must never retain caller-owned mutable arrays.
 const isolatedRequest=clone(base), isolatedCommit=apply(seed,isolatedRequest);
 assert.equal(isolatedCommit.code,"COMMIT");
@@ -206,4 +228,4 @@ const oldState=clone(committed), oldCopy=clone(oldState);
 const later=apply(oldState,{...base,head:"A:F:H1",crew:["CC","CA"],source:"S2"});
 assert.equal(later.code,"COMMIT");
 assert.deepEqual(oldState,oldCopy,"prior state remains unchanged");
-console.log(JSON.stringify({kind:"SYNTHETIC_RESEARCH_ORACLE",legacyCases:cases.length,receiptRegressions:2,negativeSchemaCases:malformed.length,receiptAncestryCases:ancestryCases.length,integrityCases:integrityCases.length,persistedStateCases:persistedMutations.length+4,isolationCases:3,passed:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+persistedMutations.length+4+3,total:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+persistedMutations.length+4+3,production:false}));
+console.log(JSON.stringify({kind:"SYNTHETIC_RESEARCH_ORACLE",legacyCases:cases.length,receiptRegressions:2,negativeSchemaCases:malformed.length,receiptAncestryCases:ancestryCases.length,integrityCases:integrityCases.length,persistedStateCases:persistedMutations.length+4,isolationCases:3,malformedAncestorCases:8,passed:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+persistedMutations.length+4+3+8,total:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+persistedMutations.length+4+3+8,production:false}));
