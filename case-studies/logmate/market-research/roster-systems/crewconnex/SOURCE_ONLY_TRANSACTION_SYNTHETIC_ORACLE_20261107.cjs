@@ -55,6 +55,8 @@ function validPersisted(s,owner,id,p){
 function apply(s,r,crash){
  const reject=x=>({code:x,state:s});
  if(!validRequest(r))return reject("SCHEMA");
+ // Reject malformed persisted envelopes before any dereference; never treat absent maps as empty.
+ if(!plain(s)||!token(s.owner)||!plain(s.flights)||!plain(s.evidence)||!plain(s.receipts))return reject("STORE_SCHEMA");
  const f=s.flights[r.id],p=s.evidence[r.id];
  if(r.owner!==s.owner||!f||f.owner!==r.owner||!f.active)return reject("OWNER");
  if(r.rev!==f.rev)return reject("FLIGHT_CAS");
@@ -267,6 +269,25 @@ for(const value of [null,false,0,""]){
  const out=apply(state,base);
  assert.equal(out.code,"RECEIPT_CHAIN","target falsy evidence entry");
  assert.equal(out.state,state,"target falsy evidence zero writes");
+}
+// Malformed top-level persisted envelope: structured fail-closed result, no writes or throw.
+for(const [name,mutate] of [
+ ["missing-flights",s=>{delete s.flights;}],
+ ["null-flights",s=>{s.flights=null;}],
+ ["array-flights",s=>{s.flights=[];}],
+ ["missing-evidence",s=>{delete s.evidence;}],
+ ["null-evidence",s=>{s.evidence=null;}],
+ ["missing-receipts",s=>{delete s.receipts;}],
+ ["null-receipts",s=>{s.receipts=null;}],
+ ["array-receipts",s=>{s.receipts=[];}],
+ ["missing-owner",s=>{delete s.owner;}],
+ ["null-store",()=>null]
+]){
+ let state=clone(committed);state=mutate(state)??state;
+ if(name==="null-store")state=null;
+ const out=apply(state,{...base,head:"A:F:H1",source:"S2"});
+ assert.equal(out.code,"STORE_SCHEMA",name);
+ assert.equal(out.state,state,name+" must preserve original reference");
 }
 // Input/output isolation regression: commit must never retain caller-owned mutable arrays.
 const isolatedRequest=clone(base), isolatedCommit=apply(seed,isolatedRequest);
