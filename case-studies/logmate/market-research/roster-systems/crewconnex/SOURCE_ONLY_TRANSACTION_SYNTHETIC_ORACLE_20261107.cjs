@@ -17,6 +17,41 @@ function validRequest(r){
  if(!token(r.source))return false;
  return true;
 }
+
+// Research policy variant: global fail-closed admission; NOT owner-approved product behavior.
+function validPersisted(s,owner,id,p){
+ if(p){
+  if(!Number.isSafeInteger(p.seq)||p.seq<1||p.head!==owner+":"+id+":H"+p.seq||
+     !plain(s.receipts[p.head])||s.receipts[p.head].owner!==owner||
+     s.receipts[p.head].id!==id)return false;
+  // Closed-world persisted head: never trust notice fields or caller-controlled extensions.
+  const headKeys=["changedCrew","crew","head","seq","signature"];
+  if(Object.keys(p).sort().join(",")!==headKeys.join(",")||
+     typeof p.changedCrew!=="boolean"||!Array.isArray(p.crew)||
+     p.crew.length<1||p.crew.length>20||!p.crew.every(token)||
+     typeof p.signature!=="string")return false;
+  // Verify the COMPLETE synthetic ancestry, not only the head. Deterministic seal is NOT cryptographic.
+  let previous=null;
+  for(let i=1;i<=p.seq;i++){
+   const key=owner+":"+id+":H"+i,receipt=s.receipts[key];
+   if(!plain(receipt)||Object.keys(receipt).sort().join(",")!=="id,owner,previous,seal,seq,snapshot"||
+      receipt.owner!==owner||receipt.id!==id||receipt.seq!==i||
+      receipt.previous!==previous||!plain(receipt.snapshot)||
+      Object.keys(receipt.snapshot).sort().join(",")!=="blh,crew,source"||
+      (!Number.isSafeInteger(receipt.snapshot.blh)||receipt.snapshot.blh<0||receipt.snapshot.blh>1440)||!Array.isArray(receipt.snapshot.crew)||receipt.snapshot.crew.length<1||receipt.snapshot.crew.length>20||
+      !receipt.snapshot.crew.every(token)||!token(receipt.snapshot.source)||
+      receipt.seal!==seal(owner,id,i,previous,receipt.snapshot))return false;
+   previous=key;
+  }
+  const last=s.receipts[p.head].snapshot;
+  const expectedCrewChanged=p.seq===1?false:
+   JSON.stringify(s.receipts[owner+":"+id+":H"+(p.seq-1)].snapshot.crew)!==JSON.stringify(last.crew);
+  if(p.signature!==JSON.stringify(last)||JSON.stringify(p.crew)!==JSON.stringify(last.crew)||
+     p.changedCrew!==expectedCrewChanged)return false;
+ }
+
+ return true;
+}
 function apply(s,r,crash){
  const reject=x=>({code:x,state:s});
  if(!validRequest(r))return reject("SCHEMA");
@@ -26,34 +61,11 @@ function apply(s,r,crash){
  if(r.head!==(p?.head??null))return reject("EVIDENCE_CAS");
  // Existing evidence must point to a real, owner/flight-bound receipt with a coherent sequence.
  // This is a synthetic invariant only; it does not prove actual durable storage.
- if(p){
-  if(!Number.isSafeInteger(p.seq)||p.seq<1||p.head!==r.owner+":"+r.id+":H"+p.seq||
-     !plain(s.receipts[p.head])||s.receipts[p.head].owner!==r.owner||
-     s.receipts[p.head].id!==r.id)return reject("RECEIPT_CHAIN");
-  // Closed-world persisted head: never trust notice fields or caller-controlled extensions.
-  const headKeys=["changedCrew","crew","head","seq","signature"];
-  if(Object.keys(p).sort().join(",")!==headKeys.join(",")||
-     typeof p.changedCrew!=="boolean"||!Array.isArray(p.crew)||
-     p.crew.length<1||p.crew.length>20||!p.crew.every(token)||
-     typeof p.signature!=="string")return reject("RECEIPT_CHAIN");
-  // Verify the COMPLETE synthetic ancestry, not only the head. Deterministic seal is NOT cryptographic.
-  let previous=null;
-  for(let i=1;i<=p.seq;i++){
-   const key=r.owner+":"+r.id+":H"+i,receipt=s.receipts[key];
-   if(!plain(receipt)||Object.keys(receipt).sort().join(",")!=="id,owner,previous,seal,seq,snapshot"||
-      receipt.owner!==r.owner||receipt.id!==r.id||receipt.seq!==i||
-      receipt.previous!==previous||!plain(receipt.snapshot)||
-      Object.keys(receipt.snapshot).sort().join(",")!=="blh,crew,source"||
-      (!Number.isSafeInteger(receipt.snapshot.blh)||receipt.snapshot.blh<0||receipt.snapshot.blh>1440)||!Array.isArray(receipt.snapshot.crew)||receipt.snapshot.crew.length<1||receipt.snapshot.crew.length>20||
-      !receipt.snapshot.crew.every(token)||!token(receipt.snapshot.source)||
-      receipt.seal!==seal(r.owner,r.id,i,previous,receipt.snapshot))return reject("RECEIPT_CHAIN");
-   previous=key;
-  }
-  const last=s.receipts[p.head].snapshot;
-  const expectedCrewChanged=p.seq===1?false:
-   JSON.stringify(s.receipts[r.owner+":"+r.id+":H"+(p.seq-1)].snapshot.crew)!==JSON.stringify(last.crew);
-  if(p.signature!==JSON.stringify(last)||JSON.stringify(p.crew)!==JSON.stringify(last.crew)||
-     p.changedCrew!==expectedCrewChanged)return reject("RECEIPT_CHAIN");
+ if(!validPersisted(s,r.owner,r.id,p))return reject("RECEIPT_CHAIN");
+ // Validate every foreign evidence head and its entire sealed ancestry before committing F.
+ if(!plain(s.evidence)||!plain(s.receipts))return reject("RECEIPT_CHAIN");
+ for(const [id,foreign] of Object.entries(s.evidence)){
+  if(!token(id)||!s.flights[id]||s.flights[id].owner!==s.owner||!validPersisted(s,s.owner,id,foreign))return reject("RECEIPT_CHAIN");
  }
  // A foreign-owner or orphan receipt is not acceptable in this research state.
  for(const [key,receipt] of Object.entries(s.receipts)){
@@ -213,6 +225,19 @@ for(const [name,mutate] of malformedAncestorSnapshots){
  assert.equal(out.code,"RECEIPT_CHAIN","ancestor-"+name);
  assert.equal(out.state,state,"ancestor-"+name+" zero writes");
 }
+// Cross-flight global fail-closed research variant (not a product decision).
+const foreignBase=twoFlights.state;
+const foreignMutations=[
+ ["foreign-signature",x=>{x.evidence.G.signature="forged";}],
+ ["foreign-crew",x=>{x.evidence.G.crew=["FAKE"]; }],
+ ["foreign-notice",x=>{x.evidence.G.changedCrew=true;}],
+ ["foreign-head-extra",x=>{x.evidence.G.staff="forbidden";}],
+ ["foreign-ancestor-blh",x=>{x.receipts["A:G:H1"].snapshot.blh=1441;}],
+ ["foreign-ancestor-crew",x=>{x.receipts["A:G:H1"].snapshot.crew=[];}],
+ ["foreign-seal",x=>{x.receipts["A:G:H1"].seal="forged";}]
+];
+for(const [name,mutate] of foreignMutations){const state=clone(foreignBase);mutate(state);const out=apply(state,{...base,head:"A:F:H1",source:"S2"});assert.equal(out.code,"RECEIPT_CHAIN",name);assert.deepEqual(out.state,state,name+" zero writes");}
+assert.equal(apply(foreignBase,{...base,head:"A:F:H1",source:"S2"}).code,"COMMIT","healthy cross-flight");
 // Input/output isolation regression: commit must never retain caller-owned mutable arrays.
 const isolatedRequest=clone(base), isolatedCommit=apply(seed,isolatedRequest);
 assert.equal(isolatedCommit.code,"COMMIT");
@@ -228,4 +253,4 @@ const oldState=clone(committed), oldCopy=clone(oldState);
 const later=apply(oldState,{...base,head:"A:F:H1",crew:["CC","CA"],source:"S2"});
 assert.equal(later.code,"COMMIT");
 assert.deepEqual(oldState,oldCopy,"prior state remains unchanged");
-console.log(JSON.stringify({kind:"SYNTHETIC_RESEARCH_ORACLE",legacyCases:cases.length,receiptRegressions:2,negativeSchemaCases:malformed.length,receiptAncestryCases:ancestryCases.length,integrityCases:integrityCases.length,persistedStateCases:persistedMutations.length+4,isolationCases:3,malformedAncestorCases:8,passed:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+persistedMutations.length+4+3+8,total:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+persistedMutations.length+4+3+8,production:false}));
+console.log(JSON.stringify({kind:"SYNTHETIC_RESEARCH_ORACLE",legacyCases:cases.length,receiptRegressions:2,negativeSchemaCases:malformed.length,receiptAncestryCases:ancestryCases.length,integrityCases:integrityCases.length,persistedStateCases:persistedMutations.length+4,isolationCases:3,malformedAncestorCases:8,crossFlightCases:8,passed:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+persistedMutations.length+4+3+8+8,total:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+persistedMutations.length+4+3+8+8,production:false}));
