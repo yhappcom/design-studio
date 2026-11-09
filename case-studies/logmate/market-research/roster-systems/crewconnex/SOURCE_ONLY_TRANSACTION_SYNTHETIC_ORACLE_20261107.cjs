@@ -65,7 +65,7 @@ function apply(s,r,crash){
  // Validate every foreign evidence head and its entire sealed ancestry before committing F.
  if(!plain(s.evidence)||!plain(s.receipts))return reject("RECEIPT_CHAIN");
  for(const [id,foreign] of Object.entries(s.evidence)){
-  if(!token(id)||!s.flights[id]||s.flights[id].owner!==s.owner||!validPersisted(s,s.owner,id,foreign))return reject("RECEIPT_CHAIN");
+  if(!token(id)||!s.flights[id]||s.flights[id].owner!==s.owner||!plain(foreign)||!validPersisted(s,s.owner,id,foreign))return reject("RECEIPT_CHAIN");
  }
  // A foreign-owner or orphan receipt is not acceptable in this research state.
  for(const [key,receipt] of Object.entries(s.receipts)){
@@ -255,6 +255,19 @@ for(const [name,mutate] of extraReceiptMutations){
  assert.equal(out.code,"RECEIPT_CHAIN",name);assert.deepEqual(out.state,before,name+" zero writes");
 }
 assert.equal(apply(committed,{...base,head:"A:F:H1",source:"S2"}).code,"COMMIT","healthy existing receipt inventory");
+// Explicit evidence-map entries must be structured, even when falsy (no silent null tombstones).
+for(const value of [null,false,0,""]){
+ const state=clone(seed);state.evidence.G=value;
+ const out=apply(state,base);
+ assert.equal(out.code,"RECEIPT_CHAIN","foreign falsy evidence entry");
+ assert.equal(out.state,state,"foreign falsy evidence zero writes");
+}
+for(const value of [null,false,0,""]){
+ const state=clone(seed);state.evidence.F=value;
+ const out=apply(state,base);
+ assert.equal(out.code,"RECEIPT_CHAIN","target falsy evidence entry");
+ assert.equal(out.state,state,"target falsy evidence zero writes");
+}
 // Input/output isolation regression: commit must never retain caller-owned mutable arrays.
 const isolatedRequest=clone(base), isolatedCommit=apply(seed,isolatedRequest);
 assert.equal(isolatedCommit.code,"COMMIT");
