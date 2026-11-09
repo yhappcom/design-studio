@@ -1,3 +1,6 @@
+## 2026-11-09 11:06 KST — cross-flight corruption policy research
+- Read-only current LogMate AGENTS `622c42d6`, MASTER `5a6fd944`, import `ac5b8721`, CrewConnex `f4c09f17`; Studio plan, integrated navigation, queue/log and research oracle `7a2f0c88` reviewed. Executed `python /tmp/crew_policy.py` in Python 3, 16 invented transition cases 16/16 expectations. No real corpus, exact Node or native Sembast. Readiness commit `1b5af62898ee79fa020f513c5bf9954a5ae6e329`, verified blob `6b9a4e50f4273457bdbbe5f88018bc680b401caa`. Global/quarantine comparison is policy illustration, not owner approval. G/O OPEN, C194 debt unchanged.
+
 ## 2026-11-09 09:58 KST — CrewConnex global fail-closed research variant
 - GitHub `fetch_file` current oracle blob `0ba5141b3aa216ee9b26a7bea8358b691808fd26`; transformed JS to reuse persisted evidence validation across every Flight. `new Function('require','console',candidate)` in Code Mode V8 with synthetic strict-assert adapter => 93/93 reported, seven new cross-flight G corruptions rejected, healthy F/G accepted. `update_file` commit `a7bf238d5175e233fcc11d4b0845175526af3586`; re-fetch blob `7a2f0c88e0b9585062aeedae0eb66824d4d14704` verified. No private bytes, product writes, Node CLI or native execution. No CSV update; no G/O closure; policy variant unapproved.
 
