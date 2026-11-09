@@ -219,3 +219,9 @@ Design Studio Type/Color status and current Layout/Interaction/Web/Content statu
 ## HANDOFFS TO OTHER SPECIALISTS
 
 **Engineering/LogMate:** implement/validate only after a separately authorized Work, retaining existing-record-only and owner authority. **Interaction/Content:** define exact review/unsupported/conflict/changed-evidence statuses before public copy. **Web/PWA:** validate old-profile offline and no-source-upload behavior in served build. **Market/Marketing:** current evidence does not authorize "CrewConnex supported" release claims.
+
+
+## 2026-11-09 14:00 KST — explicit falsy evidence-map entries (SYNTHETIC V8)
+- Exact committed research oracle prior blob `8ec71452914317ce99549b06d904705d3fe7d988`: independent new probe `state.evidence.G=null` returned COMMIT instead of RECEIPT_CHAIN. This is an invalid persisted map entry bypass, not a product defect. Previous result: 101 reported synthetic cases, without this predicate.
+- Delta: global admission now requires `plain(foreign)` for every explicit evidence-map entry. Added eight synthetic negative regressions: foreign and target evidence values null/false/0/empty string. V8 executed candidate full existing suite plus these eight; all assertions passed. No Node CLI or native storage execution; summary counters updated separately. Product decision, G/O closures and readiness unchanged.
+- Remaining decision: global reject versus per-Flight quarantine requires owner approval; native transactional persistence, backup/restore/Sync and UID/account isolation remain unexecuted. Exact C512 original-derived 21 through C426 plus independent PDF renderer remains BLOCKED_DEPENDENCY until approved private bytes and standards-based renderer are available. C194 historical debt unchanged; four CSV indexes unchanged.
