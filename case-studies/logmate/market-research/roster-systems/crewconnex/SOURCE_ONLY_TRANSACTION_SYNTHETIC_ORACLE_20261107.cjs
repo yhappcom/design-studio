@@ -69,7 +69,8 @@ function apply(s,r,crash){
  }
  // A foreign-owner or orphan receipt is not acceptable in this research state.
  for(const [key,receipt] of Object.entries(s.receipts)){
-  if(!plain(receipt)||receipt.owner!==s.owner||!s.flights[receipt.id]||
+  if(!plain(receipt)||Object.keys(receipt).sort().join(",")!=="id,owner,previous,seal,seq,snapshot"||
+     !Number.isSafeInteger(receipt.seq)||receipt.seq<1||receipt.owner!==s.owner||!s.flights[receipt.id]||
      receipt.owner!==s.flights[receipt.id].owner||
      key!==receipt.owner+":"+receipt.id+":H"+receipt.seq||
      !s.evidence[receipt.id]||receipt.seq>s.evidence[receipt.id].seq)return reject("RECEIPT_CHAIN");
@@ -238,6 +239,22 @@ const foreignMutations=[
 ];
 for(const [name,mutate] of foreignMutations){const state=clone(foreignBase);mutate(state);const out=apply(state,{...base,head:"A:F:H1",source:"S2"});assert.equal(out.code,"RECEIPT_CHAIN",name);assert.deepEqual(out.state,state,name+" zero writes");}
 assert.equal(apply(foreignBase,{...base,head:"A:F:H1",source:"S2"}).code,"COMMIT","healthy cross-flight");
+// Extra receipt admission: reject out-of-range, malformed, foreign and noncontiguous receipt inventory.
+const extraReceiptMutations=[
+ ["zero-seq",x=>{x.receipts["A:F:H0"]={...clone(x.receipts["A:F:H1"]),seq:0};}],
+ ["negative-seq",x=>{x.receipts["A:F:H-1"]={...clone(x.receipts["A:F:H1"]),seq:-1};}],
+ ["fractional-seq",x=>{x.receipts["A:F:H0.5"]={...clone(x.receipts["A:F:H1"]),seq:0.5};}],
+ ["forbidden-field",x=>{x.receipts["A:F:H0"]={...clone(x.receipts["A:F:H1"]),seq:0,extra:"synthetic"};}],
+ ["extra-after-head",x=>{x.receipts["A:F:H2"]={...clone(x.receipts["A:F:H1"]),seq:2};}],
+ ["foreign-uid",x=>{x.receipts["B:F:H0"]={...clone(x.receipts["A:F:H1"]),owner:"B",seq:0};}],
+ ["missing-evidence",x=>{x.receipts["A:G:H1"]={...clone(x.receipts["A:F:H1"]),id:"G"};}]
+];
+for(const [name,mutate] of extraReceiptMutations){
+ const state=clone(committed);mutate(state);
+ const before=clone(state),out=apply(state,{...base,head:"A:F:H1",source:"S2"});
+ assert.equal(out.code,"RECEIPT_CHAIN",name);assert.deepEqual(out.state,before,name+" zero writes");
+}
+assert.equal(apply(committed,{...base,head:"A:F:H1",source:"S2"}).code,"COMMIT","healthy existing receipt inventory");
 // Input/output isolation regression: commit must never retain caller-owned mutable arrays.
 const isolatedRequest=clone(base), isolatedCommit=apply(seed,isolatedRequest);
 assert.equal(isolatedCommit.code,"COMMIT");
@@ -253,4 +270,4 @@ const oldState=clone(committed), oldCopy=clone(oldState);
 const later=apply(oldState,{...base,head:"A:F:H1",crew:["CC","CA"],source:"S2"});
 assert.equal(later.code,"COMMIT");
 assert.deepEqual(oldState,oldCopy,"prior state remains unchanged");
-console.log(JSON.stringify({kind:"SYNTHETIC_RESEARCH_ORACLE",legacyCases:cases.length,receiptRegressions:2,negativeSchemaCases:malformed.length,receiptAncestryCases:ancestryCases.length,integrityCases:integrityCases.length,persistedStateCases:persistedMutations.length+4,isolationCases:3,malformedAncestorCases:8,crossFlightCases:8,passed:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+persistedMutations.length+4+3+8+8,total:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+persistedMutations.length+4+3+8+8,production:false}));
+console.log(JSON.stringify({kind:"SYNTHETIC_RESEARCH_ORACLE",legacyCases:cases.length,receiptRegressions:2,negativeSchemaCases:malformed.length,receiptAncestryCases:ancestryCases.length,integrityCases:integrityCases.length,persistedStateCases:persistedMutations.length+4,isolationCases:3,malformedAncestorCases:8,crossFlightCases:8,extraReceiptCases:extraReceiptMutations.length+1,passed:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+persistedMutations.length+4+3+8+8+extraReceiptMutations.length+1,total:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+persistedMutations.length+4+3+8+8+extraReceiptMutations.length+1,production:false}));
