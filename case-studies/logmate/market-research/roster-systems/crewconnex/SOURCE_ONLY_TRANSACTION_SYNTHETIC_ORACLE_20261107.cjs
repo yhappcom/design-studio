@@ -21,7 +21,7 @@ function validRequest(r){
 // Research policy variant: global fail-closed admission; NOT owner-approved product behavior.
 function validPersisted(s,owner,id,p){
  if(p){
-  if(!Number.isSafeInteger(p.seq)||p.seq<1||p.head!==owner+":"+id+":H"+p.seq||
+  if(!Number.isSafeInteger(p.seq)||p.seq<1||p.seq>Object.keys(s.receipts).length||p.head!==owner+":"+id+":H"+p.seq||
      !plain(s.receipts[p.head])||s.receipts[p.head].owner!==owner||
      s.receipts[p.head].id!==id)return false;
   // Closed-world persisted head: never trust notice fields or caller-controlled extensions.
@@ -305,3 +305,18 @@ const later=apply(oldState,{...base,head:"A:F:H1",crew:["CC","CA"],source:"S2"})
 assert.equal(later.code,"COMMIT");
 assert.deepEqual(oldState,oldCopy,"prior state remains unchanged");
 console.log(JSON.stringify({kind:"SYNTHETIC_RESEARCH_ORACLE",legacyCases:cases.length,receiptRegressions:2,negativeSchemaCases:malformed.length,receiptAncestryCases:ancestryCases.length,integrityCases:integrityCases.length,persistedStateCases:persistedMutations.length+4,isolationCases:3,malformedAncestorCases:8,crossFlightCases:8,extraReceiptCases:extraReceiptMutations.length+1,falsyEvidenceCases:8,passed:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+persistedMutations.length+4+3+8+8+extraReceiptMutations.length+1+8,total:cases.length+2+malformed.length+ancestryCases.length+integrityCases.length+persistedMutations.length+4+3+8+8+extraReceiptMutations.length+1+8,production:false}));
+
+// 2026-11-09 bounded ancestry admission: adversarial synthetic persisted heads.
+for(const seq of [1000000000,Number.MAX_SAFE_INTEGER]){
+ const corrupt=clone(committed),head="A:F:H"+seq;
+ corrupt.evidence.F.seq=seq;corrupt.evidence.F.head=head;
+ corrupt.receipts[head]=clone(corrupt.receipts["A:F:H1"]);
+ const before=JSON.stringify(corrupt),out=apply(corrupt,{...base,head});
+ assert.equal(out.code,"RECEIPT_CHAIN","oversized head must reject without traversal");
+ assert.equal(out.state,corrupt,"rejection preserves state identity");
+ assert.equal(JSON.stringify(corrupt),before,"rejection does not mutate persisted input");
+}
+const twoFlight=apply(committed,{...base,id:"G",blh:95});
+assert.equal(twoFlight.code,"COMMIT","valid second Flight ancestry remains accepted");
+const updateFirst=apply(twoFlight.state,{...base,head:"A:F:H1",source:"S2"});
+assert.equal(updateFirst.code,"COMMIT","valid independent ancestry remains accepted");
