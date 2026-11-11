@@ -1,3 +1,7 @@
+### 2026-11-11 23:59 KST — revision rollback and same-token changed BLH (SYNTHETIC; OPEN)
+- Origin: unchanged synthetic oracle SHA `4eec109f83db719e936c03cea7942319194742a4`; previous 22:59 result was crew-name admission gap (six invented cases). Delta: four newly executed synthetic sequential admissions: baseline S1 COMMIT; S2 COMMIT; S2→S1 COMMIT; unchanged S2 with changed BLH COMMIT. Canonical Flight unchanged. Neither S1 nor S2 is an authenticated real publication identifier.
+- Decision: source revision authenticity, monotonicity, changed content with unchanged token and unknown-publication HOLD policy. Precondition: authenticated same-export revision evidence or explicit owner-approved unknown-publication HOLD; real independent parser and separately authorized native persistence test. G/O OPEN, C512 BLOCKED_DEPENDENCY, C194 and CSV unchanged.
+
 ### 2026-11-11 22:59 KST — crew identity admission versus verified-name requirement (SYNTHETIC V8; OPEN)
 - Origin: unchanged `SOURCE_ONLY_TRANSACTION_SYNTHETIC_ORACLE_20261107.cjs` SHA `4eec109f83db719e936c03cea7942319194742a4`, isolated `apply` in V8. Previous result: 10:58 typed product FlightRecord reconciliation; no verified CrewParticipant-name acceptance proven.
 - Delta: six new invented crew arrays (staff-number-like, UNKNOWN, duplicate, PIC/SIC role codes, NA, normal names) all returned COMMIT with unchanged synthetic canonical flights; token-only crew validation does not certify verified names, identity or duplicate semantics. Not a real corpus test or product failure.
