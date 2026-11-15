@@ -1,3 +1,9 @@
+## 2026-11-16 03:02 KST — active-Flight deletion TOCTOU synthetic counterexample (NOT PRODUCT)
+
+- **SYNTHETIC EXECUTED:** Python 3 sqlite3 WAL, transient `python /tmp/crew_race.py`, script SHA-256 `56ceda65a2f75e7bab1ccd38d1b495eba80a6d95a952e17f7021fa7dff405ec0`. Two connections: U1 Flight initially active rev=1; A checks active; B deactivates and increments rev; A blindly inserts source evidence. Unsafe split-check path admitted one evidence row after deactivation. Reset evidence, then an atomic guarded `UPDATE flight SET rev=rev WHERE id=1 AND owner='U1' AND active=1 AND rev=1` inside `BEGIN IMMEDIATE` affected zero rows; rollback retained zero evidence and canonical Block=90 unchanged. This is a new *cross-connection deletion/eligibility TOCTOU* failure mode, distinct from prior restore epoch ABA and comparator synthetic partitions.
+- **PRODUCT CONTRACT / STATIC:** LogMate CrewConnex remains existing-active-same-owner Flight only; current Flight/Draft CAS does not certify source-only evidence persistence. **REAL ORIGINAL / ORIGINAL-DERIVED:** no new private-source execution. **UNEXECUTED:** actual Dart/Sembast, crash rollback, C512 exact PDF mutations and independent renderer. Research acceptance predicate: eligibility, owner, FlightRevision and EvidenceHead checks must share the same atomic write boundary as immutable receipt/evidence insert, not a prior read. SQLite demonstration does not close any G/O gate.
+- **Recovery:** separately authorized LogMate Work with actual Sembast transactional repository tests; approved private PDF/XLSX and independent renderer for source gates. No index CSV change.
+
 # CrewConnex evidence, decisions and contradiction register — 2026-11-07
 
 ## 2026-11-07 — independent C457 cohort decomposition (manifest-derived, not PDF decode)
