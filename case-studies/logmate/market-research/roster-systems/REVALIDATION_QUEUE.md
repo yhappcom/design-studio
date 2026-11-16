@@ -1,3 +1,9 @@
+## 2026-11-16 22:07 KST — evidence-only transaction rollback/reopen research oracle (SYNTHETIC; OPEN)
+- Origin: EXECUTED Python 3 sqlite3 standard-library transient `/tmp/crew_atomic.py`; SHA-256 `b332e50a41ec798766edc3075d0508d1a2dee22352bcbee54260de91d4eae2b5`; 9/9 authored assertions PASS. Synthetic UID, crew labels, receipt tokens only; no private bytes.
+- Previous: 19:11 14/14 synthetic cross-export provenance substitution; different gate (atomic evidence persistence). Earlier SQLite deletion TOCTOU covered split eligibility; this probes injected rollback, receipt replay, changed-crew receipt, and close/reopen in one transactional research model.
+- Delta: rejected wrong UID; injected exception after receipt insert and head increment rolled both back; valid insert advanced head; replay did not duplicate; stale head held; new receipt with changed crew accepted; canonical Block remained 90; two receipts and head revision 3 survived reopen. All are model assertions, NOT LogMate/Sembast or crash-power-loss tests.
+- Exact remaining decision: real same-owner active FlightRevision+EvidenceHead atomic persistence, immutable receipt and normalized crew/provenance notice; product Work permission and actual Dart/Sembast execution required. Source-native C512 exact 21 + independent PDF remains BLOCKED_DEPENDENCY pending approved private byte executor. G/O closure zero; CSV unchanged.
+
 ## 2026-11-16 19:11 KST — cross-export row provenance binding (SYNTHETIC; OPEN)
 - Origin: executed `python /tmp/crew_provenance_gate.py`, Python 3 standard library, SHA-256 `99883c73ea5356615d213ced23ac17d464d0d1d3b1b74b5fc7ea0d4957ff4f91`; 14/14 authored assertions PASS. Fully invented source tokens; no private source contents.
 - Previous: 16:16 12/12 synthetic overlapping company-export Publication conflict, which checked export-level coverage but not row-to-export provenance substitution.
