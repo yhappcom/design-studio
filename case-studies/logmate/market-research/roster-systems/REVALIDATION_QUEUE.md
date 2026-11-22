@@ -1,3 +1,8 @@
+## 2026-11-22 15:00 KST — backup restore / UID isolation revalidation (SYNTHETIC; OPEN)
+- **Origin / previous:** separate Python sqlite3 backup-import research model 12/12; prior 2026-11-22 14:00 receipt append/reopen/wipe model 9/9, not a backup restore acceptance.
+- **Delta:** independently exercised foreign UID HOLD with zero writes, same UID restore receipt/head retention, replay merge HOLD, orphan receipt atomic rollback, reopen and new-UID isolation. Validator SHA `d52272c52747c87b3c87c815cfac93055094b00dbbb29a072323f99f53c469cd`.
+- **Remaining decision / precondition:** product-authorized Dart/Sembast Work must define and test actual CrewConnex receipt store in WholeLedgerBackup schema, authenticated restore owner, referential validation, atomic rollback, Sync and account wipe; current synthetic result cannot close G/O. Real C512/C426 independent renderer and source authentication separately BLOCKED_DEPENDENCY pending approved private-byte executor.
+
 ## 2026-11-22 13:00 KST — clipping-path validator revalidation
 - **Origin/previous:** NEW synthetic clipping test; previous OCG 6/6 and annotation 3/3 were separate cases; first exploratory clipping hypothesis 5/6, corrected final 6/6 (script SHA `79571865080db51a9d31a4aa17db49a3c023f077453e5f2075539e6553cd7f18`).
 - **Delta:** pdfplumber extracts a fully clipped invented token while PyMuPDF omits it and raster is blank. A parser using pdfplumber alone could accept nonpainted required evidence.
