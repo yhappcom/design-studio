@@ -1,3 +1,8 @@
+## 2026-11-23 20:00 KST — invisible/overpaint PDF text revalidation (SYNTHETIC; OPEN)
+- **Origin/previous:** synthetic clipping-path 6/6 and OCG/annotation checks; no earlier explicit text-render-mode-3 plus later opaque overpaint cross-extractor raster equivalence test.
+- **Delta:** new reportlab/PyMuPDF/pdfplumber harness 3/3, SHA `d83930d17692bf39de67e5c736989131b03e94492760a06cb7425f00b44182a8`: both text extractors return an invented required token in invisible and overpaint PDFs while raster is blank. This is not an original-derived C512 test.
+- **Remaining decision/precondition:** binary-safe approved private PDF execution and independent paint-aware validator against C426 original + exact C512 21; product policy for text visibility and locator acceptance remains OPEN. No G/O closure.
+
 ## 2026-11-22 15:55 KST — publication replay/ABA model (SYNTHETIC; OPEN)
 - **Origin/previous:** new exhaustive 2,592-state Python research classifier; previous source-coverage matrix 1,152 states and SQLite backup lifecycle 12/12 did not independently exercise same-publication changed-payload versus new-publication unchanged-payload distinction.
 - **Delta:** declarative and guard-chain outputs agree; same token/changed payload HOLD, new token/unchanged scalar provenance notice, unknown payload HOLD, zero canonical writes. Script SHA `5b118b248c3d45287128fdf231244e6669cb46480ceae526de74626186f27dec`.
