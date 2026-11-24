@@ -1,6 +1,6 @@
 # LogMate Roster Integration Engine — Incremental Research Handoff
 
-Version: **0.1 — 2026-11-24**
+Version: **0.2 — 2026-11-24**
 Authority: DESIGN STUDIO RESEARCH / development-start recommendation only. Not product policy, implementation authorization, or release approval.
 
 ## 1. Executive decision
@@ -85,3 +85,7 @@ This simplified model does not implement an RFC-complete parser, real validator 
 Web specialist: browser/CORS/managed EFB validation and support claims; Layout/Interaction and Content: review/conflict/staleness/error flows, not visual approval; Typography/Color not materially implicated. No product/design authorization inferred.
 
 Navigation: [Research plan](RESEARCH_PLAN_20261004.md), [Synthesis](RESEARCH_SYNTHESIS_20261107.md), [ParserProfile](PARSER_PROFILE_SPEC_20261107.md), [Evidence register](EVIDENCE_DECISION_REGISTER_20261107.md), [Readiness](IMPLEMENTATION_READINESS_20261107.md), [Revalidation queue](REVALIDATION_QUEUE.md). Legacy index grades unchanged pending real delta.
+
+## 7. Cross-system capability delta — v0.2 (2026-11-24)
+
+[Calendar source capability matrix](CALENDAR_SOURCE_CAPABILITY_MATRIX.csv) now covers the 12 registered master-index systems (matrix commit 320c8d9c270dd178d60a6d2866b084479c1fc5f4). This is a capability inventory, not 12 verified parsers. NAVBLUE July 2026 indexed official help describes a copy-link subscription option conditional on airline enablement; its live URL redirected to Skywise, so actual endpoint/bytes and current full instructions remain unverified. CAE publisher release notes establish Apple Calendar integration (iOS v5.0.1) and Google Calendar sync (Android release notes), plus schedule export/share; this does not establish an airline-issued direct ICS URL. FLICA browser-authenticated file handoff remains distinct from live feed. The resulting architecture recommendation is separate acquisition adapters (direct feed, user file, system-calendar route only if separately approved) feeding shared ICS parsing; do not force every system into direct HTTP. H07 sample/authority and all release gates remain HOLD. No existing file-parser readiness upgrade. See matrix for exact sources and limitations.
